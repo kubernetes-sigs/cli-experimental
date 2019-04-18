@@ -17,8 +17,12 @@ import (
 // Injectors from wire.go:
 
 func InitializeStatus(resourceConfigPath clik8s.ResourceConfigPath, writer io.Writer) (*status.Status, error) {
+	pluginConfig := wirek8s.NewPluginConfig()
+	factory := wirek8s.NewResMapFactory(pluginConfig)
 	fileSystem := wirek8s.NewFileSystem()
-	resourceConfigs, err := wirek8s.NewResourceConfig(resourceConfigPath, fileSystem)
+	transformerFactory := wirek8s.NewTransformerFactory()
+	configProvider := wirek8s.NewConfigProvider(factory, fileSystem, transformerFactory, pluginConfig)
+	resourceConfigs, err := wirek8s.NewResourceConfig(resourceConfigPath, configProvider)
 	if err != nil {
 		return nil, err
 	}
@@ -55,8 +59,12 @@ func InitializeApply(resourceConfigPath clik8s.ResourceConfigPath, writer io.Wri
 	if err != nil {
 		return nil, err
 	}
+	pluginConfig := wirek8s.NewPluginConfig()
+	factory := wirek8s.NewResMapFactory(pluginConfig)
 	fileSystem := wirek8s.NewFileSystem()
-	resourceConfigs, err := wirek8s.NewResourceConfig(resourceConfigPath, fileSystem)
+	transformerFactory := wirek8s.NewTransformerFactory()
+	configProvider := wirek8s.NewConfigProvider(factory, fileSystem, transformerFactory, pluginConfig)
+	resourceConfigs, err := wirek8s.NewResourceConfig(resourceConfigPath, configProvider)
 	if err != nil {
 		return nil, err
 	}
@@ -73,8 +81,12 @@ func InitializeApply(resourceConfigPath clik8s.ResourceConfigPath, writer io.Wri
 }
 
 func DoStatus(resourceConfigPath clik8s.ResourceConfigPath, writer io.Writer) (status.Result, error) {
+	pluginConfig := wirek8s.NewPluginConfig()
+	factory := wirek8s.NewResMapFactory(pluginConfig)
 	fileSystem := wirek8s.NewFileSystem()
-	resourceConfigs, err := wirek8s.NewResourceConfig(resourceConfigPath, fileSystem)
+	transformerFactory := wirek8s.NewTransformerFactory()
+	configProvider := wirek8s.NewConfigProvider(factory, fileSystem, transformerFactory, pluginConfig)
+	resourceConfigs, err := wirek8s.NewResourceConfig(resourceConfigPath, configProvider)
 	if err != nil {
 		return status.Result{}, err
 	}
@@ -115,8 +127,12 @@ func DoApply(resourceConfigPath clik8s.ResourceConfigPath, writer io.Writer) (ap
 	if err != nil {
 		return apply.Result{}, err
 	}
+	pluginConfig := wirek8s.NewPluginConfig()
+	factory := wirek8s.NewResMapFactory(pluginConfig)
 	fileSystem := wirek8s.NewFileSystem()
-	resourceConfigs, err := wirek8s.NewResourceConfig(resourceConfigPath, fileSystem)
+	transformerFactory := wirek8s.NewTransformerFactory()
+	configProvider := wirek8s.NewConfigProvider(factory, fileSystem, transformerFactory, pluginConfig)
+	resourceConfigs, err := wirek8s.NewResourceConfig(resourceConfigPath, configProvider)
 	if err != nil {
 		return apply.Result{}, err
 	}

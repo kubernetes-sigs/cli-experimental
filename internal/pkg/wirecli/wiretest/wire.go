@@ -22,7 +22,9 @@ import (
 	"gopkg.in/src-d/go-git.v4/plumbing/object"
 	"sigs.k8s.io/cli-experimental/internal/pkg/apply"
 	"sigs.k8s.io/cli-experimental/internal/pkg/clik8s"
+	"sigs.k8s.io/cli-experimental/internal/pkg/resourceconfig"
 	"sigs.k8s.io/cli-experimental/internal/pkg/status"
+	"sigs.k8s.io/cli-experimental/internal/pkg/wirecli/wirek8s"
 )
 
 func InitializeStatus(clik8s.ResourceConfigs, *object.Commit, io.Writer) (*status.Status, func(), error) {
@@ -31,4 +33,8 @@ func InitializeStatus(clik8s.ResourceConfigs, *object.Commit, io.Writer) (*statu
 
 func InitializeApply(clik8s.ResourceConfigs, *object.Commit, io.Writer) (*apply.Apply, func(), error) {
 	panic(wire.Build(ProviderSet))
+}
+
+func InitializConfigProvider() resourceconfig.ConfigProvider {
+	panic(wire.Build(wirek8s.ConfigProviderSet))
 }

@@ -10,6 +10,7 @@ import (
 	"io"
 	"sigs.k8s.io/cli-experimental/internal/pkg/apply"
 	"sigs.k8s.io/cli-experimental/internal/pkg/clik8s"
+	"sigs.k8s.io/cli-experimental/internal/pkg/resourceconfig"
 	"sigs.k8s.io/cli-experimental/internal/pkg/status"
 	"sigs.k8s.io/cli-experimental/internal/pkg/wirecli/wirek8s"
 )
@@ -56,4 +57,13 @@ func InitializeApply(resourceConfigs clik8s.ResourceConfigs, commit *object.Comm
 	return applyApply, func() {
 		cleanup()
 	}, nil
+}
+
+func InitializConfigProvider() resourceconfig.ConfigProvider {
+	pluginConfig := wirek8s.NewPluginConfig()
+	factory := wirek8s.NewResMapFactory(pluginConfig)
+	fileSystem := wirek8s.NewFileSystem()
+	transformerFactory := wirek8s.NewTransformerFactory()
+	configProvider := wirek8s.NewConfigProvider(factory, fileSystem, transformerFactory, pluginConfig)
+	return configProvider
 }
