@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/kubernetes-sigs/cli-experimental.svg?branch=master)](https://travis-ci.org/kubernetes-sigs/cli-experimental "Travis")
+[![Go Report Card](https://goreportcard.com/badge/sigs.k8s.io/cli-experimental)](https://goreportcard.com/report/sigs.k8s.io/cli-experimental)
+
 # cli-experimental
 
 Experimental Kubectl libraries and commands.
