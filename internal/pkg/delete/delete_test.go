@@ -11,30 +11,33 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package apply_test
+package delete_test
 
 import (
 	"bytes"
+	"context"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/src-d/go-git.v4/plumbing/object"
-	"sigs.k8s.io/cli-experimental/internal/pkg/apply"
+	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
+	"k8s.io/apimachinery/pkg/runtime/schema"
 	"sigs.k8s.io/cli-experimental/internal/pkg/clik8s"
+	"sigs.k8s.io/cli-experimental/internal/pkg/delete"
 	"sigs.k8s.io/cli-experimental/internal/pkg/wirecli/wiretest"
 )
 
-func TestApplyEmpty(t *testing.T) {
+func TestDeleteEmpty(t *testing.T) {
 	buf := new(bytes.Buffer)
-	a, done, err := wiretest.InitializeApply(clik8s.ResourceConfigs(nil), &object.Commit{}, buf)
+	d, done, err := wiretest.InitializeDelete(clik8s.ResourceConfigs(nil), &object.Commit{}, buf)
 	defer done()
 	assert.NoError(t, err)
-	r, err := a.Do()
+	r, err := d.Do()
 	assert.NoError(t, err)
-	assert.Equal(t, apply.Result{}, r)
+	assert.Equal(t, delete.Result{}, r)
 }
 
-func TestApply(t *testing.T) {
+func TestDelete(t *testing.T) {
 	buf := new(bytes.Buffer)
 	kp := wiretest.InitializConfigProvider()
 	fs, cleanup, err := wiretest.InitializeKustomization()
@@ -44,18 +47,34 @@ func TestApply(t *testing.T) {
 
 	objects, err := kp.GetConfig(fs[0])
 	assert.NoError(t, err)
-
-	a, done, err := wiretest.InitializeApply(objects, &object.Commit{}, buf)
-	defer done()
+	a, donea, err := wiretest.InitializeApply(objects, &object.Commit{}, buf)
 	assert.NoError(t, err)
-	r, err := a.Do()
+	defer donea()
+	_, err = a.Do()
 	assert.NoError(t, err)
-	assert.Equal(t, apply.Result{objects}, r)
-
 	updatedObjects, err := kp.GetConfig(fs[1])
+	assert.NoError(t, err)
 	a.Resources = updatedObjects
+	_, err = a.Do()
 	assert.NoError(t, err)
-	r, err = a.Do()
+
+	cmList := &unstructured.UnstructuredList{}
+	cmList.SetGroupVersionKind(schema.GroupVersionKind{
+		Kind:    "ConfigMapList",
+		Version: "v1",
+	})
+	err = a.DynamicClient.List(context.Background(), cmList, "default", nil)
 	assert.NoError(t, err)
-	assert.Equal(t, apply.Result{updatedObjects}, r)
+	assert.Equal(t, len(cmList.Items), 3)
+
+	d, doned, err := wiretest.InitializeDelete(updatedObjects, &object.Commit{}, buf)
+	defer doned()
+	assert.NoError(t, err)
+	d.DynamicClient = a.DynamicClient
+	_, err = d.Do()
+	assert.NoError(t, err)
+
+	err = d.DynamicClient.List(context.Background(), cmList, "default", nil)
+	assert.NoError(t, err)
+	assert.Equal(t, len(cmList.Items), 0)
 }
