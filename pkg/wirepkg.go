@@ -1,5 +1,3 @@
-//+build wireinject
-
 /*
 Copyright 2019 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,23 +11,21 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package wireapply
+package pkg
 
 import (
-	"io"
-
 	"github.com/google/wire"
 	"sigs.k8s.io/cli-experimental/internal/pkg/apply"
-	"sigs.k8s.io/cli-experimental/internal/pkg/clik8s"
-	"sigs.k8s.io/cli-experimental/internal/pkg/util"
+	"sigs.k8s.io/cli-experimental/internal/pkg/delete"
+	"sigs.k8s.io/cli-experimental/internal/pkg/prune"
+	"sigs.k8s.io/cli-experimental/internal/pkg/wirecli/wirek8s"
 )
 
-// InitializeApply creates a new *apply.Apply object
-func InitializeApply(clik8s.ResourceConfigPath, io.Writer, util.Args) (*apply.Apply, error) {
-	panic(wire.Build(ProviderSet))
-}
-
-// DoApply creates a new Apply object and runs it
-func DoApply(clik8s.ResourceConfigPath, io.Writer, util.Args) (apply.Result, error) {
-	panic(wire.Build(ProviderSet))
-}
+// ProviderSet provides the dependencies for creating a Cmd object
+var ProviderSet = wire.NewSet(
+	wire.Struct(new(apply.Apply), "DynamicClient", "Out"),
+	wire.Struct(new(prune.Prune), "DynamicClient", "Out"),
+	wire.Struct(new(delete.Delete), "DynamicClient", "Out"),
+	wire.Struct(new(Cmd), "*"),
+	wirek8s.ProviderSet,
+)
