@@ -9,3 +9,6 @@ build:
 
 check:
 	GO111MODULE=on ./scripts/check-everything.sh
+
+debug:
+	GO111MODULE=on dlv debug .
