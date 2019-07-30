@@ -30,6 +30,10 @@ run:
 build:
 	GO111MODULE=on go build .
 
+.PHONY: test
+test:
+    GO111MODULE=on go test ./... -cover
+
 .PHONY: check
 check:
 	GO111MODULE=on ./scripts/check-everything.sh
