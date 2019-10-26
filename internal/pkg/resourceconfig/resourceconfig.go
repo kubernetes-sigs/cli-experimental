@@ -131,7 +131,7 @@ func isYamlFile(path string) bool {
 
 // hasAPIVersionKind checks that the input bytes
 // contains both apiVersion and kind
-func hasApiVersionKind(content []byte) bool {
+func hasAPIVersionKind(content []byte) bool {
 	if bytes.Contains(content, []byte("apiVersion:")) &&
 		bytes.Contains(content, []byte("kind:")) {
 		return true
@@ -161,7 +161,7 @@ func (p *RawConfigFileProvider) GetConfig(root string) ([]*unstructured.Unstruct
 			return err
 		}
 
-		if !hasApiVersionKind(b) {
+		if !hasAPIVersionKind(b) {
 			return nil
 		}
 
