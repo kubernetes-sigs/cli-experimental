@@ -3,9 +3,7 @@
 title: "Introduction"
 linkTitle: "Introduction"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-{{% /pageinfo %}}
+
 
 # Introduction
 

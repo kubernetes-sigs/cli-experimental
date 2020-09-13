@@ -3,9 +3,7 @@
 title: "Field Merge Semantics"
 linkTitle: "Field Merge Semantics"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/CLQBQHR)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Fields set and deleted from Resource Config are merged into Resources by Apply

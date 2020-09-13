@@ -3,9 +3,7 @@
 title: "Secrets and ConfigMaps"
 linkTitle: "Secrets and ConfigMaps"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/CLQBQHR)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Generate Secrets from files and literals with `secretGenerator`

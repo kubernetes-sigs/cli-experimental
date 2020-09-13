@@ -3,9 +3,7 @@
 title: "Labels and Annotations"
 linkTitle: "Labels and Annotations"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/CLQBQHR)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Set Labels for all Resources declared within a Project with `commonLabels`

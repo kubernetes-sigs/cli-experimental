@@ -5,9 +5,7 @@ linkTitle: "Introduction"
 weight: 20
 ---
 
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/CLQBQHR)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Apply manages Applications through files defining Kubernetes Resources (i.e. Resource Config)

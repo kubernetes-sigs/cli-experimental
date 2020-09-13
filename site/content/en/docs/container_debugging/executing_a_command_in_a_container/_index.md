@@ -3,9 +3,7 @@
 title: "Executing a command in a container"
 linkTitle: "Executing a command in a container"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Execute a Command in a Container

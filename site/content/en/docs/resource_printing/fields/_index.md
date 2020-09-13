@@ -4,9 +4,7 @@ title: "Fields"
 linkTitle: "Fields"
 ---
 
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Format and print specific fields from Resources

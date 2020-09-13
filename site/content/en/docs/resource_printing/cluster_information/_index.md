@@ -3,9 +3,7 @@
 title: "Cluster Information"
 linkTitle: "Cluster Information"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Print information about the Cluster and Client versions

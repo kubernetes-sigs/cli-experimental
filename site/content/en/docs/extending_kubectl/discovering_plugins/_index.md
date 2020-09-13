@@ -3,9 +3,7 @@
 title: "Discovering Plugins"
 linkTitle: "Discovering Plugins"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/CLQBQHR)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - [krew.sigs.k8s.io](https://krew.sigs.k8s.io/docs/user-guide/setup/install/) is a kubernetes sub-project to discover and manage plugins

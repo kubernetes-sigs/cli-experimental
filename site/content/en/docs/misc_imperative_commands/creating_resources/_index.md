@@ -3,9 +3,7 @@
 title: "Creating Resources"
 linkTitle: "Creating Resources"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Imperatively Create a Resources

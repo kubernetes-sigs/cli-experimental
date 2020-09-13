@@ -3,9 +3,7 @@
 title: "Plugin Mechanism"
 linkTitle: "Plugin Mechanism"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/CLQBQHR)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Drop executables named `kubectl-plugin_name` on your `PATH` and invoke with `kubectl plugin-name`

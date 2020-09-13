@@ -3,9 +3,7 @@
 title: "Namespaces and Names"
 linkTitle: "Namespaces and Names"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/CLQBQHR)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Set the Namespace for all Resources within a Project with `namespace`

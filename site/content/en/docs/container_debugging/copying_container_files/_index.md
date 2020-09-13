@@ -3,9 +3,7 @@
 title: "Copying Container Files"
 linkTitle: "Copying Container Files"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Copy files to and from Containers in a cluster

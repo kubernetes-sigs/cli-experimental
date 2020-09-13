@@ -3,9 +3,7 @@
 title: "Container Logs"
 linkTitle: "Container Logs"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Print the Logs of a Container in a cluster

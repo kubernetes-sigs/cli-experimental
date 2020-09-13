@@ -5,9 +5,7 @@ linkTitle: "Resources + Controllers Overview"
 weight: 20
 ---
 
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - A Kubernetes API has 2 parts - a Resource Type and a Controller

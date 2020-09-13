@@ -4,9 +4,7 @@ title: "Apply"
 linkTitle: "Apply"
 weight: 20
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/CLQBQHR)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Apply Creates and Updates Resources in a cluster through running `kubectl apply` on Resource Config.

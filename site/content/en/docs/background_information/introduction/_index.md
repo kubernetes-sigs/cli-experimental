@@ -6,8 +6,6 @@ weight: 20
 ---
 
 {{% pageinfo %}}
-**Provide feedback on new kubectl docs at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-
 See [CONTRIBUTING](https://github.com/kubernetes/kubectl/blob/master/docs/book/CONTRIBUTING.md) for
 instructions on filing/fixing issues and adding new content.
 {{% /pageinfo %}}
@@ -45,9 +43,9 @@ declarative files called Resource Config used with the Kubectl *Apply* command.
 This command reads a local (or remote) file structure and modifies cluster state to
 reflect the declared intent.
 
-{% panel style="info", title="Apply" %}
+{{< alert color="success" title="Apply" >}}
 Apply is the preferred mechanism for managing Resources in a Kubernetes cluster.
-{% endpanel %}
+{{< /alert >}}
 
 ## Printing state about Workloads
 

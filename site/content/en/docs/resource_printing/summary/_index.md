@@ -4,9 +4,7 @@ title: "Summaries"
 linkTitle: "Summaries"
 ---
 
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Get a Summary of Resources Running in the Cluster

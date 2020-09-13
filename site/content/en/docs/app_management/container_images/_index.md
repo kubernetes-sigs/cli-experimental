@@ -3,9 +3,7 @@
 title: "Container Images"
 linkTitle: "Container Images"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/CLQBQHR)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Override or set the Name and Tag for Container Images

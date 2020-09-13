@@ -3,9 +3,7 @@
 title: "Accessing Multiple Clusters"
 linkTitle: "Accessing Multiple Clusters"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Target a cluster for a rollout with the `--context` flag

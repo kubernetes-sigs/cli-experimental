@@ -3,9 +3,7 @@
 title: "Watch"
 linkTitle: "Watch"
 ---
-{{% pageinfo %}}
-**Provide feedback at the [survey](https://www.surveymonkey.com/r/JH35X82)**
-{{% /pageinfo %}}
+
 
 {{< alert color="success" title="TL;DR" >}}
 - Continuously Watch and print Resources as they change
