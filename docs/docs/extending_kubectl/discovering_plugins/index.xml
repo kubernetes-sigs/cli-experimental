@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubectl – Discovering Plugins</title>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/docs/extending_kubectl/discovering_plugins/</link>
+    <description>Recent content in Discovering Plugins on Kubectl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/docs/extending_kubectl/discovering_plugins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>

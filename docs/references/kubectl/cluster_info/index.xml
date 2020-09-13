@@ -1,0 +1,176 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – Cluster Info</title>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/</link>
+    <description>Recent content in Cluster Info on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>References: Cluster and Client versions</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/cluster_client_versions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/cluster_client_versions/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;versions&#34;&gt;Versions&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;kubectl version&lt;/code&gt; prints the client and server versions.  Note that
+the client version may not be present for clients built locally from
+source.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Client Version: version.Info&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;Major:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;, Minor:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;9&amp;#34;&lt;/span&gt;, GitVersion:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v1.9.5&amp;#34;&lt;/span&gt;, GitCommit:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;f01a2bf98249a4db383560443a59bed0c13575df&amp;#34;&lt;/span&gt;, GitTreeState:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;clean&amp;#34;&lt;/span&gt;, BuildDate:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2018-03-19T19:38:17Z&amp;#34;&lt;/span&gt;, GoVersion:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;go1.9.4&amp;#34;&lt;/span&gt;, Compiler:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;gc&amp;#34;&lt;/span&gt;, Platform:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;darwin/amd64&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+Server Version: version.Info&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;Major:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;, Minor:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;11+&amp;#34;&lt;/span&gt;, GitVersion:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v1.11.6-gke.2&amp;#34;&lt;/span&gt;, GitCommit:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;04ad69a117f331df6272a343b5d8f9e2aee5ab0c&amp;#34;&lt;/span&gt;, GitTreeState:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;clean&amp;#34;&lt;/span&gt;, BuildDate:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2019-01-04T16:19:46Z&amp;#34;&lt;/span&gt;, GoVersion:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;go1.10.3b4&amp;#34;&lt;/span&gt;, Compiler:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;gc&amp;#34;&lt;/span&gt;, Platform:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;linux/amd64&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Version Skew&lt;/h4&gt;
+Kubectl supports +/-1 version skew with the Kubernetes cluster.  Kubectl
+versions that are more than 1 version ahead of or behind the cluster are
+not guaranteed to be compatible.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Control Plane</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/control_plane/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/control_plane/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;control-plane-and-addons&#34;&gt;Control Plane and Addons&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;kubectl cluster-info&lt;/code&gt; prints information about the control plane and
+add-ons.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cluster-info
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;  Kubernetes master is running at https://1.1.1.1
+  GLBCDefaultBackend is running at https://1.1.1.1/api/v1/namespaces/kube-system/services/default-http-backend:http/proxy
+  Heapster is running at https://1.1.1.1/api/v1/namespaces/kube-system/services/heapster/proxy
+  KubeDNS is running at https://1.1.1.1/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+  Metrics-server is running at https://1.1.1.1/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Kube Proxy&lt;/h4&gt;
+The URLs printed by &lt;code&gt;cluster-info&lt;/code&gt; can be accessed at &lt;code&gt;127.0.0.1:8001&lt;/code&gt; by
+running &lt;code&gt;kubectl proxy&lt;/code&gt;.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Nodes</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/nodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/nodes/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;nodes&#34;&gt;Nodes&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;kubectl top node&lt;/code&gt; and &lt;code&gt;kubectl top pod&lt;/code&gt; print information about the
+top nodes and pods.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl top node
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;  NAME                                 CPU&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;cores&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;   CPU%      MEMORY&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;bytes&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;   MEMORY%   
+  gke-dev-default-pool-e1e7bf6a-cc8b   37m          1%        571Mi           10%       
+  gke-dev-default-pool-e1e7bf6a-f0xh   103m         5%        1106Mi          19%       
+  gke-dev-default-pool-e1e7bf6a-jfq5   139m         7%        1252Mi          22%       
+  gke-dev-default-pool-e1e7bf6a-x37l   112m         5%        982Mi           17%  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>References: APIs</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/apis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/apis/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;apis&#34;&gt;APIs&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;kubectl api-versions&lt;/code&gt; and &lt;code&gt;kubectl api-resources&lt;/code&gt; print information
+about the available Kubernetes APIs.  This information is read from the
+Discovery Service.&lt;/p&gt;
+&lt;p&gt;Print the Resource Types available in the cluster.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl api-resources
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;NAME                              SHORTNAMES   APIGROUP                       NAMESPACED   KIND
+bindings                                                                      &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;         Binding
+componentstatuses                 cs                                          &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;        ComponentStatus
+configmaps                        cm                                          &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;         ConfigMap
+endpoints                         ep                                          &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;         Endpoints
+events                            ev                                          &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;         Event
+limitranges                       limits                                      &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;         LimitRange
+namespaces                        ns                                          &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;        Namespace
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Print the API versions available in the cluster.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl api-versions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;  admissionregistration.k8s.io/v1beta1
+  apiextensions.k8s.io/v1beta1
+  apiregistration.k8s.io/v1
+  apiregistration.k8s.io/v1beta1
+  apps/v1
+  apps/v1beta1
+  apps/v1beta2
+  ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Discovery&lt;/h4&gt;
+The discovery information can be viewed at &lt;code&gt;127.0.0.1:8001/&lt;/code&gt; by running
+&lt;code&gt;kubectl proxy&lt;/code&gt;.  The Discovery for specific API can be found under either
+&lt;code&gt;/api/v1&lt;/code&gt; or &lt;code&gt;/apis/&amp;lt;group&amp;gt;/&amp;lt;version&amp;gt;&lt;/code&gt;, depending on the API group -
+e.g. &lt;code&gt;127.0.0.1:8001/apis/apps/v1&lt;/code&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;kubectl explain&lt;/code&gt; command can be used to print metadata about specific
+Resource types.  This is useful for learning about the type.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl explain deployment --api-version apps/v1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;KIND:     Deployment
+VERSION:  apps/v1
+
+DESCRIPTION:
+     Deployment enables declarative updates &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; Pods and ReplicaSets.
+
+FIELDS:
+   apiVersion	&amp;lt;string&amp;gt;
+     APIVersion defines the versioned schema of this representation of an
+     object. Servers should convert recognized schemas to the latest internal
+     value, and may reject unrecognized values. More info:
+     https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
+
+   kind	&amp;lt;string&amp;gt;
+     Kind is a string value representing the REST resource this object
+     represents. Servers may infer this from the endpoint the client submits
+     requests to. Cannot be updated. In CamelCase. More info:
+     https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
+
+   metadata	&amp;lt;Object&amp;gt;
+     Standard object metadata.
+
+   spec	&amp;lt;Object&amp;gt;
+     Specification of the desired behavior of the Deployment.
+
+   status	&amp;lt;Object&amp;gt;
+     Most recently observed status of the Deployment.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

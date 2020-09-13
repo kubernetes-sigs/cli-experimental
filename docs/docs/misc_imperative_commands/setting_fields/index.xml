@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubectl – Setting Fields</title>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/setting_fields/</link>
+    <description>Recent content in Setting Fields on Kubectl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/setting_fields/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>
