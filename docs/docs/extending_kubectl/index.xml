@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubectl – Extending Kubectl</title>
-    <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/extending_kubectl/</link>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/docs/extending_kubectl/</link>
     <description>Recent content in Extending Kubectl on Kubectl</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://syamsundarkirubakaran.github.io/cli-docs/docs/extending_kubectl/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/docs/extending_kubectl/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,21 +15,14 @@
     
     <item>
       <title>Docs: Discovering Plugins</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/extending_kubectl/discovering_plugins/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/extending_kubectl/discovering_plugins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/extending_kubectl/discovering_plugins/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/extending_kubectl/discovering_plugins/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/CLQBQHR&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -72,21 +65,14 @@ Krew helps to&lt;/p&gt;
     
     <item>
       <title>Docs: Plugin Mechanism</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/extending_kubectl/plugin_mechanism/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/extending_kubectl/plugin_mechanism/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/extending_kubectl/plugin_mechanism/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/extending_kubectl/plugin_mechanism/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/CLQBQHR&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;

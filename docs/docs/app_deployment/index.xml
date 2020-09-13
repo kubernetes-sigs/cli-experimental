@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubectl – App Deployment</title>
-    <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_deployment/</link>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/</link>
     <description>Recent content in App Deployment on Kubectl</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://syamsundarkirubakaran.github.io/cli-docs/docs/app_deployment/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,21 +15,14 @@
     
     <item>
       <title>Docs: Accessing Multiple Clusters</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_deployment/accessing_multiple_clusters/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/accessing_multiple_clusters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_deployment/accessing_multiple_clusters/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/accessing_multiple_clusters/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -113,21 +106,14 @@ k8s.io document.
     
     <item>
       <title>Docs: Diffing Local and Remote Resources</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_deployment/diffing_local_and_remote_resources/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/diffing_local_and_remote_resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_deployment/diffing_local_and_remote_resources/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/diffing_local_and_remote_resources/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -164,21 +150,14 @@ Kubectl or diff failed with an error.&lt;/p&gt;
     
     <item>
       <title>Docs: Publishing Bases</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_deployment/publishing_bases/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/publishing_bases/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_deployment/publishing_bases/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/publishing_bases/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Experimental&lt;/h4&gt;

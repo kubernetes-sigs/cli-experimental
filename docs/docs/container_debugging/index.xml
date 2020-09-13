@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubectl – Container Debugging</title>
-    <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/</link>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/</link>
     <description>Recent content in Container Debugging on Kubectl</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,21 +15,14 @@
     
     <item>
       <title>Docs: Container Logs</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/container_logs/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/container_logs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/container_logs/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/container_logs/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -117,21 +110,14 @@ kubectl logs -l &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span 
     
     <item>
       <title>Docs: Copying Container Files</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/copying_container_files/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/copying_container_files/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/copying_container_files/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/copying_container_files/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -186,21 +172,14 @@ Copy requires that &lt;em&gt;tar&lt;/em&gt; be installed in the container image.
     
     <item>
       <title>Docs: Executing a command in a container</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/executing_a_command_in_a_container/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/executing_a_command_in_a_container/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/executing_a_command_in_a_container/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/executing_a_command_in_a_container/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -237,21 +216,14 @@ For Pods running multiple Containers, the Container should be specified with &lt
     
     <item>
       <title>Docs: Port forward to Pods</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/port_forward_to_pods/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/port_forward_to_pods/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/port_forward_to_pods/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/port_forward_to_pods/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -286,21 +258,14 @@ deployment&lt;/p&gt;
     
     <item>
       <title>Docs: Proxying traffic to services</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/proxying_traffic_to_services/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/proxying_traffic_to_services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/proxying_traffic_to_services/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/proxying_traffic_to_services/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;

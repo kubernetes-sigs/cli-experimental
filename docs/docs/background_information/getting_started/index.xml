@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubectl – Getting Started with Kubectl</title>
-    <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/background_information/getting_started/</link>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/docs/background_information/getting_started/</link>
     <description>Recent content in Getting Started with Kubectl on Kubectl</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://syamsundarkirubakaran.github.io/cli-docs/docs/background_information/getting_started/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/docs/background_information/getting_started/index.xml" rel="self" type="application/rss+xml" />
     
     
       

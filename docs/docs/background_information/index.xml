@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubectl – Background Information</title>
-    <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/background_information/</link>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/docs/background_information/</link>
     <description>Recent content in Background Information on Kubectl</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://syamsundarkirubakaran.github.io/cli-docs/docs/background_information/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/docs/background_information/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,21 +15,14 @@
     
     <item>
       <title>Docs: Getting Started with Kubectl</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/background_information/getting_started/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/background_information/getting_started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/background_information/getting_started/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/background_information/getting_started/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -138,17 +131,16 @@ nginx-deployment-5c689d88bb-s7xcv   1/1     Running   &lt;span style=&#34;color:
     
     <item>
       <title>Docs: Introduction</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/background_information/introduction/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/background_information/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/background_information/introduction/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/background_information/introduction/</guid>
       <description>
         
         
         
 
 &lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback on new kubectl docs at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;See &lt;a href=&#34;https://github.com/kubernetes/kubectl/blob/master/docs/book/CONTRIBUTING.md&#34;&gt;CONTRIBUTING&lt;/a&gt; for
 instructions on filing/fixing issues and adding new content.&lt;/p&gt;
 
@@ -214,9 +206,13 @@ also covers other Kubectl functions.&lt;/p&gt;
 declarative files called Resource Config used with the Kubectl &lt;em&gt;Apply&lt;/em&gt; command.
 This command reads a local (or remote) file structure and modifies cluster state to
 reflect the declared intent.&lt;/p&gt;
-&lt;p&gt;{% panel style=&amp;quot;info&amp;rdquo;, title=&amp;quot;Apply&amp;rdquo; %}
+
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Apply&lt;/h4&gt;
 Apply is the preferred mechanism for managing Resources in a Kubernetes cluster.
-{% endpanel %}&lt;/p&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&#34;printing-state-about-workloads&#34;&gt;Printing state about Workloads&lt;/h2&gt;
 &lt;p&gt;Users will need to view Workload state.&lt;/p&gt;
 &lt;ul&gt;
@@ -259,21 +255,14 @@ be used for production.
     
     <item>
       <title>Docs: Resources &#43; Controllers Overview</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/background_information/resources_controllers/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/background_information/resources_controllers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/background_information/resources_controllers/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/background_information/resources_controllers/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;

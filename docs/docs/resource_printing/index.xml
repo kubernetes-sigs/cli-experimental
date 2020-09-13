@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubectl – Resource Printing</title>
-    <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/</link>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/</link>
     <description>Recent content in Resource Printing on Kubectl</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,21 +15,14 @@
     
     <item>
       <title>Docs: Cluster Information</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/cluster_information/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/cluster_information/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/cluster_information/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/cluster_information/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -160,21 +153,14 @@ FIELDS:
     
     <item>
       <title>Docs: Describe</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/describe/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/describe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/describe/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/describe/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -240,21 +226,14 @@ data from the &lt;em&gt;fields&lt;/em&gt; of that Resource, it won&amp;rsquo;t l
     
     <item>
       <title>Docs: Fields</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/fields/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/fields/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/fields/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/fields/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -421,21 +400,14 @@ This in turn means that you must use a single quote or escaped double quote arou
     
     <item>
       <title>Docs: Queries and Options</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/queries_and_options/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/queries_and_options/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/queries_and_options/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/queries_and_options/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -496,21 +468,14 @@ The &lt;code&gt;--ignore-not-found&lt;/code&gt; flag will cause kubectl to exit 
     
     <item>
       <title>Docs: Raw</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/raw/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/raw/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/raw/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/raw/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -714,21 +679,14 @@ For more query options see &lt;a href=&#34;queries_and_options.md&#34;&gt;Querie
     
     <item>
       <title>Docs: Summaries</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/summary/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/summary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/summary/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/summary/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -796,21 +754,14 @@ deployment.extensions/nginx   &lt;span style=&#34;color:#0000cf;font-weight:bold
     
     <item>
       <title>Docs: Watch</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/watch/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/watch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/watch/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/watch/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;

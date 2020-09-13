@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubectl – App Management</title>
-    <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/</link>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/</link>
     <description>Recent content in App Management on Kubectl</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,21 +15,14 @@
     
     <item>
       <title>Docs: Apply</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/apply/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/apply/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/apply/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/apply/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/CLQBQHR&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -150,21 +143,14 @@ with these dependencies are created in the correct order.&lt;/p&gt;
     
     <item>
       <title>Docs: Introduction</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/introduction/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/introduction/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/introduction/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/CLQBQHR&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -209,21 +195,14 @@ Kubernetes system itself - where each may contribute to defining the desired sta
     
     <item>
       <title>Docs: Container Images</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/container_images/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/container_images/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/container_images/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/container_images/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/CLQBQHR&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -401,21 +380,14 @@ deployments for these changes.
     
     <item>
       <title>Docs: Field Merge Semantics</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/field_merge_semantics/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/field_merge_semantics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/field_merge_semantics/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/field_merge_semantics/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/CLQBQHR&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -934,21 +906,14 @@ To ignore values set by &lt;code&gt;kubectl edit&lt;/code&gt; or &lt;code&gt;kub
     
     <item>
       <title>Docs: Labels and Annotations</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/labels_annotations/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/labels_annotations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/labels_annotations/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/labels_annotations/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/CLQBQHR&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -1130,21 +1095,14 @@ In addition to updating the annotations for each Resource, any fields that conta
     
     <item>
       <title>Docs: Namespaces and Names</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/namespaces_names/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/namespaces_names/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/namespaces_names/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/namespaces_names/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/CLQBQHR&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -1392,21 +1350,14 @@ including:&lt;/p&gt;
     
     <item>
       <title>Docs: Secrets and ConfigMaps</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/secrets_configmaps/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/secrets_configmaps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/app_management/secrets_configmaps/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_management/secrets_configmaps/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/CLQBQHR&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;

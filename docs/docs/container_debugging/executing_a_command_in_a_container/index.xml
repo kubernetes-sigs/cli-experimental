@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubectl – Executing a command in a container</title>
-    <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/executing_a_command_in_a_container/</link>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/executing_a_command_in_a_container/</link>
     <description>Recent content in Executing a command in a container on Kubectl</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://syamsundarkirubakaran.github.io/cli-docs/docs/container_debugging/executing_a_command_in_a_container/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/docs/container_debugging/executing_a_command_in_a_container/index.xml" rel="self" type="application/rss+xml" />
     
     
       

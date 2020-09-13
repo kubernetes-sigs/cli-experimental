@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubectl – Miscellanious Imperative Commands</title>
-    <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/misc_imperative_commands/</link>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/</link>
     <description>Recent content in Miscellanious Imperative Commands on Kubectl</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://syamsundarkirubakaran.github.io/cli-docs/docs/misc_imperative_commands/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,21 +15,14 @@
     
     <item>
       <title>Docs: Creating Resources</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/misc_imperative_commands/creating_resources/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/creating_resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/misc_imperative_commands/creating_resources/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/creating_resources/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -113,21 +106,14 @@ The cluster-admin role maybe required for creating new RBAC bindings.
     
     <item>
       <title>Docs: Editing Workloads</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/misc_imperative_commands/editing_workloads/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/editing_workloads/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/misc_imperative_commands/editing_workloads/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/editing_workloads/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
@@ -157,21 +143,14 @@ editing it through a local file.&lt;/p&gt;
     
     <item>
       <title>Docs: Introduction</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/misc_imperative_commands/introduction/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/misc_imperative_commands/introduction/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/introduction/</guid>
       <description>
         
         
-        
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+        &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;While Declarative Management of Applications is the recommended pattern for production
 use cases, imperative porcelain commands may be helpful for development or debugging
 issues.  These commands are particularly helpful for learning about Kubernetes when coming
@@ -185,21 +164,14 @@ form.&lt;/p&gt;
     
     <item>
       <title>Docs: Setting Fields</title>
-      <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/misc_imperative_commands/setting_fields/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/setting_fields/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://syamsundarkirubakaran.github.io/cli-docs/docs/misc_imperative_commands/setting_fields/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/misc_imperative_commands/setting_fields/</guid>
       <description>
         
         
         
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Provide feedback at the &lt;a href=&#34;https://www.surveymonkey.com/r/JH35X82&#34;&gt;survey&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
