@@ -1,4 +1,3 @@
-
 ---
 title: "Queries and Options"
 linkTitle: "Queries and Options"

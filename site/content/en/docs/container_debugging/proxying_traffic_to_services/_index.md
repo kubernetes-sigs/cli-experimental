@@ -1,4 +1,3 @@
-
 ---
 title: "Proxying traffic to services"
 linkTitle: "Proxying traffic to services"

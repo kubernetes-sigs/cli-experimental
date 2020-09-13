@@ -1,4 +1,3 @@
-
 ---
 title: "Resources + Controllers Overview"
 linkTitle: "Resources + Controllers Overview"

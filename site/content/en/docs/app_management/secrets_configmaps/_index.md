@@ -1,4 +1,3 @@
-
 ---
 title: "Secrets and ConfigMaps"
 linkTitle: "Secrets and ConfigMaps"

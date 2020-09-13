@@ -1,4 +1,3 @@
-
 ---
 title: "Creating Resources"
 linkTitle: "Creating Resources"

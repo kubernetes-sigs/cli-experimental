@@ -1,4 +1,3 @@
-
 ---
 title: "Labels and Annotations"
 linkTitle: "Labels and Annotations"

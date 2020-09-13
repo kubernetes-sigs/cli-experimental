@@ -1,4 +1,3 @@
-
 ---
 title: "Getting Started with Kubectl"
 linkTitle: "Getting Started with Kubectl"

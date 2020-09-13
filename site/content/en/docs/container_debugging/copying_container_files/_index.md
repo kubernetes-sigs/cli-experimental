@@ -1,4 +1,3 @@
-
 ---
 title: "Copying Container Files"
 linkTitle: "Copying Container Files"

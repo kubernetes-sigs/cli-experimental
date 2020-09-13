@@ -1,4 +1,3 @@
-
 ---
 title: "Plugin Mechanism"
 linkTitle: "Plugin Mechanism"

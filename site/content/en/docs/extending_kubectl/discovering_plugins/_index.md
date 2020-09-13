@@ -1,4 +1,3 @@
-
 ---
 title: "Discovering Plugins"
 linkTitle: "Discovering Plugins"

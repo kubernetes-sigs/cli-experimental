@@ -1,4 +1,3 @@
-
 ---
 title: "Publishing Bases"
 linkTitle: "Publishing Bases"

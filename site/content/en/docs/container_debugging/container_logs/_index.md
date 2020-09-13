@@ -1,4 +1,3 @@
-
 ---
 title: "Container Logs"
 linkTitle: "Container Logs"

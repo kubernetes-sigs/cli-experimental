@@ -1,4 +1,3 @@
-
 ---
 title: "Executing a command in a container"
 linkTitle: "Executing a command in a container"

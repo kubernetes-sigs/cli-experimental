@@ -1,4 +1,3 @@
-
 ---
 title: "Namespaces and Names"
 linkTitle: "Namespaces and Names"

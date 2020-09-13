@@ -1,4 +1,3 @@
-
 ---
 title: "Field Merge Semantics"
 linkTitle: "Field Merge Semantics"

@@ -1,4 +1,3 @@
-
 ---
 title: "Diffing Local and Remote Resources"
 linkTitle: "Diffing Local and Remote Resources"
