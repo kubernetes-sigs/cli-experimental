@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubectl – Fields</title>
+    <link>https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/fields/</link>
+    <description>Recent content in Fields on Kubectl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://syamsundarkirubakaran.github.io/cli-docs/docs/resource_printing/fields/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>
