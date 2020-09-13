@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/describe/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -22,15 +21,24 @@
 <link rel="icon" type="image/png" href="/cli-experimental/favicons/android-192x192.png" sizes="192x192">
 
 <title>Describe | Kubectl</title><meta property="og:title" content="Describe" />
-<meta property="og:description" content="Documentation for Kubectl" />
-<meta property="og:type" content="website" />
+<meta property="og:description" content="Describes current resources
+" />
+<meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/docs/resource_printing/describe/" />
 <meta property="og:site_name" content="Kubectl" />
 <meta itemprop="name" content="Describe">
-<meta itemprop="description" content="Documentation for Kubectl">
+<meta itemprop="description" content="Describes current resources
+">
+
+<meta itemprop="wordCount" content="219">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Describe"/>
-<meta name="twitter:description" content="Documentation for Kubectl"/>
+<meta name="twitter:description" content="Describes current resources
+"/>
 
 
 
@@ -48,7 +56,7 @@
 
     <title>Describe | Kubectl</title>
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -128,80 +136,29 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/app_deployment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">App Deployment</a>
+    <a  href="/cli-experimental/docs/background_information/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Background Information</a>
   </li>
   <ul>
-    <li class="collapse " id="cli-experimentaldocsapp_deployment">
+    <li class="collapse " id="cli-experimentaldocsbackground_information">
       
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/app_deployment/accessing_multiple_clusters/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Accessing Multiple Clusters</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsapp_deploymentaccessing_multiple_clusters">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsbackground_informationintroduction" href="/cli-experimental/docs/background_information/introduction/">Introduction</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/app_deployment/diffing_local_and_remote_resources/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Diffing Local and Remote Resources</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsapp_deploymentdiffing_local_and_remote_resources">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsbackground_informationgetting_started" href="/cli-experimental/docs/background_information/getting_started/">Getting Started with Kubectl</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/app_deployment/publishing_bases/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Publishing Bases</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsapp_deploymentpublishing_bases">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsbackground_informationresources_controllers" href="/cli-experimental/docs/background_information/resources_controllers/">Resources &#43; Controllers Overview</a>
       
       
     </li>
@@ -229,65 +186,44 @@
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/app_management/apply/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Apply</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsapp_managementapply">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsapp_managementintroduction" href="/cli-experimental/docs/app_management/introduction/">Introduction</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/app_management/introduction/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Introduction</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsapp_managementintroduction">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsapp_managementapply" href="/cli-experimental/docs/app_management/apply/">Apply</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/app_management/container_images/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Container Images</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsapp_managementcontainer_images">
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsapp_managementsecrets_configmaps" href="/cli-experimental/docs/app_management/secrets_configmaps/">Secrets and ConfigMaps</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsapp_managementcontainer_images" href="/cli-experimental/docs/app_management/container_images/">Container Images</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsapp_managementnamespaces_names" href="/cli-experimental/docs/app_management/namespaces_names/">Namespaces and Names</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsapp_managementlabels_annotations" href="/cli-experimental/docs/app_management/labels_annotations/">Labels and Annotations</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsapp_managementfield_merge_semantics" href="/cli-experimental/docs/app_management/field_merge_semantics/">Field Merge Semantics</a>
       
       
     </li>
@@ -306,178 +242,53 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/app_management/field_merge_semantics/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Field Merge Semantics</a>
+    <a  href="/cli-experimental/docs/resource_printing/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Resource Printing</a>
   </li>
   <ul>
-    <li class="collapse " id="cli-experimentaldocsapp_managementfield_merge_semantics">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/app_management/labels_annotations/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Labels and Annotations</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsapp_managementlabels_annotations">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/app_management/namespaces_names/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Namespaces and Names</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsapp_managementnamespaces_names">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/app_management/secrets_configmaps/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Secrets and ConfigMaps</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsapp_managementsecrets_configmaps">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/background_information/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Background Information</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsbackground_information">
+    <li class="collapse show" id="cli-experimentaldocsresource_printing">
       
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/background_information/getting_started/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Getting Started with Kubectl</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsbackground_informationgetting_started">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsresource_printingsummary" href="/cli-experimental/docs/resource_printing/summary/">Summaries</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/background_information/introduction/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Introduction</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsbackground_informationintroduction">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsresource_printingraw" href="/cli-experimental/docs/resource_printing/raw/">Raw</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/background_information/resources_controllers/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Resources &#43; Controllers Overview</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsbackground_informationresources_controllers">
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsresource_printingfields" href="/cli-experimental/docs/resource_printing/fields/">Fields</a>
       
       
       
-    </li>
-  </ul>
-</ul>
-
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-cli-experimentaldocsresource_printingdescribe" href="/cli-experimental/docs/resource_printing/describe/">Describe</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsresource_printingqueries_and_options" href="/cli-experimental/docs/resource_printing/queries_and_options/">Queries and Options</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsresource_printingwatch" href="/cli-experimental/docs/resource_printing/watch/">Watch</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsresource_printingcluster_information" href="/cli-experimental/docs/resource_printing/cluster_information/">Cluster Information</a>
       
       
     </li>
@@ -505,117 +316,32 @@
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/container_debugging/container_logs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Container Logs</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocscontainer_debuggingcontainer_logs">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocscontainer_debuggingcontainer_logs" href="/cli-experimental/docs/container_debugging/container_logs/">Container Logs</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/container_debugging/copying_container_files/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Copying Container Files</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocscontainer_debuggingcopying_container_files">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocscontainer_debuggingcopying_container_files" href="/cli-experimental/docs/container_debugging/copying_container_files/">Copying Container Files</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/container_debugging/executing_a_command_in_a_container/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Executing a command in a container</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocscontainer_debuggingexecuting_a_command_in_a_container">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocscontainer_debuggingexecuting_a_command_in_a_container" href="/cli-experimental/docs/container_debugging/executing_a_command_in_a_container/">Executing a command in a container</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/container_debugging/port_forward_to_pods/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Port forward to Pods</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocscontainer_debuggingport_forward_to_pods">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocscontainer_debuggingport_forward_to_pods" href="/cli-experimental/docs/container_debugging/port_forward_to_pods/">Port forward to Pods</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/container_debugging/proxying_traffic_to_services/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Proxying traffic to services</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocscontainer_debuggingproxying_traffic_to_services">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocscontainer_debuggingproxying_traffic_to_services" href="/cli-experimental/docs/container_debugging/proxying_traffic_to_services/">Proxying traffic to services</a>
       
       
     </li>
@@ -643,19 +369,14 @@
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/extending_kubectl/discovering_plugins/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Discovering Plugins</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsextending_kubectldiscovering_plugins">
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsextending_kubectlplugin_mechanism" href="/cli-experimental/docs/extending_kubectl/plugin_mechanism/">Plugin Mechanism</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsextending_kubectldiscovering_plugins" href="/cli-experimental/docs/extending_kubectl/discovering_plugins/">Discovering Plugins</a>
       
       
     </li>
@@ -674,17 +395,29 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/extending_kubectl/plugin_mechanism/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Plugin Mechanism</a>
+    <a  href="/cli-experimental/docs/app_deployment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">App Deployment</a>
   </li>
   <ul>
-    <li class="collapse " id="cli-experimentaldocsextending_kubectlplugin_mechanism">
+    <li class="collapse " id="cli-experimentaldocsapp_deployment">
       
       
       
-    </li>
-  </ul>
-</ul>
-
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsapp_deploymentdiffing_local_and_remote_resources" href="/cli-experimental/docs/app_deployment/diffing_local_and_remote_resources/">Diffing Local and Remote Resources</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsapp_deploymentaccessing_multiple_clusters" href="/cli-experimental/docs/app_deployment/accessing_multiple_clusters/">Accessing Multiple Clusters</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsapp_deploymentpublishing_bases" href="/cli-experimental/docs/app_deployment/publishing_bases/">Publishing Bases</a>
       
       
     </li>
@@ -712,278 +445,26 @@
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/misc_imperative_commands/creating_resources/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Creating Resources</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsmisc_imperative_commandscreating_resources">
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsmisc_imperative_commandsintroduction" href="/cli-experimental/docs/misc_imperative_commands/introduction/">Introduction</a>
       
       
-    </li>
-  </ul>
-</ul>
-
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsmisc_imperative_commandscreating_resources" href="/cli-experimental/docs/misc_imperative_commands/creating_resources/">Creating Resources</a>
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/misc_imperative_commands/editing_workloads/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Editing Workloads</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsmisc_imperative_commandsediting_workloads">
       
       
       
-    </li>
-  </ul>
-</ul>
-
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsmisc_imperative_commandssetting_fields" href="/cli-experimental/docs/misc_imperative_commands/setting_fields/">Setting Fields</a>
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/misc_imperative_commands/introduction/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Introduction</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsmisc_imperative_commandsintroduction">
       
       
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/misc_imperative_commands/setting_fields/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Setting Fields</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsmisc_imperative_commandssetting_fields">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/resource_printing/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Resource Printing</a>
-  </li>
-  <ul>
-    <li class="collapse show" id="cli-experimentaldocsresource_printing">
-      
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/resource_printing/cluster_information/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Cluster Information</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsresource_printingcluster_information">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/resource_printing/describe/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Describe</a>
-  </li>
-  <ul>
-    <li class="collapse show" id="cli-experimentaldocsresource_printingdescribe">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/resource_printing/fields/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Fields</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsresource_printingfields">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/resource_printing/queries_and_options/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Queries and Options</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsresource_printingqueries_and_options">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/resource_printing/raw/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Raw</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsresource_printingraw">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/resource_printing/summary/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Summaries</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsresource_printingsummary">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/docs/resource_printing/watch/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Watch</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocsresource_printingwatch">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocsmisc_imperative_commandsediting_workloads" href="/cli-experimental/docs/misc_imperative_commands/editing_workloads/">Editing Workloads</a>
       
       
     </li>
@@ -1017,7 +498,7 @@
 
 
 
-<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/content/en/docs/resource_printing/describe/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/content/en/docs/resource_printing/describe.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
 <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Describe" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
@@ -1074,7 +555,7 @@
             
 <div class="td-content">
 	<h1>Describe</h1>
-	
+	<div class="lead">Describes current resources</div>
 	
 
 <div class="alert alert-success" role="alert">
@@ -1135,94 +616,6 @@ data from the <em>fields</em> of that Resource, it won&rsquo;t look at fields fr
 
 </div>
 
-
-        <div class="section-index">
-    
-    
-    
-    
-    <hr class="panel-line">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    
-</div>
 
 	
 		<style>
@@ -1286,9 +679,10 @@ data from the <em>fields</em> of that Resource, it won&rsquo;t look at fields fr
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 13, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/ed2158517d5af6dff64fe0bd3d8fcfd173d88abd">fix syntax high-lighting (ed21585)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
 </div>
 </div>
+
 
           </main>
         </div>

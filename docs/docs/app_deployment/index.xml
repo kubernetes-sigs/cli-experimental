@@ -14,6 +14,50 @@
     
     
     <item>
+      <title>Docs: Diffing Local and Remote Resources</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/diffing_local_and_remote_resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/diffing_local_and_remote_resources/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;View diff of changes before they are Applied to the cluster&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&#34;diffing-local-and-cluster-state&#34;&gt;Diffing Local and Cluster State&lt;/h1&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;The ability to view what changes will be made before applying them to a cluster can be useful.&lt;/p&gt;
+&lt;h2 id=&#34;generating-a-diff&#34;&gt;Generating a Diff&lt;/h2&gt;
+&lt;p&gt;Use the &lt;code&gt;diff&lt;/code&gt; program in a user&amp;rsquo;s path to display a diff of the changes that will be
+made by Apply.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;kubectl diff -k ./dir/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-the-diff-program&#34;&gt;Setting the Diff Program&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;KUBECTL_EXTERNAL_DIFF&lt;/code&gt; environment variable can be used to select your own diff command.
+By default, the &amp;ldquo;diff&amp;rdquo; command available in your path will be run with &amp;ldquo;-u&amp;rdquo; (unified) and &amp;ldquo;-N&amp;rdquo;
+(treat new files as empty) options.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;KUBECTL_EXTERNAL_DIFF&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;meld&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; kubectl diff -k ./dir/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;exit-status&#34;&gt;Exit status&lt;/h2&gt;
+&lt;p&gt;The following exit values shall be returned:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;0&lt;/code&gt;
+No differences were found.
+&lt;code&gt;1&lt;/code&gt;
+Differences were found.
+&lt;code&gt;&amp;gt;1&lt;/code&gt;
+Kubectl or diff failed with an error.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;code&gt;KUBECTL_EXTERNAL_DIFF&lt;/code&gt;, if used, is expected to follow that convention.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Accessing Multiple Clusters</title>
       <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/accessing_multiple_clusters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -100,50 +144,6 @@ For more information on configuring kubeconfig and contexts, see the
 k8s.io document.
 &lt;/div&gt;
 
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Diffing Local and Remote Resources</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/diffing_local_and_remote_resources/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/docs/app_deployment/diffing_local_and_remote_resources/</guid>
-      <description>
-        
-        
-        
-
-&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;View diff of changes before they are Applied to the cluster&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h1 id=&#34;diffing-local-and-cluster-state&#34;&gt;Diffing Local and Cluster State&lt;/h1&gt;
-&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
-&lt;p&gt;The ability to view what changes will be made before applying them to a cluster can be useful.&lt;/p&gt;
-&lt;h2 id=&#34;generating-a-diff&#34;&gt;Generating a Diff&lt;/h2&gt;
-&lt;p&gt;Use the &lt;code&gt;diff&lt;/code&gt; program in a user&amp;rsquo;s path to display a diff of the changes that will be
-made by Apply.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;kubectl diff -k ./dir/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-the-diff-program&#34;&gt;Setting the Diff Program&lt;/h2&gt;
-&lt;p&gt;The &lt;code&gt;KUBECTL_EXTERNAL_DIFF&lt;/code&gt; environment variable can be used to select your own diff command.
-By default, the &amp;ldquo;diff&amp;rdquo; command available in your path will be run with &amp;ldquo;-u&amp;rdquo; (unified) and &amp;ldquo;-N&amp;rdquo;
-(treat new files as empty) options.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;KUBECTL_EXTERNAL_DIFF&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;meld&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; kubectl diff -k ./dir/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;exit-status&#34;&gt;Exit status&lt;/h2&gt;
-&lt;p&gt;The following exit values shall be returned:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;0&lt;/code&gt;
-No differences were found.
-&lt;code&gt;1&lt;/code&gt;
-Differences were found.
-&lt;code&gt;&amp;gt;1&lt;/code&gt;
-Kubectl or diff failed with an error.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;code&gt;KUBECTL_EXTERNAL_DIFF&lt;/code&gt;, if used, is expected to follow that convention.&lt;/p&gt;
 
       </description>
     </item>
