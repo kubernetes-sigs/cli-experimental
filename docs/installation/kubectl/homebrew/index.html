@@ -20,24 +20,24 @@
 <link rel="icon" type="image/png" href="/cli-experimental/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/cli-experimental/favicons/android-192x192.png" sizes="192x192">
 
-<title>Publishing Bases | SIG CLI</title><meta property="og:title" content="Publishing Bases" />
-<meta property="og:description" content="Publishing Bases
+<title>Homebrew / MacPorts | SIG CLI</title><meta property="og:title" content="Homebrew / MacPorts" />
+<meta property="og:description" content="Install Kubectl for MacOS using Homebrew or MacPorts
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/publishing_bases/" />
-<meta property="article:modified_time" content="2020-09-14T09:19:50+05:30" /><meta property="og:site_name" content="SIG CLI" />
-<meta itemprop="name" content="Publishing Bases">
-<meta itemprop="description" content="Publishing Bases
+<meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/homebrew/" />
+<meta property="og:site_name" content="SIG CLI" />
+<meta itemprop="name" content="Homebrew / MacPorts">
+<meta itemprop="description" content="Install Kubectl for MacOS using Homebrew or MacPorts
 ">
-<meta itemprop="dateModified" content="2020-09-14T09:19:50+05:30" />
-<meta itemprop="wordCount" content="336">
+
+<meta itemprop="wordCount" content="20">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Publishing Bases"/>
-<meta name="twitter:description" content="Publishing Bases
+<meta name="twitter:title" content="Homebrew / MacPorts"/>
+<meta name="twitter:description" content="Install Kubectl for MacOS using Homebrew or MacPorts
 "/>
 
 
@@ -54,7 +54,7 @@
   crossorigin="anonymous"></script>
 
 
-    <title>Publishing Bases | SIG CLI</title>
+    <title>Homebrew / MacPorts | SIG CLI</title>
   </head>
   <body class="td-page">
     <header>
@@ -74,7 +74,7 @@
 				
 				
 				
-				<a class="nav-link" href="/cli-experimental/installation/" ><span>Installation</span></a>
+				<a class="nav-link active" href="/cli-experimental/installation/" ><span class="active">Installation</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -84,7 +84,7 @@
 				
 				
 				
-				<a class="nav-link active" href="/cli-experimental/documentation/" ><span class="active">Documentation</span></a>
+				<a class="nav-link" href="/cli-experimental/documentation/" ><span>Documentation</span></a>
 			</li>
 			
 			
@@ -129,10 +129,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/documentation/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+    <a  href="/cli-experimental/installation/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Installation</a>
   </li>
   <ul>
-    <li class="collapse show" id="cli-experimentaldocumentation">
+    <li class="collapse show" id="cli-experimentalinstallation">
       
       
       
@@ -146,29 +146,29 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/documentation/background_information/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Background Information</a>
+    <a  href="/cli-experimental/installation/kubectl/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Kubectl</a>
   </li>
   <ul>
-    <li class="collapse " id="cli-experimentaldocumentationbackground_information">
+    <li class="collapse show" id="cli-experimentalinstallationkubectl">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationbackground_informationintroduction" href="/cli-experimental/documentation/background_information/introduction/">Introduction</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalinstallationkubectlbinaries" href="/cli-experimental/installation/kubectl/binaries/">Binaries</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationbackground_informationgetting_started" href="/cli-experimental/documentation/background_information/getting_started/">Getting Started with Kubectl</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-cli-experimentalinstallationkubectlhomebrew" href="/cli-experimental/installation/kubectl/homebrew/">Homebrew / MacPorts</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationbackground_informationresources_controllers" href="/cli-experimental/documentation/background_information/resources_controllers/">Resources &#43; Controllers Overview</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalinstallationkubectlchocolatey" href="/cli-experimental/installation/kubectl/chocolatey/">Chocolatey</a>
       
       
     </li>
@@ -187,294 +187,35 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/documentation/app_management/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">App Management</a>
+    <a  href="/cli-experimental/installation/kustomize/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Kustomize</a>
   </li>
   <ul>
-    <li class="collapse " id="cli-experimentaldocumentationapp_management">
+    <li class="collapse " id="cli-experimentalinstallationkustomize">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationapp_managementintroduction" href="/cli-experimental/documentation/app_management/introduction/">Introduction</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalinstallationkustomizesource" href="/cli-experimental/installation/kustomize/source/">Go Source</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationapp_managementapply" href="/cli-experimental/documentation/app_management/apply/">Apply</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalinstallationkustomizebinaries" href="/cli-experimental/installation/kustomize/binaries/">Binaries</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationapp_managementsecrets_configmaps" href="/cli-experimental/documentation/app_management/secrets_configmaps/">Secrets and ConfigMaps</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalinstallationkustomizehomebrew" href="/cli-experimental/installation/kustomize/homebrew/">Homebrew / MacPorts</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationapp_managementcontainer_images" href="/cli-experimental/documentation/app_management/container_images/">Container Images</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationapp_managementnamespaces_names" href="/cli-experimental/documentation/app_management/namespaces_names/">Namespaces and Names</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationapp_managementlabels_annotations" href="/cli-experimental/documentation/app_management/labels_annotations/">Labels and Annotations</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationapp_managementfield_merge_semantics" href="/cli-experimental/documentation/app_management/field_merge_semantics/">Field Merge Semantics</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/documentation/resource_printing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Resource Printing</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocumentationresource_printing">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationresource_printingsummary" href="/cli-experimental/documentation/resource_printing/summary/">Summaries</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationresource_printingraw" href="/cli-experimental/documentation/resource_printing/raw/">Raw</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationresource_printingfields" href="/cli-experimental/documentation/resource_printing/fields/">Fields</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationresource_printingdescribe" href="/cli-experimental/documentation/resource_printing/describe/">Describe</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationresource_printingqueries_and_options" href="/cli-experimental/documentation/resource_printing/queries_and_options/">Queries and Options</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationresource_printingwatch" href="/cli-experimental/documentation/resource_printing/watch/">Watch</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationresource_printingcluster_information" href="/cli-experimental/documentation/resource_printing/cluster_information/">Cluster Information</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/documentation/container_debugging/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Container Debugging</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocumentationcontainer_debugging">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationcontainer_debuggingcontainer_logs" href="/cli-experimental/documentation/container_debugging/container_logs/">Container Logs</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationcontainer_debuggingcopying_container_files" href="/cli-experimental/documentation/container_debugging/copying_container_files/">Copying Container Files</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationcontainer_debuggingexecuting_a_command_in_a_container" href="/cli-experimental/documentation/container_debugging/executing_a_command_in_a_container/">Executing a command in a container</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationcontainer_debuggingport_forward_to_pods" href="/cli-experimental/documentation/container_debugging/port_forward_to_pods/">Port forward to Pods</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationcontainer_debuggingproxying_traffic_to_services" href="/cli-experimental/documentation/container_debugging/proxying_traffic_to_services/">Proxying traffic to services</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/documentation/extending_kubectl/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extending Kubectl</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocumentationextending_kubectl">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationextending_kubectlplugin_mechanism" href="/cli-experimental/documentation/extending_kubectl/plugin_mechanism/">Plugin Mechanism</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationextending_kubectldiscovering_plugins" href="/cli-experimental/documentation/extending_kubectl/discovering_plugins/">Discovering Plugins</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/documentation/app_deployment/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">App Deployment</a>
-  </li>
-  <ul>
-    <li class="collapse show" id="cli-experimentaldocumentationapp_deployment">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationapp_deploymentdiffing_local_and_remote_resources" href="/cli-experimental/documentation/app_deployment/diffing_local_and_remote_resources/">Diffing Local and Remote Resources</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationapp_deploymentaccessing_multiple_clusters" href="/cli-experimental/documentation/app_deployment/accessing_multiple_clusters/">Accessing Multiple Clusters</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-cli-experimentaldocumentationapp_deploymentpublishing_bases" href="/cli-experimental/documentation/app_deployment/publishing_bases/">Publishing Bases</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/documentation/misc_imperative_commands/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Miscellanious Imperative Commands</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentaldocumentationmisc_imperative_commands">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationmisc_imperative_commandsintroduction" href="/cli-experimental/documentation/misc_imperative_commands/introduction/">Introduction</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationmisc_imperative_commandscreating_resources" href="/cli-experimental/documentation/misc_imperative_commands/creating_resources/">Creating Resources</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationmisc_imperative_commandssetting_fields" href="/cli-experimental/documentation/misc_imperative_commands/setting_fields/">Setting Fields</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentaldocumentationmisc_imperative_commandsediting_workloads" href="/cli-experimental/documentation/misc_imperative_commands/editing_workloads/">Editing Workloads</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalinstallationkustomizechocolatey" href="/cli-experimental/installation/kustomize/chocolatey/">Chocolatey</a>
       
       
     </li>
@@ -508,8 +249,8 @@
 
 
 
-<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/content/en/documentation/app_deployment/publishing_bases.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Publishing%20Bases" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/content/en/installation/kubectl/homebrew.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Homebrew%20/%20MacPorts" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -523,11 +264,12 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#motivation">Motivation</a></li>
-    <li><a href="#publishing-a-white-box-base">Publishing a White Box Base</a></li>
-    <li><a href="#customizing-white-box-bases">Customizing White Box Bases</a></li>
-    <li><a href="#versioning-white-box-bases">Versioning White Box Bases</a></li>
-    <li><a href="#forking-a-white-box-base">Forking a White Box Base</a></li>
+    <li>
+      <ul>
+        <li><a href="#for-homebrewhttpsbrewsh-users">For <a href="https://brew.sh">Homebrew</a> users:</a></li>
+        <li><a href="#for-macportshttpswwwmacportsorg-users">For <a href="https://www.macports.org">MacPorts</a> users:</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -552,21 +294,21 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="https://kubernetes-sigs.github.io/cli-experimental/documentation/">Documentation</a>
+	<a href="https://kubernetes-sigs.github.io/cli-experimental/installation/">Installation</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/">App Deployment</a>
+	<a href="https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/">Kubectl</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/publishing_bases/">Publishing Bases</a>
+	<a href="https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/homebrew/">Homebrew / MacPorts</a>
 </li>
 
 	</ol>
@@ -574,80 +316,16 @@
 
             
 <div class="td-content">
-	<h1>Publishing Bases</h1>
-	<div class="lead">Publishing Bases</div>
-	
-
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Experimental</h4>
-<p><strong>Content in this chapter is experimental and will evolve based on user feedback.</strong></p>
-<p>Leave feedback on the conventions by creating an issue in the <a href="https://github.com/kubernetes/kubectl/issues">kubectl</a>
-GitHub repository.</p>
-<p>Also provide feedback on new kubectl docs at the <a href="https://www.surveymonkey.com/r/JH35X82">survey</a></p>
-
-</div>
-
-
-
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">TL;DR</h4>
-<ul>
-<li>Publish a White Box Application as a Base for other users to Kustomize</li>
-</ul>
-
-</div>
-
-<h1 id="publishing-bases">Publishing Bases</h1>
-<h2 id="motivation">Motivation</h2>
-<p>Users may want to run a common White Box Application without writing the Resource Config
-for the Application from scratch.  Instead they may want to consume ready-made Resource
-Config published specifically for the White Box Application, and add customizations for
-their specific needs.</p>
-<ul>
-<li>Run a White Box Application (e.g. Cassandra, MongoDB) instance from ready-made Resource Config</li>
-<li>Publish Resource Config to run an Application</li>
-</ul>
-<h2 id="publishing-a-white-box-base">Publishing a White Box Base</h2>
-<p>White Box Applications may be published to a URL and consumed as Bases in an <code>kustomization.yaml</code>.  It
-can then be consumed in the following manner.</p>
-<p><strong>Use Case:</strong> Run a White Box Application published to GitHub.</p>
-<p><strong>Input:</strong> The kustomization.yaml file</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># kustomization.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">bases</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#8f5902;font-style:italic"># GitHub URL</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>- github.com/kubernetes-sigs/kustomize/examples/multibases/dev/<span style="color:#000;font-weight:bold">?</span>ref=v1<span style="color:#0000cf;font-weight:bold">.0.6</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><p><strong>Applied:</strong> The Resource that is Applied to the cluster</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># Resource comes from the Remote Base</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>v1<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>Pod<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">labels</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">app</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>myapp<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>dev-myapp-pod<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">containers</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>nginx<span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">1.7.9</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>nginx<span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h2 id="customizing-white-box-bases">Customizing White Box Bases</h2>
-<p>The White Box Application may be customized using the same techniques described in
-<a href="../app_customization/bases_and_variants.md">Bases and Variations</a>.</p>
-<h2 id="versioning-white-box-bases">Versioning White Box Bases</h2>
-<p>White Box Bases may be versioned using the well known versioning techniques provided by Git.</p>
-<p><strong>Tag:</strong></p>
-<p>Bases may be versioned by applying a tag to the repo and modifying the url to point to the tag:
-<code>github.com/kubernetes-sigs/kustomize/examples/multibases?ref=v1.0.6</code></p>
-<p><strong>Branch:</strong></p>
-<p>Bases may be versioned by creating a branch and modifying the url to point to the branch:
-<code>github.com/Liujingfang1/kustomize/examples/helloWorld?ref=repoUrl2</code></p>
-<p><strong>Commit:</strong></p>
-<p>If the White Box Base has not been explicitly versioned by the maintainer, users may pin the
-base to a specific commit:
-<code>github.com/Liujingfang1/kustomize/examples/helloWorld?ref=7050a45134e9848fca214ad7e7007e96e5042c03</code></p>
-<h2 id="forking-a-white-box-base">Forking a White Box Base</h2>
-<p>Uses may fork a White Box Base hosted on GitHub by forking the GitHub repo.  This allows the user
-complete control over changes to the Base.  Users should periodically pull changes from the
-upstream repo back into the fork to get bug fixes and optimizations.</p>
-
+	<h1>Homebrew / MacPorts</h1>
+	<div class="lead">Install Kubectl for MacOS using Homebrew or MacPorts</div>
+	<h3 id="for-homebrewhttpsbrewsh-users">For <a href="https://brew.sh">Homebrew</a> users:</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install kubectl 
+</code></pre></div><p>or</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install kubernetes-cli
+</code></pre></div><h3 id="for-macportshttpswwwmacportsorg-users">For <a href="https://www.macports.org">MacPorts</a> users:</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo port selfupdate
+sudo port install kubectl
+</code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -710,7 +388,7 @@ upstream repo back into the fork to get bug fixes and optimizations.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 14, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/3e7e7756884ed0c59fcd04b2ce00f6f43af72415">installation init (3e7e775)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
 </div>
 </div>
 
