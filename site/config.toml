@@ -1,5 +1,5 @@
 baseURL = "https://kubernetes-sigs.github.io/cli-experimental/"
-title = "Kubectl"
+title = "SIG CLI"
 
 publishDir = "../docs"
 
@@ -55,8 +55,8 @@ id = "UA-00000000-0"
 
 [languages]
 [languages.en]
-title = "Kubectl"
-description = "Documentation for Kubectl"
+title = "SIG CLI"
+description = "Documentation for Kubectl and Kustomize"
 languageName ="English"
 # Weight used for sorting.
 weight = 1

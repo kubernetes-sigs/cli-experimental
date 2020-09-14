@@ -1,0 +1,108 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – Kustomize</title>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/</link>
+    <description>Recent content in Kustomize on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Installation: Go Source</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/source/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/source/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Requires &lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt; to be installed.&lt;/p&gt;
+&lt;h2 id=&#34;install-the-kustomize-cli-from-source-without-cloning-the-repo&#34;&gt;Install the kustomize CLI from source without cloning the repo&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;GOBIN=$(pwd)/ GO111MODULE=on go get sigs.k8s.io/kustomize/kustomize/v3
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;install-the-kustomize-cli-from-local-source-with-cloning-the-repo&#34;&gt;Install the kustomize CLI from local source with cloning the repo&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;# Need go 1.13 or higher
+unset GOPATH
+# see https://golang.org/doc/go1.13#modules
+unset GO111MODULES
+
+# clone the repo
+git clone git@github.com:kubernetes-sigs/kustomize.git
+# get into the repo root
+cd kustomize
+
+# Optionally checkout a particular tag if you don&#39;t
+# want to build at head
+git checkout kustomize/v3.2.3
+
+# build the binary
+(cd kustomize; go install .)
+
+# run it
+~/go/bin/kustomize version
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Installation: Binaries</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/binaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/binaries/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Binaries at various versions for linux, MacOs and Windows are published on the [release page].&lt;/p&gt;
+&lt;p&gt;The following &lt;a href=&#34;https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&#34;&gt;script&lt;/a&gt; detects your OS and downloads the appropriate kustomize binary to your
+current working directory.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -s &amp;quot;https://raw.githubusercontent.com/\
+kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&amp;quot;  | bash
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Installation: Homebrew / MacPorts</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/homebrew/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/homebrew/</guid>
+      <description>
+        
+        
+        &lt;p&gt;For &lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt; users:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install kustomize
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For &lt;a href=&#34;https://www.macports.org&#34;&gt;MacPorts&lt;/a&gt; users:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo port install kustomize
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Installation: Chocolatey</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/chocolatey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/chocolatey/</guid>
+      <description>
+        
+        
+        &lt;pre&gt;&lt;code&gt;choco install kustomize
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For support on the chocolatey package
+and prior releases, see:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chocolatey.org/packages/kustomize&#34;&gt;Choco Package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kenmaglio/choco-kustomize&#34;&gt;Package Source&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
