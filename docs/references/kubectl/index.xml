@@ -13,5 +13,83 @@
       
     
     
+    <item>
+      <title>References: Apply</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/apply/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/apply/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: ConfigMaps and Secrets</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Container Images</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/container_images/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/container_images/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Namespaces and Names</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/namespaces/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/namespaces/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Labels and Annotations</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/label_annotations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/label_annotations/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Merging Resources</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/merging_resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/merging_resources/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
   </channel>
 </rss>

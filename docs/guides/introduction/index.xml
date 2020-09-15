@@ -1,0 +1,223 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – Introduction</title>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/</link>
+    <description>Recent content in Introduction on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Guides: Kubectl</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kubectl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kubectl/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Kubectl is the Kubernetes cli&lt;/li&gt;
+&lt;li&gt;Kubectl provides a swiss army knife of functionality for working with Kubernetes clusters&lt;/li&gt;
+&lt;li&gt;Kubectl may be used to deploy and manage applications on Kubernetes&lt;/li&gt;
+&lt;li&gt;Kubectl may be used for scripting and building higher-level frameworks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Kubectl is the Kubernetes cli version of a swiss army knife, and can do many things.&lt;/p&gt;
+&lt;p&gt;While this Book is focused on using Kubectl to declaratively manage Applications in Kubernetes, it
+also covers other Kubectl functions.&lt;/p&gt;
+&lt;h2 id=&#34;command-families&#34;&gt;Command Families&lt;/h2&gt;
+&lt;p&gt;Most Kubectl commands typically fall into one of a few categories:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Used For&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Declarative Resource Management&lt;/td&gt;
+&lt;td&gt;Deployment and Operations (e.g. GitOps)&lt;/td&gt;
+&lt;td&gt;Declaratively manage Kubernetes Workloads using Resource Config&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Imperative Resource Management&lt;/td&gt;
+&lt;td&gt;Development Only&lt;/td&gt;
+&lt;td&gt;Run commands to manage Kubernetes Workloads using Command Line arguments and flags&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Printing Workload State&lt;/td&gt;
+&lt;td&gt;Debugging&lt;/td&gt;
+&lt;td&gt;Print information about Workloads&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Interacting with Containers&lt;/td&gt;
+&lt;td&gt;Debugging&lt;/td&gt;
+&lt;td&gt;Exec, Attach, Cp, Logs&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cluster Management&lt;/td&gt;
+&lt;td&gt;Cluster Ops&lt;/td&gt;
+&lt;td&gt;Drain and Cordon Nodes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;declarative-application-management&#34;&gt;Declarative Application Management&lt;/h2&gt;
+&lt;p&gt;The preferred approach for managing Resources is through
+declarative files called Resource Config used with the Kubectl &lt;em&gt;Apply&lt;/em&gt; command.
+This command reads a local (or remote) file structure and modifies cluster state to
+reflect the declared intent.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Apply&lt;/h4&gt;
+Apply is the preferred mechanism for managing Resources in a Kubernetes cluster.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;printing-state-about-workloads&#34;&gt;Printing state about Workloads&lt;/h2&gt;
+&lt;p&gt;Users will need to view Workload state.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Printing summarize state and information about Resources&lt;/li&gt;
+&lt;li&gt;Printing complete state and information about Resources&lt;/li&gt;
+&lt;li&gt;Printing specific fields from Resources&lt;/li&gt;
+&lt;li&gt;Query Resources matching labels&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;debugging-workloads&#34;&gt;Debugging Workloads&lt;/h2&gt;
+&lt;p&gt;Kubectl supports debugging by providing commands for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Printing Container logs&lt;/li&gt;
+&lt;li&gt;Printing cluster events&lt;/li&gt;
+&lt;li&gt;Exec or attaching to a Container&lt;/li&gt;
+&lt;li&gt;Copying files from Containers in the cluster to a user&amp;rsquo;s filesystem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cluster-management&#34;&gt;Cluster Management&lt;/h2&gt;
+&lt;p&gt;On occasion, users may need to perform operations to the Nodes of cluster.  Kubectl supports
+commands to drain Workloads from a Node so that it can be decommission or debugged.&lt;/p&gt;
+&lt;h2 id=&#34;porcelain&#34;&gt;Porcelain&lt;/h2&gt;
+&lt;p&gt;Users may find using Resource Config overly verbose for &lt;em&gt;Development&lt;/em&gt; and prefer to work with
+the cluster &lt;em&gt;imperatively&lt;/em&gt; with a shell-like workflow.  Kubectl offers porcelain commands for
+generating and modifying Resources.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generating + creating Resources such as Deployments, StatefulSets, Services, ConfigMaps, etc&lt;/li&gt;
+&lt;li&gt;Setting fields on Resources&lt;/li&gt;
+&lt;li&gt;Editing (live) Resources in a text editor&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Porcelain For Dev Only&lt;/h4&gt;
+Porcelain commands are time saving for experimenting with workloads in a dev cluster, but shouldn&amp;rsquo;t
+be used for production.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Kustomize</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kustomize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kustomize/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Kustomize helps customizing config files in a template free way.&lt;/li&gt;
+&lt;li&gt;Kustomize provides a number of handy methods like generators to make customization easier.&lt;/li&gt;
+&lt;li&gt;Kustomize uses patches to introduce environment specific changes on an already existing standard config file without disturbing it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Kustomize provides a solution for customizing Kubernetes resource configuration free from templates and DSLs.&lt;/p&gt;
+&lt;p&gt;Kustomize lets you customize raw, template-free YAML
+files for multiple purposes, leaving the original YAML
+untouched and usable as is.&lt;/p&gt;
+&lt;p&gt;Kustomize targets kubernetes; it understands and can
+patch &lt;code&gt;kubernetes style&lt;/code&gt; API objects.  It&amp;rsquo;s like
+&lt;a href=&#34;https://www.gnu.org/software/make&#34;&gt;make&lt;/a&gt;, in that what it does is declared in a file,
+and it&amp;rsquo;s like &lt;a href=&#34;https://www.gnu.org/software/sed&#34;&gt;sed&lt;/a&gt;, in that it emits edited text.&lt;/p&gt;
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+&lt;h3 id=&#34;1-make-a-kustomization-file&#34;&gt;1) Make a &lt;code&gt;kustomization&lt;/code&gt; file&lt;/h3&gt;
+&lt;p&gt;In some directory containing your YAML &lt;code&gt;resource&lt;/code&gt;
+files (deployments, services, configmaps, etc.), create a
+&lt;code&gt;kustomization&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;This file should declare those resources, and any
+customization to apply to them, e.g. &lt;em&gt;add a common
+label&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;File structure:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~/someApp
+├── deployment.yaml
+├── kustomization.yaml
+└── service.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The resources in this directory could be a fork of
+someone else&amp;rsquo;s configuration.  If so, you can easily
+rebase from the source material to capture
+improvements, because you don&amp;rsquo;t modify the resources
+directly.&lt;/p&gt;
+&lt;p&gt;Generate customized YAML with:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kustomize build ~/someApp
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The YAML can be directly &lt;code&gt;applied&lt;/code&gt; to a cluster:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kustomize build ~/someApp | kubectl apply -f -
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;2-create-variants-using-overlays&#34;&gt;2) Create &lt;code&gt;variants&lt;/code&gt; using &lt;code&gt;overlays&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Manage traditional &lt;code&gt;variants&lt;/code&gt; of a configuration - like
+&lt;em&gt;development&lt;/em&gt;, &lt;em&gt;staging&lt;/em&gt; and &lt;em&gt;production&lt;/em&gt; - using
+&lt;code&gt;overlays&lt;/code&gt; that modify a common &lt;code&gt;base&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;File structure:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~/someApp
+├── base
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   └── service.yaml
+└── overlays
+    ├── development
+    │   ├── cpu_count.yaml
+    │   ├── kustomization.yaml
+    │   └── replica_count.yaml
+    └── production
+        ├── cpu_count.yaml
+        ├── kustomization.yaml
+        └── replica_count.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Take the work from step (1) above, move it into a
+&lt;code&gt;someApp&lt;/code&gt; subdirectory called &lt;code&gt;base&lt;/code&gt;, then
+place overlays in a sibling directory.&lt;/p&gt;
+&lt;p&gt;An overlay is just another kustomization, referring to
+the base, and referring to patches to apply to that
+base.&lt;/p&gt;
+&lt;p&gt;This arrangement makes it easy to manage your
+configuration with &lt;code&gt;git&lt;/code&gt;.  The base could have files
+from an upstream repository managed by someone else.
+The overlays could be in a repository you own.
+Arranging the repo clones as siblings on disk avoids
+the need for git submodules (though that works fine, if
+you are a submodule fan).&lt;/p&gt;
+&lt;p&gt;Generate YAML with&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;kustomize build ~/someApp/overlays/production
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The YAML can be directly &lt;code&gt;applied&lt;/code&gt; to a cluster:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;kustomize build ~/someApp/overlays/production &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; kubectl apply -f -
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

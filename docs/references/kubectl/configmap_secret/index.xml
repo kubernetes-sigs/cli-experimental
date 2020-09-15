@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – ConfigMaps and Secrets</title>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/</link>
+    <description>Recent content in ConfigMaps and Secrets on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>
