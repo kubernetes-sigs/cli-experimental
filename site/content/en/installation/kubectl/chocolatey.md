@@ -7,7 +7,7 @@ description: >
     Install Kubectl for Windows using Chocolatey
 ---
 
-### For [Chocolatey](https://chocolatey.org/) users:
+- For [Chocolatey](https://chocolatey.org/) users:
 
 ```
 choco install kubernetes-cli

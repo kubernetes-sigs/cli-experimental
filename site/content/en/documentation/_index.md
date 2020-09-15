@@ -5,5 +5,5 @@ weight: 2
 type: docs
 menu:
   main:
-    weight: 2
+    weight: 4
 ---

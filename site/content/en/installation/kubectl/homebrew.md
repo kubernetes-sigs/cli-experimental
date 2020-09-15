@@ -7,7 +7,7 @@ description: >
     Install Kubectl for MacOS using Homebrew or MacPorts
 ---
 
-### For [Homebrew](https://brew.sh) users:
+- For [Homebrew](https://brew.sh) users:
 
 ```bash
 brew install kubectl 
@@ -17,7 +17,7 @@ or
 brew install kubernetes-cli
 ```
 
-### For [MacPorts](https://www.macports.org) users:
+- For [MacPorts](https://www.macports.org) users:
 
 ```bash
 sudo port selfupdate
