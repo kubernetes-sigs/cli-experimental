@@ -273,11 +273,11 @@ spec:
         name: nginx
 ``` -->
 
-{{< alert color="warning" title="References" >}}
+<!-- {{< alert color="warning" title="References" >}}
 Apply will propagate the `namePrefix` to any place Resources within the project are referenced by other Resources
 including:
 
 - Service references from StatefulSets
 - ConfigMap references from PodSpecs
 - Secret references from PodSpecs
-{{< /alert >}}
+{{< /alert >}} -->

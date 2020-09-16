@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/c_from_files/" />
-<meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-16T10:06:31+05:30" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="From Files">
 <meta itemprop="description" content="Using ConfigMaps From Files
 ">
-
-<meta itemprop="wordCount" content="0">
+<meta itemprop="dateModified" content="2020-09-16T10:06:31+05:30" />
+<meta itemprop="wordCount" content="109">
 
 
 
@@ -328,6 +328,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagesname" href="/cli-experimental/references/kubectl/container_images/name/">Name - Image</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagesdigest" href="/cli-experimental/references/kubectl/container_images/digest/">Digest - Image</a>
       
       
       
@@ -1209,7 +1215,32 @@
 <div class="td-content">
 	<h1>From Files</h1>
 	<div class="lead">Using ConfigMaps From Files</div>
-	
+	<p>ConfigMap Resources may be generated from files - such as a java <code>.properties</code> file.  To generate a ConfigMap
+Resource for a file, add an entry to <code>configMapGenerator</code> with the filename.</p>
+<p><strong>Example:</strong> Generate a ConfigMap with a data item containing the contents of a file.</p>
+<p>The ConfigMaps will have data values populated from the file contents.  The contents of each file will
+appear as a single data item in the ConfigMap keyed by the filename.</p>
+<p><strong>Input:</strong> The kustomization.yaml file</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># kustomization.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kustomize.config.k8s.io/v1beta1<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>Kustomization<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">configMapGenerator</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>my-application-properties<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">files</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- application.properties<span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># application.properties</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>FOO=Bar<span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p><strong>Applied:</strong> The Resource that is Applied to the cluster</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>v1<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>ConfigMap<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#8f5902;font-style:italic"># The name has had a suffix applied</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>my-application-properties-c79528k426<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#8f5902;font-style:italic"># The data has been populated from each file&#39;s contents</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">application.properties</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">|
+</span><span style="color:#8f5902;font-style:italic">    FOO=Bar</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -1272,7 +1303,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 16, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/1f9283ef7ee9bfbbfd3afaa7d4118b13f3e22564">reference updated (1f9283e)</a>
 </div>
 </div>
 

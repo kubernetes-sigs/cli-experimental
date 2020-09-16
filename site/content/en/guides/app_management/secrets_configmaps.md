@@ -53,6 +53,29 @@ The generated Resources name's will have suffixes that change when their data
 changes.  See [Rollouts](#rollouts) for more on this.
 {{< /alert >}}
 
+### Generator Options
+
+It is also possible to specify cross-cutting options for generated objects
+using  `generatorOptions`.
+
+```yaml
+# kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+generatorOptions:
+  # labels to add to all generated resources
+  labels:
+    kustomize.generated.resources: somevalue
+  # annotations to add to all generated resources
+  annotations:
+    kustomize.generated.resource: somevalue
+  # disableNameSuffixHash is true disables the default behavior of adding a
+  # suffix to the names of generated resources that is a hash of
+  # the resource contents.
+  disableNameSuffixHash: true
+```
+
+
 <!-- ### ConfigMaps From Files
 
 ConfigMap Resources may be generated from files - such as a java `.properties` file.  To generate a ConfigMap

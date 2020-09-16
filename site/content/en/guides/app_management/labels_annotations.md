@@ -198,7 +198,7 @@ spec:
         name: nginx
 ``` -->
 
-{{< alert color="warning" title="Propagating Annotations" >}}
+<!-- {{< alert color="warning" title="Propagating Annotations" >}}
 In addition to updating the annotations for each Resource, any fields that contain ObjectMeta
 (e.g. PodTemplate) will also have the annotations added.
-{{< /alert >}}
+{{< /alert >}} -->

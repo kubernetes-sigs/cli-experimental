@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/default/" />
-<meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-16T10:06:31+05:30" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="Default">
 <meta itemprop="description" content="Printing the status in the default way
 ">
-
-<meta itemprop="wordCount" content="0">
+<meta itemprop="dateModified" content="2020-09-16T10:06:31+05:30" />
+<meta itemprop="wordCount" content="50">
 
 
 
@@ -328,6 +328,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagesname" href="/cli-experimental/references/kubectl/container_images/name/">Name - Image</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagesdigest" href="/cli-experimental/references/kubectl/container_images/digest/">Digest - Image</a>
       
       
       
@@ -1199,7 +1205,13 @@
 <div class="td-content">
 	<h1>Default</h1>
 	<div class="lead">Printing the status in the default way</div>
-	
+	<p>If no output format is specified, Get will print a default set of columns.</p>
+<p><strong>Note:</strong> Some columns <em>may</em> not directly map to fields on the Resource, but instead may
+be a summary of fields.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments nginx
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+nginx     <span style="color:#0000cf;font-weight:bold">1</span>         <span style="color:#0000cf;font-weight:bold">1</span>         <span style="color:#0000cf;font-weight:bold">1</span>            <span style="color:#0000cf;font-weight:bold">0</span>           5s
+</code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -1262,7 +1274,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 16, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/1f9283ef7ee9bfbbfd3afaa7d4118b13f3e22564">reference updated (1f9283e)</a>
 </div>
 </div>
 

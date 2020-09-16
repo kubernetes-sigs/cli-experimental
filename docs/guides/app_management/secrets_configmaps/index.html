@@ -30,7 +30,7 @@
 <meta itemprop="description" content="Storing Key-Value Pairs and Confidential Data on Clusters
 ">
 <meta itemprop="dateModified" content="2020-09-15T17:04:48+05:30" />
-<meta itemprop="wordCount" content="1242">
+<meta itemprop="wordCount" content="1297">
 
 
 
@@ -363,7 +363,11 @@
     <li><a href="#motivation">Motivation</a></li>
     <li><a href="#need-for-configmaps">Need for ConfigMaps</a></li>
     <li><a href="#need-for-secrets">Need for Secrets</a></li>
-    <li><a href="#generators">Generators</a></li>
+    <li><a href="#generators">Generators</a>
+      <ul>
+        <li><a href="#generator-options">Generator Options</a></li>
+      </ul>
+    </li>
     <li><a href="#rollouts">Rollouts</a></li>
   </ul>
 </nav>
@@ -473,7 +477,24 @@ The generated Resources name&rsquo;s will have suffixes that change when their d
 changes.  See <a href="#rollouts">Rollouts</a> for more on this.
 </div>
 
-<!-- ### ConfigMaps From Files
+<h3 id="generator-options">Generator Options</h3>
+<p>It is also possible to specify cross-cutting options for generated objects
+using  <code>generatorOptions</code>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># kustomization.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kustomize.config.k8s.io/v1beta1<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>Kustomization<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">generatorOptions</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#8f5902;font-style:italic"># labels to add to all generated resources</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">labels</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">kustomize.generated.resources</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>somevalue<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#8f5902;font-style:italic"># annotations to add to all generated resources</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">annotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">kustomize.generated.resource</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>somevalue<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#8f5902;font-style:italic"># disableNameSuffixHash is true disables the default behavior of adding a</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#8f5902;font-style:italic"># suffix to the names of generated resources that is a hash of</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#8f5902;font-style:italic"># the resource contents.</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">disableNameSuffixHash</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><!-- ### ConfigMaps From Files
 
 ConfigMap Resources may be generated from files - such as a java `.properties` file.  To generate a ConfigMap
 Resource for a file, add an entry to `configMapGenerator` with the filename.

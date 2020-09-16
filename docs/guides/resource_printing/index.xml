@@ -364,7 +364,7 @@ map[kind:Deployment...readyReplicas:1]]
 ```
 
 --- --&gt;
-
+&lt;!-- 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Literal Syntax&lt;/h4&gt;
@@ -374,7 +374,7 @@ This in turn means that you must use a single quote or escaped double quote arou
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;C:&lt;span style=&#34;color:#4e9a06&#34;&gt;\&amp;gt;&lt;/span&gt; kubectl get pods -o&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;jsonpath&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;{range .items[*]}{.metadata.name}{&amp;#39;\t&amp;#39;}{.status.startTime}{&amp;#39;\n&amp;#39;}{end}&amp;#34;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-
+ --&gt;
 
       </description>
     </item>

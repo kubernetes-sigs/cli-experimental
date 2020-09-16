@@ -113,7 +113,36 @@
       <description>
         
         
-        
+        &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl describe deployments
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Name:                   nginx
+Namespace:              default
+CreationTimestamp:      Thu, &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;15&lt;/span&gt; Nov &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2018&lt;/span&gt; 10:58:03 -0800
+Labels:                 &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;nginx
+Annotations:            deployment.kubernetes.io/revision&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
+Selector:               &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;nginx
+Replicas:               &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; desired &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; updated &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; total &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; available &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt; unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;nginx
+  Containers:
+   nginx:
+    Image:        nginx
+    Port:         &amp;lt;none&amp;gt;
+    Host Port:    &amp;lt;none&amp;gt;
+    Environment:  &amp;lt;none&amp;gt;
+    Mounts:       &amp;lt;none&amp;gt;
+  Volumes:        &amp;lt;none&amp;gt;
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  &amp;lt;none&amp;gt;
+NewReplicaSet:   nginx-78f5d695bd &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;1/1 replicas created&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
+Events:          &amp;lt;none&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     

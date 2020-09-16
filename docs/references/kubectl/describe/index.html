@@ -328,6 +328,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagesdigest" href="/cli-experimental/references/kubectl/container_images/digest/">Digest - Image</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagestag" href="/cli-experimental/references/kubectl/container_images/tag/">Tag - Image</a>
       
       
@@ -1184,13 +1190,44 @@
 <div class="td-content">
 	<h1>Describe</h1>
 	<div class="lead">Describing Kubernetes resources</div>
-	
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl describe deployments
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Name:                   nginx
+Namespace:              default
+CreationTimestamp:      Thu, <span style="color:#0000cf;font-weight:bold">15</span> Nov <span style="color:#0000cf;font-weight:bold">2018</span> 10:58:03 -0800
+Labels:                 <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>nginx
+Annotations:            deployment.kubernetes.io/revision<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span>
+Selector:               <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>nginx
+Replicas:               <span style="color:#0000cf;font-weight:bold">1</span> desired <span style="color:#000;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> updated <span style="color:#000;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> total <span style="color:#000;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> available <span style="color:#000;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">0</span> unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        <span style="color:#0000cf;font-weight:bold">0</span>
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>nginx
+  Containers:
+   nginx:
+    Image:        nginx
+    Port:         &lt;none&gt;
+    Host Port:    &lt;none&gt;
+    Environment:  &lt;none&gt;
+    Mounts:       &lt;none&gt;
+  Volumes:        &lt;none&gt;
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  &lt;none&gt;
+NewReplicaSet:   nginx-78f5d695bd <span style="color:#ce5c00;font-weight:bold">(</span>1/1 replicas created<span style="color:#ce5c00;font-weight:bold">)</span>
+Events:          &lt;none&gt;
+</code></pre></div>
         <div class="section-index">
     
     
     
     
     <hr class="panel-line">
+        
+            
         
             
         
@@ -1383,7 +1420,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 16, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/1f9283ef7ee9bfbbfd3afaa7d4118b13f3e22564">reference updated (1f9283e)</a>
 </div>
 </div>
 

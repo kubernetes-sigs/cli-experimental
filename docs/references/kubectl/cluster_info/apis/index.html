@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/apis/" />
-<meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-16T10:06:31+05:30" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="APIs">
 <meta itemprop="description" content="Print information about APIs
 ">
-
-<meta itemprop="wordCount" content="0">
+<meta itemprop="dateModified" content="2020-09-16T10:06:31+05:30" />
+<meta itemprop="wordCount" content="247">
 
 
 
@@ -328,6 +328,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagesname" href="/cli-experimental/references/kubectl/container_images/name/">Name - Image</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagesdigest" href="/cli-experimental/references/kubectl/container_images/digest/">Digest - Image</a>
       
       
       
@@ -1199,7 +1205,72 @@
 <div class="td-content">
 	<h1>APIs</h1>
 	<div class="lead">Print information about APIs</div>
-	
+	<h2 id="apis">APIs</h2>
+<p>The <code>kubectl api-versions</code> and <code>kubectl api-resources</code> print information
+about the available Kubernetes APIs.  This information is read from the
+Discovery Service.</p>
+<p>Print the Resource Types available in the cluster.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl api-resources
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NAME                              SHORTNAMES   APIGROUP                       NAMESPACED   KIND
+bindings                                                                      <span style="color:#204a87">true</span>         Binding
+componentstatuses                 cs                                          <span style="color:#204a87">false</span>        ComponentStatus
+configmaps                        cm                                          <span style="color:#204a87">true</span>         ConfigMap
+endpoints                         ep                                          <span style="color:#204a87">true</span>         Endpoints
+events                            ev                                          <span style="color:#204a87">true</span>         Event
+limitranges                       limits                                      <span style="color:#204a87">true</span>         LimitRange
+namespaces                        ns                                          <span style="color:#204a87">false</span>        Namespace
+...
+</code></pre></div><p>Print the API versions available in the cluster.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl api-versions
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  admissionregistration.k8s.io/v1beta1
+  apiextensions.k8s.io/v1beta1
+  apiregistration.k8s.io/v1
+  apiregistration.k8s.io/v1beta1
+  apps/v1
+  apps/v1beta1
+  apps/v1beta2
+  ...
+</code></pre></div>
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Discovery</h4>
+The discovery information can be viewed at <code>127.0.0.1:8001/</code> by running
+<code>kubectl proxy</code>.  The Discovery for specific API can be found under either
+<code>/api/v1</code> or <code>/apis/&lt;group&gt;/&lt;version&gt;</code>, depending on the API group -
+e.g. <code>127.0.0.1:8001/apis/apps/v1</code>
+</div>
+
+<p>The <code>kubectl explain</code> command can be used to print metadata about specific
+Resource types.  This is useful for learning about the type.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl explain deployment --api-version apps/v1
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">KIND:     Deployment
+VERSION:  apps/v1
+
+DESCRIPTION:
+     Deployment enables declarative updates <span style="color:#204a87;font-weight:bold">for</span> Pods and ReplicaSets.
+
+FIELDS:
+   apiVersion	&lt;string&gt;
+     APIVersion defines the versioned schema of this representation of an
+     object. Servers should convert recognized schemas to the latest internal
+     value, and may reject unrecognized values. More info:
+     https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
+
+   kind	&lt;string&gt;
+     Kind is a string value representing the REST resource this object
+     represents. Servers may infer this from the endpoint the client submits
+     requests to. Cannot be updated. In CamelCase. More info:
+     https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
+
+   metadata	&lt;Object&gt;
+     Standard object metadata.
+
+   spec	&lt;Object&gt;
+     Specification of the desired behavior of the Deployment.
+
+   status	&lt;Object&gt;
+     Most recently observed status of the Deployment.
+</code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -1262,7 +1333,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 16, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/1f9283ef7ee9bfbbfd3afaa7d4118b13f3e22564">reference updated (1f9283e)</a>
 </div>
 </div>
 

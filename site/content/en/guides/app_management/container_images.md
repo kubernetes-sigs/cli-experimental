@@ -36,7 +36,7 @@ Check out the [References](../../../references) to learn how to override or set 
 - [images](../reference/kustomize.md#images)
 {{< /alert >}} -->
 
-<!-- ## images
+## images
 
 It is possible to set image tags for container images through
 the `kustomization.yaml` using the `images` field.  When `images` are
@@ -119,7 +119,7 @@ spec:
 ```
 
 
-## Setting a Name
+<!-- ## Setting a Name
 
 The name for an image may be set by specifying `newName` and the name of the old container image.
 ```yaml

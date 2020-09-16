@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/fields/" />
-<meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-16T10:06:31+05:30" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="Fields">
 <meta itemprop="description" content="Format and print specific fields from Resources
 ">
-
-<meta itemprop="wordCount" content="0">
+<meta itemprop="dateModified" content="2020-09-16T10:06:31+05:30" />
+<meta itemprop="wordCount" content="157">
 
 
 
@@ -328,6 +328,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagesname" href="/cli-experimental/references/kubectl/container_images/name/">Name - Image</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagesdigest" href="/cli-experimental/references/kubectl/container_images/digest/">Digest - Image</a>
       
       
       
@@ -1199,7 +1205,46 @@
 <div class="td-content">
 	<h1>Fields</h1>
 	<div class="lead">Format and print specific fields from Resources</div>
-	
+	<p>Print the JSON representation of the first Deployment in the list on a single line.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment.v1.apps -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;{.items[0]}{&#34;\n&#34;}&#39;</span>
+
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">map<span style="color:#ce5c00;font-weight:bold">[</span>apiVersion:apps/v1 kind:Deployment...replicas:1 updatedReplicas:1<span style="color:#ce5c00;font-weight:bold">]]</span>
+</code></pre></div><hr>
+<p>Print the <code>metadata.name</code> field for the first Deployment in the list.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment.v1.apps -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;{.items[0].metadata.name}{&#34;\n&#34;}&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nginx
+</code></pre></div><hr>
+<p>For each Deployment, print its <code>metadata.name</code> field and a newline afterward.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment.v1.apps -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;{range .items[*]}{.metadata.name}{&#34;\n&#34;}{end}&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nginx
+nginx2
+</code></pre></div><hr>
+<p>For each Deployment, print its <code>metadata.name</code> and <code>.status.availableReplicas</code>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment.v1.apps -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;{range .items[*]}{.metadata.name}{&#34;\t&#34;}{.status.availableReplicas}{&#34;\n&#34;}{end}&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nginx	<span style="color:#0000cf;font-weight:bold">1</span>
+nginx2	<span style="color:#0000cf;font-weight:bold">1</span>
+</code></pre></div><hr>
+<p>Print the list of Deployments as single line.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment.v1.apps -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;{@}{&#34;\n&#34;}&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">map<span style="color:#ce5c00;font-weight:bold">[</span>kind:List apiVersion:v1 metadata:map<span style="color:#ce5c00;font-weight:bold">[</span>selfLink: resourceVersion:<span style="color:#ce5c00;font-weight:bold">]</span> items:<span style="color:#ce5c00;font-weight:bold">[</span>map<span style="color:#ce5c00;font-weight:bold">[</span>apiVersion:apps/v1 kind:Deployment...replicas:1 updatedReplicas:1<span style="color:#ce5c00;font-weight:bold">]]]]</span>
+</code></pre></div><hr>
+<p>Print each Deployment on a new line.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment.v1.apps -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;{range .items[*]}{@}{&#34;\n&#34;}{end}&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">map<span style="color:#ce5c00;font-weight:bold">[</span>kind:Deployment...readyReplicas:1<span style="color:#ce5c00;font-weight:bold">]]</span>
+map<span style="color:#ce5c00;font-weight:bold">[</span>kind:Deployment...readyReplicas:1<span style="color:#ce5c00;font-weight:bold">]]</span>
+</code></pre></div><hr>
+
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Literal Syntax</h4>
+<p>On Windows, you must double quote any JSONPath template that contains spaces (not single quote as shown above for bash).
+This in turn means that you must use a single quote or escaped double quote around any literals in the template.</p>
+<p>For example:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:<span style="color:#4e9a06">\&gt;</span> kubectl get pods -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;{range .items[*]}{.metadata.name}{&#39;\t&#39;}{.status.startTime}{&#39;\n&#39;}{end}&#34;</span>
+</code></pre></div>
+</div>
+
+
 	
 		<style>
   .feedback--answer {
@@ -1262,7 +1307,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 16, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/1f9283ef7ee9bfbbfd3afaa7d4118b13f3e22564">reference updated (1f9283e)</a>
 </div>
 </div>
 

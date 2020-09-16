@@ -151,7 +151,7 @@ map[kind:Deployment...readyReplicas:1]]
 
 --- -->
 
-{{< alert color="warning" title="Literal Syntax" >}}
+<!-- {{< alert color="warning" title="Literal Syntax" >}}
 On Windows, you must double quote any JSONPath template that contains spaces (not single quote as shown above for bash).
 This in turn means that you must use a single quote or escaped double quote around any literals in the template.
 
@@ -160,4 +160,4 @@ For example:
 ```bash
 C:\> kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}{'\t'}{.status.startTime}{'\n'}{end}"
 ```
-{{< /alert >}}
+{{< /alert >}} -->

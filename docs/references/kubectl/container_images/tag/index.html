@@ -30,7 +30,7 @@
 <meta itemprop="description" content="Override or set the Tag for Container Images
 ">
 <meta itemprop="dateModified" content="2020-09-15T17:04:48+05:30" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="238">
 
 
 
@@ -328,6 +328,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagesname" href="/cli-experimental/references/kubectl/container_images/name/">Name - Image</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlcontainer_imagesdigest" href="/cli-experimental/references/kubectl/container_images/digest/">Digest - Image</a>
       
       
       
@@ -1144,6 +1150,14 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#setting-a-tag">Setting a Tag</a></li>
+    <li><a href="#setting-a-tag-from-the-latest-commit-sha">Setting a Tag from the latest commit SHA</a></li>
+    <li><a href="#setting-a-tag-from-an-environment-variable">Setting a Tag from an Environment Variable</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -1199,7 +1213,40 @@
 <div class="td-content">
 	<h1>Tag - Image</h1>
 	<div class="lead">Override or set the Tag for Container Images</div>
-	
+	<h2 id="setting-a-tag">Setting a Tag</h2>
+<p>The tag for an image may be set by specifying <code>newTag</code> and the name of the container image.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># kustomization.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kustomize.config.k8s.io/v1beta1<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>Kustomization<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">images</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mycontainerregistry/myimage<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">newTag</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>v1<span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h2 id="setting-a-tag-from-the-latest-commit-sha">Setting a Tag from the latest commit SHA</h2>
+<p>A common CI/CD pattern is to tag container images with the git commit SHA of source code.  e.g. if
+the image name is <code>foo</code> and an image was built for the source code at commit <code>1bb359ccce344ca5d263cd257958ea035c978fd3</code>
+then the container image would be <code>foo:1bb359ccce344ca5d263cd257958ea035c978fd3</code>.</p>
+<p>A simple way to push an image that was just built without manually updating the image tags is to
+download the <a href="https://github.com/kubernetes-sigs/kustomize/">kustomize standalone</a> tool and run
+<code>kustomize edit set image</code> command to update the tags for you.</p>
+<p><strong>Example:</strong> Set the latest git commit SHA as the image tag for <code>foo</code> images.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kustomize edit <span style="color:#204a87">set</span> image foo:<span style="color:#204a87;font-weight:bold">$(</span>git log -n <span style="color:#0000cf;font-weight:bold">1</span> --pretty<span style="color:#ce5c00;font-weight:bold">=</span>format:<span style="color:#4e9a06">&#34;%H&#34;</span><span style="color:#204a87;font-weight:bold">)</span>
+kubectl apply -f .
+</code></pre></div><h2 id="setting-a-tag-from-an-environment-variable">Setting a Tag from an Environment Variable</h2>
+<p>It is also possible to set a Tag from an environment variable using the same technique for setting from a commit SHA.</p>
+<p><strong>Example:</strong> Set the tag for the <code>foo</code> image to the value in the environment variable <code>FOO_IMAGE_TAG</code>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kustomize edit <span style="color:#204a87">set</span> image foo:<span style="color:#000">$FOO_IMAGE_TAG</span>
+kubectl apply -f .
+</code></pre></div>
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Committing Image Tag Updates</h4>
+The <code>kustomization.yaml</code> changes <em>may</em> be committed back to git so that they
+can be audited.  When committing the image tag updates that have already
+been pushed by a CI/CD system, be careful not to trigger new builds +
+deployments for these changes.
+</div>
+
+
 	
 		<style>
   .feedback--answer {

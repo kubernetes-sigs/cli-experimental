@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/fields/" />
-<meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-16T10:06:31+05:30" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="Fields">
 <meta itemprop="description" content="Prints based on Field values
 ">
-
-<meta itemprop="wordCount" content="456">
+<meta itemprop="dateModified" content="2020-09-16T10:06:31+05:30" />
+<meta itemprop="wordCount" content="457">
 
 
 
@@ -618,7 +618,7 @@ map[kind:Deployment...readyReplicas:1]]
 ```
 
 --- -->
-
+<!-- 
 
 <div class="alert alert-warning" role="alert">
 <h4 class="alert-heading">Literal Syntax</h4>
@@ -628,7 +628,7 @@ This in turn means that you must use a single quote or escaped double quote arou
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:<span style="color:#4e9a06">\&gt;</span> kubectl get pods -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;{range .items[*]}{.metadata.name}{&#39;\t&#39;}{.status.startTime}{&#39;\n&#39;}{end}&#34;</span>
 </code></pre></div>
 </div>
-
+ -->
 
 	
 		<style>
@@ -692,7 +692,7 @@ This in turn means that you must use a single quote or escaped double quote arou
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 16, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/1f9283ef7ee9bfbbfd3afaa7d4118b13f3e22564">reference updated (1f9283e)</a>
 </div>
 </div>
 
