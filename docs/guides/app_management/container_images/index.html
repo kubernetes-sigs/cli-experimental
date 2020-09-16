@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/container_images/" />
-<meta property="article:modified_time" content="2020-09-15T17:04:48+05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-16T12:51:16+05:30" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="Container Images">
 <meta itemprop="description" content="Dealing with Application Containers
 ">
-<meta itemprop="dateModified" content="2020-09-15T17:04:48+05:30" />
-<meta itemprop="wordCount" content="364">
+<meta itemprop="dateModified" content="2020-09-16T12:51:16+05:30" />
+<meta itemprop="wordCount" content="303">
 
 
 
@@ -403,18 +403,7 @@
 <div class="td-content">
 	<h1>Container Images</h1>
 	<div class="lead">Dealing with Application Containers</div>
-	<!-- 
-
-
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">TL;DR</h4>
-<ul>
-<li>Override or set the Name and Tag for Container Images</li>
-</ul>
-
-</div>
- -->
-<h2 id="motivation">Motivation</h2>
+	<h2 id="motivation">Motivation</h2>
 <p>It may be useful to define the tags or digests of container images which are used across many Workloads.</p>
 <p>Container image tags and digests are used to refer to a specific version or instance of a container
 image - e.g. for the <code>nginx</code> container image you might use the tag <code>1.15.9</code> or <code>1.14.2</code>.</p>
@@ -433,17 +422,6 @@ the project</li>
 Check out the <a href="../../../references">References</a> to learn how to override or set the Name and Tag for Container Images
 </div>
 
-<!-- See [Bases and Variations](../app_customization/bases_and_variants.md) for more details on Copying Projects. -->
-<!-- 
-
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Reference</h4>
-<ul>
-<li><a href="../reference/kustomize.md#images">images</a></li>
-</ul>
-
-</div>
- -->
 <h2 id="images">images</h2>
 <p>It is possible to set image tags for container images through
 the <code>kustomization.yaml</code> using the <code>images</code> field.  When <code>images</code> are
@@ -533,82 +511,7 @@ This will set the name and tag for <em>all</em> images matching the <em>name</em
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#8f5902;font-style:italic"># The image has been changed</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>nginx-special<span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">1.8.0</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>nginx<span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><!-- ## Setting a Name
-
-The name for an image may be set by specifying `newName` and the name of the old container image.
-```yaml
-# kustomization.yaml
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-images:
-  - name: mycontainerregistry/myimage
-    newName: differentregistry/myimage
-```
-
-## Setting a Tag
-
-The tag for an image may be set by specifying `newTag` and the name of the container image.
-```yaml
-# kustomization.yaml
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-images:
-  - name: mycontainerregistry/myimage
-    newTag: v1
-```
-
-## Setting a Digest
-
-The digest for an image may be set by specifying `digest` and the name of the container image.
-```yaml
-# kustomization.yaml
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-images:
-  - name: alpine
-    digest: sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3
-```
-
-
-## Setting a Tag from the latest commit SHA
-
-A common CI/CD pattern is to tag container images with the git commit SHA of source code.  e.g. if
-the image name is `foo` and an image was built for the source code at commit `1bb359ccce344ca5d263cd257958ea035c978fd3`
-then the container image would be `foo:1bb359ccce344ca5d263cd257958ea035c978fd3`.
-
-A simple way to push an image that was just built without manually updating the image tags is to
-download the [kustomize standalone](https://github.com/kubernetes-sigs/kustomize/) tool and run
-`kustomize edit set image` command to update the tags for you.
-
-**Example:** Set the latest git commit SHA as the image tag for `foo` images.
-
-```bash
-kustomize edit set image foo:$(git log -n 1 --pretty=format:"%H")
-kubectl apply -f .
-```
-
-## Setting a Tag from an Environment Variable
-
-It is also possible to set a Tag from an environment variable using the same technique for setting from a commit SHA.
-
-**Example:** Set the tag for the `foo` image to the value in the environment variable `FOO_IMAGE_TAG`.
-
-```bash
-kustomize edit set image foo:$FOO_IMAGE_TAG
-kubectl apply -f .
-```
-
-
-
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Committing Image Tag Updates</h4>
-The <code>kustomization.yaml</code> changes <em>may</em> be committed back to git so that they
-can be audited.  When committing the image tag updates that have already
-been pushed by a CI/CD system, be careful not to trigger new builds +
-deployments for these changes.
-</div>
- -->
-
+</span></code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -671,7 +574,7 @@ deployments for these changes.
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 15, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/d38f4837faed30aba62536c92dbce787a23f0def">guides / references update - app mgmt (d38f483)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 16, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/445d2040fd04bf4275b0ac64aeed4b42f564dbb1">reference update (445d204)</a>
 </div>
 </div>
 

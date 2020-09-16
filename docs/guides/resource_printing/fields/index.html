@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/fields/" />
-<meta property="article:modified_time" content="2020-09-16T10:06:31+05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-16T12:51:16+05:30" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="Fields">
 <meta itemprop="description" content="Prints based on Field values
 ">
-<meta itemprop="dateModified" content="2020-09-16T10:06:31+05:30" />
-<meta itemprop="wordCount" content="457">
+<meta itemprop="dateModified" content="2020-09-16T12:51:16+05:30" />
+<meta itemprop="wordCount" content="405">
 
 
 
@@ -544,91 +544,6 @@ this group / version may have changed the representation of fields.</p>
 Check out the <a href="../../../references">References</a> to learn how to format and print specific fields from Resources
 </div>
 
-<!-- Print the JSON representation of the first Deployment in the list on a single line.
-
-```bash
-kubectl get deployment.v1.apps -o=jsonpath='{.items[0]}{"\n"}'
-
-```
-
-```bash
-map[apiVersion:apps/v1 kind:Deployment...replicas:1 updatedReplicas:1]]
-```
-
----
-
-Print the `metadata.name` field for the first Deployment in the list.
-
-```bash
-kubectl get deployment.v1.apps -o=jsonpath='{.items[0].metadata.name}{"\n"}'
-```
-
-```bash
-nginx
-```
-
----
-
-For each Deployment, print its `metadata.name` field and a newline afterward.
-
-```bash
-kubectl get deployment.v1.apps -o=jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'
-```
-
-```bash
-nginx
-nginx2
-```
-
----
-
-For each Deployment, print its `metadata.name` and `.status.availableReplicas`.
-
-```bash
-kubectl get deployment.v1.apps -o=jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.availableReplicas}{"\n"}{end}'
-```
-```bash
-nginx	1
-nginx2	1
-```
-
----
-
-Print the list of Deployments as single line.
-
-```bash
-kubectl get deployment.v1.apps -o=jsonpath='{@}{"\n"}'
-```
-
-```bash
-map[kind:List apiVersion:v1 metadata:map[selfLink: resourceVersion:] items:[map[apiVersion:apps/v1 kind:Deployment...replicas:1 updatedReplicas:1]]]]
-```
-
----
-
-Print each Deployment on a new line.
-
-```bash
-kubectl get deployment.v1.apps -o=jsonpath='{range .items[*]}{@}{"\n"}{end}'
-```
-
-```bash
-map[kind:Deployment...readyReplicas:1]]
-map[kind:Deployment...readyReplicas:1]]
-```
-
---- -->
-<!-- 
-
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Literal Syntax</h4>
-<p>On Windows, you must double quote any JSONPath template that contains spaces (not single quote as shown above for bash).
-This in turn means that you must use a single quote or escaped double quote around any literals in the template.</p>
-<p>For example:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:<span style="color:#4e9a06">\&gt;</span> kubectl get pods -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;{range .items[*]}{.metadata.name}{&#39;\t&#39;}{.status.startTime}{&#39;\n&#39;}{end}&#34;</span>
-</code></pre></div>
-</div>
- -->
 
 	
 		<style>
@@ -692,7 +607,7 @@ This in turn means that you must use a single quote or escaped double quote arou
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 16, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/1f9283ef7ee9bfbbfd3afaa7d4118b13f3e22564">reference updated (1f9283e)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 16, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/445d2040fd04bf4275b0ac64aeed4b42f564dbb1">reference update (445d204)</a>
 </div>
 </div>
 

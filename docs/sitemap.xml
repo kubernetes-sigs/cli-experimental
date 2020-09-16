@@ -4,12 +4,12 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/merging_resources/add/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/label_annotations/annotations/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -29,7 +29,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/cluster_client_versions/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -44,7 +44,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/default/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -54,17 +54,17 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/apply/files/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/c_from_files/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/secret/s_from_files/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -119,17 +119,17 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/label_annotations/labels/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/container_images/name/</loc>
-    <lastmod>2020-09-15T17:04:48+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/namespaces/namespaces/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -154,7 +154,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/wide/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -184,7 +184,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/control_plane/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -199,11 +199,12 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/custom_columns/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/container_images/digest/</loc>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -213,7 +214,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/c_from_literals/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -243,7 +244,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/apply/kustomize/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -253,7 +254,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/namespaces/names/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -263,7 +264,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/raw/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -283,7 +284,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/merging_resources/update/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -308,7 +309,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/merging_resources/delete/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -323,17 +324,17 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/fields/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/fields/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/c_env_files/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -343,12 +344,12 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/labels/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/nodes/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -373,7 +374,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/secrets_configmaps/</loc>
-    <lastmod>2020-09-15T17:04:48+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -383,12 +384,12 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/container_images/tag/</loc>
-    <lastmod>2020-09-15T17:04:48+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/apis/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -408,7 +409,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/container_images/</loc>
-    <lastmod>2020-09-15T17:04:48+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -448,7 +449,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_labels/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -468,12 +469,12 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/namespaces_names/</loc>
-    <lastmod>2020-09-15T17:04:48+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/propogating_name_suffix/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -488,7 +489,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_kind/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -503,7 +504,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/labels_annotations/</loc>
-    <lastmod>2020-09-15T17:04:48+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
@@ -543,7 +544,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/describe/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-16T12:51:16+05:30</lastmod>
   </url>
   
   <url>
