@@ -13,5 +13,44 @@
       
     
     
+    <item>
+      <title>References: Add</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/merging_resources/add/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/merging_resources/add/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Update</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/merging_resources/update/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/merging_resources/update/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Delete</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/merging_resources/delete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/merging_resources/delete/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,6 +1,6 @@
 ---
-title: "Documentation"
-linkTitle: "Documentation"
+title: "temp"
+linkTitle: "temp"
 weight: 2
 type: docs
 menu:

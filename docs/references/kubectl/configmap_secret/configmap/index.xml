@@ -1,0 +1,56 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – ConfigMaps</title>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/</link>
+    <description>Recent content in ConfigMaps on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>References: From Files</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/c_from_files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/c_from_files/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: From Literals</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/c_from_literals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/c_from_literals/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: From Environment Files</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/c_env_files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/configmap_secret/configmap/c_env_files/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

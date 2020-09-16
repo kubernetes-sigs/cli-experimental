@@ -91,5 +91,131 @@
       </description>
     </item>
     
+    <item>
+      <title>References: Get</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Describe</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/describe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/describe/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Queries and Options</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/queries_options/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/queries_options/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;resource-config-by-kustomizationyaml&#34;&gt;Resource Config By &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Get all Resources provided by the &lt;code&gt;kustomization.yaml&lt;/code&gt; in project/.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get -k project/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;resource-config-by-dir&#34;&gt;Resource Config By Dir&lt;/h2&gt;
+&lt;p&gt;Get all Resources present in the Resource Config for a directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get -f configs/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;resource-types&#34;&gt;Resource Types&lt;/h2&gt;
+&lt;p&gt;Get &lt;strong&gt;all&lt;/strong&gt; Resources in a namespace for a given type.&lt;/p&gt;
+&lt;p&gt;The Group and Version for the Resource are determined by the apiserver discovery service.&lt;/p&gt;
+&lt;p&gt;The Singular, Plural, Short Name also apply to &lt;em&gt;Types with Name&lt;/em&gt; and &lt;em&gt;Types with Selectors&lt;/em&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Plural&lt;/span&gt;
+kubectl get deployments
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Singular&lt;/span&gt;
+kubectl get deployment
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Short name&lt;/span&gt;
+kubectl get deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;resource-types-with-group--version&#34;&gt;Resource Types with Group / Version&lt;/h2&gt;
+&lt;p&gt;Get &lt;strong&gt;all&lt;/strong&gt; Resources in a namespace for a given type.&lt;/p&gt;
+&lt;p&gt;The Group and Version for the Resource are explicit.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments.apps
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments.v1.apps
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;resource-types-with-name&#34;&gt;Resource Types with Name&lt;/h2&gt;
+&lt;p&gt;Get named Resources in a namespace for a given type.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployment nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;label-selector&#34;&gt;Label Selector&lt;/h2&gt;
+&lt;p&gt;Get &lt;strong&gt;all&lt;/strong&gt; Resources in a namespace &lt;strong&gt;matching a label select&lt;/strong&gt; for a given type.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments -l &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;namespaces&#34;&gt;Namespaces&lt;/h2&gt;
+&lt;p&gt;By default Get and Describe will fetch resource in the default namespace or the namespace specified
+with &lt;code&gt;--namespace&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;--all-namespaces&lt;/code&gt; flag will &lt;strong&gt;fetch Resources from all namespaces&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments --all-namespaces
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;list-multiple-resource-types&#34;&gt;List multiple Resource types&lt;/h2&gt;
+&lt;p&gt;Get and Describe can accept &lt;strong&gt;multiple Resource types&lt;/strong&gt;, and it will print them both in separate sections.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments,services
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;list-multiple-resource-types-by-name&#34;&gt;List multiple Resource types by name&lt;/h2&gt;
+&lt;p&gt;Get and Describe can accept &lt;strong&gt;multiple Resource types and names&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get rc/web service/frontend pods/web-pod-13je7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;not-found&#34;&gt;Not Found&lt;/h2&gt;
+&lt;p&gt;By default, Get or Describe &lt;strong&gt;will return an error if an object is requested and doesn&amp;rsquo;t exist&lt;/strong&gt;.
+The &lt;code&gt;--ignore-not-found&lt;/code&gt; flag will cause kubectl to exit 0 if the Resource is not found&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployment nginx --ignore-not-found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Cluster Info</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cluster_info/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Watch</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/watch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/watch/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Continuously Watch and print Resources as they change&lt;/p&gt;
+&lt;p&gt;Print Resources as they are updated.&lt;/p&gt;
+&lt;p&gt;It is possible to have &lt;code&gt;kubectl get&lt;/code&gt; &lt;strong&gt;continuously watch for changes to objects&lt;/strong&gt;, and print the objects
+when they are changed or when the watch is reestablished.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments --watch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+nginx     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;         &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;         &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;            &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;           6h
+nginx2    &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;         &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;         &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;            &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;           21m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Watch Timeouts&lt;/h4&gt;
+Watch &lt;strong&gt;timesout after 5 minutes&lt;/strong&gt;, after which kubectl will re-establish the watch and print the
+resources.
+&lt;/div&gt;
+
+&lt;p&gt;It is possible to have &lt;code&gt;kubectl get&lt;/code&gt; continuously watch for changes to objects &lt;strong&gt;without fetching them first&lt;/strong&gt;
+using the &lt;code&gt;--watch-only&lt;/code&gt; flag.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments --watch-only
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
   </channel>
 </rss>
