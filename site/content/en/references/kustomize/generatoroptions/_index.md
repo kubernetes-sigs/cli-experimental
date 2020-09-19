@@ -3,15 +3,15 @@ title: "generatorOptions"
 linkTitle: "generatorOptions"
 type: docs
 description: >
-    Control behavior of [ConfigMap](/kustomize/api-reference/kustomization/configmapgenerator) and
-    [Secret](/kustomize/api-reference/kustomization/secretgenerator) generators.
+    Control behavior of [ConfigMap]() and
+    [Secret]() generators.
 ---
 
 
 
 Additionally, generatorOptions can be set on a per resource level within each
 generator. For details on per-resource generatorOptions usage see
-[field-name-configMapGenerator](/kustomize/api-reference/kustomization/configmapgenerator) and See [field-name-secretGenerator](/kustomize/api-reference/kustomization/secretgenerator).
+[field-name-configMapGenerator]() and See [field-name-secretGenerator]().
 
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -28,4 +28,87 @@ generatorOptions:
   # suffix to the names of generated resources that is a hash of
   # the resource contents.
   disableNameSuffixHash: true
+```
+
+## Example I
+
+Using ConfigMap
+
+### Input Files
+
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+- name: my-application-properties
+  files:
+  - application.properties
+generatorOptions:
+  labels:
+    kustomize.generated.resources: config-label
+  annotations:
+    kustomize.generated.resource: config-annotation
+```
+
+```yaml
+# application.properties
+FOO=Bar
+```
+
+### Output File
+
+```yaml
+apiVersion: v1
+data:
+  application.properties: |-
+    # application.properties
+    FOO=Bar
+kind: ConfigMap
+metadata:
+  annotations:
+    kustomize.generated.resource: config-annotation
+  labels:
+    kustomize.generated.resources: config-label
+  name: my-application-properties-f7mm6mhf59
+```
+
+## Example II
+
+Using Secrets
+
+### Input Files
+
+```yaml
+# kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+secretGenerator:
+- name: app-tls
+  files:
+    - "tls.cert"
+    - "tls.key"
+  type: "kubernetes.io/tls"
+generatorOptions:
+  labels:
+    kustomize.generated.resources: secret-label
+  annotations:
+    kustomize.generated.resource: secret-annotation
+  disableNameSuffixHash: true
+```
+
+### Output File
+
+```yaml
+apiVersion: v1
+data:
+  tls.cert: TFMwdExTMUNSVWQuLi50Q2c9PQ==
+  tls.key: TFMwdExTMUNSVWQuLi4wdExRbz0=
+kind: Secret
+metadata:
+  annotations:
+    kustomize.generated.resource: secret-annotation
+  labels:
+    kustomize.generated.resources: secret-label
+  name: app-tls
+type: kubernetes.io/tls
 ```

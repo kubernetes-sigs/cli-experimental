@@ -1,6 +1,6 @@
 ---
-title: "References"
-linkTitle: "References"
+title: "Reference"
+linkTitle: "Reference"
 weight: 1
 type: docs
 menu:

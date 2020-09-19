@@ -8,7 +8,7 @@ description: >
 
 Each entry in the argument list results in the creation of one Secret resource (it's a generator of N secrets).
 
-This works like the [configMapGenerator](/kustomize/api-reference/kustomization/configmapgenerator).
+This works like the [configMapGenerator]().
 
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -42,3 +42,53 @@ secretGenerator:
     labels:
       app.kubernetes.io/name: "app2"
 ```
+
+Secret Resources may be generated much like ConfigMaps can. This includes generating them
+from literals, files or environment files.
+
+{{< alert color="success" title="Secret Syntax" >}}
+Secret type is set using the `type` field.
+{{< /alert >}}
+
+## Example
+
+### File Input
+
+```yaml
+# kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+secretGenerator:
+- name: app-tls
+  files:
+    - "tls.cert"
+    - "tls.key"
+  type: "kubernetes.io/tls"
+```
+
+```yaml
+# tls.cert
+LS0tLS1CRUd...tCg==
+```
+
+```yaml
+# tls.key
+LS0tLS1CRUd...0tLQo=
+```
+
+### Build Output
+
+```yaml
+apiVersion: v1
+data:
+  tls.cert: TFMwdExTMUNSVWQuLi50Q2c9PQ==
+  tls.key: TFMwdExTMUNSVWQuLi4wdExRbz0=
+kind: Secret
+metadata:
+  name: app-tls-c888dfbhf8
+type: kubernetes.io/tls
+```
+
+{{< alert color="warning" title="Important" >}}
+It is important to note that the secrets are `base64` encoded
+{{< /alert >}}

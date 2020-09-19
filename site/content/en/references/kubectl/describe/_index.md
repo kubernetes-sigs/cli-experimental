@@ -1,16 +1,23 @@
 ---
-title: "Describe"
-linkTitle: "Describe"
+title: "describe"
+linkTitle: "describe"
 weight: 8
 type: docs
 description: >
     Describing Kubernetes resources
 ---
 
+Show details of a specific resource or group of resources
+
+Print a detailed description of the selected resources, including related resources such as events or controllers. You may select a single object by name, all objects of that type, provide a name prefix, or label selector.
+
+### Command
+
 ```bash
 kubectl describe deployments
 ```
 
+### Output
 ```bash
 Name:                   nginx
 Namespace:              default

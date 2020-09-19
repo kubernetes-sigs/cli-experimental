@@ -8,8 +8,7 @@ description: >
 
 Given this kubernetes Deployment fragment:
 
-```
-# deployment.yaml
+```yaml
 kind: Deployment
 metadata:
   name: deployment-name
@@ -20,7 +19,7 @@ spec:
 one can change the number of replicas to 5
 by adding the following to your kustomization:
 
-```
+```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 

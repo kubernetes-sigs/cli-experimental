@@ -28,7 +28,7 @@ Files should contain k8s resources in YAML form. A file may contain multiple res
 the document marker `---`.  File paths should be specified _relative_ to the directory holding the
 kustomization file containing the `resources` field.
 
-[hashicorp URL]: https://github.com/hashicorp/go-getter#url-format
-
 Directory specification can be relative, absolute, or part of a URL.  URL specifications should
 follow the [hashicorp URL] format.  The directory must contain a `kustomization.yaml` file.
+
+[hashicorp URL]: https://github.com/hashicorp/go-getter#url-format
