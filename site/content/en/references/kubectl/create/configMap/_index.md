@@ -15,7 +15,7 @@ A ConfigMap allows you to decouple environment-specific configuration from your 
 ConfigMap does not provide secrecy or encryption. If the data you want to store are confidential, use a Secret rather than a ConfigMap, or use additional (third party) tools to keep your data private.
 {{< /alert >}}
 
-# Command using File
+## Command `using File`
 
 ```bash
 kubectl create configmap my-config --from-file=path/to/bar
@@ -45,7 +45,7 @@ NAME        DATA   AGE
 my-config   1      21s
 ```
 
-# Command using Literal
+## Command `using Literal`
 
 ```bash
 kubectl create configmap my-config --from-literal=key1=config1 --from-literal=key2=config2
@@ -68,7 +68,7 @@ NAME        DATA   AGE
 my-config   1      21s
 ```
 
-# Command using env file
+## Command `using env file`
 
 ```bash
 kubectl create configmap my-config --from-env-file=path/to/bar.env

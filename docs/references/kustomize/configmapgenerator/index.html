@@ -385,6 +385,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/diff/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">diff</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectldiff">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/edit/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">edit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectledit">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/cli-experimental/references/kubectl/expose/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">expose</a>
   </li>
   <ul>
@@ -471,7 +517,7 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/references/kubectl/get/options/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Options</a>
+    <a  href="/cli-experimental/references/kubectl/get/options/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">options</a>
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectlgetoptions">
@@ -524,6 +570,75 @@
   </ul>
 </ul>
 
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/kustomize/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">kustomize</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlkustomize">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/label/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">label</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectllabel">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/patch/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">patch</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlpatch">
+      
       
       
     </li>
@@ -1061,19 +1176,19 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#configmap-from-file">ConfigMap from File</a>
+    <li><a href="#configmap-from-file">ConfigMap <code>from File</code></a>
       <ul>
         <li><a href="#file-input">File Input</a></li>
         <li><a href="#build-output">Build Output</a></li>
       </ul>
     </li>
-    <li><a href="#configmap-from-literals">ConfigMap from Literals</a>
+    <li><a href="#configmap-from-literals">ConfigMap <code>from Literals</code></a>
       <ul>
         <li><a href="#file-input-1">File Input</a></li>
         <li><a href="#build-output-1">Build Output</a></li>
       </ul>
     </li>
-    <li><a href="#configmap-from-environment-files">ConfigMap from Environment Files</a>
+    <li><a href="#configmap-from-env-file">ConfigMap <code>from env file</code></a>
       <ul>
         <li><a href="#file-input-2">File Input</a></li>
         <li><a href="#build-output-2">Build Output</a></li>
@@ -1200,7 +1315,7 @@ configmap is created is <code>whatever.ini</code>.</p>
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>app-whatever<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">files</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span>- myFileName.ini=whatever.ini<span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h2 id="configmap-from-file">ConfigMap from File</h2>
+</span></code></pre></div><h2 id="configmap-from-file">ConfigMap <code>from File</code></h2>
 <p>ConfigMap Resources may be generated from files - such as a java <code>.properties</code> file.  To generate a ConfigMap
 Resource for a file, add an entry to <code>configMapGenerator</code> with the filename.</p>
 <p><strong>Example:</strong> Generate a ConfigMap with a data item containing the contents of a file.</p>
@@ -1226,7 +1341,7 @@ appear as a single data item in the ConfigMap keyed by the filename.</p>
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>ConfigMap<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>my-application-properties-f7mm6mhf59<span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h2 id="configmap-from-literals">ConfigMap from Literals</h2>
+</span></code></pre></div><h2 id="configmap-from-literals">ConfigMap <code>from Literals</code></h2>
 <p>ConfigMap Resources may be generated from literal key-value pairs - such as <code>JAVA_HOME=/opt/java/jdk</code>.
 To generate a ConfigMap Resource from literal key-value pairs, add an entry to <code>configMapGenerator</code> with a
 list of <code>literals</code>.</p>
@@ -1261,7 +1376,7 @@ list of <code>literals</code>.</p>
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>ConfigMap<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>my-java-server-env-vars-44k658k8gk<span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h2 id="configmap-from-environment-files">ConfigMap from Environment Files</h2>
+</span></code></pre></div><h2 id="configmap-from-env-file">ConfigMap <code>from env file</code></h2>
 <p>ConfigMap Resources may be generated from key-value pairs much the same as using the literals option
 but taking the key-value pairs from an environment file. These generally end in <code>.env</code>.
 To generate a ConfigMap Resource from an environment file, add an entry to <code>configMapGenerator</code> with a
@@ -1496,6 +1611,16 @@ Apply will update the name to include the suffix applied to the ConfigMap name.<
         
             
         
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
     
 </div>
 
@@ -1561,7 +1686,7 @@ Apply will update the name to include the suffix applied to the ConfigMap name.<
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 15, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/c773adb713a84240893c677d7ca7bd6a4acfa95d">kustomize reference added (c773adb)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 19, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/f01448644ccc8d475c90014400fd70f0293d225f">reference changes (f014486)</a>
 </div>
 </div>
 

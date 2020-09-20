@@ -22,17 +22,17 @@
 <link rel="icon" type="image/png" href="/cli-experimental/favicons/android-192x192.png" sizes="192x192">
 
 <title>deployment | SIG CLI</title><meta property="og:title" content="deployment" />
-<meta property="og:description" content="Create a Deployment that provides declarative updates for Pods ReplicaSets.
+<meta property="og:description" content="Create a deployment with the specified name.
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/deployment/" />
 <meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="deployment">
-<meta itemprop="description" content="Create a Deployment that provides declarative updates for Pods ReplicaSets.
+<meta itemprop="description" content="Create a deployment with the specified name.
 ">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="deployment"/>
-<meta name="twitter:description" content="Create a Deployment that provides declarative updates for Pods ReplicaSets.
+<meta name="twitter:description" content="Create a deployment with the specified name.
 "/>
 
 
@@ -385,6 +385,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/diff/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">diff</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectldiff">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/edit/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">edit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectledit">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/cli-experimental/references/kubectl/expose/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">expose</a>
   </li>
   <ul>
@@ -471,7 +517,7 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/references/kubectl/get/options/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Options</a>
+    <a  href="/cli-experimental/references/kubectl/get/options/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">options</a>
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectlgetoptions">
@@ -524,6 +570,75 @@
   </ul>
 </ul>
 
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/kustomize/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">kustomize</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlkustomize">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/label/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">label</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectllabel">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/patch/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">patch</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlpatch">
+      
       
       
     </li>
@@ -1061,30 +1176,11 @@
 
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#command">Command</a></li>
     <li><a href="#example">Example</a>
       <ul>
-        <li><a href="#input-file">Input File</a></li>
-        <li><a href="#command">Command</a></li>
-        <li><a href="#output">Output</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#example-1">Example</a>
-      <ul>
         <li><a href="#command-1">Command</a></li>
-        <li><a href="#output-1">Output</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#example-2">Example</a>
-      <ul>
-        <li><a href="#input-file-1">Input File</a></li>
-        <li><a href="#command-2">Command</a></li>
-        <li><a href="#output-2">Output</a></li>
+        <li><a href="#output">Output</a></li>
       </ul>
     </li>
   </ul>
@@ -1144,54 +1240,23 @@
             
 <div class="td-content">
 	<h1>deployment</h1>
-	<div class="lead">Create a Deployment that provides declarative updates for Pods ReplicaSets.</div>
-	<p>A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.</p>
-<p>A ConfigMap allows you to decouple environment-specific configuration from your container images, so that your applications are easily portable.</p>
-
-
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Warning</h4>
-ConfigMap does not provide secrecy or encryption. If the data you want to store are confidential, use a Secret rather than a ConfigMap, or use additional (third party) tools to keep your data private.
-</div>
-
-<h1 id="command-using-file">Command using File</h1>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create configmap my-config --from-file<span style="color:#ce5c00;font-weight:bold">=</span>path/to/bar
+	<div class="lead">Create a deployment with the specified name.</div>
+	<p>You describe a desired state in a Deployment, and the Deployment Controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments.</p>
+<h2 id="command">Command</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl create deployment NAME --image<span style="color:#ce5c00;font-weight:bold">=</span>image -- <span style="color:#ce5c00;font-weight:bold">[</span>COMMAND<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>args...<span style="color:#ce5c00;font-weight:bold">]</span>
 </code></pre></div><h2 id="example">Example</h2>
-<h3 id="input-file">Input File</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># application.properties</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>FOO=Bar<span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h3 id="command">Command</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create configmap my-config --from-file<span style="color:#ce5c00;font-weight:bold">=</span>application.properties
-</code></pre></div><h3 id="output">Output</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get configmap
-
-NAME        DATA   AGE
-my-config   <span style="color:#0000cf;font-weight:bold">1</span>      21s
-</code></pre></div><h1 id="command-using-literal">Command using Literal</h1>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create configmap my-config --from-literal<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">key1</span><span style="color:#ce5c00;font-weight:bold">=</span>config1 --from-literal<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">key2</span><span style="color:#ce5c00;font-weight:bold">=</span>config2
-</code></pre></div><h2 id="example-1">Example</h2>
 <h3 id="command-1">Command</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create configmap my-config --from-literal<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">FOO</span><span style="color:#ce5c00;font-weight:bold">=</span>Bar
-</code></pre></div><h3 id="output-1">Output</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get configmap
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl create deployment my-deployment --image<span style="color:#ce5c00;font-weight:bold">=</span>nginx
+</code></pre></div><h3 id="output">Output</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
 
-NAME        DATA   AGE
-my-config   <span style="color:#0000cf;font-weight:bold">1</span>      21s
-</code></pre></div><h1 id="command-using-env-file">Command using env file</h1>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create configmap my-config --from-env-file<span style="color:#ce5c00;font-weight:bold">=</span>path/to/bar.env
-</code></pre></div><h2 id="example-2">Example</h2>
-<h3 id="input-file-1">Input File</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># tracing.env</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>ENABLE_TRACING=<span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>SAMPLER_TYPE=probabilistic<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>SAMPLER_PARAMETERS=<span style="color:#0000cf;font-weight:bold">0.1</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h3 id="command-2">Command</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create configmap my-config --from-file<span style="color:#ce5c00;font-weight:bold">=</span>tracing.env
-</code></pre></div><h3 id="output-2">Output</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get configmap
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+my-deployment   1/1     <span style="color:#0000cf;font-weight:bold">1</span>            <span style="color:#0000cf;font-weight:bold">1</span>           35s
 
-NAME        DATA   AGE
-my-config   <span style="color:#0000cf;font-weight:bold">1</span>      21s
+$ kubectl get pods
+
+NAME                             READY   STATUS    RESTARTS   AGE
+my-deployment-7d6dd5c955-pr4jt   1/1     Running   <span style="color:#0000cf;font-weight:bold">0</span>          15s
 </code></pre></div>
         <div class="section-index">
     
@@ -1199,6 +1264,16 @@ my-config   <span style="color:#0000cf;font-weight:bold">1</span>      21s
     
     
     <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
         
             
         
@@ -1353,7 +1428,7 @@ my-config   <span style="color:#0000cf;font-weight:bold">1</span>      21s
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 19, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/f01448644ccc8d475c90014400fd70f0293d225f">reference changes (f014486)</a>
 </div>
 </div>
 

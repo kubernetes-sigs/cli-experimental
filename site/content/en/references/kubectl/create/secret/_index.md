@@ -16,7 +16,7 @@ Secrets can be created by using any one of the subcommands depending on use case
 - tls
 {{< /alert >}}
 
-# docker-registry
+## `docker-registry`
 - Create a secret for use with a Docker registry
 ```bash
 kubectl create secret docker-registry NAME --docker-username=user --docker-password=password --docker-email=email [--docker-server=string] [--from-literal=key1=value1] [--dry-run=server|client|none]
@@ -37,7 +37,7 @@ NAME                  TYPE                      DATA   AGE
 my-secret             Opaque                    1      14s
 ```
 
-# generic
+## `generic`
 - Create a secret from a local file, directory or literal value
 ```bash
 $ kubectl create generic NAME [--type=string] [--from-file=[key=]source] [--from-literal=key1=value1] [--dry-run=server|client|none]
@@ -64,7 +64,7 @@ NAME                  TYPE                      DATA   AGE
 my-secret             Opaque                    1      14s
 ```
 
-# tls
+## `tls`
 - Create a secret from tls certificate and key
 ```bash
 $ kubectl create secret tls NAME --cert=path/to/cert/file --key=path/to/key/file [--dry-run=server|client|none]

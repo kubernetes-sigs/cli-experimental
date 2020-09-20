@@ -1,6 +1,6 @@
 ---
-title: "Options"
-linkTitle: "Options"
+title: "options"
+linkTitle: "options"
 weight: 4
 type: docs
 description: >

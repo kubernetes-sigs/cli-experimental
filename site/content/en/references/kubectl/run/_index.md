@@ -10,7 +10,7 @@ description: >
 Create and run a particular image in a pod. Pods are the smallest deployable units of computing that you can create and manage in Kubernetes.
 
 {{< alert color="warning" title="Important" >}}
-`run` command is depricated
+`run` command is deprecated
 {{< /alert >}}
 
 ## Command

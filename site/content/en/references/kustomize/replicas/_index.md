@@ -41,3 +41,49 @@ that is one of:
 - `StatefulSet`
 
 For more complex use cases, revert to using a patch.
+
+## Example
+
+### Input File
+
+```yaml
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: the-deployment
+spec:
+  replicas: 5
+  template:
+    containers:
+      - name: the-container
+        image: registry/conatiner:latest
+```
+
+```yaml
+# kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+replicas:
+- name: deployment-name
+  count: 10
+
+resources:
+- deployment.yaml
+```
+
+### Output
+```yaml
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: the-deployment
+spec:
+  replicas: 10
+  template:
+    containers:
+      - name: the-container
+        image: registry/conatiner:latest
+```

@@ -385,6 +385,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/diff/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">diff</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectldiff">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/edit/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">edit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectledit">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/cli-experimental/references/kubectl/expose/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">expose</a>
   </li>
   <ul>
@@ -471,7 +517,7 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/references/kubectl/get/options/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Options</a>
+    <a  href="/cli-experimental/references/kubectl/get/options/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">options</a>
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectlgetoptions">
@@ -524,6 +570,75 @@
   </ul>
 </ul>
 
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/kustomize/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">kustomize</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlkustomize">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/label/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">label</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectllabel">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/patch/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">patch</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlpatch">
+      
       
       
     </li>
@@ -1061,6 +1176,7 @@
 
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#command-using-file">Command <code>using File</code></a></li>
     <li><a href="#example">Example</a>
       <ul>
         <li><a href="#input-file">Input File</a></li>
@@ -1068,18 +1184,14 @@
         <li><a href="#output">Output</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#command-using-literal">Command <code>using Literal</code></a></li>
     <li><a href="#example-1">Example</a>
       <ul>
         <li><a href="#command-1">Command</a></li>
         <li><a href="#output-1">Output</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
+    <li><a href="#command-using-env-file">Command <code>using env file</code></a></li>
     <li><a href="#example-2">Example</a>
       <ul>
         <li><a href="#input-file-1">Input File</a></li>
@@ -1154,7 +1266,7 @@
 ConfigMap does not provide secrecy or encryption. If the data you want to store are confidential, use a Secret rather than a ConfigMap, or use additional (third party) tools to keep your data private.
 </div>
 
-<h1 id="command-using-file">Command using File</h1>
+<h2 id="command-using-file">Command <code>using File</code></h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create configmap my-config --from-file<span style="color:#ce5c00;font-weight:bold">=</span>path/to/bar
 </code></pre></div><h2 id="example">Example</h2>
 <h3 id="input-file">Input File</h3>
@@ -1167,7 +1279,7 @@ ConfigMap does not provide secrecy or encryption. If the data you want to store 
 
 NAME        DATA   AGE
 my-config   <span style="color:#0000cf;font-weight:bold">1</span>      21s
-</code></pre></div><h1 id="command-using-literal">Command using Literal</h1>
+</code></pre></div><h2 id="command-using-literal">Command <code>using Literal</code></h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create configmap my-config --from-literal<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">key1</span><span style="color:#ce5c00;font-weight:bold">=</span>config1 --from-literal<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">key2</span><span style="color:#ce5c00;font-weight:bold">=</span>config2
 </code></pre></div><h2 id="example-1">Example</h2>
 <h3 id="command-1">Command</h3>
@@ -1177,7 +1289,7 @@ my-config   <span style="color:#0000cf;font-weight:bold">1</span>      21s
 
 NAME        DATA   AGE
 my-config   <span style="color:#0000cf;font-weight:bold">1</span>      21s
-</code></pre></div><h1 id="command-using-env-file">Command using env file</h1>
+</code></pre></div><h2 id="command-using-env-file">Command <code>using env file</code></h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create configmap my-config --from-env-file<span style="color:#ce5c00;font-weight:bold">=</span>path/to/bar.env
 </code></pre></div><h2 id="example-2">Example</h2>
 <h3 id="input-file-1">Input File</h3>
@@ -1199,6 +1311,16 @@ my-config   <span style="color:#0000cf;font-weight:bold">1</span>      21s
     
     
     <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
         
             
         
@@ -1353,7 +1475,7 @@ my-config   <span style="color:#0000cf;font-weight:bold">1</span>      21s
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 19, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/f01448644ccc8d475c90014400fd70f0293d225f">reference changes (f014486)</a>
 </div>
 </div>
 

@@ -90,7 +90,7 @@ configMapGenerator:
   - myFileName.ini=whatever.ini
 ```
 
-## ConfigMap from File
+## ConfigMap `from File`
 
 ConfigMap Resources may be generated from files - such as a java `.properties` file.  To generate a ConfigMap
 Resource for a file, add an entry to `configMapGenerator` with the filename.
@@ -132,7 +132,7 @@ metadata:
   name: my-application-properties-f7mm6mhf59
 ```
 
-## ConfigMap from Literals
+## ConfigMap `from Literals`
 
 ConfigMap Resources may be generated from literal key-value pairs - such as `JAVA_HOME=/opt/java/jdk`.
 To generate a ConfigMap Resource from literal key-value pairs, add an entry to `configMapGenerator` with a
@@ -173,7 +173,7 @@ metadata:
   name: my-java-server-env-vars-44k658k8gk
 ```
 
-## ConfigMap from Environment Files
+## ConfigMap `from env file`
 
 ConfigMap Resources may be generated from key-value pairs much the same as using the literals option
 but taking the key-value pairs from an environment file. These generally end in `.env`.

@@ -4,32 +4,30 @@ linkTitle: "namespace"
 weight: 1
 type: docs
 description: >
-    Create a deployment with the specified name.
+    Create a namespace with the specified name.
 ---
 
-You describe a desired state in a Deployment, and the Deployment Controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments.
+Kubernetes supports multiple virtual clusters backed by the same physical cluster. These virtual clusters are called namespaces.
 
 
 ## Command
 ```bash
-$ kubectl create deployment NAME --image=image -- [COMMAND] [args...]
+$ kubectl create namespace NAME [--dry-run=server|client|none]
 ```
 
 ## Example
 
 ### Command
 ```bash
-$ kubectl create deployment my-deployment --image=nginx
+$ kubectl create namespace my-namespace
 ```
 
 ### Output
 ```bash
-$ kubectl get deployments
-NAME            READY   UP-TO-DATE   AVAILABLE   AGE
-my-deployment   1/1     1            1           35s
-$ kubectl get pods
-NAME                             READY   STATUS    RESTARTS   AGE
-my-deployment-7d6dd5c955-pr4jt   1/1     Running   0          15s
+$ kubectl get namespace
+NAME                   STATUS   AGE
+default                Active   41s
+my-namespace           Active   11s
 ```
 
 

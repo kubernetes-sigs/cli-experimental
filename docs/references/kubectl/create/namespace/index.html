@@ -22,17 +22,17 @@
 <link rel="icon" type="image/png" href="/cli-experimental/favicons/android-192x192.png" sizes="192x192">
 
 <title>namespace | SIG CLI</title><meta property="og:title" content="namespace" />
-<meta property="og:description" content="Create a deployment with the specified name.
+<meta property="og:description" content="Create a namespace with the specified name.
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/namespace/" />
 <meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="namespace">
-<meta itemprop="description" content="Create a deployment with the specified name.
+<meta itemprop="description" content="Create a namespace with the specified name.
 ">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="namespace"/>
-<meta name="twitter:description" content="Create a deployment with the specified name.
+<meta name="twitter:description" content="Create a namespace with the specified name.
 "/>
 
 
@@ -385,6 +385,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/diff/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">diff</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectldiff">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/edit/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">edit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectledit">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/cli-experimental/references/kubectl/expose/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">expose</a>
   </li>
   <ul>
@@ -471,7 +517,7 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/references/kubectl/get/options/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Options</a>
+    <a  href="/cli-experimental/references/kubectl/get/options/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">options</a>
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectlgetoptions">
@@ -524,6 +570,75 @@
   </ul>
 </ul>
 
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/kustomize/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">kustomize</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlkustomize">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/label/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">label</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectllabel">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/patch/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">patch</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlpatch">
+      
       
       
     </li>
@@ -1125,20 +1240,18 @@
             
 <div class="td-content">
 	<h1>namespace</h1>
-	<div class="lead">Create a deployment with the specified name.</div>
-	<p>You describe a desired state in a Deployment, and the Deployment Controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments.</p>
+	<div class="lead">Create a namespace with the specified name.</div>
+	<p>Kubernetes supports multiple virtual clusters backed by the same physical cluster. These virtual clusters are called namespaces.</p>
 <h2 id="command">Command</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl create deployment NAME --image<span style="color:#ce5c00;font-weight:bold">=</span>image -- <span style="color:#ce5c00;font-weight:bold">[</span>COMMAND<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>args...<span style="color:#ce5c00;font-weight:bold">]</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl create namespace NAME <span style="color:#ce5c00;font-weight:bold">[</span>--dry-run<span style="color:#ce5c00;font-weight:bold">=</span>server<span style="color:#000;font-weight:bold">|</span>client<span style="color:#000;font-weight:bold">|</span>none<span style="color:#ce5c00;font-weight:bold">]</span>
 </code></pre></div><h2 id="example">Example</h2>
 <h3 id="command-1">Command</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl create deployment my-deployment --image<span style="color:#ce5c00;font-weight:bold">=</span>nginx
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl create namespace my-namespace
 </code></pre></div><h3 id="output">Output</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
-NAME            READY   UP-TO-DATE   AVAILABLE   AGE
-my-deployment   1/1     <span style="color:#0000cf;font-weight:bold">1</span>            <span style="color:#0000cf;font-weight:bold">1</span>           35s
-$ kubectl get pods
-NAME                             READY   STATUS    RESTARTS   AGE
-my-deployment-7d6dd5c955-pr4jt   1/1     Running   <span style="color:#0000cf;font-weight:bold">0</span>          15s
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get namespace
+NAME                   STATUS   AGE
+default                Active   41s
+my-namespace           Active   11s
 </code></pre></div>
         <div class="section-index">
     
@@ -1146,6 +1259,16 @@ my-deployment-7d6dd5c955-pr4jt   1/1     Running   <span style="color:#0000cf;fo
     
     
     <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
         
             
         
@@ -1300,7 +1423,7 @@ my-deployment-7d6dd5c955-pr4jt   1/1     Running   <span style="color:#0000cf;fo
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 19, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/f01448644ccc8d475c90014400fd70f0293d225f">reference changes (f014486)</a>
 </div>
 </div>
 
