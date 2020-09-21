@@ -35,3 +35,14 @@ horizontalpodautoscaler.autoscaling/nginx autoscaled
 ```
 
 This will make sure to auto-scale horizontally when the CPU usage hits 80%.
+
+### Output
+```bash
+$ kubectl get pods
+
+NAME                     READY   STATUS    RESTARTS   AGE
+nginx-6db489d4b7-2rrrm   1/1     Running   0          15s
+nginx-6db489d4b7-vxqwm   1/1     Running   0          53s
+```
+
+Notice that the command has an arg that says `--min=2` the deployment instantaniously auto-scales to 2 pods.

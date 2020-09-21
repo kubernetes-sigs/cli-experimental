@@ -11,6 +11,13 @@ Show details of a specific resource or group of resources
 
 Print a detailed description of the selected resources, including related resources such as events or controllers. You may select a single object by name, all objects of that type, provide a name prefix, or label selector.
 
+## Command
+```bash
+$ kubectl describe (-f FILENAME | TYPE [NAME_PREFIX | -l label] | TYPE/NAME)
+```
+
+## Example
+
 ### Command
 
 ```bash

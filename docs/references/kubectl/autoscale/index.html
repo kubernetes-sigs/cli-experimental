@@ -224,10 +224,56 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/auth/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">auth</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlauth">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/cli-experimental/references/kubectl/autoscale/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">autoscale</a>
   </li>
   <ul>
     <li class="collapse show" id="cli-experimentalreferenceskubectlautoscale">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/cp/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">cp</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlcp">
       
       
       
@@ -412,6 +458,29 @@
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectledit">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/exec/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">exec</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlexec">
       
       
       
@@ -634,6 +703,29 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/logs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">logs</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectllogs">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/cli-experimental/references/kubectl/patch/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">patch</a>
   </li>
   <ul>
@@ -661,6 +753,29 @@
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectlrun">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/scale/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">scale</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlscale">
       
       
       
@@ -1181,6 +1296,7 @@
       <ul>
         <li><a href="#current-state">Current State</a></li>
         <li><a href="#command-1">Command</a></li>
+        <li><a href="#output">Output</a></li>
       </ul>
     </li>
   </ul>
@@ -1246,6 +1362,13 @@ nginx-6db489d4b7-zcc8h   1/1     Running   <span style="color:#0000cf;font-weigh
 
 horizontalpodautoscaler.autoscaling/nginx autoscaled
 </code></pre></div><p>This will make sure to auto-scale horizontally when the CPU usage hits 80%.</p>
+<h3 id="output">Output</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get pods
+
+NAME                     READY   STATUS    RESTARTS   AGE
+nginx-6db489d4b7-2rrrm   1/1     Running   <span style="color:#0000cf;font-weight:bold">0</span>          15s
+nginx-6db489d4b7-vxqwm   1/1     Running   <span style="color:#0000cf;font-weight:bold">0</span>          53s
+</code></pre></div><p>Notice that the command has an arg that says <code>--min=2</code> the deployment instantaniously auto-scales to 2 pods.</p>
 
         <div class="section-index">
     
@@ -1253,6 +1376,16 @@ horizontalpodautoscaler.autoscaling/nginx autoscaled
     
     
     <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
         
             
         

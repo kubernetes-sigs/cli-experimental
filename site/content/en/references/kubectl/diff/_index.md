@@ -14,9 +14,9 @@ Output is always YAML.
 KUBECTL_EXTERNAL_DIFF environment variable can be used to select your own diff command. By default, the "diff" command available in your path will be run with "-u" (unified diff) and "-N" (treat absent files as empty) options.
 
 {{< alert color="warning" title="Exit status" >}}
-- 0 No differences were found. 
-- 1 Differences were found. 
-- >1 Kubectl or diff failed with an error.
+- `0` No differences were found. 
+- `1` Differences were found. 
+- `>1` Kubectl or diff failed with an error.
 {{< /alert >}}
 
 ## Command
