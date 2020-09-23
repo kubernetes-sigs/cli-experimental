@@ -16,6 +16,12 @@ Looks up a Deployment, ReplicaSet, StatefulSet, or ReplicationController by name
 $ kubectl autoscale (-f FILENAME | TYPE NAME | TYPE/NAME) [--min=MINPODS] --max=MAXPODS [--cpu-percent=CPU]
 ```
 
+[OR]
+
+```bash
+$ kubectl hpa (-f FILENAME | TYPE NAME | TYPE/NAME) [--min=MINPODS] --max=MAXPODS [--cpu-percent=CPU]
+```
+`hpa` stands for `Horizontal Pod Autoscale`
 
 ## Example
 
@@ -34,6 +40,14 @@ $ kubectl autoscale deployment nginx --min=2 --max=10 --cpu-percent=80
 horizontalpodautoscaler.autoscaling/nginx autoscaled
 ```
 
+[OR]
+
+```bash
+$ kubectl hpa deployment nginx --min=2 --max=10 --cpu-percent=80
+
+horizontalpodautoscaler.autoscaling/nginx autoscaled
+```
+
 This will make sure to auto-scale horizontally when the CPU usage hits 80%.
 
 ### Output
@@ -45,4 +59,4 @@ nginx-6db489d4b7-2rrrm   1/1     Running   0          15s
 nginx-6db489d4b7-vxqwm   1/1     Running   0          53s
 ```
 
-Notice that the command has an arg that says `--min=2` the deployment instantaniously auto-scales to 2 pods.
+Notice that the command has an arg that says `--min=2`, the deployment instantaniously auto-scales to 2 pods.

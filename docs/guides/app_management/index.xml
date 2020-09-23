@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SIG CLI – App Management</title>
+    <title>SIG CLI – Configuration Management</title>
     <link>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/</link>
-    <description>Recent content in App Management on SIG CLI</description>
+    <description>Recent content in Configuration Management on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/index.xml" rel="self" type="application/rss+xml" />

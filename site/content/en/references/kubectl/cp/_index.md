@@ -70,3 +70,52 @@ drwxr-xr-x   1 root root 4096 Sep 21 03:17 ..
 drwxr-xr-x  10 root root 4096 Sep  8 07:00 usr
 drwxr-xr-x   1 root root 4096 Sep  8 07:00 var
 ```
+
+{{< alert color="warning" title="Install Tar" >}}
+Copy requires that *tar* be installed in the container image.
+{{< /alert >}}
+
+
+## Local to Remote
+
+Copy a local file to a remote Pod in a cluster.
+
+- Local file format is `<path>`
+- Remote file format is `<pod-name>:<path>`
+
+
+```bash
+kubectl cp /tmp/foo_dir <some-pod>:/tmp/bar_dir
+```
+
+
+## Remote to Local
+
+Copy a remote file from a Pod to a local file.
+
+- Local file format is `<path>`
+- Remote file format is `<pod-name>:<path>`
+
+```bash
+kubectl cp <some-pod>:/tmp/foo /tmp/bar
+```
+
+## Specify the Container
+
+Specify the Container within a Pod running multiple containers.
+
+- `-c <container-name>`
+
+```bash
+kubectl cp /tmp/foo <some-pod>:/tmp/bar -c <specific-container>
+```
+
+## Namespaces
+
+Set the Pod namespace by prefixing the Pod name with `<namespace>/` .
+
+- `<pod-namespace>/<pod-name>:<path>`
+
+```bash
+kubectl cp /tmp/foo <some-namespace>/<some-pod>:/tmp/bar
+```

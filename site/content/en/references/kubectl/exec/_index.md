@@ -75,3 +75,20 @@ tmp
 usr
 var
 ```
+
+## Exec Shell
+
+To get a Shell in a Container, use the `-t -i` options to get a tty and attach STDIN.
+
+```bash
+kubectl exec -t -i nginx-78f5d695bd-czm8z bash
+```
+
+```bash
+root@nginx-78f5d695bd-czm8z:/# ls
+bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  root  run  sbin  srv  sys  tmp  usr  var
+```
+
+{{< alert color="success" title="Specifying the Container" >}}
+For Pods running multiple Containers, the Container should be specified with `-c <container-name>`.
+{{< /alert >}}

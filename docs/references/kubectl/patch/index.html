@@ -392,6 +392,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/create/auth_resources/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">roles</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlcreateauth_resources">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -730,6 +753,52 @@
   </li>
   <ul>
     <li class="collapse show" id="cli-experimentalreferenceskubectlpatch">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/port-forward/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">port-forward</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlport-forward">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/proxy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">proxy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlproxy">
       
       
       
@@ -1299,6 +1368,7 @@
         <li><a href="#output">Output</a></li>
       </ul>
     </li>
+    <li><a href="#more-examples">More Examples</a></li>
   </ul>
 </nav>
 
@@ -1367,6 +1437,17 @@ deployment.apps/nginx patched
 
 NAME    READY   UP-TO-DATE   AVAILABLE   AGE
 nginx   1/1     <span style="color:#0000cf;font-weight:bold">1</span>            <span style="color:#0000cf;font-weight:bold">1</span>           26m
+</code></pre></div><h2 id="more-examples">More Examples</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Partially update a node using a strategic merge patch. Specify the patch as JSON.</span>
+kubectl patch node k8s-node-1 -p <span style="color:#4e9a06">&#39;{&#34;spec&#34;:{&#34;unschedulable&#34;:true}}&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Partially update a node using a strategic merge patch. Specify the patch as YAML.</span>
+kubectl patch node k8s-node-1 -p <span style="color:#4e9a06">$&#39;spec:\n unschedulable: true&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Partially update a node identified by the type and name specified in &#34;node.json&#34; using strategic merge patch.</span>
+kubectl patch -f node.json -p <span style="color:#4e9a06">&#39;{&#34;spec&#34;:{&#34;unschedulable&#34;:true}}&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update a container&#39;s image; spec.containers[*].name is required because it&#39;s a merge key.</span>
+kubectl patch pod valid-pod -p <span style="color:#4e9a06">&#39;{&#34;spec&#34;:{&#34;containers&#34;:[{&#34;name&#34;:&#34;kubernetes-serve-hostname&#34;,&#34;image&#34;:&#34;new image&#34;}]}}&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update a container&#39;s image using a json patch with positional arrays.</span>
+kubectl patch pod valid-pod --type<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;json&#39;</span> -p<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;[{&#34;op&#34;: &#34;replace&#34;, &#34;path&#34;: &#34;/spec/containers/0/image&#34;, &#34;value&#34;:&#34;newimage&#34;}]&#39;</span>
 </code></pre></div>
         <div class="section-index">
     
@@ -1374,6 +1455,12 @@ nginx   1/1     <span style="color:#0000cf;font-weight:bold">1</span>           
     
     
     <hr class="panel-line">
+        
+            
+        
+            
+        
+            
         
             
         

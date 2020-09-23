@@ -392,6 +392,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/create/auth_resources/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">roles</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlcreateauth_resources">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -730,6 +753,52 @@
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectlpatch">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/port-forward/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">port-forward</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlport-forward">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/proxy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">proxy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlproxy">
       
       
       
@@ -1306,6 +1375,7 @@
         <li><a href="#output-1">Output</a></li>
       </ul>
     </li>
+    <li><a href="#exec-shell">Exec Shell</a></li>
   </ul>
 </nav>
 
@@ -1399,13 +1469,31 @@ sys
 tmp
 usr
 var
+</code></pre></div><h2 id="exec-shell">Exec Shell</h2>
+<p>To get a Shell in a Container, use the <code>-t -i</code> options to get a tty and attach STDIN.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl <span style="color:#204a87">exec</span> -t -i nginx-78f5d695bd-czm8z bash
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@nginx-78f5d695bd-czm8z:/# ls
+bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  root  run  sbin  srv  sys  tmp  usr  var
 </code></pre></div>
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Specifying the Container</h4>
+For Pods running multiple Containers, the Container should be specified with <code>-c &lt;container-name&gt;</code>.
+</div>
+
+
         <div class="section-index">
     
     
     
     
     <hr class="panel-line">
+        
+            
+        
+            
+        
+            
         
             
         
@@ -1580,7 +1668,7 @@ var
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 21, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/7ad9ec4da3288077b3e96d41e2b5b40d26d20ce1">kubectl reference update (7ad9ec4)</a>
 </div>
 </div>
 

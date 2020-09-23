@@ -1,7 +1,7 @@
 ---
 title: "Resources + Controllers Overview"
 linkTitle: "Resources + Controllers Overview"
-weight: 2
+weight: 3
 type: docs
 description: >
     Kubernetes Resources and Controllers Overview

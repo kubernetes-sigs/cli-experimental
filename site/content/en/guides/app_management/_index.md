@@ -1,8 +1,8 @@
 ---
-title: "App Management"
-linkTitle: "App Management"
-weight: 3
+title: "Configuration Management"
+linkTitle: "Configuration Management"
+weight: 2
 type: docs
 description: >
-    Managing your deployed applications using Kubectl
+    Managing your deployed application's config using Kubectl
 ---

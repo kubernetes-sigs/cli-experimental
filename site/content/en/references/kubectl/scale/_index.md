@@ -42,3 +42,36 @@ $ kubectl get deployments
 NAME    READY   UP-TO-DATE   AVAILABLE   AGE
 nginx   3/3     3            3           87s
 ```
+
+## More Examples
+
+```bash
+# Scale a replicaset named 'foo' to 3.
+kubectl scale --replicas=3 rs/foo
+```
+
+```sh
+# Scale a resource identified by type and name specified in "foo.yaml" to 3.
+kubectl scale --replicas=3 -f foo.yaml
+```
+
+```sh
+# If the deployment named mysql's current size is 2, scale mysql to 3.
+kubectl scale --current-replicas=2 --replicas=3 deployment/mysql
+```
+
+```sh
+# Scale multiple replication controllers.
+kubectl scale --replicas=5 rc/foo rc/bar rc/baz
+```
+
+```sh
+# Scale statefulset named 'web' to 3.
+kubectl scale --replicas=3 statefulset/web
+```
+
+{{< alert color="success" title="Conditional Scale Update" >}}
+It is possible to conditionally update the replicas if and only if the
+replicas haven't changed from their last known value using the `--current-replicas` flag.
+e.g. `kubectl scale --current-replicas=2 --replicas=3 deployment/mysql`
+{{< /alert >}}

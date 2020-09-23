@@ -392,6 +392,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/create/auth_resources/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">roles</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlcreateauth_resources">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -730,6 +753,52 @@
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectlpatch">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/port-forward/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">port-forward</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlport-forward">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/proxy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">proxy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlproxy">
       
       
       
@@ -1298,6 +1367,7 @@
         <li><a href="#command-1">Command</a></li>
       </ul>
     </li>
+    <li><a href="#more-examples">More Examples</a></li>
   </ul>
 </nav>
 
@@ -1359,6 +1429,22 @@ nginx-6db489d4b7-zcc8h   1/1     Running   <span style="color:#0000cf;font-weigh
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl annotate pods nginx-6db489d4b7-zcc8h <span style="color:#000">description</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;standard gateway&#39;</span>
 
 pod/nginx-6db489d4b7-zcc8h annotated
+</code></pre></div><h2 id="more-examples">More Examples</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; with the annotation &#39;description&#39; and the value &#39;my frontend&#39;.</span>
+<span style="color:#8f5902;font-style:italic"># If the same annotation is set multiple times, only the last value will be applied</span>
+kubectl annotate pods foo <span style="color:#000">description</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;my frontend&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update a pod identified by type and name in &#34;pod.json&#34;</span>
+kubectl annotate -f pod.json <span style="color:#000">description</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;my frontend&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; with the annotation &#39;description&#39; and the value &#39;my frontend running nginx&#39;, overwriting any</span>
+existing value.
+kubectl annotate --overwrite pods foo <span style="color:#000">description</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;my frontend running nginx&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update all pods in the namespace</span>
+kubectl annotate pods --all <span style="color:#000">description</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;my frontend running nginx&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; only if the resource is unchanged from version 1.</span>
+kubectl annotate pods foo <span style="color:#000">description</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;my frontend running nginx&#39;</span> --resource-version<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; by removing an annotation named &#39;description&#39; if it exists.</span>
+<span style="color:#8f5902;font-style:italic"># Does not require the --overwrite flag.</span>
+kubectl annotate pods foo description-
 </code></pre></div>
         <div class="section-index">
     
@@ -1366,6 +1452,12 @@ pod/nginx-6db489d4b7-zcc8h annotated
     
     
     <hr class="panel-line">
+        
+            
+        
+            
+        
+            
         
             
         

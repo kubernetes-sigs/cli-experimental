@@ -21,18 +21,18 @@
 <link rel="icon" type="image/png" href="/cli-experimental/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/cli-experimental/favicons/android-192x192.png" sizes="192x192">
 
-<title>App Management | SIG CLI</title><meta property="og:title" content="App Management" />
-<meta property="og:description" content="Managing your deployed applications using Kubectl
+<title>Configuration Management | SIG CLI</title><meta property="og:title" content="Configuration Management" />
+<meta property="og:description" content="Managing your deployed application&#39;s config using Kubectl
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/" />
 <meta property="og:site_name" content="SIG CLI" />
-<meta itemprop="name" content="App Management">
-<meta itemprop="description" content="Managing your deployed applications using Kubectl
+<meta itemprop="name" content="Configuration Management">
+<meta itemprop="description" content="Managing your deployed application&#39;s config using Kubectl
 ">
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="App Management"/>
-<meta name="twitter:description" content="Managing your deployed applications using Kubectl
+<meta name="twitter:title" content="Configuration Management"/>
+<meta name="twitter:description" content="Managing your deployed application&#39;s config using Kubectl
 "/>
 
 
@@ -49,7 +49,7 @@
   crossorigin="anonymous"></script>
 
 
-    <title>App Management | SIG CLI</title>
+    <title>Configuration Management | SIG CLI</title>
   </head>
   <body class="td-section">
     <header>
@@ -180,27 +180,10 @@
       <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesintroductionkustomize" href="/cli-experimental/guides/introduction/kustomize/">Kustomize</a>
       
       
-    </li>
-  </ul>
-</ul>
-
       
       
       
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/guides/resources_controllers/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Resources &#43; Controllers Overview</a>
-  </li>
-  <ul>
-    <li class="collapse " id="cli-experimentalguidesresources_controllers">
-      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesintroductionresources_controllers" href="/cli-experimental/guides/introduction/resources_controllers/">Resources &#43; Controllers Overview</a>
       
       
     </li>
@@ -219,7 +202,7 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/cli-experimental/guides/app_management/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">App Management</a>
+    <a  href="/cli-experimental/guides/app_management/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Configuration Management</a>
   </li>
   <ul>
     <li class="collapse show" id="cli-experimentalguidesapp_management">
@@ -315,6 +298,41 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/guides/extending_kubectl/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extending Kubectl</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalguidesextending_kubectl">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesextending_kubectlplugin_mechanism" href="/cli-experimental/guides/extending_kubectl/plugin_mechanism/">Plugin Mechanism</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesextending_kubectldiscovering_plugins" href="/cli-experimental/guides/extending_kubectl/discovering_plugins/">Discovering Plugins</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -341,7 +359,7 @@
 
 
 <a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/content/en/guides/app_management/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=App%20Management" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Configuration%20Management" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -378,7 +396,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/">App Management</a>
+	<a href="https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/">Configuration Management</a>
 </li>
 
 	</ol>
@@ -386,8 +404,8 @@
 
             
 <div class="td-content">
-	<h1>App Management</h1>
-	<div class="lead">Managing your deployed applications using Kubectl</div>
+	<h1>Configuration Management</h1>
+	<div class="lead">Managing your deployed application&rsquo;s config using Kubectl</div>
 	
         <div class="section-index">
     
@@ -414,12 +432,18 @@
             
         
             
+        
+            
                 <div class="entry">
                     <h5>
                         <a href="/cli-experimental/guides/app_management/apply/">Apply</a>
                     </h5>
                     <p>Applying Changes on Kubernetes Clusters</p>
                 </div>
+            
+        
+            
+        
             
         
             

@@ -392,6 +392,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/create/auth_resources/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">roles</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlcreateauth_resources">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -730,6 +753,52 @@
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectlpatch">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/port-forward/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">port-forward</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlport-forward">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/proxy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">proxy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlproxy">
       
       
       
@@ -1299,6 +1368,14 @@
         <li><a href="#output">Output</a></li>
       </ul>
     </li>
+    <li><a href="#print-logs-for-a-container-in-a-pod">Print Logs for a Container in a Pod</a></li>
+    <li><a href="#print-logs-for-all-pods-for-a-workload">Print Logs for all Pods for a Workload</a></li>
+    <li><a href="#follow-logs-for-a-container">Follow Logs for a Container</a></li>
+    <li><a href="#printing-logs-for-a-container-that-has-exited">Printing Logs for a Container that has exited</a></li>
+    <li><a href="#selecting-a-container-in-a-pod">Selecting a Container in a Pod</a></li>
+    <li><a href="#printing-logs-after-a-time">Printing Logs After a Time</a></li>
+    <li><a href="#printing-logs-since-a-time">Printing Logs Since a Time</a></li>
+    <li><a href="#include-timestamps">Include Timestamps</a></li>
   </ul>
 </nav>
 
@@ -1366,6 +1443,75 @@ nginx   1/1     <span style="color:#0000cf;font-weight:bold">1</span>           
 10-listen-on-ipv6-by-default.sh: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
 /docker-entrypoint.sh: Configuration complete<span style="color:#000;font-weight:bold">;</span> ready <span style="color:#204a87;font-weight:bold">for</span> start up
+</code></pre></div><h2 id="print-logs-for-a-container-in-a-pod">Print Logs for a Container in a Pod</h2>
+<p>Print the logs for a Pod running a single Container</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl logs echo-c6bc8ccff-nnj52
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hello
+hello
+</code></pre></div>
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Crash Looping Containers</h4>
+If a container is crash looping and you want to print its logs after it
+exits, use the <code>-p</code> flag to look at the <strong>logs from containers that have
+exited</strong>.  e.g. <code>kubectl logs -p -c ruby web-1</code>
+</div>
+
+<hr>
+<h2 id="print-logs-for-all-pods-for-a-workload">Print Logs for all Pods for a Workload</h2>
+<p>Print the logs for all Pods for a Workload</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs from all containers matching label</span>
+kubectl logs -l <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>nginx
+</code></pre></div>
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Workloads Logs</h4>
+Print all logs from <strong>all containers for a Workload</strong> by passing the
+Workload label selector to the <code>-l</code> flag.  e.g. if your Workload
+label selector is <code>app=nginx</code> usie <code>-l &quot;app=nginx&quot;</code> to print logs
+for all the Pods from that Workload.
+</div>
+
+<hr>
+<h2 id="follow-logs-for-a-container">Follow Logs for a Container</h2>
+<p>Stream logs from a container.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Follow logs from container</span>
+kubectl logs nginx-78f5d695bd-czm8z -f
+</code></pre></div><hr>
+<h2 id="printing-logs-for-a-container-that-has-exited">Printing Logs for a Container that has exited</h2>
+<p>Print the logs for the previously running container.  This is useful for printing containers that have
+crashed or are crash looping.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs from exited container</span>
+kubectl logs nginx-78f5d695bd-czm8z -p
+</code></pre></div><hr>
+<h2 id="selecting-a-container-in-a-pod">Selecting a Container in a Pod</h2>
+<p>Print the logs from a specific container within a Pod.  This is necessary for Pods running multiple
+containers.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs from the nginx container in the nginx-78f5d695bd-czm8z Pod</span>
+kubectl logs nginx-78f5d695bd-czm8z -c nginx
+</code></pre></div><hr>
+<h2 id="printing-logs-after-a-time">Printing Logs After a Time</h2>
+<p>Print the logs that occurred after an absolute time.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs since a date</span>
+kubectl logs nginx-78f5d695bd-czm8z --since-time<span style="color:#ce5c00;font-weight:bold">=</span>2018-11-01T15:00:00Z
+</code></pre></div><hr>
+<h2 id="printing-logs-since-a-time">Printing Logs Since a Time</h2>
+<p>Print the logs that are newer than a duration.</p>
+<p>Examples:</p>
+<ul>
+<li>0s: 0 seconds</li>
+<li>1m: 1 minute</li>
+<li>2h: 2 hours</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs for the past hour</span>
+kubectl logs nginx-78f5d695bd-czm8z --since<span style="color:#ce5c00;font-weight:bold">=</span>1h
+</code></pre></div><hr>
+<h2 id="include-timestamps">Include Timestamps</h2>
+<p>Include timestamps in the log lines</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs with timestamps</span>
+kubectl logs -l <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">echo</span> --timestamps
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">2018-11-16T05:26:31.38898405Z hello
+2018-11-16T05:27:13.363932497Z hello
 </code></pre></div>
         <div class="section-index">
     
@@ -1373,6 +1519,12 @@ nginx   1/1     <span style="color:#0000cf;font-weight:bold">1</span>           
     
     
     <hr class="panel-line">
+        
+            
+        
+            
+        
+            
         
             
         
@@ -1547,7 +1699,7 @@ nginx   1/1     <span style="color:#0000cf;font-weight:bold">1</span>           
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 21, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/7ad9ec4da3288077b3e96d41e2b5b40d26d20ce1">kubectl reference update (7ad9ec4)</a>
 </div>
 </div>
 

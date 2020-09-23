@@ -392,6 +392,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/create/auth_resources/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">roles</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlcreateauth_resources">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -730,6 +753,52 @@
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectlpatch">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/port-forward/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">port-forward</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlport-forward">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/proxy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">proxy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlproxy">
       
       
       
@@ -1351,7 +1420,10 @@
 <p>Looks up a Deployment, ReplicaSet, StatefulSet, or ReplicationController by name and creates an autoscaler that uses the given resource as a reference. An autoscaler can automatically increase or decrease number of pods deployed within the system as needed.</p>
 <h2 id="command">Command</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl autoscale <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME <span style="color:#000;font-weight:bold">|</span> TYPE/NAME<span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">[</span>--min<span style="color:#ce5c00;font-weight:bold">=</span>MINPODS<span style="color:#ce5c00;font-weight:bold">]</span> --max<span style="color:#ce5c00;font-weight:bold">=</span>MAXPODS <span style="color:#ce5c00;font-weight:bold">[</span>--cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span>CPU<span style="color:#ce5c00;font-weight:bold">]</span>
-</code></pre></div><h2 id="example">Example</h2>
+</code></pre></div><p>[OR]</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl hpa <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME <span style="color:#000;font-weight:bold">|</span> TYPE/NAME<span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">[</span>--min<span style="color:#ce5c00;font-weight:bold">=</span>MINPODS<span style="color:#ce5c00;font-weight:bold">]</span> --max<span style="color:#ce5c00;font-weight:bold">=</span>MAXPODS <span style="color:#ce5c00;font-weight:bold">[</span>--cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span>CPU<span style="color:#ce5c00;font-weight:bold">]</span>
+</code></pre></div><p><code>hpa</code> stands for <code>Horizontal Pod Autoscale</code></p>
+<h2 id="example">Example</h2>
 <h3 id="current-state">Current State</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get pods
 
@@ -1361,6 +1433,10 @@ nginx-6db489d4b7-zcc8h   1/1     Running   <span style="color:#0000cf;font-weigh
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl autoscale deployment nginx --min<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> --max<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">10</span> --cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">80</span>
 
 horizontalpodautoscaler.autoscaling/nginx autoscaled
+</code></pre></div><p>[OR]</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl hpa deployment nginx --min<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> --max<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">10</span> --cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">80</span>
+
+horizontalpodautoscaler.autoscaling/nginx autoscaled
 </code></pre></div><p>This will make sure to auto-scale horizontally when the CPU usage hits 80%.</p>
 <h3 id="output">Output</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get pods
@@ -1368,7 +1444,7 @@ horizontalpodautoscaler.autoscaling/nginx autoscaled
 NAME                     READY   STATUS    RESTARTS   AGE
 nginx-6db489d4b7-2rrrm   1/1     Running   <span style="color:#0000cf;font-weight:bold">0</span>          15s
 nginx-6db489d4b7-vxqwm   1/1     Running   <span style="color:#0000cf;font-weight:bold">0</span>          53s
-</code></pre></div><p>Notice that the command has an arg that says <code>--min=2</code> the deployment instantaniously auto-scales to 2 pods.</p>
+</code></pre></div><p>Notice that the command has an arg that says <code>--min=2</code>, the deployment instantaniously auto-scales to 2 pods.</p>
 
         <div class="section-index">
     
@@ -1376,6 +1452,12 @@ nginx-6db489d4b7-vxqwm   1/1     Running   <span style="color:#0000cf;font-weigh
     
     
     <hr class="panel-line">
+        
+            
+        
+            
+        
+            
         
             
         
@@ -1550,7 +1632,7 @@ nginx-6db489d4b7-vxqwm   1/1     Running   <span style="color:#0000cf;font-weigh
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 19, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/f01448644ccc8d475c90014400fd70f0293d225f">reference changes (f014486)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 21, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/7ad9ec4da3288077b3e96d41e2b5b40d26d20ce1">kubectl reference update (7ad9ec4)</a>
 </div>
 </div>
 

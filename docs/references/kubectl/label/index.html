@@ -392,6 +392,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/create/auth_resources/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">roles</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlcreateauth_resources">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -730,6 +753,52 @@
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectlpatch">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/port-forward/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">port-forward</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlport-forward">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/proxy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">proxy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlproxy">
       
       
       
@@ -1299,6 +1368,7 @@
         <li><a href="#output">Output</a></li>
       </ul>
     </li>
+    <li><a href="#more-examples">More Examples</a></li>
   </ul>
 </nav>
 
@@ -1389,13 +1459,33 @@ Events:
   Normal  Created    14m   kubelet, minikube  Created container nginx
   Normal  Started    14m   kubelet, minikube  Started container nginx
 </code></pre></div><p>Notice that the <code>labels</code> has <code>unhealthy=true</code> as a last entry.</p>
-
+<h2 id="more-examples">More Examples</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; with the label &#39;unhealthy&#39; and the value &#39;true&#39;.</span>
+kubectl label pods foo <span style="color:#000">unhealthy</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; with the label &#39;status&#39; and the value &#39;unhealthy&#39;, overwriting any existing value.</span>
+kubectl label --overwrite pods foo <span style="color:#000">status</span><span style="color:#ce5c00;font-weight:bold">=</span>unhealthy
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update all pods in the namespace</span>
+kubectl label pods --all <span style="color:#000">status</span><span style="color:#ce5c00;font-weight:bold">=</span>unhealthy
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update a pod identified by the type and name in &#34;pod.json&#34;</span>
+kubectl label -f pod.json <span style="color:#000">status</span><span style="color:#ce5c00;font-weight:bold">=</span>unhealthy
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; only if the resource is unchanged from version 1.</span>
+kubectl label pods foo <span style="color:#000">status</span><span style="color:#ce5c00;font-weight:bold">=</span>unhealthy --resource-version<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; by removing a label named &#39;bar&#39; if it exists.</span>
+<span style="color:#8f5902;font-style:italic"># Does not require the --overwrite flag.</span>
+kubectl label pods foo bar-
+</code></pre></div>
         <div class="section-index">
     
     
     
     
     <hr class="panel-line">
+        
+            
+        
+            
+        
+            
         
             
         

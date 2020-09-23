@@ -392,6 +392,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/create/auth_resources/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">roles</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlcreateauth_resources">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -730,6 +753,52 @@
   </li>
   <ul>
     <li class="collapse " id="cli-experimentalreferenceskubectlpatch">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/port-forward/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">port-forward</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlport-forward">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kubectl/proxy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">proxy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskubectlproxy">
       
       
       
@@ -1299,6 +1368,7 @@
         <li><a href="#new-state">New State</a></li>
       </ul>
     </li>
+    <li><a href="#more-examples">More Examples</a></li>
   </ul>
 </nav>
 
@@ -1367,13 +1437,39 @@ deployment.apps/nginx scaled
 
 NAME    READY   UP-TO-DATE   AVAILABLE   AGE
 nginx   3/3     <span style="color:#0000cf;font-weight:bold">3</span>            <span style="color:#0000cf;font-weight:bold">3</span>           87s
+</code></pre></div><h2 id="more-examples">More Examples</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Scale a replicaset named &#39;foo&#39; to 3.</span>
+kubectl scale --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span> rs/foo
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Scale a resource identified by type and name specified in &#34;foo.yaml&#34; to 3.</span>
+kubectl scale --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span> -f foo.yaml
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># If the deployment named mysql&#39;s current size is 2, scale mysql to 3.</span>
+kubectl scale --current-replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span> deployment/mysql
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Scale multiple replication controllers.</span>
+kubectl scale --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">5</span> rc/foo rc/bar rc/baz
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Scale statefulset named &#39;web&#39; to 3.</span>
+kubectl scale --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span> statefulset/web
 </code></pre></div>
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Conditional Scale Update</h4>
+It is possible to conditionally update the replicas if and only if the
+replicas haven&rsquo;t changed from their last known value using the <code>--current-replicas</code> flag.
+e.g. <code>kubectl scale --current-replicas=2 --replicas=3 deployment/mysql</code>
+</div>
+
+
         <div class="section-index">
     
     
     
     
     <hr class="panel-line">
+        
+            
+        
+            
+        
+            
         
             
         
@@ -1548,7 +1644,7 @@ nginx   3/3     <span style="color:#0000cf;font-weight:bold">3</span>           
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 21, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/7ad9ec4da3288077b3e96d41e2b5b40d26d20ce1">kubectl reference update (7ad9ec4)</a>
 </div>
 </div>
 

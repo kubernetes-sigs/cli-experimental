@@ -61,3 +61,36 @@ Events:
 ```
 
 Notice that the `labels` has `unhealthy=true` as a last entry.
+
+## More Examples
+
+```sh
+# Update pod 'foo' with the label 'unhealthy' and the value 'true'.
+kubectl label pods foo unhealthy=true
+```
+
+```sh
+# Update pod 'foo' with the label 'status' and the value 'unhealthy', overwriting any existing value.
+kubectl label --overwrite pods foo status=unhealthy
+```
+
+```sh
+# Update all pods in the namespace
+kubectl label pods --all status=unhealthy
+```
+
+```sh
+# Update a pod identified by the type and name in "pod.json"
+kubectl label -f pod.json status=unhealthy
+```
+
+```sh
+# Update pod 'foo' only if the resource is unchanged from version 1.
+kubectl label pods foo status=unhealthy --resource-version=1
+```
+
+```sh
+# Update pod 'foo' by removing a label named 'bar' if it exists.
+# Does not require the --overwrite flag.
+kubectl label pods foo bar-
+```

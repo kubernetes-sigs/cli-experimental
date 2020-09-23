@@ -104,3 +104,22 @@ diff -u -N /tmp/LIVE-435797985/apps.v1.Deployment.default.nginx-dev /tmp/MERGED-
          resources: {}
 exit status 1
 ```
+
+## Generating a Diff
+
+Use the `diff` program in a user's path to display a diff of the changes that will be
+made by Apply.
+
+```sh
+kubectl diff -k ./dir/
+```
+
+## Setting the Diff Program
+
+The `KUBECTL_EXTERNAL_DIFF` environment variable can be used to select your own diff command.
+By default, the "diff" command available in your path will be run with "-u" (unified) and "-N"
+(treat new files as empty) options.
+
+```sh
+export KUBECTL_EXTERNAL_DIFF=meld; kubectl diff -k ./dir/
+```
