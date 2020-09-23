@@ -1,0 +1,295 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – Resource Printing</title>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/</link>
+    <description>Recent content in Resource Printing on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Guides: Summaries / Raw</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/summary/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Get a Summary of Resources Running in the Cluster&lt;/li&gt;
+&lt;li&gt;Get or List Raw Resources in a cluster as Yaml or Json&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&#34;summarizing-resources&#34;&gt;Summarizing Resources&lt;/h1&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Quickly summarizing a collection of Resources and their state.&lt;/p&gt;
+&lt;p&gt;Summarizing Resource State using a columnar format is the most common way to view cluster
+state when developing applications or triaging issues.  The &lt;strong&gt;columnar view gives a compact
+summary of the most relevant information&lt;/strong&gt; for a collection of Resources.&lt;/p&gt;
+&lt;h2 id=&#34;get&#34;&gt;Get&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;kubectl get&lt;/code&gt; reads Resources from the cluster and formats them as output.  The examples in
+this chapter will query for Resources by providing Get the &lt;em&gt;Resource Type&lt;/em&gt; as an argument.
+For more query options see &lt;a href=&#34;&#34;&gt;Queries and Options&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;default&#34;&gt;Default&lt;/h3&gt;
+&lt;p&gt;If no output format is specified, Get will print a default set of columns.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Some columns &lt;em&gt;may&lt;/em&gt; not directly map to fields on the Resource, but instead may
+be a summary of fields.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+nginx     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;         &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;         &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;            &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;           5s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;raw---json--yaml&#34;&gt;Raw - JSON / YAML&lt;/h3&gt;
+&lt;p&gt;Print the Raw Resource formatting it as JSON.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments -o json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments -o yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Check out the &lt;a href=&#34;../../../references&#34;&gt;References&lt;/a&gt; to learn how to print Summary of Resources Running in the Cluster
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Fields</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/fields/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Format and print specific fields from Resources&lt;/li&gt;
+&lt;li&gt;Use when scripting with Get&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&#34;print-resource-fields&#34;&gt;Print Resource Fields&lt;/h1&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Kubectl Get is able to pull out fields from Resources it queries and format them as output.&lt;/p&gt;
+&lt;p&gt;This may be &lt;strong&gt;useful for scripting or gathering data&lt;/strong&gt; about Resources from a Kubernetes cluster.&lt;/p&gt;
+&lt;h2 id=&#34;get&#34;&gt;Get&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;kubectl get&lt;/code&gt; reads Resources from the cluster and formats them as output.  The examples in
+this chapter will query for Resources by providing Get the &lt;em&gt;Resource Type&lt;/em&gt; with the
+Version and Group as an argument.
+For more query options see &lt;a href=&#34;queries_and_options.md&#34;&gt;Queries and Options&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Kubectl can format and print specific fields from Resources using Json Path.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Scripting Pitfalls&lt;/h4&gt;
+&lt;p&gt;By default, if no API group or version is specified, kubectl will use the group and version preferred by
+the apiserver.&lt;/p&gt;
+&lt;p&gt;Because the &lt;strong&gt;Resource structure may change between API groups and Versions&lt;/strong&gt;, users &lt;em&gt;should&lt;/em&gt; specify the
+API Group and Version when emitting fields from &lt;code&gt;kubectl get&lt;/code&gt; to make sure the command does not break
+in future releases.&lt;/p&gt;
+&lt;p&gt;Failure to do this may result in the different API group / version being used after a cluster upgrade, and
+this group / version may have changed the representation of fields.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&#34;json-path&#34;&gt;JSON Path&lt;/h3&gt;
+&lt;p&gt;Print the fields from the JSON Path&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;  JSON Path can also be read from a file using &lt;code&gt;-o custom-columns-file&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JSON Path template is composed of JSONPath expressions enclosed by {}. In addition to the original JSONPath syntax, several capabilities are added:
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;$&lt;/code&gt; operator is optional (the expression starts from the root object by default).&lt;/li&gt;
+&lt;li&gt;Use &amp;quot;&amp;rdquo; to quote text inside JSONPath expressions.&lt;/li&gt;
+&lt;li&gt;Use range operator to iterate lists.&lt;/li&gt;
+&lt;li&gt;Use negative slice indices to step backwards through a list. Negative indices do not “wrap around” a list. They are valid as long as -index + listLength &amp;gt;= 0.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;json-path-symbols-table&#34;&gt;JSON Path Symbols Table&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Function&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Example&lt;/th&gt;
+&lt;th&gt;Result&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;text&lt;/td&gt;
+&lt;td&gt;the plain text&lt;/td&gt;
+&lt;td&gt;kind is {.kind}&lt;/td&gt;
+&lt;td&gt;kind is List&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;@&lt;/td&gt;
+&lt;td&gt;the current object&lt;/td&gt;
+&lt;td&gt;{@}&lt;/td&gt;
+&lt;td&gt;the same as input&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;. or []&lt;/td&gt;
+&lt;td&gt;child operator&lt;/td&gt;
+&lt;td&gt;{.kind} or {[‘kind’]}&lt;/td&gt;
+&lt;td&gt;List&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;..&lt;/td&gt;
+&lt;td&gt;recursive descent&lt;/td&gt;
+&lt;td&gt;{..name}&lt;/td&gt;
+&lt;td&gt;127.0.0.1 127.0.0.2 myself e2e&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;wildcard. Get all objects&lt;/td&gt;
+&lt;td&gt;{.items[*].metadata.name}&lt;/td&gt;
+&lt;td&gt;[127.0.0.1 127.0.0.2]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;[start:end :step]&lt;/td&gt;
+&lt;td&gt;subscript operator&lt;/td&gt;
+&lt;td&gt;{.users[0].name}&lt;/td&gt;
+&lt;td&gt;myself&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;[,]&lt;/td&gt;
+&lt;td&gt;union operator&lt;/td&gt;
+&lt;td&gt;{.items[*][‘metadata.name’, ‘status.capacity’]}&lt;/td&gt;
+&lt;td&gt;127.0.0.1 127.0.0.2 map[cpu:4] map[cpu:8]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;?()&lt;/td&gt;
+&lt;td&gt;filter&lt;/td&gt;
+&lt;td&gt;{.users[?(@.name==“e2e”)].user.password}&lt;/td&gt;
+&lt;td&gt;secret&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;range, end&lt;/td&gt;
+&lt;td&gt;iterate list&lt;/td&gt;
+&lt;td&gt;{range .items[*]}[{.metadata.name}, {.status.capacity}] {end}&lt;/td&gt;
+&lt;td&gt;[127.0.0.1, map[cpu:4]] [127.0.0.2, map[cpu:8]]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;“&lt;/td&gt;
+&lt;td&gt;quote interpreted string&lt;/td&gt;
+&lt;td&gt;{range .items[*]}{.metadata.name}{’\t’} {end}&lt;/td&gt;
+&lt;td&gt;127.0.0.1 127.0.0.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Check out the &lt;a href=&#34;../../../references&#34;&gt;References&lt;/a&gt; to learn how to format and print specific fields from Resources
+&lt;/div&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;Print the JSON representation of the first Deployment in the list on a single line.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployment.v1.apps -o&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;jsonpath&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;{.items[0]}{&amp;#34;\n&amp;#34;}&amp;#39;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;map&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;apiVersion:apps/v1 kind:Deployment...replicas:1 updatedReplicas:1&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;Print the &lt;code&gt;metadata.name&lt;/code&gt; field for the first Deployment in the list.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployment.v1.apps -o&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;jsonpath&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;{.items[0].metadata.name}{&amp;#34;\n&amp;#34;}&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Describe</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/describe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/describe/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Print verbose debug information about a Resource&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&#34;describe-resources&#34;&gt;Describe Resources&lt;/h1&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Describe is a &lt;strong&gt;higher level printing operation that may aggregate data from other sources&lt;/strong&gt; in addition
+to the Resource being queried (e.g. Events).&lt;/p&gt;
+&lt;p&gt;Describe pulls out the most important information about a Resource from the Resource itself and related
+Resources, and formats and prints this information on multiple lines.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aggregates data from related Resources&lt;/li&gt;
+&lt;li&gt;Formats Verbose Output for debugging&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl describe deployments
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Name:                   nginx
+Namespace:              default
+CreationTimestamp:      Thu, &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;15&lt;/span&gt; Nov &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2018&lt;/span&gt; 10:58:03 -0800
+Labels:                 &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;nginx
+Annotations:            deployment.kubernetes.io/revision&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
+Selector:               &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;nginx
+Replicas:               &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; desired &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; updated &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; total &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; available &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt; unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;nginx
+  Containers:
+   nginx:
+    Image:        nginx
+    Port:         &amp;lt;none&amp;gt;
+    Host Port:    &amp;lt;none&amp;gt;
+    Environment:  &amp;lt;none&amp;gt;
+    Mounts:       &amp;lt;none&amp;gt;
+  Volumes:        &amp;lt;none&amp;gt;
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  &amp;lt;none&amp;gt;
+NewReplicaSet:   nginx-78f5d695bd &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;1/1 replicas created&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
+Events:          &amp;lt;none&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Get vs Describe&lt;/h4&gt;
+&lt;p&gt;When Describing a Resource, it may aggregate information from several other Resources.  For instance Describing
+a Node will aggregate Pod Resources to print the Node utilization.&lt;/p&gt;
+&lt;p&gt;When Getting a Resource, it will only print information available from reading that Resource.  While Get may aggregate
+data from the &lt;em&gt;fields&lt;/em&gt; of that Resource, it won&amp;rsquo;t look at fields from other Resources.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
