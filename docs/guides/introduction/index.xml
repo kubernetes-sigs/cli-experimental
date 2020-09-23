@@ -1,0 +1,470 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – Introduction</title>
+    <link>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/</link>
+    <description>Recent content in Introduction on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Guides: Kubectl</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kubectl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kubectl/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Kubectl is the Kubernetes cli&lt;/li&gt;
+&lt;li&gt;Kubectl provides a swiss army knife of functionality for working with Kubernetes clusters&lt;/li&gt;
+&lt;li&gt;Kubectl may be used to deploy and manage applications on Kubernetes&lt;/li&gt;
+&lt;li&gt;Kubectl may be used for scripting and building higher-level frameworks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Kubectl is the Kubernetes cli version of a swiss army knife, and can do many things.&lt;/p&gt;
+&lt;p&gt;While this Book is focused on using Kubectl to declaratively manage Applications in Kubernetes, it
+also covers other Kubectl functions.&lt;/p&gt;
+&lt;h2 id=&#34;command-families&#34;&gt;Command Families&lt;/h2&gt;
+&lt;p&gt;Most Kubectl commands typically fall into one of a few categories:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Used For&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Declarative Resource Management&lt;/td&gt;
+&lt;td&gt;Deployment and Operations (e.g. GitOps)&lt;/td&gt;
+&lt;td&gt;Declaratively manage Kubernetes Workloads using Resource Config&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Imperative Resource Management&lt;/td&gt;
+&lt;td&gt;Development Only&lt;/td&gt;
+&lt;td&gt;Run commands to manage Kubernetes Workloads using Command Line arguments and flags&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Printing Workload State&lt;/td&gt;
+&lt;td&gt;Debugging&lt;/td&gt;
+&lt;td&gt;Print information about Workloads&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Interacting with Containers&lt;/td&gt;
+&lt;td&gt;Debugging&lt;/td&gt;
+&lt;td&gt;Exec, Attach, Cp, Logs&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cluster Management&lt;/td&gt;
+&lt;td&gt;Cluster Ops&lt;/td&gt;
+&lt;td&gt;Drain and Cordon Nodes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;declarative-application-management&#34;&gt;Declarative Application Management&lt;/h2&gt;
+&lt;p&gt;The preferred approach for managing Resources is through
+declarative files called Resource Config used with the Kubectl &lt;em&gt;Apply&lt;/em&gt; command.
+This command reads a local (or remote) file structure and modifies cluster state to
+reflect the declared intent.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Apply&lt;/h4&gt;
+Apply is the preferred mechanism for managing Resources in a Kubernetes cluster.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;printing-state-about-workloads&#34;&gt;Printing state about Workloads&lt;/h2&gt;
+&lt;p&gt;Users will need to view Workload state.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Printing summarize state and information about Resources&lt;/li&gt;
+&lt;li&gt;Printing complete state and information about Resources&lt;/li&gt;
+&lt;li&gt;Printing specific fields from Resources&lt;/li&gt;
+&lt;li&gt;Query Resources matching labels&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;debugging-workloads&#34;&gt;Debugging Workloads&lt;/h2&gt;
+&lt;p&gt;Kubectl supports debugging by providing commands for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Printing Container logs&lt;/li&gt;
+&lt;li&gt;Printing cluster events&lt;/li&gt;
+&lt;li&gt;Exec or attaching to a Container&lt;/li&gt;
+&lt;li&gt;Copying files from Containers in the cluster to a user&amp;rsquo;s filesystem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cluster-management&#34;&gt;Cluster Management&lt;/h2&gt;
+&lt;p&gt;On occasion, users may need to perform operations to the Nodes of cluster.  Kubectl supports
+commands to drain Workloads from a Node so that it can be decommission or debugged.&lt;/p&gt;
+&lt;h2 id=&#34;porcelain&#34;&gt;Porcelain&lt;/h2&gt;
+&lt;p&gt;Users may find using Resource Config overly verbose for &lt;em&gt;Development&lt;/em&gt; and prefer to work with
+the cluster &lt;em&gt;imperatively&lt;/em&gt; with a shell-like workflow.  Kubectl offers porcelain commands for
+generating and modifying Resources.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generating + creating Resources such as Deployments, StatefulSets, Services, ConfigMaps, etc&lt;/li&gt;
+&lt;li&gt;Setting fields on Resources&lt;/li&gt;
+&lt;li&gt;Editing (live) Resources in a text editor&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Porcelain For Dev Only&lt;/h4&gt;
+Porcelain commands are time saving for experimenting with workloads in a dev cluster, but shouldn&amp;rsquo;t
+be used for production.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Kustomize</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kustomize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kustomize/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Kustomize helps customizing config files in a template free way.&lt;/li&gt;
+&lt;li&gt;Kustomize provides a number of handy methods like generators to make customization easier.&lt;/li&gt;
+&lt;li&gt;Kustomize uses patches to introduce environment specific changes on an already existing standard config file without disturbing it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Kustomize provides a solution for customizing Kubernetes resource configuration free from templates and DSLs.&lt;/p&gt;
+&lt;p&gt;Kustomize lets you customize raw, template-free YAML
+files for multiple purposes, leaving the original YAML
+untouched and usable as is.&lt;/p&gt;
+&lt;p&gt;Kustomize targets kubernetes; it understands and can
+patch &lt;code&gt;kubernetes style&lt;/code&gt; API objects.  It&amp;rsquo;s like
+&lt;a href=&#34;https://www.gnu.org/software/make&#34;&gt;make&lt;/a&gt;, in that what it does is declared in a file,
+and it&amp;rsquo;s like &lt;a href=&#34;https://www.gnu.org/software/sed&#34;&gt;sed&lt;/a&gt;, in that it emits edited text.&lt;/p&gt;
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+&lt;h3 id=&#34;1-make-a-kustomization-file&#34;&gt;1) Make a &lt;code&gt;kustomization&lt;/code&gt; file&lt;/h3&gt;
+&lt;p&gt;In some directory containing your YAML &lt;code&gt;resource&lt;/code&gt;
+files (deployments, services, configmaps, etc.), create a
+&lt;code&gt;kustomization&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;This file should declare those resources, and any
+customization to apply to them, e.g. &lt;em&gt;add a common
+label&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;File structure:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~/someApp
+├── deployment.yaml
+├── kustomization.yaml
+└── service.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The resources in this directory could be a fork of
+someone else&amp;rsquo;s configuration.  If so, you can easily
+rebase from the source material to capture
+improvements, because you don&amp;rsquo;t modify the resources
+directly.&lt;/p&gt;
+&lt;p&gt;Generate customized YAML with:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kustomize build ~/someApp
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The YAML can be directly &lt;code&gt;applied&lt;/code&gt; to a cluster:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kustomize build ~/someApp | kubectl apply -f -
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;2-create-variants-using-overlays&#34;&gt;2) Create &lt;code&gt;variants&lt;/code&gt; using &lt;code&gt;overlays&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Manage traditional &lt;code&gt;variants&lt;/code&gt; of a configuration - like
+&lt;em&gt;development&lt;/em&gt;, &lt;em&gt;staging&lt;/em&gt; and &lt;em&gt;production&lt;/em&gt; - using
+&lt;code&gt;overlays&lt;/code&gt; that modify a common &lt;code&gt;base&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;File structure:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~/someApp
+├── base
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   └── service.yaml
+└── overlays
+    ├── development
+    │   ├── cpu_count.yaml
+    │   ├── kustomization.yaml
+    │   └── replica_count.yaml
+    └── production
+        ├── cpu_count.yaml
+        ├── kustomization.yaml
+        └── replica_count.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Take the work from step (1) above, move it into a
+&lt;code&gt;someApp&lt;/code&gt; subdirectory called &lt;code&gt;base&lt;/code&gt;, then
+place overlays in a sibling directory.&lt;/p&gt;
+&lt;p&gt;An overlay is just another kustomization, referring to
+the base, and referring to patches to apply to that
+base.&lt;/p&gt;
+&lt;p&gt;This arrangement makes it easy to manage your
+configuration with &lt;code&gt;git&lt;/code&gt;.  The base could have files
+from an upstream repository managed by someone else.
+The overlays could be in a repository you own.
+Arranging the repo clones as siblings on disk avoids
+the need for git submodules (though that works fine, if
+you are a submodule fan).&lt;/p&gt;
+&lt;p&gt;Generate YAML with&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;kustomize build ~/someApp/overlays/production
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The YAML can be directly &lt;code&gt;applied&lt;/code&gt; to a cluster:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;kustomize build ~/someApp/overlays/production &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; kubectl apply -f -
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Resources &#43; Controllers Overview</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/resources_controllers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/resources_controllers/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;A Kubernetes API has 2 parts - a Resource Type and a Controller&lt;/li&gt;
+&lt;li&gt;Resources are objects declared as json or yaml and written to a cluster&lt;/li&gt;
+&lt;li&gt;Controllers asynchronously actuate Resources after they are stored&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;This section provides background on the Kubernetes Resource model.  This information
+is also available at the &lt;a href=&#34;https://kubernetes.io/docs/home/&#34;&gt;kubernetes.io&lt;/a&gt; docs site.&lt;/p&gt;
+&lt;p&gt;For more information on Kubernetes Resources see: &lt;a href=&#34;https://kubernetes.io/docs/concepts/&#34;&gt;kubernetes.io Concepts&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;p&gt;Instances of Kubernetes objects (e.g. Deployment, Services, Namespaces, etc)
+are called &lt;strong&gt;Resources&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Resources which run containers are referred to as &lt;strong&gt;Workloads&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Examples of Workloads:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/deployment/&#34;&gt;Deployments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/&#34;&gt;StatefulSets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/&#34;&gt;Jobs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/&#34;&gt;CronJobs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/&#34;&gt;DaemonSets&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Users work with Resource APIs by declaring them in files which are then Applied to a Kubernetes
+cluster.  These declarative files are called Resource Config.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Resource Config is &lt;em&gt;Applied&lt;/em&gt; (declarative Create/Update/Delete) to a Kubernetes cluster using
+tools such as Kubectl, and then actuated by a &lt;em&gt;Controller&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Resources are uniquely identified:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;apiVersion&lt;/strong&gt; (API Type Group and Version)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;kind&lt;/strong&gt; (API Type Name)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;metadata.namespace&lt;/strong&gt; (Instance namespace)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;metadata.name&lt;/strong&gt; (Instance name)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Default Namespace&lt;/h4&gt;
+If namespace is omitted from the Resource Config, the &lt;em&gt;default&lt;/em&gt; namespace is used.  Users
+should almost always explicitly specify the namespace for their Application using a
+&lt;code&gt;kustomization.yaml&lt;/code&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;resources-structure&#34;&gt;Resources Structure&lt;/h3&gt;
+&lt;p&gt;Resources have the following components.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TypeMeta:&lt;/strong&gt; Resource Type &lt;strong&gt;apiVersion&lt;/strong&gt; and &lt;strong&gt;kind&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ObjectMeta:&lt;/strong&gt; Resource &lt;strong&gt;name&lt;/strong&gt; and &lt;strong&gt;namespace&lt;/strong&gt; + other metadata (labels, annotations, etc).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Spec:&lt;/strong&gt; the desired state of the Resource - intended state the user provides to the cluster.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Status:&lt;/strong&gt; the observed state of the object - recorded state the cluster provides to the user.&lt;/p&gt;
+&lt;p&gt;Resource Config written by the user omits the Status field.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example Deployment Resource Config&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;apps/v1&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;Deployment&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;metadata&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;nginx-deployment&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;labels&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;nginx&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;spec&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;replicas&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;selector&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;matchLabels&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;nginx&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;template&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;metadata&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;labels&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;nginx&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;spec&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;containers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;nginx&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;nginx&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.15.4&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Spec and Status&lt;/h4&gt;
+Resources such as ConfigMaps and Secrets do not have a Status,
+and as a result their Spec is implicit (i.e. they don&amp;rsquo;t have a spec field).
+&lt;/div&gt;
+
+&lt;h2 id=&#34;controllers&#34;&gt;Controllers&lt;/h2&gt;
+&lt;p&gt;Controllers actuate Kubernetes APIs.  They observe the state of the system and look for
+changes either to desired state of Resources (create, update, delete) or the system
+(Pod or Node dies).&lt;/p&gt;
+&lt;p&gt;Controllers then make changes to the cluster to fulfill the intent specified by the user
+(e.g. in Resource Config) or automation (e.g. changes from Autoscalers).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; After a user creates a Deployment, the Deployment Controller will see
+that the Deployment exists and verify that the corresponding ReplicaSet it expects
+to find exists.  The Controller will see that the ReplicaSet does not exist and will
+create one.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Asynchronous Actuation&lt;/h4&gt;
+Because Controllers run asynchronously, issues such as a bad
+Container Image or unschedulable Pods will not be present in the CRUD response.
+Tooling must facilitate processes for watching the state of the system until changes are
+completely actuated by Controllers.  Once the changes have been fully actuated such
+that the desired state matches the observed state, the Resource is considered &lt;em&gt;Settled&lt;/em&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;controller-structure&#34;&gt;Controller Structure&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Reconcile&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Controllers actuate Resources by reading the Resource they are Reconciling + related Resources,
+such as those that they create and delete.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Controllers &lt;em&gt;do not&lt;/em&gt; Reconcile events, rather they Reconcile the expected
+cluster state to the observed cluster state at the time Reconcile is run.&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Deployment Controller creates/deletes ReplicaSets&lt;/li&gt;
+&lt;li&gt;ReplicaSet Controller creates/deletes Pods&lt;/li&gt;
+&lt;li&gt;Scheduler (Controller) writes Nodes to Pods&lt;/li&gt;
+&lt;li&gt;Node (Controller) runs Containers specified in Pods on the Node&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Watch&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Controllers actuate Resources &lt;em&gt;after&lt;/em&gt; they are written by Watching Resource Types, and then
+triggering Reconciles from Events.  After a Resource is created/updated/deleted, Controllers
+Watching the Resource Type will receive a notification that the Resource has been changed,
+and they will read the state of the system to see what has changed (instead of relying on
+the Event for this information).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deployment Controller watches Deployments + ReplicaSets (+ Pods)&lt;/li&gt;
+&lt;li&gt;ReplicaSet Controller watches ReplicaSets + Pods&lt;/li&gt;
+&lt;li&gt;Scheduler (Controller) watches Pods&lt;/li&gt;
+&lt;li&gt;Node (Controller) watches Pods (+ Secrets + ConfigMaps)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Level vs Edge Based Reconciliation&lt;/h4&gt;
+Because Controllers don&amp;rsquo;t respond to individual Events, but instead Reconcile the state
+of the system at the time that Reconcile is run, &lt;strong&gt;changes from several different events may be observed
+and Reconciled together.&lt;/strong&gt;  This is referred to as a &lt;em&gt;Level Based&lt;/em&gt; system, whereas a system that
+responds to each event individually would be referred to as an &lt;em&gt;Edge Based&lt;/em&gt; system.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;overview-of-kubernetes-resource-apis&#34;&gt;Overview of Kubernetes Resource APIs&lt;/h2&gt;
+&lt;h3 id=&#34;pods&#34;&gt;Pods&lt;/h3&gt;
+&lt;p&gt;Containers are run in &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/&#34;&gt;&lt;em&gt;Pods&lt;/em&gt;&lt;/a&gt; which are
+scheduled to run on &lt;em&gt;Nodes&lt;/em&gt; (i.e. worker machines) in a cluster.&lt;/p&gt;
+&lt;p&gt;Pods run a &lt;em&gt;single replica&lt;/em&gt; of an Application and provide:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Compute Resources (cpu, memory, disk)&lt;/li&gt;
+&lt;li&gt;Environment Variables&lt;/li&gt;
+&lt;li&gt;Readiness and Health Checking&lt;/li&gt;
+&lt;li&gt;Network (IP address shared by containers in the Pod)&lt;/li&gt;
+&lt;li&gt;Mounting Shared Configuration and Secrets&lt;/li&gt;
+&lt;li&gt;Mounting Storage Volumes&lt;/li&gt;
+&lt;li&gt;Initialization&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Multi Container Pods&lt;/h4&gt;
+&lt;p&gt;Multiple replicas of an Application should be created using a Workload API to manage
+creation and deletion of Pod replicas using a PodTemplate.&lt;/p&gt;
+&lt;p&gt;In some cases a Pod may contain multiple Containers forming a single instance of an Application.  These
+containers may coordinate with one another through shared network (IP) and storage.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&#34;workloads&#34;&gt;Workloads&lt;/h3&gt;
+&lt;p&gt;Pods are typically managed by higher level abstractions that handle concerns such as
+replication, identity, persistent storage, custom scheduling, rolling updates, etc.&lt;/p&gt;
+&lt;p&gt;The most common out-of-the-box Workload APIs (manage Pods) are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/deployment/&#34;&gt;Deployments&lt;/a&gt; (Stateless Applications)
+&lt;ul&gt;
+&lt;li&gt;replication + rollouts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/&#34;&gt;StatefulSets&lt;/a&gt; (Stateful Applications)
+&lt;ul&gt;
+&lt;li&gt;replication + rollouts + persistent storage + identity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/&#34;&gt;Jobs&lt;/a&gt; (Batch Work)
+&lt;ul&gt;
+&lt;li&gt;run to completion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/&#34;&gt;CronJobs&lt;/a&gt; (Scheduled Batch Work)
+&lt;ul&gt;
+&lt;li&gt;scheduled run to completion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/&#34;&gt;DaemonSets&lt;/a&gt; (Per-Machine)
+&lt;ul&gt;
+&lt;li&gt;per-Node scheduling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;API Abstraction Layers&lt;/h4&gt;
+High-level Workload APIs may manage lower-level Workload APIs instead of directly managing Pods
+(e.g. Deployments manage ReplicaSets).
+&lt;/div&gt;
+
+&lt;h3 id=&#34;service-discovery-and-load-balancing&#34;&gt;Service Discovery and Load Balancing&lt;/h3&gt;
+&lt;p&gt;Service discovery and Load Balancing may be managed by a &lt;em&gt;Service&lt;/em&gt; object.  Services provide a single
+virtual IP address and dns name load balanced to a collection of Pods matching Labels.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Internal vs External Services&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/service/&#34;&gt;Services Resources&lt;/a&gt;
+(L4) may expose Pods internally within a cluster or externally through an HA proxy.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/ingress/&#34;&gt;Ingress Resources&lt;/a&gt; (L7)
+may expose URI endpoints and route them to Services.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&#34;configuration-and-secrets&#34;&gt;Configuration and Secrets&lt;/h3&gt;
+&lt;p&gt;Shared Configuration and Secret data may be provided by ConfigMaps and Secrets.  This allows
+Environment Variables, Command Line Arguments and Files to be loosely injected into
+the Pods and Containers that consume them.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Internal vs External Services&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/&#34;&gt;ConfigMaps&lt;/a&gt;
+are for providing non-sensitive data to Pods.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/configuration/secret/&#34;&gt;Secrets&lt;/a&gt;
+are for providing sensitive data to Pods.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
