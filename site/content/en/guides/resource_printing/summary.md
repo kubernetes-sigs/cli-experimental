@@ -30,6 +30,36 @@ The `kubectl get` reads Resources from the cluster and formats them as output.  
 this chapter will query for Resources by providing Get the *Resource Type* as an argument.
 For more query options see [Queries and Options]().
 
+### Default
+
+If no output format is specified, Get will print a default set of columns.
+
+**Note:** Some columns *may* not directly map to fields on the Resource, but instead may
+be a summary of fields.
+
+```bash
+kubectl get deployments nginx
+```
+
+```bash
+NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+nginx     1         1         1            0           5s
+```
+
+---
+
+### Raw - JSON / YAML
+
+Print the Raw Resource formatting it as JSON.
+
+```bash
+kubectl get deployments -o json
+```
+
+```bash
+kubectl get deployments -o yaml
+```
+
 {{< alert color="success" title="Note" >}}
 Check out the [References](../../../references) to learn how to print Summary of Resources Running in the Cluster
 {{< /alert >}}

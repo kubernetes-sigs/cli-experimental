@@ -1449,6 +1449,20 @@
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>registry/conatiner<span style="color:#000;font-weight:bold">:</span>latest<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>the-container<span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div>
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">References</h4>
+<p>Apply will propagate the <code>namePrefix</code> to any place Resources within the project are referenced by other Resources
+including:</p>
+<ul>
+<li>Service references from StatefulSets</li>
+<li>ConfigMap references from PodSpecs</li>
+<li>Secret references from PodSpecs</li>
+</ul>
+
+</div>
+
+
         <div class="section-index">
     
     

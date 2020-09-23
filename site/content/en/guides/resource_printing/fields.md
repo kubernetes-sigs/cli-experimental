@@ -75,3 +75,30 @@ Print the fields from the JSON Path
 {{< alert color="success" title="Note" >}}
 Check out the [References](../../../references) to learn how to format and print specific fields from Resources
 {{< /alert >}}
+
+## Examples
+
+Print the JSON representation of the first Deployment in the list on a single line.
+
+```bash
+kubectl get deployment.v1.apps -o=jsonpath='{.items[0]}{"\n"}'
+
+```
+
+```bash
+map[apiVersion:apps/v1 kind:Deployment...replicas:1 updatedReplicas:1]]
+```
+
+---
+
+Print the `metadata.name` field for the first Deployment in the list.
+
+```bash
+kubectl get deployment.v1.apps -o=jsonpath='{.items[0].metadata.name}{"\n"}'
+```
+
+```bash
+nginx
+```
+
+---

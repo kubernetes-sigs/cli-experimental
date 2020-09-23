@@ -30,7 +30,7 @@
 <meta itemprop="description" content="Prints based on Field values
 ">
 <meta itemprop="dateModified" content="2020-09-16T12:57:52+05:30" />
-<meta itemprop="wordCount" content="405">
+<meta itemprop="wordCount" content="444">
 
 
 
@@ -385,6 +385,7 @@
         <li><a href="#json-path-symbols-table">JSON Path Symbols Table</a></li>
       </ul>
     </li>
+    <li><a href="#examples">Examples</a></li>
   </ul>
 </nav>
 
@@ -562,6 +563,16 @@ this group / version may have changed the representation of fields.</p>
 Check out the <a href="../../../references">References</a> to learn how to format and print specific fields from Resources
 </div>
 
+<h2 id="examples">Examples</h2>
+<p>Print the JSON representation of the first Deployment in the list on a single line.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment.v1.apps -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;{.items[0]}{&#34;\n&#34;}&#39;</span>
+
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">map<span style="color:#ce5c00;font-weight:bold">[</span>apiVersion:apps/v1 kind:Deployment...replicas:1 updatedReplicas:1<span style="color:#ce5c00;font-weight:bold">]]</span>
+</code></pre></div><hr>
+<p>Print the <code>metadata.name</code> field for the first Deployment in the list.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment.v1.apps -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;{.items[0].metadata.name}{&#34;\n&#34;}&#39;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nginx
+</code></pre></div><hr>
 
 	
 		<style>

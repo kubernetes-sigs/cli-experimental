@@ -30,7 +30,7 @@
 <meta itemprop="description" content="Prints Summary or Raw info of currently working resources and their states
 ">
 <meta itemprop="dateModified" content="2020-09-16T12:57:52+05:30" />
-<meta itemprop="wordCount" content="130">
+<meta itemprop="wordCount" content="204">
 
 
 
@@ -376,6 +376,18 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#motivation">Motivation</a></li>
+    <li><a href="#get">Get</a>
+      <ul>
+        <li><a href="#default">Default</a></li>
+        <li><a href="#raw---json--yaml">Raw - JSON / YAML</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -442,7 +454,19 @@ summary of the most relevant information</strong> for a collection of Resources.
 <p>The <code>kubectl get</code> reads Resources from the cluster and formats them as output.  The examples in
 this chapter will query for Resources by providing Get the <em>Resource Type</em> as an argument.
 For more query options see <a href="">Queries and Options</a>.</p>
-
+<h3 id="default">Default</h3>
+<p>If no output format is specified, Get will print a default set of columns.</p>
+<p><strong>Note:</strong> Some columns <em>may</em> not directly map to fields on the Resource, but instead may
+be a summary of fields.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments nginx
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+nginx     <span style="color:#0000cf;font-weight:bold">1</span>         <span style="color:#0000cf;font-weight:bold">1</span>         <span style="color:#0000cf;font-weight:bold">1</span>            <span style="color:#0000cf;font-weight:bold">0</span>           5s
+</code></pre></div><hr>
+<h3 id="raw---json--yaml">Raw - JSON / YAML</h3>
+<p>Print the Raw Resource formatting it as JSON.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments -o json
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments -o yaml
+</code></pre></div>
 
 <div class="alert alert-success" role="alert">
 <h4 class="alert-heading">Note</h4>

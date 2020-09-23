@@ -30,7 +30,7 @@
 <meta itemprop="description" content="Describes current resources
 ">
 <meta itemprop="dateModified" content="2020-09-16T12:57:52+05:30" />
-<meta itemprop="wordCount" content="148">
+<meta itemprop="wordCount" content="219">
 
 
 
@@ -441,16 +441,38 @@ Resources, and formats and prints this information on multiple lines.</p>
 <li>Aggregates data from related Resources</li>
 <li>Formats Verbose Output for debugging</li>
 </ul>
-
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl describe deployments
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Name:                   nginx
+Namespace:              default
+CreationTimestamp:      Thu, <span style="color:#0000cf;font-weight:bold">15</span> Nov <span style="color:#0000cf;font-weight:bold">2018</span> 10:58:03 -0800
+Labels:                 <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>nginx
+Annotations:            deployment.kubernetes.io/revision<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span>
+Selector:               <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>nginx
+Replicas:               <span style="color:#0000cf;font-weight:bold">1</span> desired <span style="color:#000;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> updated <span style="color:#000;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> total <span style="color:#000;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> available <span style="color:#000;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">0</span> unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        <span style="color:#0000cf;font-weight:bold">0</span>
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>nginx
+  Containers:
+   nginx:
+    Image:        nginx
+    Port:         &lt;none&gt;
+    Host Port:    &lt;none&gt;
+    Environment:  &lt;none&gt;
+    Mounts:       &lt;none&gt;
+  Volumes:        &lt;none&gt;
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  &lt;none&gt;
+NewReplicaSet:   nginx-78f5d695bd <span style="color:#ce5c00;font-weight:bold">(</span>1/1 replicas created<span style="color:#ce5c00;font-weight:bold">)</span>
+Events:          &lt;none&gt;
+</code></pre></div>
 
 <div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Note</h4>
-Check out the <a href="../../../references">References</a> to learn how to print verbose debug information about a Resource
-</div>
-
-
-
-<div class="alert alert-warning" role="alert">
 <h4 class="alert-heading">Get vs Describe</h4>
 <p>When Describing a Resource, it may aggregate information from several other Resources.  For instance Describing
 a Node will aggregate Pod Resources to print the Node utilization.</p>

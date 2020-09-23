@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/annotation/</loc>
-    <lastmod>2020-09-19T19:58:19+05:30</lastmod>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/autoscale/</loc>
-    <lastmod>2020-09-21T10:01:02+05:30</lastmod>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -44,7 +44,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cp/</loc>
-    <lastmod>2020-09-21T10:01:02+05:30</lastmod>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -64,7 +64,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/diff/</loc>
-    <lastmod>2020-09-21T10:01:02+05:30</lastmod>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -79,7 +79,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/exec/</loc>
-    <lastmod>2020-09-21T10:01:02+05:30</lastmod>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -154,12 +154,12 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/label/</loc>
-    <lastmod>2020-09-20T21:18:21+05:30</lastmod>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/logs/</loc>
-    <lastmod>2020-09-21T10:01:02+05:30</lastmod>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -169,7 +169,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/patch/</loc>
-    <lastmod>2020-09-20T21:18:21+05:30</lastmod>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -179,14 +179,17 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kubectl/plugin_mechanism/</loc>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/port-forward/</loc>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/proxy/</loc>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -201,7 +204,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/scale/</loc>
-    <lastmod>2020-09-21T10:01:02+05:30</lastmod>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -246,7 +249,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/</loc>
-    <lastmod>2020-09-15T17:04:48+05:30</lastmod>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -276,6 +279,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kubectl/discovering_plugins/</loc>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -370,7 +374,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/</loc>
-    <lastmod>2020-09-16T10:06:31+05:30</lastmod>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -380,6 +384,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/resources_controllers/</loc>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -434,6 +439,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kubectl/</loc>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>
@@ -478,6 +484,7 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/auth_resources/</loc>
+    <lastmod>2020-09-23T12:37:27+05:30</lastmod>
   </url>
   
   <url>

@@ -52,3 +52,12 @@ spec:
     - image: registry/conatiner:latest
       name: the-container
 ```
+
+{{< alert color="success" title="References" >}}
+Apply will propagate the `namePrefix` to any place Resources within the project are referenced by other Resources
+including:
+
+- Service references from StatefulSets
+- ConfigMap references from PodSpecs
+- Secret references from PodSpecs
+{{< /alert >}}
