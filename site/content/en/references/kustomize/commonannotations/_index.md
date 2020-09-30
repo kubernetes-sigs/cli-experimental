@@ -2,6 +2,7 @@
 title: "commonAnnotations"
 linkTitle: "commonAnnotations"
 type: docs
+weight: 2
 description: >
     Add annotations to add all resources.
 ---

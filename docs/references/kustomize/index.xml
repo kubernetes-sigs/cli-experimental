@@ -620,6 +620,40 @@ generator. For details on per-resource generatorOptions usage see
 &lt;li&gt;image name &lt;code&gt;my-demo-app&lt;/code&gt; to &lt;code&gt;my-app&lt;/code&gt;,&lt;/li&gt;
 &lt;li&gt;alpine&amp;rsquo;s tag &lt;code&gt;3.7&lt;/code&gt; to a digest value&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;It is possible to set image tags for container images through
+the &lt;code&gt;kustomization.yaml&lt;/code&gt; using the &lt;code&gt;images&lt;/code&gt; field.  When &lt;code&gt;images&lt;/code&gt; are
+specified, Apply will override the images whose image name matches &lt;code&gt;name&lt;/code&gt; with a new
+tag.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Example Field&lt;/th&gt;
+&lt;th&gt;Example Result&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Match images with this image name&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;name: nginx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;newTag&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Override the image &lt;strong&gt;tag&lt;/strong&gt; or &lt;strong&gt;digest&lt;/strong&gt; for images whose image name matches &lt;code&gt;name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;newTag: new&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;nginx:old&lt;/code&gt; -&amp;gt; &lt;code&gt;nginx:new&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;newName&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Override the image &lt;strong&gt;name&lt;/strong&gt; for images whose image name matches &lt;code&gt;name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;newName: nginx-special&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;nginx:old&lt;/code&gt; -&amp;gt; &lt;code&gt;nginx-special:old&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
 &lt;h3 id=&#34;file-input&#34;&gt;File Input&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# deployment.yaml&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -675,7 +709,56 @@ generator. For details on per-resource generatorOptions usage see
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;myapp&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;alpine@sha256&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;alpine-app&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-a-name&#34;&gt;Setting a Name&lt;/h2&gt;
+&lt;p&gt;The name for an image may be set by specifying &lt;code&gt;newName&lt;/code&gt; and the name of the old container image.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# kustomization.yaml&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;kustomize.config.k8s.io/v1beta1&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;Kustomization&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;mycontainerregistry/myimage&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;newName&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;differentregistry/myimage&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-a-tag&#34;&gt;Setting a Tag&lt;/h2&gt;
+&lt;p&gt;The tag for an image may be set by specifying &lt;code&gt;newTag&lt;/code&gt; and the name of the container image.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# kustomization.yaml&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;kustomize.config.k8s.io/v1beta1&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;Kustomization&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;mycontainerregistry/myimage&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;newTag&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;v1&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-a-digest&#34;&gt;Setting a Digest&lt;/h2&gt;
+&lt;p&gt;The digest for an image may be set by specifying &lt;code&gt;digest&lt;/code&gt; and the name of the container image.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# kustomization.yaml&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;kustomize.config.k8s.io/v1beta1&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;Kustomization&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;alpine&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;digest&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;sha256&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-a-tag-from-the-latest-commit-sha&#34;&gt;Setting a Tag from the latest commit SHA&lt;/h2&gt;
+&lt;p&gt;A common CI/CD pattern is to tag container images with the git commit SHA of source code.  e.g. if
+the image name is &lt;code&gt;foo&lt;/code&gt; and an image was built for the source code at commit &lt;code&gt;1bb359ccce344ca5d263cd257958ea035c978fd3&lt;/code&gt;
+then the container image would be &lt;code&gt;foo:1bb359ccce344ca5d263cd257958ea035c978fd3&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A simple way to push an image that was just built without manually updating the image tags is to
+download the &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/&#34;&gt;kustomize standalone&lt;/a&gt; tool and run
+&lt;code&gt;kustomize edit set image&lt;/code&gt; command to update the tags for you.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Set the latest git commit SHA as the image tag for &lt;code&gt;foo&lt;/code&gt; images.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kustomize edit &lt;span style=&#34;color:#204a87&#34;&gt;set&lt;/span&gt; image foo:&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;git log -n &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; --pretty&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;format:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;%H&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt;
+kubectl apply -f .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-a-tag-from-an-environment-variable&#34;&gt;Setting a Tag from an Environment Variable&lt;/h2&gt;
+&lt;p&gt;It is also possible to set a Tag from an environment variable using the same technique for setting from a commit SHA.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Set the tag for the &lt;code&gt;foo&lt;/code&gt; image to the value in the environment variable &lt;code&gt;FOO_IMAGE_TAG&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kustomize edit &lt;span style=&#34;color:#204a87&#34;&gt;set&lt;/span&gt; image foo:&lt;span style=&#34;color:#000&#34;&gt;$FOO_IMAGE_TAG&lt;/span&gt;
+kubectl apply -f .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Committing Image Tag Updates&lt;/h4&gt;
+The &lt;code&gt;kustomization.yaml&lt;/code&gt; changes &lt;em&gt;may&lt;/em&gt; be committed back to git so that they
+can be audited.  When committing the image tag updates that have already
+been pushed by a CI/CD system, be careful not to trigger new builds +
+deployments for these changes.
+&lt;/div&gt;
+
+
       </description>
     </item>
     
@@ -1331,6 +1414,344 @@ job.  E.g., a Deployment may reference a ConfigMap
 by name, and if kustomize changes the name of a
 ConfigMap, it knows to change the name reference
 in the Deployment.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Glossary</title>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/glossary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/glossary/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;glossary&#34;&gt;Glossary&lt;/h1&gt;
+&lt;h2 id=&#34;application&#34;&gt;application&lt;/h2&gt;
+&lt;p&gt;An &lt;em&gt;application&lt;/em&gt; is a group of k8s resources related by
+some common purpose, e.g.  a load balancer in front of a
+webserver backed by a database.
+&lt;a href=&#34;#resource&#34;&gt;Resource&lt;/a&gt; labelling, naming and metadata schemes have
+historically served to group resources together for
+collective operations like &lt;em&gt;list&lt;/em&gt; and &lt;em&gt;remove&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This &lt;a href=&#34;https://github.com/kubernetes/community/pull/1629&#34;&gt;proposal&lt;/a&gt; describes a new k8s resource called
+&lt;em&gt;application&lt;/em&gt; to more formally describe this idea and
+provide support for application-level operations and
+dashboards.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#kustomize&#34;&gt;kustomize&lt;/a&gt; configures k8s resources, and the proposed
+application resource is just another resource.&lt;/p&gt;
+&lt;h2 id=&#34;apply&#34;&gt;apply&lt;/h2&gt;
+&lt;p&gt;The verb &lt;em&gt;apply&lt;/em&gt; in the context of k8s refers to a
+kubectl command and an in-progress &lt;a href=&#34;https://goo.gl/UbCRuf&#34;&gt;API
+endpoint&lt;/a&gt; for mutating a
+cluster.&lt;/p&gt;
+&lt;p&gt;One &lt;em&gt;applies&lt;/em&gt; a statement of what one wants to a
+cluster in the form of a complete resource list.&lt;/p&gt;
+&lt;p&gt;The cluster merges this with the previously applied
+state and the actual state to arrive at a new desired
+state, which the cluster&amp;rsquo;s reconciliation loop attempts
+to create.  This is the foundation of level-based state
+management in k8s.&lt;/p&gt;
+&lt;h2 id=&#34;base&#34;&gt;base&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;base&lt;/em&gt; is a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt; referred to
+by some other &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Any kustomization, including an &lt;a href=&#34;#overlay&#34;&gt;overlay&lt;/a&gt;, can be a base to
+another kustomization.&lt;/p&gt;
+&lt;p&gt;A base has no knowledge of the overlays that refer to it.&lt;/p&gt;
+&lt;p&gt;For simple &lt;a href=&#34;#gitops&#34;&gt;gitops&lt;/a&gt; management, a base configuration
+could be the &lt;em&gt;sole content of a git repository
+dedicated to that purpose&lt;/em&gt;.  Same with &lt;a href=&#34;#overlay&#34;&gt;overlays&lt;/a&gt;.
+Changes in a repo could generate a build, test and
+deploy cycle.&lt;/p&gt;
+&lt;h2 id=&#34;bespoke-configuration&#34;&gt;bespoke configuration&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;bespoke&lt;/em&gt; configuration is a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt; and some
+&lt;a href=&#34;#resource&#34;&gt;resources&lt;/a&gt; created and maintained internally by some
+organization for their own purposes.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/guides&#34;&gt;workflow&lt;/a&gt; associated with a &lt;em&gt;bespoke&lt;/em&gt; config is
+simpler than the workflow associated with an
+&lt;a href=&#34;#off-the-shelf-configuration&#34;&gt;off-the-shelf&lt;/a&gt; config, because there&amp;rsquo;s no notion of
+periodically capturing someone else&amp;rsquo;s upgrades to the
+&lt;a href=&#34;#off-the-shelf-configuration&#34;&gt;off-the-shelf&lt;/a&gt; config.&lt;/p&gt;
+&lt;h2 id=&#34;custom-resource-definition&#34;&gt;custom resource definition&lt;/h2&gt;
+&lt;p&gt;One can extend the k8s API by making a
+Custom Resource Definition (&lt;a href=&#34;https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/&#34;&gt;CRD spec&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;This defines a custom &lt;a href=&#34;#resource&#34;&gt;resource&lt;/a&gt; (CD), an entirely
+new resource that can be used alongside &lt;em&gt;native&lt;/em&gt;
+resources like ConfigMaps, Deployments, etc.&lt;/p&gt;
+&lt;p&gt;Kustomize can customize a CD, but to do so
+kustomize must also be given the corresponding CRD
+so that it can interpret the structure correctly.&lt;/p&gt;
+&lt;h2 id=&#34;declarative-application-management&#34;&gt;declarative application management&lt;/h2&gt;
+&lt;p&gt;Kustomize aspires to support &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/declarative-application-management.md&#34;&gt;Declarative Application Management&lt;/a&gt;,
+a set of best practices around managing k8s clusters.&lt;/p&gt;
+&lt;p&gt;In brief, kustomize should&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Work with any configuration, be it bespoke,
+off-the-shelf, stateless, stateful, etc.&lt;/li&gt;
+&lt;li&gt;Support common customizations, and creation of
+&lt;a href=&#34;#variant&#34;&gt;variants&lt;/a&gt; (e.g. &lt;em&gt;development&lt;/em&gt; vs.
+&lt;em&gt;staging&lt;/em&gt; vs. &lt;em&gt;production&lt;/em&gt;).&lt;/li&gt;
+&lt;li&gt;Expose and teach native k8s APIs, rather than
+hide them.&lt;/li&gt;
+&lt;li&gt;Add no friction to version control integration to
+support reviews and audit trails.&lt;/li&gt;
+&lt;li&gt;Compose with other tools in a unix sense.&lt;/li&gt;
+&lt;li&gt;Eschew crossing the line into templating, domain
+specific languages, etc., frustrating the other
+goals.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;generator&#34;&gt;generator&lt;/h2&gt;
+&lt;p&gt;A generator makes resources that can be used as is,
+or fed into a &lt;a href=&#34;#transformer&#34;&gt;transformer&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;gitops&#34;&gt;gitops&lt;/h2&gt;
+&lt;p&gt;Devops or CICD workflows that use a git repository as a
+single source of truth and take action (e.g., build,
+test or deploy) when that truth changes.&lt;/p&gt;
+&lt;h2 id=&#34;kustomization&#34;&gt;kustomization&lt;/h2&gt;
+&lt;p&gt;The term &lt;em&gt;kustomization&lt;/em&gt; refers to a
+&lt;code&gt;kustomization.yaml&lt;/code&gt; file, or more generally to a
+directory (the &lt;a href=&#34;#kustomization-root&#34;&gt;root&lt;/a&gt;) containing the
+&lt;code&gt;kustomization.yaml&lt;/code&gt; file and all the relative file
+paths that it immediately references (all the local
+data that doesn&amp;rsquo;t require a URL specification).&lt;/p&gt;
+&lt;p&gt;I.e. if someone gives you a &lt;em&gt;kustomization&lt;/em&gt; for use
+with &lt;a href=&#34;#kustomize&#34;&gt;kustomize&lt;/a&gt;, it could be in the form of&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;one file called &lt;code&gt;kustomization.yaml&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;a tarball (containing that YAML file plus what it references),&lt;/li&gt;
+&lt;li&gt;a git archive (ditto),&lt;/li&gt;
+&lt;li&gt;a URL to a git repo (ditto), etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A kustomization file contains &lt;a href=&#34;fields.md&#34;&gt;fields&lt;/a&gt;
+falling into four categories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;resources&lt;/em&gt; - what existing &lt;a href=&#34;#resource&#34;&gt;resources&lt;/a&gt; are to be customized.
+Example fields: &lt;em&gt;resources&lt;/em&gt;, &lt;em&gt;crds&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;generators&lt;/em&gt; - what &lt;em&gt;new&lt;/em&gt; resources should be created.
+Example fields: &lt;em&gt;configMapGenerator&lt;/em&gt; (legacy),
+&lt;em&gt;secretGenerator&lt;/em&gt; (legacy), &lt;em&gt;generators&lt;/em&gt; (v2.1).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;transformers&lt;/em&gt; - what to &lt;em&gt;do&lt;/em&gt; to the aforementioned resources.
+Example fields: &lt;em&gt;namePrefix&lt;/em&gt;, &lt;em&gt;nameSuffix&lt;/em&gt;, &lt;em&gt;images&lt;/em&gt;,
+&lt;em&gt;commonLabels&lt;/em&gt;, &lt;em&gt;patchesJson6902&lt;/em&gt;, etc. and the more
+general &lt;em&gt;transformers&lt;/em&gt; (v2.1) field.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;meta&lt;/em&gt; - fields which may influence all or some of
+the above.  Example fields: &lt;em&gt;vars&lt;/em&gt;, &lt;em&gt;namespace&lt;/em&gt;,
+&lt;em&gt;apiVersion&lt;/em&gt;, &lt;em&gt;kind&lt;/em&gt;, etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;kustomization-root&#34;&gt;kustomization root&lt;/h2&gt;
+&lt;p&gt;The directory that immediately contains a
+&lt;code&gt;kustomization.yaml&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;When a kustomization file is processed, it may or may
+not be able to access files outside its root.&lt;/p&gt;
+&lt;p&gt;Data files like resource YAML files, or text files
+containing &lt;em&gt;name=value&lt;/em&gt; pairs intended for a ConfigMap
+or Secret, or files representing a patch to be used in
+a patch transformation, must live &lt;em&gt;within or below&lt;/em&gt; the
+root, and as such are specified via &lt;em&gt;relative
+paths&lt;/em&gt; exclusively.&lt;/p&gt;
+&lt;p&gt;A special flag (in v2.1), &lt;code&gt;--load_restrictions none&lt;/code&gt;,
+is provided to relax this security feature, to, say,
+allow a patch file to be shared by more than one
+kustomization.&lt;/p&gt;
+&lt;p&gt;Other kustomizations (other directories containing a
+&lt;code&gt;kustomization.yaml&lt;/code&gt; file) may be referred to by URL, by
+absolute path, or by relative path.&lt;/p&gt;
+&lt;p&gt;If kustomization &lt;strong&gt;A&lt;/strong&gt; depends on kustomization &lt;strong&gt;B&lt;/strong&gt;, then&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;B&lt;/strong&gt; may not &lt;em&gt;contain&lt;/em&gt; &lt;strong&gt;A&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;B&lt;/strong&gt; may not &lt;em&gt;depend on&lt;/em&gt; &lt;strong&gt;A&lt;/strong&gt;, even transitively.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;A&lt;/strong&gt; may contain &lt;strong&gt;B&lt;/strong&gt;, but in this case it might be
+simplest to have &lt;strong&gt;A&lt;/strong&gt; directly depend on &lt;strong&gt;B&lt;/strong&gt;&amp;rsquo;s
+resources and eliminate &lt;strong&gt;B&lt;/strong&gt;&amp;rsquo;s kustomization.yaml file
+(i.e. absorb &lt;strong&gt;B&lt;/strong&gt; into &lt;strong&gt;A&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;Conventionally, &lt;strong&gt;B&lt;/strong&gt; is in a directory that&amp;rsquo;s sibling
+to &lt;strong&gt;A&lt;/strong&gt;, or &lt;strong&gt;B&lt;/strong&gt; is off in a completely independent
+git repository, referencable from any kustomization.&lt;/p&gt;
+&lt;p&gt;A common layout is&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;├── base
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   └── service.yaml
+└── overlays
+    ├── dev
+    │   ├── kustomization.yaml
+    │   └── patch.yaml
+    ├── prod
+    │   ├── kustomization.yaml
+    │   └── patch.yaml
+    └── staging
+        ├── kustomization.yaml
+        └── patch.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;The three roots &lt;code&gt;dev&lt;/code&gt;, &lt;code&gt;prod&lt;/code&gt; and &lt;code&gt;staging&lt;/code&gt;
+(presumably) all refer to the &lt;code&gt;base&lt;/code&gt; root.  One would
+have to inspect the &lt;code&gt;kustomization.yaml&lt;/code&gt; files to be
+sure.&lt;/p&gt;
+&lt;h2 id=&#34;kubernetes&#34;&gt;kubernetes&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://kubernetes.io&#34;&gt;Kubernetes&lt;/a&gt; is an open-source
+system for automating deployment, scaling, and
+management of containerized applications.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s often abbreviated as &lt;em&gt;k8s&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;kubernetes-style-object&#34;&gt;kubernetes-style object&lt;/h2&gt;
+&lt;p&gt;An object, expressed in a YAML or JSON file, with the
+&lt;a href=&#34;https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/#required-fields&#34;&gt;fields required&lt;/a&gt; by kubernetes.  Basically just a
+&lt;em&gt;kind&lt;/em&gt; field to identify the type, a &lt;em&gt;metadata/name&lt;/em&gt;
+field to identify the particular instance, and an
+&lt;em&gt;apiVersion&lt;/em&gt; field to identify the version (if there&amp;rsquo;s
+more than one version).&lt;/p&gt;
+&lt;h2 id=&#34;kustomize&#34;&gt;kustomize&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;kustomize&lt;/em&gt; is a command line tool supporting
+template-free, structured customization of declarative
+configuration targeted to k8s-style objects.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Targeted to k8s means&lt;/em&gt; that kustomize has some
+understanding of API resources, k8s concepts like
+names, labels, namespaces, etc. and the semantics of
+resource patching.&lt;/p&gt;
+&lt;p&gt;kustomize is an implementation of &lt;a href=&#34;#declarative-application-management&#34;&gt;DAM&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;off-the-shelf-configuration&#34;&gt;off-the-shelf configuration&lt;/h2&gt;
+&lt;p&gt;An &lt;em&gt;off-the-shelf&lt;/em&gt; configuration is a kustomization and
+resources intentionally published somewhere for others
+to use.&lt;/p&gt;
+&lt;p&gt;E.g. one might create a github repository like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;github.com/username/someapp/
+  kustomization.yaml
+  deployment.yaml
+  configmap.yaml
+  README.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;Someone could then &lt;em&gt;fork&lt;/em&gt; this repo (on github) and
+&lt;em&gt;clone&lt;/em&gt; their fork to their local disk for
+customization.&lt;/p&gt;
+&lt;p&gt;This clone could act as a &lt;a href=&#34;#base&#34;&gt;base&lt;/a&gt; for the user&amp;rsquo;s
+own &lt;a href=&#34;#overlay&#34;&gt;overlays&lt;/a&gt; to do further customization.&lt;/p&gt;
+&lt;h2 id=&#34;overlay&#34;&gt;overlay&lt;/h2&gt;
+&lt;p&gt;An &lt;em&gt;overlay&lt;/em&gt; is a kustomization that depends on
+another kustomization.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;#kustomization&#34;&gt;kustomizations&lt;/a&gt; an overlay refers to (via file
+path, URI or other method) are called &lt;a href=&#34;#base&#34;&gt;bases&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;An overlay is unusable without its bases.&lt;/p&gt;
+&lt;p&gt;An overlay may act as a base to another overlay.&lt;/p&gt;
+&lt;p&gt;Overlays make the most sense when there is &lt;em&gt;more than
+one&lt;/em&gt;, because they create different &lt;a href=&#34;#variant&#34;&gt;variants&lt;/a&gt; of a
+common base - e.g.  &lt;em&gt;development&lt;/em&gt;, &lt;em&gt;QA&lt;/em&gt;, &lt;em&gt;staging&lt;/em&gt; and
+&lt;em&gt;production&lt;/em&gt; environment variants.&lt;/p&gt;
+&lt;p&gt;These variants use the same overall resources, and vary
+in relatively simple ways, e.g. the number of replicas
+in a deployment, the CPU to a particular pod, the data
+source used in a ConfigMap, etc.&lt;/p&gt;
+&lt;p&gt;One configures a cluster like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt; kustomize build someapp/overlays/staging |\
+     kubectl apply -f -
+
+ kustomize build someapp/overlays/production |\
+     kubectl apply -f -
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;Usage of the base is implicit - the overlay&amp;rsquo;s
+kustomization points to the base.&lt;/p&gt;
+&lt;p&gt;See also &lt;a href=&#34;#kustomization-root&#34;&gt;root&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;package&#34;&gt;package&lt;/h2&gt;
+&lt;p&gt;The word &lt;em&gt;package&lt;/em&gt; has no meaning in kustomize, as
+kustomize is not to be confused with a package
+management tool in the tradition of, say, &lt;a href=&#34;https://en.wikipedia.org/wiki/APT_(Debian)&#34;&gt;apt&lt;/a&gt; or
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Rpm_(software)&#34;&gt;rpm&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;patch&#34;&gt;patch&lt;/h2&gt;
+&lt;p&gt;General instructions to modify a resource.&lt;/p&gt;
+&lt;p&gt;There are two alternative techniques with similar
+power but different notation - the
+&lt;a href=&#34;#patchstrategicmerge&#34;&gt;strategic merge patch&lt;/a&gt;
+and the &lt;a href=&#34;#patchjson6902&#34;&gt;JSON patch&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;patchstrategicmerge&#34;&gt;patchStrategicMerge&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;patchStrategicMerge&lt;/em&gt; is &lt;a href=&#34;https://git.k8s.io/community/contributors/devel/sig-api-machinery/strategic-merge-patch.md&#34;&gt;strategic-merge&lt;/a&gt;-style patch (SMP).&lt;/p&gt;
+&lt;p&gt;An SMP looks like an incomplete YAML specification of
+a k8s resource.  The SMP includes &lt;code&gt;TypeMeta&lt;/code&gt;
+fields to establish the group/version/kind/name of the
+&lt;a href=&#34;#resource&#34;&gt;resource&lt;/a&gt; to patch, then just enough remaining fields
+to step into a nested structure to specify a new field
+value, e.g. an image tag.&lt;/p&gt;
+&lt;p&gt;By default, an SMP &lt;em&gt;replaces&lt;/em&gt; values.  This is
+usually desired when the target value is a simple
+string, but may not be desired when the target
+value is a list.&lt;/p&gt;
+&lt;p&gt;To change this
+default behavior, add a &lt;em&gt;directive&lt;/em&gt;.  Recognized
+directives in YAML patches are &lt;em&gt;replace&lt;/em&gt; (the default)
+and &lt;em&gt;delete&lt;/em&gt; (see &lt;a href=&#34;https://git.k8s.io/community/contributors/devel/sig-api-machinery/strategic-merge-patch.md&#34;&gt;these notes&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Note that for custom resources, SMPs are treated as
+&lt;a href=&#34;https://tools.ietf.org/html/rfc7386&#34;&gt;json merge patches&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Fun fact - any resource file can be used as
+an SMP, overwriting matching fields in another
+resource with the same group/version/kind/name,
+but leaving all other fields as they were.&lt;/p&gt;
+&lt;p&gt;TODO(monopole): add ptr to example.&lt;/p&gt;
+&lt;h2 id=&#34;patchjson6902&#34;&gt;patchJson6902&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;patchJson6902&lt;/em&gt; refers to a kubernetes &lt;a href=&#34;#resource&#34;&gt;resource&lt;/a&gt; and
+a &lt;a href=&#34;https://tools.ietf.org/html/rfc6902&#34;&gt;JSONPatch&lt;/a&gt; specifying how to change the resource.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;patchJson6902&lt;/em&gt; can do almost everything a
+&lt;em&gt;patchStrategicMerge&lt;/em&gt; can do, but with a briefer
+syntax.  See this &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/examples/jsonpatch.md&#34;&gt;example&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;plugin&#34;&gt;plugin&lt;/h2&gt;
+&lt;p&gt;A chunk of code used by kustomize, but not necessarily
+compiled into kustomize, to generate and/or transform a
+kubernetes resource as part of a kustomization.&lt;/p&gt;
+&lt;p&gt;Details &lt;a href=&#34;../../guides/plugins&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;resource&#34;&gt;resource&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;resource&lt;/em&gt; in the context of a REST-ful API is the
+target object of an HTTP operation like &lt;em&gt;GET&lt;/em&gt;, &lt;em&gt;PUT&lt;/em&gt; or
+&lt;em&gt;POST&lt;/em&gt;.  k8s offers a REST-ful API surface to interact
+with clients.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;resource&lt;/em&gt;, in the context of a kustomization, is a
+&lt;a href=&#34;#kustomization-root&#34;&gt;root&lt;/a&gt; relative path to a &lt;a href=&#34;http://www.yaml.org/start.html&#34;&gt;YAML&lt;/a&gt; or &lt;a href=&#34;https://www.json.org/&#34;&gt;JSON&lt;/a&gt; file
+describing a k8s API object, like a Deployment or a
+ConfigMap, or it&amp;rsquo;s a path to a kustomization, or a URL
+that resolves to a kustomization.&lt;/p&gt;
+&lt;p&gt;More generally, a resource can be any correct YAML file
+that &lt;a href=&#34;https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/#required-fields&#34;&gt;defines an object&lt;/a&gt;
+with a &lt;em&gt;kind&lt;/em&gt; and a &lt;em&gt;metadata/name&lt;/em&gt; field.&lt;/p&gt;
+&lt;h2 id=&#34;root&#34;&gt;root&lt;/h2&gt;
+&lt;p&gt;See &lt;a href=&#34;#kustomization-root&#34;&gt;kustomization root&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;sub-target--sub-application--sub-package&#34;&gt;sub-target / sub-application / sub-package&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;sub-whatever&lt;/em&gt; is not a thing. There are only
+&lt;a href=&#34;#base&#34;&gt;bases&lt;/a&gt; and &lt;a href=&#34;#overlay&#34;&gt;overlays&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;target&#34;&gt;target&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;target&lt;/em&gt; is the argument to &lt;code&gt;kustomize build&lt;/code&gt;, e.g.:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt; kustomize build $target
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;$target&lt;/code&gt; must be a path or a url to a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The target contains, or refers to, all the information
+needed to create customized resources to send to the
+&lt;a href=&#34;#apply&#34;&gt;apply&lt;/a&gt; operation.&lt;/p&gt;
+&lt;p&gt;A target can be a &lt;a href=&#34;#base&#34;&gt;base&lt;/a&gt; or an &lt;a href=&#34;#overlay&#34;&gt;overlay&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;transformer&#34;&gt;transformer&lt;/h2&gt;
+&lt;p&gt;A transformer can modify a resource, or merely
+visit it and collect information about it in the
+course of a &lt;code&gt;kustomize build&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;variant&#34;&gt;variant&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;variant&lt;/em&gt; is the outcome, in a cluster, of applying
+an &lt;a href=&#34;#overlay&#34;&gt;overlay&lt;/a&gt; to a &lt;a href=&#34;#base&#34;&gt;base&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;E.g., a &lt;em&gt;staging&lt;/em&gt; and &lt;em&gt;production&lt;/em&gt; overlay both modify
+some common base to create distinct variants.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;staging&lt;/em&gt; variant is the set of resources exposed
+to quality assurance testing, or to some external users
+who&amp;rsquo;d like to see what the next version of production
+will look like.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;production&lt;/em&gt; variant is the set of resources
+exposed to production traffic, and thus may employ
+deployments with a large number of replicas and higher
+cpu and memory requests.&lt;/p&gt;
 
       </description>
     </item>

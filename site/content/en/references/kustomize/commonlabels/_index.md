@@ -2,6 +2,7 @@
 title: "commonLabels"
 linkTitle: "commonLabels"
 type: docs
+weight: 3
 description: >
     Add labels and selectors to add all resources.
 ---

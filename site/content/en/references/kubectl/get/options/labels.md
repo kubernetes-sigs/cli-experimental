@@ -1,6 +1,6 @@
 ---
-title: "Labels"
-linkTitle: "Labels"
+title: "labels"
+linkTitle: "labels"
 weight: 3
 type: docs
 description: >

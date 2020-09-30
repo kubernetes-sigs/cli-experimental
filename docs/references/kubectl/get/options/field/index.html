@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/field/" />
-<meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-23T14:28:56+05:30" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="field">
 <meta itemprop="description" content="Printing the status of the Kubernetes resources using fields
 ">
-
-<meta itemprop="wordCount" content="176">
+<meta itemprop="dateModified" content="2020-09-23T14:28:56+05:30" />
+<meta itemprop="wordCount" content="367">
 
 
 
@@ -104,7 +104,27 @@
 				
 				
 				
-				<a class="nav-link" href="/cli-experimental/documentation/" ><span>temp</span></a>
+				<a class="nav-link" href="/cli-experimental/faq/" ><span>FAQ</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/cli-experimental/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/cli-experimental/contributing/" ><span>Contributing</span></a>
 			</li>
 			
 			
@@ -630,37 +650,37 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionswide" href="/cli-experimental/references/kubectl/get/options/wide/">Wide</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionswide" href="/cli-experimental/references/kubectl/get/options/wide/">wide</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionscustom_columns" href="/cli-experimental/references/kubectl/get/options/custom_columns/">Custom Columns</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionscustom_columns" href="/cli-experimental/references/kubectl/get/options/custom_columns/">custom columns</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionslabels" href="/cli-experimental/references/kubectl/get/options/labels/">Labels</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionslabels" href="/cli-experimental/references/kubectl/get/options/labels/">labels</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionsshow_labels" href="/cli-experimental/references/kubectl/get/options/show_labels/">Show Labels</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionsshow_labels" href="/cli-experimental/references/kubectl/get/options/show_labels/">show labels</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionsshow_kind" href="/cli-experimental/references/kubectl/get/options/show_kind/">Show Kind</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionsshow_kind" href="/cli-experimental/references/kubectl/get/options/show_kind/">show kind</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionswatch" href="/cli-experimental/references/kubectl/get/options/watch/">Watch</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalreferenceskubectlgetoptionswatch" href="/cli-experimental/references/kubectl/get/options/watch/">watch</a>
       
       
     </li>
@@ -1319,6 +1339,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/references/kustomize/glossary/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Glossary</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalreferenceskustomizeglossary">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -1367,6 +1410,7 @@
   <ul>
     <li><a href="#fields">fields</a>
       <ul>
+        <li><a href="#json-path-symbols-table">JSON Path Symbols Table</a></li>
         <li><a href="#command-i">Command I</a></li>
         <li><a href="#output">Output</a></li>
         <li><a href="#command-ii">Command II</a></li>
@@ -1450,6 +1494,89 @@
 	<h1>field</h1>
 	<div class="lead">Printing the status of the Kubernetes resources using fields</div>
 	<h2 id="fields">fields</h2>
+<p>Print the fields from the JSON Path</p>
+<p><strong>Note:</strong>  JSON Path can also be read from a file using <code>-o custom-columns-file</code>.</p>
+<ul>
+<li>JSON Path template is composed of JSONPath expressions enclosed by {}. In addition to the original JSONPath syntax, several capabilities are added:</li>
+<li>The <code>$</code> operator is optional (the expression starts from the root object by default).</li>
+<li>Use &quot;&rdquo; to quote text inside JSONPath expressions.</li>
+<li>Use range operator to iterate lists.</li>
+<li>Use negative slice indices to step backwards through a list. Negative indices do not “wrap around” a list. They are valid as long as -index + listLength &gt;= 0.</li>
+</ul>
+<h3 id="json-path-symbols-table">JSON Path Symbols Table</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Example</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>the plain text</td>
+<td>kind is {.kind}</td>
+<td>kind is List</td>
+</tr>
+<tr>
+<td>@</td>
+<td>the current object</td>
+<td>{@}</td>
+<td>the same as input</td>
+</tr>
+<tr>
+<td>. or []</td>
+<td>child operator</td>
+<td>{.kind} or {[‘kind’]}</td>
+<td>List</td>
+</tr>
+<tr>
+<td>..</td>
+<td>recursive descent</td>
+<td>{..name}</td>
+<td>127.0.0.1 127.0.0.2 myself e2e</td>
+</tr>
+<tr>
+<td>*</td>
+<td>wildcard. Get all objects</td>
+<td>{.items[*].metadata.name}</td>
+<td>[127.0.0.1 127.0.0.2]</td>
+</tr>
+<tr>
+<td>[start:end :step]</td>
+<td>subscript operator</td>
+<td>{.users[0].name}</td>
+<td>myself</td>
+</tr>
+<tr>
+<td>[,]</td>
+<td>union operator</td>
+<td>{.items[*][‘metadata.name’, ‘status.capacity’]}</td>
+<td>127.0.0.1 127.0.0.2 map[cpu:4] map[cpu:8]</td>
+</tr>
+<tr>
+<td>?()</td>
+<td>filter</td>
+<td>{.users[?(@.name==“e2e”)].user.password}</td>
+<td>secret</td>
+</tr>
+<tr>
+<td>range, end</td>
+<td>iterate list</td>
+<td>{range .items[*]}[{.metadata.name}, {.status.capacity}] {end}</td>
+<td>[127.0.0.1, map[cpu:4]] [127.0.0.2, map[cpu:8]]</td>
+</tr>
+<tr>
+<td>“</td>
+<td>quote interpreted string</td>
+<td>{range .items[*]}{.metadata.name}{’\t’} {end}</td>
+<td>127.0.0.1 127.0.0.2</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <p>Print the JSON representation of the first Deployment in the list on a single line.</p>
 <h3 id="command-i">Command I</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment.v1.apps -o<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">jsonpath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;{.items[0]}{&#34;\n&#34;}&#39;</span>
@@ -1563,7 +1690,7 @@ This in turn means that you must use a single quote or escaped double quote arou
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 23, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/b46eb865e1ab737ad6fbcb67d153303e53b79c8c">docs update (b46eb86)</a>
 </div>
 </div>
 

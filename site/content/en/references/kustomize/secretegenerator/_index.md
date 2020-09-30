@@ -2,6 +2,7 @@
 title: "secretGenerator"
 linkTitle: "secretGenerator"
 type: docs
+weight: 17
 description: >
     Generate Secret resources.
 ---

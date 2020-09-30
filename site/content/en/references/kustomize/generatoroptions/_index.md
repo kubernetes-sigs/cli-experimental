@@ -2,6 +2,7 @@
 title: "generatorOptions"
 linkTitle: "generatorOptions"
 type: docs
+weight: 7
 description: >
     Control behavior of [ConfigMap]() and
     [Secret]() generators.

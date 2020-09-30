@@ -1,6 +1,6 @@
 ---
-title: "Show Labels"
-linkTitle: "Show Labels"
+title: "show labels"
+linkTitle: "show labels"
 weight: 4
 type: docs
 description: >

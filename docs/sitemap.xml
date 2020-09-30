@@ -4,510 +4,827 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/annotation/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/apply/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/auth/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/autoscale/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/background_information/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/binaries/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/configmap/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/container_logs/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cp/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/delete/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/deployment/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/diff/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/diffing_local_and_remote_resources/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/edit/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/exec/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/expose/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/field/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/introduction/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/background_information/introduction/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/misc_imperative_commands/introduction/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/introduction/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kubectl/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/kustomize/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/label/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/logs/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/namespace/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/patch/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/extending_kubectl/plugin_mechanism/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kubectl/plugin_mechanism/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/port-forward/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/proxy/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/run/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/scale/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/secret/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/summary/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/summary/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/wide/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/accessing_multiple_clusters/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/apply/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/apply/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/copying_container_files/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/misc_imperative_commands/creating_resources/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/custom_columns/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/default/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/extending_kubectl/discovering_plugins/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kubectl/discovering_plugins/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/background_information/getting_started/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/source/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/homebrew/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kustomize/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/raw/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/raw/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/binaries/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/chocolatey/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/executing_a_command_in_a_container/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/fields/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/fields/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/homebrew/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/labels/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/publishing_bases/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/background_information/resources_controllers/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/resources_controllers/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/secrets_configmaps/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/secrets_configmaps/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/misc_imperative_commands/setting_fields/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/chocolatey/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/container_images/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/container_images/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/describe/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/describe/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/misc_imperative_commands/editing_workloads/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kubectl/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/port_forward_to_pods/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_labels/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/extending_kubectl/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/namespaces_names/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/namespaces_names/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/proxying_traffic_to_services/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/queries_and_options/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/auth_resources/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_kind/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/labels_annotations/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/labels_annotations/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/watch/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/watch/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/cluster_information/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/field_merge_semantics/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_management/field_merge_semantics/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/misc_imperative_commands/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/describe/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/bases/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/binaries/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/configmap/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/container_logs/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/container_debugging/container_logs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cp/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/delete/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/deployment/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/diff/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/diffing_local_and_remote_resources/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_deployment/diffing_local_and_remote_resources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/edit/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/exec/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/expose/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/field/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/introduction/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/background_information/introduction/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/misc_imperative_commands/introduction/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kubectl/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/kustomize/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/label/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/logs/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/namespace/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/patch/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/extending_kubectl/plugin_mechanism/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kubectl/plugin_mechanism/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/port-forward/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/proxy/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/run/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/scale/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/secret/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/summary/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/summary/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/wide/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/accessing_multiple_clusters/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_deployment/accessing_multiple_clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/apply/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/apply/</loc>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/commonannotations/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/copying_container_files/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/container_debugging/copying_container_files/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/misc_imperative_commands/creating_resources/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/custom_columns/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/default/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/extending_kubectl/discovering_plugins/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kubectl/discovering_plugins/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/background_information/getting_started/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/source/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/homebrew/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/kustomize/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/raw/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/raw/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/raw/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/binaries/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/chocolatey/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/commonlabels/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/executing_a_command_in_a_container/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/container_debugging/executing_a_command_in_a_container/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/fields/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/fields/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/homebrew/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/labels/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/publishing_bases/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_deployment/publishing_bases/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/background_information/resources_controllers/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/introduction/resources_controllers/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/secrets_configmaps/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/secrets_configmaps/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/misc_imperative_commands/setting_fields/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/chocolatey/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/components/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/container_debugging/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/container_images/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/container_images/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/describe/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/describe/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/misc_imperative_commands/editing_workloads/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/port_forward_to_pods/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/container_debugging/port_forward_to_pods/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_labels/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/app_deployment/</loc>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/configmapgenerator/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/extending_kubectl/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/namespaces_names/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/namespaces_names/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/container_debugging/proxying_traffic_to_services/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/container_debugging/proxying_traffic_to_services/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/queries_and_options/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/queries_and_options/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/auth_resources/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_kind/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/crds/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kubectl/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kustomize/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/labels_annotations/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/labels_annotations/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/watch/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/watch/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/resource_printing/cluster_information/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/resource_printing/cluster_information/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/field_merge_semantics/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/field_merge_semantics/</loc>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/generatoroptions/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/misc_imperative_commands/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/bespoke/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/describe/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/images/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/nameprefix/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/offtheshelf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/contributing/kustomize/bugs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/components/</loc>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/namespace/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/namesuffix/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/patches/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/patchesjson6902/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/patchesstrategicmerge/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/replicas/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/resource/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/secretegenerator/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/vars/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/blog/releases/</loc>
+    <lastmod>2019-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/contributing/kustomize/community/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/contributing/kustomize/features/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/contributing/kustomize/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/contributing/kustomize/howitworks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/contributing/kustomize/mac/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/contributing/kustomize/windows/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/faq/kustomize/eschewedfeatures/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/glossary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/faq/kustomize/versioningpolicy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/blog/</loc>
+    <lastmod>2019-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/10/24/v3.3.0/</loc>
+    <lastmod>2019-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/09/26/v3.2.1/</loc>
+    <lastmod>2019-09-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/09/17/v3.2.0/</loc>
+    <lastmod>2019-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/07/26/v3.1.0/</loc>
+    <lastmod>2019-07-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/07/03/v3.0.0/</loc>
+    <lastmod>2019-07-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/06/18/v2.1.0/</loc>
+    <lastmod>2019-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/02/05/v2.0.0/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/blog/2018/05/21/v1.0.1/</loc>
+    <lastmod>2018-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kustomize/builtins/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/contributing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kustomize/execpluginguidedexample/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kustomize/goplugincaveats/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/guides/extending_kustomize/gopluginguidedexample/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/contributing/kubectl/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/faq/kubectl/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/contributing/kustomize/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/faq/kustomize/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubernetes-sigs.github.io/cli-experimental/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
 </urlset>

@@ -1,6 +1,6 @@
 ---
-title: "Custom Columns"
-linkTitle: "Custom Columns"
+title: "custom columns"
+linkTitle: "custom columns"
 weight: 2
 type: docs
 description: >

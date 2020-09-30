@@ -1,6 +1,6 @@
 ---
-title: "Show Kind"
-linkTitle: "Show Kind"
+title: "show kind"
+linkTitle: "show kind"
 weight: 5
 type: docs
 description: >
