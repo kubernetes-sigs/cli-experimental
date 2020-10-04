@@ -31,7 +31,7 @@ viewing the Raw Resource as Yaml or Json.  The Raw Resource will contain:
 
 The `kubectl get` reads Resources from the cluster and formats them as output.  The examples in
 this chapter will query for Resources by providing Get the *Resource Type* as an argument.
-For more query options see [Queries and Options](queries_and_options.md).
+For more query options see [Queries and Options](/cli-experimental/guides/resource_printing/queries_and_options/).
 
 ### YAML
 

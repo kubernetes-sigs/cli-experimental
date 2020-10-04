@@ -9,6 +9,6 @@ description: >
 
 - For [Chocolatey](https://chocolatey.org/) users:
 
-```
+```bash
 choco install kubernetes-cli
 ```

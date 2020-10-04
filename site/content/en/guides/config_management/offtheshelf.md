@@ -12,58 +12,60 @@ they are based on an [off-the-shelf] configuration that is periodically consulte
 
 ![off-the-shelf config workflow image][workflowOts]
 
-#### 1) find and [fork] an [OTS] config
+Following are the steps involved:
 
-#### 2) clone it as your [base]
+1. ***Find and [fork] an [OTS] config***
 
-The [base] directory is maintained in a repo whose upstream is an [OTS] configuration, in this case
-some user's `ldap` repo:
+1. ***Clone it as your [base]***
 
-> ```
-> mkdir ~/ldap
-> git clone https://github.com/$USER/ldap ~/ldap/base
-> cd ~/ldap/base
-> git remote add upstream git@github.com:$USER/ldap
-> ```
+    The [base] directory is maintained in a repo whose upstream is an [OTS] configuration, in this case
+    some user's `ldap` repo:
 
-#### 3) create [overlays]
+    > ```bash
+    > mkdir ~/ldap
+    > git clone https://github.com/$USER/ldap ~/ldap/base
+    > cd ~/ldap/base
+    > git remote add upstream git@github.com:$USER/ldap
+    > ```
 
-As in the bespoke case above, create and populate an _overlays_ directory.
+1. ***Create [overlays]***
 
-The [overlays] are siblings to each other and to the [base] they depend on.
+    As in the bespoke case above, create and populate an _overlays_ directory.
 
-> ```
-> mkdir -p ~/ldap/overlays/staging
-> mkdir -p ~/ldap/overlays/production
-> ```
+    The [overlays] are siblings to each other and to the [base] they depend on.
 
-The user can maintain the `overlays` directory in a
-distinct repository.
+    > ```bash
+    > mkdir -p ~/ldap/overlays/staging
+    > mkdir -p ~/ldap/overlays/production
+    > ```
 
-#### 4) bring up [variants]
+    The user can maintain the `overlays` directory in a
+    distinct repository.
 
-> ```
-> kustomize build ~/ldap/overlays/staging | kubectl apply -f -
-> kustomize build ~/ldap/overlays/production | kubectl apply -f -
-> ```
+1. ***Bring up [variants]***
 
-You can also use [kubectl-v1.14.0] to apply your [variants].
->
-> ```
-> kubectl apply -k ~/ldap/overlays/staging
-> kubectl apply -k ~/ldap/overlays/production
-> ```
+    > ```bash
+    > kustomize build ~/ldap/overlays/staging | kubectl apply -f -
+    > kustomize build ~/ldap/overlays/production | kubectl apply -f -
+    > ```
 
-#### 5) (optionally) capture changes from upstream
+    You can also use [kubectl-v1.14.0] to apply your [variants].
 
-The user can periodically [rebase] their [base] to
-capture changes made in the upstream repository.
+    > ```bash
+    > kubectl apply -k ~/ldap/overlays/staging
+    > kubectl apply -k ~/ldap/overlays/production
+    > ```
 
-> ```
-> cd ~/ldap/base
-> git fetch upstream
-> git rebase upstream/master
-> ```
+1. ***(Optionally) Capture changes from upstream***
+
+    The user can periodically [rebase] their [base] to
+    capture changes made in the upstream repository.
+
+    > ```bash
+    > cd ~/ldap/base
+    > git fetch upstream
+    > git rebase upstream/master
+    > ```
 
 [OTS]: /cli-experimental/references/kustomize/glossary#off-the-shelf-configuration
 [apply]: /cli-experimental/references/kustomize/glossary#apply
@@ -79,5 +81,5 @@ capture changes made in the upstream repository.
 [rebase]: https://git-scm.com/docs/git-rebase
 [resources]: /cli-experimental/references/kustomize/glossary#resource
 [workflowBespoke]: /cli-experimental/images/workflowBespoke.jpg
-[workflowOts]: /cli-experimental/images/workflowOts.jpg
+[workflowOts]: /cli-experimental/images/new_ots.jpg
 [kubectl-v1.14.0]:https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/

@@ -23,8 +23,6 @@ Users may want to define a common set of labels or annotations for all the Resou
 - Set metadata for all Resources within a project (e.g. environment=test).
 - Copy or Fork an existing Project and add or change labels and annotations.
 
-See [Bases and Variations]() for more details on Copying Projects.
-
 
 ## Setting Labels
 

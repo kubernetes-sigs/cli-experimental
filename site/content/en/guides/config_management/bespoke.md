@@ -12,56 +12,58 @@ No content is incorporated from version control repositories owned by others.
 
 ![bespoke config workflow image][workflowBespoke]
 
-#### 1) create a directory in version control
+Following are the steps involved:
 
-Speculate some overall cluster application called _ldap_;
-we want to keep its configuration in its own repo.
+1. ***Create a directory in version control***
 
-> ```
-> git init ~/ldap
-> ```
+    Speculate some overall cluster application called _ldap_;
+    we want to keep its configuration in its own repo.
 
-#### 2) create a [base]
+    > ```bash
+    > git init ~/ldap
+    > ```
 
-> ```
-> mkdir -p ~/ldap/base
-> ```
+1. ***Create a [base]***
 
-In this directory, create and commit a [kustomization]
-file and a set of [resources].
+    > ```bash
+    > mkdir -p ~/ldap/base
+    > ```
 
-#### 3) create [overlays]
+    In this directory, create and commit a [kustomization]
+    file and a set of [resources].
 
-> ```
-> mkdir -p ~/ldap/overlays/staging
-> mkdir -p ~/ldap/overlays/production
-> ```
+1. ***Create [overlays]***
 
-Each of these directories needs a [kustomization]
-file and one or more [patches].
+    > ```bash
+    > mkdir -p ~/ldap/overlays/staging
+    > mkdir -p ~/ldap/overlays/production
+    > ```
 
-The _staging_ directory might get a patch
-that turns on an experiment flag in a configmap.
+    Each of these directories needs a [kustomization]
+    file and one or more [patches].
 
-The _production_ directory might get a patch
-that increases the replica count in a deployment
-specified in the base.
+    The _staging_ directory might get a patch
+    that turns on an experiment flag in a configmap.
 
-#### 4) bring up [variants]
+    The _production_ directory might get a patch
+    that increases the replica count in a deployment
+    specified in the base.
 
-Run kustomize, and pipe the output to [apply].
+1. ***Bring up [variants]***
 
-> ```
-> kustomize build ~/ldap/overlays/staging | kubectl apply -f -
-> kustomize build ~/ldap/overlays/production | kubectl apply -f -
-> ```
+    Run kustomize, and pipe the output to [apply].
 
-You can also use [kubectl-v1.14.0] to apply your [variants].
->
-> ```
-> kubectl apply -k ~/ldap/overlays/staging
-> kubectl apply -k ~/ldap/overlays/production
-> ```
+    > ```bash
+    > kustomize build ~/ldap/overlays/staging | kubectl apply -f -
+    > kustomize build ~/ldap/overlays/production | kubectl apply -f -
+    > ```
+
+    You can also use [kubectl-v1.14.0] to apply your [variants].
+    >
+    > ```bash
+    > kubectl apply -k ~/ldap/overlays/staging
+    > kubectl apply -k ~/ldap/overlays/production
+    > ```
 
 [OTS]: /cli-experimental/references/kustomize/glossary#off-the-shelf-configuration
 [apply]: /cli-experimental/references/kustomize/glossary#apply
@@ -76,6 +78,6 @@ You can also use [kubectl-v1.14.0] to apply your [variants].
 [patches]: /cli-experimental/references/kustomize/glossary#patch
 [rebase]: https://git-scm.com/docs/git-rebase
 [resources]: /cli-experimental/references/kustomize/glossary#resource
-[workflowBespoke]: /cli-experimental/images/workflowBespoke.jpg
+[workflowBespoke]: /cli-experimental/images/new_bespoke.jpg
 [workflowOts]: /cli-experimental/images/workflowOts.jpg
 [kubectl-v1.14.0]:https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/

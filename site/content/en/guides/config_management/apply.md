@@ -69,7 +69,7 @@ Any fields that have been added to the Resource Config will be set on the Resour
 **Updated Fields** 
  
 Any fields that contain different values for the fields specified locally in the Resource Config from what is
-in the Resource will be updated by merging the Resource Config into the live Resource.  See [merging](field_merge_semantics.md)
+in the Resource will be updated by merging the Resource Config into the live Resource.  See [merging](/cli-experimental/references/architecture/field_merge_semantics/)
 for more details.
 
 **Deleted Fields**

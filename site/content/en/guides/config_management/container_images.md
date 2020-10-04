@@ -28,8 +28,6 @@ image - e.g. for the `nginx` container image you might use the tag `1.15.9` or `
 - Copy or Fork an existing Project and change the Image Tag for a container
 - Change the registry used for an image
 
-See [Bases and Variations]() for more details on Copying Projects.
-
 Consider the following `deployment.yaml` file,
 
 ```yaml

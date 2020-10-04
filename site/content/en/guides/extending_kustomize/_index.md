@@ -38,7 +38,7 @@ field to your kustomization.
 
 Each field accepts a string list:
 
-> ```
+> ```bash
 > generators:
 > - relative/path/to/some/file.yaml
 > - relative/path/to/some/kustomization
@@ -67,7 +67,7 @@ kustomize as a _plugin configuration_ object.
 
 A kustomization file could have the following lines:
 
-```
+```bash
 generators:
 - chartInflator.yaml
 ```
@@ -81,7 +81,7 @@ it contains a YAML configuration object.
 
 The file `chartInflator.yaml` could contain:
 
-```
+```bash
 apiVersion: someteam.example.com/v1
 kind: ChartInflator
 metadata:
@@ -117,7 +117,7 @@ Each plugin gets its own dedicated directory named
 
 [`XDG_CONFIG_HOME`]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 
-```
+```bash
 $XDG_CONFIG_HOME/kustomize/plugin
     /${apiVersion}/LOWERCASE(${kind})
 ```
@@ -137,7 +137,7 @@ version dependency skew.
 When loading, kustomize will first look for an
 _executable_ file called
 
-```
+```bash
 $XDG_CONFIG_HOME/kustomize/plugin
     /${apiVersion}/LOWERCASE(${kind})/${kind}
 ```
@@ -306,7 +306,7 @@ attached functions implement the `Configurable`,
 
 A Go plugin for kustomize looks like this:
 
-> ```
+> ```go
 > package main
 >
 > import (
@@ -369,7 +369,7 @@ Here's a build command that sensibly assumes the
 plugin source code sits in the directory where
 kustomize expects to find `.so` files:
 
-```
+```bash
 d=$XDG_CONFIG_HOME/kustomize/plugin\
 /${apiVersion}/LOWERCASE(${kind})
 

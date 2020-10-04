@@ -11,13 +11,13 @@ Requires [Go] to be installed.
 
 ## Install the kustomize CLI from source without cloning the repo
 
-```
+```bash
 GOBIN=$(pwd)/ GO111MODULE=on go get sigs.k8s.io/kustomize/kustomize/v3
 ```
 
 ## Install the kustomize CLI from local source with cloning the repo
 
-```
+```bash
 # Need go 1.13 or higher
 unset GOPATH
 # see https://golang.org/doc/go1.13#modules

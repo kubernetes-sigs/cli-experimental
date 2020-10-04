@@ -7,13 +7,13 @@ description: >
     How to modify Kustomize
 ---
 
-{{% pageinfo color="info" %}}
+{{< alert color="success" title="Info" >}}
 To build kustomize using the locally modified modules, `replace` statements must be added to
 the `kustomize/go.mod`.
 
 e.g. if code in `api` was modified, a `replace` statement would need to be added for the
 `kustomize/api` module.
-{{% /pageinfo %}}
+{{< /alert >}}
 
 Call stack when running `kustomize build`, with links to code.
 

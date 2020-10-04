@@ -85,12 +85,7 @@ Krew helps to&lt;/p&gt;
 &lt;li&gt;remove plugins&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;installing-krew&#34;&gt;Installing krew&lt;/h2&gt;
-&lt;p&gt;Krew should be used as a kubectl plugin. To set yourself up to using krew, you need to do two things:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Install git&lt;/li&gt;
-&lt;li&gt;Install krew as described on the project page &lt;a href=&#34;https://krew.sigs.k8s.io/docs/user-guide/setup/install/&#34;&gt;krew.sigs.k8s.io&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Add the krew bin folder to your &lt;code&gt;PATH&lt;/code&gt; environment variable. For example, in bash &lt;code&gt;export PATH=&amp;quot;${KREW_ROOT:-$HOME/.krew}/bin:$PATH&amp;quot;&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Krew should be used as a kubectl plugin. To set yourself up to using krew - please check out the &lt;a href=&#34;http://localhost:1313/cli-experimental/installation/krew/&#34;&gt;Installation section for krew&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;krew-capabilities&#34;&gt;Krew capabilities&lt;/h2&gt;
 &lt;p&gt;Discover plugins&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl krew search

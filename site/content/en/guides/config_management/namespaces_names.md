@@ -25,8 +25,6 @@ a Project.
 - Ensure all Resources share a common naming convention
 - Copy or Fork an existing Project and change the Namespace / Names
 
-See [Bases and Variations]() for more details on Copying Projects.
-
 
 ## Setting Namespace
 

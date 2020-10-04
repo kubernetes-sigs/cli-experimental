@@ -203,7 +203,7 @@ chmod a+x $MY_PLUGIN_DIR/SillyConfigMapGenerator
 
 ## Install kustomize
 
-Per the [instructions](/kustomize/installation):
+Per the [instructions](/cli-experimental/installation/kustomize/):
 
 ```bash
 curl -s "https://raw.githubusercontent.com/\

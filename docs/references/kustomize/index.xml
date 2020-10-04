@@ -183,7 +183,8 @@ resource has been applied to a cluster.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;&lt;em&gt;Coming soon&lt;/em&gt;&lt;/p&gt;
+        &lt;p&gt;Please check out the existing &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/guides/config_management/components/&#34;&gt;components guide&lt;/a&gt; for explanation with examples.
+More examples are in progress&lt;/p&gt;
 
       </description>
     </item>
@@ -1261,10 +1262,10 @@ follow the &lt;a href=&#34;https://github.com/hashicorp/go-getter#url-format&#34
     
     <item>
       <title>References: secretGenerator</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/secretegenerator/</link>
+      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/secretgenerator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/secretegenerator/</guid>
+      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/secretgenerator/</guid>
       <description>
         
         

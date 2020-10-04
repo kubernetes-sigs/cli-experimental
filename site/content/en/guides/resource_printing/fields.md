@@ -27,7 +27,7 @@ This may be **useful for scripting or gathering data** about Resources from a Ku
 The `kubectl get` reads Resources from the cluster and formats them as output.  The examples in
 this chapter will query for Resources by providing Get the *Resource Type* with the
 Version and Group as an argument.
-For more query options see [Queries and Options]().
+For more query options see [Queries and Options](/cli-experimental/guides/resource_printing/queries_and_options/).
 
 Kubectl can format and print specific fields from Resources using Json Path.
 

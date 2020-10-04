@@ -104,7 +104,7 @@ viewing the Raw Resource as Yaml or Json.  The Raw Resource will contain:&lt;/p&
 &lt;h2 id=&#34;get&#34;&gt;Get&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;kubectl get&lt;/code&gt; reads Resources from the cluster and formats them as output.  The examples in
 this chapter will query for Resources by providing Get the &lt;em&gt;Resource Type&lt;/em&gt; as an argument.
-For more query options see &lt;a href=&#34;queries_and_options.md&#34;&gt;Queries and Options&lt;/a&gt;.&lt;/p&gt;
+For more query options see &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/guides/resource_printing/queries_and_options/&#34;&gt;Queries and Options&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;yaml&#34;&gt;YAML&lt;/h3&gt;
 &lt;p&gt;Print the Raw Resource formatting it as YAML.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments -o yaml
@@ -217,7 +217,7 @@ Check out the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental
 &lt;p&gt;The &lt;code&gt;kubectl get&lt;/code&gt; reads Resources from the cluster and formats them as output.  The examples in
 this chapter will query for Resources by providing Get the &lt;em&gt;Resource Type&lt;/em&gt; with the
 Version and Group as an argument.
-For more query options see &lt;a href=&#34;&#34;&gt;Queries and Options&lt;/a&gt;.&lt;/p&gt;
+For more query options see &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/guides/resource_printing/queries_and_options/&#34;&gt;Queries and Options&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Kubectl can format and print specific fields from Resources using Json Path.&lt;/p&gt;
 
 
