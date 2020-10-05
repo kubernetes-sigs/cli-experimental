@@ -74,8 +74,7 @@ weight = 1
 # Everything below this are Site Params
 
 [params]
-copyright = "The Docsy Authors"
-privacy_policy = "https://policies.google.com/privacy"
+copyright = "SIG CLI | Documentation Distributed under CC BY 4.0 | "
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
