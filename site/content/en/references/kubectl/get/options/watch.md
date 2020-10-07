@@ -1,6 +1,6 @@
 ---
-title: "Watch"
-linkTitle: "Watch"
+title: "watch"
+linkTitle: "watch"
 weight: 6
 type: docs
 description: >

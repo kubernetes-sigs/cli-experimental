@@ -8,6 +8,34 @@ description: >
 ---
 ## fields
 
+Print the fields from the JSON Path
+
+**Note:**  JSON Path can also be read from a file using `-o custom-columns-file`.
+
+- JSON Path template is composed of JSONPath expressions enclosed by {}. In addition to the original JSONPath syntax, several capabilities are added:
+- The `$` operator is optional (the expression starts from the root object by default).
+- Use "" to quote text inside JSONPath expressions.
+- Use range operator to iterate lists.
+- Use negative slice indices to step backwards through a list. Negative indices do not “wrap around” a list. They are valid as long as -index + listLength >= 0.
+
+### JSON Path Symbols Table
+
+| Function	| Description	| Example	| Result |
+|---|---|---|---|
+| text	| the plain text	| kind is {.kind}	| kind is List |
+| @	| the current object	| {@}	| the same as input |
+| . or [] |	child operator	| {.kind} or {[‘kind’]}	| List |
+| ..	| recursive descent	| {..name}	| 127.0.0.1 127.0.0.2 myself e2e |
+| *	| wildcard. Get all objects	| {.items[*].metadata.name}	| [127.0.0.1 127.0.0.2] |
+| [start:end :step]	| subscript operator	| {.users[0].name}	| myself |
+| [,]	| union operator	| {.items[*][‘metadata.name’, ‘status.capacity’]}	|127.0.0.1 127.0.0.2 map[cpu:4] map[cpu:8] |
+| ?()	| filter	| {.users[?(@.name==“e2e”)].user.password}	| secret |
+| range, end	| iterate list	| {range .items[*]}[{.metadata.name}, {.status.capacity}] {end}	| [127.0.0.1, map[cpu:4]] [127.0.0.2, map[cpu:8]] |
+| “	| quote interpreted string	| {range .items[*]}{.metadata.name}{’\t’} {end} |	127.0.0.1 127.0.0.2|
+
+---
+
+
 Print the JSON representation of the first Deployment in the list on a single line.
 
 ### Command I

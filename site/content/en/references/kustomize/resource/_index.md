@@ -2,6 +2,7 @@
 title: "resources"
 linkTitle: "resources"
 type: docs
+weight: 16
 description: >
     Resources to include.
 ---

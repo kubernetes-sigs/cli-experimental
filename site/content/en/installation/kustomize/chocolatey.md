@@ -7,7 +7,7 @@ description: >
     Install Kustomize for Windows using Chocolatey
 ---
 
-```
+```bash
 choco install kustomize
 ```
 

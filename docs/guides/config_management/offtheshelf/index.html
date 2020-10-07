@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.74.3" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/cli-experimental/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/cli-experimental/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/cli-experimental/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/cli-experimental/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/cli-experimental/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/cli-experimental/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/cli-experimental/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/cli-experimental/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/cli-experimental/favicons/android-192x192.png" sizes="192x192">
+
+<title>Off The Shelf Application | SIG CLI</title><meta property="og:title" content="Off The Shelf Application" />
+<meta property="og:description" content="Workflow for off the shelf applications
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/offtheshelf/" />
+<meta property="article:modified_time" content="2020-10-05T00:12:12+05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta itemprop="name" content="Off The Shelf Application">
+<meta itemprop="description" content="Workflow for off the shelf applications
+">
+<meta itemprop="dateModified" content="2020-10-05T00:12:12+05:30" />
+<meta itemprop="wordCount" content="191">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Off The Shelf Application"/>
+<meta name="twitter:description" content="Workflow for off the shelf applications
+"/>
+
+
+
+
+
+<link rel="preload" href="/cli-experimental/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" as="style">
+<link href="/cli-experimental/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+    <title>Off The Shelf Application | SIG CLI</title>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/cli-experimental/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">SIG CLI</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/cli-experimental/installation/" ><span>Installation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/cli-experimental/guides/" ><span class="active">Guides</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/cli-experimental/references/" ><span>Reference</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/cli-experimental/faq/" ><span>FAQ</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/cli-experimental/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/cli-experimental/contributing/" ><span>Contributing</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/guides/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Guides</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="cli-experimentalguides">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/guides/introduction/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Introduction</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalguidesintroduction">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesintroductionkubectl" href="/cli-experimental/guides/introduction/kubectl/">Kubectl</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesintroductionkustomize" href="/cli-experimental/guides/introduction/kustomize/">Kustomize</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesintroductionresources_controllers" href="/cli-experimental/guides/introduction/resources_controllers/">Resources &#43; Controllers Overview</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/guides/config_management/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Configuration Management</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="cli-experimentalguidesconfig_management">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesconfig_managementintroduction" href="/cli-experimental/guides/config_management/introduction/">Introduction</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesconfig_managementapply" href="/cli-experimental/guides/config_management/apply/">Apply</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesconfig_managementsecrets_configmaps" href="/cli-experimental/guides/config_management/secrets_configmaps/">Secrets and ConfigMaps</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesconfig_managementcontainer_images" href="/cli-experimental/guides/config_management/container_images/">Container Images</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesconfig_managementnamespaces_names" href="/cli-experimental/guides/config_management/namespaces_names/">Namespaces and Names</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesconfig_managementlabels_annotations" href="/cli-experimental/guides/config_management/labels_annotations/">Labels and Annotations</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesconfig_managementbespoke" href="/cli-experimental/guides/config_management/bespoke/">Bespoke Application</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-cli-experimentalguidesconfig_managementofftheshelf" href="/cli-experimental/guides/config_management/offtheshelf/">Off The Shelf Application</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesconfig_managementcomponents" href="/cli-experimental/guides/config_management/components/">Kustomize Components</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/guides/resource_printing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Resource Printing</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalguidesresource_printing">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesresource_printingsummary" href="/cli-experimental/guides/resource_printing/summary/">Summaries</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesresource_printingraw" href="/cli-experimental/guides/resource_printing/raw/">Raw</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesresource_printingfields" href="/cli-experimental/guides/resource_printing/fields/">Fields</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesresource_printingdescribe" href="/cli-experimental/guides/resource_printing/describe/">Describe</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesresource_printingqueries_and_options" href="/cli-experimental/guides/resource_printing/queries_and_options/">Queries and Options</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesresource_printingcluster_information" href="/cli-experimental/guides/resource_printing/cluster_information/">Cluster Information</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/guides/container_debugging/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Container Debugging</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalguidescontainer_debugging">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidescontainer_debuggingcontainer_logs" href="/cli-experimental/guides/container_debugging/container_logs/">Container Logs</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidescontainer_debuggingcopying_container_files" href="/cli-experimental/guides/container_debugging/copying_container_files/">Copying Container Files</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidescontainer_debuggingexecuting_a_command_in_a_container" href="/cli-experimental/guides/container_debugging/executing_a_command_in_a_container/">Executing a command in a container</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidescontainer_debuggingport_forward_to_pods" href="/cli-experimental/guides/container_debugging/port_forward_to_pods/">Port forward to Pods</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidescontainer_debuggingproxying_traffic_to_services" href="/cli-experimental/guides/container_debugging/proxying_traffic_to_services/">Proxying traffic to services</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/guides/app_deployment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">App Deployment</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalguidesapp_deployment">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesapp_deploymentdiffing_local_and_remote_resources" href="/cli-experimental/guides/app_deployment/diffing_local_and_remote_resources/">Diffing Local and Remote Resources</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesapp_deploymentaccessing_multiple_clusters" href="/cli-experimental/guides/app_deployment/accessing_multiple_clusters/">Accessing Multiple Clusters</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesapp_deploymentpublishing_bases" href="/cli-experimental/guides/app_deployment/publishing_bases/">Publishing Bases</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/guides/extending_kubectl/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extending Kubectl</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalguidesextending_kubectl">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesextending_kubectlplugin_mechanism" href="/cli-experimental/guides/extending_kubectl/plugin_mechanism/">Plugin Mechanism</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesextending_kubectldiscovering_plugins" href="/cli-experimental/guides/extending_kubectl/discovering_plugins/">Discovering Plugins</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/cli-experimental/guides/extending_kustomize/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extending Kustomize</a>
+  </li>
+  <ul>
+    <li class="collapse " id="cli-experimentalguidesextending_kustomize">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesextending_kustomizebuiltins" href="/cli-experimental/guides/extending_kustomize/builtins/">Builtin Plugins</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesextending_kustomizeexecpluginguidedexample" href="/cli-experimental/guides/extending_kustomize/execpluginguidedexample/">Exec plugin on linux</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesextending_kustomizegoplugincaveats" href="/cli-experimental/guides/extending_kustomize/goplugincaveats/">Go plugin Caveats</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-cli-experimentalguidesextending_kustomizegopluginguidedexample" href="/cli-experimental/guides/extending_kustomize/gopluginguidedexample/">Go plugin example</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/content/en/guides/config_management/offtheshelf.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Off%20The%20Shelf%20Application" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+
+</div>
+
+
+
+
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://kubernetes-sigs.github.io/cli-experimental/guides/">Guides</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/">Configuration Management</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/offtheshelf/">Off The Shelf Application</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Off The Shelf Application</h1>
+	<div class="lead">Workflow for off the shelf applications</div>
+	<p>In this workflow, all files are owned by the user and maintained in a repository under their control, but
+they are based on an <a href="/cli-experimental/references/kustomize/glossary#off-the-shelf-configuration">off-the-shelf</a> configuration that is periodically consulted for updates.</p>
+<p><img src="/cli-experimental/images/new_ots.jpg" alt="off-the-shelf config workflow image"></p>
+<p>Following are the steps involved:</p>
+<ol>
+<li>
+<p><em><strong>Find and <a href="https://guides.github.com/activities/forking/">fork</a> an <a href="/cli-experimental/references/kustomize/glossary#off-the-shelf-configuration">OTS</a> config</strong></em></p>
+</li>
+<li>
+<p><em><strong>Clone it as your <a href="/cli-experimental/references/kustomize/glossary#base">base</a></strong></em></p>
+<p>The <a href="/cli-experimental/references/kustomize/glossary#base">base</a> directory is maintained in a repo whose upstream is an <a href="/cli-experimental/references/kustomize/glossary#off-the-shelf-configuration">OTS</a> configuration, in this case
+some user&rsquo;s <code>ldap</code> repo:</p>
+<blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/ldap
+git clone https://github.com/<span style="color:#000">$USER</span>/ldap ~/ldap/base
+<span style="color:#204a87">cd</span> ~/ldap/base
+git remote add upstream git@github.com:<span style="color:#000">$USER</span>/ldap
+</code></pre></div></blockquote>
+</li>
+<li>
+<p><em><strong>Create <a href="/cli-experimental/references/kustomize/glossary#overlay">overlays</a></strong></em></p>
+<p>As in the bespoke case above, create and populate an <em>overlays</em> directory.</p>
+<p>The <a href="/cli-experimental/references/kustomize/glossary#overlay">overlays</a> are siblings to each other and to the <a href="/cli-experimental/references/kustomize/glossary#base">base</a> they depend on.</p>
+<blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/ldap/overlays/staging
+mkdir -p ~/ldap/overlays/production
+</code></pre></div></blockquote>
+<p>The user can maintain the <code>overlays</code> directory in a
+distinct repository.</p>
+</li>
+<li>
+<p><em><strong>Bring up <a href="/cli-experimental/references/kustomize/glossary#variant">variants</a></strong></em></p>
+<blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kustomize build ~/ldap/overlays/staging <span style="color:#000;font-weight:bold">|</span> kubectl apply -f -
+kustomize build ~/ldap/overlays/production <span style="color:#000;font-weight:bold">|</span> kubectl apply -f -
+</code></pre></div></blockquote>
+<p>You can also use <a href="https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/">kubectl-v1.14.0</a> to apply your <a href="/cli-experimental/references/kustomize/glossary#variant">variants</a>.</p>
+<blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -k ~/ldap/overlays/staging
+kubectl apply -k ~/ldap/overlays/production
+</code></pre></div></blockquote>
+</li>
+<li>
+<p><em><strong>(Optionally) Capture changes from upstream</strong></em></p>
+<p>The user can periodically <a href="https://git-scm.com/docs/git-rebase">rebase</a> their <a href="/cli-experimental/references/kustomize/glossary#base">base</a> to
+capture changes made in the upstream repository.</p>
+<blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">cd</span> ~/ldap/base
+git fetch upstream
+git rebase upstream/master
+</code></pre></div></blockquote>
+</li>
+</ol>
+
+	
+		<style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h2 class="feedback--title">Feedback</h2>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script>
+
+		<br />
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 5, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/53154e46f206c1a93c5a44f2b5fd0478636c1cdc">site refactor (53154e4)</a>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 SIG CLI | Documentation Distributed under CC BY 4.0 |  All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<script src="/cli-experimental/js/main.min.f36e2ae1845dad7465fabca9f3cabf721bea42b378353241ab4c6bbbcf94ecdb.js" integrity="sha256-824q4YRdrXRl&#43;ryp88q/chvqQrN4NTJBq0xru8&#43;U7Ns=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

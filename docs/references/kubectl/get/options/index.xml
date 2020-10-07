@@ -23,6 +23,89 @@
         
         
         &lt;h2 id=&#34;fields&#34;&gt;fields&lt;/h2&gt;
+&lt;p&gt;Print the fields from the JSON Path&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;  JSON Path can also be read from a file using &lt;code&gt;-o custom-columns-file&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JSON Path template is composed of JSONPath expressions enclosed by {}. In addition to the original JSONPath syntax, several capabilities are added:&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;$&lt;/code&gt; operator is optional (the expression starts from the root object by default).&lt;/li&gt;
+&lt;li&gt;Use &amp;quot;&amp;rdquo; to quote text inside JSONPath expressions.&lt;/li&gt;
+&lt;li&gt;Use range operator to iterate lists.&lt;/li&gt;
+&lt;li&gt;Use negative slice indices to step backwards through a list. Negative indices do not “wrap around” a list. They are valid as long as -index + listLength &amp;gt;= 0.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;json-path-symbols-table&#34;&gt;JSON Path Symbols Table&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Function&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Example&lt;/th&gt;
+&lt;th&gt;Result&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;text&lt;/td&gt;
+&lt;td&gt;the plain text&lt;/td&gt;
+&lt;td&gt;kind is {.kind}&lt;/td&gt;
+&lt;td&gt;kind is List&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;@&lt;/td&gt;
+&lt;td&gt;the current object&lt;/td&gt;
+&lt;td&gt;{@}&lt;/td&gt;
+&lt;td&gt;the same as input&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;. or []&lt;/td&gt;
+&lt;td&gt;child operator&lt;/td&gt;
+&lt;td&gt;{.kind} or {[‘kind’]}&lt;/td&gt;
+&lt;td&gt;List&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;..&lt;/td&gt;
+&lt;td&gt;recursive descent&lt;/td&gt;
+&lt;td&gt;{..name}&lt;/td&gt;
+&lt;td&gt;127.0.0.1 127.0.0.2 myself e2e&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;wildcard. Get all objects&lt;/td&gt;
+&lt;td&gt;{.items[*].metadata.name}&lt;/td&gt;
+&lt;td&gt;[127.0.0.1 127.0.0.2]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;[start:end :step]&lt;/td&gt;
+&lt;td&gt;subscript operator&lt;/td&gt;
+&lt;td&gt;{.users[0].name}&lt;/td&gt;
+&lt;td&gt;myself&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;[,]&lt;/td&gt;
+&lt;td&gt;union operator&lt;/td&gt;
+&lt;td&gt;{.items[*][‘metadata.name’, ‘status.capacity’]}&lt;/td&gt;
+&lt;td&gt;127.0.0.1 127.0.0.2 map[cpu:4] map[cpu:8]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;?()&lt;/td&gt;
+&lt;td&gt;filter&lt;/td&gt;
+&lt;td&gt;{.users[?(@.name==“e2e”)].user.password}&lt;/td&gt;
+&lt;td&gt;secret&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;range, end&lt;/td&gt;
+&lt;td&gt;iterate list&lt;/td&gt;
+&lt;td&gt;{range .items[*]}[{.metadata.name}, {.status.capacity}] {end}&lt;/td&gt;
+&lt;td&gt;[127.0.0.1, map[cpu:4]] [127.0.0.2, map[cpu:8]]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;“&lt;/td&gt;
+&lt;td&gt;quote interpreted string&lt;/td&gt;
+&lt;td&gt;{range .items[*]}{.metadata.name}{’\t’} {end}&lt;/td&gt;
+&lt;td&gt;127.0.0.1 127.0.0.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
 &lt;p&gt;Print the JSON representation of the first Deployment in the list on a single line.&lt;/p&gt;
 &lt;h3 id=&#34;command-i&#34;&gt;Command I&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployment.v1.apps -o&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;jsonpath&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;{.items[0]}{&amp;#34;\n&amp;#34;}&amp;#39;&lt;/span&gt;
@@ -78,7 +161,7 @@ This in turn means that you must use a single quote or escaped double quote arou
     </item>
     
     <item>
-      <title>References: Wide</title>
+      <title>References: wide</title>
       <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/wide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -99,7 +182,7 @@ nginx     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&
     </item>
     
     <item>
-      <title>References: Custom Columns</title>
+      <title>References: custom columns</title>
       <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/custom_columns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -119,7 +202,7 @@ nginx     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&
     </item>
     
     <item>
-      <title>References: Labels</title>
+      <title>References: labels</title>
       <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/labels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -138,7 +221,7 @@ nginx     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&
     </item>
     
     <item>
-      <title>References: Show Labels</title>
+      <title>References: show labels</title>
       <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_labels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -157,7 +240,7 @@ nginx     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&
     </item>
     
     <item>
-      <title>References: Show Kind</title>
+      <title>References: show kind</title>
       <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_kind/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -178,7 +261,7 @@ deployment.extensions/nginx   &lt;span style=&#34;color:#0000cf;font-weight:bold
     </item>
     
     <item>
-      <title>References: Watch</title>
+      <title>References: watch</title>
       <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/watch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

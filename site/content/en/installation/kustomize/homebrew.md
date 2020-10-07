@@ -9,12 +9,12 @@ description: >
 
 For [Homebrew](https://brew.sh) users:
 
-```
+```bash
 brew install kustomize
 ```
 
 For [MacPorts](https://www.macports.org) users:
 
-```
+```bash
 sudo port install kustomize
 ```

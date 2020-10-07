@@ -2,6 +2,7 @@
 title: "configMapGenerator"
 linkTitle: "configMapGenerator"
 type: docs
+weight: 5
 description: >
     Generate ConfigMap resources.
 ---

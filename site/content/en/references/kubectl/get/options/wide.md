@@ -1,6 +1,6 @@
 ---
-title: "Wide"
-linkTitle: "Wide"
+title: "wide"
+linkTitle: "wide"
 weight: 1
 type: docs
 description: >

@@ -24,11 +24,7 @@ Krew helps to
 
 ## Installing krew
 
-Krew should be used as a kubectl plugin. To set yourself up to using krew, you need to do two things:
-
-1. Install git
-1. Install krew as described on the project page [krew.sigs.k8s.io](https://krew.sigs.k8s.io/docs/user-guide/setup/install/).
-1. Add the krew bin folder to your `PATH` environment variable. For example, in bash `export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"`.
+Krew should be used as a kubectl plugin. To set yourself up to using krew - please check out the [Installation section for krew](http://localhost:1313/cli-experimental/installation/krew/)
 
 ## Krew capabilities
 

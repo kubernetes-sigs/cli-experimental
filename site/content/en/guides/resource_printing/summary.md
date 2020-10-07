@@ -1,17 +1,14 @@
 ---
-title: "Summaries / Raw"
-linkTitle: "Summaries / Raw"
+title: "Summaries"
+linkTitle: "Summaries"
 weight: 1
 type: docs
 description: >
-    Prints Summary or Raw info of currently working resources and their states
+    Prints Summary of currently working resources and their states
 ---
-
-
 
 {{< alert color="success" title="TL;DR" >}}
 - Get a Summary of Resources Running in the Cluster
-- Get or List Raw Resources in a cluster as Yaml or Json
 {{< /alert >}}
 
 # Summarizing Resources
@@ -28,7 +25,7 @@ summary of the most relevant information** for a collection of Resources.
 
 The `kubectl get` reads Resources from the cluster and formats them as output.  The examples in
 this chapter will query for Resources by providing Get the *Resource Type* as an argument.
-For more query options see [Queries and Options]().
+For more query options see [Queries and Options](queries_and_options.md).
 
 ### Default
 
@@ -48,20 +45,14 @@ nginx     1         1         1            0           5s
 
 ---
 
-### Raw - JSON / YAML
+You can also use a number of options to query out and format the way the resources are displayed.
+Some of the commonly used `options` include:
+- wide
+- custom columns
+- labels
+- show labels
+- show kind
 
-Print the Raw Resource formatting it as JSON.
-
-```bash
-kubectl get deployments -o json
-```
-
-```bash
-kubectl get deployments -o yaml
-```
-
-{{< alert color="success" title="Note" >}}
-Check out the [References](../../../references) to learn how to print Summary of Resources Running in the Cluster
-{{< /alert >}}
-
-
+{{% alert color="success" title="Command / Examples" %}}
+Check out the [reference](/cli-experimental/references/kubectl/get/) for commands and examples for `get` with / without options
+{{% /alert %}}

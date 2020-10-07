@@ -2,6 +2,7 @@
 title: "patchesJson6902"
 linkTitle: "patchesJson6902"
 type: docs
+weight: 13
 description: >
     Patch resources using the [json 6902 standard](https://tools.ietf.org/html/rfc6902)
 ---
