@@ -70,14 +70,14 @@ On windows, the minimum required version to use the plugin mechanism is 1.14.
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://krew.sigs.k8s.io/docs/user-guide/setup/install/&#34;&gt;krew.sigs.k8s.io&lt;/a&gt; is a kubernetes sub-project to discover and manage plugins&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://krew.sigs.k8s.io/&#34;&gt;krew.sigs.k8s.io&lt;/a&gt; is a kubernetes sub-project to discover and manage plugins&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
 
 &lt;h1 id=&#34;krew&#34;&gt;Krew&lt;/h1&gt;
 &lt;p&gt;By design, &lt;code&gt;kubectl&lt;/code&gt; does not install plugins. This task is left to the kubernetes sub-project
-&lt;a href=&#34;https://krew.sigs.k8s.io/docs/user-guide/setup/install/&#34;&gt;krew.sigs.k8s.io&lt;/a&gt; which needs to be installed separately.
+&lt;a href=&#34;https://krew.sigs.k8s.io/&#34;&gt;krew.sigs.k8s.io&lt;/a&gt; which needs to be installed separately.
 Krew helps to&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;discover plugins&lt;/li&gt;
@@ -85,7 +85,7 @@ Krew helps to&lt;/p&gt;
 &lt;li&gt;remove plugins&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;installing-krew&#34;&gt;Installing krew&lt;/h2&gt;
-&lt;p&gt;Krew should be used as a kubectl plugin. To set yourself up to using krew - please check out the &lt;a href=&#34;http://localhost:1313/cli-experimental/installation/krew/&#34;&gt;Installation section for krew&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Krew should be used as a kubectl plugin. To set yourself up to using krew - please check out the &lt;a href=&#34;https://krew.sigs.k8s.io/docs/user-guide/setup/install/&#34;&gt;Installation section for krew&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;krew-capabilities&#34;&gt;Krew capabilities&lt;/h2&gt;
 &lt;p&gt;Discover plugins&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl krew search

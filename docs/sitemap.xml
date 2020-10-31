@@ -33,11 +33,6 @@
   </url>
   
   <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/krew/bash_zsh/</loc>
-    <lastmod>2020-10-05T00:12:12+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kubectl/binaries/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
@@ -248,11 +243,6 @@
   </url>
   
   <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/krew/windows/</loc>
-    <lastmod>2020-10-05T00:12:12+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_deployment/accessing_multiple_clusters/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
@@ -414,11 +404,6 @@
   
   <url>
     <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/kustomize/homebrew/</loc>
-    <lastmod>2020-10-05T00:12:12+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kubernetes-sigs.github.io/cli-experimental/installation/krew/</loc>
     <lastmod>2020-10-05T00:12:12+05:30</lastmod>
   </url>
   

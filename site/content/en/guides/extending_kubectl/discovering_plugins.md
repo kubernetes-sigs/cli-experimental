@@ -9,13 +9,13 @@ description: >
 
 
 {{< alert color="success" title="TL;DR" >}}
-- [krew.sigs.k8s.io](https://krew.sigs.k8s.io/docs/user-guide/setup/install/) is a kubernetes sub-project to discover and manage plugins
+- [krew.sigs.k8s.io](https://krew.sigs.k8s.io/) is a kubernetes sub-project to discover and manage plugins
 {{< /alert >}}
 
 # Krew
 
 By design, `kubectl` does not install plugins. This task is left to the kubernetes sub-project
-[krew.sigs.k8s.io](https://krew.sigs.k8s.io/docs/user-guide/setup/install/) which needs to be installed separately.
+[krew.sigs.k8s.io](https://krew.sigs.k8s.io/) which needs to be installed separately.
 Krew helps to
 
 - discover plugins
@@ -24,7 +24,7 @@ Krew helps to
 
 ## Installing krew
 
-Krew should be used as a kubectl plugin. To set yourself up to using krew - please check out the [Installation section for krew](http://localhost:1313/cli-experimental/installation/krew/)
+Krew should be used as a kubectl plugin. To set yourself up to using krew - please check out the [Installation section for krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install/)
 
 ## Krew capabilities
 
