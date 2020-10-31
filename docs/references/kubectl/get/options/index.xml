@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – options</title>
-    <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/</link>
+    <link>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/</link>
     <description>Recent content in options on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://cli-docs.sigs.k8s.io/references/kubectl/get/options/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>References: field</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/field/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/field/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/field/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/field/</guid>
       <description>
         
         
@@ -162,10 +162,10 @@ This in turn means that you must use a single quote or escaped double quote arou
     
     <item>
       <title>References: wide</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/wide/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/wide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/wide/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/wide/</guid>
       <description>
         
         
@@ -183,10 +183,10 @@ nginx     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&
     
     <item>
       <title>References: custom columns</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/custom_columns/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/custom_columns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/custom_columns/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/custom_columns/</guid>
       <description>
         
         
@@ -203,10 +203,10 @@ nginx     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&
     
     <item>
       <title>References: labels</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/labels/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/labels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/labels/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/labels/</guid>
       <description>
         
         
@@ -222,10 +222,10 @@ nginx     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&
     
     <item>
       <title>References: show labels</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_labels/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/show_labels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_labels/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/show_labels/</guid>
       <description>
         
         
@@ -241,10 +241,10 @@ nginx     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&
     
     <item>
       <title>References: show kind</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_kind/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/show_kind/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/show_kind/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/show_kind/</guid>
       <description>
         
         
@@ -262,10 +262,10 @@ deployment.extensions/nginx   &lt;span style=&#34;color:#0000cf;font-weight:bold
     
     <item>
       <title>References: watch</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/watch/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/watch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/options/watch/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/get/options/watch/</guid>
       <description>
         
         

@@ -7,9 +7,9 @@ linkTitle = "SIG CLI"
 
 {{< blocks/lead title="SIG CLI" image_anchor="top" height="min" color="primary" >}}
 <div class="mx-auto">
-	<img src="/cli-experimental/images/banner.jpg" width=90% height=90%>
+	<img src="/images/banner.jpg" width=90% height=90%>
 	<p class="lead mt-5">Guides and API References for Kubectl and Kustomize.</p>
-	<a class="btn btn-lg btn-primary mr-3 mb-4 lead mt-3" href="/cli-experimental/guides/">
+	<a class="btn btn-lg btn-primary mr-3 mb-4 lead mt-3" href="/guides/">
     	Get Started <i class="fas fa-arrow-alt-circle-right ml-2"></i>
   	</a>
 </div>
@@ -17,11 +17,11 @@ linkTitle = "SIG CLI"
 
 {{< blocks/lead title="" image_anchor="top" height="min" color="secondary" >}}
 <div>
-	<img src="/cli-experimental/images/new_kubectl_banner.png" width=100% height=100%>
+	<img src="/images/new_kubectl_banner.png" width=100% height=100%>
 	<p class="lead mt-5">
 			<b>Kubectl</b> is a Kubernetes CLI, which provides a swiss army knife of functionality for working with Kubernetes clusters. It can be used to deploy and manage applications on Kubernetes, and for scripting and building higher-level frameworks.
 	</p>
-	<a class="btn btn-lg btn-primary mr-3 mb-4 lead mt-5" href="/cli-experimental/references/kubectl/">
+	<a class="btn btn-lg btn-primary mr-3 mb-4 lead mt-5" href="/references/kubectl/">
     	Goto Reference <i class="fas fa-arrow-alt-circle-right ml-2"></i>
 	</a>
 </div>
@@ -29,11 +29,11 @@ linkTitle = "SIG CLI"
 
 {{< blocks/lead title="" image_anchor="top" height="min" color="white" >}}
 <div class="mx-auto">
-	<img src="/cli-experimental/images/new_kustomize_banner.jpg" width=80% height=80%>
+	<img src="/images/new_kustomize_banner.jpg" width=80% height=80%>
 	<p class="lead mt-4">
 			<b>Kustomize</b> lets you customize raw, template-free YAML files for multiple purposes, leaving the original YAML untouched and usable as is.
 	</p>
-	<a class="btn btn-lg btn-primary mr-3 mb-4 lead mt-3" href="/cli-experimental/references/kustomize/">
+	<a class="btn btn-lg btn-primary mr-3 mb-4 lead mt-3" href="/references/kustomize/">
     	Goto Reference <i class="fas fa-arrow-alt-circle-right ml-2"></i>
   	</a>
 </div>

@@ -47,5 +47,5 @@ and so on.
 {{% /alert %}}
 
 {{% alert color="warning" title="Command / Examples" %}}
-Check out the [reference](/cli-experimental/references/kubectl/logs/) for commands and examples.
+Check out the [reference](/references/kubectl/logs/) for commands and examples.
 {{% /alert %}}

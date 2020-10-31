@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – App Management</title>
-    <link>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/</link>
+    <link>https://cli-docs.sigs.k8s.io/documentation/app_management/</link>
     <description>Recent content in App Management on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://cli-docs.sigs.k8s.io/documentation/app_management/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Documentation: Introduction</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/introduction/</link>
+      <link>https://cli-docs.sigs.k8s.io/documentation/app_management/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/introduction/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/documentation/app_management/introduction/</guid>
       <description>
         
         
@@ -67,10 +67,10 @@ Kubernetes system itself - where each may contribute to defining the desired sta
     
     <item>
       <title>Documentation: Apply</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/apply/</link>
+      <link>https://cli-docs.sigs.k8s.io/documentation/app_management/apply/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/apply/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/documentation/app_management/apply/</guid>
       <description>
         
         
@@ -195,10 +195,10 @@ with these dependencies are created in the correct order.&lt;/p&gt;
     
     <item>
       <title>Documentation: Secrets and ConfigMaps</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/secrets_configmaps/</link>
+      <link>https://cli-docs.sigs.k8s.io/documentation/app_management/secrets_configmaps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/secrets_configmaps/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/documentation/app_management/secrets_configmaps/</guid>
       <description>
         
         
@@ -511,10 +511,10 @@ their names will not match exactly what is specified in the kustomization.yaml f
     
     <item>
       <title>Documentation: Container Images</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/container_images/</link>
+      <link>https://cli-docs.sigs.k8s.io/documentation/app_management/container_images/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/container_images/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/documentation/app_management/container_images/</guid>
       <description>
         
         
@@ -696,10 +696,10 @@ deployments for these changes.
     
     <item>
       <title>Documentation: Namespaces and Names</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/namespaces_names/</link>
+      <link>https://cli-docs.sigs.k8s.io/documentation/app_management/namespaces_names/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/namespaces_names/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/documentation/app_management/namespaces_names/</guid>
       <description>
         
         
@@ -951,10 +951,10 @@ including:&lt;/p&gt;
     
     <item>
       <title>Documentation: Labels and Annotations</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/labels_annotations/</link>
+      <link>https://cli-docs.sigs.k8s.io/documentation/app_management/labels_annotations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/labels_annotations/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/documentation/app_management/labels_annotations/</guid>
       <description>
         
         
@@ -1140,10 +1140,10 @@ In addition to updating the annotations for each Resource, any fields that conta
     
     <item>
       <title>Documentation: Field Merge Semantics</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/field_merge_semantics/</link>
+      <link>https://cli-docs.sigs.k8s.io/documentation/app_management/field_merge_semantics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/documentation/app_management/field_merge_semantics/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/documentation/app_management/field_merge_semantics/</guid>
       <description>
         
         

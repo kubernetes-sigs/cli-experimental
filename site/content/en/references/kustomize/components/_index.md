@@ -7,5 +7,5 @@ description: >
     Compose kustomizations.
 ---
 
-Please check out the existing [components guide](/cli-experimental/guides/config_management/components/) for explanation with examples. 
+Please check out the existing [components guide](/guides/config_management/components/) for explanation with examples. 
 More examples are in progress

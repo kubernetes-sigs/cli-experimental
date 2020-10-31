@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – diff</title>
-    <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/diff/</link>
+    <link>https://cli-docs.sigs.k8s.io/references/kubectl/diff/</link>
     <description>Recent content in diff on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/diff/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://cli-docs.sigs.k8s.io/references/kubectl/diff/index.xml" rel="self" type="application/rss+xml" />
     
     
       

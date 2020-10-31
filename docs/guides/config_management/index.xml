@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – Configuration Management</title>
-    <link>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/</link>
+    <link>https://cli-docs.sigs.k8s.io/guides/config_management/</link>
     <description>Recent content in Configuration Management on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://cli-docs.sigs.k8s.io/guides/config_management/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Guides: Introduction</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/introduction/</link>
+      <link>https://cli-docs.sigs.k8s.io/guides/config_management/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/introduction/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/guides/config_management/introduction/</guid>
       <description>
         
         
@@ -67,10 +67,10 @@ Kubernetes system itself - where each may contribute to defining the desired sta
     
     <item>
       <title>Guides: Apply</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/apply/</link>
+      <link>https://cli-docs.sigs.k8s.io/guides/config_management/apply/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/apply/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/guides/config_management/apply/</guid>
       <description>
         
         
@@ -109,7 +109,7 @@ configuration that cuts across many Resources (e.g. namespace).&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Command / Examples&lt;/h4&gt;
-Check out the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kubectl/apply/&#34;&gt;reference&lt;/a&gt; for commands and examples.
+Check out the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kubectl/apply/&#34;&gt;reference&lt;/a&gt; for commands and examples.
 &lt;/div&gt;
 
 &lt;p&gt;Users run Apply on directories containing &lt;code&gt;kustomization.yaml&lt;/code&gt; files using &lt;code&gt;-k&lt;/code&gt; or on raw
@@ -130,7 +130,7 @@ A single Resource Config file may declare multiple Resources separated by &lt;co
 &lt;p&gt;Any fields that have been added to the Resource Config will be set on the Resource.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Updated Fields&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Any fields that contain different values for the fields specified locally in the Resource Config from what is
-in the Resource will be updated by merging the Resource Config into the live Resource.  See &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/architecture/field_merge_semantics/&#34;&gt;merging&lt;/a&gt;
+in the Resource will be updated by merging the Resource Config into the live Resource.  See &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/architecture/field_merge_semantics/&#34;&gt;merging&lt;/a&gt;
 for more details.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Deleted Fields&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Fields that were in the Resource Config the last time Apply was run, will be deleted from the Resource, and
@@ -160,10 +160,10 @@ with these dependencies are created in the correct order.&lt;/p&gt;
     
     <item>
       <title>Guides: Secrets and ConfigMaps</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/secrets_configmaps/</link>
+      <link>https://cli-docs.sigs.k8s.io/guides/config_management/secrets_configmaps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/secrets_configmaps/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/guides/config_management/secrets_configmaps/</guid>
       <description>
         
         
@@ -197,7 +197,7 @@ changes.  See &lt;a href=&#34;#rollouts&#34;&gt;Rollouts&lt;/a&gt; for more on t
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Command / Examples&lt;/h4&gt;
-Check out the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/configmapgenerator/&#34;&gt;reference&lt;/a&gt; for commands and examples for &lt;code&gt;ConfigMapsGenerator&lt;/code&gt;
+Check out the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/configmapgenerator/&#34;&gt;reference&lt;/a&gt; for commands and examples for &lt;code&gt;ConfigMapsGenerator&lt;/code&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Consider we have to generate ConfigMap from a preset values stored in &lt;code&gt;.properties&lt;/code&gt; file. One can make use
@@ -225,7 +225,7 @@ of the following &lt;code&gt;kustomization.yaml&lt;/code&gt; file to do so.&lt;/
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Command / Examples&lt;/h4&gt;
-Check out the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/secretgenerator/&#34;&gt;reference&lt;/a&gt; for commands and examples
+Check out the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/secretgenerator/&#34;&gt;reference&lt;/a&gt; for commands and examples
 for &lt;code&gt;SecretGenerator&lt;/code&gt;
 &lt;/div&gt;
 
@@ -252,10 +252,10 @@ their names will not match exactly what is specified in the kustomization.yaml f
     
     <item>
       <title>Guides: Container Images</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/container_images/</link>
+      <link>https://cli-docs.sigs.k8s.io/guides/config_management/container_images/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/container_images/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/guides/config_management/container_images/</guid>
       <description>
         
         
@@ -314,7 +314,7 @@ the project&lt;/li&gt;
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Command / Examples&lt;/h4&gt;
-Check out the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/images/&#34;&gt;reference&lt;/a&gt; for commands and examples for &lt;code&gt;images&lt;/code&gt;
+Check out the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/images/&#34;&gt;reference&lt;/a&gt; for commands and examples for &lt;code&gt;images&lt;/code&gt;
 &lt;/div&gt;
 
 
@@ -323,10 +323,10 @@ Check out the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental
     
     <item>
       <title>Guides: Namespaces and Names</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/namespaces_names/</link>
+      <link>https://cli-docs.sigs.k8s.io/guides/config_management/namespaces_names/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/namespaces_names/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/guides/config_management/namespaces_names/</guid>
       <description>
         
         
@@ -360,7 +360,7 @@ Resources.&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Command / Examples&lt;/h4&gt;
-Check out the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/namespace/&#34;&gt;reference&lt;/a&gt; for commands and examples for &lt;code&gt;setting namespace&lt;/code&gt;
+Check out the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/namespace/&#34;&gt;reference&lt;/a&gt; for commands and examples for &lt;code&gt;setting namespace&lt;/code&gt;
 &lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Set the &lt;code&gt;namespace&lt;/code&gt; specified in the &lt;code&gt;kustomization.yaml&lt;/code&gt; on the namespaced Resources.&lt;/p&gt;
@@ -417,7 +417,7 @@ Setting the namespace will override the namespace on Resources if it is already 
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Command / Examples&lt;/h4&gt;
-Check out the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/nameprefix/&#34;&gt;nameprefix&lt;/a&gt; / &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/namesuffix/&#34;&gt;namesuffix&lt;/a&gt; for commands and examples for &lt;code&gt;setting nameprefix / namesuffix&lt;/code&gt; to kubernetes resources
+Check out the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/nameprefix/&#34;&gt;nameprefix&lt;/a&gt; / &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/namesuffix/&#34;&gt;namesuffix&lt;/a&gt; for commands and examples for &lt;code&gt;setting nameprefix / namesuffix&lt;/code&gt; to kubernetes resources
 &lt;/div&gt;
 
 &lt;h3 id=&#34;propagation-of-the-name-to-object-references&#34;&gt;Propagation of the Name to Object References&lt;/h3&gt;
@@ -449,10 +449,10 @@ including:&lt;/p&gt;
     
     <item>
       <title>Guides: Labels and Annotations</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/labels_annotations/</link>
+      <link>https://cli-docs.sigs.k8s.io/guides/config_management/labels_annotations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/labels_annotations/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/guides/config_management/labels_annotations/</guid>
       <description>
         
         
@@ -539,7 +539,7 @@ or Workloads.&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Command / Examples&lt;/h4&gt;
-Check out the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/commonlabels/&#34;&gt;reference&lt;/a&gt; for commands and examples for &lt;code&gt;setting labels&lt;/code&gt;
+Check out the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/commonlabels/&#34;&gt;reference&lt;/a&gt; for commands and examples for &lt;code&gt;setting labels&lt;/code&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&#34;propagating-labels-to-selectors&#34;&gt;Propagating Labels to Selectors&lt;/h3&gt;
@@ -560,7 +560,7 @@ that may be applied to Applications.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&#34;setting-annotations&#34;&gt;Setting Annotations&lt;/h2&gt;
-&lt;p&gt;Setting Annotations is very similar to setting labels as seen above. Check out the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/commonannotations/&#34;&gt;reference&lt;/a&gt; for commands and examples.&lt;/p&gt;
+&lt;p&gt;Setting Annotations is very similar to setting labels as seen above. Check out the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/commonannotations/&#34;&gt;reference&lt;/a&gt; for commands and examples.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
@@ -575,16 +575,16 @@ In addition to updating the annotations for each Resource, any fields that conta
     
     <item>
       <title>Guides: Bespoke Application</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/bespoke/</link>
+      <link>https://cli-docs.sigs.k8s.io/guides/config_management/bespoke/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/bespoke/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/guides/config_management/bespoke/</guid>
       <description>
         
         
         &lt;p&gt;In this workflow, all configuration (resource YAML) files are owned by the user.
 No content is incorporated from version control repositories owned by others.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/images/new_bespoke.jpg&#34; alt=&#34;bespoke config workflow image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cli-docs.sigs.k8s.io/images/new_bespoke.jpg&#34; alt=&#34;bespoke config workflow image&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Following are the steps involved:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -596,21 +596,21 @@ we want to keep its configuration in its own repo.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Create a &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#base&#34;&gt;base&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Create a &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#base&#34;&gt;base&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir -p ~/ldap/base
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;In this directory, create and commit a &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt;
-file and a set of &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#resource&#34;&gt;resources&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this directory, create and commit a &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt;
+file and a set of &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#resource&#34;&gt;resources&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Create &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#overlay&#34;&gt;overlays&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Create &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#overlay&#34;&gt;overlays&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir -p ~/ldap/overlays/staging
 mkdir -p ~/ldap/overlays/production
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Each of these directories needs a &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt;
-file and one or more &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#patch&#34;&gt;patches&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Each of these directories needs a &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt;
+file and one or more &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#patch&#34;&gt;patches&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The &lt;em&gt;staging&lt;/em&gt; directory might get a patch
 that turns on an experiment flag in a configmap.&lt;/p&gt;
 &lt;p&gt;The &lt;em&gt;production&lt;/em&gt; directory might get a patch
@@ -618,13 +618,13 @@ that increases the replica count in a deployment
 specified in the base.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Bring up &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#variant&#34;&gt;variants&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Run kustomize, and pipe the output to &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#apply&#34;&gt;apply&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Bring up &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#variant&#34;&gt;variants&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Run kustomize, and pipe the output to &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#apply&#34;&gt;apply&lt;/a&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kustomize build ~/ldap/overlays/staging &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; kubectl apply -f -
 kustomize build ~/ldap/overlays/production &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; kubectl apply -f -
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;You can also use &lt;a href=&#34;https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/&#34;&gt;kubectl-v1.14.0&lt;/a&gt; to apply your &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#variant&#34;&gt;variants&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can also use &lt;a href=&#34;https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/&#34;&gt;kubectl-v1.14.0&lt;/a&gt; to apply your &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#variant&#34;&gt;variants&lt;/a&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl apply -k ~/ldap/overlays/staging
 kubectl apply -k ~/ldap/overlays/production
@@ -637,24 +637,24 @@ kubectl apply -k ~/ldap/overlays/production
     
     <item>
       <title>Guides: Off The Shelf Application</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/offtheshelf/</link>
+      <link>https://cli-docs.sigs.k8s.io/guides/config_management/offtheshelf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/offtheshelf/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/guides/config_management/offtheshelf/</guid>
       <description>
         
         
         &lt;p&gt;In this workflow, all files are owned by the user and maintained in a repository under their control, but
-they are based on an &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#off-the-shelf-configuration&#34;&gt;off-the-shelf&lt;/a&gt; configuration that is periodically consulted for updates.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/images/new_ots.jpg&#34; alt=&#34;off-the-shelf config workflow image&#34;&gt;&lt;/p&gt;
+they are based on an &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#off-the-shelf-configuration&#34;&gt;off-the-shelf&lt;/a&gt; configuration that is periodically consulted for updates.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cli-docs.sigs.k8s.io/images/new_ots.jpg&#34; alt=&#34;off-the-shelf config workflow image&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Following are the steps involved:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Find and &lt;a href=&#34;https://guides.github.com/activities/forking/&#34;&gt;fork&lt;/a&gt; an &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#off-the-shelf-configuration&#34;&gt;OTS&lt;/a&gt; config&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Find and &lt;a href=&#34;https://guides.github.com/activities/forking/&#34;&gt;fork&lt;/a&gt; an &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#off-the-shelf-configuration&#34;&gt;OTS&lt;/a&gt; config&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Clone it as your &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#base&#34;&gt;base&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#base&#34;&gt;base&lt;/a&gt; directory is maintained in a repo whose upstream is an &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#off-the-shelf-configuration&#34;&gt;OTS&lt;/a&gt; configuration, in this case
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Clone it as your &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#base&#34;&gt;base&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#base&#34;&gt;base&lt;/a&gt; directory is maintained in a repo whose upstream is an &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#off-the-shelf-configuration&#34;&gt;OTS&lt;/a&gt; configuration, in this case
 some user&amp;rsquo;s &lt;code&gt;ldap&lt;/code&gt; repo:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir ~/ldap
@@ -664,9 +664,9 @@ git remote add upstream git@github.com:&lt;span style=&#34;color:#000&#34;&gt;$U
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Create &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#overlay&#34;&gt;overlays&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Create &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#overlay&#34;&gt;overlays&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;As in the bespoke case above, create and populate an &lt;em&gt;overlays&lt;/em&gt; directory.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#overlay&#34;&gt;overlays&lt;/a&gt; are siblings to each other and to the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#base&#34;&gt;base&lt;/a&gt; they depend on.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#overlay&#34;&gt;overlays&lt;/a&gt; are siblings to each other and to the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#base&#34;&gt;base&lt;/a&gt; they depend on.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir -p ~/ldap/overlays/staging
 mkdir -p ~/ldap/overlays/production
@@ -675,12 +675,12 @@ mkdir -p ~/ldap/overlays/production
 distinct repository.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Bring up &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#variant&#34;&gt;variants&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Bring up &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#variant&#34;&gt;variants&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kustomize build ~/ldap/overlays/staging &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; kubectl apply -f -
 kustomize build ~/ldap/overlays/production &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; kubectl apply -f -
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;You can also use &lt;a href=&#34;https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/&#34;&gt;kubectl-v1.14.0&lt;/a&gt; to apply your &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#variant&#34;&gt;variants&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can also use &lt;a href=&#34;https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/&#34;&gt;kubectl-v1.14.0&lt;/a&gt; to apply your &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#variant&#34;&gt;variants&lt;/a&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl apply -k ~/ldap/overlays/staging
 kubectl apply -k ~/ldap/overlays/production
@@ -688,7 +688,7 @@ kubectl apply -k ~/ldap/overlays/production
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;(Optionally) Capture changes from upstream&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The user can periodically &lt;a href=&#34;https://git-scm.com/docs/git-rebase&#34;&gt;rebase&lt;/a&gt; their &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/references/kustomize/glossary#base&#34;&gt;base&lt;/a&gt; to
+&lt;p&gt;The user can periodically &lt;a href=&#34;https://git-scm.com/docs/git-rebase&#34;&gt;rebase&lt;/a&gt; their &lt;a href=&#34;https://cli-docs.sigs.k8s.io/references/kustomize/glossary#base&#34;&gt;base&lt;/a&gt; to
 capture changes made in the upstream repository.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; ~/ldap/base
@@ -703,10 +703,10 @@ git rebase upstream/master
     
     <item>
       <title>Guides: Kustomize Components</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/components/</link>
+      <link>https://cli-docs.sigs.k8s.io/guides/config_management/components/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/guides/config_management/components/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/guides/config_management/components/</guid>
       <description>
         
         

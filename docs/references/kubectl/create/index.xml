@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – create</title>
-    <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/</link>
+    <link>https://cli-docs.sigs.k8s.io/references/kubectl/create/</link>
     <description>Recent content in create on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://cli-docs.sigs.k8s.io/references/kubectl/create/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>References: configmap</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/configmap/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/create/configmap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/configmap/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/create/configmap/</guid>
       <description>
         
         
@@ -75,10 +75,10 @@ my-config   &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/spa
     
     <item>
       <title>References: deployment</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/deployment/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/create/deployment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/deployment/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/create/deployment/</guid>
       <description>
         
         
@@ -104,10 +104,10 @@ my-deployment-7d6dd5c955-pr4jt   1/1     Running   &lt;span style=&#34;color:#00
     
     <item>
       <title>References: namespace</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/namespace/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/create/namespace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/namespace/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/create/namespace/</guid>
       <description>
         
         
@@ -128,10 +128,10 @@ my-namespace           Active   11s
     
     <item>
       <title>References: secrets</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/secret/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/create/secret/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/secret/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/create/secret/</guid>
       <description>
         
         
@@ -202,10 +202,10 @@ my-secret             Opaque                    &lt;span style=&#34;color:#0000c
     
     <item>
       <title>References: roles</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/auth_resources/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/create/auth_resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/auth_resources/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/create/auth_resources/</guid>
       <description>
         
         

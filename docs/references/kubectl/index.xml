@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – Kubectl</title>
-    <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/</link>
+    <link>https://cli-docs.sigs.k8s.io/references/kubectl/</link>
     <description>Recent content in Kubectl on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://cli-docs.sigs.k8s.io/references/kubectl/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>References: annotation</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/annotation/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/annotation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/annotation/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/annotation/</guid>
       <description>
         
         
@@ -57,10 +57,10 @@ kubectl annotate pods foo description-
     
     <item>
       <title>References: apply</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/apply/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/apply/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/apply/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/apply/</guid>
       <description>
         
         
@@ -125,10 +125,10 @@ kubectl get -k .
     
     <item>
       <title>References: auth</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/auth/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/auth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/auth/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/auth/</guid>
       <description>
         
         
@@ -178,10 +178,10 @@ yes
     
     <item>
       <title>References: autoscale</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/autoscale/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/autoscale/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/autoscale/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/autoscale/</guid>
       <description>
         
         
@@ -220,10 +220,10 @@ nginx-6db489d4b7-vxqwm   1/1     Running   &lt;span style=&#34;color:#0000cf;fon
     
     <item>
       <title>References: cp</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cp/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/cp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/cp/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/cp/</guid>
       <description>
         
         
@@ -307,10 +307,10 @@ Copy requires that &lt;em&gt;tar&lt;/em&gt; be installed in the container image.
     
     <item>
       <title>References: create</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/create/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/create/</guid>
       <description>
         
         
@@ -320,10 +320,10 @@ Copy requires that &lt;em&gt;tar&lt;/em&gt; be installed in the container image.
     
     <item>
       <title>References: delete</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/delete/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/delete/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/delete/</guid>
       <description>
         
         
@@ -356,10 +356,10 @@ No resources found in default namespace.
     
     <item>
       <title>References: diff</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/diff/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/diff/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/diff/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/diff/</guid>
       <description>
         
         
@@ -461,10 +461,10 @@ By default, the &amp;ldquo;diff&amp;rdquo; command available in your path will b
     
     <item>
       <title>References: edit</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/edit/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/edit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/edit/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/edit/</guid>
       <description>
         
         
@@ -575,10 +575,10 @@ nginx-dev   2/2     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2
     
     <item>
       <title>References: exec</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/exec/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/exec/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/exec/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/exec/</guid>
       <description>
         
         
@@ -645,10 +645,10 @@ For Pods running multiple Containers, the Container should be specified with &lt
     
     <item>
       <title>References: expose</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/expose/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/expose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/expose/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/expose/</guid>
       <description>
         
         
@@ -695,10 +695,10 @@ nginx-6db489d4b7-9wgn9   ClusterIP   10.106.133.77   &amp;lt;none&amp;gt;       
     
     <item>
       <title>References: get</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/get/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/get/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/get/</guid>
       <description>
         
         
@@ -709,10 +709,10 @@ nginx-6db489d4b7-9wgn9   ClusterIP   10.106.133.77   &amp;lt;none&amp;gt;       
     
     <item>
       <title>References: kustomize</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/kustomize/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/kustomize/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/kustomize/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/kustomize/</guid>
       <description>
         
         
@@ -761,10 +761,10 @@ $ kubectl kustomize
     
     <item>
       <title>References: label</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/label/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/label/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/label/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/label/</guid>
       <description>
         
         
@@ -830,10 +830,10 @@ kubectl label pods foo bar-
     
     <item>
       <title>References: logs</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/logs/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/logs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/logs/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/logs/</guid>
       <description>
         
         
@@ -931,10 +931,10 @@ kubectl logs -l &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span 
     
     <item>
       <title>References: patch</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/patch/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/patch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/patch/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/patch/</guid>
       <description>
         
         
@@ -975,10 +975,10 @@ kubectl patch pod valid-pod --type&lt;span style=&#34;color:#ce5c00;font-weight:
     
     <item>
       <title>References: port-forward</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/port-forward/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/port-forward/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/port-forward/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/port-forward/</guid>
       <description>
         
         
@@ -1009,10 +1009,10 @@ deployment&lt;/p&gt;
     
     <item>
       <title>References: proxy</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/proxy/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/proxy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/proxy/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/proxy/</guid>
       <description>
         
         
@@ -1072,10 +1072,10 @@ For more information on connecting to a cluster, see
     
     <item>
       <title>References: run</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/run/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/run/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/run/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/run/</guid>
       <description>
         
         
@@ -1108,10 +1108,10 @@ nginx   1/1     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;
     
     <item>
       <title>References: scale</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/scale/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/scale/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/scale/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/scale/</guid>
       <description>
         
         
@@ -1161,10 +1161,10 @@ e.g. &lt;code&gt;kubectl scale --current-replicas=2 --replicas=3 deployment/mysq
     
     <item>
       <title>References: describe</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/describe/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kubectl/describe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kubectl/describe/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kubectl/describe/</guid>
       <description>
         
         

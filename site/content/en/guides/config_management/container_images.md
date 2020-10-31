@@ -62,5 +62,5 @@ Some of things that can be done with images:
 - Setting a Tag from an Environment Variable
 
 {{% alert color="success" title="Command / Examples" %}}
-Check out the [reference](/cli-experimental/references/kustomize/images/) for commands and examples for `images`
+Check out the [reference](/references/kustomize/images/) for commands and examples for `images`
 {{% /alert %}}

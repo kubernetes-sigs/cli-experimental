@@ -15,8 +15,8 @@ description: >
 This is a (no reading allowed!) 60 second copy/paste guided
 example.
 
-Full plugin docs [here](/cli-experimental/guides/extending_kustomize/gopluginguidedexample/).
-Be sure to read the [Go plugin caveats](/cli-experimental/guides/extending_kustomize/goplugincaveats/).
+Full plugin docs [here](/guides/extending_kustomize/gopluginguidedexample/).
+Be sure to read the [Go plugin caveats](/guides/extending_kustomize/goplugincaveats/).
 
 This demo uses a Go plugin, `SopsEncodedSecrets`,
 that lives in the [sopsencodedsecrets repository].
@@ -175,7 +175,7 @@ This step may succeed, but kustomize might
 ultimately fail to load the plugin because of
 dependency [skew].
 
-[skew]: /cli-experimental/guides/extending_kustomize/goplugincaveats/
+[skew]: /guides/extending_kustomize/goplugincaveats/
 [used in this demo]: #install-kustomize
 
 On load failure

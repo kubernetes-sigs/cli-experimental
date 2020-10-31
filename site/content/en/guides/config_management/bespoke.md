@@ -65,19 +65,19 @@ Following are the steps involved:
     > kubectl apply -k ~/ldap/overlays/production
     > ```
 
-[OTS]: /cli-experimental/references/kustomize/glossary#off-the-shelf-configuration
-[apply]: /cli-experimental/references/kustomize/glossary#apply
-[applying]: /cli-experimental/references/kustomize/glossary#apply
-[base]: /cli-experimental/references/kustomize/glossary#base
+[OTS]: /references/kustomize/glossary#off-the-shelf-configuration
+[apply]: /references/kustomize/glossary#apply
+[applying]: /references/kustomize/glossary#apply
+[base]: /references/kustomize/glossary#base
 [fork]: https://guides.github.com/activities/forking/
-[variants]: /cli-experimental/references/kustomize/glossary#variant
-[kustomization]: /cli-experimental/references/kustomize/glossary#kustomization
-[off-the-shelf]: /cli-experimental/references/kustomize/glossary#off-the-shelf-configuration
-[overlays]: /cli-experimental/references/kustomize/glossary#overlay
-[patch]: /cli-experimental/references/kustomize/glossary#patch
-[patches]: /cli-experimental/references/kustomize/glossary#patch
+[variants]: /references/kustomize/glossary#variant
+[kustomization]: /references/kustomize/glossary#kustomization
+[off-the-shelf]: /references/kustomize/glossary#off-the-shelf-configuration
+[overlays]: /references/kustomize/glossary#overlay
+[patch]: /references/kustomize/glossary#patch
+[patches]: /references/kustomize/glossary#patch
 [rebase]: https://git-scm.com/docs/git-rebase
-[resources]: /cli-experimental/references/kustomize/glossary#resource
-[workflowBespoke]: /cli-experimental/images/new_bespoke.jpg
-[workflowOts]: /cli-experimental/images/workflowOts.jpg
+[resources]: /references/kustomize/glossary#resource
+[workflowBespoke]: /images/new_bespoke.jpg
+[workflowOts]: /images/workflowOts.jpg
 [kubectl-v1.14.0]:https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/
