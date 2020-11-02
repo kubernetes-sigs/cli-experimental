@@ -99,7 +99,7 @@ spec:
 ```
 
 {{% alert color="success" title="Command / Examples" %}}
-Check out the [reference](/cli-experimental/references/kustomize/commonlabels/) for commands and examples for `setting labels`
+Check out the [reference](/references/kustomize/commonlabels/) for commands and examples for `setting labels`
 {{% /alert %}}
 
 ### Propagating Labels to Selectors
@@ -122,7 +122,7 @@ Labeling Workload Resources makes it simpler to query Pods - e.g. for the purpos
 
 ## Setting Annotations 
 
-Setting Annotations is very similar to setting labels as seen above. Check out the [reference](/cli-experimental/references/kustomize/commonannotations/) for commands and examples.
+Setting Annotations is very similar to setting labels as seen above. Check out the [reference](/references/kustomize/commonannotations/) for commands and examples.
 
 {{< alert color="warning" title="Propagating Annotations" >}}
 In addition to updating the annotations for each Resource, any fields that contain ObjectMeta

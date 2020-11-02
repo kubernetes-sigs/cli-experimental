@@ -55,5 +55,5 @@ One can also perfrom operations such as:
 {{% /alert %}}
 
 {{% alert color="warning" title="Command / Examples" %}}
-Check out the [reference](/cli-experimental/references/kubectl/cp/) for commands and examples of `cp`
+Check out the [reference](/references/kubectl/cp/) for commands and examples of `cp`
 {{% /alert %}}

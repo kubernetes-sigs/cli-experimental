@@ -29,7 +29,7 @@ hugo serve
 ```shell script
 ...
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
-Web Server is available at http://localhost:1313/cli-experimental/ (bind address 127.0.0.1)
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 ```
 
 ## Publishing

@@ -54,5 +54,5 @@ Some of the commonly used `options` include:
 - show kind
 
 {{% alert color="success" title="Command / Examples" %}}
-Check out the [reference](/cli-experimental/references/kubectl/get/) for commands and examples for `get` with / without options
+Check out the [reference](/references/kubectl/get/) for commands and examples for `get` with / without options
 {{% /alert %}}

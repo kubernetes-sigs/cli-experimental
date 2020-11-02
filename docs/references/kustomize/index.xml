@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – Kustomize</title>
-    <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/</link>
+    <link>https://cli-docs.sigs.k8s.io/references/kustomize/</link>
     <description>Recent content in Kustomize on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://cli-docs.sigs.k8s.io/references/kustomize/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>References: bases</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/bases/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/bases/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/bases/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/bases/</guid>
       <description>
         
         
@@ -29,9 +29,9 @@
 
 &lt;/div&gt;
 
-&lt;p&gt;Move entries into the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/api-reference/kustomization/resources&#34;&gt;resources&lt;/a&gt;
+&lt;p&gt;Move entries into the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/kustomization/resources&#34;&gt;resources&lt;/a&gt;
 field.  This allows bases - which are still a
-&lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/api-reference/glossary#base&#34;&gt;central concept&lt;/a&gt; - to be
+&lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#base&#34;&gt;central concept&lt;/a&gt; - to be
 ordered relative to other input resources.&lt;/p&gt;
 
       </description>
@@ -39,10 +39,10 @@ ordered relative to other input resources.&lt;/p&gt;
     
     <item>
       <title>References: commonAnnotations</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/commonannotations/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/commonannotations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/commonannotations/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/commonannotations/</guid>
       <description>
         
         
@@ -86,10 +86,10 @@ the value will be overridden.&lt;/p&gt;
     
     <item>
       <title>References: commonLabels</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/commonlabels/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/commonlabels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/commonlabels/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/commonlabels/</guid>
       <description>
         
         
@@ -176,14 +176,14 @@ resource has been applied to a cluster.&lt;/p&gt;
     
     <item>
       <title>References: components</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/components/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/components/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/components/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/components/</guid>
       <description>
         
         
-        &lt;p&gt;Please check out the existing &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/cli-experimental/guides/config_management/components/&#34;&gt;components guide&lt;/a&gt; for explanation with examples.
+        &lt;p&gt;Please check out the existing &lt;a href=&#34;https://cli-docs.sigs.k8s.io/guides/config_management/components/&#34;&gt;components guide&lt;/a&gt; for explanation with examples.
 More examples are in progress&lt;/p&gt;
 
       </description>
@@ -191,10 +191,10 @@ More examples are in progress&lt;/p&gt;
     
     <item>
       <title>References: configMapGenerator</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/configmapgenerator/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/configmapgenerator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/configmapgenerator/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/configmapgenerator/</guid>
       <description>
         
         
@@ -476,10 +476,10 @@ Apply will update the name to include the suffix applied to the ConfigMap name.&
     
     <item>
       <title>References: crds</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/crds/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/crds/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/crds/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/crds/</guid>
       <description>
         
         
@@ -516,10 +516,10 @@ same way.&lt;/p&gt;
     
     <item>
       <title>References: generatorOptions</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/generatoroptions/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/generatoroptions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/generatoroptions/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/generatoroptions/</guid>
       <description>
         
         
@@ -606,10 +606,10 @@ generator. For details on per-resource generatorOptions usage see
     
     <item>
       <title>References: images</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/images/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/images/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/images/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/images/</guid>
       <description>
         
         
@@ -765,10 +765,10 @@ deployments for these changes.
     
     <item>
       <title>References: namePrefix</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/nameprefix/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/nameprefix/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/nameprefix/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/nameprefix/</guid>
       <description>
         
         
@@ -826,10 +826,10 @@ including:&lt;/p&gt;
     
     <item>
       <title>References: namespace</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/namespace/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/namespace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/namespace/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/namespace/</guid>
       <description>
         
         
@@ -876,10 +876,10 @@ if it is not set on a resource.&lt;/p&gt;
     
     <item>
       <title>References: nameSuffix</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/namesuffix/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/namesuffix/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/namesuffix/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/namesuffix/</guid>
       <description>
         
         
@@ -924,10 +924,10 @@ if it is not set on a resource.&lt;/p&gt;
     
     <item>
       <title>References: patches</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/patches/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/patches/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/patches/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/patches/</guid>
       <description>
         
         
@@ -936,7 +936,7 @@ if it is not set on a resource.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;patches&lt;/code&gt; field contains a list of patches to be applied in the order they are specified.&lt;/p&gt;
 &lt;p&gt;Each patch may:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;be either a &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/api-reference/glossary#patchstrategicmerge&#34;&gt;strategic merge&lt;/a&gt; patch, or a &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/api-reference/glossary#patchjson6902&#34;&gt;JSON&lt;/a&gt; patch&lt;/li&gt;
+&lt;li&gt;be either a &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#patchstrategicmerge&#34;&gt;strategic merge&lt;/a&gt; patch, or a &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#patchjson6902&#34;&gt;JSON&lt;/a&gt; patch&lt;/li&gt;
 &lt;li&gt;be either a file, or an inline string&lt;/li&gt;
 &lt;li&gt;target a single resource or multiple resources&lt;/li&gt;
 &lt;/ul&gt;
@@ -1044,10 +1044,10 @@ registry.&lt;/p&gt;
     
     <item>
       <title>References: patchesJson6902</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/patchesjson6902/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/patchesjson6902/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/patchesjson6902/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/patchesjson6902/</guid>
       <description>
         
         
@@ -1105,10 +1105,10 @@ The content in this patch file can be either in JSON format as&lt;/p&gt;
     
     <item>
       <title>References: patchesStrategicMerge</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/patchesstrategicmerge/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/patchesstrategicmerge/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/patchesstrategicmerge/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/patchesstrategicmerge/</guid>
       <description>
         
         
@@ -1157,10 +1157,10 @@ patch that performs all the needed deletions.&lt;/p&gt;
     
     <item>
       <title>References: replicas</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/replicas/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/replicas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/replicas/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/replicas/</guid>
       <description>
         
         
@@ -1231,10 +1231,10 @@ that is one of:&lt;/p&gt;
     
     <item>
       <title>References: resources</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/resource/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/resource/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/resource/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/resource/</guid>
       <description>
         
         
@@ -1262,10 +1262,10 @@ follow the &lt;a href=&#34;https://github.com/hashicorp/go-getter#url-format&#34
     
     <item>
       <title>References: secretGenerator</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/secretgenerator/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/secretgenerator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/secretgenerator/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/secretgenerator/</guid>
       <description>
         
         
@@ -1347,10 +1347,10 @@ It is important to note that the secrets are &lt;code&gt;base64&lt;/code&gt; enc
     
     <item>
       <title>References: vars</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/vars/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/vars/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/vars/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/vars/</guid>
       <description>
         
         
@@ -1421,10 +1421,10 @@ in the Deployment.&lt;/p&gt;
     
     <item>
       <title>References: Glossary</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/glossary/</link>
+      <link>https://cli-docs.sigs.k8s.io/references/kustomize/glossary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/references/kustomize/glossary/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/references/kustomize/glossary/</guid>
       <description>
         
         
@@ -1469,7 +1469,7 @@ deploy cycle.&lt;/p&gt;
 &lt;p&gt;A &lt;em&gt;bespoke&lt;/em&gt; configuration is a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt; and some
 &lt;a href=&#34;#resource&#34;&gt;resources&lt;/a&gt; created and maintained internally by some
 organization for their own purposes.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/guides&#34;&gt;workflow&lt;/a&gt; associated with a &lt;em&gt;bespoke&lt;/em&gt; config is
+&lt;p&gt;The &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/guides&#34;&gt;workflow&lt;/a&gt; associated with a &lt;em&gt;bespoke&lt;/em&gt; config is
 simpler than the workflow associated with an
 &lt;a href=&#34;#off-the-shelf-configuration&#34;&gt;off-the-shelf&lt;/a&gt; config, because there&amp;rsquo;s no notion of
 periodically capturing someone else&amp;rsquo;s upgrades to the

@@ -42,7 +42,7 @@ to run Apply against a `kustomization.yaml` using `-k`.  The `kustomization.yaml
 configuration that cuts across many Resources (e.g. namespace).
 
 {{% alert color="success" title="Command / Examples" %}}
-Check out the [reference](/cli-experimental/references/kubectl/apply/) for commands and examples.
+Check out the [reference](/references/kubectl/apply/) for commands and examples.
 {{% /alert %}}
 
 Users run Apply on directories containing `kustomization.yaml` files using `-k` or on raw
@@ -69,7 +69,7 @@ Any fields that have been added to the Resource Config will be set on the Resour
 **Updated Fields** 
  
 Any fields that contain different values for the fields specified locally in the Resource Config from what is
-in the Resource will be updated by merging the Resource Config into the live Resource.  See [merging](/cli-experimental/references/architecture/field_merge_semantics/)
+in the Resource will be updated by merging the Resource Config into the live Resource.  See [merging](/references/architecture/field_merge_semantics/)
 for more details.
 
 **Deleted Fields**

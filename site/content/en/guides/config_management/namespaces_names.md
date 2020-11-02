@@ -35,7 +35,7 @@ This sets the namespace for both generated Resources (e.g. ConfigMaps and Secret
 Resources.
 
 {{% alert color="success" title="Command / Examples" %}}
-Check out the [reference](/cli-experimental/references/kustomize/namespace/) for commands and examples for `setting namespace`
+Check out the [reference](/references/kustomize/namespace/) for commands and examples for `setting namespace`
 {{% /alert %}}
 
 **Example:** Set the `namespace` specified in the `kustomization.yaml` on the namespaced Resources.
@@ -102,7 +102,7 @@ spec:
 Setting the namespace will override the namespace on Resources if it is already set.
 
 {{% alert color="success" title="Command / Examples" %}}
-Check out the [nameprefix](/cli-experimental/references/kustomize/nameprefix/) / [namesuffix](/cli-experimental/references/kustomize/namesuffix/) for commands and examples for `setting nameprefix / namesuffix` to kubernetes resources
+Check out the [nameprefix](/references/kustomize/nameprefix/) / [namesuffix](/references/kustomize/namesuffix/) for commands and examples for `setting nameprefix / namesuffix` to kubernetes resources
 {{% /alert %}}
 
 

@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – SIG CLI</title>
-    <link>https://kubernetes-sigs.github.io/cli-experimental/</link>
+    <link>https://cli-docs.sigs.k8s.io/</link>
     <description>Recent content on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://kubernetes-sigs.github.io/cli-experimental/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://cli-docs.sigs.k8s.io/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -14,10 +14,10 @@
     
     <item>
       <title>Blog: v3.3.0</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/10/24/v3.3.0/</link>
+      <link>https://cli-docs.sigs.k8s.io/blog/2019/10/24/v3.3.0/</link>
       <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/10/24/v3.3.0/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/blog/2019/10/24/v3.3.0/</guid>
       <description>
         
         
@@ -26,9 +26,9 @@
 &lt;p&gt;Many of the PRs since the last vrelease were
 around restructuring the &lt;em&gt;sigs.k8s.io/kustomize&lt;/em&gt;
 repository into three Go modules instead of just one.&lt;/p&gt;
-&lt;p&gt;The reasons for this are detailed in the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/site/content/en/faq/versioningPolicy.md&#34;&gt;versioning
+&lt;p&gt;The reasons for this are detailed in the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/site/content/en/faq/versioningPolicy.md&#34;&gt;versioning
 policy documentation&lt;/a&gt;, and what it means for releasing
-is explained in the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/releasing&#34;&gt;release process documentation&lt;/a&gt;.&lt;/p&gt;
+is explained in the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/releasing&#34;&gt;release process documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The tl;dr is that the top level module
 &lt;code&gt;sigs.k8s.io/kustomize&lt;/code&gt; now defines the kustomize Go
 API, and the &lt;em&gt;kustomize&lt;/em&gt; CLI sits below it in an
@@ -123,10 +123,10 @@ b5d5e70b - empty list or map item return error (nimohunter)
     
     <item>
       <title>Blog: v3.2.1</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/09/26/v3.2.1/</link>
+      <link>https://cli-docs.sigs.k8s.io/blog/2019/09/26/v3.2.1/</link>
       <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/09/26/v3.2.1/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/blog/2019/09/26/v3.2.1/</guid>
       <description>
         
         
@@ -144,10 +144,10 @@ represented by the public package surface presented by
     
     <item>
       <title>Blog: v3.2.0</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/09/17/v3.2.0/</link>
+      <link>https://cli-docs.sigs.k8s.io/blog/2019/09/17/v3.2.0/</link>
       <pubDate>Tue, 17 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/09/17/v3.2.0/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/blog/2019/09/17/v3.2.0/</guid>
       <description>
         
         
@@ -169,10 +169,10 @@ represented by the public package surface presented by
     
     <item>
       <title>Blog: v3.1.0</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/07/26/v3.1.0/</link>
+      <link>https://cli-docs.sigs.k8s.io/blog/2019/07/26/v3.1.0/</link>
       <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/07/26/v3.1.0/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/blog/2019/07/26/v3.1.0/</guid>
       <description>
         
         
@@ -281,10 +281,10 @@ user to add them as part of the &lt;code&gt;configurations:&lt;/code&gt; section
     
     <item>
       <title>Blog: v3.0.0</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/07/03/v3.0.0/</link>
+      <link>https://cli-docs.sigs.k8s.io/blog/2019/07/03/v3.0.0/</link>
       <pubDate>Wed, 03 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/07/03/v3.0.0/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/blog/2019/07/03/v3.0.0/</guid>
       <description>
         
         
@@ -292,7 +292,7 @@ user to add them as part of the &lt;code&gt;configurations:&lt;/code&gt; section
 with many post-v2.1.0 bugs fixed (in about 150
 commits) and a &lt;code&gt;v3&lt;/code&gt; in Go package paths.&lt;/p&gt;
 &lt;p&gt;The major version increment to &lt;code&gt;v3&lt;/code&gt; puts a new
-floor on a stable API for &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/docs/plugins&#34;&gt;plugin&lt;/a&gt; developers
+floor on a stable API for &lt;a href=&#34;https://cli-docs.sigs.k8s.io/docs/plugins&#34;&gt;plugin&lt;/a&gt; developers
 (both &lt;em&gt;Go&lt;/em&gt; plugin developers and &lt;em&gt;exec&lt;/em&gt; plugin
 developers who happen to use Go).&lt;/p&gt;
 &lt;h3 id=&#34;why-so-soon-after-v210&#34;&gt;Why so soon after v2.1.0&lt;/h3&gt;
@@ -306,9 +306,9 @@ module-based release.&lt;/p&gt;
 already at major version 2 when it began using Go
 modules to state &lt;em&gt;its own&lt;/em&gt; dependencies in v2.1.0.&lt;/p&gt;
 &lt;p&gt;But the more important reason for &lt;code&gt;v3&lt;/code&gt; is a change
-to the kustomize &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/faq/versioningpolicy&#34;&gt;versioning policy&lt;/a&gt;, forced by
+to the kustomize &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/faq/versioningpolicy&#34;&gt;versioning policy&lt;/a&gt;, forced by
 the introduction of plugins.&lt;/p&gt;
-&lt;p&gt;Historically, kustomize&amp;rsquo;s &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/faq/versioningpolicy&#34;&gt;versioning policy&lt;/a&gt;
+&lt;p&gt;Historically, kustomize&amp;rsquo;s &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/faq/versioningpolicy&#34;&gt;versioning policy&lt;/a&gt;
 didn&amp;rsquo;t involve Go modules and addressed &lt;em&gt;only&lt;/em&gt; the
 command line tool&amp;rsquo;s behavior and the fields in a
 kustomization file.  The underlying packages were
@@ -341,10 +341,10 @@ increment.&lt;/p&gt;
     
     <item>
       <title>Blog: v2.1.0</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/06/18/v2.1.0/</link>
+      <link>https://cli-docs.sigs.k8s.io/blog/2019/06/18/v2.1.0/</link>
       <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/06/18/v2.1.0/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/blog/2019/06/18/v2.1.0/</guid>
       <description>
         
         
@@ -353,7 +353,7 @@ loading restrictions, the notion of inventory, eased replica count modification.
 About ~90 issues closed since &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/releases/tag/v1.0.9releases/tag/v2.0.3&#34;&gt;v2.0.3&lt;/a&gt; in ~400 commits.&lt;/p&gt;
 &lt;p&gt;Download &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/releases/tag/v1.0.9releases/tag/v2.1.0&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;go-modules&#34;&gt;Go modules&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/images/goModules.png&#34; alt=&#34;gopher with boxes&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cli-docs.sigs.k8s.io/kustomize/images/goModules.png&#34; alt=&#34;gopher with boxes&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Kustomize now defines its dependencies in a top
 level &lt;code&gt;go.mod&lt;/code&gt; file.  This is the first step
 towards a package structure intentially exported
@@ -361,7 +361,7 @@ as one or more &lt;a href=&#34;https://github.com/golang/go/wiki/Modules&#34;&gt
 programs (kubectl, kubebuilder, etc.) and in
 kustomize plugins (see below).&lt;/p&gt;
 &lt;h2 id=&#34;resource-ordering&#34;&gt;Resource ordering&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/images/sorted.png&#34; alt=&#34;sort order retained&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cli-docs.sigs.k8s.io/kustomize/images/sorted.png&#34; alt=&#34;sort order retained&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Kustomize now retains the depth-first order of
 resources as read, a frequently requested
 feature.&lt;/p&gt;
@@ -385,7 +385,7 @@ automatic retention of load order, your
 output.  Specify this to see output order
 respect input order.&lt;/p&gt;
 &lt;h2 id=&#34;generator-and-transformer-plugins&#34;&gt;Generator and transformer plugins&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/images/plugins.png&#34; alt=&#34;kid putting knife in electrical outlet&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cli-docs.sigs.k8s.io/kustomize/images/plugins.png&#34; alt=&#34;kid putting knife in electrical outlet&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Since the beginning (as &lt;code&gt;kinflate&lt;/code&gt; back in Sep
 2017), kustomize has read or generated resources,
 applied a series of pipelined transformation to
@@ -424,12 +424,12 @@ execution of
 &lt;p&gt;For more information, see the
 &lt;a href=&#34;plugins&#34;&gt;kustomize plugin documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;remove-load-restrictions&#34;&gt;Remove load restrictions&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/images/abandonedTrainingWheels.png&#34; alt=&#34;removed training wheels&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cli-docs.sigs.k8s.io/kustomize/images/abandonedTrainingWheels.png&#34; alt=&#34;removed training wheels&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The following usage:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;kustomize build --load_restrictor none $target
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;allows a &lt;code&gt;kustomization.yaml&lt;/code&gt; file used in this
 build to refer to files outside its own directory
-(i.e. outside its &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/api-reference/glossary#kustomization-root&#34;&gt;root&lt;/a&gt;).&lt;/p&gt;
+(i.e. outside its &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#kustomization-root&#34;&gt;root&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;This is an opt-in to suppress a security feature
 that denies this precise behavior.&lt;/p&gt;
 &lt;p&gt;This feature should only be used to allow multiple
@@ -438,7 +438,7 @@ patch file.  To share &lt;em&gt;resources&lt;/em&gt;, use a relative
 path or URL to a kustomization directory in the
 &lt;code&gt;resources&lt;/code&gt; directive.&lt;/p&gt;
 &lt;h2 id=&#34;inventory-generation-for-pruning&#34;&gt;Inventory generation for pruning&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/images/pruning.png&#34; alt=&#34;pruning dead branches&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cli-docs.sigs.k8s.io/kustomize/images/pruning.png&#34; alt=&#34;pruning dead branches&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Alpha&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Users can add an &lt;code&gt;inventory&lt;/code&gt; stanza to their
 kustomization file, to add a special &lt;em&gt;inventory
@@ -492,13 +492,13 @@ argument format.&lt;/p&gt;
 &lt;p&gt;Each field&amp;rsquo;s argument is a &lt;em&gt;string list&lt;/em&gt;,
 where each entry is either a &lt;em&gt;resource&lt;/em&gt; (a
 relative path to a YAML file) or a
-&lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/api-reference/glossary#kustomization&#34;&gt;&lt;em&gt;kustomization&lt;/em&gt;&lt;/a&gt; (a path or URL
+&lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#kustomization&#34;&gt;&lt;em&gt;kustomization&lt;/em&gt;&lt;/a&gt; (a path or URL
 pointing to a directory with a kustomization
 file).  A kustomization directory used in this
-context is called a &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/api-reference/glossary#base&#34;&gt;&lt;em&gt;base&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+context is called a &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#base&#34;&gt;&lt;em&gt;base&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The fact that the &lt;code&gt;generators&lt;/code&gt; and &lt;code&gt;transformers&lt;/code&gt;
-field accept &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/api-reference/glossary#base&#34;&gt;bases&lt;/a&gt; and the fact that generator
+field accept &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#base&#34;&gt;bases&lt;/a&gt; and the fact that generator
 and transformer configuration objects are just
 normal k8s resources means that one can generate
 or transform a generator or a transformer (see
@@ -506,7 +506,7 @@ or transform a generator or a transformer (see
 &lt;h3 id=&#34;replicas-field&#34;&gt;&lt;code&gt;replicas&lt;/code&gt; field&lt;/h3&gt;
 &lt;p&gt;The common task of patching a deployment to edit
 the number of replicas is now made easier
-with the new &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/api-reference/kustomization/replicas&#34;&gt;replicas&lt;/a&gt; field.&lt;/p&gt;
+with the new &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/kustomization/replicas&#34;&gt;replicas&lt;/a&gt; field.&lt;/p&gt;
 &lt;h3 id=&#34;envs-field&#34;&gt;&lt;code&gt;envs&lt;/code&gt; field&lt;/h3&gt;
 &lt;p&gt;An &lt;code&gt;envs&lt;/code&gt; sub-field has been added to both
 &lt;code&gt;configMapGenerator&lt;/code&gt; and &lt;code&gt;secretGenerator&lt;/code&gt;,
@@ -521,10 +521,10 @@ singular &lt;code&gt;env&lt;/code&gt; field into a plural field.&lt;/p&gt;
     
     <item>
       <title>Blog: v2.0.0</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/02/05/v2.0.0/</link>
+      <link>https://cli-docs.sigs.k8s.io/blog/2019/02/05/v2.0.0/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/blog/2019/02/05/v2.0.0/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/blog/2019/02/05/v2.0.0/</guid>
       <description>
         
         
@@ -534,7 +534,7 @@ definition of a kustomization file with no
 mechanism to convert it to a new form.  Also, the
 set of files accessible from a kustomization file
 has been further constrained.&lt;/p&gt;
-&lt;p&gt;Per the &lt;a href=&#34;https://kubernetes-sigs.github.io/cli-experimental/kustomize/faq/versioningpolicy&#34;&gt;versioning policy&lt;/a&gt;,
+&lt;p&gt;Per the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/faq/versioningpolicy&#34;&gt;versioning policy&lt;/a&gt;,
 backward incompatible changes trigger an increment
 of the major version number, hence we go
 from 1.0.11 to 2.0.0. We&amp;rsquo;re taking this major
@@ -637,10 +637,10 @@ The deprecation warning&lt;/p&gt;
     
     <item>
       <title>Blog: v1.0.1</title>
-      <link>https://kubernetes-sigs.github.io/cli-experimental/blog/2018/05/21/v1.0.1/</link>
+      <link>https://cli-docs.sigs.k8s.io/blog/2018/05/21/v1.0.1/</link>
       <pubDate>Mon, 21 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://kubernetes-sigs.github.io/cli-experimental/blog/2018/05/21/v1.0.1/</guid>
+      <guid>https://cli-docs.sigs.k8s.io/blog/2018/05/21/v1.0.1/</guid>
       <description>
         
         

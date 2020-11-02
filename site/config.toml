@@ -1,4 +1,4 @@
-baseURL = "https://kubernetes-sigs.github.io/cli-experimental/"
+baseURL = "https://cli-docs.sigs.k8s.io"
 title = "SIG CLI"
 
 publishDir = "../docs"

@@ -36,5 +36,5 @@ One can also perfrom operations such as, Port Forward to:
 {{% /alert %}}
 
 {{% alert color="warning" title="Command / Examples" %}}
-Check out the [reference](/cli-experimental/references/kubectl/port-forward/) for commands and examples of `port forwarding`
+Check out the [reference](/references/kubectl/port-forward/) for commands and examples of `port forwarding`
 {{% /alert %}}
