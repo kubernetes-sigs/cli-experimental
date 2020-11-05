@@ -7,8 +7,5 @@ dyctl
 .idea/
 *.iml
 
-# scripts/verify.sh creates a vendor for metalinter
-vendor/
-
 # go artifacts
 cover.out
