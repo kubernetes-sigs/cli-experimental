@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – Extending Kubectl</title>
-    <link>https://cli-docs.sigs.k8s.io/guides/extending_kubectl/</link>
+    <link>https://kubectl.docs.kubernetes.io/guides/extending_kubectl/</link>
     <description>Recent content in Extending Kubectl on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://cli-docs.sigs.k8s.io/guides/extending_kubectl/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubectl.docs.kubernetes.io/guides/extending_kubectl/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Guides: Plugin Mechanism</title>
-      <link>https://cli-docs.sigs.k8s.io/guides/extending_kubectl/plugin_mechanism/</link>
+      <link>https://kubectl.docs.kubernetes.io/guides/extending_kubectl/plugin_mechanism/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/guides/extending_kubectl/plugin_mechanism/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/guides/extending_kubectl/plugin_mechanism/</guid>
       <description>
         
         
@@ -58,10 +58,10 @@ On windows, the minimum required version to use the plugin mechanism is 1.14.
     
     <item>
       <title>Guides: Discovering Plugins</title>
-      <link>https://cli-docs.sigs.k8s.io/guides/extending_kubectl/discovering_plugins/</link>
+      <link>https://kubectl.docs.kubernetes.io/guides/extending_kubectl/discovering_plugins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/guides/extending_kubectl/discovering_plugins/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/guides/extending_kubectl/discovering_plugins/</guid>
       <description>
         
         

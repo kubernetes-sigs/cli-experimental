@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – images</title>
-    <link>https://cli-docs.sigs.k8s.io/references/kustomize/images/</link>
+    <link>https://kubectl.docs.kubernetes.io/references/kustomize/images/</link>
     <description>Recent content in images on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://cli-docs.sigs.k8s.io/references/kustomize/images/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubectl.docs.kubernetes.io/references/kustomize/images/index.xml" rel="self" type="application/rss+xml" />
     
     
       

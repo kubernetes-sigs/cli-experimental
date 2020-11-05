@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.76.5" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -24,13 +24,13 @@
 <meta property="og:description" content="Editing Workloads
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cli-docs.sigs.k8s.io/documentation/misc_imperative_commands/editing_workloads/" />
+<meta property="og:url" content="https://kubectl.docs.kubernetes.io/documentation/misc_imperative_commands/editing_workloads/" />
 <meta property="article:modified_time" content="2020-09-23T14:28:56+05:30" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="Editing Workloads">
 <meta itemprop="description" content="Editing Workloads
 ">
 <meta itemprop="dateModified" content="2020-09-23T14:28:56+05:30" />
-<meta itemprop="wordCount" content="81">
+<meta itemprop="wordCount" content="95">
 
 
 
@@ -44,8 +44,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" as="style">
-<link href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" as="style">
+<link href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -582,21 +582,21 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="https://cli-docs.sigs.k8s.io/documentation/">temp</a>
+	<a href="https://kubectl.docs.kubernetes.io/documentation/">temp</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="https://cli-docs.sigs.k8s.io/documentation/misc_imperative_commands/">Miscellanious Imperative Commands</a>
+	<a href="https://kubectl.docs.kubernetes.io/documentation/misc_imperative_commands/">Miscellanious Imperative Commands</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://cli-docs.sigs.k8s.io/documentation/misc_imperative_commands/editing_workloads/">Editing Workloads</a>
+	<a href="https://kubectl.docs.kubernetes.io/documentation/misc_imperative_commands/editing_workloads/">Editing Workloads</a>
 </li>
 
 	</ol>
@@ -623,13 +623,13 @@
 <p>Edit allows a user to directly edit a Resource in a cluster rather than
 editing it through a local file.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># Edit the service named &#39;docker-registry&#39;:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>kubectl<span style="color:#f8f8f8;text-decoration:underline"> </span>edit<span style="color:#f8f8f8;text-decoration:underline"> </span>svc/docker-registry<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">kubectl edit svc/docker-registry</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># Use an alternative editor</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>KUBE_EDITOR=<span style="color:#4e9a06">&#34;nano&#34;</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kubectl<span style="color:#f8f8f8;text-decoration:underline"> </span>edit<span style="color:#f8f8f8;text-decoration:underline"> </span>svc/docker-registry<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">KUBE_EDITOR=&#34;nano&#34; kubectl edit svc/docker-registry</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># Edit the job &#39;myjob&#39; in JSON using the v1 API format:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>kubectl<span style="color:#f8f8f8;text-decoration:underline"> </span>edit<span style="color:#f8f8f8;text-decoration:underline"> </span>job.v1.batch/myjob<span style="color:#f8f8f8;text-decoration:underline"> </span>-o<span style="color:#f8f8f8;text-decoration:underline"> </span>json<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">kubectl edit job.v1.batch/myjob -o json</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># Edit the deployment &#39;mydeployment&#39; in YAML and save the modified config in its annotation:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>kubectl<span style="color:#f8f8f8;text-decoration:underline"> </span>edit<span style="color:#f8f8f8;text-decoration:underline"> </span>deployment/mydeployment<span style="color:#f8f8f8;text-decoration:underline"> </span>-o<span style="color:#f8f8f8;text-decoration:underline"> </span>yaml<span style="color:#f8f8f8;text-decoration:underline"> </span>--save-config<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">kubectl edit deployment/mydeployment -o yaml --save-config</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div>
 	
 		<style>
@@ -734,7 +734,7 @@ editing it through a local file.</p>
 
 
 
-<script src="/js/main.min.7c5d430fefb5b85d79d78e2dfeb0ed4d624c52de2aec62800ade35d9468f0e9d.js" integrity="sha256-fF1DD&#43;&#43;1uF15144t/rDtTWJMUt4q7GKACt412UaPDp0=" crossorigin="anonymous"></script>
+<script src="/js/main.min.fae006e5cf9fa218c3a9ae5c10f640f60885363bd071daf1abebdf20e8083aeb.js" integrity="sha256-&#43;uAG5c&#43;fohjDqa5cEPZA9giFNjvQcdrxq&#43;vfIOgIOus=" crossorigin="anonymous"></script>
 
 
 

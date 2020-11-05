@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – Extending Kustomize</title>
-    <link>https://cli-docs.sigs.k8s.io/guides/extending_kustomize/</link>
+    <link>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/</link>
     <description>Recent content in Extending Kustomize on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://cli-docs.sigs.k8s.io/guides/extending_kustomize/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Guides: Builtin Plugins</title>
-      <link>https://cli-docs.sigs.k8s.io/guides/extending_kustomize/builtins/</link>
+      <link>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/builtins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/guides/extending_kustomize/builtins/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/builtins/</guid>
       <description>
         
         
@@ -565,10 +565,10 @@ literals:
     
     <item>
       <title>Guides: Exec plugin on linux</title>
-      <link>https://cli-docs.sigs.k8s.io/guides/extending_kustomize/execpluginguidedexample/</link>
+      <link>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/execpluginguidedexample/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/guides/extending_kustomize/execpluginguidedexample/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/execpluginguidedexample/</guid>
       <description>
         
         
@@ -711,7 +711,7 @@ EOF
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By definition, an &lt;em&gt;exec&lt;/em&gt; plugin must be executable:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;chmod a+x &lt;span style=&#34;color:#000&#34;&gt;$MY_PLUGIN_DIR&lt;/span&gt;/SillyConfigMapGenerator
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;install-kustomize&#34;&gt;Install kustomize&lt;/h2&gt;
-&lt;p&gt;Per the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/installation/kustomize/&#34;&gt;instructions&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;Per the &lt;a href=&#34;https://kubectl.docs.kubernetes.io/installation/kustomize/&#34;&gt;instructions&lt;/a&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -s &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://raw.githubusercontent.com/\
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; bash
 mkdir -p &lt;span style=&#34;color:#000&#34;&gt;$DEMO&lt;/span&gt;/bin
@@ -732,10 +732,10 @@ mv kustomize &lt;span style=&#34;color:#000&#34;&gt;$DEMO&lt;/span&gt;/bin
     
     <item>
       <title>Guides: Go plugin Caveats</title>
-      <link>https://cli-docs.sigs.k8s.io/guides/extending_kustomize/goplugincaveats/</link>
+      <link>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/goplugincaveats/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/guides/extending_kustomize/goplugincaveats/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/goplugincaveats/</guid>
       <description>
         
         
@@ -829,18 +829,18 @@ plugin vs host dependencies.&lt;/p&gt;
     
     <item>
       <title>Guides: Go plugin example</title>
-      <link>https://cli-docs.sigs.k8s.io/guides/extending_kustomize/gopluginguidedexample/</link>
+      <link>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/gopluginguidedexample/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/guides/extending_kustomize/gopluginguidedexample/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/gopluginguidedexample/</guid>
       <description>
         
         
         &lt;h1 id=&#34;go-plugin-guided-example-for-linux&#34;&gt;Go Plugin Guided Example for Linux&lt;/h1&gt;
 &lt;p&gt;This is a (no reading allowed!) 60 second copy/paste guided
 example.&lt;/p&gt;
-&lt;p&gt;Full plugin docs &lt;a href=&#34;https://cli-docs.sigs.k8s.io/guides/extending_kustomize/gopluginguidedexample/&#34;&gt;here&lt;/a&gt;.
-Be sure to read the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/guides/extending_kustomize/goplugincaveats/&#34;&gt;Go plugin caveats&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Full plugin docs &lt;a href=&#34;https://kubectl.docs.kubernetes.io/guides/extending_kustomize/gopluginguidedexample/&#34;&gt;here&lt;/a&gt;.
+Be sure to read the &lt;a href=&#34;https://kubectl.docs.kubernetes.io/guides/extending_kustomize/goplugincaveats/&#34;&gt;Go plugin caveats&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This demo uses a Go plugin, &lt;code&gt;SopsEncodedSecrets&lt;/code&gt;,
 that lives in the &lt;a href=&#34;https://github.com/monopole/sopsencodedsecrets&#34;&gt;sopsencodedsecrets repository&lt;/a&gt;.
 This is an inprocess &lt;a href=&#34;https://golang.org/pkg/plugin&#34;&gt;Go plugin&lt;/a&gt;, not an
@@ -940,7 +940,7 @@ go &lt;span style=&#34;color:#204a87&#34;&gt;test&lt;/span&gt; SopsEncodedSecret
 &lt;span style=&#34;color:#000&#34;&gt;GOPATH&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$tmpGoPath&lt;/span&gt; go build -buildmode plugin -o &lt;span style=&#34;color:#4e9a06&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;}&lt;/span&gt;.so &lt;span style=&#34;color:#4e9a06&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;}&lt;/span&gt;.go
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This step may succeed, but kustomize might
 ultimately fail to load the plugin because of
-dependency &lt;a href=&#34;https://cli-docs.sigs.k8s.io/guides/extending_kustomize/goplugincaveats/&#34;&gt;skew&lt;/a&gt;.&lt;/p&gt;
+dependency &lt;a href=&#34;https://kubectl.docs.kubernetes.io/guides/extending_kustomize/goplugincaveats/&#34;&gt;skew&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;On load failure&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
