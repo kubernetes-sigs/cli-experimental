@@ -73,6 +73,11 @@
   </url>
   
   <url>
+    <loc>https://kubectl.docs.kubernetes.io/references/kubectl/describe/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kubectl.docs.kubernetes.io/references/kubectl/diff/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
@@ -209,6 +214,11 @@
   
   <url>
     <loc>https://kubectl.docs.kubernetes.io/references/</loc>
+    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/references/kubectl/create/auth_resources/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
@@ -568,11 +578,6 @@
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kubectl/create/auth_resources/</loc>
-    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://kubectl.docs.kubernetes.io/references/kubectl/get/options/show_kind/</loc>
     <lastmod>2020-09-30T20:01:35+05:30</lastmod>
   </url>
@@ -650,11 +655,6 @@
   <url>
     <loc>https://kubectl.docs.kubernetes.io/guides/config_management/bespoke/</loc>
     <lastmod>2020-10-31T08:50:10+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kubectl/describe/</loc>
-    <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
   
   <url>
