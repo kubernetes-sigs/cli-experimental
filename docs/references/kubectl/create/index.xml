@@ -127,6 +127,42 @@ my-namespace           Active   11s
     </item>
     
     <item>
+      <title>References: roles</title>
+      <link>https://kubectl.docs.kubernetes.io/references/kubectl/create/auth_resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/references/kubectl/create/auth_resources/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;auth-resources&#34;&gt;Auth Resources&lt;/h2&gt;
+&lt;h3 id=&#34;clusterrole&#34;&gt;ClusterRole&lt;/h3&gt;
+&lt;p&gt;Create a ClusterRole named &amp;ldquo;foo&amp;rdquo; with API Group specified.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create clusterrole foo --verb&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;get,list,watch --resource&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;rs.extensions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;clusterrolebinding&#34;&gt;ClusterRoleBinding&lt;/h3&gt;
+&lt;p&gt;Create a role binding to give a user cluster admin permissions.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create clusterrolebinding &amp;lt;choose-a-name&amp;gt; --clusterrole&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;cluster-admin --user&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&amp;lt;your-cloud-email-account&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Required Admin Permissions&lt;/h4&gt;
+The cluster-admin role maybe required for creating new RBAC bindings.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;role&#34;&gt;Role&lt;/h3&gt;
+&lt;p&gt;Create a Role named &amp;ldquo;foo&amp;rdquo; with API Group specified.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create role foo --verb&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;get,list,watch --resource&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;rs.extensions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;rolebinding&#34;&gt;RoleBinding&lt;/h3&gt;
+&lt;p&gt;Create a RoleBinding for user1, user2, and group1 using the admin ClusterRole.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create rolebinding admin --clusterrole&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;admin --user&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;user1 --user&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;user2 --group&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;group1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;serviceaccount&#34;&gt;ServiceAccount&lt;/h3&gt;
+&lt;p&gt;Create a new service account named my-service-account&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create serviceaccount my-service-account
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>References: secrets</title>
       <link>https://kubectl.docs.kubernetes.io/references/kubectl/create/secret/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -196,42 +232,6 @@ my-secret             Opaque                    &lt;span style=&#34;color:#0000c
 
 NAME                  TYPE                      DATA   AGE
 my-secret             Opaque                    &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;      14s
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>References: roles</title>
-      <link>https://kubectl.docs.kubernetes.io/references/kubectl/create/auth_resources/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kubectl.docs.kubernetes.io/references/kubectl/create/auth_resources/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;auth-resources&#34;&gt;Auth Resources&lt;/h2&gt;
-&lt;h3 id=&#34;clusterrole&#34;&gt;ClusterRole&lt;/h3&gt;
-&lt;p&gt;Create a ClusterRole named &amp;ldquo;foo&amp;rdquo; with API Group specified.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create clusterrole foo --verb&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;get,list,watch --resource&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;rs.extensions
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;clusterrolebinding&#34;&gt;ClusterRoleBinding&lt;/h3&gt;
-&lt;p&gt;Create a role binding to give a user cluster admin permissions.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create clusterrolebinding &amp;lt;choose-a-name&amp;gt; --clusterrole&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;cluster-admin --user&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&amp;lt;your-cloud-email-account&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Required Admin Permissions&lt;/h4&gt;
-The cluster-admin role maybe required for creating new RBAC bindings.
-&lt;/div&gt;
-
-&lt;h3 id=&#34;role&#34;&gt;Role&lt;/h3&gt;
-&lt;p&gt;Create a Role named &amp;ldquo;foo&amp;rdquo; with API Group specified.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create role foo --verb&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;get,list,watch --resource&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;rs.extensions
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;rolebinding&#34;&gt;RoleBinding&lt;/h3&gt;
-&lt;p&gt;Create a RoleBinding for user1, user2, and group1 using the admin ClusterRole.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create rolebinding admin --clusterrole&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;admin --user&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;user1 --user&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;user2 --group&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;group1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;serviceaccount&#34;&gt;ServiceAccount&lt;/h3&gt;
-&lt;p&gt;Create a new service account named my-service-account&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl create serviceaccount my-service-account
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>

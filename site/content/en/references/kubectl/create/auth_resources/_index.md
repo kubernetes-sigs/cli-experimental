@@ -1,7 +1,7 @@
 ---
 title: "roles"
 linkTitle: "roles"
-weight: 5
+weight: 1
 type: docs
 description: >
     Creating Auth Resources

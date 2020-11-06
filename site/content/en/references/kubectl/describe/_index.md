@@ -1,7 +1,7 @@
 ---
 title: "describe"
 linkTitle: "describe"
-weight: 8
+weight: 1
 type: docs
 description: >
     Describing Kubernetes resources
