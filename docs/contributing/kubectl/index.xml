@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – Kubectl</title>
-    <link>https://cli-docs.sigs.k8s.io/contributing/kubectl/</link>
+    <link>https://kubectl.docs.kubernetes.io/contributing/kubectl/</link>
     <description>Recent content in Kubectl on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://cli-docs.sigs.k8s.io/contributing/kubectl/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubectl.docs.kubernetes.io/contributing/kubectl/index.xml" rel="self" type="application/rss+xml" />
     
     
       

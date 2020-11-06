@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – temp</title>
-    <link>https://cli-docs.sigs.k8s.io/documentation/</link>
+    <link>https://kubectl.docs.kubernetes.io/documentation/</link>
     <description>Recent content in temp on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://cli-docs.sigs.k8s.io/documentation/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubectl.docs.kubernetes.io/documentation/index.xml" rel="self" type="application/rss+xml" />
     
     
       

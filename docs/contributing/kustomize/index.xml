@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – Kustomize</title>
-    <link>https://cli-docs.sigs.k8s.io/contributing/kustomize/</link>
+    <link>https://kubectl.docs.kubernetes.io/contributing/kustomize/</link>
     <description>Recent content in Kustomize on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://cli-docs.sigs.k8s.io/contributing/kustomize/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubectl.docs.kubernetes.io/contributing/kustomize/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Contributing: Filing Bugs</title>
-      <link>https://cli-docs.sigs.k8s.io/contributing/kustomize/bugs/</link>
+      <link>https://kubectl.docs.kubernetes.io/contributing/kustomize/bugs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/contributing/kustomize/bugs/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/contributing/kustomize/bugs/</guid>
       <description>
         
         
@@ -61,10 +61,10 @@ misunderstandings.&lt;/p&gt;
     
     <item>
       <title>Contributing: Community Engagment</title>
-      <link>https://cli-docs.sigs.k8s.io/contributing/kustomize/community/</link>
+      <link>https://kubectl.docs.kubernetes.io/contributing/kustomize/community/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/contributing/kustomize/community/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/contributing/kustomize/community/</guid>
       <description>
         
         
@@ -82,16 +82,16 @@ project &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/comm
     
     <item>
       <title>Contributing: Contributing Features</title>
-      <link>https://cli-docs.sigs.k8s.io/contributing/kustomize/features/</link>
+      <link>https://kubectl.docs.kubernetes.io/contributing/kustomize/features/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/contributing/kustomize/features/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/contributing/kustomize/features/</guid>
       <description>
         
         
         &lt;p&gt;Following is the process for proposing a new Kustomize feature:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Check the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/faq/kustomize/eschewedfeatures/&#34;&gt;eschewed feature list&lt;/a&gt; to see if the feature has already been proposed&lt;/li&gt;
+&lt;li&gt;Check the &lt;a href=&#34;https://kubectl.docs.kubernetes.io/faq/kustomize/eschewedfeatures/&#34;&gt;eschewed feature list&lt;/a&gt; to see if the feature has already been proposed&lt;/li&gt;
 &lt;li&gt;File an &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/issues&#34;&gt;issue&lt;/a&gt; describing the desired feature
 &lt;ul&gt;
 &lt;li&gt;label it &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/labels/kind%2Ffeature&#34;&gt;kind/feature&lt;/a&gt;&lt;/li&gt;
@@ -100,8 +100,8 @@ project &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/comm
 &lt;li&gt;example of how you would accomplish the motivating task &lt;em&gt;with&lt;/em&gt; the feature&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Email the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/contributing/kustomize/community/&#34;&gt;sig-cli&lt;/a&gt; mailing list with the issue&lt;/li&gt;
-&lt;li&gt;Present the issue at &lt;a href=&#34;https://cli-docs.sigs.k8s.io/contributing/kustomize/community/&#34;&gt;sig-cli&lt;/a&gt; bi-weekly meeting on Zoom
+&lt;li&gt;Email the &lt;a href=&#34;https://kubectl.docs.kubernetes.io/contributing/kustomize/community/&#34;&gt;sig-cli&lt;/a&gt; mailing list with the issue&lt;/li&gt;
+&lt;li&gt;Present the issue at &lt;a href=&#34;https://kubectl.docs.kubernetes.io/contributing/kustomize/community/&#34;&gt;sig-cli&lt;/a&gt; bi-weekly meeting on Zoom
 &lt;ul&gt;
 &lt;li&gt;add it to the &lt;a href=&#34;https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit#heading=h.himo1st0tqyy&#34;&gt;meeting agenda&lt;/a&gt; doc&lt;/li&gt;
 &lt;li&gt;be present to discuss the feature&lt;/li&gt;
@@ -128,10 +128,10 @@ or more information is needed.&lt;/li&gt;
     
     <item>
       <title>Contributing: Writing Docs</title>
-      <link>https://cli-docs.sigs.k8s.io/contributing/kustomize/docs/</link>
+      <link>https://kubectl.docs.kubernetes.io/contributing/kustomize/docs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/contributing/kustomize/docs/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/contributing/kustomize/docs/</guid>
       <description>
         
         
@@ -206,10 +206,10 @@ Changes must be pushed to the fork&amp;rsquo;s &lt;strong&gt;master branch&lt;/s
     
     <item>
       <title>Contributing: Writing Code</title>
-      <link>https://cli-docs.sigs.k8s.io/contributing/kustomize/howitworks/</link>
+      <link>https://kubectl.docs.kubernetes.io/contributing/kustomize/howitworks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/contributing/kustomize/howitworks/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/contributing/kustomize/howitworks/</guid>
       <description>
         
         
@@ -314,10 +314,10 @@ the &lt;code&gt;kustomize/go.mod&lt;/code&gt;.&lt;/p&gt;
     
     <item>
       <title>Contributing: MacOS Dev Guide</title>
-      <link>https://cli-docs.sigs.k8s.io/contributing/kustomize/mac/</link>
+      <link>https://kubectl.docs.kubernetes.io/contributing/kustomize/mac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/contributing/kustomize/mac/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/contributing/kustomize/mac/</guid>
       <description>
         
         
@@ -343,10 +343,10 @@ the &lt;code&gt;kustomize/go.mod&lt;/code&gt;.&lt;/p&gt;
     
     <item>
       <title>Contributing: Windows Dev Guide</title>
-      <link>https://cli-docs.sigs.k8s.io/contributing/kustomize/windows/</link>
+      <link>https://kubectl.docs.kubernetes.io/contributing/kustomize/windows/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/contributing/kustomize/windows/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/contributing/kustomize/windows/</guid>
       <description>
         
         

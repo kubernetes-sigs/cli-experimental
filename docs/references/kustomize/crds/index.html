@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.76.5" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://cli-docs.sigs.k8s.io/references/kustomize/crds/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="https://kubectl.docs.kubernetes.io/references/kustomize/crds/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -25,7 +25,7 @@
 <meta property="og:description" content="Adding CRD support
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://cli-docs.sigs.k8s.io/references/kustomize/crds/" />
+<meta property="og:url" content="https://kubectl.docs.kubernetes.io/references/kustomize/crds/" />
 <meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="crds">
 <meta itemprop="description" content="Adding CRD support
@@ -39,8 +39,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" as="style">
-<link href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" as="style">
+<link href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -1451,21 +1451,21 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="https://cli-docs.sigs.k8s.io/references/">Reference</a>
+	<a href="https://kubectl.docs.kubernetes.io/references/">Reference</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="https://cli-docs.sigs.k8s.io/references/kustomize/">Kustomize</a>
+	<a href="https://kubectl.docs.kubernetes.io/references/kustomize/">Kustomize</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://cli-docs.sigs.k8s.io/references/kustomize/crds/">crds</a>
+	<a href="https://kubectl.docs.kubernetes.io/references/kustomize/crds/">crds</a>
 </li>
 
 	</ol>
@@ -1489,19 +1489,19 @@ with namePrefix, nameSuffix, or hashing in the
 same way.</p>
 <p>The annotations can be put into openAPI definitions are:</p>
 <ul>
-<li>&ldquo;x-kubernetes-annotation&rdquo;: &quot;&rdquo;</li>
-<li>&ldquo;x-kubernetes-label-selector&rdquo;: &quot;&rdquo;</li>
-<li>&ldquo;x-kubernetes-identity&rdquo;: &quot;&rdquo;</li>
+<li>&ldquo;x-kubernetes-annotation&rdquo;: &quot;&quot;</li>
+<li>&ldquo;x-kubernetes-label-selector&rdquo;: &quot;&quot;</li>
+<li>&ldquo;x-kubernetes-identity&rdquo;: &quot;&quot;</li>
 <li>&ldquo;x-kubernetes-object-ref-api-version&rdquo;: &ldquo;v1&rdquo;,</li>
 <li>&ldquo;x-kubernetes-object-ref-kind&rdquo;: &ldquo;Secret&rdquo;,</li>
 <li>&ldquo;x-kubernetes-object-ref-name-key&rdquo;: &ldquo;name&rdquo;,</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>kustomize.config.k8s.io/v1beta1<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>Kustomization<span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">kustomize.config.k8s.io/v1beta1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Kustomization</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">crds</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>- crds/typeA.yaml<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>- crds/typeB.yaml<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">crds/typeA.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">crds/typeB.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div>
         <div class="section-index">
     
@@ -1735,7 +1735,7 @@ same way.</p>
 
 
 
-<script src="/js/main.min.7c5d430fefb5b85d79d78e2dfeb0ed4d624c52de2aec62800ade35d9468f0e9d.js" integrity="sha256-fF1DD&#43;&#43;1uF15144t/rDtTWJMUt4q7GKACt412UaPDp0=" crossorigin="anonymous"></script>
+<script src="/js/main.min.fae006e5cf9fa218c3a9ae5c10f640f60885363bd071daf1abebdf20e8083aeb.js" integrity="sha256-&#43;uAG5c&#43;fohjDqa5cEPZA9giFNjvQcdrxq&#43;vfIOgIOus=" crossorigin="anonymous"></script>
 
 
 

@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – Kustomize</title>
-    <link>https://cli-docs.sigs.k8s.io/faq/kustomize/</link>
+    <link>https://kubectl.docs.kubernetes.io/faq/kustomize/</link>
     <description>Recent content in Kustomize on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://cli-docs.sigs.k8s.io/faq/kustomize/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubectl.docs.kubernetes.io/faq/kustomize/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Faq: Eschewed Features</title>
-      <link>https://cli-docs.sigs.k8s.io/faq/kustomize/eschewedfeatures/</link>
+      <link>https://kubectl.docs.kubernetes.io/faq/kustomize/eschewedfeatures/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/faq/kustomize/eschewedfeatures/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/faq/kustomize/eschewedfeatures/</guid>
       <description>
         
         
@@ -28,7 +28,7 @@ set.  The bounds can be changed with
 a consensus on the risks.&lt;/p&gt;
 &lt;p&gt;For a bigger picture about why kustomize
 does some things and not others, see the
-glossary entry for &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#declarative-application-management&#34;&gt;DAM&lt;/a&gt;.&lt;/p&gt;
+glossary entry for &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#declarative-application-management&#34;&gt;DAM&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;removal-directives&#34;&gt;Removal directives&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;kustomize&lt;/code&gt; supports configurations that can be reasoned about as
 &lt;em&gt;compositions&lt;/em&gt; or &lt;em&gt;mixins&lt;/em&gt; - concepts that are widely accepted as
@@ -44,8 +44,8 @@ unnecessarily complex configuration layouts.&lt;/p&gt;
 always possible to remove things from a base like labels and
 annotations, and/or split multi-resource manifests into individual
 resource files - then add things back as desired via the
-&lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If the underlying base is outside of one&amp;rsquo;s control, an &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#off-the-shelf-configuration&#34;&gt;OTS
+&lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If the underlying base is outside of one&amp;rsquo;s control, an &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#off-the-shelf-configuration&#34;&gt;OTS
 workflow&lt;/a&gt; is the recommended best practice.  Fork the base, remove
 what you don&amp;rsquo;t want and commit it to your private fork, then use
 kustomize on your fork.  As often as desired, use &lt;em&gt;git rebase&lt;/em&gt; to
@@ -54,7 +54,7 @@ capture improvements from the upstream base.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Structured edits&lt;/em&gt; are changes controlled by
 knowledge of the k8s API, and YAML or JSON syntax.&lt;/p&gt;
 &lt;p&gt;Most edits performed by kustomize can be expressed as
-&lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#patchjson6902&#34;&gt;JSON patches&lt;/a&gt; or &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#patchstrategicmerge&#34;&gt;SMP patches&lt;/a&gt;.
+&lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#patchjson6902&#34;&gt;JSON patches&lt;/a&gt; or &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#patchstrategicmerge&#34;&gt;SMP patches&lt;/a&gt;.
 Those can be verbose, so common patches,
 like adding labels or annotatations, get dedicated
 transformer plugins - &lt;code&gt;LabelTransformer&lt;/code&gt;,
@@ -112,7 +112,7 @@ entire configuration in a version control system.&lt;/p&gt;
 of additional arguments or flags to &lt;code&gt;build&lt;/code&gt;, or by
 consulting shell environment variable values in &lt;code&gt;build&lt;/code&gt;
 code, would frustrate that goal.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;kustomize&lt;/code&gt; insteads offers &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt; file &lt;code&gt;edit&lt;/code&gt;
+&lt;p&gt;&lt;code&gt;kustomize&lt;/code&gt; insteads offers &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt; file &lt;code&gt;edit&lt;/code&gt;
 commands.  Like any shell command, they can accept
 environment variable arguments.&lt;/p&gt;
 &lt;p&gt;For example, to set the tag used on an image to match an
@@ -124,7 +124,7 @@ environment variable, run&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;kustomize&lt;/code&gt; supports the best practice of storing one&amp;rsquo;s
 entire configuration in a version control system.&lt;/p&gt;
 &lt;p&gt;Globbing the local file system for files not explicitly
-declared in the &lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt; file at &lt;code&gt;kustomize build&lt;/code&gt; time
+declared in the &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt; file at &lt;code&gt;kustomize build&lt;/code&gt; time
 would violate that goal.&lt;/p&gt;
 &lt;p&gt;Allowing globbing in a kustomization file would also introduce
 the same problems as allowing globbing in &lt;a href=&#34;https://www.codebyamir.com/blog/pitfalls-java-import-wildcards&#34;&gt;java import&lt;/a&gt;
@@ -139,10 +139,10 @@ explicit names into the kustomization file.&lt;/p&gt;
     
     <item>
       <title>Faq: Versioning Policy</title>
-      <link>https://cli-docs.sigs.k8s.io/faq/kustomize/versioningpolicy/</link>
+      <link>https://kubectl.docs.kubernetes.io/faq/kustomize/versioningpolicy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/faq/kustomize/versioningpolicy/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/faq/kustomize/versioningpolicy/</guid>
       <description>
         
         
@@ -150,7 +150,7 @@ explicit names into the kustomization file.&lt;/p&gt;
 particular version of a program (a CLI), using a
 particular version of underlying packages (a Go
 API), and reading a particular version of a
-&lt;a href=&#34;https://cli-docs.sigs.k8s.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt; file.&lt;/p&gt;
+&lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt; file.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;If you&amp;rsquo;re having trouble with &lt;code&gt;go get&lt;/code&gt;, please
 read  &lt;a href=&#34;#go-api-versioning&#34;&gt;Go API Versioning&lt;/a&gt;

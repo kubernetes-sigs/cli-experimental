@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SIG CLI – Kustomize</title>
-    <link>https://cli-docs.sigs.k8s.io/installation/kustomize/</link>
+    <link>https://kubectl.docs.kubernetes.io/installation/kustomize/</link>
     <description>Recent content in Kustomize on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://cli-docs.sigs.k8s.io/installation/kustomize/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://kubectl.docs.kubernetes.io/installation/kustomize/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Installation: Go Source</title>
-      <link>https://cli-docs.sigs.k8s.io/installation/kustomize/source/</link>
+      <link>https://kubectl.docs.kubernetes.io/installation/kustomize/source/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/installation/kustomize/source/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/installation/kustomize/source/</guid>
       <description>
         
         
@@ -51,10 +51,10 @@ git checkout kustomize/v3.2.3
     
     <item>
       <title>Installation: Binaries</title>
-      <link>https://cli-docs.sigs.k8s.io/installation/kustomize/binaries/</link>
+      <link>https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/installation/kustomize/binaries/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/</guid>
       <description>
         
         
@@ -69,10 +69,10 @@ current working directory.&lt;/p&gt;
     
     <item>
       <title>Installation: Homebrew / MacPorts</title>
-      <link>https://cli-docs.sigs.k8s.io/installation/kustomize/homebrew/</link>
+      <link>https://kubectl.docs.kubernetes.io/installation/kustomize/homebrew/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/installation/kustomize/homebrew/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/installation/kustomize/homebrew/</guid>
       <description>
         
         
@@ -86,10 +86,10 @@ current working directory.&lt;/p&gt;
     
     <item>
       <title>Installation: Chocolatey</title>
-      <link>https://cli-docs.sigs.k8s.io/installation/kustomize/chocolatey/</link>
+      <link>https://kubectl.docs.kubernetes.io/installation/kustomize/chocolatey/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cli-docs.sigs.k8s.io/installation/kustomize/chocolatey/</guid>
+      <guid>https://kubectl.docs.kubernetes.io/installation/kustomize/chocolatey/</guid>
       <description>
         
         

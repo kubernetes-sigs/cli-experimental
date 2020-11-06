@@ -9,3 +9,5 @@ dyctl
 
 # go artifacts
 cover.out
+
+.DS_Store
