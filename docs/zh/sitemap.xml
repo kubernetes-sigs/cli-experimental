@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/guides/plugins/builtins/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/guides/bespoke/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/guides/plugins/execpluginguidedexample/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/installation/source/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/guides/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/guides/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/guides/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/guides/offtheshelf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/guides/plugins/goplugincaveats/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/installation/homebrew/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/installation/binaries/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/installation/chocolatey/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/guides/plugins/gopluginguidedexample/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/contributing/bugs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/blog/releases/</loc>
+    <lastmod>2019-10-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/blog/releases/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/blog/releases/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/contributing/community/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/installation/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/installation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/installation/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/contributing/features/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/contributing/docs/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/contributing/docs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/contributing/docs/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/contributing/howitworks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/contributing/mac/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/contributing/windows/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/guides/plugins/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/faq/eschewedfeatures/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/faq/versioningpolicy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/glossary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/</loc>
+    <lastmod>2019-10-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/blog/2019/10/24/v3.3.0/</loc>
+    <lastmod>2019-10-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/blog/2019/10/24/v3.3.0/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/blog/2019/10/24/v3.3.0/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/blog/</loc>
+    <lastmod>2019-10-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/blog/2019/09/26/v3.2.1/</loc>
+    <lastmod>2019-09-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/blog/2019/09/26/v3.2.1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/blog/2019/09/26/v3.2.1/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/blog/2019/09/17/v3.2.0/</loc>
+    <lastmod>2019-09-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/blog/2019/09/17/v3.2.0/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/blog/2019/09/17/v3.2.0/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/blog/2019/07/26/v3.1.0/</loc>
+    <lastmod>2019-07-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/blog/2019/07/26/v3.1.0/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/blog/2019/07/26/v3.1.0/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/blog/2019/07/03/v3.0.0/</loc>
+    <lastmod>2019-07-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/blog/2019/07/03/v3.0.0/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/blog/2019/07/03/v3.0.0/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/blog/2019/06/18/v2.1.0/</loc>
+    <lastmod>2019-06-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/blog/2019/06/18/v2.1.0/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/blog/2019/06/18/v2.1.0/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/blog/2019/02/05/v2.0.0/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/blog/2019/02/05/v2.0.0/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/blog/2019/02/05/v2.0.0/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/blog/2018/05/21/v1.0.1/</loc>
+    <lastmod>2018-05-21T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/blog/2018/05/21/v1.0.1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/blog/2018/05/21/v1.0.1/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/index.json</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/bases/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/commonannotations/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/commonlabels/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/components/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/configmapgenerator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/crds/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/faq/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/faq/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/faq/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/generatoroptions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/images/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/nameprefix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/namespace/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/namesuffix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/patches/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/patchesjson6902/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/patchesstrategicmerge/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/replicas/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/resources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/search/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/search/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/search/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/secretegenerator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/vars/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/contributing/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kubectl.docs.kubernetes.io/contributing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://kubectl.docs.kubernetes.io/zh/contributing/"
+                />
+  </url>
+  
+</urlset>

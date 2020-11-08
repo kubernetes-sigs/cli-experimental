@@ -61,6 +61,16 @@ languageName ="English"
 # Weight used for sorting.
 weight = 1
 
+[languages.zh]
+title = "SIG CLI"
+description = "自定义 Kubernetes 配置"
+languageName ="简体中文"
+contentDir = "content/zh"
+time_format_default = "2006年01月02日"
+time_format_blog = "2006年01月02日"
+# Weight used for sorting.
+weight = 2
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -106,13 +116,14 @@ github_project_repo = "https://github.com/kubernetes-sigs/cli-experimental"
 github_subdir = "site"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+# gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
 # Enable Algolia DocSearch
 algolia_docsearch = false
 
 # Enable Lunr.js offline search
-offlineSearch = false
+offlineSearch = true
+offlineSearchMaxResults = 50
 
 # User interface configuration
 [params.ui]
