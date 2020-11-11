@@ -18,7 +18,7 @@ else
     MAKEFLAGS += -s
 endif
 
-.PHONY: generate
+.PHONY: generate docs
 generate:
 	GO111MODULE=on go generate
 
@@ -36,3 +36,6 @@ check:
 
 debug:
 	GO111MODULE=on dlv debug .
+
+docs:
+	cd site && go run github.com/gohugoio/hugo
