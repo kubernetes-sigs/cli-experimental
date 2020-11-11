@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.78.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -39,8 +39,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" as="style">
-<link href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" as="style">
+<link href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4f2785d90ceba8cf841a9c0b39148c2b737e1155e70da7b79e2b5754b7e55869c80d14124475ad6897fac65c9cb809e9b17a77019e84348a48008d97c138a1bc.json"
+  data-offline-search-index-json-src="/offline-search-index.41edccae6c92af7a002802de9493fccee7d4b47fded54e3f1bd22b3ff4b9bbdd0221437b90fbe964f73e61d98e47c63bbff2bf525ce30d949556afce0249a26a.json"
   data-offline-search-base-href="/"
 >
 
@@ -184,7 +184,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4f2785d90ceba8cf841a9c0b39148c2b737e1155e70da7b79e2b5754b7e55869c80d14124475ad6897fac65c9cb809e9b17a77019e84348a48008d97c138a1bc.json"
+  data-offline-search-index-json-src="/offline-search-index.41edccae6c92af7a002802de9493fccee7d4b47fded54e3f1bd22b3ff4b9bbdd0221437b90fbe964f73e61d98e47c63bbff2bf525ce30d949556afce0249a26a.json"
   data-offline-search-base-href="/"
 >
 
@@ -1580,7 +1580,7 @@ ConfigMap does not provide secrecy or encryption. If the data you want to store 
 </code></pre></div><h2 id="example">Example</h2>
 <h3 id="input-file">Input File</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># application.properties</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>FOO=Bar<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">FOO=Bar</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><h3 id="command">Command</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create configmap my-config --from-file<span style="color:#ce5c00;font-weight:bold">=</span>application.properties
 </code></pre></div><h3 id="output">Output</h3>
@@ -1603,9 +1603,9 @@ my-config   <span style="color:#0000cf;font-weight:bold">1</span>      21s
 </code></pre></div><h2 id="example-2">Example</h2>
 <h3 id="input-file-1">Input File</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># tracing.env</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>ENABLE_TRACING=<span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>SAMPLER_TYPE=probabilistic<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>SAMPLER_PARAMETERS=<span style="color:#0000cf;font-weight:bold">0.1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">ENABLE_TRACING=true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">SAMPLER_TYPE=probabilistic</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">SAMPLER_PARAMETERS=0.1</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><h3 id="command-2">Command</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create configmap my-config --from-file<span style="color:#ce5c00;font-weight:bold">=</span>tracing.env
 </code></pre></div><h3 id="output-2">Output</h3>
