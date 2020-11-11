@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.41edccae6c92af7a002802de9493fccee7d4b47fded54e3f1bd22b3ff4b9bbdd0221437b90fbe964f73e61d98e47c63bbff2bf525ce30d949556afce0249a26a.json"
+  data-offline-search-index-json-src="/offline-search-index.8e3de7e35b773539d1aa4129280eaa4211f523836cec70f93cdddbcfb40327c5a6084d12914a5249f6ed0331cd45a70278b9bd21a671d5293be8503045690cce.json"
   data-offline-search-base-href="/"
 >
 
@@ -184,7 +184,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.41edccae6c92af7a002802de9493fccee7d4b47fded54e3f1bd22b3ff4b9bbdd0221437b90fbe964f73e61d98e47c63bbff2bf525ce30d949556afce0249a26a.json"
+  data-offline-search-index-json-src="/offline-search-index.8e3de7e35b773539d1aa4129280eaa4211f523836cec70f93cdddbcfb40327c5a6084d12914a5249f6ed0331cd45a70278b9bd21a671d5293be8503045690cce.json"
   data-offline-search-base-href="/"
 >
 
@@ -469,6 +469,22 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#attend-a-sig-cli-meeting">Attend a sig-cli meeting</a></li>
+    <li><a href="#checking-out-the-code">Checking out the code</a>
+      <ul>
+        <li><a href="#install-golang">Install golang</a></li>
+        <li><a href="#get-a-copy-of-the-code">Get a copy of the code</a></li>
+        <li><a href="#build-the-binary">Build the binary</a></li>
+        <li><a href="#edit-the-code">Edit the code</a></li>
+      </ul>
+    </li>
+    <li><a href="#learning-about-libraries">Learning about libraries</a></li>
+    <li><a href="#additional-resources">Additional resources</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -504,7 +520,39 @@
 <div class="td-content">
 	<h1>Kubectl</h1>
 	<div class="lead">Contribute to Kubectl</div>
-	<p><em><strong>Coming Soon</strong></em></p>
+	<h2 id="attend-a-sig-cli-meeting">Attend a sig-cli meeting</h2>
+<p>The best way to get started is to attend <a href="https://github.com/kubernetes/community/tree/master/sig-cli">sig-cli</a>
+meetings.  The bug scrub is a great place to pick up an issue to work on.</p>
+<h2 id="checking-out-the-code">Checking out the code</h2>
+<h3 id="install-golang">Install golang</h3>
+<p>Install the latest version of <a href="https://golang.org">go</a></p>
+<h3 id="get-a-copy-of-the-code">Get a copy of the code</h3>
+<p>Fork and clone the <a href="https://github.com/kubernetes/kubernetes">kubernetes</a> repository</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone git@github.com/USER/kubernetes
+<span style="color:#204a87">cd</span> kubernetes
+</code></pre></div><h3 id="build-the-binary">Build the binary</h3>
+<p>Build the binary using <code>go build</code></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#204a87">cd</span> cmd/kubectl
+go build -v
+./kubectl version
+</code></pre></div><h3 id="edit-the-code">Edit the code</h3>
+<p>The kubectl code is under <code>staging/src/k8s.io/kubectl</code>.</p>
+<ul>
+<li>Libraries are under <code>staging/src/k8s.io/kubectl/pkg</code></li>
+<li>Command implementations are under <code>staging/src/k8s.io/kubectl/pkg/cmd</code></li>
+</ul>
+<h2 id="learning-about-libraries">Learning about libraries</h2>
+<p>Kubectl uses a number of common libraries</p>
+<ul>
+<li><a href="https://github.com/spf13/cobra">cobra</a> &ndash; a golang framework for CLIs</li>
+<li><a href="https://github.com/kubernetes/client-go">client-go</a> &ndash; libraries for talking to the Kubernetes apiserver</li>
+<li><a href="https://github.com/kubernetes/api">api</a> &ndash; Kubernetes types</li>
+<li><a href="https://github.com/kubernetes/apimachinery">apimachinery</a> &ndash; Kubernetes apimachinery libraries</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=QVYQUQd7prE">Everything You Always Wanted to Know About SIG-CLI but Were Afraid to Ask</a></li>
+</ul>
 
         <div class="section-index">
     
@@ -598,7 +646,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified November 11, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/711e83006786f75813f8bb40a24c2142e559431a">outstanding issues fix (711e830)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified November 11, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/eabe0f66774fe96a86353df933b8242ae6863ab8">Add kubectl contributing guide (eabe0f6)</a>
 </div>
 </div>
 
