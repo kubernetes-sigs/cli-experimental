@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.78.1" />
+<meta name="generator" content="Hugo 0.78.2" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/" />
-<meta property="article:modified_time" content="2020-10-05T00:12:12+05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-11-17T11:18:04-08:00" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="Binaries">
 <meta itemprop="description" content="Install Kustomize by downloading precompiled binaries.
 ">
-<meta itemprop="dateModified" content="2020-10-05T00:12:12+05:30" />
-<meta itemprop="wordCount" content="38">
+<meta itemprop="dateModified" content="2020-11-17T11:18:04-08:00" />
+<meta itemprop="wordCount" content="62">
 
 
 
@@ -159,7 +159,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8e3de7e35b773539d1aa4129280eaa4211f523836cec70f93cdddbcfb40327c5a6084d12914a5249f6ed0331cd45a70278b9bd21a671d5293be8503045690cce.json"
+  data-offline-search-index-json-src="/offline-search-index.ef6f20be251c051dfdf8c3888b29b430903ac3a41647832ef9418699e0060b58589aecdd47eb97603abafdfcea55db9bb40447757853861e7238ea3c2a7e0bb0.json"
   data-offline-search-base-href="/"
 >
 
@@ -189,7 +189,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8e3de7e35b773539d1aa4129280eaa4211f523836cec70f93cdddbcfb40327c5a6084d12914a5249f6ed0331cd45a70278b9bd21a671d5293be8503045690cce.json"
+  data-offline-search-index-json-src="/offline-search-index.ef6f20be251c051dfdf8c3888b29b430903ac3a41647832ef9418699e0060b58589aecdd47eb97603abafdfcea55db9bb40447757853861e7238ea3c2a7e0bb0.json"
   data-offline-search-base-href="/"
 >
 
@@ -302,6 +302,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-installationkustomizedocker" href="/installation/kustomize/docker/">Docker Images</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-installationkustomizehomebrew" href="/installation/kustomize/homebrew/">Homebrew / MacPorts</a>
       
       
@@ -400,12 +406,14 @@
 <div class="td-content">
 	<h1>Binaries</h1>
 	<div class="lead">Install Kustomize by downloading precompiled binaries.</div>
-	<p>Binaries at various versions for linux, MacOs and Windows are published on the [release page].</p>
+	<p>Binaries at various versions for linux, MacOs and Windows are published on the <a href="https://github.com/kubernetes-sigs/kustomize/releases">releases page</a>.</p>
 <p>The following <a href="https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh">script</a> detects your OS and downloads the appropriate kustomize binary to your
 current working directory.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s <span style="color:#4e9a06">&#34;https://raw.githubusercontent.com/\
 </span><span style="color:#4e9a06">kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&#34;</span>  <span style="color:#000;font-weight:bold">|</span> bash
-</code></pre></div>
+</code></pre></div><p><strong>This script doesn&rsquo;t work for ARM architecture.</strong> If you want to install ARM binaries, please
+go to the release page to find the URL.</p>
+
 	
 		<style>
   .feedback--answer {
@@ -468,7 +476,7 @@ current working directory.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 5, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/53154e46f206c1a93c5a44f2b5fd0478636c1cdc">site refactor (53154e4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified November 17, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/48bf469b58238366a153e431e9a3b6f00f1afe26">add kustomize docker (48bf469)</a>
 </div>
 </div>
 
