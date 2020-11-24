@@ -20,24 +20,24 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Chocolatey | SIG CLI</title><meta property="og:title" content="Chocolatey" />
-<meta property="og:description" content="Install Kustomize for Windows using Chocolatey
+<title>Docker Images | SIG CLI</title><meta property="og:title" content="Docker Images" />
+<meta property="og:description" content="Install Kustomize by pulling docker images.
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kubectl.docs.kubernetes.io/installation/kustomize/chocolatey/" />
-<meta property="article:modified_time" content="2020-10-05T00:12:12+05:30" /><meta property="og:site_name" content="SIG CLI" />
-<meta itemprop="name" content="Chocolatey">
-<meta itemprop="description" content="Install Kustomize for Windows using Chocolatey
+<meta property="og:url" content="https://kubectl.docs.kubernetes.io/installation/kustomize/docker/" />
+<meta property="article:modified_time" content="2020-11-17T11:18:04-08:00" /><meta property="og:site_name" content="SIG CLI" />
+<meta itemprop="name" content="Docker Images">
+<meta itemprop="description" content="Install Kustomize by pulling docker images.
 ">
-<meta itemprop="dateModified" content="2020-10-05T00:12:12+05:30" />
-<meta itemprop="wordCount" content="17">
+<meta itemprop="dateModified" content="2020-11-17T11:18:04-08:00" />
+<meta itemprop="wordCount" content="46">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Chocolatey"/>
-<meta name="twitter:description" content="Install Kustomize for Windows using Chocolatey
+<meta name="twitter:title" content="Docker Images"/>
+<meta name="twitter:description" content="Install Kustomize by pulling docker images.
 "/>
 
 
@@ -59,7 +59,7 @@
   crossorigin="anonymous"></script>
 
 
-    <title>Chocolatey | SIG CLI</title>
+    <title>Docker Images | SIG CLI</title>
   </head>
   <body class="td-page">
     <header>
@@ -302,7 +302,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-installationkustomizedocker" href="/installation/kustomize/docker/">Docker Images</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-installationkustomizedocker" href="/installation/kustomize/docker/">Docker Images</a>
       
       
       
@@ -314,7 +314,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-installationkustomizechocolatey" href="/installation/kustomize/chocolatey/">Chocolatey</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-installationkustomizechocolatey" href="/installation/kustomize/chocolatey/">Chocolatey</a>
       
       
     </li>
@@ -348,8 +348,8 @@
 
 
 
-<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/site/content/en/installation/kustomize/chocolatey.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Chocolatey" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/site/content/en/installation/kustomize/docker.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Docker%20Images" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -396,7 +396,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://kubectl.docs.kubernetes.io/installation/kustomize/chocolatey/">Chocolatey</a>
+	<a href="https://kubectl.docs.kubernetes.io/installation/kustomize/docker/">Docker Images</a>
 </li>
 
 	</ol>
@@ -404,16 +404,15 @@
 
             
 <div class="td-content">
-	<h1>Chocolatey</h1>
-	<div class="lead">Install Kustomize for Windows using Chocolatey</div>
-	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">choco install kustomize
-</code></pre></div><p>For support on the chocolatey package
-and prior releases, see:</p>
-<ul>
-<li><a href="https://chocolatey.org/packages/kustomize">Choco Package</a></li>
-<li><a href="https://github.com/kenmaglio/choco-kustomize">Package Source</a></li>
-</ul>
-
+	<h1>Docker Images</h1>
+	<div class="lead">Install Kustomize by pulling docker images.</div>
+	<p>Starting with Kustomize v3.8.7, docker images are available to run Kustomize.
+The images are hosted in kubernetes official GCR repositories.</p>
+<p>See <a href="https://us.gcr.io/k8s-artifacts-prod/kustomize/kustomize">GCR page</a> for available images.</p>
+<p>The following commands are how to pull and run kustomize 3.8.7 docker image.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull k8s.gcr.io/kustomize/kustomize:v3.8.7
+docker run k8s.gcr.io/kustomize/kustomize:v3.8.7 version
+</code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -476,7 +475,7 @@ and prior releases, see:</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 5, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/53154e46f206c1a93c5a44f2b5fd0478636c1cdc">site refactor (53154e4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified November 17, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/48bf469b58238366a153e431e9a3b6f00f1afe26">add kustomize docker (48bf469)</a>
 </div>
 </div>
 

@@ -324,7 +324,7 @@
   
   <url>
     <loc>https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/</loc>
-    <lastmod>2020-10-05T00:12:12+05:30</lastmod>
+    <lastmod>2020-11-17T11:18:04-08:00</lastmod>
   </url>
   
   <url>
@@ -335,6 +335,11 @@
   <url>
     <loc>https://kubectl.docs.kubernetes.io/references/kustomize/commonlabels/</loc>
     <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/installation/kustomize/docker/</loc>
+    <lastmod>2020-11-17T11:18:04-08:00</lastmod>
   </url>
   
   <url>
