@@ -178,6 +178,11 @@
   </url>
   
   <url>
+    <loc>https://kubectl.docs.kubernetes.io/guides/example/multi_base/</loc>
+    <lastmod>2020-11-25T21:45:20+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kubectl.docs.kubernetes.io/references/kubectl/create/namespace/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
@@ -285,6 +290,11 @@
   <url>
     <loc>https://kubectl.docs.kubernetes.io/installation/kubectl/homebrew/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/guides/example/inline_patch/</loc>
+    <lastmod>2020-11-25T21:45:20+05:30</lastmod>
   </url>
   
   <url>
@@ -495,6 +505,11 @@
   <url>
     <loc>https://kubectl.docs.kubernetes.io/guides/resource_printing/cluster_information/</loc>
     <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/guides/example/</loc>
+    <lastmod>2020-11-25T21:45:20+05:30</lastmod>
   </url>
   
   <url>
