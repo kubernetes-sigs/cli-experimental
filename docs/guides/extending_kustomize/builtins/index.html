@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.78.2" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/builtins/" />
-<meta property="article:modified_time" content="2020-09-30T20:01:35+05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-12-01T13:21:29-08:00" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="Builtin Plugins">
 <meta itemprop="description" content="Builtin Plugins
 ">
-<meta itemprop="dateModified" content="2020-09-30T20:01:35+05:30" />
-<meta itemprop="wordCount" content="1560">
+<meta itemprop="dateModified" content="2020-12-01T13:21:29-08:00" />
+<meta itemprop="wordCount" content="1802">
 
 
 
@@ -44,8 +44,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" as="style">
-<link href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" as="style">
+<link href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -159,7 +159,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ff52e57a9b0177f9eccb281291ed8b53ad0d7d70b3b511861040e13c9da98ef564c1f9919f74b15462cbc573d28904b84d8ed01896f02b57debe92cd645f3be3.json"
+  data-offline-search-index-json-src="/offline-search-index.72bd3de9aa7baabc20f18a8c957d805b417658afc207da078b35b866708da46485aa596425e0e0d0a942867ac9c18ad68bfc7d4dbfbc33475505e8bb67d67a2f.json"
   data-offline-search-base-href="/"
 >
 
@@ -189,7 +189,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ff52e57a9b0177f9eccb281291ed8b53ad0d7d70b3b511861040e13c9da98ef564c1f9919f74b15462cbc573d28904b84d8ed01896f02b57debe92cd645f3be3.json"
+  data-offline-search-index-json-src="/offline-search-index.72bd3de9aa7baabc20f18a8c957d805b417658afc207da078b35b866708da46485aa596425e0e0d0a942867ac9c18ad68bfc7d4dbfbc33475505e8bb67d67a2f.json"
   data-offline-search-base-href="/"
 >
 
@@ -721,6 +721,12 @@
       <ul>
         <li><a href="#usage-via-kustomizationyaml-10">Usage via <code>kustomization.yaml</code></a></li>
         <li><a href="#usage-via-plugin-10">Usage via plugin</a></li>
+      </ul>
+    </li>
+    <li><a href="#_helmchartinflationgenerator_"><em>HelmChartInflationGenerator</em></a>
+      <ul>
+        <li><a href="#usage-via-kustomizationyaml-11">Usage via <code>kustomization.yaml</code></a></li>
+        <li><a href="#usage-via-plugin-11">Usage via plugin</a></li>
       </ul>
     </li>
   </ul>
@@ -1308,6 +1314,68 @@ literals:
 - <span style="color:#000">FRUIT</span><span style="color:#ce5c00;font-weight:bold">=</span>apple
 - <span style="color:#000">VEGETABLE</span><span style="color:#ce5c00;font-weight:bold">=</span>carrot
 </code></pre></div></blockquote>
+<h2 id="_helmchartinflationgenerator_"><em>HelmChartInflationGenerator</em></h2>
+<h3 id="usage-via-kustomizationyaml-11">Usage via <code>kustomization.yaml</code></h3>
+<h4 id="field-name-helmchartinflationgenerator">field name: <code>helmChartInflationGenerator</code></h4>
+<p>Each entry in the argument list results in the pulling
+and rendering of a helm chart.</p>
+<p>Each entry can have following fields:</p>
+<ul>
+<li><code>chartName</code>: The name of the chart that you want to use.</li>
+<li><code>chartRepoUrl</code>: [Optional] The URL of the repository which contains the chart. If
+this is provided, the plugin will try to fetch remote charts. Otherwise it will
+try to load local chart in <code>chartHome</code>.</li>
+<li><code>chartVersion</code>: [Optional] Version of the chart. Will use latest version
+if this is omitted.</li>
+<li><code>chartHome</code>: [Optional] Provide the path to the parent directory for local chart.</li>
+<li><code>chartRelease</code>: [Optional] The name of the repo where to find the chart.</li>
+<li><code>values</code>: [Optional] A path to the values file.</li>
+<li><code>releaseName</code>: [Optional] The release name that will be set in the chart.</li>
+<li><code>releaseNamespace</code>: [Optional] The namespace which will be used by <code>--namespace</code>
+flag in <code>helm template</code> command.</li>
+<li><code>helmBin</code>: [Optional] Path to helm binary. Default is <code>helm</code>.</li>
+<li><code>helmHome</code>: [Optional] Path to helm home directory.</li>
+<li><code>extraArgs</code>: [Optional] A list of additional argumetns that will be passed into helm
+template command.</li>
+</ul>
+<pre><code>helmChartInflationGenerator:
+- chartName: minecraft
+  chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
+  chartVersion: v1.2.0
+  releaseName: test
+  releaseNamespace: testNamespace
+</code></pre><h3 id="usage-via-plugin-11">Usage via plugin</h3>
+<h4 id="arguments-11">Arguments</h4>
+<blockquote>
+<p>ChartName string</p>
+<p>ChartVersion string</p>
+<p>ChartRepoURL string</p>
+<p>ChartHome string</p>
+<p>ChartRepoName string</p>
+<p>HelmBin string</p>
+<p>HelmHome string</p>
+<p>Values string</p>
+<p>ReleaseName string</p>
+<p>ReleaseNamespace string</p>
+<p>ExtraArgs []string</p>
+</blockquote>
+<h4 id="example-11">Example</h4>
+<blockquote>
+<pre><code>apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: myMap
+chartName: minecraft
+chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
+chartVersion: v1.2.0
+helmBin: /usr/bin/helm
+helmHome: /tmp/helmHome
+releaseName: test
+releaseNamespace: testNamespace
+values: values.yaml
+extraArgs:
+- --include-crds
+</code></pre></blockquote>
 
 	
 		<style>
@@ -1371,7 +1439,7 @@ literals:
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/d705a6d13a34076f78d82ef2095f7e6bb97b8255">SIG CLI docs - guide changes (d705a6d)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified December 1, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/55b80da17d8aa7bd59d4d21176dee90dd2b9acbc">Add doc for helm chart generator (55b80da)</a>
 </div>
 </div>
 
