@@ -559,6 +559,68 @@ literals:
 - &lt;span style=&#34;color:#000&#34;&gt;FRUIT&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;apple
 - &lt;span style=&#34;color:#000&#34;&gt;VEGETABLE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;carrot
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_helmchartinflationgenerator_&#34;&gt;&lt;em&gt;HelmChartInflationGenerator&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-11&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-helmchartinflationgenerator&#34;&gt;field name: &lt;code&gt;helmChartInflationGenerator&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Each entry in the argument list results in the pulling
+and rendering of a helm chart.&lt;/p&gt;
+&lt;p&gt;Each entry can have following fields:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;chartName&lt;/code&gt;: The name of the chart that you want to use.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chartRepoUrl&lt;/code&gt;: [Optional] The URL of the repository which contains the chart. If
+this is provided, the plugin will try to fetch remote charts. Otherwise it will
+try to load local chart in &lt;code&gt;chartHome&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chartVersion&lt;/code&gt;: [Optional] Version of the chart. Will use latest version
+if this is omitted.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chartHome&lt;/code&gt;: [Optional] Provide the path to the parent directory for local chart.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chartRelease&lt;/code&gt;: [Optional] The name of the repo where to find the chart.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;values&lt;/code&gt;: [Optional] A path to the values file.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;releaseName&lt;/code&gt;: [Optional] The release name that will be set in the chart.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;releaseNamespace&lt;/code&gt;: [Optional] The namespace which will be used by &lt;code&gt;--namespace&lt;/code&gt;
+flag in &lt;code&gt;helm template&lt;/code&gt; command.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;helmBin&lt;/code&gt;: [Optional] Path to helm binary. Default is &lt;code&gt;helm&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;helmHome&lt;/code&gt;: [Optional] Path to helm home directory.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;extraArgs&lt;/code&gt;: [Optional] A list of additional argumetns that will be passed into helm
+template command.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;helmChartInflationGenerator:
+- chartName: minecraft
+  chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
+  chartVersion: v1.2.0
+  releaseName: test
+  releaseNamespace: testNamespace
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;usage-via-plugin-11&#34;&gt;Usage via plugin&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-11&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ChartName string&lt;/p&gt;
+&lt;p&gt;ChartVersion string&lt;/p&gt;
+&lt;p&gt;ChartRepoURL string&lt;/p&gt;
+&lt;p&gt;ChartHome string&lt;/p&gt;
+&lt;p&gt;ChartRepoName string&lt;/p&gt;
+&lt;p&gt;HelmBin string&lt;/p&gt;
+&lt;p&gt;HelmHome string&lt;/p&gt;
+&lt;p&gt;Values string&lt;/p&gt;
+&lt;p&gt;ReleaseName string&lt;/p&gt;
+&lt;p&gt;ReleaseNamespace string&lt;/p&gt;
+&lt;p&gt;ExtraArgs []string&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-11&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: myMap
+chartName: minecraft
+chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
+chartVersion: v1.2.0
+helmBin: /usr/bin/helm
+helmHome: /tmp/helmHome
+releaseName: test
+releaseNamespace: testNamespace
+values: values.yaml
+extraArgs:
+- --include-crds
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 
       </description>
     </item>
