@@ -9,7 +9,7 @@ description: >
 
 Each entry in the argument list results in the creation of one Secret resource (it's a generator of N secrets).
 
-This works like the [configMapGenerator]().
+This works like the [configMapGenerator](/references/kustomize/configmapgenerator).
 
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
