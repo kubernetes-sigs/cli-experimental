@@ -32,7 +32,7 @@ spec:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namePrefix: overlook-
+namePrefix: alices-
 
 resources:
 - deployment.yaml
