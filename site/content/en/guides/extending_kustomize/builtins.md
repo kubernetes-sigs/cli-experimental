@@ -740,7 +740,9 @@ Each entry can have following fields:
   if this is omitted.
 - `chartHome`: [Optional] Provide the path to the parent directory for local chart.
 - `chartRelease`: [Optional] The name of the repo where to find the chart.
-- `values`: [Optional] A path to the values file.
+- `values`: [Optional] An absolute path to the values file.
+- `valuesLocal`: [Optional] Values, map, locally in infator config file.
+- `valuesMerge`: [Optional] ValuesLocal merge strategy with Chart default `values.yaml`, default `override`. Options: `[override|merge|none]`.
 - `releaseName`: [Optional] The release name that will be set in the chart.
 - `releaseNamespace`: [Optional] The namespace which will be used by `--namespace`
   flag in `helm template` command.
@@ -777,6 +779,10 @@ helmChartInflationGenerator:
 > HelmHome string
 >
 > Values string
+
+> ValuesLocal map[string]interface
+
+> ValuesMerge string
 >
 > ReleaseName string
 >
@@ -798,7 +804,14 @@ helmChartInflationGenerator:
 > helmHome: /tmp/helmHome
 > releaseName: test
 > releaseNamespace: testNamespace
-> values: values.yaml
 > extraArgs:
 > - --include-crds
+> valuesLocal:
+>   image: itzg/minecraft-server
+>   imageTag: latest
+>   resources:
+>     requests:
+>       memory: 1024Mi
+>       cpu: 1000m
+>   difficulty: normal
 > ```
