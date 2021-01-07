@@ -24,7 +24,7 @@ tag.
 
 | Field     | Description                                                              | Example Field | Example Result |
 |-----------|--------------------------------------------------------------------------|----------| --- |
-| `name`    | Match images with this image name| `name: nginx`| |
+| `name`    | Match images with this _image_ name (not the _container_ name) | `nginx` (not `nginxapp`) | |
 | `newTag`  | Override the image **tag** or **digest** for images whose image name matches `name`    | `newTag: new` | `nginx:old` -> `nginx:new` |
 | `newName` | Override the image **name** for images whose image name matches `name`   | `newName: nginx-special` | `nginx:old` -> `nginx-special:old` |
 
