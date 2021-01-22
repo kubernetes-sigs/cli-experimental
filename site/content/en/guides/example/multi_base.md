@@ -26,7 +26,7 @@ that is just a single pod.
 Define a place to work:
 
 ```bash
-DEMO_HOME = $(mktemp -d)
+DEMO_HOME=$(mktemp -d)
 ```
 
 ## `/base`
