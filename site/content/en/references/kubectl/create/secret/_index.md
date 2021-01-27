@@ -40,7 +40,7 @@ my-secret             Opaque                    1      14s
 ## `generic`
 - Create a secret from a local file, directory or literal value
 ```bash
-$ kubectl create generic NAME [--type=string] [--from-file=[key=]source] [--from-literal=key1=value1] [--dry-run=server|client|none]
+$ kubectl create secret generic NAME [--type=string] [--from-file=[key=]source] [--from-literal=key1=value1] [--dry-run=server|client|none]
 ```
 
 ## Example
