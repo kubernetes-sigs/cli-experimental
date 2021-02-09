@@ -14,7 +14,7 @@ forked from the [docsy-example](https://github.com/google/docsy-example)
 
 - [Install hugo](https://gohugo.io/getting-started/installing/#fetch-from-github)
 - Clone kustomize
-  - `https://github.com/kubernetes-sigs/cli-experimental.git && cd site/`
+  - `git clone https://github.com/kubernetes-sigs/cli-experimental.git && cd site/`
 
 ## Development
 
