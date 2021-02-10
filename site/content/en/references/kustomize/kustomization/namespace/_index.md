@@ -2,7 +2,7 @@
 title: "namespace"
 linkTitle: "namespace"
 type: docs
-weight: 10
+weight: 11
 description: >
     Adds namespace to all resources.
 ---

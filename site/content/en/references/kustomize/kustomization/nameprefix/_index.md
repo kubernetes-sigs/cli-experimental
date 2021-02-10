@@ -2,7 +2,7 @@
 title: "namePrefix"
 linkTitle: "namePrefix"
 type: docs
-weight: 9
+weight: 10
 description: >
     Prepends the value to the names of all resources and references.
 ---

@@ -2,7 +2,7 @@
 title: "patchesStrategicMerge"
 linkTitle: "patchesStrategicMerge"
 type: docs
-weight: 14
+weight: 15
 description: >
     Patch resources using the strategic merge patch standard.
 ---

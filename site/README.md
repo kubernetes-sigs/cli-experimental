@@ -1,4 +1,4 @@
-# Kubeclt Docs
+# Kubectl Docs
 
 Kubectl Documentation, built with [Docsy](https://github.com/google/docsy)
 
