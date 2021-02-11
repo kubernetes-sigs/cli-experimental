@@ -179,7 +179,7 @@ metadata:
 ConfigMap Resources may be generated from key-value pairs much the same as using the literals option
 but taking the key-value pairs from an environment file. These generally end in `.env`.
 To generate a ConfigMap Resource from an environment file, add an entry to `configMapGenerator` with a
-single `env` entry, e.g. `env: config.env`.
+single `envs` entry, e.g. `envs: [ 'config.env' ]`.
 
 {{< alert color="success" title="Environment File Syntax" >}}
 - The key/value pairs inside of the environment file are separated by a `=` sign (left side is the key)
@@ -196,7 +196,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 configMapGenerator:
 - name: tracing-options
-  env: tracing.env
+  envs:
+  - tracing.env
 ```
 
 ```bash
