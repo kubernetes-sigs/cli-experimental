@@ -24,7 +24,7 @@ spec:
   template:
     containers:
       - name: the-container
-        image: registry/conatiner:latest
+        image: registry/container:latest
 ```
 
 ```yaml
@@ -45,12 +45,12 @@ resources:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: alices-the-deployment
+  name: overlook-the-deployment
 spec:
   replicas: 5
   template:
     containers:
-    - image: registry/conatiner:latest
+    - image: registry/conaianer:latest
       name: the-container
 ```
 
