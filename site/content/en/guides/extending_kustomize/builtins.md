@@ -720,3 +720,85 @@ secretGenerator:
 > - FRUIT=apple
 > - VEGETABLE=carrot
 > ```
+
+## _HelmChartInflationGenerator_
+
+### Usage via `kustomization.yaml`
+
+#### field name: `helmChartInflationGenerator`
+
+Each entry in the argument list results in the pulling
+and rendering of a helm chart.
+
+Each entry can have following fields:
+
+- `chartName`: The name of the chart that you want to use.
+- `chartRepoUrl`: [Optional] The URL of the repository which contains the chart. If
+  this is provided, the plugin will try to fetch remote charts. Otherwise it will
+  try to load local chart in `chartHome`.
+- `chartVersion`: [Optional] Version of the chart. Will use latest version
+  if this is omitted.
+- `chartHome`: [Optional] Provide the path to the parent directory for local chart.
+- `chartRelease`: [Optional] The name of the repo where to find the chart.
+- `values`: [Optional] A path to the values file.
+- `releaseName`: [Optional] The release name that will be set in the chart.
+- `releaseNamespace`: [Optional] The namespace which will be used by `--namespace`
+  flag in `helm template` command.
+- `helmBin`: [Optional] Path to helm binary. Default is `helm`.
+- `helmHome`: [Optional] Path to helm home directory.
+- `extraArgs`: [Optional] A list of additional argumetns that will be passed into helm
+  template command.
+
+```
+helmChartInflationGenerator:
+- chartName: minecraft
+  chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
+  chartVersion: v1.2.0
+  releaseName: test
+  releaseNamespace: testNamespace
+```
+
+### Usage via plugin
+
+#### Arguments
+
+> ChartName string
+>
+> ChartVersion string
+>
+> ChartRepoURL string
+>
+> ChartHome string
+>
+> ChartRepoName string
+>
+> HelmBin string
+>
+> HelmHome string
+>
+> Values string
+>
+> ReleaseName string
+>
+> ReleaseNamespace string
+>
+> ExtraArgs []string
+
+#### Example
+
+> ```
+> apiVersion: builtin
+> kind: HelmChartInflationGenerator
+> metadata:
+>   name: myMap
+> chartName: minecraft
+> chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
+> chartVersion: v1.2.0
+> helmBin: /usr/bin/helm
+> helmHome: /tmp/helmHome
+> releaseName: test
+> releaseNamespace: testNamespace
+> values: values.yaml
+> extraArgs:
+> - --include-crds
+> ```

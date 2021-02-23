@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.78.1" />
+<meta name="generator" content="Hugo 0.80.0" />
 
-<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 
@@ -25,12 +25,12 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/builtins/" />
-<meta property="article:modified_time" content="2020-09-30T20:01:35+05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-12-01T13:21:29-08:00" /><meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="Builtin Plugins">
 <meta itemprop="description" content="Builtin Plugins
 ">
-<meta itemprop="dateModified" content="2020-09-30T20:01:35+05:30" />
-<meta itemprop="wordCount" content="1560">
+<meta itemprop="dateModified" content="2020-12-01T13:21:29-08:00" />
+<meta itemprop="wordCount" content="1802">
 
 
 
@@ -39,6 +39,19 @@
 <meta name="twitter:title" content="Builtin Plugins"/>
 <meta name="twitter:description" content="Builtin Plugins
 "/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-00000000-0', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 
 
 
@@ -159,7 +172,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8e3de7e35b773539d1aa4129280eaa4211f523836cec70f93cdddbcfb40327c5a6084d12914a5249f6ed0331cd45a70278b9bd21a671d5293be8503045690cce.json"
+  data-offline-search-index-json-src="/offline-search-index.102224cb190562ccf2da0d4ad51a112b747c59f02bda30664f3d7d4432873ddde2b195ab98a85c37f6a80bdbb9d99df873d82cb4982f561889520de46d211992.json"
   data-offline-search-base-href="/"
 >
 
@@ -189,7 +202,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8e3de7e35b773539d1aa4129280eaa4211f523836cec70f93cdddbcfb40327c5a6084d12914a5249f6ed0331cd45a70278b9bd21a671d5293be8503045690cce.json"
+  data-offline-search-index-json-src="/offline-search-index.102224cb190562ccf2da0d4ad51a112b747c59f02bda30664f3d7d4432873ddde2b195ab98a85c37f6a80bdbb9d99df873d82cb4982f561889520de46d211992.json"
   data-offline-search-base-href="/"
 >
 
@@ -582,6 +595,41 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/guides/example/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Examples</a>
+  </li>
+  <ul>
+    <li class="collapse " id="guidesexample">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesexamplemulti_base" href="/guides/example/multi_base/">Multibase</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesexampleinline_patch" href="/guides/example/inline_patch/">Inline Patch</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -686,6 +734,12 @@
       <ul>
         <li><a href="#usage-via-kustomizationyaml-10">Usage via <code>kustomization.yaml</code></a></li>
         <li><a href="#usage-via-plugin-10">Usage via plugin</a></li>
+      </ul>
+    </li>
+    <li><a href="#_helmchartinflationgenerator_"><em>HelmChartInflationGenerator</em></a>
+      <ul>
+        <li><a href="#usage-via-kustomizationyaml-11">Usage via <code>kustomization.yaml</code></a></li>
+        <li><a href="#usage-via-plugin-11">Usage via plugin</a></li>
       </ul>
     </li>
   </ul>
@@ -1273,6 +1327,68 @@ literals:
 - <span style="color:#000">FRUIT</span><span style="color:#ce5c00;font-weight:bold">=</span>apple
 - <span style="color:#000">VEGETABLE</span><span style="color:#ce5c00;font-weight:bold">=</span>carrot
 </code></pre></div></blockquote>
+<h2 id="_helmchartinflationgenerator_"><em>HelmChartInflationGenerator</em></h2>
+<h3 id="usage-via-kustomizationyaml-11">Usage via <code>kustomization.yaml</code></h3>
+<h4 id="field-name-helmchartinflationgenerator">field name: <code>helmChartInflationGenerator</code></h4>
+<p>Each entry in the argument list results in the pulling
+and rendering of a helm chart.</p>
+<p>Each entry can have following fields:</p>
+<ul>
+<li><code>chartName</code>: The name of the chart that you want to use.</li>
+<li><code>chartRepoUrl</code>: [Optional] The URL of the repository which contains the chart. If
+this is provided, the plugin will try to fetch remote charts. Otherwise it will
+try to load local chart in <code>chartHome</code>.</li>
+<li><code>chartVersion</code>: [Optional] Version of the chart. Will use latest version
+if this is omitted.</li>
+<li><code>chartHome</code>: [Optional] Provide the path to the parent directory for local chart.</li>
+<li><code>chartRelease</code>: [Optional] The name of the repo where to find the chart.</li>
+<li><code>values</code>: [Optional] A path to the values file.</li>
+<li><code>releaseName</code>: [Optional] The release name that will be set in the chart.</li>
+<li><code>releaseNamespace</code>: [Optional] The namespace which will be used by <code>--namespace</code>
+flag in <code>helm template</code> command.</li>
+<li><code>helmBin</code>: [Optional] Path to helm binary. Default is <code>helm</code>.</li>
+<li><code>helmHome</code>: [Optional] Path to helm home directory.</li>
+<li><code>extraArgs</code>: [Optional] A list of additional argumetns that will be passed into helm
+template command.</li>
+</ul>
+<pre><code>helmChartInflationGenerator:
+- chartName: minecraft
+  chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
+  chartVersion: v1.2.0
+  releaseName: test
+  releaseNamespace: testNamespace
+</code></pre><h3 id="usage-via-plugin-11">Usage via plugin</h3>
+<h4 id="arguments-11">Arguments</h4>
+<blockquote>
+<p>ChartName string</p>
+<p>ChartVersion string</p>
+<p>ChartRepoURL string</p>
+<p>ChartHome string</p>
+<p>ChartRepoName string</p>
+<p>HelmBin string</p>
+<p>HelmHome string</p>
+<p>Values string</p>
+<p>ReleaseName string</p>
+<p>ReleaseNamespace string</p>
+<p>ExtraArgs []string</p>
+</blockquote>
+<h4 id="example-11">Example</h4>
+<blockquote>
+<pre><code>apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: myMap
+chartName: minecraft
+chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
+chartVersion: v1.2.0
+helmBin: /usr/bin/helm
+helmHome: /tmp/helmHome
+releaseName: test
+releaseNamespace: testNamespace
+values: values.yaml
+extraArgs:
+- --include-crds
+</code></pre></blockquote>
 
 	
 		<style>
@@ -1336,7 +1452,7 @@ literals:
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/d705a6d13a34076f78d82ef2095f7e6bb97b8255">SIG CLI docs - guide changes (d705a6d)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified December 1, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/64a4c489645e6e3dbeed13e3aae652949e116c73">Add doc for helm chart generator (64a4c48)</a>
 </div>
 </div>
 
@@ -1355,7 +1471,7 @@ literals:
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2020 SIG CLI | Documentation Distributed under CC BY 4.0 |  All Rights Reserved</small>
+        <small class="text-white">&copy; 2021 SIG CLI | Documentation Distributed under CC BY 4.0 |  All Rights Reserved</small>
         
 	
 		

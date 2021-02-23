@@ -23,8 +23,8 @@
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/bases/</loc>
-    <lastmod>2020-11-11T21:41:16+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/bases/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
@@ -178,6 +178,11 @@
   </url>
   
   <url>
+    <loc>https://kubectl.docs.kubernetes.io/guides/example/multi_base/</loc>
+    <lastmod>2020-11-25T21:45:20+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kubectl.docs.kubernetes.io/references/kubectl/create/namespace/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url>
@@ -248,8 +253,8 @@
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/commonannotations/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/commonannotations/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
@@ -285,6 +290,11 @@
   <url>
     <loc>https://kubectl.docs.kubernetes.io/installation/kubectl/homebrew/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/guides/example/inline_patch/</loc>
+    <lastmod>2020-11-25T21:45:20+05:30</lastmod>
   </url>
   
   <url>
@@ -324,7 +334,7 @@
   
   <url>
     <loc>https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/</loc>
-    <lastmod>2020-10-05T00:12:12+05:30</lastmod>
+    <lastmod>2020-11-17T11:18:04-08:00</lastmod>
   </url>
   
   <url>
@@ -333,8 +343,13 @@
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/commonlabels/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/commonlabels/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/installation/kustomize/docker/</loc>
+    <lastmod>2020-11-17T11:18:04-08:00</lastmod>
   </url>
   
   <url>
@@ -398,8 +413,8 @@
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/components/</loc>
-    <lastmod>2020-10-31T08:50:10+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/components/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
@@ -438,8 +453,8 @@
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/configmapgenerator/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/configmapgenerator/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
@@ -463,8 +478,8 @@
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/crds/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/crds/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
@@ -493,13 +508,18 @@
   </url>
   
   <url>
+    <loc>https://kubectl.docs.kubernetes.io/guides/example/</loc>
+    <lastmod>2020-11-25T21:45:20+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kubectl.docs.kubernetes.io/references/architecture/field_merge_semantics/</loc>
     <lastmod>2020-10-05T00:12:12+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/generatoroptions/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/generatoroptions/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
@@ -508,13 +528,13 @@
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/images/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/images/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/nameprefix/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/nameprefix/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
@@ -533,48 +553,48 @@
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/namespace/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/namespace/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/namesuffix/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/namesuffix/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/patches/</loc>
-    <lastmod>2020-11-11T21:41:16+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patches/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/patchesjson6902/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patchesjson6902/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/patchesstrategicmerge/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patchesstrategicmerge/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/replicas/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/replicas/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/resource/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/resource/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/secretgenerator/</loc>
-    <lastmod>2020-10-05T00:12:12+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/secretgenerator/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/vars/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/vars/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
@@ -625,6 +645,11 @@
   <url>
     <loc>https://kubectl.docs.kubernetes.io/references/kustomize/glossary/</loc>
     <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/</loc>
+    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url>
   
   <url>
@@ -769,7 +794,7 @@
   
   <url>
     <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/builtins/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
+    <lastmod>2020-12-01T13:21:29-08:00</lastmod>
   </url>
   
   <url>

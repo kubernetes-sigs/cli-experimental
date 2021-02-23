@@ -58,11 +58,32 @@ git checkout kustomize/v3.2.3
       <description>
         
         
-        &lt;p&gt;Binaries at various versions for linux, MacOs and Windows are published on the [release page].&lt;/p&gt;
+        &lt;p&gt;Binaries at various versions for linux, MacOs and Windows are published on the &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/releases&#34;&gt;releases page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The following &lt;a href=&#34;https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&#34;&gt;script&lt;/a&gt; detects your OS and downloads the appropriate kustomize binary to your
 current working directory.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -s &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://raw.githubusercontent.com/\
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;This script doesn&amp;rsquo;t work for ARM architecture.&lt;/strong&gt; If you want to install ARM binaries, please
+go to the release page to find the URL.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Installation: Docker Images</title>
+      <link>https://kubectl.docs.kubernetes.io/installation/kustomize/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/installation/kustomize/docker/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Starting with Kustomize v3.8.7, docker images are available to run Kustomize.
+The images are hosted in kubernetes official GCR repositories.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://us.gcr.io/k8s-artifacts-prod/kustomize/kustomize&#34;&gt;GCR page&lt;/a&gt; for available images.&lt;/p&gt;
+&lt;p&gt;The following commands are how to pull and run kustomize 3.8.7 docker image.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker pull k8s.gcr.io/kustomize/kustomize:v3.8.7
+docker run k8s.gcr.io/kustomize/kustomize:v3.8.7 version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
