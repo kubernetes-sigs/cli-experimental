@@ -17,6 +17,7 @@ limitations under the License.
 package main
 
 import (
+	"flag"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -47,15 +48,13 @@ func main() {
 		Out:    os.Stdout,
 		ErrOut: os.Stderr,
 	}
-
 	flags := cmd.PersistentFlags()
 	kubeConfigFlags := genericclioptions.NewConfigFlags(true).WithDeprecatedPasswordFlag()
 	kubeConfigFlags.AddFlags(flags)
 	matchVersionKubeConfigFlags := cmdutil.NewMatchVersionFlags(kubeConfigFlags)
-
+	cmd.PersistentFlags().AddGoFlagSet(flag.CommandLine)
 	f := cmdutil.NewFactory(matchVersionKubeConfigFlags)
-
-	cmd.AddCommand(pkglint.NewCmdLint(f, ioStreams))
+	cmd := pkglint.NewCmdLint(f, ioStreams)
 
 	if err := cmd.Execute(); err != nil {
 		errors.CheckErr(cmd.ErrOrStderr(), err, "kubectl-lint")

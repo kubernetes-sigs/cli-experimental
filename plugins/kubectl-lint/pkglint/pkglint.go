@@ -67,6 +67,8 @@ kubectl lint -f example.yaml
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return c.Run()
 		},
+		SilenceErrors: true,
+		SilenceUsage:  true,
 	}
 	o.RecordFlags.AddFlags(cmd)
 	cmdutil.AddFilenameOptionFlags(cmd, &o.FileNameOpts, "full path to Kubernetes manifests (.yaml) to lint")
