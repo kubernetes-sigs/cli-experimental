@@ -1,9 +1,9 @@
 ---
 title: "安装"
 linkTitle: "安装"
-weight: 20
+weight: 1
 type: docs
 menu:
   main:
-    weight: 10
+    weight: 1
 ---
