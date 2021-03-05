@@ -180,7 +180,7 @@ of _"plugin security"_.
 A `kustomize build` that tries to use plugins but
 omits the flag
 
-> `--enable_alpha_plugins`
+> `--enable-alpha-plugins`
 
 will not load plugins and will fail with a
 warning about plugin use.
