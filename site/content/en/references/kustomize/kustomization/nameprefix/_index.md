@@ -32,7 +32,7 @@ spec:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namePrefix: overlook-
+namePrefix: custom-prefix-
 
 resources:
 - deployment.yaml
@@ -45,7 +45,7 @@ resources:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: alices-the-deployment
+  name: custom-prefix-the-deployment
 spec:
   replicas: 5
   template:
