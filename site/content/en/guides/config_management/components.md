@@ -16,7 +16,7 @@ optional features and you wish to enable only a subset of them in different
 overlays, i.e., different features for different environments or audiences.
 
 For more details regarding this feature you can read the
-[Kustomize Components KEP](https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/1802-kustomize-components.md).
+[Kustomize Components KEP](https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/1802-kustomize-components/README.md).
 
 ## Use case
 
