@@ -63,12 +63,6 @@ function fetch_kb_tools {
   tar -zvxf "$kb_tools_archive_path" -C "$tmp_root/"
 }
 
-# Install metalinter
-function install_metalinter {
-   which gometalinter.v2 || go get -v -u gopkg.in/alecthomas/gometalinter.v2
-}
-
-
 # Install wire
 function install_wire {
    which wire|| go get -v -u github.com/google/wire/cmd/wire
