@@ -115,7 +115,7 @@ func (o *Prune) runPruneWithInventory(ctx context.Context, obj *unstructured.Uns
 	var results []*unstructured.Unstructured
 	annotations := obj.GetAnnotations()
 	inv := inventory.NewInventory()
-	inv.LoadFromAnnotation(annotations)
+	_ = inv.LoadFromAnnotation(annotations)
 	items := inv.Prune()
 	for _, item := range items {
 		gvk := schema.GroupVersionKind{
@@ -131,7 +131,7 @@ func (o *Prune) runPruneWithInventory(ctx context.Context, obj *unstructured.Uns
 			results = append(results, u)
 		}
 	}
-	inv.UpdateAnnotations(annotations)
+	_ = inv.UpdateAnnotations(annotations)
 	obj.SetAnnotations(annotations)
 	return obj, results, nil
 }
