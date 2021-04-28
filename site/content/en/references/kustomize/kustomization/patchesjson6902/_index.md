@@ -70,3 +70,7 @@ patchesJson6902:
       path: /some/existing/path
       value: "new value"
 ```
+
+A patch can refer to a resource by any of its previous names or kinds.
+For example, if a resource has gone through name-prefix transformations, it can refer to the
+resource by its current name, original name, or any intermediate name that it had. 
