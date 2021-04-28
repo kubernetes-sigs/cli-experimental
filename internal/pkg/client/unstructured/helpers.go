@@ -71,9 +71,9 @@ func GetStringField(obj map[string]interface{}, fieldPath string, defaultValue s
 		return rv
 	}
 
-	switch val.(type) {
+	switch val := val.(type) {
 	case string:
-		rv = val.(string)
+		rv = val
 	}
 	return rv
 }
@@ -92,13 +92,13 @@ func GetIntField(obj map[string]interface{}, fieldPath string, defaultValue int)
 		return rv
 	}
 
-	switch val.(type) {
+	switch val := val.(type) {
 	case int:
-		rv = val.(int)
+		rv = val
 	case int32:
-		rv = int(val.(int32))
+		rv = int(val)
 	case int64:
-		rv = int(val.(int64))
+		rv = int(val)
 	}
 	return rv
 }

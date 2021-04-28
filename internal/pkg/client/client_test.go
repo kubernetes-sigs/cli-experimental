@@ -141,7 +141,7 @@ var _ = Describe("Client", func() {
 
 				By("encoding the deployment as unstructured")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "apps",
 					Kind:    "Deployment",
@@ -165,7 +165,7 @@ var _ = Describe("Client", func() {
 
 				By("encoding the deployment as unstructured")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(node, u, nil)
+				_ = scheme.Convert(node, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "",
 					Kind:    "Node",
@@ -180,8 +180,8 @@ var _ = Describe("Client", func() {
 				Expect(err).NotTo(HaveOccurred())
 				Expect(actual).NotTo(BeNil())
 				au := &unstructured.Unstructured{}
-				scheme.Convert(actual, au, nil)
-				scheme.Convert(node, u, nil)
+				_ = scheme.Convert(actual, au, nil)
+				_ = scheme.Convert(node, u, nil)
 				By("writing the result back to the go struct")
 
 				Expect(actual.Name).To(Equal(node.Name))
@@ -198,7 +198,7 @@ var _ = Describe("Client", func() {
 
 				By("creating the object")
 				cu := &unstructured.Unstructured{}
-				scheme.Convert(dep, cu, nil)
+				_ = scheme.Convert(dep, cu, nil)
 				err = cl.Create(context.TODO(), cu, nil)
 				Expect(err).NotTo(HaveOccurred())
 				actual, err := clientset.AppsV1().Deployments(ns).Get(dep.Name, metav1.GetOptions{})
@@ -207,7 +207,7 @@ var _ = Describe("Client", func() {
 
 				By("encoding the deployment as unstructured")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(old, u, nil)
+				_ = scheme.Convert(old, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "apps",
 					Kind:    "Deployment",
@@ -229,7 +229,7 @@ var _ = Describe("Client", func() {
 
 				By("creating the pod, since required field Containers is empty")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(pod, u, nil)
+				_ = scheme.Convert(pod, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "",
 					Version: "v1",
@@ -256,7 +256,7 @@ var _ = Describe("Client", func() {
 
 				By("updating the Deployment")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "apps",
 					Kind:    "Deployment",
@@ -285,7 +285,7 @@ var _ = Describe("Client", func() {
 
 				By("updating the object")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(node, u, nil)
+				_ = scheme.Convert(node, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "",
 					Kind:    "Node",
@@ -310,7 +310,7 @@ var _ = Describe("Client", func() {
 
 				By("updating non-existent object")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "apps",
 					Kind:    "Deployment",
@@ -333,7 +333,7 @@ var _ = Describe("Client", func() {
 
 				By("encoding the deployment as unstructured")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				data, err := patch.SerializeLastApplied(u, true)
 				Expect(err).NotTo(HaveOccurred())
 				expected := u.DeepCopy()
@@ -364,7 +364,7 @@ var _ = Describe("Client", func() {
 
 				By("initially creating a Deployment")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				Expect(err).NotTo(HaveOccurred())
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "apps",
@@ -376,7 +376,7 @@ var _ = Describe("Client", func() {
 
 				By("updating the Deployment")
 				u = &unstructured.Unstructured{}
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "apps",
 					Kind:    "Deployment",
@@ -415,7 +415,7 @@ var _ = Describe("Client", func() {
 				By("updating the status of Deployment")
 				u := &unstructured.Unstructured{}
 				dep.Status.Replicas = 1
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				err = cl.UpdateStatus(context.TODO(), u)
 				Expect(err).NotTo(HaveOccurred())
 
@@ -442,7 +442,7 @@ var _ = Describe("Client", func() {
 				var rc int32 = 1
 				dep.Status.Replicas = 1
 				dep.Spec.Replicas = &rc
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				err = cl.UpdateStatus(context.TODO(), u)
 				Expect(err).NotTo(HaveOccurred())
 
@@ -467,7 +467,7 @@ var _ = Describe("Client", func() {
 				By("updating status of the object")
 				u := &unstructured.Unstructured{}
 				node.Status.Phase = corev1.NodeRunning
-				scheme.Convert(node, u, nil)
+				_ = scheme.Convert(node, u, nil)
 				err = cl.UpdateStatus(context.TODO(), u)
 				Expect(err).NotTo(HaveOccurred())
 
@@ -487,7 +487,7 @@ var _ = Describe("Client", func() {
 
 				By("updating status of a non-existent object")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				err = cl.UpdateStatus(context.TODO(), u)
 				Expect(err).To(HaveOccurred())
 
@@ -519,7 +519,7 @@ var _ = Describe("Client", func() {
 				By("deleting the Deployment")
 				depName := dep.Name
 				u := &unstructured.Unstructured{}
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "apps",
 					Kind:    "Deployment",
@@ -547,7 +547,7 @@ var _ = Describe("Client", func() {
 				By("deleting the Node")
 				nodeName := node.Name
 				u := &unstructured.Unstructured{}
-				scheme.Convert(node, u, nil)
+				_ = scheme.Convert(node, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "",
 					Kind:    "Node",
@@ -570,7 +570,7 @@ var _ = Describe("Client", func() {
 
 				By("Deleting node before it is ever created")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(node, u, nil)
+				_ = scheme.Convert(node, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "",
 					Kind:    "Node",
@@ -598,7 +598,7 @@ var _ = Describe("Client", func() {
 				By("patching the Deployment")
 				depName := dep.Name
 				u := &unstructured.Unstructured{}
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "apps",
 					Kind:    "Deployment",
@@ -628,7 +628,7 @@ var _ = Describe("Client", func() {
 				By("patching the Node")
 				nodeName := node.Name
 				u := &unstructured.Unstructured{}
-				scheme.Convert(node, u, nil)
+				_ = scheme.Convert(node, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "",
 					Kind:    "Node",
@@ -653,7 +653,7 @@ var _ = Describe("Client", func() {
 
 				By("Patching node before it is ever created")
 				u := &unstructured.Unstructured{}
-				scheme.Convert(node, u, nil)
+				_ = scheme.Convert(node, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "",
 					Kind:    "Node",
@@ -678,7 +678,7 @@ var _ = Describe("Client", func() {
 				By("patching the Deployment")
 				depName := dep.Name
 				u := &unstructured.Unstructured{}
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 				u.SetGroupVersionKind(schema.GroupVersionKind{
 					Group:   "apps",
 					Kind:    "Deployment",
@@ -709,7 +709,7 @@ var _ = Describe("Client", func() {
 
 				By("encoding the Deployment as unstructured")
 				var u runtime.Unstructured = &unstructured.Unstructured{}
-				scheme.Convert(dep, u, nil)
+				_ = scheme.Convert(dep, u, nil)
 
 				By("fetching the created Deployment")
 				var actual unstructured.Unstructured
@@ -736,7 +736,7 @@ var _ = Describe("Client", func() {
 
 				By("encoding the Node as unstructured")
 				var u runtime.Unstructured = &unstructured.Unstructured{}
-				scheme.Convert(node, u, nil)
+				_ = scheme.Convert(node, u, nil)
 
 				cl, err := client.NewForConfig(dinterface, restmapper)
 				Expect(err).NotTo(HaveOccurred())
