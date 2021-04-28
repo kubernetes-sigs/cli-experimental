@@ -22,7 +22,7 @@ spec:
   template:
     containers:
       - name: the-container
-        image: registry/conatiner:latest
+        image: registry/container:latest
 ```
 
 ```bash
@@ -72,7 +72,7 @@ spec:
   template:
     containers:
       - name: the-container
-        image: registry/conatiner:latest
+        image: registry/container:latest
 ```
 
 Users run Apply on directories containing `kustomization.yaml` files using `-k` or on raw
