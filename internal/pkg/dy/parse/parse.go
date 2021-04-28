@@ -76,7 +76,7 @@ func (p *CommandParser) Parse(cmd *clidynamic.Command) (*cobra.Command, Values) 
 			// Create a bool flag and register it
 			values.Flags.Bools[cmdFlag.Name] = cbra.Flags().Bool(cmdFlag.Name, cmdFlag.BoolValue, cmdFlag.Description)
 		}
-		if *cmdFlag.Required {
+		if cmdFlag.Required != nil && *cmdFlag.Required {
 			_ = cbra.MarkFlagRequired(cmdFlag.Name)
 		}
 	}
