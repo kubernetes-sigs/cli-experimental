@@ -739,8 +739,10 @@ Each entry can have following fields:
 - `chartVersion`: [Optional] Version of the chart. Will use latest version
   if this is omitted.
 - `chartHome`: [Optional] Provide the path to the parent directory for local chart.
-- `chartRelease`: [Optional] The name of the repo where to find the chart.
+- `chartRepoName`: [Optional] The name of the repo where to find the chart.
 - `values`: [Optional] A path to the values file.
+- `valuesLocal`: [Optional] The content of the values file. When used with `values`, `mergeStrategy` must be specified.
+- `valuesMerge`: [Optional] One of `merge`, `override`, or `replace`.
 - `releaseName`: [Optional] The release name that will be set in the chart.
 - `releaseNamespace`: [Optional] The namespace which will be used by `--namespace`
   flag in `helm template` command.
@@ -777,6 +779,10 @@ helmChartInflationGenerator:
 > HelmHome string
 >
 > Values string
+> 
+> ValuesLocal map[string]interface{}
+> 
+> ValuesMerge string
 >
 > ReleaseName string
 >
