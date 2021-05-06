@@ -758,6 +758,7 @@ helmChartInflationGenerator:
   chartVersion: v1.2.0
   releaseName: test
   releaseNamespace: testNamespace
+  values: values.yaml
 ```
 
 ### Usage via plugin
