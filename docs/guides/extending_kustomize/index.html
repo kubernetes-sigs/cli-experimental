@@ -1,0 +1,1208 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.79.0" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Extending Kustomize | SIG CLI</title><meta property="og:title" content="Extending Kustomize" />
+<meta property="og:description" content="Kustomize plugins guide
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/" />
+<meta property="og:site_name" content="SIG CLI" />
+<meta itemprop="name" content="Extending Kustomize">
+<meta itemprop="description" content="Kustomize plugins guide
+">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Extending Kustomize"/>
+<meta name="twitter:description" content="Kustomize plugins guide
+"/>
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" as="style">
+<link href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+    <title>Extending Kustomize | SIG CLI</title>
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">SIG CLI</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/installation/" ><span>Installation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/guides/" ><span class="active">Guides</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/references/" ><span>Reference</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/faq/" ><span>FAQ</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/contributing/" ><span>Contributing</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/zh/guides/extending_kustomize/">简体中文</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.82a2731adc87a553a961a520597d97db4187cfc677484a984ba030e34c95e1a749ab98359c0b9547afb6dc810aed92b5ca7502ff38adc055cc66324c73a6d78b.json"
+  data-offline-search-base-href="/"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.82a2731adc87a553a961a520597d97db4187cfc677484a984ba030e34c95e1a749ab98359c0b9547afb6dc810aed92b5ca7502ff38adc055cc66324c73a6d78b.json"
+  data-offline-search-base-href="/"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/zh/guides/extending_kustomize/">简体中文</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/guides/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Guides</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="guides">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/guides/introduction/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Introduction</a>
+  </li>
+  <ul>
+    <li class="collapse " id="guidesintroduction">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesintroductionkubectl" href="/guides/introduction/kubectl/">Kubectl</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesintroductionkustomize" href="/guides/introduction/kustomize/">Kustomize</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesintroductionresources_controllers" href="/guides/introduction/resources_controllers/">Resources &#43; Controllers Overview</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/guides/config_management/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Configuration Management</a>
+  </li>
+  <ul>
+    <li class="collapse " id="guidesconfig_management">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesconfig_managementintroduction" href="/guides/config_management/introduction/">Introduction</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesconfig_managementapply" href="/guides/config_management/apply/">Apply</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesconfig_managementsecrets_configmaps" href="/guides/config_management/secrets_configmaps/">Secrets and ConfigMaps</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesconfig_managementcontainer_images" href="/guides/config_management/container_images/">Container Images</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesconfig_managementnamespaces_names" href="/guides/config_management/namespaces_names/">Namespaces and Names</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesconfig_managementlabels_annotations" href="/guides/config_management/labels_annotations/">Labels and Annotations</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesconfig_managementbespoke" href="/guides/config_management/bespoke/">Bespoke Application</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesconfig_managementofftheshelf" href="/guides/config_management/offtheshelf/">Off The Shelf Application</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesconfig_managementcomponents" href="/guides/config_management/components/">Kustomize Components</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/guides/resource_printing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Resource Printing</a>
+  </li>
+  <ul>
+    <li class="collapse " id="guidesresource_printing">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesresource_printingsummary" href="/guides/resource_printing/summary/">Summaries</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesresource_printingraw" href="/guides/resource_printing/raw/">Raw</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesresource_printingfields" href="/guides/resource_printing/fields/">Fields</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesresource_printingdescribe" href="/guides/resource_printing/describe/">Describe</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesresource_printingqueries_and_options" href="/guides/resource_printing/queries_and_options/">Queries and Options</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesresource_printingcluster_information" href="/guides/resource_printing/cluster_information/">Cluster Information</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/guides/container_debugging/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Container Debugging</a>
+  </li>
+  <ul>
+    <li class="collapse " id="guidescontainer_debugging">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidescontainer_debuggingcontainer_logs" href="/guides/container_debugging/container_logs/">Container Logs</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidescontainer_debuggingcopying_container_files" href="/guides/container_debugging/copying_container_files/">Copying Container Files</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidescontainer_debuggingexecuting_a_command_in_a_container" href="/guides/container_debugging/executing_a_command_in_a_container/">Executing a command in a container</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidescontainer_debuggingport_forward_to_pods" href="/guides/container_debugging/port_forward_to_pods/">Port forward to Pods</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidescontainer_debuggingproxying_traffic_to_services" href="/guides/container_debugging/proxying_traffic_to_services/">Proxying traffic to services</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/guides/app_deployment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">App Deployment</a>
+  </li>
+  <ul>
+    <li class="collapse " id="guidesapp_deployment">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesapp_deploymentdiffing_local_and_remote_resources" href="/guides/app_deployment/diffing_local_and_remote_resources/">Diffing Local and Remote Resources</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesapp_deploymentaccessing_multiple_clusters" href="/guides/app_deployment/accessing_multiple_clusters/">Accessing Multiple Clusters</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesapp_deploymentpublishing_bases" href="/guides/app_deployment/publishing_bases/">Publishing Bases</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/guides/extending_kubectl/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extending Kubectl</a>
+  </li>
+  <ul>
+    <li class="collapse " id="guidesextending_kubectl">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kubectlplugin_mechanism" href="/guides/extending_kubectl/plugin_mechanism/">Plugin Mechanism</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kubectldiscovering_plugins" href="/guides/extending_kubectl/discovering_plugins/">Discovering Plugins</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/guides/extending_kustomize/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Extending Kustomize</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="guidesextending_kustomize">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizebuiltins" href="/guides/extending_kustomize/builtins/">Builtin Plugins</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizeexecpluginguidedexample" href="/guides/extending_kustomize/execpluginguidedexample/">Exec plugin on linux</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizegoplugincaveats" href="/guides/extending_kustomize/goplugincaveats/">Go plugin Caveats</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizegopluginguidedexample" href="/guides/extending_kustomize/gopluginguidedexample/">Go plugin example</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/guides/example/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Examples</a>
+  </li>
+  <ul>
+    <li class="collapse " id="guidesexample">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesexamplemulti_base" href="/guides/example/multi_base/">Multibase</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesexampleinline_patch" href="/guides/example/inline_patch/">Inline Patch</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/site/content/en/guides/extending_kustomize/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Extending%20Kustomize" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+
+</div>
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#specification-in-kustomizationyaml">Specification in <code>kustomization.yaml</code></a></li>
+    <li><a href="#configuration">Configuration</a></li>
+    <li><a href="#placement">Placement</a></li>
+    <li><a href="#execution">Execution</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#authoring">Authoring</a>
+      <ul>
+        <li><a href="#exec-plugins">Exec plugins</a></li>
+        <li><a href="#go-plugins">Go plugins</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://kubectl.docs.kubernetes.io/guides/">Guides</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/">Extending Kustomize</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Extending Kustomize</h1>
+	<div class="lead">Kustomize plugins guide</div>
+	<p>Kustomize offers a plugin framework allowing people to write their own resource <em>generators</em>
+and <em>transformers</em>.</p>
+<p>Write a plugin when changing <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/examples/generatorOptions.md">generator options</a>
+or <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/examples/transformerconfigs">transformer configs</a> doesn&rsquo;t meet your needs.</p>
+<ul>
+<li>
+<p>A <em>generator</em> plugin could be a helm chart
+inflator, or a plugin that emits all the
+components (deployment, service, scaler,
+ingress, etc.) needed by someone&rsquo;s <a href="https://12factor.net">12-factor</a>
+application, based on a smaller number of free
+variables.</p>
+</li>
+<li>
+<p>A <em>transformer</em> plugin might perform special
+container command line edits, or any other
+transformation beyond those provided by the
+builtin (<code>namePrefix</code>, <code>commonLabels</code>, etc.)
+transformers.</p>
+</li>
+</ul>
+<h2 id="specification-in-kustomizationyaml">Specification in <code>kustomization.yaml</code></h2>
+<p>Start by adding a <code>generators</code> and/or <code>transformers</code>
+field to your kustomization.</p>
+<p>Each field accepts a string list:</p>
+<blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">generators:
+- relative/path/to/some/file.yaml
+- relative/path/to/some/kustomization
+- /absolute/path/to/some/kustomization
+- https://github.com/org/repo/some/kustomization
+
+transformers:
+- <span style="color:#ce5c00;font-weight:bold">{</span>as above<span style="color:#ce5c00;font-weight:bold">}</span>
+</code></pre></div></blockquote>
+<p>The value of each entry in a <code>generators</code> or
+<code>transformers</code> list must be a relative path to a
+YAML file, or a path or URL to a <a href="/kustomize/api-reference/glossary#kustomization">kustomization</a>.
+This is the same format as demanded by the
+<code>resources</code> field.</p>
+<p>YAML files are read from disk directly.  Paths or
+URLs leading to kustomizations trigger an
+in-process kustomization run.  Each of the
+resulting objects is now further interpreted by
+kustomize as a <em>plugin configuration</em> object.</p>
+<h2 id="configuration">Configuration</h2>
+<p>A kustomization file could have the following lines:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">generators:
+- chartInflator.yaml
+</code></pre></div><p>Given this, the kustomization process would expect
+to find a file called <code>chartInflator.yaml</code> in the
+kustomization <a href="/kustomize/api-reference/glossary#kustomization-root">root</a>.</p>
+<p>This is the plugin&rsquo;s configuration file;
+it contains a YAML configuration object.</p>
+<p>The file <code>chartInflator.yaml</code> could contain:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: someteam.example.com/v1
+kind: ChartInflator
+metadata:
+  name: notImportantHere
+chartName: minecraft
+</code></pre></div><p><strong>The <code>apiVersion</code> and <code>kind</code> fields are
+used to locate the plugin.</strong></p>
+<p>Thus, these fields are required.  They are also
+required because a kustomize plugin configuration
+object is also a <a href="/kustomize/api-reference/glossary#kubernetes-style-object">k8s object</a>.</p>
+<p>To get the plugin ready to generate or transform,
+it is given the entire contents of the
+configuration file.</p>
+<p>For more examples of plugin configuration YAML,
+browse the unit tests below the <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/builtin">plugins</a> root,
+e.g. the tests for <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/chartinflator/ChartInflator_test.go">ChartInflator</a> or
+<a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/builtin/prefixsuffixtransformer/PrefixSuffixTransformer_test.go">NameTransformer</a>.</p>
+<h2 id="placement">Placement</h2>
+<p>Each plugin gets its own dedicated directory named</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">$XDG_CONFIG_HOME</span>/kustomize/plugin
+    /<span style="color:#4e9a06">${</span><span style="color:#000">apiVersion</span><span style="color:#4e9a06">}</span>/LOWERCASE<span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span><span style="color:#ce5c00;font-weight:bold">)</span>
+</code></pre></div><p>The default value of <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html"><code>XDG_CONFIG_HOME</code></a> is
+<code>$HOME/.config</code>.</p>
+<p>The one-plugin-per-directory requirement eases
+creation of a plugin bundle (source, tests, plugin
+data files, etc.) for sharing.</p>
+<p>In the case of a <a href="#go-plugins">Go plugin</a>, it also
+allows one to provide a <code>go.mod</code> file for the
+single plugin, easing resolution of package
+version dependency skew.</p>
+<p>When loading, kustomize will first look for an
+<em>executable</em> file called</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">$XDG_CONFIG_HOME</span>/kustomize/plugin
+    /<span style="color:#4e9a06">${</span><span style="color:#000">apiVersion</span><span style="color:#4e9a06">}</span>/LOWERCASE<span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span><span style="color:#ce5c00;font-weight:bold">)</span>/<span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span>
+</code></pre></div><p>If this file is not found or is not executable,
+kustomize will look for a file called <code>${kind}.so</code>
+in the same directory and attempt to load it as a
+<a href="#go-plugins">Go plugin</a>.</p>
+<p>If both checks fail, the plugin load fails the overall
+<code>kustomize build</code>.</p>
+<h2 id="execution">Execution</h2>
+<p>Plugins are only used during a run of the
+<code>kustomize build</code> command.</p>
+<p>Generator plugins are run after processing the
+<code>resources</code> field (which itself can be viewed as a
+generator, simply reading objects from disk).</p>
+<p>The full set of resources is then passed into the
+transformation pipeline, wherein builtin
+transformations like <code>namePrefix</code> and
+<code>commonLabel</code> are applied (if they were specified
+in the kustomization file), followed by the
+user-specified transformers in the <code>transformers</code>
+field.</p>
+<p>The order specified in the <code>transformers</code> field is
+respected, as transformers cannot be expected to
+be commutative.</p>
+<h4 id="no-security">No Security</h4>
+<p>Kustomize plugins do not run in any kind of
+kustomize-provided sandbox.  There&rsquo;s no notion
+of <em>&ldquo;plugin security&rdquo;</em>.</p>
+<p>A <code>kustomize build</code> that tries to use plugins but
+omits the flag</p>
+<blockquote>
+<p><code>--enable_alpha_plugins</code></p>
+</blockquote>
+<p>will not load plugins and will fail with a
+warning about plugin use.</p>
+<p>The use of this flag is an opt-in acknowledging
+the unstable (alpha) plugin API, the absence of
+plugin provenance, and the fact that a plugin
+is not part of kustomize.</p>
+<p>To be clear, some kustomize plugin downloaded
+from the internet might wonderfully transform
+k8s config in a desired manner, while also
+quietly doing anything the user could do to the
+system running <code>kustomize build</code>.</p>
+<h2 id="authoring">Authoring</h2>
+<p>There are two kinds of plugins, <a href="#exec-plugins">exec</a> and <a href="#go-plugins">Go</a>.</p>
+<h3 id="exec-plugins">Exec plugins</h3>
+<p>A <em>exec plugin</em> is any executable that accepts a
+single argument on its command line - the name of
+a YAML file containing its configuration (the file name
+provided in the kustomization file).</p>
+<blockquote>
+<p>TODO: restrictions on plugin to allow the <em>same exec
+plugin</em> to be targeted by both the
+<code>generators</code> and <code>transformers</code> fields.</p>
+<ul>
+<li>first arg could be the fixed string
+<code>generate</code> or <code>transform</code>,
+(the name of the configuration file moves to
+the 2nd arg), or</li>
+<li>or by default an exec plugin behaves as a tranformer
+unless a flag <code>-g</code> is provided, switching the
+exec plugin to behave as a generator.</li>
+</ul>
+</blockquote>
+<h4 id="examples">Examples</h4>
+<ul>
+<li><a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/chartinflator">helm chart inflator</a> - A generator that inflates a helm chart.</li>
+<li><a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/bashedconfigmap">bashed config map</a> -  Super simple configMap generation from bash.</li>
+<li><a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/sedtransformer">sed transformer</a> - Define your unstructured edits using a
+plugin like this one.</li>
+<li><a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/gogetter">hashicorp go-getter</a> - Download kustomize layes and build it to generate resources</li>
+</ul>
+<p>A generator plugin accepts nothing on <code>stdin</code>, but emits
+generated resources to <code>stdout</code>.</p>
+<p>A transformer plugin accepts resource YAML on <code>stdin</code>,
+and emits those resources, presumably transformed, to
+<code>stdout</code>.</p>
+<p>kustomize uses an exec plugin adapter to provide
+marshalled resources on <code>stdin</code> and capture
+<code>stdout</code> for further processing.</p>
+<h4 id="generator-options">Generator Options</h4>
+<p>A generator exec plugin can adjust the generator options for the resources it emits by setting one of the following internal annotations.</p>
+<blockquote>
+<p>NOTE: These annotations are local to kustomize and will not be included in the final output.</p>
+</blockquote>
+<p><strong><code>kustomize.config.k8s.io/needs-hash</code></strong></p>
+<p>Resources can be marked as needing to be processed by the internal hash transformer by including the <code>needs-hash</code> annotation. When set valid values for the annotation are <code>&quot;true&quot;</code> and <code>&quot;false&quot;</code> which respectively enable or disable hash suffixing for the resource. Omitting the annotation is equivalent to setting the value <code>&quot;false&quot;</code>.</p>
+<p>Hashes are determined as follows:</p>
+<ul>
+<li>For <code>ConfigMap</code> resources, hashes are based on the values of the <code>name</code>, <code>data</code>, and <code>binaryData</code> fields.</li>
+<li>For <code>Secret</code> resources, hashes are based on the values of the <code>name</code>, <code>type</code>, <code>data</code>, and <code>stringData</code> fields.</li>
+<li>For any other object type, hashes are based on the entire object content (i.e. all fields).</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">ConfigMap</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">cm-test</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">annotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">kustomize.config.k8s.io/needs-hash</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">foo</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">bar</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p><strong><code>kustomize.config.k8s.io/behavior</code></strong></p>
+<p>The <code>behavior</code> annotation will influence how conflicts are handled for resources emitted by the plugin. Valid values include &ldquo;create&rdquo;, &ldquo;merge&rdquo;, and &ldquo;replace&rdquo; with &ldquo;create&rdquo; being the default.</p>
+<p>Example:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">ConfigMap</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">cm-test</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">annotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">kustomize.config.k8s.io/behavior</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;merge&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">foo</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">bar</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h3 id="go-plugins">Go plugins</h3>
+<p>Be sure to read <a href="goplugincaveats/">Go plugin caveats</a>.</p>
+<p>A <code>.go</code> file can be a <a href="https://golang.org/pkg/plugin/">Go plugin</a> if it declares
+&lsquo;main&rsquo; as it&rsquo;s package, and exports a symbol to
+which useful functions are attached.</p>
+<p>It can further be used as a <em>kustomize</em> plugin if
+the symbol is named &lsquo;KustomizePlugin&rsquo; and the
+attached functions implement the <code>Configurable</code>,
+<code>Generator</code> and <code>Transformer</code> interfaces.</p>
+<p>A Go plugin for kustomize looks like this:</p>
+<blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span>
+
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000;font-weight:bold">(</span>
+<span style="color:#4e9a06">&#34;sigs.k8s.io/kustomize/api/resmap&#34;</span>
+  <span style="color:#ce5c00;font-weight:bold">...</span>
+<span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">plugin</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#ce5c00;font-weight:bold">...</span><span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">KustomizePlugin</span> <span style="color:#000">plugin</span>
+
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">p</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">plugin</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">Config</span><span style="color:#000;font-weight:bold">(</span>
+   <span style="color:#000">h</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">resmap</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">PluginHelpers</span><span style="color:#000;font-weight:bold">,</span>
+   <span style="color:#000">c</span> <span style="color:#000;font-weight:bold">[]</span><span style="color:#204a87;font-weight:bold">byte</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">error</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#ce5c00;font-weight:bold">...</span><span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">p</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">plugin</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">Generate</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">resmap</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ResMap</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">error</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#ce5c00;font-weight:bold">...</span><span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">p</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">plugin</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">Transform</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">m</span> <span style="color:#000">resmap</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ResMap</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">error</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#ce5c00;font-weight:bold">...</span><span style="color:#000;font-weight:bold">}</span>
+</code></pre></div></blockquote>
+<p>Use of the identifiers <code>plugin</code>, <code>KustomizePlugin</code>
+and implementation of the method signature
+<code>Config</code> is required.</p>
+<p>Implementing the <code>Generator</code> or <code>Transformer</code>
+method allows (respectively) the plugin&rsquo;s config
+file to be added to the <code>generators</code> or
+<code>transformers</code> field in the kustomization file.
+Do one or the other or both as desired.</p>
+<h4 id="examples-1">Examples</h4>
+<ul>
+<li><a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/someservicegenerator">service generator</a> - generate a service from a name and port argument.</li>
+<li><a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/stringprefixer">string prefixer</a> - uses the value in <code>metadata/name</code> as the prefix.
+This particular example exists to show how a plugin can
+transform the behavior of a plugin.  See the
+<code>TestTransformedTransformers</code> test in the <code>target</code> package.</li>
+<li><a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/dateprefixer">date prefixer</a> - prefix the current date to resource names, a simple
+example used to modify the string prefixer plugin just mentioned.</li>
+<li><a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/secretsfromdatabase">secret generator</a> - generate secrets from a toy database.</li>
+<li><a href="https://github.com/monopole/sopsencodedsecrets">sops encoded secrets</a> - a more complex secret generator that converts SOPS files into Kubernetes Secrets</li>
+<li><a href="https://github.com/omninonsense/kustomize-sopsgenerator">SOPSGenerator</a> - another generator that decrypts SOPS files into Secrets</li>
+<li><a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/builtin">All the builtin plugins</a>.
+User authored plugins are
+on the same footing as builtin operations.</li>
+</ul>
+<p>A Go plugin can be both a generator and a
+transformer.  The <code>Generate</code> method will run along
+with all the other generators before the
+<code>Transform</code> method runs.</p>
+<p>Here&rsquo;s a build command that sensibly assumes the
+plugin source code sits in the directory where
+kustomize expects to find <code>.so</code> files:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">d</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$XDG_CONFIG_HOME</span>/kustomize/plugin<span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>/<span style="color:#4e9a06">${</span><span style="color:#000">apiVersion</span><span style="color:#4e9a06">}</span>/LOWERCASE<span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span><span style="color:#ce5c00;font-weight:bold">)</span>
+
+go build -buildmode plugin <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>   -o <span style="color:#000">$d</span>/<span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span>.so <span style="color:#000">$d</span>/<span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span>.go
+</code></pre></div>
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/guides/extending_kustomize/builtins/">Builtin Plugins</a>
+                    </h5>
+                    <p>Builtin Plugins</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/guides/extending_kustomize/execpluginguidedexample/">Exec plugin on linux</a>
+                    </h5>
+                    <p>Exec plugin on linux in 60 seconds</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/guides/extending_kustomize/goplugincaveats/">Go plugin Caveats</a>
+                    </h5>
+                    <p>Go plugin Caveats</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/guides/extending_kustomize/gopluginguidedexample/">Go plugin example</a>
+                    </h5>
+                    <p>Go plugin example</p>
+                </div>
+            
+        
+    
+</div>
+
+	
+		<style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h2 class="feedback--title">Feedback</h2>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script>
+
+		<br />
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 5, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/53154e46f206c1a93c5a44f2b5fd0478636c1cdc">site refactor (53154e4)</a>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2021 SIG CLI | Documentation Distributed under CC BY 4.0 |  All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.3587468abafd7ee678f61330f7c574ba0376f12451f11e076f2283f1e0504095.js" integrity="sha256-NYdGirr9fuZ49hMw98V0ugN28SRR8R4HbyKD8eBQQJU=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

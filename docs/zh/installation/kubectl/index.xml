@@ -1,0 +1,93 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – Kubectl</title>
+    <link>https://kubectl.docs.kubernetes.io/zh/installation/kubectl/</link>
+    <description>Recent content in Kubectl on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubectl.docs.kubernetes.io/zh/installation/kubectl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Installation: Binaries</title>
+      <link>https://kubectl.docs.kubernetes.io/zh/installation/kubectl/binaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/zh/installation/kubectl/binaries/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;install-kubectl-binary-with-curl-on-linux--macos&#34;&gt;Install kubectl binary with curl on Linux / macOS&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Download the latest release with the command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -LO &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://storage.googleapis.com/kubernetes-release/release/&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;/bin/linux/amd64/kubectl&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To download a specific version, replace the &lt;code&gt;$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)&lt;/code&gt; portion of the command with the specific version.&lt;/p&gt;
+&lt;p&gt;For example, to download version v1.19.0 on Linux, type:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.19.0/bin/linux/amd64/kubectl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make the kubectl binary executable.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;chmod +x ./kubectl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Move the binary in to your PATH.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo mv ./kubectl /usr/local/bin/kubectl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Test to ensure the version you installed is up-to-date:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl version --client
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Installation: Homebrew / MacPorts</title>
+      <link>https://kubectl.docs.kubernetes.io/zh/installation/kubectl/homebrew/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/zh/installation/kubectl/homebrew/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;For &lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt; users:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;brew install kubectl 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;brew install kubernetes-cli
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;For &lt;a href=&#34;https://www.macports.org&#34;&gt;MacPorts&lt;/a&gt; users:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo port selfupdate
+sudo port install kubectl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Installation: Chocolatey</title>
+      <link>https://kubectl.docs.kubernetes.io/zh/installation/kubectl/chocolatey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/zh/installation/kubectl/chocolatey/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;For &lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey&lt;/a&gt; users:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;choco install kubernetes-cli
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

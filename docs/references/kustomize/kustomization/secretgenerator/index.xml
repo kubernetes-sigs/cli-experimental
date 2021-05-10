@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – secretGenerator</title>
+    <link>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/secretgenerator/</link>
+    <description>Recent content in secretGenerator on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/secretgenerator/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>

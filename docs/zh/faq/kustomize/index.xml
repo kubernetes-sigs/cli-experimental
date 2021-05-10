@@ -1,0 +1,357 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – Kustomize</title>
+    <link>https://kubectl.docs.kubernetes.io/zh/faq/kustomize/</link>
+    <description>Recent content in Kustomize on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubectl.docs.kubernetes.io/zh/faq/kustomize/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Faq: Eschewed Features</title>
+      <link>https://kubectl.docs.kubernetes.io/zh/faq/kustomize/eschewedfeatures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/zh/faq/kustomize/eschewedfeatures/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The maintainers established this list to
+place bounds on the kustomize feature
+set.  The bounds can be changed with
+a consensus on the risks.&lt;/p&gt;
+&lt;p&gt;For a bigger picture about why kustomize
+does some things and not others, see the
+glossary entry for &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#declarative-application-management&#34;&gt;DAM&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;removal-directives&#34;&gt;Removal directives&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;kustomize&lt;/code&gt; supports configurations that can be reasoned about as
+&lt;em&gt;compositions&lt;/em&gt; or &lt;em&gt;mixins&lt;/em&gt; - concepts that are widely accepted as
+a best practice in various programming languages.&lt;/p&gt;
+&lt;p&gt;To this end, &lt;code&gt;kustomize&lt;/code&gt; offers various &lt;em&gt;addition&lt;/em&gt; directives.
+One may add labels, annotations, patches, resources, bases, etc.
+Corresponding &lt;em&gt;removal&lt;/em&gt; directives are not offered.&lt;/p&gt;
+&lt;p&gt;Removal semantics would introduce many possibilities for
+inconsistency, and the need to add code to detect, report and
+reject it.  It would also allow, and possibly encourage,
+unnecessarily complex configuration layouts.&lt;/p&gt;
+&lt;p&gt;When faced with a situation where removal is desirable, it&amp;rsquo;s
+always possible to remove things from a base like labels and
+annotations, and/or split multi-resource manifests into individual
+resource files - then add things back as desired via the
+&lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If the underlying base is outside of one&amp;rsquo;s control, an &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#off-the-shelf-configuration&#34;&gt;OTS
+workflow&lt;/a&gt; is the recommended best practice.  Fork the base, remove
+what you don&amp;rsquo;t want and commit it to your private fork, then use
+kustomize on your fork.  As often as desired, use &lt;em&gt;git rebase&lt;/em&gt; to
+capture improvements from the upstream base.&lt;/p&gt;
+&lt;h2 id=&#34;unstructured-edits&#34;&gt;Unstructured edits&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Structured edits&lt;/em&gt; are changes controlled by
+knowledge of the k8s API, and YAML or JSON syntax.&lt;/p&gt;
+&lt;p&gt;Most edits performed by kustomize can be expressed as
+&lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#patchjson6902&#34;&gt;JSON patches&lt;/a&gt; or &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#patchstrategicmerge&#34;&gt;SMP patches&lt;/a&gt;.
+Those can be verbose, so common patches,
+like adding labels or annotatations, get dedicated
+transformer plugins - &lt;code&gt;LabelTransformer&lt;/code&gt;,
+&lt;code&gt;AnnotationsTransformer&lt;/code&gt;, etc.
+These accept relatively simple YAML configuration
+allowing easy targeting of any number of resources.&lt;/p&gt;
+&lt;p&gt;Another class of edits take data from one specific
+object&amp;rsquo;s field and use it in another (e.g. a service
+object&amp;rsquo;s name found and copied into a container&amp;rsquo;s
+command line).  These reflection-style edits
+are called &lt;em&gt;replacements&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The above edits create valid output given valid input,
+and can provide syntactically and semantically
+informed error messages if inputs are invalid.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Unstructured edits&lt;/em&gt;, edits that don&amp;rsquo;t limit
+themselves to a syntax or object structure,
+come in many forms.  A common one in the
+configuration domain is the template or
+parameterization approach.&lt;/p&gt;
+&lt;p&gt;In this technique, the source
+material is sprinkled with strings of the
+form &lt;code&gt;${VAR}&lt;/code&gt;.  A scanner replaces them
+with a value taken from a map using &lt;code&gt;VAR&lt;/code&gt;
+as the map key. It&amp;rsquo;s trivial to implement.&lt;/p&gt;
+&lt;p&gt;kustomize eschews parameterization, because&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The source yaml gets polluted with &lt;code&gt;$VARs&lt;/code&gt;
+and can no longed be applied as is
+to the cluster (it &lt;em&gt;must&lt;/em&gt; be processed).&lt;/li&gt;
+&lt;li&gt;The source material is no longer structured,
+making it unusable with any YAML processor.
+It&amp;rsquo;s no longer &lt;em&gt;data&lt;/em&gt;, it&amp;rsquo;s now logic that
+must be compiled.&lt;/li&gt;
+&lt;li&gt;Errors in the output are disconnected from
+the edit that caused it.&lt;/li&gt;
+&lt;li&gt;The input becomes &lt;a href=&#34;https://github.com/helm/charts/blob/e002378c13e91bef4a3b0ba718c191ec791ce3f9/stable/artifactory/templates/artifactory-deployment.yaml&#34;&gt;unintelligible&lt;/a&gt; as the project
+scales in any number of dimensions (resource
+count, cluster count, environment count, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Kustomizations are meant to be sharable and stackable.
+Imagine tracing down a problem rooted in a
+clever set of stacked regexp replacements
+performed by various overlays on some remote base.
+We&amp;rsquo;ve used such systems, and never want to again.&lt;/p&gt;
+&lt;p&gt;Other tools (sed, jinja, erb, envsubst, kafka, helm, ksonnet,
+etc.) provide varying degrees of unstructured editting
+and/or embedded languages, and can be used instead
+of, or in a pipe with, kustomize.  If you want to
+go all-in on &lt;em&gt;configuration as a language&lt;/em&gt;, consider &lt;a href=&#34;https://cuelang.org/&#34;&gt;cue&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;kustomize is going to stick to YAML in / YAML out.&lt;/p&gt;
+&lt;h2 id=&#34;build-time-side-effects-from-cli-args-or-env-variables&#34;&gt;Build-time side effects from CLI args or env variables&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;kustomize&lt;/code&gt; supports the best practice of storing one&amp;rsquo;s
+entire configuration in a version control system.&lt;/p&gt;
+&lt;p&gt;Changing &lt;code&gt;kustomize build&lt;/code&gt; configuration output as a result
+of additional arguments or flags to &lt;code&gt;build&lt;/code&gt;, or by
+consulting shell environment variable values in &lt;code&gt;build&lt;/code&gt;
+code, would frustrate that goal.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kustomize&lt;/code&gt; insteads offers &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt; file &lt;code&gt;edit&lt;/code&gt;
+commands.  Like any shell command, they can accept
+environment variable arguments.&lt;/p&gt;
+&lt;p&gt;For example, to set the tag used on an image to match an
+environment variable, run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kustomize edit set image nginx:$MY_NGINX_VERSION
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;as part of some encapsulating work flow executed before
+&lt;code&gt;kustomize build&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;globs-in-kustomization-files&#34;&gt;Globs in kustomization files&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;kustomize&lt;/code&gt; supports the best practice of storing one&amp;rsquo;s
+entire configuration in a version control system.&lt;/p&gt;
+&lt;p&gt;Globbing the local file system for files not explicitly
+declared in the &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt; file at &lt;code&gt;kustomize build&lt;/code&gt; time
+would violate that goal.&lt;/p&gt;
+&lt;p&gt;Allowing globbing in a kustomization file would also introduce
+the same problems as allowing globbing in &lt;a href=&#34;https://www.codebyamir.com/blog/pitfalls-java-import-wildcards&#34;&gt;java import&lt;/a&gt;
+declarations or BUILD/Makefile dependency rules.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kustomize&lt;/code&gt; will instead provide kustomization file editting
+commands that accept globbed arguments, expand them at &lt;em&gt;edit
+time&lt;/em&gt; relative to the local file system, and store the resulting
+explicit names into the kustomization file.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Faq: Versioning Policy</title>
+      <link>https://kubectl.docs.kubernetes.io/zh/faq/kustomize/versioningpolicy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/zh/faq/kustomize/versioningpolicy/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Running &lt;code&gt;kustomize&lt;/code&gt; means one is running a
+particular version of a program (a CLI), using a
+particular version of underlying packages (a Go
+API), and reading a particular version of a
+&lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#kustomization&#34;&gt;kustomization&lt;/a&gt; file.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you&amp;rsquo;re having trouble with &lt;code&gt;go get&lt;/code&gt;, please
+read  &lt;a href=&#34;#go-api-versioning&#34;&gt;Go API Versioning&lt;/a&gt;
+and be patient.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;cli-program-versioning&#34;&gt;CLI Program Versioning&lt;/h2&gt;
+&lt;p&gt;The command &lt;code&gt;kustomize version&lt;/code&gt; prints a three
+field version tag (e.g. &lt;code&gt;v3.0.0&lt;/code&gt;) that aspires to
+&lt;a href=&#34;https://semver.org&#34;&gt;semantic versioning&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This notion of semver applies only to the CLI;
+the command names, their arguments and their flags.&lt;/p&gt;
+&lt;p&gt;The major version changes when some backward
+incompatibility appears in how the commands
+behave.&lt;/p&gt;
+&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
+&lt;p&gt;See the &lt;a href=&#34;INSTALL.md&#34;&gt;installation docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;go-api-versioning&#34;&gt;Go API Versioning&lt;/h2&gt;
+&lt;p&gt;The public methods in the public packages
+of module &lt;code&gt;sigs.k8s.io/kustomize/api&lt;/code&gt; constitute
+the &lt;em&gt;kustomize Go API&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;version-sigsk8siokustomizev3-and-earlier&#34;&gt;Version sigs.k8s.io/kustomize/v3 and earlier&lt;/h4&gt;
+&lt;p&gt;In &lt;code&gt;kustomize/v3&lt;/code&gt; (and preceding major versions), the
+kustomize program and the API live the same Go
+module at &lt;code&gt;sigs.k8s.io/kustomize&lt;/code&gt;, at &lt;a href=&#34;https://github.com/golang/go/wiki/Modules#releasing-modules-v2-or-higher&#34;&gt;import path&lt;/a&gt;
+&lt;code&gt;sigs.k8s.io/kustomize/v3&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This has been fine for the CLI, but it presents a
+problem for the Go API.&lt;/p&gt;
+&lt;p&gt;The process around Go modules, in particular the
+notion of &lt;a href=&#34;https://research.swtch.com/vgo-mvs&#34;&gt;minimal version selection&lt;/a&gt;, demands
+that the module respect semver.&lt;/p&gt;
+&lt;p&gt;Almost all the code in module
+&lt;code&gt;sigs.k8s.io/kustomize/v3&lt;/code&gt; is exposed (not in a
+directory named &lt;code&gt;internal&lt;/code&gt;).  Even a minor
+refactor changing a method name or argument type
+in some deeply buried (but still public) method is
+a backward incompatible change.  As a result, Go
+API semver hasn&amp;rsquo;t been followed.  This was a mistake.&lt;/p&gt;
+&lt;p&gt;Some options are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;continue to ignore Go API semver and stick to
+CLI semver (eliminating the usefullness of
+minimal version selection),&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;obey semver, and increment the module&amp;rsquo;s major
+version number with every release (drastically
+reducing the usefullness of minimal version
+selection - since virtually all releases will
+be major),&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;slow down change in the huge API in favor of
+stability, yet somehow continue to deliver
+features,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;drastically reduce the API surface, stabilize on
+semver there, and refactor as needed inside
+&lt;code&gt;internal&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The last option seems the most appealing.&lt;/p&gt;
+&lt;h4 id=&#34;the-first-stable-api-version-is-coming&#34;&gt;The first stable API version is coming&lt;/h4&gt;
+&lt;p&gt;The first stable API version will launch
+as the Go module&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sigs.k8s.io/kustomize/api
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The &lt;em&gt;kustomize&lt;/em&gt; program itself (&lt;code&gt;main.go&lt;/code&gt;
+and CLI specific code) will have moved out of
+&lt;code&gt;sigs.k8s.io/kustomize&lt;/code&gt; and into the new module
+&lt;code&gt;sigs.k8s.io/kustomize/kustomize&lt;/code&gt;.  This is a
+submodule in the same repo, and it will retain its
+current notion of semver (e.g. a backward
+incompatible change in command behavior will
+trigger a major version bump).  This module will
+not export packages; it&amp;rsquo;s just home to a &lt;code&gt;main&lt;/code&gt;
+package.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;sigs.k8s.io/kustomize/api&lt;/code&gt; module will
+obey semver with a sustainable public
+surface, informed by current usage.  Clients
+should import packages from this module, i.e.
+from import paths prefixed by
+&lt;code&gt;sigs.k8s.io/kustomize/api/&lt;/code&gt; at first,
+and later by &lt;code&gt;sigs.k8s.io/kustomize/api/v2/&lt;/code&gt;.
+The kustomize binary
+itself is an API client requiring this module.&lt;/p&gt;
+&lt;p&gt;The clients and API will evolve independently.&lt;/p&gt;
+&lt;h2 id=&#34;kustomization-file-versioning&#34;&gt;Kustomization File Versioning&lt;/h2&gt;
+&lt;p&gt;The kustomization file is a struct that is part of
+the kustomize Go API (the &lt;code&gt;sigs.k8s.io/kustomize&lt;/code&gt;
+module), but it also evolves as a k8s API object -
+it has an &lt;code&gt;apiVersion&lt;/code&gt; field containing its
+own version number.&lt;/p&gt;
+&lt;h3 id=&#34;field-change-policy&#34;&gt;Field Change Policy&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A field&amp;rsquo;s meaning cannot be changed.&lt;/li&gt;
+&lt;li&gt;A field may be deprecated, then removed.&lt;/li&gt;
+&lt;li&gt;Deprecation means triggering a &lt;em&gt;minor&lt;/em&gt; (semver)
+version bump in the kustomize Go API, and
+defining a migration path in a non-fatal error
+message.&lt;/li&gt;
+&lt;li&gt;Removal means triggering a &lt;em&gt;major&lt;/em&gt; (semver)
+version bump in the kustomize Go API, and fatal
+error if field encountered (as with any unknown
+field).  Likewise a change in &lt;code&gt;apiVersion&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-edit-fix-command&#34;&gt;The &lt;code&gt;edit fix&lt;/code&gt; Command&lt;/h3&gt;
+&lt;p&gt;This &lt;code&gt;kustomize&lt;/code&gt; command reads a Kustomization
+file, converts deprecated fields to new
+fields, and writes it out again in the latest
+format.&lt;/p&gt;
+&lt;p&gt;This is a type version upgrade mechanism that
+works within &lt;em&gt;major&lt;/em&gt; API revisions.  There is no
+downgrade capability, as there&amp;rsquo;s no use case for
+it (see discussion below).&lt;/p&gt;
+&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;With the 2.0.0 release, there were three field
+removals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;imageTag&lt;/code&gt; was deprecated when &lt;code&gt;images&lt;/code&gt; was
+introduced, because the latter offers more
+general features for image data manipulation.
+&lt;code&gt;imageTag&lt;/code&gt; was removed in v2.0.0.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;patches&lt;/code&gt; was deprecated and replaced by
+&lt;code&gt;patchesStrategicMerge&lt;/code&gt; when &lt;code&gt;patchesJson6902&lt;/code&gt;
+was introduced, to make a clearer
+distinction between patch specification formats.
+&lt;code&gt;patches&lt;/code&gt; was removed in v2.0.0.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;secretGenerator/commands&lt;/code&gt; was removed
+due to security concerns in v2.0.0
+with no deprecation period.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;code&gt;edit fix&lt;/code&gt; command in a v2.0.x binary
+will no longer recognize these fields.&lt;/p&gt;
+&lt;h2 id=&#34;relationship-to-the-k8s-api&#34;&gt;Relationship to the k8s API&lt;/h2&gt;
+&lt;h3 id=&#34;review-of-k8s-api-versioning&#34;&gt;Review of k8s API versioning&lt;/h3&gt;
+&lt;p&gt;The k8s API has specific &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md&#34;&gt;conventions&lt;/a&gt; and a
+process for making &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api_changes.md&#34;&gt;changes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The presence of an &lt;code&gt;apiVersion&lt;/code&gt; field in a k8s
+native type signals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;its reliability level (alpha vs beta vs
+generally available),&lt;/li&gt;
+&lt;li&gt;the existence of code to provide default values
+to fields not present in a serialization,&lt;/li&gt;
+&lt;li&gt;the existence of code to provide both forward
+and backward conversion between different
+versions of types.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The k8s API promises a lossless &lt;em&gt;conversion&lt;/em&gt;
+between versions over a specific range.  This
+means that a recent client can write an object
+bearing the newest possible value for its version,
+the server will accept it and store it in
+&amp;ldquo;versionless&amp;rdquo; JSON form in storage, and can
+convert it to a range of older versions should
+an older client request data.&lt;/p&gt;
+&lt;p&gt;For native k8s types, this all requires writing Go
+code in the kubernetes core repo, to provide
+defaulting and conversions.&lt;/p&gt;
+&lt;p&gt;For CRDs, there&amp;rsquo;s a &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/customresources-versioning.md&#34;&gt;proposal&lt;/a&gt; on how to manage
+versioning (e.g. a remote service can offer type
+defaulting and conversions).&lt;/p&gt;
+&lt;h3 id=&#34;differences&#34;&gt;Differences&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A k8s API server is able to go &lt;em&gt;forward&lt;/em&gt; and
+&lt;em&gt;backward&lt;/em&gt; in versioning, to work with older
+clients, over &lt;a href=&#34;https://kubernetes.io/docs/reference/using-api/deprecation-policy&#34;&gt;some range&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;kustomize edit fix&lt;/code&gt; command only moves
+&lt;em&gt;forward&lt;/em&gt; within a &lt;em&gt;major&lt;/em&gt; API
+version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At the time of writing, the YAML in a
+kustomization file does not represent a &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md&#34;&gt;k8s API&lt;/a&gt;
+object, and the kustomize command and associated
+library is neither a server of, nor a client to,
+the k8s API.&lt;/p&gt;
+&lt;h3 id=&#34;additional-kustomization-file-rules&#34;&gt;Additional Kustomization file rules&lt;/h3&gt;
+&lt;p&gt;In addition to the &lt;a href=&#34;#field-change-policy&#34;&gt;field change policy&lt;/a&gt; described
+above, kustomization files conform to
+the following rules.&lt;/p&gt;
+&lt;h4 id=&#34;eschew-classic-k8s-fields&#34;&gt;Eschew classic k8s fields&lt;/h4&gt;
+&lt;p&gt;Field names with dedicated meaning in k8s
+(&lt;code&gt;metadata&lt;/code&gt;, &lt;code&gt;spec&lt;/code&gt;, &lt;code&gt;status&lt;/code&gt;, etc.)  aren&amp;rsquo;t used.
+This is enforced via code review.&lt;/p&gt;
+&lt;h4 id=&#34;default-values-for-k8s-kind-and-apiversion&#34;&gt;Default values for k8s &lt;code&gt;kind&lt;/code&gt; and &lt;code&gt;apiVersion&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;In &lt;code&gt;v3&lt;/code&gt; or below, the two &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#resources&#34;&gt;special&lt;/a&gt; k8s
+resource fields &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#types-kinds&#34;&gt;&lt;code&gt;kind&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://kubernetes.io/docs/concepts/overview/kubernetes-api/#api-versioning&#34;&gt;&lt;code&gt;apiVersion&lt;/code&gt;&lt;/a&gt; may
+be omitted from the kustomization file.&lt;/p&gt;
+&lt;p&gt;If either field is present, they both must be.
+If present, the value of &lt;code&gt;kind&lt;/code&gt; must be:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;kind: Kustomization
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;If missing, the value of &lt;code&gt;apiVersion&lt;/code&gt; defaults to&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;apiVersion: kustomize.config.k8s.io/v1beta1
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

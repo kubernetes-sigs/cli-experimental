@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.79.0" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="https://kubectl.docs.kubernetes.io/contributing/kustomize/bugs/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Filing Bugs | SIG CLI</title><meta property="og:title" content="Filing Bugs" />
+<meta property="og:description" content="How to file bugs and fix Kustomize bugs
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kubectl.docs.kubernetes.io/contributing/kustomize/bugs/" />
+<meta property="og:site_name" content="SIG CLI" />
+<meta itemprop="name" content="Filing Bugs">
+<meta itemprop="description" content="How to file bugs and fix Kustomize bugs
+">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Filing Bugs"/>
+<meta name="twitter:description" content="How to file bugs and fix Kustomize bugs
+"/>
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" as="style">
+<link href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+    <title>Filing Bugs | SIG CLI</title>
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">SIG CLI</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/installation/" ><span>Installation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/guides/" ><span>Guides</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/references/" ><span>Reference</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/faq/" ><span>FAQ</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/contributing/" ><span class="active">Contributing</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/zh/contributing/kustomize/bugs/">简体中文</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.82a2731adc87a553a961a520597d97db4187cfc677484a984ba030e34c95e1a749ab98359c0b9547afb6dc810aed92b5ca7502ff38adc055cc66324c73a6d78b.json"
+  data-offline-search-base-href="/"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.82a2731adc87a553a961a520597d97db4187cfc677484a984ba030e34c95e1a749ab98359c0b9547afb6dc810aed92b5ca7502ff38adc055cc66324c73a6d78b.json"
+  data-offline-search-base-href="/"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/zh/contributing/kustomize/bugs/">简体中文</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/contributing/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Contributing</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="contributing">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/contributing/kubectl/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Kubectl</a>
+  </li>
+  <ul>
+    <li class="collapse " id="contributingkubectl">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/contributing/kustomize/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Kustomize</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="contributingkustomize">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/contributing/kustomize/bugs/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Filing Bugs</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="contributingkustomizebugs">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/contributing/kustomize/community/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Community</a>
+  </li>
+  <ul>
+    <li class="collapse " id="contributingkustomizecommunity">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/contributing/kustomize/features/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contributing Features</a>
+  </li>
+  <ul>
+    <li class="collapse " id="contributingkustomizefeatures">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/contributing/kustomize/howitworks/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Writing Code</a>
+  </li>
+  <ul>
+    <li class="collapse " id="contributingkustomizehowitworks">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/contributing/kustomize/mac/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">MacOS Dev Guide</a>
+  </li>
+  <ul>
+    <li class="collapse " id="contributingkustomizemac">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/contributing/kustomize/windows/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Windows Dev Guide</a>
+  </li>
+  <ul>
+    <li class="collapse " id="contributingkustomizewindows">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/contributing/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse " id="contributingdocs">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/site/content/en/contributing/kustomize/bugs/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Filing%20Bugs" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+
+</div>
+
+
+
+
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://kubectl.docs.kubernetes.io/contributing/">Contributing</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://kubectl.docs.kubernetes.io/contributing/kustomize/">Kustomize</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://kubectl.docs.kubernetes.io/contributing/kustomize/bugs/">Filing Bugs</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Filing Bugs</h1>
+	<div class="lead">How to file bugs and fix Kustomize bugs</div>
+	<p>File issues as desired, but if you&rsquo;ve found a problem
+with how <code>kustomize build</code> works, please report</p>
+<ul>
+<li>the output of <code>kustomize version</code>,</li>
+<li>the input (the content of <code>kustomization.yaml</code>
+and any files it refers to),</li>
+<li>the expected YAML output.</li>
+</ul>
+<h2 id="if-you-have-go-installed">If you have <code>go</code> installed</h2>
+<p>kustomize has a simple test harness in the <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/api/krusty">krusty
+package</a> for specifying a kustomization&rsquo;s input and the
+expected output.</p>
+<p>Copy one of those tests, e.g. this <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/api/krusty/customconfigreusable_test.go">reusable custom
+transformer test</a>, to a new test file in the
+krusty package.</p>
+<p>Insert the inputs you want to use, and run it as
+you&rsquo;d run the reusable custom transformer test:</p>
+<pre><code>(cd api; go test -run TestReusableCustomTransformers ./krusty)
+</code></pre><p>The output will demonstrate the bug or missing feature.</p>
+<p>Record this output in the test file in a call to
+<code>AssertActualEqualsExpected</code>, per all the other tests
+in the <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/api/krusty">krusty package</a>.  This makes the test pass,
+albeit with output demonstrating behavior you
+presumably want to change.</p>
+<p>Send the new test in a PR, along with commentary (in
+the test) on what you&rsquo;d prefer to see.</p>
+<p>The person who fixes the bug then has a clear bug
+reproduction and a test to modify when the bug is
+fixed.</p>
+<p>Any bug fix first requires a test demonstrating the bug
+(so we have permanent regression coverage), so if the
+<em>bug reporter</em> does this, it saves time and avoids
+misunderstandings.</p>
+
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</div>
+
+	
+		<style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h2 class="feedback--title">Feedback</h2>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script>
+
+		<br />
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/d705a6d13a34076f78d82ef2095f7e6bb97b8255">SIG CLI docs - guide changes (d705a6d)</a>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2021 SIG CLI | Documentation Distributed under CC BY 4.0 |  All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.3587468abafd7ee678f61330f7c574ba0376f12451f11e076f2283f1e0504095.js" integrity="sha256-NYdGirr9fuZ49hMw98V0ugN28SRR8R4HbyKD8eBQQJU=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

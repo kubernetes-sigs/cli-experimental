@@ -1,0 +1,128 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – Kustomize</title>
+    <link>https://kubectl.docs.kubernetes.io/installation/kustomize/</link>
+    <description>Recent content in Kustomize on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubectl.docs.kubernetes.io/installation/kustomize/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Installation: Go Source</title>
+      <link>https://kubectl.docs.kubernetes.io/installation/kustomize/source/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/installation/kustomize/source/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Requires &lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt; to be installed.&lt;/p&gt;
+&lt;h2 id=&#34;install-the-kustomize-cli-from-source-without-cloning-the-repo&#34;&gt;Install the kustomize CLI from source without cloning the repo&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GOBIN&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;pwd&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt;/ &lt;span style=&#34;color:#000&#34;&gt;GO111MODULE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;on go get sigs.k8s.io/kustomize/kustomize/v3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;install-the-kustomize-cli-from-local-source-with-cloning-the-repo&#34;&gt;Install the kustomize CLI from local source with cloning the repo&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Need go 1.13 or higher&lt;/span&gt;
+&lt;span style=&#34;color:#204a87&#34;&gt;unset&lt;/span&gt; GOPATH
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# see https://golang.org/doc/go1.13#modules&lt;/span&gt;
+&lt;span style=&#34;color:#204a87&#34;&gt;unset&lt;/span&gt; GO111MODULES
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# clone the repo&lt;/span&gt;
+git clone git@github.com:kubernetes-sigs/kustomize.git
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# get into the repo root&lt;/span&gt;
+&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; kustomize
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Optionally checkout a particular tag if you don&amp;#39;t&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# want to build at head&lt;/span&gt;
+git checkout kustomize/v3.2.3
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# build the binary&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; kustomize&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; go install .&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# run it&lt;/span&gt;
+~/go/bin/kustomize version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Installation: Binaries</title>
+      <link>https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Binaries at various versions for linux, MacOs and Windows are published on the &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/releases&#34;&gt;releases page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The following &lt;a href=&#34;https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&#34;&gt;script&lt;/a&gt; detects your OS and downloads the appropriate kustomize binary to your
+current working directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -s &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;This script doesn&amp;rsquo;t work for ARM architecture.&lt;/strong&gt; If you want to install ARM binaries, please
+go to the release page to find the URL.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Installation: Docker Images</title>
+      <link>https://kubectl.docs.kubernetes.io/installation/kustomize/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/installation/kustomize/docker/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Starting with Kustomize v3.8.7, docker images are available to run Kustomize.
+The images are hosted in kubernetes official GCR repositories.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://us.gcr.io/k8s-artifacts-prod/kustomize/kustomize&#34;&gt;GCR page&lt;/a&gt; for available images.&lt;/p&gt;
+&lt;p&gt;The following commands are how to pull and run kustomize 3.8.7 docker image.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker pull k8s.gcr.io/kustomize/kustomize:v3.8.7
+docker run k8s.gcr.io/kustomize/kustomize:v3.8.7 version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Installation: Homebrew / MacPorts</title>
+      <link>https://kubectl.docs.kubernetes.io/installation/kustomize/homebrew/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/installation/kustomize/homebrew/</guid>
+      <description>
+        
+        
+        &lt;p&gt;For &lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt; users:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;brew install kustomize
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For &lt;a href=&#34;https://www.macports.org&#34;&gt;MacPorts&lt;/a&gt; users:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo port install kustomize
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Installation: Chocolatey</title>
+      <link>https://kubectl.docs.kubernetes.io/installation/kustomize/chocolatey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/installation/kustomize/chocolatey/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;choco install kustomize
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For support on the chocolatey package
+and prior releases, see:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chocolatey.org/packages/kustomize&#34;&gt;Choco Package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kenmaglio/choco-kustomize&#34;&gt;Package Source&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
