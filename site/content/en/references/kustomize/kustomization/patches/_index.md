@@ -67,7 +67,7 @@ spec:
   template:
     containers:
       - name: the-container
-        image: registry/conatiner:latest
+        image: registry/container:latest
 ```
 
 Another feature of patches is the option to override the kind or name of 
@@ -113,7 +113,7 @@ spec:
   template:
     containers:
       - name: the-container
-        image: registry/conatiner:1.0.0
+        image: registry/container:1.0.0
 ```
 
 ### Build Output
@@ -127,7 +127,7 @@ spec:
   replicas: 5
   template:
     containers:
-    - image: registry/conatiner:1.0.0
+    - image: registry/container:1.0.0
       name: the-container
 ```
 
@@ -155,7 +155,7 @@ patches:
 ```yaml
 # patch.json
 [
-   {"op": "replace", "path": "/spec/template/containers/0/image", "value": "registry/conatiner:1.0.0"}
+   {"op": "replace", "path": "/spec/template/containers/0/image", "value": "registry/container:1.0.0"}
 ]
 
 ```
@@ -171,6 +171,6 @@ spec:
   replicas: 5
   template:
     containers:
-    - image: registry/conatiner:1.0.0
+    - image: registry/container:1.0.0
       name: the-container
 ```
