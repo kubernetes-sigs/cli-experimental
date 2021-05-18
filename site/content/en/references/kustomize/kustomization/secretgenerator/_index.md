@@ -25,7 +25,10 @@ secretGenerator:
   # you can define a namespace to generate
   # a secret in, defaults to: "default"
   namespace: apps
+  # if you do not specify a key, the
+  # filename is used as key inside data
   files:
+  # - key=filename
   - tls.crt=catsecret/tls.cert
   - tls.key=secret/tls.key
   type: "kubernetes.io/tls"
