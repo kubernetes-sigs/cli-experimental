@@ -1,6 +1,6 @@
 module sigs.k8s.io/cli-experimental
 
-go 1.12
+go 1.16
 
 require (
 	contrib.go.opencensus.io/exporter/ocagent v0.4.9 // indirect
