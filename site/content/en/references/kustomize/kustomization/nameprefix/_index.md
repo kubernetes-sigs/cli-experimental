@@ -45,7 +45,7 @@ resources:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: alices-the-deployment
+  name: the-container-the-deployment
 spec:
   replicas: 5
   template:
