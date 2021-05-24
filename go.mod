@@ -1,10 +1,11 @@
 module sigs.k8s.io/cli-experimental
 
-go 1.12
+go 1.16
 
 require (
 	contrib.go.opencensus.io/exporter/ocagent v0.4.9 // indirect
 	github.com/Azure/go-autorest v11.7.0+incompatible // indirect
+	github.com/PuerkitoBio/purell v1.1.0 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/evanphx/json-patch v4.1.0+incompatible
 	github.com/ghodss/yaml v1.0.0
@@ -20,6 +21,7 @@ require (
 	github.com/gregjones/httpcache v0.0.0-20190212212710-3befbb6ad0cc // indirect
 	github.com/grpc-ecosystem/grpc-gateway v1.6.2 // indirect
 	github.com/imdario/mergo v0.3.7 // indirect
+	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/json-iterator/go v1.1.6 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/onsi/ginkgo v1.8.0
@@ -28,6 +30,7 @@ require (
 	github.com/spf13/cobra v0.0.3
 	github.com/spf13/pflag v1.0.3
 	github.com/stretchr/testify v1.3.0
+	github.com/xanzy/ssh-agent v0.2.0 // indirect
 	go.opencensus.io v0.19.2 // indirect
 	go.uber.org/atomic v1.3.2 // indirect
 	go.uber.org/multierr v1.1.0 // indirect
@@ -38,6 +41,8 @@ require (
 	golang.org/x/sys v0.0.0-20190506115046-ca7f33d4116e // indirect
 	golang.org/x/text v0.3.2 // indirect
 	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4 // indirect
+	google.golang.org/api v0.2.0 // indirect
+	google.golang.org/grpc v1.19.1 // indirect
 	gopkg.in/src-d/go-git.v4 v4.10.0
 	k8s.io/api v0.0.0-20190327184913-92d2ee7fc726
 	k8s.io/apiextensions-apiserver v0.0.0-20190328030136-8ada4fd07db4
