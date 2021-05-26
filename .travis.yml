@@ -4,11 +4,8 @@ os:
 - linux
 - osx
 
-env:
-- GO111MODULE=on 
-
 go:
-- "1.12"
+- "1.16"
 
 git:
   depth: 1
@@ -16,10 +13,10 @@ git:
 go_import_path: sigs.k8s.io/cli-experimental
 
 install:
-  - go get -u gopkg.in/alecthomas/gometalinter.v2 && gometalinter.v2 --install
+- go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.23.8
 
 script:
-  - TRACE=1 ./scripts/check-everything.sh
+- TRACE=1 ./scripts/check-everything.sh
 
 # TBD. Suppressing for now.
 notifications:

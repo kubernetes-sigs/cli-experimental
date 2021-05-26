@@ -403,6 +403,10 @@
   </url>
   
   <url>
+    <loc>https://kubectl.docs.kubernetes.io/zh/api-reference/kustomization/resources/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubectl.docs.kubernetes.io/zh/search/</loc>
     <lastmod>2020-11-11T21:42:40+05:30</lastmod>
     <xhtml:link

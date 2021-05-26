@@ -16,7 +16,6 @@ k8s Secret object in a container's environment variable,
 so that the following would work:
 
 ```yaml
-
 containers:
   - image: myimage
     command: ["start", "--host", "$(MY_SERVICE_NAME)"]

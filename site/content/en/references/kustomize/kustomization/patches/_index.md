@@ -22,8 +22,12 @@ Each patch may:
 - target a single resource or multiple resources
 
 The patch target selects resources by group, version, kind, name, namespace, labelSelector and
-annotationSelector.  Any resource which matches all the **specified** fields has the patch applied
-to it (regular expressions).
+annotationSelector. Any resource which matches all the **specified** fields has the patch applied
+to it (regular expressions). 
+
+A patch can refer to a resource by any of its previous names or kinds.
+For example, if a resource has gone through name-prefix transformations, it can refer to the
+resource by its current name, original name, or any intermediate name that it had. 
 
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -64,6 +68,21 @@ spec:
     containers:
       - name: the-container
         image: registry/conatiner:latest
+```
+
+Another feature of patches is the option to override the kind or name of 
+the resource it is editing. By default, the patch will leave the kind and name
+of the resource untouched. For example:
+```yaml
+resources:
+- deployment.yaml
+patches:
+- path: patch.yaml
+  target:
+    kind: Deployment
+  options:
+    allowNameChange: true
+    allowKindChange: true
 ```
 
 ## Example I

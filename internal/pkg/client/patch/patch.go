@@ -91,10 +91,9 @@ func GetClientSideApplyPatch(current, desired runtime.Object) (Patch, error) {
 		if err != nil {
 			return patch, err
 		}
-	case err != nil:
-		return patch, err
 	}
-	return patch, nil
+
+	return patch, err
 }
 
 // GetMergePatch - generate merge patch from original and modified objects
