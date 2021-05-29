@@ -50,6 +50,6 @@ func (w *CommandOutputWriter) Write(cmd *clidynamic.ResourceCommand, values *par
 	}
 
 	// Print the output
-	fmt.Fprintf(w.Output, buff.String())
+	fmt.Fprint(w.Output, buff.String())
 	return nil
 }

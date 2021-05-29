@@ -56,3 +56,7 @@ Note that kustomize does not support more than one patch
 for the same object that contain a _delete_ directive. To remove
 several fields / slice elements from an object create a single
 patch that performs all the needed deletions.
+
+A patch can refer to a resource by any of its previous names or kinds.
+For example, if a resource has gone through name-prefix transformations, it can refer to the
+resource by its current name, original name, or any intermediate name that it had. 

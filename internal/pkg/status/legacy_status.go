@@ -45,7 +45,7 @@ func GetLegacyConditionsFn(u *unstructured.Unstructured) GetConditionsFn {
 	if g == "" {
 		key = k
 	}
-	fn, _ := legacyTypes[key]
+	fn := legacyTypes[key]
 	return fn
 }
 
@@ -64,10 +64,7 @@ func HasBeenObserved(u *unstructured.Unstructured) bool {
 	// ensure that the meta generation is observed
 	observedGeneration := clientu.GetIntField(obj, ".status.observedGeneration", -1)
 	metaGeneration := clientu.GetIntField(obj, ".metadata.generation", -1)
-	if observedGeneration != metaGeneration {
-		return false
-	}
-	return true
+	return observedGeneration == metaGeneration
 }
 
 func notObservedConditions() []Condition {
