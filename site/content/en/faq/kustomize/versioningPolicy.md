@@ -30,7 +30,7 @@ behave.
 
 ### Installation
 
-See the [installation docs](INSTALL.md).
+See the [installation docs].
 
 ## Go API Versioning
 
@@ -264,7 +264,8 @@ If missing, the value of `apiVersion` defaults to
 [conventions]: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md
 [release page]: https://github.com/kubernetes-sigs/kustomize/releases
 [release process]: https://github.com/kubernetes-sigs/kustomize/tree/master/releasing/README.md
-[kustomization]: /kustomize/api-reference/glossary#kustomization
+[kustomization]: /references/kustomize/glossary#kustomization
 [`kind`]: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 [`apiVersion`]: https://kubernetes.io/docs/concepts/overview/kubernetes-api/#api-versioning
 [semantic versioning]: https://semver.org
+[installation docs]: /installation/
