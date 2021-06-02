@@ -150,13 +150,13 @@ commands that accept globbed arguments, expand them at _edit
 time_ relative to the local file system, and store the resulting
 explicit names into the kustomization file.
 
-[base]: /kustomize/api-reference/glossary#base
-[DAM]: /kustomize/api-reference/glossary#declarative-application-management
+[base]: /references/kustomize/glossary/#base
+[DAM]: /references/kustomize/glossary/#declarative-application-management
 [java import]: https://www.codebyamir.com/blog/pitfalls-java-import-wildcards
-[JSON patches]: /kustomize/api-reference/glossary#patchjson6902
-[kustomization]: /kustomize/api-reference/glossary#kustomization
-[OTS workflow]: /kustomize/api-reference/glossary#off-the-shelf-configuration
-[SMP patches]: /kustomize/api-reference/glossary#patchstrategicmerge
+[JSON patches]: /references/kustomize/glossary/#patchjson6902
+[kustomization]: /references/kustomize/glossary/#kustomization
+[OTS workflow]: /references/kustomize/glossary/#off-the-shelf-configuration
+[SMP patches]: /references/kustomize/glossary/#patchstrategicmerge
 [parameterization pitfall discussion]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/declarative-application-management.md#parameterization-pitfalls
 [unintelligible]: https://github.com/helm/charts/blob/e002378c13e91bef4a3b0ba718c191ec791ce3f9/stable/artifactory/templates/artifactory-deployment.yaml
 [cue]: https://cuelang.org/
