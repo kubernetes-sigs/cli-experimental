@@ -119,7 +119,7 @@ resources:
 namePrefix: cluster-a-
 ```
 
-## `directory sturcture`
+## `directory structure`
 > ```bash
 > .
 > ├── kustomization.yaml
