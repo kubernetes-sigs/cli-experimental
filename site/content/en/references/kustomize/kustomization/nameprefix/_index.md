@@ -24,7 +24,7 @@ spec:
   template:
     containers:
       - name: the-container
-        image: registry/conatiner:latest
+        image: registry/container:latest
 ```
 
 ```yaml
@@ -50,7 +50,7 @@ spec:
   replicas: 5
   template:
     containers:
-    - image: registry/conatiner:latest
+    - image: registry/container:latest
       name: the-container
 ```
 
