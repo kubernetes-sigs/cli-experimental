@@ -46,7 +46,7 @@ complete plugin argument specification.
 
 #### field name: `commonAnnotations`
 
-Adds annotions (non-identifying metadata) to add
+Adds annotations (non-identifying metadata) to
 all resources. Like labels, these are key value
 pairs.
 
