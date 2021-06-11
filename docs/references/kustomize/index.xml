@@ -301,7 +301,7 @@ syntax.  See this &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/t
 &lt;p&gt;A chunk of code used by kustomize, but not necessarily
 compiled into kustomize, to generate and/or transform a
 kubernetes resource as part of a kustomization.&lt;/p&gt;
-&lt;p&gt;Details &lt;a href=&#34;../../guides/plugins&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Details &lt;a href=&#34;../../../guides/extending_kustomize/builtins&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;resource&#34;&gt;resource&lt;/h2&gt;
 &lt;p&gt;A &lt;em&gt;resource&lt;/em&gt; in the context of a REST-ful API is the
 target object of an HTTP operation like &lt;em&gt;GET&lt;/em&gt;, &lt;em&gt;PUT&lt;/em&gt; or

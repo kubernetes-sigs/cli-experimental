@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -24,18 +24,16 @@
 <meta property="og:description" content="Eschewed Features
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kubectl.docs.kubernetes.io/faq/kustomize/eschewedfeatures/" />
-<meta property="article:modified_time" content="2020-09-30T20:01:35+05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="og:url" content="https://kubectl.docs.kubernetes.io/faq/kustomize/eschewedfeatures/" /><meta property="article:section" content="faq" />
+
+<meta property="article:modified_time" content="2021-05-29T22:02:42-07:00" /><meta property="og:site_name" content="SIG CLI" />
+
 <meta itemprop="name" content="Eschewed Features">
 <meta itemprop="description" content="Eschewed Features
 ">
-<meta itemprop="dateModified" content="2020-09-30T20:01:35+05:30" />
+<meta itemprop="dateModified" content="2021-05-29T22:02:42-07:00" />
 <meta itemprop="wordCount" content="781">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Eschewed Features"/>
 <meta name="twitter:description" content="Eschewed Features
 "/>
@@ -44,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" as="style">
-<link href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
+<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -159,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.223cef4aa7d35ce05d35e863204807e6a69d63ef7911c4224abb1a02b256f8ce123efbb3545e5e6b75e92171b62888069a77c770912f35edb36802526da28593.json"
+  data-offline-search-index-json-src="/offline-search-index.48899e71e736bbadccbce1d044fe073ff0e14badd6a230ba41538963ebbba6685d8abf4a21ac2fdf95289ec5ae6131a7e47be1d205adc6479819b3e96a8ad2a5.json"
   data-offline-search-base-href="/"
 >
 
@@ -189,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.223cef4aa7d35ce05d35e863204807e6a69d63ef7911c4224abb1a02b256f8ce123efbb3545e5e6b75e92171b62888069a77c770912f35edb36802526da28593.json"
+  data-offline-search-index-json-src="/offline-search-index.48899e71e736bbadccbce1d044fe073ff0e14badd6a230ba41538963ebbba6685d8abf4a21ac2fdf95289ec5ae6131a7e47be1d205adc6479819b3e96a8ad2a5.json"
   data-offline-search-base-href="/"
 >
 
@@ -385,7 +383,7 @@ set.  The bounds can be changed with
 a consensus on the risks.</p>
 <p>For a bigger picture about why kustomize
 does some things and not others, see the
-glossary entry for <a href="/kustomize/api-reference/glossary#declarative-application-management">DAM</a>.</p>
+glossary entry for <a href="/references/kustomize/glossary/#declarative-application-management">DAM</a>.</p>
 <h2 id="removal-directives">Removal directives</h2>
 <p><code>kustomize</code> supports configurations that can be reasoned about as
 <em>compositions</em> or <em>mixins</em> - concepts that are widely accepted as
@@ -401,8 +399,8 @@ unnecessarily complex configuration layouts.</p>
 always possible to remove things from a base like labels and
 annotations, and/or split multi-resource manifests into individual
 resource files - then add things back as desired via the
-<a href="/kustomize/api-reference/glossary#kustomization">kustomization</a>.</p>
-<p>If the underlying base is outside of one&rsquo;s control, an <a href="/kustomize/api-reference/glossary#off-the-shelf-configuration">OTS
+<a href="/references/kustomize/glossary/#kustomization">kustomization</a>.</p>
+<p>If the underlying base is outside of one&rsquo;s control, an <a href="/references/kustomize/glossary/#off-the-shelf-configuration">OTS
 workflow</a> is the recommended best practice.  Fork the base, remove
 what you don&rsquo;t want and commit it to your private fork, then use
 kustomize on your fork.  As often as desired, use <em>git rebase</em> to
@@ -411,7 +409,7 @@ capture improvements from the upstream base.</p>
 <p><em>Structured edits</em> are changes controlled by
 knowledge of the k8s API, and YAML or JSON syntax.</p>
 <p>Most edits performed by kustomize can be expressed as
-<a href="/kustomize/api-reference/glossary#patchjson6902">JSON patches</a> or <a href="/kustomize/api-reference/glossary#patchstrategicmerge">SMP patches</a>.
+<a href="/references/kustomize/glossary/#patchjson6902">JSON patches</a> or <a href="/references/kustomize/glossary/#patchstrategicmerge">SMP patches</a>.
 Those can be verbose, so common patches,
 like adding labels or annotatations, get dedicated
 transformer plugins - <code>LabelTransformer</code>,
@@ -469,7 +467,7 @@ entire configuration in a version control system.</p>
 of additional arguments or flags to <code>build</code>, or by
 consulting shell environment variable values in <code>build</code>
 code, would frustrate that goal.</p>
-<p><code>kustomize</code> insteads offers <a href="/kustomize/api-reference/glossary#kustomization">kustomization</a> file <code>edit</code>
+<p><code>kustomize</code> insteads offers <a href="/references/kustomize/glossary/#kustomization">kustomization</a> file <code>edit</code>
 commands.  Like any shell command, they can accept
 environment variable arguments.</p>
 <p>For example, to set the tag used on an image to match an
@@ -481,7 +479,7 @@ environment variable, run</p>
 <p><code>kustomize</code> supports the best practice of storing one&rsquo;s
 entire configuration in a version control system.</p>
 <p>Globbing the local file system for files not explicitly
-declared in the <a href="/kustomize/api-reference/glossary#kustomization">kustomization</a> file at <code>kustomize build</code> time
+declared in the <a href="/references/kustomize/glossary/#kustomization">kustomization</a> file at <code>kustomize build</code> time
 would violate that goal.</p>
 <p>Allowing globbing in a kustomization file would also introduce
 the same problems as allowing globbing in <a href="https://www.codebyamir.com/blog/pitfalls-java-import-wildcards">java import</a>
@@ -553,7 +551,7 @@ explicit names into the kustomization file.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 30, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/d705a6d13a34076f78d82ef2095f7e6bb97b8255">SIG CLI docs - guide changes (d705a6d)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified May 29, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/dfbb98c1aa11b6198e83fe405153096c741bf712">docs(eschewedfeatures.md): fix broken links (dfbb98c)</a>
 </div>
 </div>
 
@@ -596,7 +594,7 @@ explicit names into the kustomization file.</p>
 
 
 
-<script src="/js/main.min.3587468abafd7ee678f61330f7c574ba0376f12451f11e076f2283f1e0504095.js" integrity="sha256-NYdGirr9fuZ49hMw98V0ugN28SRR8R4HbyKD8eBQQJU=" crossorigin="anonymous"></script>
+<script src="/js/main.min.76d515dfd36b9cd42d225ea0cd8cbbcf0515fa5b16dc7fbbe14dd6e8c3641ee5.js" integrity="sha256-dtUV39NrnNQtIl6gzYy7zwUV&#43;lsW3H&#43;74U3W6MNkHuU=" crossorigin="anonymous"></script>
 
 
 
