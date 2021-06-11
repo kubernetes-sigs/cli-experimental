@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -22,25 +22,22 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>指南 | SIG CLI</title><meta property="og:title" content="指南" />
-<meta property="og:description" content="Kustomize CLI 命令参考。
-" />
+<meta property="og:description" content="Kubectl 和 Kustomize 的文档" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/zh/guides/" />
 <meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="指南">
-<meta itemprop="description" content="Kustomize CLI 命令参考。
-">
+<meta itemprop="description" content="Kubectl 和 Kustomize 的文档">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="指南"/>
-<meta name="twitter:description" content="Kustomize CLI 命令参考。
-"/>
+<meta name="twitter:description" content="Kubectl 和 Kustomize 的文档"/>
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" as="style">
-<link href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" as="style">
+<link href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -94,7 +91,7 @@
 				
 				
 				
-				<a class="nav-link" href="/zh/api-reference/" ><span>API 参考</span></a>
+				<a class="nav-link" href="/zh/references/" ><span>参考</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -154,7 +151,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.223cef4aa7d35ce05d35e863204807e6a69d63ef7911c4224abb1a02b256f8ce123efbb3545e5e6b75e92171b62888069a77c770912f35edb36802526da28593.json"
+  data-offline-search-index-json-src="/offline-search-index.82a2731adc87a553a961a520597d97db4187cfc677484a984ba030e34c95e1a749ab98359c0b9547afb6dc810aed92b5ca7502ff38adc055cc66324c73a6d78b.json"
   data-offline-search-base-href="/"
 >
 
@@ -184,7 +181,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.223cef4aa7d35ce05d35e863204807e6a69d63ef7911c4224abb1a02b256f8ce123efbb3545e5e6b75e92171b62888069a77c770912f35edb36802526da28593.json"
+  data-offline-search-index-json-src="/offline-search-index.82a2731adc87a553a961a520597d97db4187cfc677484a984ba030e34c95e1a749ab98359c0b9547afb6dc810aed92b5ca7502ff38adc055cc66324c73a6d78b.json"
   data-offline-search-base-href="/"
 >
 
@@ -234,11 +231,29 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/guides/bespoke/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">配置定制（Bespoke configuration）</a>
+    <a  href="/zh/guides/introduction/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Introduction</a>
   </li>
   <ul>
-    <li class="collapse " id="zhguidesbespoke">
+    <li class="collapse " id="zhguidesintroduction">
       
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesintroductionkubectl" href="/zh/guides/introduction/kubectl/">Kubectl</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesintroductionkustomize" href="/zh/guides/introduction/kustomize/">Kustomize</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesintroductionresources_controllers" href="/zh/guides/introduction/resources_controllers/">Resources &#43; Controllers Overview</a>
       
       
     </li>
@@ -257,11 +272,65 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/guides/offtheshelf/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">通用配置（Off-the-shelf configuration）</a>
+    <a  href="/zh/guides/config_management/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Configuration Management</a>
   </li>
   <ul>
-    <li class="collapse " id="zhguidesofftheshelf">
+    <li class="collapse " id="zhguidesconfig_management">
       
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesconfig_managementintroduction" href="/zh/guides/config_management/introduction/">Introduction</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesconfig_managementapply" href="/zh/guides/config_management/apply/">Apply</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesconfig_managementsecrets_configmaps" href="/zh/guides/config_management/secrets_configmaps/">Secrets and ConfigMaps</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesconfig_managementcontainer_images" href="/zh/guides/config_management/container_images/">Container Images</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesconfig_managementnamespaces_names" href="/zh/guides/config_management/namespaces_names/">Namespaces and Names</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesconfig_managementlabels_annotations" href="/zh/guides/config_management/labels_annotations/">Labels and Annotations</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesconfig_managementbespoke" href="/zh/guides/config_management/bespoke/">配置定制（Bespoke configuration）</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesconfig_managementofftheshelf" href="/zh/guides/config_management/offtheshelf/">通用配置（Off-the-shelf configuration）</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesconfig_managementcomponents" href="/zh/guides/config_management/components/">Kustomize Components</a>
       
       
     </li>
@@ -280,35 +349,258 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/guides/plugins/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Kustomize 插件</a>
+    <a  href="/zh/guides/resource_printing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Resource Printing</a>
   </li>
   <ul>
-    <li class="collapse " id="zhguidesplugins">
+    <li class="collapse " id="zhguidesresource_printing">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidespluginsbuiltins" href="/zh/guides/plugins/builtins/">内置插件</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesresource_printingsummary" href="/zh/guides/resource_printing/summary/">Summaries</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidespluginsexecpluginguidedexample" href="/zh/guides/plugins/execpluginguidedexample/">Exec 插件示例</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesresource_printingraw" href="/zh/guides/resource_printing/raw/">Raw</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidespluginsgoplugincaveats" href="/zh/guides/plugins/goplugincaveats/">Go 插件注意事项</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesresource_printingfields" href="/zh/guides/resource_printing/fields/">Fields</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidespluginsgopluginguidedexample" href="/zh/guides/plugins/gopluginguidedexample/">Go 插件示例</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesresource_printingdescribe" href="/zh/guides/resource_printing/describe/">Describe</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesresource_printingqueries_and_options" href="/zh/guides/resource_printing/queries_and_options/">Queries and Options</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesresource_printingcluster_information" href="/zh/guides/resource_printing/cluster_information/">Cluster Information</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/zh/guides/container_debugging/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Container Debugging</a>
+  </li>
+  <ul>
+    <li class="collapse " id="zhguidescontainer_debugging">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidescontainer_debuggingcontainer_logs" href="/zh/guides/container_debugging/container_logs/">Container Logs</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidescontainer_debuggingcopying_container_files" href="/zh/guides/container_debugging/copying_container_files/">Copying Container Files</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidescontainer_debuggingexecuting_a_command_in_a_container" href="/zh/guides/container_debugging/executing_a_command_in_a_container/">Executing a command in a container</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidescontainer_debuggingport_forward_to_pods" href="/zh/guides/container_debugging/port_forward_to_pods/">Port forward to Pods</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidescontainer_debuggingproxying_traffic_to_services" href="/zh/guides/container_debugging/proxying_traffic_to_services/">Proxying traffic to services</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/zh/guides/app_deployment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">App Deployment</a>
+  </li>
+  <ul>
+    <li class="collapse " id="zhguidesapp_deployment">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesapp_deploymentdiffing_local_and_remote_resources" href="/zh/guides/app_deployment/diffing_local_and_remote_resources/">Diffing Local and Remote Resources</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesapp_deploymentaccessing_multiple_clusters" href="/zh/guides/app_deployment/accessing_multiple_clusters/">Accessing Multiple Clusters</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesapp_deploymentpublishing_bases" href="/zh/guides/app_deployment/publishing_bases/">Publishing Bases</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/zh/guides/extending_kubectl/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extending Kubectl</a>
+  </li>
+  <ul>
+    <li class="collapse " id="zhguidesextending_kubectl">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesextending_kubectlplugin_mechanism" href="/zh/guides/extending_kubectl/plugin_mechanism/">Plugin Mechanism</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesextending_kubectldiscovering_plugins" href="/zh/guides/extending_kubectl/discovering_plugins/">Discovering Plugins</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/zh/guides/extending_kustomize/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">拓展 Kustomize</a>
+  </li>
+  <ul>
+    <li class="collapse " id="zhguidesextending_kustomize">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesextending_kustomizeexecpluginguidedexample" href="/zh/guides/extending_kustomize/execpluginguidedexample/">Exec 插件示例</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesextending_kustomizegoplugincaveats" href="/zh/guides/extending_kustomize/goplugincaveats/">Go 插件注意事项</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesextending_kustomizegopluginguidedexample" href="/zh/guides/extending_kustomize/gopluginguidedexample/">Go 插件示例</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesextending_kustomizebuiltins" href="/zh/guides/extending_kustomize/builtins/">内置插件</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/zh/guides/example/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Examples</a>
+  </li>
+  <ul>
+    <li class="collapse " id="zhguidesexample">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesexamplemulti_base" href="/zh/guides/example/multi_base/">Multibase</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhguidesexampleinline_patch" href="/zh/guides/example/inline_patch/">Inline Patch</a>
       
       
     </li>
@@ -379,7 +671,7 @@
             
 <div class="td-content">
 	<h1>指南</h1>
-	<div class="lead">Kustomize CLI 命令参考。</div>
+	
 	
         <div class="section-index">
     
@@ -391,11 +683,63 @@
             
         
             
+        
+            
+        
+            
                 <div class="entry">
                     <h5>
-                        <a href="/zh/guides/bespoke/">配置定制（Bespoke configuration）</a>
+                        <a href="/zh/guides/introduction/">Introduction</a>
                     </h5>
-                    <p>自定义配置的工作流。</p>
+                    <p>Introduction to Kubectl and Kustomize</p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/zh/guides/config_management/">Configuration Management</a>
+                    </h5>
+                    <p>Managing your deployed application&rsquo;s config using Kubectl</p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/zh/guides/resource_printing/">Resource Printing</a>
+                    </h5>
+                    <p>Getting to know the status of your cloud resources</p>
                 </div>
             
         
@@ -406,10 +750,12 @@
             
                 <div class="entry">
                     <h5>
-                        <a href="/zh/guides/offtheshelf/">通用配置（Off-the-shelf configuration）</a>
+                        <a href="/zh/guides/container_debugging/">Container Debugging</a>
                     </h5>
-                    <p>使用通用配置的工作流。</p>
+                    <p>Debugging Deployed Container Images</p>
                 </div>
+            
+        
             
         
             
@@ -419,10 +765,61 @@
             
                 <div class="entry">
                     <h5>
-                        <a href="/zh/guides/plugins/">Kustomize 插件</a>
+                        <a href="/zh/guides/app_deployment/">App Deployment</a>
+                    </h5>
+                    <p>Deploying Applications using Kubectl</p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/zh/guides/extending_kubectl/">Extending Kubectl</a>
+                    </h5>
+                    <p>Working with Plugins for Kubectl</p>
+                </div>
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/zh/guides/extending_kustomize/">拓展 Kustomize</a>
                     </h5>
                     <p>Kustomize 插件指南</p>
                 </div>
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/zh/guides/example/">Examples</a>
+                    </h5>
+                    <p></p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
             
         
     
@@ -490,7 +887,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最后修改 2020年11月11日: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/6ace8d4147d100ebaea65ab8595aabfa38570346">add `zh` dir (6ace8d4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最后修改 2021年03月03日: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/74194263ad997e0c954747865eef567cd5538bc4">update zh doc (7419426)</a>
 </div>
 </div>
 

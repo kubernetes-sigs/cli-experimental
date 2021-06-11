@@ -1,35 +1,39 @@
 ---
-title: "Writing Docs"
-linkTitle: "Writing Docs"
+title: "Documentation"
+linkTitle: "Documentation"
 type: docs
-weight: 30
+weight: 3
 description: >
-    How to make Kustomize docs contributions
+    How to make contributions to this site
 ---
 
-Kustomize uses [Docsy](https://www.docsy.dev) for the site, and was
+This site uses [Docsy](https://www.docsy.dev) and was
 forked from the [docsy-example](https://github.com/google/docsy-example)
 
 ## Prerequisites
 
 - [Install hugo](https://gohugo.io/getting-started/installing/#fetch-from-github)
 - Clone kustomize
-  - `git clone git@github.com:kubernetes-sigs/kustomize && cd kustomize/`
+  - `git clone git@github.com:kubernetes-sigs/cli-experimental && cd site/`
 
 ## Development
 
 The doc input files are in the `site` directory.  The site can be hosted locally using
-`hugo serve`.
+`hugo server`.
 
 ```shell script
 cd site/
-hugo serve
+npm install
+npm install -g postcss-cli
+npm install autoprefixer
+npm audit fix
+hugo server
 ```
 
 ```shell script
 ...
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
-Web Server is available at http://localhost:1313/kustomize/ (bind address 127.0.0.1)
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 ```
 
 ## Publishing
@@ -56,26 +60,50 @@ hugo
 
 Add the `site/` and `docs/` folders to a commit, then create a PR.
 
-## Publishing docs to your kustomize fork
+## Publishing docs in forked repository
 
-It is possible to have the kustomize docs published to your forks github pages.
+We use **Netlify** to publish changes in the site. You can also enable netlify on you're forked repo
+by doing the following step.
 
-### Setup GitHub Pages for the fork
+- Log into Netlify using your Github Credentials.
+- Click **New Site from Git** button in the Netlify Dashboard.
+- The setup has 3 steps.
+  - Connect to Git Provider - Select Github here and authenticate your Github account if not done earlier.
+  - Pick a repository - Select the forked repository here.
+  - Build options, and deploy! - Here set **Branch to deploy** to the branch that has the latest changes also set **Publish directory** to `./docs`.
 
-1. Go to the *forked repo's* **Settings** tab
-   - e.g. [https://github.com/pwittrock/kustomize](https://github.com/pwittrock/kustomize)
-2. Go to the **GitHub Pages** section
-3. Set the source to master branch **/docs folder**
+![Netlify Setup Image][setup]
 
-### Publish to the fork's GitHub Pages
+## Raising a PR for changes in the site
 
-{{% pageinfo color="info" %}}
-Changes must be pushed to the fork's **master branch** to be served as the fork's GitHub Page.
-{{% /pageinfo %}}
+- Once deployed, you'll have a URL pointing to the newly deployed site. Submit the URL along with the PR.
+- Make sure your changes are working as expected in the newly received netlify URL before PR.
 
-1. Make a change to a file under `site/content`
-2. Run `hugo` from the `site/` directory
-3. Add the `site` and `docs` directories to the **master branch**
-4. Commit and push the changes to the *remote fork's* **master branch**
-5. After a few minutes, the docs should be served from the fork's GitHub Page
-   - e.g. [https://pwittrock.github.io/kustomize/](https://pwittrock.github.io/kustomize/)
+![Netlify Deployed Image][deploy]
+
+
+## Setting Custom Domain & DNS changes
+
+{{< alert color="success" title="Note" >}}
+This is applicable only for the site adminisrators on the event of site migration.
+{{< /alert >}}
+- Make sure you're a part of **Kubernetes Docs** Netlify team.
+- Under **Site Settings** you'll find **Domain Management**, where in you can set the site's custom domain.
+- Ideally, it should match up with the wild card `*.k8s.io`
+- Once custom domains are set on Netlify, you can raise a PR in [k8s.io](https://github.com/kubernetes/k8s.io) github repository.
+- You'll have to add this snippet in `dns/zone-configs/k8s.io._0_base.yaml` file:
+```yaml
+# <github repo url> (@maintainers)
+<custom_name>:
+  type: CNAME
+  value: <current_netlify_url>.
+```
+{{< alert color="success" title="Useful Links" >}}
+- Subproject Site Requests: https://github.com/kubernetes/community/blob/master/github-management/subproject-site-requests.md.
+- Issue template for site request: https://github.com/kubernetes/org/issues/new/choose, select **Netlify site request**.
+{{< /alert >}}
+
+
+
+[setup]: /images/netlify_setup.png
+[deploy]: /images/netlify_deployed.png

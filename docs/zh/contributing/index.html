@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -22,22 +22,22 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>贡献指南 | SIG CLI</title><meta property="og:title" content="贡献指南" />
-<meta property="og:description" content="自定义 Kubernetes 配置" />
+<meta property="og:description" content="Kubectl 和 Kustomize 的文档" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/zh/contributing/" />
 <meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="贡献指南">
-<meta itemprop="description" content="自定义 Kubernetes 配置">
+<meta itemprop="description" content="Kubectl 和 Kustomize 的文档">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="贡献指南"/>
-<meta name="twitter:description" content="自定义 Kubernetes 配置"/>
+<meta name="twitter:description" content="Kubectl 和 Kustomize 的文档"/>
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" as="style">
-<link href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" as="style">
+<link href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -91,7 +91,7 @@
 				
 				
 				
-				<a class="nav-link" href="/zh/api-reference/" ><span>API 参考</span></a>
+				<a class="nav-link" href="/zh/references/" ><span>参考</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -151,7 +151,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.223cef4aa7d35ce05d35e863204807e6a69d63ef7911c4224abb1a02b256f8ce123efbb3545e5e6b75e92171b62888069a77c770912f35edb36802526da28593.json"
+  data-offline-search-index-json-src="/offline-search-index.82a2731adc87a553a961a520597d97db4187cfc677484a984ba030e34c95e1a749ab98359c0b9547afb6dc810aed92b5ca7502ff38adc055cc66324c73a6d78b.json"
   data-offline-search-base-href="/"
 >
 
@@ -181,7 +181,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.223cef4aa7d35ce05d35e863204807e6a69d63ef7911c4224abb1a02b256f8ce123efbb3545e5e6b75e92171b62888069a77c770912f35edb36802526da28593.json"
+  data-offline-search-index-json-src="/offline-search-index.82a2731adc87a553a961a520597d97db4187cfc677484a984ba030e34c95e1a749ab98359c0b9547afb6dc810aed92b5ca7502ff38adc055cc66324c73a6d78b.json"
   data-offline-search-base-href="/"
 >
 
@@ -231,10 +231,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/contributing/bugs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Filing Bugs</a>
+    <a  href="/zh/contributing/kubectl/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Kubectl</a>
   </li>
   <ul>
-    <li class="collapse " id="zhcontributingbugs">
+    <li class="collapse " id="zhcontributingkubectl">
       
       
       
@@ -254,10 +254,27 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/contributing/community/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Community</a>
+    <a  href="/zh/contributing/kustomize/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Kustomize</a>
   </li>
   <ul>
-    <li class="collapse " id="zhcontributingcommunity">
+    <li class="collapse " id="zhcontributingkustomize">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/zh/contributing/kustomize/bugs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Filing Bugs</a>
+  </li>
+  <ul>
+    <li class="collapse " id="zhcontributingkustomizebugs">
       
       
       
@@ -277,10 +294,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/contributing/features/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contributing Features</a>
+    <a  href="/zh/contributing/kustomize/community/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Community</a>
   </li>
   <ul>
-    <li class="collapse " id="zhcontributingfeatures">
+    <li class="collapse " id="zhcontributingkustomizecommunity">
       
       
       
@@ -300,79 +317,108 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/contributing/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Writing Docs</a>
+    <a  href="/zh/contributing/kustomize/features/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contributing Features</a>
+  </li>
+  <ul>
+    <li class="collapse " id="zhcontributingkustomizefeatures">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/zh/contributing/kustomize/howitworks/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Writing Code</a>
+  </li>
+  <ul>
+    <li class="collapse " id="zhcontributingkustomizehowitworks">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/zh/contributing/kustomize/mac/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">MacOS Dev Guide</a>
+  </li>
+  <ul>
+    <li class="collapse " id="zhcontributingkustomizemac">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/zh/contributing/kustomize/windows/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Windows Dev Guide</a>
+  </li>
+  <ul>
+    <li class="collapse " id="zhcontributingkustomizewindows">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/zh/contributing/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Documentation</a>
   </li>
   <ul>
     <li class="collapse " id="zhcontributingdocs">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/contributing/howitworks/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Writing Code</a>
-  </li>
-  <ul>
-    <li class="collapse " id="zhcontributinghowitworks">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/contributing/mac/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">MacOS Dev Guide</a>
-  </li>
-  <ul>
-    <li class="collapse " id="zhcontributingmac">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/contributing/windows/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Windows Dev Guide</a>
-  </li>
-  <ul>
-    <li class="collapse " id="zhcontributingwindows">
       
       
       
@@ -445,7 +491,7 @@
 <div class="td-content">
 	<h1>贡献指南</h1>
 	
-	<p>以下是 Kustomize 贡献指南。</p>
+	<p>以下为 Kubectl 和 Kustomize 的贡献指南。</p>
 
         <div class="section-index">
     
@@ -457,64 +503,40 @@
             
                 <div class="entry">
                     <h5>
-                        <a href="/zh/contributing/bugs/">Filing Bugs</a>
+                        <a href="/zh/contributing/kubectl/">Kubectl</a>
                     </h5>
-                    <p>How to file bugs and fix Kustomize bugs</p>
+                    <p>Contribute to Kubectl</p>
                 </div>
             
         
             
                 <div class="entry">
                     <h5>
-                        <a href="/zh/contributing/community/">Community Engagment</a>
+                        <a href="/zh/contributing/kustomize/">Kustomize</a>
                     </h5>
-                    <p>Joining SIG-CLI and the Kubernetes community</p>
+                    <p>Contribute to Kustomize</p>
                 </div>
             
         
             
                 <div class="entry">
                     <h5>
-                        <a href="/zh/contributing/features/">Contributing Features</a>
+                        <a href="/zh/contributing/docs/">Documentation</a>
                     </h5>
-                    <p>How to contribute features</p>
+                    <p>How to make contributions to this site</p>
                 </div>
             
         
             
-                <div class="entry">
-                    <h5>
-                        <a href="/zh/contributing/docs/">Writing Docs</a>
-                    </h5>
-                    <p>How to make Kustomize docs contributions</p>
-                </div>
+        
             
         
             
-                <div class="entry">
-                    <h5>
-                        <a href="/zh/contributing/howitworks/">Writing Code</a>
-                    </h5>
-                    <p>How to modify Kustomize</p>
-                </div>
+        
             
         
             
-                <div class="entry">
-                    <h5>
-                        <a href="/zh/contributing/mac/">MacOS Dev Guide</a>
-                    </h5>
-                    <p>How to develop on MacOS</p>
-                </div>
-            
         
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/zh/contributing/windows/">Windows Dev Guide</a>
-                    </h5>
-                    <p>How to develop on Windows</p>
-                </div>
             
         
             
@@ -584,7 +606,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最后修改 2020年11月11日: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/6ace8d4147d100ebaea65ab8595aabfa38570346">add `zh` dir (6ace8d4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最后修改 2021年03月03日: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/74194263ad997e0c954747865eef567cd5538bc4">update zh doc (7419426)</a>
 </div>
 </div>
 

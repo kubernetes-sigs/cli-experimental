@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -22,22 +22,22 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>安装 | SIG CLI</title><meta property="og:title" content="安装" />
-<meta property="og:description" content="自定义 Kubernetes 配置" />
+<meta property="og:description" content="Kubectl 和 Kustomize 的文档" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/zh/installation/" />
 <meta property="og:site_name" content="SIG CLI" />
 <meta itemprop="name" content="安装">
-<meta itemprop="description" content="自定义 Kubernetes 配置">
+<meta itemprop="description" content="Kubectl 和 Kustomize 的文档">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="安装"/>
-<meta name="twitter:description" content="自定义 Kubernetes 配置"/>
+<meta name="twitter:description" content="Kubectl 和 Kustomize 的文档"/>
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" as="style">
-<link href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" as="style">
+<link href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -91,7 +91,7 @@
 				
 				
 				
-				<a class="nav-link" href="/zh/api-reference/" ><span>API 参考</span></a>
+				<a class="nav-link" href="/zh/references/" ><span>参考</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -151,7 +151,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.223cef4aa7d35ce05d35e863204807e6a69d63ef7911c4224abb1a02b256f8ce123efbb3545e5e6b75e92171b62888069a77c770912f35edb36802526da28593.json"
+  data-offline-search-index-json-src="/offline-search-index.82a2731adc87a553a961a520597d97db4187cfc677484a984ba030e34c95e1a749ab98359c0b9547afb6dc810aed92b5ca7502ff38adc055cc66324c73a6d78b.json"
   data-offline-search-base-href="/"
 >
 
@@ -181,7 +181,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.223cef4aa7d35ce05d35e863204807e6a69d63ef7911c4224abb1a02b256f8ce123efbb3545e5e6b75e92171b62888069a77c770912f35edb36802526da28593.json"
+  data-offline-search-index-json-src="/offline-search-index.82a2731adc87a553a961a520597d97db4187cfc677484a984ba030e34c95e1a749ab98359c0b9547afb6dc810aed92b5ca7502ff38adc055cc66324c73a6d78b.json"
   data-offline-search-base-href="/"
 >
 
@@ -231,11 +231,29 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/installation/source/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Go 源码</a>
+    <a  href="/zh/installation/kubectl/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Kubectl</a>
   </li>
   <ul>
-    <li class="collapse " id="zhinstallationsource">
+    <li class="collapse " id="zhinstallationkubectl">
       
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhinstallationkubectlbinaries" href="/zh/installation/kubectl/binaries/">Binaries</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhinstallationkubectlhomebrew" href="/zh/installation/kubectl/homebrew/">Homebrew / MacPorts</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhinstallationkubectlchocolatey" href="/zh/installation/kubectl/chocolatey/">Chocolatey</a>
       
       
     </li>
@@ -254,57 +272,41 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/installation/homebrew/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Homebrew / MacPorts</a>
+    <a  href="/zh/installation/kustomize/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Kustomize</a>
   </li>
   <ul>
-    <li class="collapse " id="zhinstallationhomebrew">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
+    <li class="collapse " id="zhinstallationkustomize">
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/installation/binaries/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">可执行文件</a>
-  </li>
-  <ul>
-    <li class="collapse " id="zhinstallationbinaries">
       
       
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhinstallationkustomizesource" href="/zh/installation/kustomize/source/">Go 源码安装</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/zh/installation/chocolatey/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Chocolatey</a>
-  </li>
-  <ul>
-    <li class="collapse " id="zhinstallationchocolatey">
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhinstallationkustomizedocker" href="/zh/installation/kustomize/docker/">Docker 镜像</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhinstallationkustomizehomebrew" href="/zh/installation/kustomize/homebrew/">Homebrew / MacPorts</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhinstallationkustomizebinaries" href="/zh/installation/kustomize/binaries/">可执行文件</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-zhinstallationkustomizechocolatey" href="/zh/installation/kustomize/chocolatey/">Chocolatey</a>
       
       
     </li>
@@ -385,39 +387,37 @@
     <hr class="panel-line">
         
             
+        
+            
                 <div class="entry">
                     <h5>
-                        <a href="/zh/installation/source/">Go 源码</a>
+                        <a href="/zh/installation/kubectl/">Kubectl</a>
                     </h5>
-                    <p>使用 Go 源码安装 Kustomize。</p>
+                    <p>Install Kubectl</p>
                 </div>
+            
+        
+            
+        
+            
+        
             
         
             
                 <div class="entry">
                     <h5>
-                        <a href="/zh/installation/homebrew/">Homebrew / MacPorts</a>
+                        <a href="/zh/installation/kustomize/">Kustomize</a>
                     </h5>
-                    <p>MacOS 系统可以使用 Homebrew 或 MacPorts 来安装 Kustomize。</p>
+                    <p>安装 Kustomize</p>
                 </div>
             
         
             
-                <div class="entry">
-                    <h5>
-                        <a href="/zh/installation/binaries/">可执行文件</a>
-                    </h5>
-                    <p>下载编译好的二进制文件来安装 Kustomize。</p>
-                </div>
+        
             
         
             
-                <div class="entry">
-                    <h5>
-                        <a href="/zh/installation/chocolatey/">Chocolatey</a>
-                    </h5>
-                    <p>Windows 系统可以使用 Chocolatey 安装 Kustomize。</p>
-                </div>
+        
             
         
             
@@ -487,7 +487,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最后修改 2020年11月11日: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/6ace8d4147d100ebaea65ab8595aabfa38570346">add `zh` dir (6ace8d4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最后修改 2021年03月03日: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/74194263ad997e0c954747865eef567cd5538bc4">update zh doc (7419426)</a>
 </div>
 </div>
 

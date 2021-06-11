@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -21,23 +21,23 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>SIG CLI</title><meta property="og:title" content="Kustomize" />
-<meta property="og:description" content="自定义 Kubernetes 配置" />
+<title>SIG CLI</title><meta property="og:title" content="SIG CLI" />
+<meta property="og:description" content="Kubectl 和 Kustomize 的文档" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/zh/" />
 <meta property="og:site_name" content="SIG CLI" />
-<meta itemprop="name" content="Kustomize">
-<meta itemprop="description" content="自定义 Kubernetes 配置">
+<meta itemprop="name" content="SIG CLI">
+<meta itemprop="description" content="Kubectl 和 Kustomize 的文档">
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Kustomize"/>
-<meta name="twitter:description" content="自定义 Kubernetes 配置"/>
+<meta name="twitter:title" content="SIG CLI"/>
+<meta name="twitter:description" content="Kubectl 和 Kustomize 的文档"/>
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" as="style">
-<link href="/scss/main.min.3a0a27233a6adef263918bba23834e5f51f6132a3540e2ada13e8003c3abb83e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" as="style">
+<link href="/scss/main.min.aae62c800e3989b7b86f60f95a532ae2acace7609172930b9971ee140697a4c8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -55,7 +55,7 @@
   <body class="td-home">
     <header>
       
-<nav class="js-navbar-scroll navbar navbar-expand navbar-dark  td-navbar-cover flex-column flex-md-row td-navbar">
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
         <a class="navbar-brand" href="/zh/">
 		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">SIG CLI</span>
 	</a>
@@ -90,7 +90,7 @@
 				
 				
 				
-				<a class="nav-link" href="/zh/api-reference/" ><span>API 参考</span></a>
+				<a class="nav-link" href="/zh/references/" ><span>参考</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -150,7 +150,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.223cef4aa7d35ce05d35e863204807e6a69d63ef7911c4224abb1a02b256f8ce123efbb3545e5e6b75e92171b62888069a77c770912f35edb36802526da28593.json"
+  data-offline-search-index-json-src="/offline-search-index.82a2731adc87a553a961a520597d97db4187cfc677484a984ba030e34c95e1a749ab98359c0b9547afb6dc810aed92b5ca7502ff38adc055cc66324c73a6d78b.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,58 +166,101 @@
 
 
 
-
-
-
-
-
-
-<section id="td-cover-block-0" class="row td-cover-block td-cover-block--height-full js-td-cover td-overlay td-overlay--dark -bg-primary">
-  <div class="container td-overlay__inner">
-    <div class="row">
-      <div class="col-12">
-        <div class="text-center">
-          <h1 class="display-1 mt-0 mt-md-5 pb-4">Kustomize</h1>
-          
-          <div class="pt-3 lead">
-            <div class="mx-auto">
-  <p class="lead mt-5">Kustomize 提供了一种自定义 Kubernetes 资源配置的解决方案，该方案摆脱了模板和 DSL。</p>
-  <a
-    class="btn btn-lg btn-primary mr-3 mb-4"
-    href="/zh/installation/"
-  >
-    Get Started <i class="fas fa-arrow-alt-circle-right ml-2"></i>
-  </a>
-  <a
-    class="btn btn-lg btn-secondary mr-3 mb-4"
-    href="/zh/contributing/"
-  >
-    Contribute <i class="fas fa-pencil-alt ml-2"></i>
-  </a>
+<a id="td-block-0" class="td-offset-anchor"></a>
+<section class="row td-box td-box--primary position-relative td-box--gradient td-box--height-min">
+	<div class="container text-center td-arrow-down">
+		<span class="h4 mb-0">
+			<div class="mx-auto">
+	<img src="/images/banner.jpg" width=90% height=90%>
+	<p class="lead mt-5">Kubectl 和 Kustomize 的使用指南和 API 参考。</p>
+	<a class="btn btn-lg btn-primary mr-3 mb-4 lead mt-3" href="/zh/guides/">
+    	快速开始 <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+  	</a>
 </div>
 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+		</span>
+	</div>
+</section>
+
+
+
+
+
+<a id="td-block-1" class="td-offset-anchor"></a>
+<section class="row td-box td-box--secondary position-relative td-box--gradient td-box--height-min">
+	<div class="container text-center td-arrow-down">
+		<span class="h4 mb-0">
+			<div>
+	<img src="/images/new_kubectl_banner.png" width=100% height=100%>
+	<p class="lead mt-5">
+      <b>Kubectl</b> 是一个 Kubernetes CLI，其提供了众多操作 Kubernetes 集群的功能。它可以在 Kubernetes 上部署和管理应用程序，并用于编写脚本或构建更高级别的框架。
+	</p>
+	<a class="btn btn-lg btn-primary mr-3 mb-4 lead mt-5" href="/zh/references/kubectl/">
+    	查看参考文档 <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+	</a>
+</div>
+
+		</span>
+	</div>
+</section>
+
+
+
+
+
+<a id="td-block-2" class="td-offset-anchor"></a>
+<section class="row td-box td-box--white position-relative td-box--gradient td-box--height-min">
+	<div class="container text-center td-arrow-down">
+		<span class="h4 mb-0">
+			<div class="mx-auto">
+	<img src="/images/new_kustomize_banner.jpg" width=80% height=80%>
+	<p class="lead mt-4">
+      <b>Kustomize</b> 可以让你可以通过多种途径自定义原生无模板的 YAML 文件，保持原始 YAML 不变，并按原样使用。
+	</p>
+	<a class="btn btn-lg btn-primary mr-3 mb-4 lead mt-3" href="/zh/references/kustomize/">
+    	查看参考文档 <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+  	</a>
+</div>
+
+		</span>
+	</div>
 </section>
 
 
 
 
  
-<a id="td-block-1" class="td-offset-anchor"></a>
-<section class="row td-box td-box--1 td-box--gradient td-box--height-auto">
+<a id="td-block-3" class="td-offset-anchor"></a>
+<section class="row td-box td-box--primary td-box--gradient td-box--height-auto">
 	<div class="col">
 		<div class="row ">
 			<div class="col-lg-4 mb-5 mb-lg-0 text-center ">
   <div class="mb-4 h1">
+    <i class="fab fa-slack"></i>
+  </div>
+  <h4 class="h3">加入我们的 Slack</h4>
+  <p class="mb-0"><p>在 Slack 上加入社区</p>
+</p>
+  <p><a href="https://slack.k8s.io/">加入我们 …</a></p>
+</div>
+<div class="col-lg-4 mb-5 mb-lg-0 text-center ">
+  <div class="mb-4 h1">
     <i class="fab fa-github"></i>
   </div>
-  <h4 class="h3">参与贡献</h4>
-  <p class="mb-0"><p>欢迎在 <strong>Github</strong> 提交 <a href="https://github.com/kubernetes-sigs/kustomize/pulls">RP</a>，贡献你的力量。</p>
+  <h4 class="h3">欢迎贡献！</h4>
+  <p class="mb-0"><p>在 <strong>GitHub</strong> 上提交 Pull Request 来参与贡献
+随时欢迎新用户！</p>
 </p>
+  <p><a href="https://github.com/kubernetes-sigs">贡献 Kubectl 和 Kustomize …</a></p>
+</div>
+<div class="col-lg-4 mb-5 mb-lg-0 text-center ">
+  <div class="mb-4 h1">
+    <i class="fab fa-twitter"></i>
+  </div>
+  <h4 class="h3">关注我们的 Twitter!</h4>
+  <p class="mb-0"><p>用于公布最新功能等。</p>
+</p>
+  <p><a href="https://twitter.com/kubernetesio">关注我们 …</a></p>
 </div>
 
 		</div>

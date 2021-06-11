@@ -61,8 +61,7 @@ git checkout kustomize/v3.2.3
         &lt;p&gt;Binaries at various versions for linux, MacOs and Windows are published on the &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/releases&#34;&gt;releases page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The following &lt;a href=&#34;https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&#34;&gt;script&lt;/a&gt; detects your OS and downloads the appropriate kustomize binary to your
 current working directory.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -s &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://raw.githubusercontent.com/\
-&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; bash
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -s &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; bash
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;This script doesn&amp;rsquo;t work for ARM architecture.&lt;/strong&gt; If you want to install ARM binaries, please
 go to the release page to find the URL.&lt;/p&gt;
 

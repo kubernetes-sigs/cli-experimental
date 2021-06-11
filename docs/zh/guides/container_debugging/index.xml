@@ -1,0 +1,309 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SIG CLI – Container Debugging</title>
+    <link>https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/</link>
+    <description>Recent content in Container Debugging on SIG CLI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Guides: Container Logs</title>
+      <link>https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/container_logs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/container_logs/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Print the Logs of a Container in a cluster&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&#34;summarizing-resources&#34;&gt;Summarizing Resources&lt;/h1&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Debugging Workloads by printing out the Logs of containers in a cluster.&lt;/p&gt;
+&lt;h2 id=&#34;print-logs-for-a-container-in-a-pod&#34;&gt;Print Logs for a Container in a Pod&lt;/h2&gt;
+&lt;p&gt;Print the logs for a Pod running a single Container&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl logs echo-c6bc8ccff-nnj52
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hello
+hello
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Operations&lt;/h4&gt;
+&lt;p&gt;One can also perfrom debugging operations such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Print Logs for all Pods for a Workload&lt;/li&gt;
+&lt;li&gt;Follow Logs for a Container&lt;/li&gt;
+&lt;li&gt;Printing Logs for a Container that has exited&lt;/li&gt;
+&lt;li&gt;Selecting a Container in a Pod&lt;/li&gt;
+&lt;li&gt;Printing Logs After a Time&lt;/li&gt;
+&lt;li&gt;Printing Logs Since a Time&lt;/li&gt;
+&lt;li&gt;Include Timestamps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;and so on.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Command / Examples&lt;/h4&gt;
+Check out the &lt;a href=&#34;https://kubectl.docs.kubernetes.io/references/kubectl/logs/&#34;&gt;reference&lt;/a&gt; for commands and examples.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Copying Container Files</title>
+      <link>https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/copying_container_files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/copying_container_files/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy files to and from Containers in a cluster&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&#34;copying-container-files&#34;&gt;Copying Container Files&lt;/h1&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Copying files from Containers in a cluster to a local filesystem&lt;/li&gt;
+&lt;li&gt;Copying files from a local filesystem to Containers in a cluster&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Install Tar&lt;/h4&gt;
+Copy requires that &lt;em&gt;tar&lt;/em&gt; be installed in the container image.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;local-to-remote&#34;&gt;Local to Remote&lt;/h2&gt;
+&lt;p&gt;Copy a local file to a remote Pod in a cluster.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Local file format is &lt;code&gt;&amp;lt;path&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Remote file format is &lt;code&gt;&amp;lt;pod-name&amp;gt;:&amp;lt;path&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cp /tmp/foo_dir &amp;lt;some-pod&amp;gt;:/tmp/bar_dir
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;remote-to-local&#34;&gt;Remote to Local&lt;/h2&gt;
+&lt;p&gt;Copy a remote file from a Pod to a local file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Local file format is &lt;code&gt;&amp;lt;path&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Remote file format is &lt;code&gt;&amp;lt;pod-name&amp;gt;:&amp;lt;path&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cp &amp;lt;some-pod&amp;gt;:/tmp/foo /tmp/bar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Operations&lt;/h4&gt;
+&lt;p&gt;One can also perfrom operations such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy a specific container within a Pod running multiple containers&lt;/li&gt;
+&lt;li&gt;Set the Pod namespace by prefixing the Pod name with &lt;code&gt;&amp;lt;namespace&amp;gt;/&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Command / Examples&lt;/h4&gt;
+Check out the &lt;a href=&#34;https://kubectl.docs.kubernetes.io/references/kubectl/cp/&#34;&gt;reference&lt;/a&gt; for commands and examples of &lt;code&gt;cp&lt;/code&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Executing a command in a container</title>
+      <link>https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/executing_a_command_in_a_container/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/executing_a_command_in_a_container/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Execute a Command in a Container&lt;/li&gt;
+&lt;li&gt;Get a Shell in a Container&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&#34;executing-commands&#34;&gt;Executing Commands&lt;/h1&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Debugging Workloads by running commands within the Container.  Commands may be a Shell with
+a tty.&lt;/p&gt;
+&lt;h2 id=&#34;exec-command&#34;&gt;Exec Command&lt;/h2&gt;
+&lt;p&gt;Run a command in a Container in the cluster by specifying the &lt;strong&gt;Pod name&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl &lt;span style=&#34;color:#204a87&#34;&gt;exec&lt;/span&gt; nginx-78f5d695bd-czm8z ls
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  root  run  sbin  srv  sys  tmp  usr  var
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;exec-shell&#34;&gt;Exec Shell&lt;/h2&gt;
+&lt;p&gt;To get a Shell in a Container, use the &lt;code&gt;-t -i&lt;/code&gt; options to get a tty and attach STDIN.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl &lt;span style=&#34;color:#204a87&#34;&gt;exec&lt;/span&gt; -t -i nginx-78f5d695bd-czm8z bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@nginx-78f5d695bd-czm8z:/# ls
+bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  root  run  sbin  srv  sys  tmp  usr  var
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Specifying the Container&lt;/h4&gt;
+For Pods running multiple Containers, the Container should be specified with &lt;code&gt;-c &amp;lt;container-name&amp;gt;&lt;/code&gt;.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Port forward to Pods</title>
+      <link>https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/port_forward_to_pods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/port_forward_to_pods/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Port Forward local connections to Pods running in a cluster&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&#34;port-forward&#34;&gt;Port Forward&lt;/h1&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Connect to ports of Pods running a cluster by port forwarding local ports.&lt;/p&gt;
+&lt;h2 id=&#34;forward-multiple-ports&#34;&gt;Forward Multiple Ports&lt;/h2&gt;
+&lt;p&gt;Listen on ports 5000 and 6000 locally, forwarding data to/from ports 5000 and 6000 in the pod&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl port-forward pod/mypod &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;5000&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;6000&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Operations&lt;/h4&gt;
+&lt;p&gt;One can also perfrom operations such as, Port Forward to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pod in a Workload&lt;/li&gt;
+&lt;li&gt;Different Local and Remote Ports&lt;/li&gt;
+&lt;li&gt;Random Local Port&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Command / Examples&lt;/h4&gt;
+Check out the &lt;a href=&#34;https://kubectl.docs.kubernetes.io/references/kubectl/port-forward/&#34;&gt;reference&lt;/a&gt; for commands and examples of &lt;code&gt;port forwarding&lt;/code&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Guides: Proxying traffic to services</title>
+      <link>https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/proxying_traffic_to_services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/zh/guides/container_debugging/proxying_traffic_to_services/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;TL;DR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Proxy local connections to Services running in the cluster&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&#34;connecting-to-services&#34;&gt;Connecting to Services&lt;/h1&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Not all Services running a Kubernetes cluster are exposed externally.  However Services
+only exposed internally to a cluster with a &lt;em&gt;clusterIp&lt;/em&gt; are accessible through an
+apiserver proxy.&lt;/p&gt;
+&lt;p&gt;Users may use Proxy to &lt;strong&gt;connect to Kubernetes Services in a cluster that are not
+externally exposed&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Services running a type LoadBalancer or type NodePort may be exposed externally and
+accessed without the need for a Proxy.&lt;/p&gt;
+&lt;h2 id=&#34;connecting-to-an-internal-service&#34;&gt;Connecting to an internal Service&lt;/h2&gt;
+&lt;p&gt;Connect to a internal Service using the Proxy command, and the Service Proxy url.&lt;/p&gt;
+&lt;p&gt;To visit the nginx service go to the Proxy URL at
+&lt;code&gt;http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl proxy
+
+Starting to serve on 127.0.0.1:8001
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Literal Syntax&lt;/h4&gt;
+&lt;p&gt;To connect to a Service through a proxy the user must build the Proxy URL.  The Proxy URL format is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;http://&amp;lt;apiserver-address&amp;gt;/api/v1/namespaces/&amp;lt;service-namespace&amp;gt;/services/&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;https:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&amp;lt;service-name&amp;gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;:&amp;lt;port-name&amp;gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;/proxy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;The apiserver-address should be the URL printed by the Proxy command&lt;/li&gt;
+&lt;li&gt;The Port is optional if you haven’t specified a name for your port&lt;/li&gt;
+&lt;li&gt;The Protocol is optional if you are using &lt;code&gt;http&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;builtin-cluster-services&#34;&gt;Builtin Cluster Services&lt;/h2&gt;
+&lt;p&gt;A common usecase is to connect to Services running as part of the cluster itself.  A user can print out these
+Services and their Proxy Urls with &lt;code&gt;kubectl cluster-info&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cluster-info
+
+Kubernetes master is running at https://104.197.5.247
+GLBCDefaultBackend is running at https://104.197.5.247/api/v1/namespaces/kube-system/services/default-http-backend:http/proxy
+Heapster is running at https://104.197.5.247/api/v1/namespaces/kube-system/services/heapster/proxy
+KubeDNS is running at https://104.197.5.247/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+Metrics-server is running at https://104.197.5.247/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;More Info&lt;/h4&gt;
+For more information on connecting to a cluster, see
+&lt;a href=&#34;https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster/&#34;&gt;Accessing Clusters&lt;/a&gt;.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

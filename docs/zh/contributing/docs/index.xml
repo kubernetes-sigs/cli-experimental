@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SIG CLI – Writing Docs</title>
+    <title>SIG CLI – Documentation</title>
     <link>https://kubectl.docs.kubernetes.io/zh/contributing/docs/</link>
-    <description>Recent content in Writing Docs on SIG CLI</description>
+    <description>Recent content in Documentation on SIG CLI</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="https://kubectl.docs.kubernetes.io/zh/contributing/docs/index.xml" rel="self" type="application/rss+xml" />

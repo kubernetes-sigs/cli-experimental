@@ -7,4 +7,4 @@ menu:
     weight: 99
 ---
 
-以下是 Kustomize 贡献指南。
+以下为 Kubectl 和 Kustomize 的贡献指南。
