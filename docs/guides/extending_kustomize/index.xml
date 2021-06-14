@@ -47,7 +47,7 @@ complete plugin argument specification.&lt;/p&gt;
 &lt;h2 id=&#34;_annotationtransformer_&#34;&gt;&lt;em&gt;AnnotationTransformer&lt;/em&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;usage-via-kustomizationyaml&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
 &lt;h4 id=&#34;field-name-commonannotations&#34;&gt;field name: &lt;code&gt;commonAnnotations&lt;/code&gt;&lt;/h4&gt;
-&lt;p&gt;Adds annotions (non-identifying metadata) to add
+&lt;p&gt;Adds annotations (non-identifying metadata) to
 all resources. Like labels, these are key value
 pairs.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;commonAnnotations:
