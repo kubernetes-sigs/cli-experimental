@@ -45,7 +45,11 @@ resources:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+<<<<<<< HEAD
   name: custom-prefix-the-deployment
+=======
+  name: overlook-the-deployment
+>>>>>>> 0daa248bc506a66453afc412c9c8fd0561884847
 spec:
   replicas: 5
   template:
