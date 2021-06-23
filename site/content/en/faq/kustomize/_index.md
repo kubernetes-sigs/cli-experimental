@@ -47,8 +47,14 @@ relocatability.
 
 To disable this, use v3, and the `load_restrictor` flag:
 
-```
+```bash
 kustomize build --load_restrictor none $target
+```
+
+To disable this in v4, use the `load-restrictor` flag:
+
+```bash
+kustomize build --load-restrictor LoadRestrictionsNone $target
 ```
 
 ## Some field is not transformed by kustomize

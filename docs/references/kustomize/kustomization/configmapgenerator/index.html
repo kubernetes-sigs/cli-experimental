@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.48899e71e736bbadccbce1d044fe073ff0e14badd6a230ba41538963ebbba6685d8abf4a21ac2fdf95289ec5ae6131a7e47be1d205adc6479819b3e96a8ad2a5.json"
+  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.48899e71e736bbadccbce1d044fe073ff0e14badd6a230ba41538963ebbba6685d8abf4a21ac2fdf95289ec5ae6131a7e47be1d205adc6479819b3e96a8ad2a5.json"
+  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
   data-offline-search-base-href="/"
 >
 
@@ -1767,7 +1767,7 @@ list of <code>literals</code>.</p>
 <p>ConfigMap Resources may be generated from key-value pairs much the same as using the literals option
 but taking the key-value pairs from an environment file. These generally end in <code>.env</code>.
 To generate a ConfigMap Resource from an environment file, add an entry to <code>configMapGenerator</code> with a
-single <code>env</code> entry, e.g. <code>env: config.env</code>.</p>
+single <code>envs</code> entry, e.g. <code>envs: [ 'config.env' ]</code>.</p>
 
 
 <div class="alert alert-success" role="alert">
@@ -1786,7 +1786,8 @@ single <code>env</code> entry, e.g. <code>env: config.env</code>.</p>
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Kustomization</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">configMapGenerator</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">tracing-options</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">tracing.env</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">envs</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#000">tracing.env</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># tracing.env</span>
 <span style="color:#000">ENABLE_TRACING</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span>
 <span style="color:#000">SAMPLER_TYPE</span><span style="color:#ce5c00;font-weight:bold">=</span>probabilistic
@@ -2101,7 +2102,7 @@ Apply will update the name to include the suffix applied to the ConfigMap name.<
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 4, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/8e1ef9f7779d172dc6319e616007a396c9d5f973">Provide kustomization file overview. (8e1ef9f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 11, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/8b90539055a3de780528a563f012cad54c1bceb0">Fix a syntax error in the use of from env file (8b90539)</a>
 </div>
 </div>
 
