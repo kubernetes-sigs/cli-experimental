@@ -88,7 +88,7 @@ SAMPLER_PARAMETERS=0.1
 ### Command
 
 ```bash
-kubectl create configmap my-config --from-file=tracing.env
+kubectl create configmap my-config --from-env-file=tracing.env
 ```
 
 ### Output
