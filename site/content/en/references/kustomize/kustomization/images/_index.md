@@ -68,7 +68,7 @@ images:
 - name: my-demo-app
   newName: my-app
 - name: alpine
-  digest: sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3
+  newTag: sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3
 
 resources:
 - deployment.yaml
