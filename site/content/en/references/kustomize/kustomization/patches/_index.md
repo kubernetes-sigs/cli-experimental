@@ -2,7 +2,7 @@
 title: "patches"
 linkTitle: "patches"
 type: docs
-weight: 12
+weight: 13
 description: >
     Patch resources
 ---

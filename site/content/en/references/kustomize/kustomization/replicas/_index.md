@@ -2,7 +2,7 @@
 title: "replicas"
 linkTitle: "replicas"
 type: docs
-weight: 15
+weight: 16
 description: >
     Change the number of replicas for a resource.
 ---

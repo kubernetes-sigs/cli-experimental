@@ -2,7 +2,7 @@
 title: "nameSuffix"
 linkTitle: "nameSuffix"
 type: docs
-weight: 11
+weight: 12
 description: >
     Appends the value to the names of all resources and references.
 ---

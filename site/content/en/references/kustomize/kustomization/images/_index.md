@@ -2,7 +2,7 @@
 title: "images"
 linkTitle: "images"
 type: docs
-weight: 8
+weight: 9
 description: >
     Modify the name, tags and/or digest for images.
 ---

@@ -2,7 +2,7 @@
 title: "crds"
 linkTitle: "crds"
 type: docs
-weight: 6
+weight: 7
 description: >
     Adding CRD support
 ---
