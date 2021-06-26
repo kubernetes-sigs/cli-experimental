@@ -41,7 +41,7 @@ Resources (including configmap and secret generators)
 can _still be shared_ via the recommended best practice
 of placing them in a directory with their own
 kustomization file, and referring to this directory as a
-[`base`](/kustomize/api-reference/glossary#base) from any kustomization that
+[`base`](/references/kustomize/glossary/#base) from any kustomization that
 wants to use it.  This encourages modularity and
 relocatability.
 
