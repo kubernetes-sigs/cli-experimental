@@ -188,7 +188,7 @@ can call these methods - creating, sorting, destroying, etc.
 
 Transformers have a general generative power.
 
-A kustomization overlay, could, say, fix common oversites made in
+A kustomization overlay, could, say, fix common oversights made in
 cluster configuration.
 
 For example, a transformer could scan all resources, looking for the
