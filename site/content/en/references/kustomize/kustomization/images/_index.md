@@ -7,7 +7,7 @@ description: >
     Modify the name, tags and/or digest for images.
 ---
 
-Images modify the name, tags and/or digest for images without creating patches. 
+Images modify the name, tags and/or digest for images without creating patches.
 
 One can change the `image` in the following ways (Refer the following example to know exactly how this is done):
 
@@ -160,6 +160,26 @@ It is also possible to set a Tag from an environment variable using the same tec
 kustomize edit set image foo:$FOO_IMAGE_TAG
 kubectl apply -f .
 ```
+
+## Use the full image name to modify the name, tag and digest
+
+Kustomize has the ability to set numerous fields on images in a single, idempotent command.
+
+```bash
+kustomize edit set image index.docker.io/oldregistry/myapp=quay.io/newregistry/myapp:v2@sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3
+```
+
+Output:
+
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+  - digest: sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3
+    name: index.docker.io/sourcegraph/redis-store:insiders
+    newName: quay.io/my-reg/myapp:v
+```
+
 
 {{< alert color="success" title="Committing Image Tag Updates" >}}
 The `kustomization.yaml` changes *may* be committed back to git so that they
