@@ -225,5 +225,5 @@ tree $DEMO
 
 ```bash
 export KUSTOMIZE_PLUGIN_ROOT
-$DEMO/bin/kustomize build --enable_alpha_plugins $MYAPP
+$DEMO/bin/kustomize build --enable-alpha-plugins $MYAPP
 ```
