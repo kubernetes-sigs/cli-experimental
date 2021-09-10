@@ -134,13 +134,16 @@ ls -C1 $MYAPP
 
 ## Make a home for plugins
 
-Plugins must live in a particular place for
-kustomize to find them.
+By default plugins are searched for in the following locations:
+
+- `$HOME/kustomize/plugin`
+- `$XDG_CONFIG_HOME/kustomize/plugin`
+- `$KUSTOMIZE_PLUGIN_HOME`
 
 This demo will use the ephemeral directory:
 
 ```bash
-PLUGIN_ROOT=$DEMO/kustomize/plugin
+KUSTOMIZE_PLUGIN_ROOT=$DEMO/plugin
 ```
 
 The plugin config defined above in
@@ -155,7 +158,7 @@ This means the plugin must live in a directory
 named:
 
 ```bash
-MY_PLUGIN_DIR=$PLUGIN_ROOT/myDevOpsTeam/sillyconfigmapgenerator
+MY_PLUGIN_DIR=$KUSTOMIZE_PLUGIN_ROOT/myDevOpsTeam/sillyconfigmapgenerator
 
 mkdir -p $MY_PLUGIN_DIR
 ```
@@ -178,7 +181,7 @@ must match the plugin's _kind_ (in this case,
 
 ```bash
 # $MY_PLUGIN_DIR/SillyConfigMapGenerator
-#!/bin/bash
+#!/usr/bin/env bash
 # Skip the config file name argument.
 shift
 today=`date +%F`
@@ -221,14 +224,6 @@ tree $DEMO
 ## Build your app, using the plugin
 
 ```bash
-XDG_CONFIG_HOME=$DEMO $DEMO/bin/kustomize build --enable_alpha_plugins $MYAPP
+export KUSTOMIZE_PLUGIN_ROOT
+$DEMO/bin/kustomize build --enable_alpha_plugins $MYAPP
 ```
-
-Above, if you had set
-
-> ```bash
-> PLUGIN_ROOT=$HOME/.config/kustomize/plugin
-> ```
-
-there would be no need to use `XDG_CONFIG_HOME` in the
-_kustomize_ command above.
