@@ -222,28 +222,50 @@ data:
   SAMPLER_PARAMETERS: "0.1"
 ```
 
-{{< alert color="success" title="Overriding Base ConfigMap Values" >}}
-ConfigMaps Values from Bases may be overridden by adding another generator for the ConfigMap
-in the Variant and specifying the `behavior` field.  `behavior` may be
-one of `create` (default value), `replace` (replace the base ConfigMap),
-or `merge` (add or update the values the ConfigMap).  See [Bases and Variantions](../app_customization/bases_and_variants.md)
-for more on using Bases.  e.g. `behavior: "merge"`
+## Overriding Base ConfigMap Values
+
+ConfigMap values from bases may be overridden by adding another generator for the ConfigMap
+in the overlay and specifying the `behavior` field.  `behavior` may be
+one of:
+* `create` (default value): used to create a new ConfigMap. A name conflict error will be thrown if a ConfigMap with the same name and namespace already exists.
+* `replace`: replace an existing ConfigMap from the base.
+* `merge`: add or update the values in an existing ConfigMap from the base.
+
+When updating an existing ConfigMap with the `merge` or `replace` strategies, you must ensure that both the name and namespace match the ConfigMap you're targeting. For example, if the namespace is unspecified in the base, you should not specify it in the overlay. Conversely, if it is specified in the base, you must specify it in the overlay as well. This is true even if the overlay Kustomization includes a namespace, because configMapGenerator runs before the namespace transformer.
+
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: my-new-namespace
+
+resources:
+- ../base
+
+configMapGenerator:
+  - name: existing-name
+    namespace: existing-ns # needs to match target ConfigMap from base
+    behavior: replace
+    literals:
+      - ENV=dev
+```
+
+{{< alert color="warning" title="Name suffixing with overlay configMapGenerator" >}}
+When using configMapGenerator to override values of an existing ConfigMap, the overlay configMapGenerator does not cause suffixing of the existing ConfigMap's name to occur. To take advantage of name suffixing, use configMapGenerator in the base, and the overlay generator will correctly update the suffix based on the new content. 
 {{< /alert >}}
 
 ## Propagating the Name Suffix
 
-Letting ConfigMap or Secret know the name of the generated Resource name suffix
+Workloads that reference the ConfigMap or Secret will need to know the name of the generated Resource,
+including the suffix. Kustomize takes care of this automatically by identifying
+references to generated ConfigMaps and Secrets, and updating them.
 
-Workloads that reference the ConfigMap or Secret will need to know the name of the generated Resource
-including the suffix, however Apply takes care of this automatically for users.  Apply will identify
-references to generated ConfigMaps and Secrets, and update them.
-
-The generated ConfigMap name will be `my-java-server-env-vars` with a suffix unique to its contents.
+In the following example, the generated ConfigMap name will be `my-java-server-env-vars` with a suffix unique to its contents.
 Changes to the contents will change the name suffix, resulting in the creation of a new ConfigMap,
-and transform Workloads to point to this one.
+which Kustomize will transform Workloads to point to.
 
 The PodTemplate volume references the ConfigMap by the name specified in the generator (excluding the suffix).
-Apply will update the name to include the suffix applied to the ConfigMap name.
+Kustomize will update the name to include the suffix applied to the ConfigMap name.
 
 **Input:** The kustomization.yaml and deployment.yaml files
 
@@ -290,7 +312,7 @@ spec:
           name: my-java-server-env-vars
 ```
 
-**Applied:** The Resources that are Applied to the cluster.
+**Result:** The output of the Kustomize build.
 
 ```yaml
 apiVersion: v1
