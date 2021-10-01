@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -25,13 +25,13 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/blog/2019/09/17/v3.2.0/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2019-09-17T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2020-09-30T20:01:35&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:published_time" content="2019-09-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-30T20:01:35+05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="v3.2.0">
 <meta itemprop="description" content="Kustomize v3.2.0
-"><meta itemprop="datePublished" content="2019-09-17T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-09-30T20:01:35&#43;05:30" />
+"><meta itemprop="datePublished" content="2019-09-17T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-09-30T20:01:35+05:30" />
 <meta itemprop="wordCount" content="103">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="v3.2.0"/>
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -367,11 +367,11 @@
 <h2 id="new-subcommand">New Subcommand</h2>
 <p>Since this version, one can create a kustomization.yaml file in a directory through a <code>create</code> subcommand.</p>
 <p>Create a new overlay from the base ../base</p>
-<pre><code>kustomize create --resources ../base
+<pre tabindex="0"><code>kustomize create --resources ../base
 </code></pre><p>Create a new kustomization detecing resources in the current directory</p>
-<pre><code>kustomize create --autodetect
+<pre tabindex="0"><code>kustomize create --autodetect
 </code></pre><p>Once can also add all resources in the current directory recursively by</p>
-<pre><code>kustomize create --autodetect --recursive
+<pre tabindex="0"><code>kustomize create --autodetect --recursive
 </code></pre><h3 id="new-example-generator">New Example Generator</h3>
 <p>A new example generator of using go-getter to download resources is added. Take a look at <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/examples/goGetterGeneratorPlugin.md">go-getter generator</a>.</p>
 

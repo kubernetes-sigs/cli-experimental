@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -395,16 +395,16 @@
 <p>我们希望将一个名为 <em>ldap</em> 的 Kubernetes 集群应用的配置保存在自己的 repo 中。
 这里使用 git 进行版本控制。</p>
 <blockquote>
-<pre><code>git init ~/ldap
+<pre tabindex="0"><code>git init ~/ldap
 </code></pre></blockquote>
 <h4 id="2-创建一个-base">2) 创建一个 <a href="/references/kustomize/glossary#base">base</a></h4>
 <blockquote>
-<pre><code>mkdir -p ~/ldap/base
+<pre tabindex="0"><code>mkdir -p ~/ldap/base
 </code></pre></blockquote>
 <p>在这个目录中创建并提交 <a href="/references/kustomize/glossary#kustomization">kustomization</a> 文件及一组资源 <a href="/references/kustomize/glossary#resource">resources</a> 配置。</p>
 <h4 id="3-创建-overlays">3) 创建 <a href="/references/kustomize/glossary#overlay">overlays</a></h4>
 <blockquote>
-<pre><code>mkdir -p ~/ldap/overlays/staging
+<pre tabindex="0"><code>mkdir -p ~/ldap/overlays/staging
 mkdir -p ~/ldap/overlays/production
 </code></pre></blockquote>
 <p>每个目录都包含需要一个 <a href="/references/kustomize/glossary#kustomization">kustomization</a> 文件以及一或多个 <a href="/references/kustomize/glossary#patch">patches</a>。</p>
@@ -413,12 +413,12 @@ mkdir -p ~/ldap/overlays/production
 <h4 id="4-生成-variants">4) 生成 <a href="/references/kustomize/glossary#variant">variants</a></h4>
 <p>运行 kustomize，将生成的配置用于 kubernetes 应用发布。</p>
 <blockquote>
-<pre><code>kustomize build ~/ldap/overlays/staging | kubectl apply -f -
+<pre tabindex="0"><code>kustomize build ~/ldap/overlays/staging | kubectl apply -f -
 kustomize build ~/ldap/overlays/production | kubectl apply -f -
 </code></pre></blockquote>
 <p>也可以在 <a href="https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/">kubectl-v1.14.0</a> 版，使用 <code>kubectl</code> 命令发布你的 <a href="/references/kustomize/glossary#variant">variants</a> 。</p>
 <blockquote>
-<pre><code>kubectl apply -k ~/ldap/overlays/staging
+<pre tabindex="0"><code>kubectl apply -k ~/ldap/overlays/staging
 kubectl apply -k ~/ldap/overlays/production
 </code></pre></blockquote>
 

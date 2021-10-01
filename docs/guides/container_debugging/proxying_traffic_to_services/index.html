@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/container_debugging/proxying_traffic_to_services/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2020-09-30T20:01:35&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-30T20:01:35+05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Proxying traffic to services">
 <meta itemprop="description" content="Proxying traffic to services
 ">
-<meta itemprop="dateModified" content="2020-09-30T20:01:35&#43;05:30" />
+<meta itemprop="dateModified" content="2020-09-30T20:01:35+05:30" />
 <meta itemprop="wordCount" content="248">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Proxying traffic to services"/>
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -729,16 +729,16 @@ accessed without the need for a Proxy.</p>
 <p>Connect to a internal Service using the Proxy command, and the Service Proxy url.</p>
 <p>To visit the nginx service go to the Proxy URL at
 <code>http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/</code></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl proxy
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl proxy
 
 Starting to serve on 127.0.0.1:8001
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/
 </code></pre></div>
 
 <div class="alert alert-success" role="alert">
 <h4 class="alert-heading">Literal Syntax</h4>
 <p>To connect to a Service through a proxy the user must build the Proxy URL.  The Proxy URL format is:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">http://&lt;apiserver-address&gt;/api/v1/namespaces/&lt;service-namespace&gt;/services/<span style="color:#ce5c00;font-weight:bold">[</span>https:<span style="color:#ce5c00;font-weight:bold">]</span>&lt;service-name&gt;<span style="color:#ce5c00;font-weight:bold">[</span>:&lt;port-name&gt;<span style="color:#ce5c00;font-weight:bold">]</span>/proxy
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">http://&lt;apiserver-address&gt;/api/v1/namespaces/&lt;service-namespace&gt;/services/<span style="color:#ce5c00;font-weight:bold">[</span>https:<span style="color:#ce5c00;font-weight:bold">]</span>&lt;service-name&gt;<span style="color:#ce5c00;font-weight:bold">[</span>:&lt;port-name&gt;<span style="color:#ce5c00;font-weight:bold">]</span>/proxy
 </code></pre></div><ul>
 <li>The apiserver-address should be the URL printed by the Proxy command</li>
 <li>The Port is optional if you haven’t specified a name for your port</li>
@@ -750,7 +750,7 @@ Starting to serve on 127.0.0.1:8001
 <h2 id="builtin-cluster-services">Builtin Cluster Services</h2>
 <p>A common usecase is to connect to Services running as part of the cluster itself.  A user can print out these
 Services and their Proxy Urls with <code>kubectl cluster-info</code>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cluster-info
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cluster-info
 
 Kubernetes master is running at https://104.197.5.247
 GLBCDefaultBackend is running at https://104.197.5.247/api/v1/namespaces/kube-system/services/default-http-backend:http/proxy

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -803,7 +803,7 @@ complete plugin argument specification.</p>
 <p>Adds annotations (non-identifying metadata) to
 all resources. Like labels, these are key value
 pairs.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">commonAnnotations:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">commonAnnotations:
   oncallPager: 800-555-1212
 </code></pre></div><h3 id="usage-via-plugin">Usage via plugin</h3>
 <h4 id="arguments">Arguments</h4>
@@ -813,7 +813,7 @@ pairs.</p>
 </blockquote>
 <h4 id="example">Example</h4>
 <blockquote>
-<pre><code>apiVersion: builtin
+<pre tabindex="0"><code>apiVersion: builtin
 kind: AnnotationsTransformer
 metadata:
   name: not-important-to-example
@@ -847,7 +847,7 @@ file <code>generatorOptions</code> field.  However, due to how
 booleans behave, if the global <code>generatorOptions</code> field
 specifies <code>disableNameSuffixHash: true</code>, this will
 trump any attempt to locally override it.</p>
-<pre><code># These labels are added to all configmaps and secrets.
+<pre tabindex="0"><code># These labels are added to all configmaps and secrets.
 generatorOptions:
   labels:
     fruit: apple
@@ -881,7 +881,7 @@ to set a name different than the filename.</p>
 with the name of file as <code>myFileName.ini</code>
 while the <em>actual</em> filename from which the
 configmap is created is <code>whatever.ini</code>.</p>
-<pre><code>configMapGenerator:
+<pre tabindex="0"><code>configMapGenerator:
 - name: app-whatever
   files:
   - myFileName.ini=whatever.ini
@@ -892,7 +892,7 @@ configmap is created is <code>whatever.ini</code>.</p>
 </blockquote>
 <h4 id="example-1">Example</h4>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
 kind: ConfigMapGenerator
 metadata:
   name: mymap
@@ -909,7 +909,7 @@ literals:
 <p>Images modify the name, tags and/or digest for images
 without creating patches.  E.g. Given this
 kubernetes Deployment fragment:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">containers:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">containers:
 - name: mypostgresdb
   image: postgres:8
 - name: nginxapp
@@ -926,7 +926,7 @@ kubernetes Deployment fragment:</p>
 <li>alpine&rsquo;s tag <code>3.7</code> to a digest value</li>
 </ul>
 <p>all with the following <em>kustomization</em>:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">images:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">images:
 - name: postgres
   newName: my-registry/my-postgres
   newTag: v1
@@ -944,7 +944,7 @@ kubernetes Deployment fragment:</p>
 </blockquote>
 <h4 id="example-2">Example</h4>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
 kind: ImageTagTransformer
 metadata:
   name: not-important-to-example
@@ -956,7 +956,7 @@ imageTag:
 <h3 id="usage-via-kustomizationyaml-3">Usage via <code>kustomization.yaml</code></h3>
 <h4 id="field-name-commonlabels">field name: <code>commonLabels</code></h4>
 <p>Adds labels to all resources and selectors</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">commonLabels:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">commonLabels:
   someName: someValue
   owner: alice
   app: bingo
@@ -968,7 +968,7 @@ imageTag:
 </blockquote>
 <h4 id="example-3">Example</h4>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
 kind: LabelTransformer
 metadata:
   name: not-important-to-example
@@ -983,7 +983,7 @@ fieldSpecs:
 <h3 id="usage-via-kustomizationyaml-4">Usage via <code>kustomization.yaml</code></h3>
 <h4 id="field-name-namespace">field name: <code>namespace</code></h4>
 <p>Adds namespace to all resources</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">namespace: my-namespace
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">namespace: my-namespace
 </code></pre></div><h3 id="usage-via-plugin-4">Usage via plugin</h3>
 <h4 id="arguments-4">Arguments</h4>
 <blockquote>
@@ -992,7 +992,7 @@ fieldSpecs:
 </blockquote>
 <h4 id="example-4">Example</h4>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
  kind: NamespaceTransformer
  metadata:
    name: not-important-to-example
@@ -1018,18 +1018,18 @@ The JSON patch is documented at <a href="https://tools.ietf.org/html/rfc6902">ht
 by the object&rsquo;s group, version, kind, name and namespace.
 path field is a relative file path of a JSON patch file.
 The content in this patch file can be either in JSON format as</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#ce5c00;font-weight:bold">[</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#ce5c00;font-weight:bold">[</span>
    <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;op&#34;</span>: <span style="color:#4e9a06">&#34;add&#34;</span>, <span style="color:#4e9a06">&#34;path&#34;</span>: <span style="color:#4e9a06">&#34;/some/new/path&#34;</span>, <span style="color:#4e9a06">&#34;value&#34;</span>: <span style="color:#4e9a06">&#34;value&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,
    <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;op&#34;</span>: <span style="color:#4e9a06">&#34;replace&#34;</span>, <span style="color:#4e9a06">&#34;path&#34;</span>: <span style="color:#4e9a06">&#34;/some/existing/path&#34;</span>, <span style="color:#4e9a06">&#34;value&#34;</span>: <span style="color:#4e9a06">&#34;new value&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
  <span style="color:#ce5c00;font-weight:bold">]</span>
 </code></pre></div><p>or in YAML format as</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">- op: add
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">- op: add
   path: /some/new/path
   value: value
 - op: replace
   path: /some/existing/path
   value: new value
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">patchesJson6902:
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">patchesJson6902:
 - target:
     version: v1
     kind: Deployment
@@ -1041,7 +1041,7 @@ The content in this patch file can be either in JSON format as</p>
     name: my-service
   path: add_service_annotation.yaml
 </code></pre></div><p>The patch content can be an inline string as well:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">patchesJson6902:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">patchesJson6902:
 - target:
     version: v1
     kind: Deployment
@@ -1062,7 +1062,7 @@ The content in this patch file can be either in JSON format as</p>
 </blockquote>
 <h4 id="example-5">Example</h4>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
 kind: PatchJson6902Transformer
 metadata:
   name: not-important-to-example
@@ -1088,12 +1088,12 @@ files must match names already loaded via the
 a memory request/limit, change an env var in a
 ConfigMap, etc.  Small patches are easy to review and
 easy to mix together in overlays.</p>
-<pre><code>patchesStrategicMerge:
+<pre tabindex="0"><code>patchesStrategicMerge:
 - service_port_8888.yaml
 - deployment_increase_replicas.yaml
 - deployment_increase_memory.yaml
 </code></pre><p>The patch content can be a inline string as well.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">patchesStrategicMerge:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">patchesStrategicMerge:
 - <span style="color:#000;font-weight:bold">|</span>-
   apiVersion: apps/v1
   kind: Deployment
@@ -1117,7 +1117,7 @@ patch that performs all the needed deletions.</p>
 </blockquote>
 <h4 id="example-6">Example</h4>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
 kind: PatchStrategicMergeTransformer
 metadata:
   name: not-important-to-example
@@ -1136,7 +1136,7 @@ resources by group, version, kind, name, namespace,
 labelSelector and annotationSelector. A resource
 which matches all the specified fields is selected
 to apply the patch.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">patches:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">patches:
 - path: patch.yaml
   target:
     group: apps
@@ -1164,7 +1164,7 @@ is equivalent to <code>^myapp$</code>.</p>
 </blockquote>
 <h4 id="example-7">Example</h4>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
 kind: PatchTransformer
 metadata:
   name: not-important-to-example
@@ -1181,7 +1181,7 @@ of all resources.</p>
 <p>E.g. a deployment named <code>wordpress</code> could
 become <code>alices-wordpress</code> or  <code>wordpress-v2</code>
 or <code>alices-wordpress-v2</code>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">namePrefix: alices-
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">namePrefix: alices-
 nameSuffix: -v2
 </code></pre></div><p>The suffix is appended before the content hash if
 the resource type is ConfigMap or Secret.</p>
@@ -1194,7 +1194,7 @@ the resource type is ConfigMap or Secret.</p>
 </blockquote>
 <h4 id="example-8">Example</h4>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
 kind: PrefixSuffixTransformer
 metadata:
   name: not-important-to-example
@@ -1208,14 +1208,14 @@ fieldSpecs:
 <h4 id="field-name-replicas">field name: <code>replicas</code></h4>
 <p>Replicas modified the number of replicas for a resource.</p>
 <p>E.g. Given this kubernetes Deployment fragment:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kind: Deployment
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kind: Deployment
 metadata:
   name: deployment-name
 spec:
   replicas: <span style="color:#0000cf;font-weight:bold">3</span>
 </code></pre></div><p>one can change the number of replicas to 5
 by adding the following to your kustomization:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">replicas:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">replicas:
 - name: deployment-name
   count: <span style="color:#0000cf;font-weight:bold">5</span>
 </code></pre></div><p>This field accepts a list, so many resources can
@@ -1238,7 +1238,7 @@ that is one of:</p>
 </blockquote>
 <h4 id="example-9">Example</h4>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
 kind: ReplicaCountTransformer
 metadata:
   name: not-important-to-example
@@ -1262,7 +1262,7 @@ one Secret resource
 (it&rsquo;s a generator of n secrets).</p>
 <p>This works like the <code>configMapGenerator</code> field
 described above.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">secretGenerator:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">secretGenerator:
 - name: app-tls
   files:
   - secret/tls.cert
@@ -1297,7 +1297,7 @@ described above.</p>
 </blockquote>
 <h4 id="example-10">Example</h4>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
 kind: SecretGenerator
 metadata:
   name: my-secret
@@ -1336,7 +1336,7 @@ flag in <code>helm template</code> command.</li>
 <li><code>extraArgs</code>: [Optional] A list of additional argumetns that will be passed into helm
 template command.</li>
 </ul>
-<pre><code>helmChartInflationGenerator:
+<pre tabindex="0"><code>helmChartInflationGenerator:
 - chartName: minecraft
   chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
   chartVersion: v1.2.0
@@ -1359,7 +1359,7 @@ template command.</li>
 </blockquote>
 <h4 id="example-11">Example</h4>
 <blockquote>
-<pre><code>apiVersion: builtin
+<pre tabindex="0"><code>apiVersion: builtin
 kind: HelmChartInflationGenerator
 metadata:
   name: myMap

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/app_deployment/accessing_multiple_clusters/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2020-09-30T20:01:35&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-30T20:01:35+05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Accessing Multiple Clusters">
 <meta itemprop="description" content="Accessing Multiple Clusters
 ">
-<meta itemprop="dateModified" content="2020-09-30T20:01:35&#43;05:30" />
+<meta itemprop="dateModified" content="2020-09-30T20:01:35+05:30" />
 <meta itemprop="wordCount" content="315">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Accessing Multiple Clusters"/>
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -735,15 +735,15 @@ matching the name of the cluster (i.e. as it is referred to be context).</p>
 <p>The kubeconfig file allows multiple contexts to be specified, each with a different cluster + auth.</p>
 <h3 id="list-contexts">List Contexts</h3>
 <p>List the contexts in the kubeconfig file</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl config get-contexts
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">CURRENT   NAME   CLUSTER   AUTHINFO   NAMESPACE
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl config get-contexts
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">CURRENT   NAME   CLUSTER   AUTHINFO   NAMESPACE
           us-central1-c  us-central1-c  us-central1-c
 *         us-east1-c  us-east1-c  us-east1-c
           us-west2-c   us-west2-c   us-west2-c
 </code></pre></div><h3 id="print-a-context">Print a Context</h3>
 <p>Print information about the current context</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl config --kubeconfig<span style="color:#ce5c00;font-weight:bold">=</span>config-demo view --minify
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl config --kubeconfig<span style="color:#ce5c00;font-weight:bold">=</span>config-demo view --minify
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">clusters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">cluster</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">certificate-authority</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fake-ca-file</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -767,12 +767,12 @@ matching the name of the cluster (i.e. as it is referred to be context).</p>
 <p>Specify the kubeconfig context as part of the command.</p>
 <p><strong>Note:</strong> In this example the <code>kustomization.yaml</code> exists in a directory whose name matches
 the name of the context.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#204a87">export</span> <span style="color:#000">CLUSTER</span><span style="color:#ce5c00;font-weight:bold">=</span>us-west2-c<span style="color:#000;font-weight:bold">;</span> kubectl apply -k <span style="color:#4e9a06">${</span><span style="color:#000">CLUSTER</span><span style="color:#4e9a06">}</span> --context<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">${</span><span style="color:#000">CLUSTER</span><span style="color:#4e9a06">}</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#204a87">export</span> <span style="color:#000">CLUSTER</span><span style="color:#ce5c00;font-weight:bold">=</span>us-west2-c<span style="color:#000;font-weight:bold">;</span> kubectl apply -k <span style="color:#4e9a06">${</span><span style="color:#000">CLUSTER</span><span style="color:#4e9a06">}</span> --context<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">${</span><span style="color:#000">CLUSTER</span><span style="color:#4e9a06">}</span>
 </code></pre></div><h3 id="switch-to-use-a-context">Switch to use a Context</h3>
 <p>Switch the current context before running the command.</p>
 <p><strong>Note:</strong> In this example the <code>kustomization.yaml</code> exists in a directory whose name matches
 the name of the context.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># change the context to us-west2-c</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># change the context to us-west2-c</span>
 kubectl config use-context us-west2-c
 <span style="color:#8f5902;font-style:italic"># deploy Resources from the ./us-west2-c/kustomization.yaml</span>
 kubectl apply -k ./us-west2-c
@@ -781,7 +781,7 @@ kubectl apply -k ./us-west2-c
 kubeconfig may be specified with the <code>--kubeconfig</code> flag.</p>
 <p><strong>Note:</strong> In this example the <code>kustomization.yaml</code> exists in a directory whose name matches
 the name of the directory containing the kubeconfig.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl apply -k ./us-west2-c --kubeconfig /path/to/us-west2-c/config
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl apply -k ./us-west2-c --kubeconfig /path/to/us-west2-c/config
 </code></pre></div>
 
 <div class="alert alert-success" role="alert">

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/gopluginguidedexample/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2020-10-31T08:50:10&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-10-31T08:50:10+05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Go plugin example">
 <meta itemprop="description" content="Go plugin example
 ">
-<meta itemprop="dateModified" content="2020-10-31T08:50:10&#43;05:30" />
+<meta itemprop="dateModified" content="2020-10-31T08:50:10+05:30" />
 <meta itemprop="wordCount" content="1057">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Go plugin example"/>
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -752,13 +752,13 @@ current setup.</p>
 <li>a Google account with KMS permission</li>
 </ul>
 <h2 id="make-a-place-to-work">Make a place to work</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#8f5902;font-style:italic"># Keeping these separate to avoid cluttering the DEMO dir.</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#8f5902;font-style:italic"># Keeping these separate to avoid cluttering the DEMO dir.</span>
 <span style="color:#000">DEMO</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>mktemp -d<span style="color:#204a87;font-weight:bold">)</span>
 <span style="color:#000">tmpGoPath</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>mktemp -d<span style="color:#204a87;font-weight:bold">)</span>
 </code></pre></div><h2 id="install-kustomize">Install kustomize</h2>
 <p>Need v3.0.0 for what follows, and you must <em>compile</em>
 it (not download the binary from the release page):</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">GOPATH</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$tmpGoPath</span> go install sigs.k8s.io/kustomize/kustomize
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">GOPATH</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$tmpGoPath</span> go install sigs.k8s.io/kustomize/kustomize
 </code></pre></div><h2 id="make-a-home-for-plugins">Make a home for plugins</h2>
 <p>A kustomize plugin is fully determined by
 its configuration file and source code.</p>
@@ -772,7 +772,7 @@ fields</a> in these config files.</p>
 kustomization file), then locates the Go plugin&rsquo;s
 object code at the following location:</p>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">$XDG_CONFIG_HOME</span>/kustomize/plugin/<span style="color:#000">$apiVersion</span>/<span style="color:#000">$lKind</span>/<span style="color:#000">$kind</span>.so
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">$XDG_CONFIG_HOME</span>/kustomize/plugin/<span style="color:#000">$apiVersion</span>/<span style="color:#000">$lKind</span>/<span style="color:#000">$kind</span>.so
 </code></pre></div></blockquote>
 <p>where <code>lKind</code> holds the lowercased kind.  The
 plugin is then loaded and fed its config, and the
@@ -787,7 +787,7 @@ mapping between plugins and config data; it&rsquo;s not
 left to plugins to find their own config.</p>
 <p>This demo will house the plugin it uses at the
 ephemeral directory</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/kustomize/plugin
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/kustomize/plugin
 </code></pre></div><p>and ephemerally set <code>XDG_CONFIG_HOME</code> on a command
 line below.</p>
 <h3 id="what-apiversion-and-kind">What apiVersion and kind</h3>
@@ -804,29 +804,29 @@ to a plugin.</p>
 and it lives in the <a href="https://github.com/monopole/sopsencodedsecrets">SopsEncodedSecrets repository</a>.</p>
 <p>Somewhat arbitrarily, we&rsquo;ll chose to install
 this plugin with</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">apiVersion</span><span style="color:#ce5c00;font-weight:bold">=</span>mygenerators
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">apiVersion</span><span style="color:#ce5c00;font-weight:bold">=</span>mygenerators
 <span style="color:#000">kind</span><span style="color:#ce5c00;font-weight:bold">=</span>SopsEncodedSecrets
 </code></pre></div><h3 id="define-the-plugins-home-dir">Define the plugin&rsquo;s home dir</h3>
 <p>By convention, the ultimate home of the plugin
 code and supplemental data, tests, documentation,
 etc. is the lowercase form of its kind.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">lKind</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">echo</span> <span style="color:#000">$kind</span> <span style="color:#000;font-weight:bold">|</span> awk <span style="color:#4e9a06">&#39;{print tolower($0)}&#39;</span><span style="color:#204a87;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">lKind</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">echo</span> <span style="color:#000">$kind</span> <span style="color:#000;font-weight:bold">|</span> awk <span style="color:#4e9a06">&#39;{print tolower($0)}&#39;</span><span style="color:#204a87;font-weight:bold">)</span>
 </code></pre></div><h3 id="download-the-sopsencodedsecrets-plugin">Download the SopsEncodedSecrets plugin</h3>
 <p>In this case, the repo name matches the lowercase
 kind already, so we just clone the repo and get
 the proper directory name automatically:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir -p <span style="color:#000">$PLUGIN_ROOT</span>/<span style="color:#4e9a06">${</span><span style="color:#000">apiVersion</span><span style="color:#4e9a06">}</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir -p <span style="color:#000">$PLUGIN_ROOT</span>/<span style="color:#4e9a06">${</span><span style="color:#000">apiVersion</span><span style="color:#4e9a06">}</span>
 <span style="color:#204a87">cd</span> <span style="color:#000">$PLUGIN_ROOT</span>/<span style="color:#4e9a06">${</span><span style="color:#000">apiVersion</span><span style="color:#4e9a06">}</span>
 git clone git@github.com:monopole/sopsencodedsecrets.git
 </code></pre></div><p>Remember this directory:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">MY_PLUGIN_DIR</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$PLUGIN_ROOT</span>/<span style="color:#4e9a06">${</span><span style="color:#000">apiVersion</span><span style="color:#4e9a06">}</span>/<span style="color:#4e9a06">${</span><span style="color:#000">lKind</span><span style="color:#4e9a06">}</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">MY_PLUGIN_DIR</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$PLUGIN_ROOT</span>/<span style="color:#4e9a06">${</span><span style="color:#000">apiVersion</span><span style="color:#4e9a06">}</span>/<span style="color:#4e9a06">${</span><span style="color:#000">lKind</span><span style="color:#4e9a06">}</span>
 </code></pre></div><h3 id="try-the-plugins-own-test">Try the plugin&rsquo;s own test</h3>
 <p>Plugins may come with their own tests.
 This one does, and it hopefully passes:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#204a87">cd</span> <span style="color:#000">$MY_PLUGIN_DIR</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#204a87">cd</span> <span style="color:#000">$MY_PLUGIN_DIR</span>
 go <span style="color:#204a87">test</span> SopsEncodedSecrets_test.go
 </code></pre></div><p>Build the object code for use by kustomize:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#204a87">cd</span> <span style="color:#000">$MY_PLUGIN_DIR</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#204a87">cd</span> <span style="color:#000">$MY_PLUGIN_DIR</span>
 <span style="color:#000">GOPATH</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$tmpGoPath</span> go build -buildmode plugin -o <span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span>.so <span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span>.go
 </code></pre></div><p>This step may succeed, but kustomize might
 ultimately fail to load the plugin because of
@@ -857,12 +857,12 @@ code as a individual special cases.</p>
 <h2 id="create-a-kustomization">Create a kustomization</h2>
 <p>Make a kustomization directory to
 hold all your config:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">MYAPP</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/myapp
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">MYAPP</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/myapp
 mkdir -p <span style="color:#000">$MYAPP</span>
 </code></pre></div><p>Make a config file for the SopsEncodedSecrets plugin.</p>
 <p>Its <code>apiVersion</code> and <code>kind</code> allow the plugin to be
 found:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat <span style="color:#4e9a06">&lt;&lt;EOF &gt;$MYAPP/secGenerator.yaml
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat <span style="color:#4e9a06">&lt;&lt;EOF &gt;$MYAPP/secGenerator.yaml
 </span><span style="color:#4e9a06">apiVersion: ${apiVersion}
 </span><span style="color:#4e9a06">kind: ${kind}
 </span><span style="color:#4e9a06">metadata:
@@ -878,7 +878,7 @@ found:</p>
 <code>myEncryptedData.yaml</code>; we&rsquo;ll get to that shortly.</p>
 <p>Make a kustomization file referencing the plugin
 config:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat <span style="color:#4e9a06">&lt;&lt;EOF &gt;$MYAPP/kustomization.yaml
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat <span style="color:#4e9a06">&lt;&lt;EOF &gt;$MYAPP/kustomization.yaml
 </span><span style="color:#4e9a06">commonLabels:
 </span><span style="color:#4e9a06">  app: hello
 </span><span style="color:#4e9a06">generators:
@@ -889,27 +889,27 @@ config:</p>
 <p>We&rsquo;re going to use <a href="https://github.com/mozilla/sops">sops</a> to encode a file. Choose either GPG or Google Cloud KMS as the secret provider to continue.</p>
 <h4 id="gpg">GPG</h4>
 <p>Try this:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gpg --list-keys
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gpg --list-keys
 </code></pre></div><p>If it returns a list, presumably you&rsquo;ve already created keys. If not, try import test keys from sops for dev.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl https://raw.githubusercontent.com/mozilla/sops/master/pgp/sops_functional_tests_key.asc <span style="color:#000;font-weight:bold">|</span> gpg --import
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl https://raw.githubusercontent.com/mozilla/sops/master/pgp/sops_functional_tests_key.asc <span style="color:#000;font-weight:bold">|</span> gpg --import
 <span style="color:#000">SOPS_PGP_FP</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;1022470DE3F0BC54BC6AB62DE05550BC07FB1A0A&#34;</span>
 </code></pre></div><h4 id="google-cloude-kms">Google Cloude KMS</h4>
 <p>Try this:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gcloud kms keys list --location global --keyring sops
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gcloud kms keys list --location global --keyring sops
 </code></pre></div><p>If it succeeds, presumably you&rsquo;ve already created keys and placed them in a keyring called sops. If not, do this:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gcloud kms keyrings create sops --location global
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gcloud kms keyrings create sops --location global
 gcloud kms keys create sops-key --location global <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>    --keyring sops --purpose encryption
 </code></pre></div><p>Extract your keyLocation for use below:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">keyLocation</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span><span style="color:#4e9a06">\
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">keyLocation</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span><span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>    gcloud kms keys list --location global --keyring sops <span style="color:#000;font-weight:bold">|</span><span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>    grep GOOGLE <span style="color:#000;font-weight:bold">|</span> cut -d <span style="color:#4e9a06">&#34; &#34;</span> -f1<span style="color:#204a87;font-weight:bold">)</span>
 <span style="color:#204a87">echo</span> <span style="color:#000">$keyLocation</span>
 </code></pre></div><h3 id="install-sops">Install <code>sops</code></h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">GOPATH</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$tmpGoPath</span> go install go.mozilla.org/sops/cmd/sops
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">GOPATH</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$tmpGoPath</span> go install go.mozilla.org/sops/cmd/sops
 </code></pre></div><h3 id="create-data-encrypted-with-your-private-key">Create data encrypted with your private key</h3>
 <p>Create raw data to encrypt:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat <span style="color:#4e9a06">&lt;&lt;EOF &gt;$MYAPP/myClearData.yaml
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat <span style="color:#4e9a06">&lt;&lt;EOF &gt;$MYAPP/myClearData.yaml
 </span><span style="color:#4e9a06">VEGETABLE: carrot
 </span><span style="color:#4e9a06">ROCKET: saturn-v
 </span><span style="color:#4e9a06">FRUIT: apple
@@ -917,18 +917,18 @@ gcloud kms keys create sops-key --location global <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06">EOF</span>
 </code></pre></div><p>Encrypt the data into file the plugin wants to read:</p>
 <p>With PGP</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">$tmpGoPath</span>/bin/sops --encrypt <span style="color:#4e9a06">\
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">$tmpGoPath</span>/bin/sops --encrypt <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>  --pgp <span style="color:#000">$SOPS_PGP_FP</span> <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>  <span style="color:#000">$MYAPP</span>/myClearData.yaml &gt;<span style="color:#000">$MYAPP</span>/myEncryptedData.yaml
 </code></pre></div><p>Or GCP KMS</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">$tmpGoPath</span>/bin/sops --encrypt <span style="color:#4e9a06">\
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">$tmpGoPath</span>/bin/sops --encrypt <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>  --gcp-kms <span style="color:#000">$keyLocation</span> <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>  <span style="color:#000">$MYAPP</span>/myClearData.yaml &gt;<span style="color:#000">$MYAPP</span>/myEncryptedData.yaml
 </code></pre></div><p>Review the files</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tree <span style="color:#000">$DEMO</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tree <span style="color:#000">$DEMO</span>
 </code></pre></div><p>This should look something like:</p>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/tmp/tmp.0kIE9VclPt
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/tmp/tmp.0kIE9VclPt
 ├── kustomize
 │   └── plugin
 │       └── mygenerators
@@ -947,12 +947,12 @@ gcloud kms keys create sops-key --location global <span style="color:#4e9a06">\
     └── secGenerator.yaml
 </code></pre></div></blockquote>
 <h2 id="build-your-app-using-the-plugin">Build your app, using the plugin</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">XDG_CONFIG_HOME</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span> <span style="color:#000">$tmpGoPath</span>/bin/kustomize build --enable_alpha_plugins <span style="color:#000">$MYAPP</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">XDG_CONFIG_HOME</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span> <span style="color:#000">$tmpGoPath</span>/bin/kustomize build --enable_alpha_plugins <span style="color:#000">$MYAPP</span>
 </code></pre></div><p>This should emit a kubernetes secret, with
 encrypted data for the names <code>ROCKET</code> and <code>CAR</code>.</p>
 <p>Above, if you had set</p>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$HOME</span>/.config/kustomize/plugin
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$HOME</span>/.config/kustomize/plugin
 </code></pre></div></blockquote>
 <p>there would be no need to use <code>XDG_CONFIG_HOME</code> in the
 <em>kustomize</em> command above.</p>

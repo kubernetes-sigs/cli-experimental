@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -395,7 +395,7 @@
 <h4 id="2-将其克隆为你自己的-base">2) 将其克隆为你自己的 <a href="/references/kustomize/glossary#base">base</a></h4>
 <p>这个 <a href="/references/kustomize/glossary#base">base</a> 目录维护在上游为 <a href="/references/kustomize/glossary#off-the-shelf-configuration">OTS</a> 配置的 repo ，在这个示例中使用 <code>ladp</code> 的 repo 。</p>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/ldap
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/ldap
 git clone https://github.com/<span style="color:#000">$USER</span>/ldap ~/ldap/base
 <span style="color:#204a87">cd</span> ~/ldap/base
 git remote add upstream git@github.com:<span style="color:#000">$USER</span>/ldap
@@ -404,24 +404,24 @@ git remote add upstream git@github.com:<span style="color:#000">$USER</span>/lda
 <p>如配置定制方法一样，创建并完善 <em>overlays</em> 目录中的内容。</p>
 <p>所有的 <a href="/references/kustomize/glossary#overlay">overlays</a> 都依赖于 <a href="/references/kustomize/glossary#base">base</a> 。</p>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/ldap/overlays/staging
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/ldap/overlays/staging
 mkdir -p ~/ldap/overlays/production
 </code></pre></div></blockquote>
 <p>用户可以将 <code>overlays</code> 维护在不同的 repo 中。</p>
 <h4 id="4-生成-variants">4) 生成 <a href="/references/kustomize/glossary#variant">variants</a></h4>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kustomize build ~/ldap/overlays/staging <span style="color:#000;font-weight:bold">|</span> kubectl apply -f -
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kustomize build ~/ldap/overlays/staging <span style="color:#000;font-weight:bold">|</span> kubectl apply -f -
 kustomize build ~/ldap/overlays/production <span style="color:#000;font-weight:bold">|</span> kubectl apply -f -
 </code></pre></div></blockquote>
 <p>也可以在 <a href="https://kubernetes.io/blog/2019/03/25/kubernetes-1-14-release-announcement/">kubectl-v1.14.0</a> 版，使用 <code>kubectl</code> 命令发布你的 <a href="/references/kustomize/glossary#variant">variants</a> 。</p>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -k ~/ldap/overlays/staging
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -k ~/ldap/overlays/staging
 kubectl apply -k ~/ldap/overlays/production
 </code></pre></div></blockquote>
 <h4 id="5-可选从上游更新">5) （可选）从上游更新</h4>
 <p>用户可以定期从上游 repo 中 <a href="https://git-scm.com/docs/git-rebase">rebase</a> 他们的 <a href="/references/kustomize/glossary#base">base</a> 以保证及时更新。</p>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">cd</span> ~/ldap/base
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">cd</span> ~/ldap/base
 git fetch upstream
 git rebase upstream/master
 </code></pre></div></blockquote>

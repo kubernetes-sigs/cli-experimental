@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -1779,7 +1779,7 @@ to <strong>A</strong>, or <strong>B</strong> is off in a completely independent
 git repository, referencable from any kustomization.</p>
 <p>A common layout is</p>
 <blockquote>
-<pre><code>├── base
+<pre tabindex="0"><code>├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
 │   └── service.yaml
@@ -1825,7 +1825,7 @@ resources intentionally published somewhere for others
 to use.</p>
 <p>E.g. one might create a github repository like this:</p>
 <blockquote>
-<pre><code>github.com/username/someapp/
+<pre tabindex="0"><code>github.com/username/someapp/
   kustomization.yaml
   deployment.yaml
   configmap.yaml
@@ -1853,7 +1853,7 @@ in a deployment, the CPU to a particular pod, the data
 source used in a ConfigMap, etc.</p>
 <p>One configures a cluster like this:</p>
 <blockquote>
-<pre><code> kustomize build someapp/overlays/staging |\
+<pre tabindex="0"><code> kustomize build someapp/overlays/staging |\
      kubectl apply -f -
 
  kustomize build someapp/overlays/production |\
@@ -1928,7 +1928,7 @@ with a <em>kind</em> and a <em>metadata/name</em> field.</p>
 <h2 id="target">target</h2>
 <p>The <em>target</em> is the argument to <code>kustomize build</code>, e.g.:</p>
 <blockquote>
-<pre><code> kustomize build $target
+<pre tabindex="0"><code> kustomize build $target
 </code></pre></blockquote>
 <p><code>$target</code> must be a path or a url to a <a href="#kustomization">kustomization</a>.</p>
 <p>The target contains, or refers to, all the information
