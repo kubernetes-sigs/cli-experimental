@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -35,8 +35,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -150,7 +150,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -180,7 +180,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -339,16 +339,16 @@ kustomization file, and referring to this directory as a
 wants to use it.  This encourages modularity and
 relocatability.</p>
 <p>To disable this, use v3, and the <code>load_restrictor</code> flag:</p>
-<pre><code>kustomize build --load_restrictor none $target
+<pre tabindex="0"><code>kustomize build --load_restrictor none $target
 </code></pre><h2 id="some-field-is-not-transformed-by-kustomize">Some field is not transformed by kustomize</h2>
 <p>Example: <a href="https://github.com/kubernetes-sigs/kustomize/issues/1319">#1319</a>, <a href="https://github.com/kubernetes-sigs/kustomize/issues/1322">#1322</a>, <a href="https://github.com/kubernetes-sigs/kustomize/issues/1347">#1347</a> and etc.</p>
 <p>The fields transformed by kustomize is configured explicitly in <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/api/konfig/builtinpluginconsts/defaultconfig.go">defaultconfig</a>. The configuration itself can be customized by including <code>configurations</code> in <code>kustomization.yaml</code>, e.g.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">kustomize.config.k8s.io/v1beta1</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">kustomize.config.k8s.io/v1beta1</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Kustomization</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">configurations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">kustomizeconfig.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><p>The configuration directive allows customization of the following transformers:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">commonAnnotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[]</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">commonAnnotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[]</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">commonLabels</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[]</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">nameprefix</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[]</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">namespace</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[]</span><span style="color:#f8f8f8;text-decoration:underline">

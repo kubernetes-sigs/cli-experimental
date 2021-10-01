@@ -46,8 +46,8 @@ For more query options see &lt;a href=&#34;queries_and_options.md&#34;&gt;Querie
 &lt;p&gt;If no output format is specified, Get will print a default set of columns.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Some columns &lt;em&gt;may&lt;/em&gt; not directly map to fields on the Resource, but instead may
 be a summary of fields.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments nginx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 nginx     &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;         &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;         &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;            &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;           5s
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;p&gt;You can also use a number of options to query out and format the way the resources are displayed.
@@ -107,8 +107,8 @@ this chapter will query for Resources by providing Get the &lt;em&gt;Resource Ty
 For more query options see &lt;a href=&#34;https://kubectl.docs.kubernetes.io/guides/resource_printing/queries_and_options/&#34;&gt;Queries and Options&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;yaml&#34;&gt;YAML&lt;/h3&gt;
 &lt;p&gt;Print the Raw Resource formatting it as YAML.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments -o yaml
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;v1&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments -o yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;v1&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;items&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;extensions/v1beta1&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Deployment&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -234,9 +234,9 @@ this group / version may have changed the representation of fields.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/em&gt; Print the JSON representation of the first Deployment in the list on a single line&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployment.v1.apps -o&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;jsonpath&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;{.items[0]}{&amp;#34;\n&amp;#34;}&amp;#39;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployment.v1.apps -o&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;jsonpath&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;{.items[0]}{&amp;#34;\n&amp;#34;}&amp;#39;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;you get:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;map&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;apiVersion:apps/v1 kind:Deployment...replicas:1 updatedReplicas:1&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]]&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;map&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;apiVersion:apps/v1 kind:Deployment...replicas:1 updatedReplicas:1&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This ideology can be extended to query out the specific fields in a yaml resource file.&lt;/p&gt;
 
 
@@ -278,8 +278,8 @@ Resources, and formats and prints this information on multiple lines.&lt;/p&gt;
 &lt;li&gt;Aggregates data from related Resources&lt;/li&gt;
 &lt;li&gt;Formats Verbose Output for debugging&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl describe deployments
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Name:                   nginx
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl describe deployments
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Name:                   nginx
 Namespace:              default
 CreationTimestamp:      Thu, &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;15&lt;/span&gt; Nov &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2018&lt;/span&gt; 10:58:03 -0800
 Labels:                 &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;nginx
@@ -346,46 +346,46 @@ data from the &lt;em&gt;fields&lt;/em&gt; of that Resource, it won&amp;rsquo;t l
 &lt;p&gt;Match Resources with Queries when Getting or Describing them.&lt;/p&gt;
 &lt;h2 id=&#34;resource-config-by-kustomizationyaml&#34;&gt;Resource Config By &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;Get all Resources provided by the &lt;code&gt;kustomization.yaml&lt;/code&gt; in project/.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get -k project/
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get -k project/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;resource-config-by-dir&#34;&gt;Resource Config By Dir&lt;/h2&gt;
 &lt;p&gt;Get all Resources present in the Resource Config for a directory.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get -f configs/
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get -f configs/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;resource-types&#34;&gt;Resource Types&lt;/h2&gt;
 &lt;p&gt;Get &lt;strong&gt;all&lt;/strong&gt; Resources in a namespace for a given type.&lt;/p&gt;
 &lt;p&gt;The Group and Version for the Resource are determined by the apiserver discovery service.&lt;/p&gt;
 &lt;p&gt;The Singular, Plural, Short Name also apply to &lt;em&gt;Types with Name&lt;/em&gt; and &lt;em&gt;Types with Selectors&lt;/em&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Plural&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Plural&lt;/span&gt;
 kubectl get deployments
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Singular&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Singular&lt;/span&gt;
 kubectl get deployment
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Short name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Short name&lt;/span&gt;
 kubectl get deploy
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;resource-types-with-group--version&#34;&gt;Resource Types with Group / Version&lt;/h2&gt;
 &lt;p&gt;Get &lt;strong&gt;all&lt;/strong&gt; Resources in a namespace for a given type.&lt;/p&gt;
 &lt;p&gt;The Group and Version for the Resource are explicit.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments.apps
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments.v1.apps
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments.apps
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments.v1.apps
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;resource-types-with-name&#34;&gt;Resource Types with Name&lt;/h2&gt;
 &lt;p&gt;Get named Resources in a namespace for a given type.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployment nginx
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployment nginx
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;label-selector&#34;&gt;Label Selector&lt;/h2&gt;
 &lt;p&gt;Get &lt;strong&gt;all&lt;/strong&gt; Resources in a namespace &lt;strong&gt;matching a label select&lt;/strong&gt; for a given type.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments -l &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;nginx
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments -l &lt;span style=&#34;color:#000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;nginx
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;namespaces&#34;&gt;Namespaces&lt;/h2&gt;
 &lt;p&gt;By default Get and Describe will fetch resource in the default namespace or the namespace specified
 with &lt;code&gt;--namespace&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;--all-namespaces&lt;/code&gt; flag will &lt;strong&gt;fetch Resources from all namespaces&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments --all-namespaces
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments --all-namespaces
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;list-multiple-resource-types&#34;&gt;List multiple Resource types&lt;/h2&gt;
 &lt;p&gt;Get and Describe can accept &lt;strong&gt;multiple Resource types&lt;/strong&gt;, and it will print them both in separate sections.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments,services
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployments,services
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;list-multiple-resource-types-by-name&#34;&gt;List multiple Resource types by name&lt;/h2&gt;
 &lt;p&gt;Get and Describe can accept &lt;strong&gt;multiple Resource types and names&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get rc/web service/frontend pods/web-pod-13je7
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get rc/web service/frontend pods/web-pod-13je7
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;not-found&#34;&gt;Not Found&lt;/h2&gt;
 &lt;p&gt;By default, Get or Describe &lt;strong&gt;will return an error if an object is requested and doesn&amp;rsquo;t exist&lt;/strong&gt;.
 The &lt;code&gt;--ignore-not-found&lt;/code&gt; flag will cause kubectl to exit 0 if the Resource is not found&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployment nginx --ignore-not-found
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl get deployment nginx --ignore-not-found
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
@@ -421,8 +421,8 @@ unexpected behavior.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;kubectl version&lt;/code&gt; prints the client and server versions.  Note that
 the client version may not be present for clients built locally from
 source.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl version
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Client Version: version.Info&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;Major:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;, Minor:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;9&amp;#34;&lt;/span&gt;, GitVersion:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v1.9.5&amp;#34;&lt;/span&gt;, GitCommit:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;f01a2bf98249a4db383560443a59bed0c13575df&amp;#34;&lt;/span&gt;, GitTreeState:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;clean&amp;#34;&lt;/span&gt;, BuildDate:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2018-03-19T19:38:17Z&amp;#34;&lt;/span&gt;, GoVersion:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;go1.9.4&amp;#34;&lt;/span&gt;, Compiler:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;gc&amp;#34;&lt;/span&gt;, Platform:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;darwin/amd64&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Client Version: version.Info&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;Major:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;, Minor:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;9&amp;#34;&lt;/span&gt;, GitVersion:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v1.9.5&amp;#34;&lt;/span&gt;, GitCommit:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;f01a2bf98249a4db383560443a59bed0c13575df&amp;#34;&lt;/span&gt;, GitTreeState:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;clean&amp;#34;&lt;/span&gt;, BuildDate:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2018-03-19T19:38:17Z&amp;#34;&lt;/span&gt;, GoVersion:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;go1.9.4&amp;#34;&lt;/span&gt;, Compiler:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;gc&amp;#34;&lt;/span&gt;, Platform:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;darwin/amd64&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
 Server Version: version.Info&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;Major:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;, Minor:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;11+&amp;#34;&lt;/span&gt;, GitVersion:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v1.11.6-gke.2&amp;#34;&lt;/span&gt;, GitCommit:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;04ad69a117f331df6272a343b5d8f9e2aee5ab0c&amp;#34;&lt;/span&gt;, GitTreeState:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;clean&amp;#34;&lt;/span&gt;, BuildDate:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2019-01-04T16:19:46Z&amp;#34;&lt;/span&gt;, GoVersion:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;go1.10.3b4&amp;#34;&lt;/span&gt;, Compiler:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;gc&amp;#34;&lt;/span&gt;, Platform:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;linux/amd64&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -436,8 +436,8 @@ not guaranteed to be compatible.
 &lt;h2 id=&#34;control-plane-and-addons&#34;&gt;Control Plane and Addons&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;kubectl cluster-info&lt;/code&gt; prints information about the control plane and
 add-ons.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cluster-info
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;  Kubernetes master is running at https://1.1.1.1
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cluster-info
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;  Kubernetes master is running at https://1.1.1.1
   GLBCDefaultBackend is running at https://1.1.1.1/api/v1/namespaces/kube-system/services/default-http-backend:http/proxy
   Heapster is running at https://1.1.1.1/api/v1/namespaces/kube-system/services/heapster/proxy
   KubeDNS is running at https://1.1.1.1/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
@@ -453,8 +453,8 @@ running &lt;code&gt;kubectl proxy&lt;/code&gt;.
 &lt;h2 id=&#34;nodes&#34;&gt;Nodes&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;kubectl top node&lt;/code&gt; and &lt;code&gt;kubectl top pod&lt;/code&gt; print information about the
 top nodes and pods.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl top node
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;  NAME                                 CPU&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;cores&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;   CPU%      MEMORY&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;bytes&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;   MEMORY%   
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl top node
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;  NAME                                 CPU&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;cores&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;   CPU%      MEMORY&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;bytes&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;   MEMORY%   
   gke-dev-default-pool-e1e7bf6a-cc8b   37m          1%        571Mi           10%       
   gke-dev-default-pool-e1e7bf6a-f0xh   103m         5%        1106Mi          19%       
   gke-dev-default-pool-e1e7bf6a-jfq5   139m         7%        1252Mi          22%       
@@ -464,8 +464,8 @@ top nodes and pods.&lt;/p&gt;
 about the available Kubernetes APIs.  This information is read from the
 Discovery Service.&lt;/p&gt;
 &lt;p&gt;Print the Resource Types available in the cluster.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl api-resources
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;NAME                              SHORTNAMES   APIGROUP                       NAMESPACED   KIND
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl api-resources
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;NAME                              SHORTNAMES   APIGROUP                       NAMESPACED   KIND
 bindings                                                                      &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;         Binding
 componentstatuses                 cs                                          &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;        ComponentStatus
 configmaps                        cm                                          &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;         ConfigMap
@@ -475,8 +475,8 @@ limitranges                       limits                                      &l
 namespaces                        ns                                          &lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;        Namespace
 ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Print the API versions available in the cluster.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl api-versions
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;  admissionregistration.k8s.io/v1beta1
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl api-versions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;  admissionregistration.k8s.io/v1beta1
   apiextensions.k8s.io/v1beta1
   apiregistration.k8s.io/v1
   apiregistration.k8s.io/v1beta1
@@ -496,8 +496,8 @@ e.g. &lt;code&gt;127.0.0.1:8001/apis/apps/v1&lt;/code&gt;
 
 &lt;p&gt;The &lt;code&gt;kubectl explain&lt;/code&gt; command can be used to print metadata about specific
 Resource types.  This is useful for learning about the type.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl explain deployment --api-version apps/v1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;KIND:     Deployment
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl explain deployment --api-version apps/v1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;KIND:     Deployment
 VERSION:  apps/v1
 
 DESCRIPTION:

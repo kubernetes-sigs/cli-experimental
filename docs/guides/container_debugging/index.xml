@@ -37,8 +37,8 @@
 &lt;p&gt;Debugging Workloads by printing out the Logs of containers in a cluster.&lt;/p&gt;
 &lt;h2 id=&#34;print-logs-for-a-container-in-a-pod&#34;&gt;Print Logs for a Container in a Pod&lt;/h2&gt;
 &lt;p&gt;Print the logs for a Pod running a single Container&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl logs echo-c6bc8ccff-nnj52
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hello
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl logs echo-c6bc8ccff-nnj52
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hello
 hello
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 
@@ -108,14 +108,14 @@ Copy requires that &lt;em&gt;tar&lt;/em&gt; be installed in the container image.
 &lt;li&gt;Local file format is &lt;code&gt;&amp;lt;path&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Remote file format is &lt;code&gt;&amp;lt;pod-name&amp;gt;:&amp;lt;path&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cp /tmp/foo_dir &amp;lt;some-pod&amp;gt;:/tmp/bar_dir
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cp /tmp/foo_dir &amp;lt;some-pod&amp;gt;:/tmp/bar_dir
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;remote-to-local&#34;&gt;Remote to Local&lt;/h2&gt;
 &lt;p&gt;Copy a remote file from a Pod to a local file.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Local file format is &lt;code&gt;&amp;lt;path&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Remote file format is &lt;code&gt;&amp;lt;pod-name&amp;gt;:&amp;lt;path&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cp &amp;lt;some-pod&amp;gt;:/tmp/foo /tmp/bar
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cp &amp;lt;some-pod&amp;gt;:/tmp/foo /tmp/bar
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
@@ -165,12 +165,12 @@ Check out the &lt;a href=&#34;https://kubectl.docs.kubernetes.io/references/kube
 a tty.&lt;/p&gt;
 &lt;h2 id=&#34;exec-command&#34;&gt;Exec Command&lt;/h2&gt;
 &lt;p&gt;Run a command in a Container in the cluster by specifying the &lt;strong&gt;Pod name&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl &lt;span style=&#34;color:#204a87&#34;&gt;exec&lt;/span&gt; nginx-78f5d695bd-czm8z ls
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  root  run  sbin  srv  sys  tmp  usr  var
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl &lt;span style=&#34;color:#204a87&#34;&gt;exec&lt;/span&gt; nginx-78f5d695bd-czm8z ls
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  root  run  sbin  srv  sys  tmp  usr  var
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;exec-shell&#34;&gt;Exec Shell&lt;/h2&gt;
 &lt;p&gt;To get a Shell in a Container, use the &lt;code&gt;-t -i&lt;/code&gt; options to get a tty and attach STDIN.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl &lt;span style=&#34;color:#204a87&#34;&gt;exec&lt;/span&gt; -t -i nginx-78f5d695bd-czm8z bash
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@nginx-78f5d695bd-czm8z:/# ls
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl &lt;span style=&#34;color:#204a87&#34;&gt;exec&lt;/span&gt; -t -i nginx-78f5d695bd-czm8z bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@nginx-78f5d695bd-czm8z:/# ls
 bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  root  run  sbin  srv  sys  tmp  usr  var
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -207,7 +207,7 @@ For Pods running multiple Containers, the Container should be specified with &lt
 &lt;p&gt;Connect to ports of Pods running a cluster by port forwarding local ports.&lt;/p&gt;
 &lt;h2 id=&#34;forward-multiple-ports&#34;&gt;Forward Multiple Ports&lt;/h2&gt;
 &lt;p&gt;Listen on ports 5000 and 6000 locally, forwarding data to/from ports 5000 and 6000 in the pod&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl port-forward pod/mypod &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;5000&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;6000&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl port-forward pod/mypod &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;5000&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;6000&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 
 
@@ -265,16 +265,16 @@ accessed without the need for a Proxy.&lt;/p&gt;
 &lt;p&gt;Connect to a internal Service using the Proxy command, and the Service Proxy url.&lt;/p&gt;
 &lt;p&gt;To visit the nginx service go to the Proxy URL at
 &lt;code&gt;http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl proxy
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl proxy
 
 Starting to serve on 127.0.0.1:8001
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl http://127.0.0.1:8001/api/v1/namespaces/default/services/nginx/proxy/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Literal Syntax&lt;/h4&gt;
 &lt;p&gt;To connect to a Service through a proxy the user must build the Proxy URL.  The Proxy URL format is:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;http://&amp;lt;apiserver-address&amp;gt;/api/v1/namespaces/&amp;lt;service-namespace&amp;gt;/services/&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;https:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&amp;lt;service-name&amp;gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;:&amp;lt;port-name&amp;gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;/proxy
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;http://&amp;lt;apiserver-address&amp;gt;/api/v1/namespaces/&amp;lt;service-namespace&amp;gt;/services/&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;https:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&amp;lt;service-name&amp;gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;:&amp;lt;port-name&amp;gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;/proxy
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;The apiserver-address should be the URL printed by the Proxy command&lt;/li&gt;
 &lt;li&gt;The Port is optional if you haven’t specified a name for your port&lt;/li&gt;
@@ -286,7 +286,7 @@ Starting to serve on 127.0.0.1:8001
 &lt;h2 id=&#34;builtin-cluster-services&#34;&gt;Builtin Cluster Services&lt;/h2&gt;
 &lt;p&gt;A common usecase is to connect to Services running as part of the cluster itself.  A user can print out these
 Services and their Proxy Urls with &lt;code&gt;kubectl cluster-info&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cluster-info
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl cluster-info
 
 Kubernetes master is running at https://104.197.5.247
 GLBCDefaultBackend is running at https://104.197.5.247/api/v1/namespaces/kube-system/services/default-http-backend:http/proxy

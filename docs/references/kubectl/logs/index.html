@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4566e076e60bbe2d004f9f16b9a0c9a83c27e7a2ebc4d82f13b84007f91b925f4f6589ef2104bb463b664c65d5b831a8f59804e93995f704c862d345b9ec4310.json"
+  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
   data-offline-search-base-href="/"
 >
 
@@ -1619,17 +1619,17 @@
 	<div class="lead">Getting logs for Kubernetes resources</div>
 	<p>Print the logs for a container in a pod or specified resource. If the pod has only one container, the container name is optional.</p>
 <h2 id="command">Command</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl logs <span style="color:#ce5c00;font-weight:bold">[</span>-f<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>-p<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">(</span>POD <span style="color:#000;font-weight:bold">|</span> TYPE/NAME<span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">[</span>-c CONTAINER<span style="color:#ce5c00;font-weight:bold">]</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl logs <span style="color:#ce5c00;font-weight:bold">[</span>-f<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>-p<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">(</span>POD <span style="color:#000;font-weight:bold">|</span> TYPE/NAME<span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">[</span>-c CONTAINER<span style="color:#ce5c00;font-weight:bold">]</span>
 </code></pre></div><h2 id="example">Example</h2>
 <h3 id="current-state">Current State</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
 
 NAME    READY   UP-TO-DATE   AVAILABLE   AGE
 nginx   1/1     <span style="color:#0000cf;font-weight:bold">1</span>            <span style="color:#0000cf;font-weight:bold">1</span>           13m
 </code></pre></div><h3 id="command-1">Command</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl logs deployment/nginx
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl logs deployment/nginx
 </code></pre></div><h3 id="output">Output</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
 /docker-entrypoint.sh: Looking <span style="color:#204a87;font-weight:bold">for</span> shell scripts in /docker-entrypoint.d/
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
 10-listen-on-ipv6-by-default.sh: Getting the checksum of /etc/nginx/conf.d/default.conf
@@ -1638,8 +1638,8 @@ nginx   1/1     <span style="color:#0000cf;font-weight:bold">1</span>           
 /docker-entrypoint.sh: Configuration complete<span style="color:#000;font-weight:bold">;</span> ready <span style="color:#204a87;font-weight:bold">for</span> start up
 </code></pre></div><h2 id="print-logs-for-a-container-in-a-pod">Print Logs for a Container in a Pod</h2>
 <p>Print the logs for a Pod running a single Container</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl logs echo-c6bc8ccff-nnj52
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hello
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl logs echo-c6bc8ccff-nnj52
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hello
 hello
 </code></pre></div>
 
@@ -1653,7 +1653,7 @@ exited</strong>.  e.g. <code>kubectl logs -p -c ruby web-1</code>
 <hr>
 <h2 id="print-logs-for-all-pods-for-a-workload">Print Logs for all Pods for a Workload</h2>
 <p>Print the logs for all Pods for a Workload</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs from all containers matching label</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs from all containers matching label</span>
 kubectl logs -l <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>nginx
 </code></pre></div>
 
@@ -1668,24 +1668,24 @@ for all the Pods from that Workload.
 <hr>
 <h2 id="follow-logs-for-a-container">Follow Logs for a Container</h2>
 <p>Stream logs from a container.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Follow logs from container</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Follow logs from container</span>
 kubectl logs nginx-78f5d695bd-czm8z -f
 </code></pre></div><hr>
 <h2 id="printing-logs-for-a-container-that-has-exited">Printing Logs for a Container that has exited</h2>
 <p>Print the logs for the previously running container.  This is useful for printing containers that have
 crashed or are crash looping.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs from exited container</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs from exited container</span>
 kubectl logs nginx-78f5d695bd-czm8z -p
 </code></pre></div><hr>
 <h2 id="selecting-a-container-in-a-pod">Selecting a Container in a Pod</h2>
 <p>Print the logs from a specific container within a Pod.  This is necessary for Pods running multiple
 containers.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs from the nginx container in the nginx-78f5d695bd-czm8z Pod</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs from the nginx container in the nginx-78f5d695bd-czm8z Pod</span>
 kubectl logs nginx-78f5d695bd-czm8z -c nginx
 </code></pre></div><hr>
 <h2 id="printing-logs-after-a-time">Printing Logs After a Time</h2>
 <p>Print the logs that occurred after an absolute time.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs since a date</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs since a date</span>
 kubectl logs nginx-78f5d695bd-czm8z --since-time<span style="color:#ce5c00;font-weight:bold">=</span>2018-11-01T15:00:00Z
 </code></pre></div><hr>
 <h2 id="printing-logs-since-a-time">Printing Logs Since a Time</h2>
@@ -1696,14 +1696,14 @@ kubectl logs nginx-78f5d695bd-czm8z --since-time<span style="color:#ce5c00;font-
 <li>1m: 1 minute</li>
 <li>2h: 2 hours</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs for the past hour</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs for the past hour</span>
 kubectl logs nginx-78f5d695bd-czm8z --since<span style="color:#ce5c00;font-weight:bold">=</span>1h
 </code></pre></div><hr>
 <h2 id="include-timestamps">Include Timestamps</h2>
 <p>Include timestamps in the log lines</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs with timestamps</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Print logs with timestamps</span>
 kubectl logs -l <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">echo</span> --timestamps
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">2018-11-16T05:26:31.38898405Z hello
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">2018-11-16T05:26:31.38898405Z hello
 2018-11-16T05:27:13.363932497Z hello
 </code></pre></div>
         <div class="section-index">
