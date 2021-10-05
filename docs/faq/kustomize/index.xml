@@ -117,7 +117,7 @@ commands.  Like any shell command, they can accept
 environment variable arguments.&lt;/p&gt;
 &lt;p&gt;For example, to set the tag used on an image to match an
 environment variable, run&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kustomize edit set image nginx:$MY_NGINX_VERSION
+&lt;pre&gt;&lt;code&gt;kustomize edit set image nginx:$MY_NGINX_VERSION
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;as part of some encapsulating work flow executed before
 &lt;code&gt;kustomize build&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;globs-in-kustomization-files&#34;&gt;Globs in kustomization files&lt;/h2&gt;
@@ -217,7 +217,7 @@ semver there, and refactor as needed inside
 &lt;h4 id=&#34;the-first-stable-api-version-is-coming&#34;&gt;The first stable API version is coming&lt;/h4&gt;
 &lt;p&gt;The first stable API version will launch
 as the Go module&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sigs.k8s.io/kustomize/api
+&lt;pre&gt;&lt;code&gt;sigs.k8s.io/kustomize/api
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The &lt;em&gt;kustomize&lt;/em&gt; program itself (&lt;code&gt;main.go&lt;/code&gt;
 and CLI specific code) will have moved out of
 &lt;code&gt;sigs.k8s.io/kustomize&lt;/code&gt; and into the new module
@@ -343,11 +343,11 @@ be omitted from the kustomization file.&lt;/p&gt;
 &lt;p&gt;If either field is present, they both must be.
 If present, the value of &lt;code&gt;kind&lt;/code&gt; must be:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kind: Kustomization
+&lt;pre&gt;&lt;code&gt;kind: Kustomization
 &lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;If missing, the value of &lt;code&gt;apiVersion&lt;/code&gt; defaults to&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apiVersion: kustomize.config.k8s.io/v1beta1
+&lt;pre&gt;&lt;code&gt;apiVersion: kustomize.config.k8s.io/v1beta1
 &lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 
       </description>

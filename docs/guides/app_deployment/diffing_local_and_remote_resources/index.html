@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/app_deployment/diffing_local_and_remote_resources/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2020-09-30T20:01:35+05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-30T20:01:35&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Diffing Local and Remote Resources">
 <meta itemprop="description" content="Diffing Local and Remote Resources
 ">
-<meta itemprop="dateModified" content="2020-09-30T20:01:35+05:30" />
+<meta itemprop="dateModified" content="2020-09-30T20:01:35&#43;05:30" />
 <meta itemprop="wordCount" content="146">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Diffing Local and Remote Resources"/>
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
-<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
+<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -723,12 +723,12 @@
 <h2 id="generating-a-diff">Generating a Diff</h2>
 <p>Use the <code>diff</code> program in a user&rsquo;s path to display a diff of the changes that will be
 made by Apply.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl diff -k ./dir/
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl diff -k ./dir/
 </code></pre></div><h2 id="setting-the-diff-program">Setting the Diff Program</h2>
 <p>The <code>KUBECTL_EXTERNAL_DIFF</code> environment variable can be used to select your own diff command.
 By default, the &ldquo;diff&rdquo; command available in your path will be run with &ldquo;-u&rdquo; (unified) and &ldquo;-N&rdquo;
 (treat new files as empty) options.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#204a87">export</span> <span style="color:#000">KUBECTL_EXTERNAL_DIFF</span><span style="color:#ce5c00;font-weight:bold">=</span>meld<span style="color:#000;font-weight:bold">;</span> kubectl diff -k ./dir/
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#204a87">export</span> <span style="color:#000">KUBECTL_EXTERNAL_DIFF</span><span style="color:#ce5c00;font-weight:bold">=</span>meld<span style="color:#000;font-weight:bold">;</span> kubectl diff -k ./dir/
 </code></pre></div><h2 id="exit-status">Exit status</h2>
 <p>The following exit values shall be returned:</p>
 <p><code>0</code>

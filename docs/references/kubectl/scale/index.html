@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
-<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
+<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -1614,32 +1614,32 @@
 <p>Scale also allows users to specify one or more preconditions for the scale action.</p>
 <p>If &ndash;current-replicas or &ndash;resource-version is specified, it is validated before the scale is attempted, and it is guaranteed that the precondition holds true when the scale is sent to the server.</p>
 <h2 id="command">Command</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl scale <span style="color:#ce5c00;font-weight:bold">[</span>--resource-version<span style="color:#ce5c00;font-weight:bold">=</span>version<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>--current-replicas<span style="color:#ce5c00;font-weight:bold">=</span>count<span style="color:#ce5c00;font-weight:bold">]</span> --replicas<span style="color:#ce5c00;font-weight:bold">=</span>COUNT <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME<span style="color:#ce5c00;font-weight:bold">)</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl scale <span style="color:#ce5c00;font-weight:bold">[</span>--resource-version<span style="color:#ce5c00;font-weight:bold">=</span>version<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>--current-replicas<span style="color:#ce5c00;font-weight:bold">=</span>count<span style="color:#ce5c00;font-weight:bold">]</span> --replicas<span style="color:#ce5c00;font-weight:bold">=</span>COUNT <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME<span style="color:#ce5c00;font-weight:bold">)</span>
 </code></pre></div><h2 id="example">Example</h2>
 <h3 id="current-state">Current State</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
 
 NAME    READY   UP-TO-DATE   AVAILABLE   AGE
 nginx   1/1     <span style="color:#0000cf;font-weight:bold">1</span>            <span style="color:#0000cf;font-weight:bold">1</span>           24s
 </code></pre></div><h3 id="command-1">Command</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl scale --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span> deployment/nginx
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl scale --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span> deployment/nginx
 
 deployment.apps/nginx scaled
 </code></pre></div><h3 id="new-state">New State</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
 
 NAME    READY   UP-TO-DATE   AVAILABLE   AGE
 nginx   3/3     <span style="color:#0000cf;font-weight:bold">3</span>            <span style="color:#0000cf;font-weight:bold">3</span>           87s
 </code></pre></div><h2 id="more-examples">More Examples</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Scale a replicaset named &#39;foo&#39; to 3.</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Scale a replicaset named &#39;foo&#39; to 3.</span>
 kubectl scale --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span> rs/foo
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Scale a resource identified by type and name specified in &#34;foo.yaml&#34; to 3.</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Scale a resource identified by type and name specified in &#34;foo.yaml&#34; to 3.</span>
 kubectl scale --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span> -f foo.yaml
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># If the deployment named mysql&#39;s current size is 2, scale mysql to 3.</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># If the deployment named mysql&#39;s current size is 2, scale mysql to 3.</span>
 kubectl scale --current-replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span> deployment/mysql
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Scale multiple replication controllers.</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Scale multiple replication controllers.</span>
 kubectl scale --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">5</span> rc/foo rc/bar rc/baz
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Scale statefulset named &#39;web&#39; to 3.</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Scale statefulset named &#39;web&#39; to 3.</span>
 kubectl scale --replicas<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span> statefulset/web
 </code></pre></div>
 

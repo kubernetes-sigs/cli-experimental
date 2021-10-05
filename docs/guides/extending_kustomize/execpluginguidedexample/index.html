@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/execpluginguidedexample/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2020-10-31T08:50:10+05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-10-31T08:50:10&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Exec plugin on linux">
 <meta itemprop="description" content="Exec plugin on linux in 60 seconds
 ">
-<meta itemprop="dateModified" content="2020-10-31T08:50:10+05:30" />
+<meta itemprop="dateModified" content="2020-10-31T08:50:10&#43;05:30" />
 <meta itemprop="wordCount" content="459">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Exec plugin on linux"/>
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
-<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
+<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -727,14 +727,14 @@ current setup.</p>
 <li>linux, git, curl, Go 1.13</li>
 </ul>
 <h2 id="make-a-place-to-work">Make a place to work</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">DEMO</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>mktemp -d<span style="color:#204a87;font-weight:bold">)</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">DEMO</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>mktemp -d<span style="color:#204a87;font-weight:bold">)</span>
 </code></pre></div><h2 id="create-a-kustomization">Create a kustomization</h2>
 <p>Make a kustomization directory to
 hold all your config:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">MYAPP</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/myapp
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">MYAPP</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/myapp
 mkdir -p <span style="color:#000">$MYAPP</span>
 </code></pre></div><p>Make a deployment config:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/deployment.yaml</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/deployment.yaml</span>
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -770,7 +770,7 @@ spec:
               key: enableRisky
 EOF
 </code></pre></div><p>Make a service config:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/service.yaml</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/service.yaml</span>
 kind: Service
 apiVersion: v1
 metadata:
@@ -788,7 +788,7 @@ you&rsquo;re about to write.</p>
 object.  The values of its <code>apiVersion</code> and <code>kind</code>
 fields are used to <em>find</em> the plugin code on your
 filesystem (more on this later).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/cmGenerator.yaml</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/cmGenerator.yaml</span>
 apiVersion: myDevOpsTeam
 kind: SillyConfigMapGenerator
 metadata:
@@ -797,7 +797,7 @@ argsOneLiner: Bienvenue <span style="color:#204a87">true</span>
 EOF
 </code></pre></div><p>Finally, make a kustomization file
 referencing all of the above:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/kustomization.yaml</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/kustomization.yaml</span>
 commonLabels:
   app: hello
 resources:
@@ -807,21 +807,21 @@ generators:
 - cmGenerator.yaml
 EOF
 </code></pre></div><p>Review the files</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -C1 <span style="color:#000">$MYAPP</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -C1 <span style="color:#000">$MYAPP</span>
 </code></pre></div><h2 id="make-a-home-for-plugins">Make a home for plugins</h2>
 <p>Plugins must live in a particular place for
 kustomize to find them.</p>
 <p>This demo will use the ephemeral directory:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/kustomize/plugin
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/kustomize/plugin
 </code></pre></div><p>The plugin config defined above in
 <code>$MYAPP/cmGenerator.yaml</code> specifies:</p>
 <blockquote>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: myDevOpsTeam
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: myDevOpsTeam
 kind: SillyConfigMapGenerator
 </code></pre></div></blockquote>
 <p>This means the plugin must live in a directory
 named:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">MY_PLUGIN_DIR</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$PLUGIN_ROOT</span>/myDevOpsTeam/sillyconfigmapgenerator
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">MY_PLUGIN_DIR</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$PLUGIN_ROOT</span>/myDevOpsTeam/sillyconfigmapgenerator
 
 mkdir -p <span style="color:#000">$MY_PLUGIN_DIR</span>
 </code></pre></div><p>The directory name is the plugin config&rsquo;s
@@ -835,7 +835,7 @@ might need.</p>
 correct directory and file name.  The file name
 must match the plugin&rsquo;s <em>kind</em> (in this case,
 <code>SillyConfigMapGenerator</code>):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MY_PLUGIN_DIR/SillyConfigMapGenerator</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MY_PLUGIN_DIR/SillyConfigMapGenerator</span>
 <span style="color:#8f5902;font-style:italic">#!/bin/bash</span>
 <span style="color:#8f5902;font-style:italic"># Skip the config file name argument.</span>
 <span style="color:#204a87">shift</span>
@@ -852,20 +852,20 @@ must match the plugin&rsquo;s <em>kind</em> (in this case,
 </span><span style="color:#4e9a06">&#34;</span>
 EOF
 </code></pre></div><p>By definition, an <em>exec</em> plugin must be executable:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod a+x <span style="color:#000">$MY_PLUGIN_DIR</span>/SillyConfigMapGenerator
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod a+x <span style="color:#000">$MY_PLUGIN_DIR</span>/SillyConfigMapGenerator
 </code></pre></div><h2 id="install-kustomize">Install kustomize</h2>
 <p>Per the <a href="/installation/kustomize/">instructions</a>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s <span style="color:#4e9a06">&#34;https://raw.githubusercontent.com/\
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s <span style="color:#4e9a06">&#34;https://raw.githubusercontent.com/\
 </span><span style="color:#4e9a06">kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&#34;</span>  <span style="color:#000;font-weight:bold">|</span> bash
 mkdir -p <span style="color:#000">$DEMO</span>/bin
 mv kustomize <span style="color:#000">$DEMO</span>/bin
 </code></pre></div><h2 id="review-the-layout">Review the layout</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tree <span style="color:#000">$DEMO</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tree <span style="color:#000">$DEMO</span>
 </code></pre></div><h2 id="build-your-app-using-the-plugin">Build your app, using the plugin</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">XDG_CONFIG_HOME</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span> <span style="color:#000">$DEMO</span>/bin/kustomize build --enable_alpha_plugins <span style="color:#000">$MYAPP</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">XDG_CONFIG_HOME</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span> <span style="color:#000">$DEMO</span>/bin/kustomize build --enable_alpha_plugins <span style="color:#000">$MYAPP</span>
 </code></pre></div><p>Above, if you had set</p>
 <blockquote>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$HOME</span>/.config/kustomize/plugin
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$HOME</span>/.config/kustomize/plugin
 </code></pre></div></blockquote>
 <p>there would be no need to use <code>XDG_CONFIG_HOME</code> in the
 <em>kustomize</em> command above.</p>

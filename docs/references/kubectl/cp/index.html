@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
-<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
+<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -1615,17 +1615,17 @@
 	<div class="lead">Copy files and directories to and from containers</div>
 	<p>Copy files and directories to and from containers.</p>
 <h2 id="command">Command</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl cp &lt;file-spec-src&gt; &lt;file-spec-dest&gt;
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl cp &lt;file-spec-src&gt; &lt;file-spec-dest&gt;
 </code></pre></div><h2 id="example">Example</h2>
 <h3 id="current-state">Current State</h3>
 <p><code>files</code> in local machine. Also notice a file named <code>simple.txt</code> which is about to be copied to a pod named <code>nginx-6db489d4b7-qkd5d</code></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -l
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -l
 
 total <span style="color:#0000cf;font-weight:bold">8</span>
 drwxr-xr-x <span style="color:#0000cf;font-weight:bold">2</span> root root <span style="color:#0000cf;font-weight:bold">4096</span> Mar  <span style="color:#0000cf;font-weight:bold">1</span>  <span style="color:#0000cf;font-weight:bold">2020</span> Desktop
 -rw-r--r-- <span style="color:#0000cf;font-weight:bold">1</span> root root    <span style="color:#0000cf;font-weight:bold">6</span> Sep <span style="color:#0000cf;font-weight:bold">21</span> 03:51 simple.txt
 </code></pre></div><p><code>files</code> in a pod named <code>nginx-6db489d4b7-qkd5d</code></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl <span style="color:#204a87">exec</span> nginx-6db489d4b7-qkd5d -- ls -al
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl <span style="color:#204a87">exec</span> nginx-6db489d4b7-qkd5d -- ls -al
 
 total <span style="color:#0000cf;font-weight:bold">84</span>
 drwxr-xr-x   <span style="color:#0000cf;font-weight:bold">1</span> root root <span style="color:#0000cf;font-weight:bold">4096</span> Sep <span style="color:#0000cf;font-weight:bold">21</span> 03:17 .
@@ -1638,12 +1638,12 @@ drwxr-xr-x   <span style="color:#0000cf;font-weight:bold">5</span> root root  <s
 drwxr-xr-x  <span style="color:#0000cf;font-weight:bold">10</span> root root <span style="color:#0000cf;font-weight:bold">4096</span> Sep  <span style="color:#0000cf;font-weight:bold">8</span> 07:00 usr
 drwxr-xr-x   <span style="color:#0000cf;font-weight:bold">1</span> root root <span style="color:#0000cf;font-weight:bold">4096</span> Sep  <span style="color:#0000cf;font-weight:bold">8</span> 07:00 var
 </code></pre></div><h3 id="command-1">Command</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp simple.txt nginx-6db489d4b7-qkd5d:.
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp simple.txt nginx-6db489d4b7-qkd5d:.
 </code></pre></div><p>Notice the <code>.</code> followed by <code>nginx-6db489d4b7-qkd5d:</code> this specifies the current directory .i.e., <code>root</code>, if you want to copy the file to another directory - you can use absolute path to paste it there.</p>
 <p><strong>Example:</strong> If you would like to copy <code>simple.txt</code> to <code>/temp</code> then use command</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp simple.txt nginx-6db489d4b7-qkd5d:./temp
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp simple.txt nginx-6db489d4b7-qkd5d:./temp
 </code></pre></div><h3 id="output">Output</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl <span style="color:#204a87">exec</span> nginx-6db489d4b7-qkd5d -- ls -al
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl <span style="color:#204a87">exec</span> nginx-6db489d4b7-qkd5d -- ls -al
 
 total <span style="color:#0000cf;font-weight:bold">84</span>
 drwxr-xr-x   <span style="color:#0000cf;font-weight:bold">1</span> root root <span style="color:#0000cf;font-weight:bold">4096</span> Sep <span style="color:#0000cf;font-weight:bold">21</span> 03:17 .
@@ -1667,26 +1667,26 @@ Copy requires that <em>tar</em> be installed in the container image.
 <li>Local file format is <code>&lt;path&gt;</code></li>
 <li>Remote file format is <code>&lt;pod-name&gt;:&lt;path&gt;</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp /tmp/foo_dir &lt;some-pod&gt;:/tmp/bar_dir
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp /tmp/foo_dir &lt;some-pod&gt;:/tmp/bar_dir
 </code></pre></div><h2 id="remote-to-local">Remote to Local</h2>
 <p>Copy a remote file from a Pod to a local file.</p>
 <ul>
 <li>Local file format is <code>&lt;path&gt;</code></li>
 <li>Remote file format is <code>&lt;pod-name&gt;:&lt;path&gt;</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp &lt;some-pod&gt;:/tmp/foo /tmp/bar
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp &lt;some-pod&gt;:/tmp/foo /tmp/bar
 </code></pre></div><h2 id="specify-the-container">Specify the Container</h2>
 <p>Specify the Container within a Pod running multiple containers.</p>
 <ul>
 <li><code>-c &lt;container-name&gt;</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp /tmp/foo &lt;some-pod&gt;:/tmp/bar -c &lt;specific-container&gt;
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp /tmp/foo &lt;some-pod&gt;:/tmp/bar -c &lt;specific-container&gt;
 </code></pre></div><h2 id="namespaces">Namespaces</h2>
 <p>Set the Pod namespace by prefixing the Pod name with <code>&lt;namespace&gt;/</code> .</p>
 <ul>
 <li><code>&lt;pod-namespace&gt;/&lt;pod-name&gt;:&lt;path&gt;</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp /tmp/foo &lt;some-namespace&gt;/&lt;some-pod&gt;:/tmp/bar
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl cp /tmp/foo &lt;some-namespace&gt;/&lt;some-pod&gt;:/tmp/bar
 </code></pre></div>
         <div class="section-index">
     

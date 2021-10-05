@@ -47,7 +47,7 @@ any other client.&lt;/p&gt;
 &lt;p&gt;The new semver-able API will begin with &lt;code&gt;v4.0.0&lt;/code&gt; (not
 yet released) and be a clean break with &lt;code&gt;v3&lt;/code&gt; etc.&lt;/p&gt;
 &lt;h3 id=&#34;change-log-since-v320&#34;&gt;Change log since v3.2.0&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;3c9d828f - Have kustomize CLI depend on kustomize Go API v3.3.0 (Jeffrey Regan)
+&lt;pre&gt;&lt;code&gt;3c9d828f - Have kustomize CLI depend on kustomize Go API v3.3.0 (Jeffrey Regan)
 5d800f0b - Merge pull request #1595 from monopole/threeReleases (Jeff Regan)
 4eb2d5bc - Three builders. (Jeffrey Regan)
 988af1ff - Update README.md (Jeff Regan)
@@ -157,11 +157,11 @@ represented by the public package surface presented by
 &lt;h2 id=&#34;new-subcommand&#34;&gt;New Subcommand&lt;/h2&gt;
 &lt;p&gt;Since this version, one can create a kustomization.yaml file in a directory through a &lt;code&gt;create&lt;/code&gt; subcommand.&lt;/p&gt;
 &lt;p&gt;Create a new overlay from the base ../base&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kustomize create --resources ../base
+&lt;pre&gt;&lt;code&gt;kustomize create --resources ../base
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Create a new kustomization detecing resources in the current directory&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kustomize create --autodetect
+&lt;pre&gt;&lt;code&gt;kustomize create --autodetect
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once can also add all resources in the current directory recursively by&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kustomize create --autodetect --recursive
+&lt;pre&gt;&lt;code&gt;kustomize create --autodetect --recursive
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;new-example-generator&#34;&gt;New Example Generator&lt;/h3&gt;
 &lt;p&gt;A new example generator of using go-getter to download resources is added. Take a look at &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/examples/goGetterGeneratorPlugin.md&#34;&gt;go-getter generator&lt;/a&gt;.&lt;/p&gt;
 
@@ -188,7 +188,7 @@ will let the user define two different patches against two different Deployment 
 same &amp;ldquo;deploy1&amp;rdquo; name but in different namespaces in the same Kustomize context/folder.
 Unless the &lt;code&gt;namespace:&lt;/code&gt; field has been specified in the kustomization.yaml, no namespace
 value will be handled as Kubernetes &lt;code&gt;default&lt;/code&gt; namespace.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;apps/v1&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;apps/v1&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Deployment&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;metadata&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;deploy1&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -222,7 +222,7 @@ Specifying the namespace in the objRef of the corresponding varriables, allows K
 resovlve thoses variables.
 If the namespace is not specified, Kustomize will handle it has a &amp;ldquo;wildcard&amp;rdquo; value.&lt;/p&gt;
 &lt;p&gt;Extract of kustomization.yaml:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;vars&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;vars&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;elasticsearch-test-protocol&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;objref&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Service&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -251,7 +251,7 @@ Special attention has been paid the handling of:&lt;/p&gt;
 even if ClusterRoleBind,RoleBinding and ValidatingWebookConfiguration are part of the
 resources he needs to declare.&lt;/p&gt;
 &lt;p&gt;Extract of kustomization.yaml:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;namePrefix&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pfx-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;namePrefix&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pfx-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;nameSuffix&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;-&lt;span style=&#34;color:#000&#34;&gt;sfx&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;namespace&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;testnamespace&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -264,7 +264,7 @@ combining sub-components, (as in the following example), Kustomize has improved
 resource matching capabilities. This removes some of the constraints which were
 present on the utilization of prefix/suffix and namespace transformers in the
 individual components.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;resources&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;resources&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#000&#34;&gt;../component1&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#000&#34;&gt;../component2&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#000&#34;&gt;../component3&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -427,7 +427,7 @@ execution of
 &lt;h2 id=&#34;remove-load-restrictions&#34;&gt;Remove load restrictions&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://kubectl.docs.kubernetes.io/kustomize/images/abandonedTrainingWheels.png&#34; alt=&#34;removed training wheels&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The following usage:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kustomize build --load_restrictor none $target
+&lt;pre&gt;&lt;code&gt;kustomize build --load_restrictor none $target
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;allows a &lt;code&gt;kustomization.yaml&lt;/code&gt; file used in this
 build to refer to files outside its own directory
 (i.e. outside its &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/api-reference/glossary#kustomization-root&#34;&gt;root&lt;/a&gt;).&lt;/p&gt;
@@ -470,7 +470,7 @@ deprecation simply moving the arguments of the
 &lt;code&gt;bases&lt;/code&gt; field to the &lt;code&gt;resources&lt;/code&gt; field in the
 desired order, e.g.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;resources:
+&lt;pre&gt;&lt;code&gt;resources:
 - someResouceFile.yaml
 - someOtherResourceFile.yaml
 bases:
@@ -478,7 +478,7 @@ bases:
 &lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;could become&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;resources:
+&lt;pre&gt;&lt;code&gt;resources:
 - someResouceFile.yaml
 - ../../someBaseDir
 - someOtherResourceFile.yaml
@@ -576,7 +576,7 @@ registries, tags and digests.&lt;/p&gt;
 a &lt;a href=&#34;https://docs.google.com/document/d/1FYgLVdq-siB_Cef9yuQBmit0PbrE8lsyTBdGI2eA2y8/edit&#34;&gt;security concern&lt;/a&gt;. One can use &lt;code&gt;files&lt;/code&gt; or
 &lt;code&gt;literals&lt;/code&gt;, similar to ConfigMapGenerator, to
 generate a secret.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;secretGenerator:
+&lt;pre&gt;&lt;code&gt;secretGenerator:
 - name: app-tls
   files:
     - secret/tls.cert
@@ -598,13 +598,13 @@ transformation rules).&lt;/p&gt;
 kustomization file working with previous
 versions to one working with 2.0.0. For example,
 a kustomization.yaml with following content&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;patches:
+&lt;pre&gt;&lt;code&gt;patches:
   - deployment-patch.yaml
 imageTags:
   - name: postgres
     newTag: v1
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;will be converted to&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apiVersion: kustomize.config.k8s.io/v1beta1
+&lt;pre&gt;&lt;code&gt;apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 patchesStrategicMerge:
   - deployment-patch.yaml
@@ -628,7 +628,7 @@ use cases.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;Cancelled plans to deprecate applying prefix/suffix to namespace.
 The deprecation warning&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Adding nameprefix and namesuffix to Namespace resource will be deprecated in next release.
+&lt;pre&gt;&lt;code&gt;Adding nameprefix and namesuffix to Namespace resource will be deprecated in next release.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;was removed.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

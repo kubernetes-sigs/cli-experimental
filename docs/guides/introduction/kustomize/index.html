@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -25,11 +25,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/introduction/kustomize/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2020-09-23T14:28:56+05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-23T14:28:56&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Kustomize">
 <meta itemprop="description" content="Introduction to Kustomize">
-<meta itemprop="dateModified" content="2020-09-23T14:28:56+05:30" />
+<meta itemprop="dateModified" content="2020-09-23T14:28:56&#43;05:30" />
 <meta itemprop="wordCount" content="398">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kustomize"/>
@@ -39,8 +39,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
-<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
+<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -184,7 +184,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -735,7 +735,7 @@ files (deployments, services, configmaps, etc.), create a
 customization to apply to them, e.g. <em>add a common
 label</em>.</p>
 <p>File structure:</p>
-<pre tabindex="0"><code>~/someApp
+<pre><code>~/someApp
 ├── deployment.yaml
 ├── kustomization.yaml
 └── service.yaml
@@ -745,15 +745,15 @@ rebase from the source material to capture
 improvements, because you don&rsquo;t modify the resources
 directly.</p>
 <p>Generate customized YAML with:</p>
-<pre tabindex="0"><code>kustomize build ~/someApp
+<pre><code>kustomize build ~/someApp
 </code></pre><p>The YAML can be directly <code>applied</code> to a cluster:</p>
-<pre tabindex="0"><code>kustomize build ~/someApp | kubectl apply -f -
+<pre><code>kustomize build ~/someApp | kubectl apply -f -
 </code></pre><h3 id="2-create-variants-using-overlays">2) Create <code>variants</code> using <code>overlays</code></h3>
 <p>Manage traditional <code>variants</code> of a configuration - like
 <em>development</em>, <em>staging</em> and <em>production</em> - using
 <code>overlays</code> that modify a common <code>base</code>.</p>
 <p>File structure:</p>
-<pre tabindex="0"><code>~/someApp
+<pre><code>~/someApp
 ├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
@@ -781,9 +781,9 @@ Arranging the repo clones as siblings on disk avoids
 the need for git submodules (though that works fine, if
 you are a submodule fan).</p>
 <p>Generate YAML with</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kustomize build ~/someApp/overlays/production
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kustomize build ~/someApp/overlays/production
 </code></pre></div><p>The YAML can be directly <code>applied</code> to a cluster:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kustomize build ~/someApp/overlays/production <span style="color:#000;font-weight:bold">|</span> kubectl apply -f -
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kustomize build ~/someApp/overlays/production <span style="color:#000;font-weight:bold">|</span> kubectl apply -f -
 </code></pre></div>
 	
 		<style>

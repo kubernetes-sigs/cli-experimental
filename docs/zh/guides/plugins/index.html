@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
-<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
+<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -418,7 +418,7 @@
 <p>从为添加 <code>generators</code> 或 <code>transformers</code> 字段开始。</p>
 <p>字段内容为一个 string list：</p>
 <blockquote>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">generators</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">generators</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">relative/path/to/some/file.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">relative/path/to/some/kustomization</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">/absolute/path/to/some/kustomization</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -431,11 +431,11 @@
 <p>从磁盘上读取 YAML 文件，kustomization 的路径或 URL 会触发 kustomization 的运行。由此产生的每个的对象都会被 kustomize 进一步解析为 <em>plugin configuration</em> 对象。</p>
 <h2 id="配置">配置</h2>
 <p>kustomization 文件可以包含如下内容：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">generators</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">generators</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">chartInflator.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><p>像这样，kustomization 进程将在 <a href="glossary.md#kustomization-root">kustomization root</a> 下寻找到一个名为 <code>chartInflator.yaml</code> 的文件。</p>
 <p><code>chartInflator.yaml</code> 为插件配置文件，该文件包含 YAML 配置对象，内容如下：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">someteam.example.com/v1</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">someteam.example.com/v1</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">ChartInflator</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">notImportantHere</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -446,7 +446,7 @@
 <p>更多关于插件配置 YAML 的例子，请浏览根目录下 <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/builtin">plugins</a> 中的单元测试，例如 <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/chartinflator/ChartInflator_test.go">ChartInflator</a> 或 <a href="https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/builtin/prefixsuffixtransformer/PrefixSuffixTransformer_test.go">NameTransformer</a>。</p>
 <h2 id="植入">植入</h2>
 <p>每个插件都有自己的专用目录，名为：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">$XDG_CONFIG_HOME</span>/kustomize/plugin
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">$XDG_CONFIG_HOME</span>/kustomize/plugin
     /<span style="color:#4e9a06">${</span><span style="color:#000">apiVersion</span><span style="color:#4e9a06">}</span>/LOWERCASE<span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span><span style="color:#ce5c00;font-weight:bold">)</span>
 </code></pre></div><p>The default value of <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html"><code>XDG_CONFIG_HOME</code></a> is
 <code>$HOME/.config</code>.</p>
@@ -454,7 +454,7 @@
 <p>为了便于插件包（源码、测试、插件数据文件等）的共享，要求每个目录存放一个插件。</p>
 <p>在 <a href="#go-%E6%8F%92%E4%BB%B6">Go 插件</a>中，还可以为单个插件提供一个 <code>go.mod</code> 文件，可以缓解包版本依赖性偏移的问题。</p>
 <p>加载时，kustomize 首先会寻找一个 <em>可执行</em> 文件，名为：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">$XDG_CONFIG_HOME</span>/kustomize/plugin
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">$XDG_CONFIG_HOME</span>/kustomize/plugin
     /<span style="color:#4e9a06">${</span><span style="color:#000">apiVersion</span><span style="color:#4e9a06">}</span>/LOWERCASE<span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span><span style="color:#ce5c00;font-weight:bold">)</span>/<span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span>
 </code></pre></div><p>如果没有找到这个文件，或者这个文件不是可执行的，kustomize 会在同一目录下寻找一个名为 <code>${kind}.so</code> 的文件，并尝试将其作为 <a href="#go-%E6%8F%92%E4%BB%B6">Go插件</a> 加载。</p>
 <p>如果这两项检查都失败，则插件加载失败，<code>kustomize build</code> 失败。</p>
@@ -498,7 +498,7 @@
 <p>通过包含 <code>needs-hash</code> 注释，可以将资源标记为需要由内部哈希转换器处理的资源。当设置注释的有效值为 <code>&quot;true&quot;</code> 和 <code>&quot;false&quot;</code> 时，分别启用或禁用资源的哈希后缀。忽略该注解相当于将值设置为 <code>&quot;false&quot;</code>。</p>
 <p>如果此注释被设置在不受哈希转换器支持的资源上，将导致构建将失败。</p>
 <p>示例：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">ConfigMap</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">cm-test</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -509,7 +509,7 @@
 </span></code></pre></div><p><strong><code>kustomize.config.k8s.io/behavior</code></strong></p>
 <p><code>behavior</code> 注释为当资源发生冲突时插件的处理方式，有效值包括：&ldquo;create&rdquo;、&ldquo;merge &ldquo;和 &ldquo;replace&rdquo;，默认为 &ldquo;create&rdquo;。</p>
 <p>示例：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">ConfigMap</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">cm-test</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -523,7 +523,7 @@
 <p>如果标志被命名为 “KustomizePlugin”，并且附加的函数实现了 <code>Configurable</code>、<code>Generator</code> 和 <code>Transformer</code> 接口，那么它可以进一步作为 <em>kustomize</em> 插件使用。</p>
 <p>kustomize 的一个 Go 插件看起来是这样的：</p>
 <blockquote>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span>
 
 <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000;font-weight:bold">(</span>
 <span style="color:#4e9a06">&#34;sigs.k8s.io/kustomize/api/ifc&#34;</span>
@@ -558,7 +558,7 @@
 </ul>
 <p>Go 插件既可以是生成器，也可以是转化器。<code>Generate</code> 方法将在 <code>Transform</code> 方法运行之前与所有其他生成器一起运行。</p>
 <p>如下的构建命令，假设插件源代码位于 kustomize 期望查找 <code>.so</code> 文件的目录中：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">d</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$XDG_CONFIG_HOME</span>/kustomize/plugin<span style="color:#4e9a06">\
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">d</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$XDG_CONFIG_HOME</span>/kustomize/plugin<span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>/<span style="color:#4e9a06">${</span><span style="color:#000">apiVersion</span><span style="color:#4e9a06">}</span>/LOWERCASE<span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">${</span><span style="color:#000">kind</span><span style="color:#4e9a06">}</span><span style="color:#ce5c00;font-weight:bold">)</span>
 
 go build -buildmode plugin <span style="color:#4e9a06">\

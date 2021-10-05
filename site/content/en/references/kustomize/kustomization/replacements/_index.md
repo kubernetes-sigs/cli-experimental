@@ -176,15 +176,27 @@ The fieldPath and fieldPaths fields support a format of a '.'-separated path to 
 
 `metadata.name`
 
+You can escape the '.' one of two ways. For example, say we have the following resource:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    config.kubernetes.io/local-config: true # this is what we want to target
+```
+
+We can express our path:
+
+1. With a '\': `metadata.annotations.config\.kubernetes\.io/local-config`
+
+2. With '[]': `metadata.annotations.[config.kubernetes.io/local-config]`
+
 Strings are used for mapping nodes. For sequence nodes, we support two options:
 
-1. Index by number:
+1. Index by number: `spec.template.spec.containers.1.image`
 
-`spec.template.spec.containers.1.image`
-
-2. Index by key-value pair:
-
-`spec.template.spec.containers.[name=nginx].image`
+2. Index by key-value pair: `spec.template.spec.containers.[name=nginx].image`
 
 
 ### Example

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
-<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
+<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -1616,7 +1616,7 @@ A kustomization describes how to generate or transform
 other KRM objects.</p>
 <p>Although most practical kustomization files don&rsquo;t actually look this
 way, a <code>kustomization.yaml</code> file is basically four lists:</p>
-<pre tabindex="0"><code>apiVersion: kustomize.config.k8s.io/v1beta1
+<pre><code>apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
@@ -1656,7 +1656,7 @@ injected into the encapsulating list in order.  When this happens, the
 encapsulating kustomization can be called an <em>overlay</em>, and what it
 refers to can be called a <em>base</em>.</p>
 <p>A typical layout:</p>
-<pre tabindex="0"><code>app1/
+<pre><code>app1/
   kustomization.yaml
     | resources:
     | - ../base
@@ -1720,7 +1720,7 @@ convenience.</p>
 <h3 id="generators-and-transformers">Generators and Transformers</h3>
 <p>In the code, the interfaces distinguishing a generator from a
 transformer are:</p>
-<pre tabindex="0"><code>// Generator creates an instance of ResMap.
+<pre><code>// Generator creates an instance of ResMap.
 type Generator interface {
   Generate() (ResMap, error)
 }
@@ -1737,7 +1737,7 @@ and T&rsquo;s are done via a distinct (and common) interface.</p>
 <p>A transformer doesn&rsquo;t implement <code>Generator</code>, but it&rsquo;s capable of
 behaving like one.</p>
 <p>This is because <code>ResMap</code> has the methods</p>
-<pre tabindex="0"><code>Append(*Resource)
+<pre><code>Append(*Resource)
 Replace(*Resource)
 Remove(ResId)
 Clear()
@@ -1769,8 +1769,8 @@ run after the generators, but before the validators</em>.</p>
 <p>Also, they make common use cases easier to express.</p>
 <p>E.g. the following two YAML stanzas do the exactly the same thing if
 added to a kustomization file:</p>
-<pre tabindex="0"><code>namePrefix: bob-
-</code></pre><pre tabindex="0"><code>transformers:
+<pre><code>namePrefix: bob-
+</code></pre><pre><code>transformers:
 - |-
   apiVersion: builtin
   kind: PrefixSuffixTransformer
@@ -1796,7 +1796,7 @@ reusable, custom transformer configs.</p>
 that transform the base transformer configurations before they are
 used in the top level apps.</p>
 <blockquote>
-<pre tabindex="0"><code>app1/
+<pre><code>app1/
   kustomization.yaml
     | resources:
     | - ../base/resources
