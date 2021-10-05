@@ -174,7 +174,7 @@ to &lt;strong&gt;A&lt;/strong&gt;, or &lt;strong&gt;B&lt;/strong&gt; is off in a
 git repository, referencable from any kustomization.&lt;/p&gt;
 &lt;p&gt;A common layout is&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;├── base
+&lt;pre&gt;&lt;code&gt;├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
 │   └── service.yaml
@@ -220,7 +220,7 @@ resources intentionally published somewhere for others
 to use.&lt;/p&gt;
 &lt;p&gt;E.g. one might create a github repository like this:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;github.com/username/someapp/
+&lt;pre&gt;&lt;code&gt;github.com/username/someapp/
   kustomization.yaml
   deployment.yaml
   configmap.yaml
@@ -248,7 +248,7 @@ in a deployment, the CPU to a particular pod, the data
 source used in a ConfigMap, etc.&lt;/p&gt;
 &lt;p&gt;One configures a cluster like this:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; kustomize build someapp/overlays/staging |\
+&lt;pre&gt;&lt;code&gt; kustomize build someapp/overlays/staging |\
      kubectl apply -f -
 
  kustomize build someapp/overlays/production |\
@@ -323,7 +323,7 @@ with a &lt;em&gt;kind&lt;/em&gt; and a &lt;em&gt;metadata/name&lt;/em&gt; field.
 &lt;h2 id=&#34;target&#34;&gt;target&lt;/h2&gt;
 &lt;p&gt;The &lt;em&gt;target&lt;/em&gt; is the argument to &lt;code&gt;kustomize build&lt;/code&gt;, e.g.:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; kustomize build $target
+&lt;pre&gt;&lt;code&gt; kustomize build $target
 &lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;code&gt;$target&lt;/code&gt; must be a path or a url to a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The target contains, or refers to, all the information
@@ -366,7 +366,7 @@ A kustomization describes how to generate or transform
 other KRM objects.&lt;/p&gt;
 &lt;p&gt;Although most practical kustomization files don&amp;rsquo;t actually look this
 way, a &lt;code&gt;kustomization.yaml&lt;/code&gt; file is basically four lists:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apiVersion: kustomize.config.k8s.io/v1beta1
+&lt;pre&gt;&lt;code&gt;apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
@@ -406,7 +406,7 @@ injected into the encapsulating list in order.  When this happens, the
 encapsulating kustomization can be called an &lt;em&gt;overlay&lt;/em&gt;, and what it
 refers to can be called a &lt;em&gt;base&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;A typical layout:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;app1/
+&lt;pre&gt;&lt;code&gt;app1/
   kustomization.yaml
     | resources:
     | - ../base
@@ -470,7 +470,7 @@ convenience.&lt;/p&gt;
 &lt;h3 id=&#34;generators-and-transformers&#34;&gt;Generators and Transformers&lt;/h3&gt;
 &lt;p&gt;In the code, the interfaces distinguishing a generator from a
 transformer are:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// Generator creates an instance of ResMap.
+&lt;pre&gt;&lt;code&gt;// Generator creates an instance of ResMap.
 type Generator interface {
   Generate() (ResMap, error)
 }
@@ -487,7 +487,7 @@ and T&amp;rsquo;s are done via a distinct (and common) interface.&lt;/p&gt;
 &lt;p&gt;A transformer doesn&amp;rsquo;t implement &lt;code&gt;Generator&lt;/code&gt;, but it&amp;rsquo;s capable of
 behaving like one.&lt;/p&gt;
 &lt;p&gt;This is because &lt;code&gt;ResMap&lt;/code&gt; has the methods&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Append(*Resource)
+&lt;pre&gt;&lt;code&gt;Append(*Resource)
 Replace(*Resource)
 Remove(ResId)
 Clear()
@@ -519,8 +519,8 @@ run after the generators, but before the validators&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Also, they make common use cases easier to express.&lt;/p&gt;
 &lt;p&gt;E.g. the following two YAML stanzas do the exactly the same thing if
 added to a kustomization file:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;namePrefix: bob-
-&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;transformers:
+&lt;pre&gt;&lt;code&gt;namePrefix: bob-
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;transformers:
 - |-
   apiVersion: builtin
   kind: PrefixSuffixTransformer
@@ -546,7 +546,7 @@ reusable, custom transformer configs.&lt;/p&gt;
 that transform the base transformer configurations before they are
 used in the top level apps.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;app1/
+&lt;pre&gt;&lt;code&gt;app1/
   kustomization.yaml
     | resources:
     | - ../base/resources

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
-<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
+<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -1613,33 +1613,33 @@
 	<p>Update field(s) of a resource using strategic merge patch, a JSON merge patch, or a JSON patch.</p>
 <p>JSON and YAML formats are accepted.</p>
 <h2 id="command">Command</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl patch <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME<span style="color:#ce5c00;font-weight:bold">)</span> -p PATCH
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl patch <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME<span style="color:#ce5c00;font-weight:bold">)</span> -p PATCH
 </code></pre></div><h2 id="example">Example</h2>
 <h3 id="current-state">Current State</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
 
 NAME    READY   UP-TO-DATE   AVAILABLE   AGE
 nginx   2/2     <span style="color:#0000cf;font-weight:bold">2</span>            <span style="color:#0000cf;font-weight:bold">2</span>           24m
 </code></pre></div><h3 id="command-1">Command</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl patch deployment nginx -p <span style="color:#4e9a06">&#39;{&#34;spec&#34;:{&#34;replicas&#34;:1}}&#39;</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl patch deployment nginx -p <span style="color:#4e9a06">&#39;{&#34;spec&#34;:{&#34;replicas&#34;:1}}&#39;</span>
 
 deployment.apps/nginx patched
 </code></pre></div><p>This will reduce the number of replicas for nginx from 2 to 1.</p>
 <h3 id="output">Output</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get deployments
 
 NAME    READY   UP-TO-DATE   AVAILABLE   AGE
 nginx   1/1     <span style="color:#0000cf;font-weight:bold">1</span>            <span style="color:#0000cf;font-weight:bold">1</span>           26m
 </code></pre></div><h2 id="more-examples">More Examples</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Partially update a node using a strategic merge patch. Specify the patch as JSON.</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Partially update a node using a strategic merge patch. Specify the patch as JSON.</span>
 kubectl patch node k8s-node-1 -p <span style="color:#4e9a06">&#39;{&#34;spec&#34;:{&#34;unschedulable&#34;:true}}&#39;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Partially update a node using a strategic merge patch. Specify the patch as YAML.</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Partially update a node using a strategic merge patch. Specify the patch as YAML.</span>
 kubectl patch node k8s-node-1 -p <span style="color:#4e9a06">$&#39;spec:\n unschedulable: true&#39;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Partially update a node identified by the type and name specified in &#34;node.json&#34; using strategic merge patch.</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Partially update a node identified by the type and name specified in &#34;node.json&#34; using strategic merge patch.</span>
 kubectl patch -f node.json -p <span style="color:#4e9a06">&#39;{&#34;spec&#34;:{&#34;unschedulable&#34;:true}}&#39;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update a container&#39;s image; spec.containers[*].name is required because it&#39;s a merge key.</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update a container&#39;s image; spec.containers[*].name is required because it&#39;s a merge key.</span>
 kubectl patch pod valid-pod -p <span style="color:#4e9a06">&#39;{&#34;spec&#34;:{&#34;containers&#34;:[{&#34;name&#34;:&#34;kubernetes-serve-hostname&#34;,&#34;image&#34;:&#34;new image&#34;}]}}&#39;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update a container&#39;s image using a json patch with positional arrays.</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update a container&#39;s image using a json patch with positional arrays.</span>
 kubectl patch pod valid-pod --type<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;json&#39;</span> -p<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;[{&#34;op&#34;: &#34;replace&#34;, &#34;path&#34;: &#34;/spec/containers/0/image&#34;, &#34;value&#34;:&#34;newimage&#34;}]&#39;</span>
 </code></pre></div>
         <div class="section-index">

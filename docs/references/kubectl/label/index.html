@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
-<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
+<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -1617,17 +1617,17 @@
 <li>If &ndash;resource-version is specified, then updates will use this resource version, otherwise the existing resource-version will be used.</li>
 </ul>
 <h2 id="command">Command</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl label <span style="color:#ce5c00;font-weight:bold">[</span>--overwrite<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME<span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#000">KEY_1</span><span style="color:#ce5c00;font-weight:bold">=</span>VAL_1 ... <span style="color:#000">KEY_N</span><span style="color:#ce5c00;font-weight:bold">=</span>VAL_N <span style="color:#ce5c00;font-weight:bold">[</span>--resource-version<span style="color:#ce5c00;font-weight:bold">=</span>version<span style="color:#ce5c00;font-weight:bold">]</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl label <span style="color:#ce5c00;font-weight:bold">[</span>--overwrite<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME<span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#000">KEY_1</span><span style="color:#ce5c00;font-weight:bold">=</span>VAL_1 ... <span style="color:#000">KEY_N</span><span style="color:#ce5c00;font-weight:bold">=</span>VAL_N <span style="color:#ce5c00;font-weight:bold">[</span>--resource-version<span style="color:#ce5c00;font-weight:bold">=</span>version<span style="color:#ce5c00;font-weight:bold">]</span>
 </code></pre></div><h2 id="example">Example</h2>
 <h3 id="current-status">Current Status</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get pods
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get pods
 NAME                     READY   STATUS    RESTARTS   AGE
 nginx-6db489d4b7-b5nsn   1/1     Running   <span style="color:#0000cf;font-weight:bold">0</span>          16m
 nginx-6db489d4b7-vdhvz   1/1     Running   <span style="color:#0000cf;font-weight:bold">0</span>          15m
 </code></pre></div><h3 id="command-1">Command</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl label pods nginx-6db489d4b7-b5nsn <span style="color:#000">unhealthy</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl label pods nginx-6db489d4b7-b5nsn <span style="color:#000">unhealthy</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span>
 </code></pre></div><h3 id="output">Output</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl describe pods nginx-6db489d4b7-b5nsn
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl describe pods nginx-6db489d4b7-b5nsn
 
 Name:         nginx-6db489d4b7-b5nsn
 Namespace:    default
@@ -1653,17 +1653,17 @@ Events:
   Normal  Started    14m   kubelet, minikube  Started container nginx
 </code></pre></div><p>Notice that the <code>labels</code> has <code>unhealthy=true</code> as a last entry.</p>
 <h2 id="more-examples">More Examples</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; with the label &#39;unhealthy&#39; and the value &#39;true&#39;.</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; with the label &#39;unhealthy&#39; and the value &#39;true&#39;.</span>
 kubectl label pods foo <span style="color:#000">unhealthy</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; with the label &#39;status&#39; and the value &#39;unhealthy&#39;, overwriting any existing value.</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; with the label &#39;status&#39; and the value &#39;unhealthy&#39;, overwriting any existing value.</span>
 kubectl label --overwrite pods foo <span style="color:#000">status</span><span style="color:#ce5c00;font-weight:bold">=</span>unhealthy
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update all pods in the namespace</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update all pods in the namespace</span>
 kubectl label pods --all <span style="color:#000">status</span><span style="color:#ce5c00;font-weight:bold">=</span>unhealthy
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update a pod identified by the type and name in &#34;pod.json&#34;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update a pod identified by the type and name in &#34;pod.json&#34;</span>
 kubectl label -f pod.json <span style="color:#000">status</span><span style="color:#ce5c00;font-weight:bold">=</span>unhealthy
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; only if the resource is unchanged from version 1.</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; only if the resource is unchanged from version 1.</span>
 kubectl label pods foo <span style="color:#000">status</span><span style="color:#ce5c00;font-weight:bold">=</span>unhealthy --resource-version<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; by removing a label named &#39;bar&#39; if it exists.</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8f5902;font-style:italic"># Update pod &#39;foo&#39; by removing a label named &#39;bar&#39; if it exists.</span>
 <span style="color:#8f5902;font-style:italic"># Does not require the --overwrite flag.</span>
 kubectl label pods foo bar-
 </code></pre></div>

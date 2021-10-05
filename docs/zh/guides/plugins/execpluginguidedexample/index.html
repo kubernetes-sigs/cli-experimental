@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/zh/guides/plugins/execpluginguidedexample/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2020-11-11T21:42:40+05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-11-11T21:42:40&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Exec 插件示例">
 <meta itemprop="description" content="60 秒在 Linux 构建一个 Exec 插件
 ">
-<meta itemprop="dateModified" content="2020-11-11T21:42:40+05:30" />
+<meta itemprop="dateModified" content="2020-11-11T21:42:40&#43;05:30" />
 <meta itemprop="wordCount" content="257">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Exec 插件示例"/>
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
-<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
+<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -157,7 +157,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5446888fd0aee4d5fb8e5137f160ad094f4caf6a3d2614c68528079a9b36eda5c3a87f580beac790ccf8bfacf47248075bdd3932aabfce67057b832ea5dc98b9.json"
+  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
   data-offline-search-base-href="/"
 >
 
@@ -431,13 +431,13 @@
 <li><code>Go 1.13</code></li>
 </ul>
 <h2 id="创建一个工作空间目录">创建一个工作空间/目录</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">DEMO</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>mktemp -d<span style="color:#204a87;font-weight:bold">)</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">DEMO</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>mktemp -d<span style="color:#204a87;font-weight:bold">)</span>
 </code></pre></div><h2 id="编写-kustomization">编写 kustomization</h2>
 <p>新建一个目录来保存所有的配置：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">MYAPP</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/myapp
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">MYAPP</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/myapp
 mkdir -p <span style="color:#000">$MYAPP</span>
 </code></pre></div><p>编写一个 Deployment 配置：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#4e9a06">&lt;&lt;&#39;EOF&#39; &gt;$MYAPP/deployment.yaml
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#4e9a06">&lt;&lt;&#39;EOF&#39; &gt;$MYAPP/deployment.yaml
 </span><span style="color:#4e9a06">apiVersion: apps/v1
 </span><span style="color:#4e9a06">kind: Deployment
 </span><span style="color:#4e9a06">metadata:
@@ -473,7 +473,7 @@ mkdir -p <span style="color:#000">$MYAPP</span>
 </span><span style="color:#4e9a06">              key: enableRisky
 </span><span style="color:#4e9a06">EOF</span>
 </code></pre></div><p>编写一个 service 配置：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#4e9a06">&lt;&lt;EOF &gt;$MYAPP/service.yaml
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#4e9a06">&lt;&lt;EOF &gt;$MYAPP/service.yaml
 </span><span style="color:#4e9a06">kind: Service
 </span><span style="color:#4e9a06">apiVersion: v1
 </span><span style="color:#4e9a06">metadata:
@@ -487,7 +487,7 @@ mkdir -p <span style="color:#000">$MYAPP</span>
 </span><span style="color:#4e9a06">EOF</span>
 </code></pre></div><p>现在为您要编写的插件创建一个配置文件。</p>
 <p>这个配置文件的内容也是 k8s 资源对象。其中 <code>apiVersion</code> 和 <code>kind</code> 字段的值用于在文件系统中查找插件代码（稍后会对此进行更多介绍）。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#4e9a06">&lt;&lt;&#39;EOF&#39; &gt;$MYAPP/cmGenerator.yaml
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#4e9a06">&lt;&lt;&#39;EOF&#39; &gt;$MYAPP/cmGenerator.yaml
 </span><span style="color:#4e9a06">apiVersion: myDevOpsTeam
 </span><span style="color:#4e9a06">kind: SillyConfigMapGenerator
 </span><span style="color:#4e9a06">metadata:
@@ -495,7 +495,7 @@ mkdir -p <span style="color:#000">$MYAPP</span>
 </span><span style="color:#4e9a06">argsOneLiner: Bienvenue true
 </span><span style="color:#4e9a06">EOF</span>
 </code></pre></div><p>最后在 kustomization 文件中引用以上所有内容：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#4e9a06">&lt;&lt;EOF &gt;$MYAPP/kustomization.yaml
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#4e9a06">&lt;&lt;EOF &gt;$MYAPP/kustomization.yaml
 </span><span style="color:#4e9a06">commonLabels:
 </span><span style="color:#4e9a06">  app: hello
 </span><span style="color:#4e9a06">resources:
@@ -505,18 +505,18 @@ mkdir -p <span style="color:#000">$MYAPP</span>
 </span><span style="color:#4e9a06">- cmGenerator.yaml
 </span><span style="color:#4e9a06">EOF</span>
 </code></pre></div><p>检查这些文件</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -C1 <span style="color:#000">$MYAPP</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -C1 <span style="color:#000">$MYAPP</span>
 </code></pre></div><h2 id="为插件创建目录">为插件创建目录</h2>
 <p>插件必须位于特定的目录，以便 Kustomize 能够找到它们。</p>
 <p>该示例将使用临时目录：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/kustomize/plugin
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/kustomize/plugin
 </code></pre></div><p>在上面定义的插件配置 <code>$MYAPP/cmGenerator.yaml</code> 中指定：</p>
 <blockquote>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">myDevOpsTeam</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">myDevOpsTeam</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">SillyConfigMapGenerator</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div></blockquote>
 <p>这意味着该插件必须位于以下目录中：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">MY_PLUGIN_DIR</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$PLUGIN_ROOT</span>/myDevOpsTeam/sillyconfigmapgenerator
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">MY_PLUGIN_DIR</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$PLUGIN_ROOT</span>/myDevOpsTeam/sillyconfigmapgenerator
 
 mkdir -p <span style="color:#000">$MY_PLUGIN_DIR</span>
 </code></pre></div><p>插件的目录结构为： <code>apiVersion 的 value/小写 kind 的 value</code>。</p>
@@ -524,7 +524,7 @@ mkdir -p <span style="color:#000">$MY_PLUGIN_DIR</span>
 <h2 id="编写插件">编写插件</h2>
 <p>插件有 <em>exec</em> 和 <em>Go</em> 两种.</p>
 <p>编写一个 <em>exec</em> 插件，将其安装到正确的目录，文件名必须与插件的类型匹配（在本例中为 <code>SillyConfigMapGenerator</code>）：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#4e9a06">&lt;&lt;&#39;EOF&#39; &gt;$MY_PLUGIN_DIR/SillyConfigMapGenerator
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#4e9a06">&lt;&lt;&#39;EOF&#39; &gt;$MY_PLUGIN_DIR/SillyConfigMapGenerator
 </span><span style="color:#4e9a06">#!/bin/bash
 </span><span style="color:#4e9a06"># Skip the config file name argument.
 </span><span style="color:#4e9a06">shift
@@ -541,17 +541,17 @@ mkdir -p <span style="color:#000">$MY_PLUGIN_DIR</span>
 </span><span style="color:#4e9a06">&#34;
 </span><span style="color:#4e9a06">EOF</span>
 </code></pre></div><p>根据定义，<em>exec</em> 插件必须是可执行的：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod a+x <span style="color:#000">$MY_PLUGIN_DIR</span>/SillyConfigMapGenerator
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod a+x <span style="color:#000">$MY_PLUGIN_DIR</span>/SillyConfigMapGenerator
 </code></pre></div><h2 id="安装-kustomize">安装 kustomize</h2>
 <p>根据<a href="/kustomize/zh/installation">文档</a>安装 kustomize:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s <span style="color:#4e9a06">&#34;https://raw.githubusercontent.com/\
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s <span style="color:#4e9a06">&#34;https://raw.githubusercontent.com/\
 </span><span style="color:#4e9a06">kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&#34;</span>  <span style="color:#000;font-weight:bold">|</span> bash
 mkdir -p <span style="color:#000">$DEMO</span>/bin
 mv kustomize <span style="color:#000">$DEMO</span>/bin
 </code></pre></div><h2 id="检查目录结构">检查目录结构</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tree <span style="color:#000">$DEMO</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tree <span style="color:#000">$DEMO</span>
 </code></pre></div><h2 id="使用插件构建-app">使用插件构建 APP</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">XDG_CONFIG_HOME</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span> <span style="color:#000">$DEMO</span>/bin/kustomize build --enable_alpha_plugins <span style="color:#000">$MYAPP</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">XDG_CONFIG_HOME</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span> <span style="color:#000">$DEMO</span>/bin/kustomize build --enable_alpha_plugins <span style="color:#000">$MYAPP</span>
 </code></pre></div><p>之前如果您已经设置了 <code>PLUGIN_ROOT=$HOME/.config/kustomize/plugin</code>，则无需在 <em>kustomize</em> 命令前使用 <code>XDG_CONFIG_HOME</code>。</p>
 
 	

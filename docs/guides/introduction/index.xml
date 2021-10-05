@@ -166,7 +166,7 @@ files (deployments, services, configmaps, etc.), create a
 customization to apply to them, e.g. &lt;em&gt;add a common
 label&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;File structure:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;~/someApp
+&lt;pre&gt;&lt;code&gt;~/someApp
 ├── deployment.yaml
 ├── kustomization.yaml
 └── service.yaml
@@ -176,15 +176,15 @@ rebase from the source material to capture
 improvements, because you don&amp;rsquo;t modify the resources
 directly.&lt;/p&gt;
 &lt;p&gt;Generate customized YAML with:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kustomize build ~/someApp
+&lt;pre&gt;&lt;code&gt;kustomize build ~/someApp
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The YAML can be directly &lt;code&gt;applied&lt;/code&gt; to a cluster:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kustomize build ~/someApp | kubectl apply -f -
+&lt;pre&gt;&lt;code&gt;kustomize build ~/someApp | kubectl apply -f -
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;2-create-variants-using-overlays&#34;&gt;2) Create &lt;code&gt;variants&lt;/code&gt; using &lt;code&gt;overlays&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Manage traditional &lt;code&gt;variants&lt;/code&gt; of a configuration - like
 &lt;em&gt;development&lt;/em&gt;, &lt;em&gt;staging&lt;/em&gt; and &lt;em&gt;production&lt;/em&gt; - using
 &lt;code&gt;overlays&lt;/code&gt; that modify a common &lt;code&gt;base&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;File structure:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;~/someApp
+&lt;pre&gt;&lt;code&gt;~/someApp
 ├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
@@ -212,9 +212,9 @@ Arranging the repo clones as siblings on disk avoids
 the need for git submodules (though that works fine, if
 you are a submodule fan).&lt;/p&gt;
 &lt;p&gt;Generate YAML with&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;kustomize build ~/someApp/overlays/production
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;kustomize build ~/someApp/overlays/production
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The YAML can be directly &lt;code&gt;applied&lt;/code&gt; to a cluster:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;kustomize build ~/someApp/overlays/production &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; kubectl apply -f -
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;kustomize build ~/someApp/overlays/production &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; kubectl apply -f -
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
@@ -283,7 +283,7 @@ should almost always explicitly specify the namespace for their Application usin
 &lt;p&gt;&lt;strong&gt;Status:&lt;/strong&gt; the observed state of the object - recorded state the cluster provides to the user.&lt;/p&gt;
 &lt;p&gt;Resource Config written by the user omits the Status field.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example Deployment Resource Config&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;apps/v1&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;apps/v1&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Deployment&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;metadata&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;nginx-deployment&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
