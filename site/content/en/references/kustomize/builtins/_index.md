@@ -1,33 +1,28 @@
 ---
-title: "Builtin Plugins"
-linkTitle: "Builtin Plugins"
+title: "Kustomize Built-Ins"
+linkTitle: "Built-Ins"
+weight: 3
 type: docs
 description: >
-    Builtin Plugins
+    Reference docs for Kustomize's built-in transformers and generators
 ---
 
-
-# Builtin Plugins
-
-A list of kustomize's builtin plugins - both
+A list of kustomize's built-in
 generators and transformers.
 
-For each plugin, an example is given for
+For each, an example is given for
 
-* implicitly triggering
-the plugin via a dedicated kustomization
+* triggering the feature via a dedicated kustomization
 file field (e.g. the `AnnotationsTransformer` is
 triggered by the `commonAnnotations` field).
 
-* explicitly triggering the plugin
-via the `generators` or `transformers` field
-(by providing a config file specifying the
-plugin).
+* triggering the feature via the `generators` or `transformers` field
+(by providing a config file specifying the feature's own configuration object).
 
 The former method is convenient but limited in
-power as most of the plugins arguments must
+power as most of the configuration options must
 be defaulted.  The latter method allows for
-complete plugin argument specification.
+complete argument specification.
 
 [types.GeneratorOptions]: https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/generatoroptions.go
 [types.SecretArgs]: https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/secretargs.go
@@ -55,7 +50,7 @@ commonAnnotations:
   oncallPager: 800-555-1212
 ```
 
-### Usage via plugin
+### Usage via `transformers` field
 
 #### Arguments
 
@@ -155,7 +150,7 @@ configMapGenerator:
   - myFileName.ini=whatever.ini
 ```
 
-### Usage via plugin
+### Usage via `generators` field
 
 #### Arguments
 
@@ -220,7 +215,7 @@ images:
   digest: sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3
 ```
 
-### Usage via plugin
+### Usage via `transformers` field
 
 #### Arguments
 
@@ -255,7 +250,7 @@ commonLabels:
   app: bingo
 ```
 
-### Usage via plugin
+### Usage via `transformers` field
 
 #### Arguments
 
@@ -290,7 +285,7 @@ Adds namespace to all resources
 namespace: my-namespace
 ```
 
-### Usage via plugin
+### Usage via `transformers` field
 
 #### Arguments
 
@@ -382,7 +377,7 @@ patchesJson6902:
       value: "new value"
 ```
 
-### Usage via plugin
+### Usage via `transformers` field
 
 #### Arguments
 
@@ -457,7 +452,7 @@ for the same object that contain a _delete_ directive. To remove
 several fields / slice elements from an object create a single
 patch that performs all the needed deletions.
 
-### Usage via plugin
+### Usage via `transformers` field
 
 #### Arguments
 
@@ -515,7 +510,7 @@ The `name` and `namespace` fields of the patch target selector are
 automatically anchored regular expressions. This means that the value `myapp`
 is equivalent to `^myapp$`.
 
-### Usage via plugin
+### Usage via `transformers` field
 
 #### Arguments
 
@@ -559,7 +554,7 @@ nameSuffix: -v2
 The suffix is appended before the content hash if
 the resource type is ConfigMap or Secret.
 
-### Usage via plugin
+### Usage via `transformers` field
 
 #### Arguments
 
@@ -623,7 +618,7 @@ that is one of:
 
 For more complex use cases, revert to using a patch.
 
-### Usage via plugin
+### Usage via `transformers` field
 
 #### Arguments
 
@@ -694,7 +689,7 @@ secretGenerator:
       app.kubernetes.io/name: "app2"
 ```
 
-### Usage via plugin
+### Usage via `generators` field
 
 #### Arguments
 
@@ -734,7 +729,7 @@ Each entry can have following fields:
 
 - `chartName`: The name of the chart that you want to use.
 - `chartRepoUrl`: [Optional] The URL of the repository which contains the chart. If
-  this is provided, the plugin will try to fetch remote charts. Otherwise it will
+  this is provided, the generator will try to fetch remote charts. Otherwise it will
   try to load local chart in `chartHome`.
 - `chartVersion`: [Optional] Version of the chart. Will use latest version
   if this is omitted.
@@ -758,7 +753,7 @@ helmChartInflationGenerator:
   releaseNamespace: testNamespace
 ```
 
-### Usage via plugin
+### Usage via `generators` field
 
 #### Arguments
 
