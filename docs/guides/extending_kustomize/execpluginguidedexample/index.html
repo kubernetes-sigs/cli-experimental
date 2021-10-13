@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -20,30 +20,30 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Exec plugin on linux | SIG CLI</title><meta property="og:title" content="Exec plugin on linux" />
-<meta property="og:description" content="Exec plugin on linux in 60 seconds
+<title>Exec plugin example | SIG CLI</title><meta property="og:title" content="Exec plugin example" />
+<meta property="og:description" content="Exec plugin in 60 seconds
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/execpluginguidedexample/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2020-10-31T08:50:10&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2021-10-12T16:42:03-07:00" /><meta property="og:site_name" content="SIG CLI" />
 
-<meta itemprop="name" content="Exec plugin on linux">
-<meta itemprop="description" content="Exec plugin on linux in 60 seconds
+<meta itemprop="name" content="Exec plugin example">
+<meta itemprop="description" content="Exec plugin in 60 seconds
 ">
-<meta itemprop="dateModified" content="2020-10-31T08:50:10&#43;05:30" />
-<meta itemprop="wordCount" content="459">
+<meta itemprop="dateModified" content="2021-10-12T16:42:03-07:00" />
+<meta itemprop="wordCount" content="370">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Exec plugin on linux"/>
-<meta name="twitter:description" content="Exec plugin on linux in 60 seconds
+<meta name="twitter:title" content="Exec plugin example"/>
+<meta name="twitter:description" content="Exec plugin in 60 seconds
 "/>
 
 
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -57,7 +57,7 @@
   crossorigin="anonymous"></script>
 
 
-    <title>Exec plugin on linux | SIG CLI</title>
+    <title>Exec plugin example | SIG CLI</title>
   </head>
   <body class="td-page">
     <header>
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.4b5043104075e4d349e2767994054ce50cca1de64d01d135c95fb49c14a55cd58d51e2a06fffb3bd84cb980589cd433072d098f35fedf4a483e247a3726246db.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.4b5043104075e4d349e2767994054ce50cca1de64d01d135c95fb49c14a55cd58d51e2a06fffb3bd84cb980589cd433072d098f35fedf4a483e247a3726246db.json"
   data-offline-search-base-href="/"
 >
 
@@ -553,19 +553,37 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizegoplugins" href="/guides/extending_kustomize/goplugins/">Go Plugins</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizelegacyexecplugins" href="/guides/extending_kustomize/legacyexecplugins/">Legacy Exec Plugins</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizebuiltins" href="/guides/extending_kustomize/builtins/">Builtin Plugins</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-guidesextending_kustomizeexecpluginguidedexample" href="/guides/extending_kustomize/execpluginguidedexample/">Exec plugin on linux</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizecontainerpluginguidedexample" href="/guides/extending_kustomize/containerpluginguidedexample/">Container plugin example</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizegoplugincaveats" href="/guides/extending_kustomize/goplugincaveats/">Go plugin Caveats</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-guidesextending_kustomizeexecpluginguidedexample" href="/guides/extending_kustomize/execpluginguidedexample/">Exec plugin example</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizelegacyexecpluginguidedexample" href="/guides/extending_kustomize/legacyexecpluginguidedexample/">Exec plugin on linux</a>
       
       
       
@@ -641,7 +659,7 @@
 
 
 <a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/site/content/en/guides/extending_kustomize/execPluginGuidedExample.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Exec%20plugin%20on%20linux" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Exec%20plugin%20example" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -705,7 +723,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/execpluginguidedexample/">Exec plugin on linux</a>
+	<a href="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/execpluginguidedexample/">Exec plugin example</a>
 </li>
 
 	</ol>
@@ -713,28 +731,29 @@
 
             
 <div class="td-content">
-	<h1>Exec plugin on linux</h1>
-	<div class="lead">Exec plugin on linux in 60 seconds</div>
+	<h1>Exec plugin example</h1>
+	<div class="lead">Exec plugin in 60 seconds</div>
 	<p>This is a (no reading allowed!) 60 second copy/paste guided
-example.  Full plugin docs <a href="..">here</a>.</p>
+example.  Full plugin docs <a href="../.">here</a>.</p>
 <p>This demo writes and uses a somewhat ridiculous
 <em>exec</em> plugin (written in bash) that generates a
 <code>ConfigMap</code>.</p>
 <p>This is a guide to try it without damaging your
 current setup.</p>
-<h4 id="requirements">requirements</h4>
+<h4 id="requirements">Requirements</h4>
 <ul>
-<li>linux, git, curl, Go 1.13</li>
+<li>linux or osx</li>
+<li>git, curl, bash, Go 1.16</li>
 </ul>
 <h2 id="make-a-place-to-work">Make a place to work</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">DEMO</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>mktemp -d<span style="color:#204a87;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">DEMO</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>mktemp -d<span style="color:#204a87;font-weight:bold">)</span>
 </code></pre></div><h2 id="create-a-kustomization">Create a kustomization</h2>
 <p>Make a kustomization directory to
 hold all your config:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">MYAPP</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/myapp
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">MYAPP</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/myapp
 mkdir -p <span style="color:#000">$MYAPP</span>
 </code></pre></div><p>Make a deployment config:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/deployment.yaml</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/deployment.yaml</span>
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -768,108 +787,94 @@ spec:
             configMapKeyRef:
               name: the-map
               key: enableRisky
-EOF
 </code></pre></div><p>Make a service config:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/service.yaml</span>
-kind: Service
-apiVersion: v1
-metadata:
-  name: the-service
-spec:
-  type: LoadBalancer
-  ports:
-  - protocol: TCP
-    port: <span style="color:#0000cf;font-weight:bold">8666</span>
-    targetPort: <span style="color:#0000cf;font-weight:bold">8080</span>
-EOF
-</code></pre></div><p>Now make a config file for the plugin
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># $MYAPP/service.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Service</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">the-service</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">LoadBalancer</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">ports</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">protocol</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">TCP</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">port</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">8666</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">targetPort</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">8080</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Now make a config file for the plugin
 you&rsquo;re about to write.</p>
-<p>This config file is just another k8s resource
-object.  The values of its <code>apiVersion</code> and <code>kind</code>
-fields are used to <em>find</em> the plugin code on your
+<p>This config file is just another Kubernetes resource
+object.  The <code>config.kubernetes.io/function</code> annotation is used to <em>find</em> the plugin code on your
 filesystem (more on this later).</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/cmGenerator.yaml</span>
-apiVersion: myDevOpsTeam
-kind: SillyConfigMapGenerator
-metadata:
-  name: whatever
-argsOneLiner: Bienvenue <span style="color:#204a87">true</span>
-EOF
-</code></pre></div><p>Finally, make a kustomization file
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># $MYAPP/cmGenerator.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">myDevOpsTeam</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">SillyConfigMapGenerator</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">whatever</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">annotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">config.kubernetes.io/function</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">      exec: 
+</span><span style="color:#8f5902;font-style:italic">        path: ./plugins/silly-generator.sh</span><span style="color:#f8f8f8;text-decoration:underline">      
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">altGreeting</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Bienvenue</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">enableRisky</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">true</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Finally, make a kustomization file
 referencing all of the above:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/kustomization.yaml</span>
-commonLabels:
-  app: hello
-resources:
-- deployment.yaml
-- service.yaml
-generators:
-- cmGenerator.yaml
-EOF
-</code></pre></div><p>Review the files</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -C1 <span style="color:#000">$MYAPP</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># $MYAPP/kustomization.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">commonLabels</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">app</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">hello</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">resources</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">deployment.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">service.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">generators</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">cmGenerator.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Review the files</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -C1 <span style="color:#000">$MYAPP</span>
 </code></pre></div><h2 id="make-a-home-for-plugins">Make a home for plugins</h2>
-<p>Plugins must live in a particular place for
-kustomize to find them.</p>
-<p>This demo will use the ephemeral directory:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span>/kustomize/plugin
-</code></pre></div><p>The plugin config defined above in
+<p>Due to their inherent lack of security, exec plugins should be bespoke to and distributed along with the Kustomization they are for. Plugins intended for reuse should be containerized.</p>
+<p>The plugin config defined above in
 <code>$MYAPP/cmGenerator.yaml</code> specifies:</p>
-<blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: myDevOpsTeam
-kind: SillyConfigMapGenerator
-</code></pre></div></blockquote>
-<p>This means the plugin must live in a directory
-named:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">MY_PLUGIN_DIR</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$PLUGIN_ROOT</span>/myDevOpsTeam/sillyconfigmapgenerator
-
-mkdir -p <span style="color:#000">$MY_PLUGIN_DIR</span>
-</code></pre></div><p>The directory name is the plugin config&rsquo;s
-<em>apiVersion</em> followed by its lower-cased <em>kind</em>.</p>
-<p>A plugin gets its own directory to hold itself,
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">annotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">config.kubernetes.io/function</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">      exec: 
+</span><span style="color:#8f5902;font-style:italic">        path: ./plugins/silly-generator.sh</span><span style="color:#f8f8f8;text-decoration:underline">      
+</span></code></pre></div><p>So let&rsquo;s create that directory:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir <span style="color:#000">$MYAPP</span>/plugins
+</code></pre></div><p>A plugin gets its own directory to hold itself,
 its tests and any supplemental data files it
 might need.</p>
 <h2 id="create-the-plugin">Create the plugin</h2>
-<p>There are two kinds of plugins, <em>exec</em> and <em>Go</em>.</p>
-<p>Make an <em>exec</em> plugin, installing it to the
-correct directory and file name.  The file name
-must match the plugin&rsquo;s <em>kind</em> (in this case,
-<code>SillyConfigMapGenerator</code>):</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MY_PLUGIN_DIR/SillyConfigMapGenerator</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $MYAPP/plugins/silly-generator.sh</span>
 <span style="color:#8f5902;font-style:italic">#!/bin/bash</span>
-<span style="color:#8f5902;font-style:italic"># Skip the config file name argument.</span>
-<span style="color:#204a87">shift</span>
 <span style="color:#000">today</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">`</span>date +%F<span style="color:#4e9a06">`</span>
+<span style="color:#000">resourceList</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>cat<span style="color:#204a87;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic"># read the `kind: ResourceList` from stdin</span>
+<span style="color:#000">altGreeting</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;</span><span style="color:#000">$resourceList</span><span style="color:#4e9a06">&#34;</span> <span style="color:#000;font-weight:bold">|</span> yq e <span style="color:#4e9a06">&#39;.functionConfig.spec.altGreeting&#39;</span> - <span style="color:#204a87;font-weight:bold">)</span>
+<span style="color:#000">enableRisky</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;</span><span style="color:#000">$resourceList</span><span style="color:#4e9a06">&#34;</span> <span style="color:#000;font-weight:bold">|</span> yq e <span style="color:#4e9a06">&#39;.functionConfig.spec.enableRisky&#39;</span> - <span style="color:#204a87;font-weight:bold">)</span>
+
 <span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;
-</span><span style="color:#4e9a06">kind: ConfigMap
-</span><span style="color:#4e9a06">apiVersion: v1
-</span><span style="color:#4e9a06">metadata:
-</span><span style="color:#4e9a06">  name: the-map
-</span><span style="color:#4e9a06">data:
-</span><span style="color:#4e9a06">  today: </span><span style="color:#000">$today</span><span style="color:#4e9a06">
-</span><span style="color:#4e9a06">  altGreeting: &#34;</span><span style="color:#000">$1</span><span style="color:#4e9a06">&#34;
-</span><span style="color:#4e9a06">  enableRisky: &#34;</span><span style="color:#000">$2</span><span style="color:#4e9a06">&#34;
+</span><span style="color:#4e9a06">kind: ResourceList
+</span><span style="color:#4e9a06">items:
+</span><span style="color:#4e9a06">- kind: ConfigMap
+</span><span style="color:#4e9a06">  apiVersion: v1
+</span><span style="color:#4e9a06">  metadata:
+</span><span style="color:#4e9a06">    name: the-map
+</span><span style="color:#4e9a06">  data:
+</span><span style="color:#4e9a06">    today: </span><span style="color:#000">$today</span><span style="color:#4e9a06">
+</span><span style="color:#4e9a06">    altGreeting: &#34;</span><span style="color:#000">$altGreeting</span><span style="color:#4e9a06">&#34;
+</span><span style="color:#4e9a06">    enableRisky: &#34;</span><span style="color:#000">$enableRisky</span><span style="color:#4e9a06">&#34;
 </span><span style="color:#4e9a06">&#34;</span>
-EOF
 </code></pre></div><p>By definition, an <em>exec</em> plugin must be executable:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod a+x <span style="color:#000">$MY_PLUGIN_DIR</span>/SillyConfigMapGenerator
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod a+x <span style="color:#000">$MYAPP</span>/plugins/silly-generator.sh
 </code></pre></div><h2 id="install-kustomize">Install kustomize</h2>
 <p>Per the <a href="/installation/kustomize/">instructions</a>:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s <span style="color:#4e9a06">&#34;https://raw.githubusercontent.com/\
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s <span style="color:#4e9a06">&#34;https://raw.githubusercontent.com/\
 </span><span style="color:#4e9a06">kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&#34;</span>  <span style="color:#000;font-weight:bold">|</span> bash
 mkdir -p <span style="color:#000">$DEMO</span>/bin
 mv kustomize <span style="color:#000">$DEMO</span>/bin
 </code></pre></div><h2 id="review-the-layout">Review the layout</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tree <span style="color:#000">$DEMO</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tree <span style="color:#000">$DEMO</span>
 </code></pre></div><h2 id="build-your-app-using-the-plugin">Build your app, using the plugin</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">XDG_CONFIG_HOME</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO</span> <span style="color:#000">$DEMO</span>/bin/kustomize build --enable_alpha_plugins <span style="color:#000">$MYAPP</span>
-</code></pre></div><p>Above, if you had set</p>
-<blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">PLUGIN_ROOT</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$HOME</span>/.config/kustomize/plugin
-</code></pre></div></blockquote>
-<p>there would be no need to use <code>XDG_CONFIG_HOME</code> in the
-<em>kustomize</em> command above.</p>
-
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">$DEMO</span>/bin/kustomize build --enable-alpha-plugins --enable-exec <span style="color:#000">$MYAPP</span>
+</code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -932,7 +937,7 @@ mv kustomize <span style="color:#000">$DEMO</span>/bin
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 31, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/cd35140b2ee6d8c467e444acb44dbee27b440c22">docs render fix (cd35140)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 12, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/d8c64f9b561c4bc63bc31ae8f9f223eec978dcc6">[ci skip] wip (d8c64f9)</a>
 </div>
 </div>
 

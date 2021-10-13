@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/zh/faq/versioningpolicy/" /><meta property="article:section" content="faq" />
 
-<meta property="article:modified_time" content="2020-11-11T21:42:40&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-11-11T21:42:40+05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Versioning Policy">
 <meta itemprop="description" content="Running kustomize means one is running a particular version of a program (a CLI), using a particular version of underlying packages (a Go API), and reading a particular version of a kustomization file.
  If you&rsquo;re having trouble with go get, please read Go API Versioning and be patient.
  CLI Program Versioning The command kustomize version prints a three field version tag (e.g. v3.0.0) that aspires to semantic versioning.">
-<meta itemprop="dateModified" content="2020-11-11T21:42:40&#43;05:30" />
+<meta itemprop="dateModified" content="2020-11-11T21:42:40+05:30" />
 <meta itemprop="wordCount" content="1054">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Versioning Policy"/>
@@ -45,8 +45,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -160,7 +160,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -190,7 +190,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -432,7 +432,7 @@ semver there, and refactor as needed inside
 <h4 id="the-first-stable-api-version-is-coming">The first stable API version is coming</h4>
 <p>The first stable API version will launch
 as the Go module</p>
-<pre><code>sigs.k8s.io/kustomize/api
+<pre tabindex="0"><code>sigs.k8s.io/kustomize/api
 </code></pre><p>The <em>kustomize</em> program itself (<code>main.go</code>
 and CLI specific code) will have moved out of
 <code>sigs.k8s.io/kustomize</code> and into the new module
@@ -558,11 +558,11 @@ be omitted from the kustomization file.</p>
 <p>If either field is present, they both must be.
 If present, the value of <code>kind</code> must be:</p>
 <blockquote>
-<pre><code>kind: Kustomization
+<pre tabindex="0"><code>kind: Kustomization
 </code></pre></blockquote>
 <p>If missing, the value of <code>apiVersion</code> defaults to</p>
 <blockquote>
-<pre><code>apiVersion: kustomize.config.k8s.io/v1beta1
+<pre tabindex="0"><code>apiVersion: kustomize.config.k8s.io/v1beta1
 </code></pre></blockquote>
 
 	

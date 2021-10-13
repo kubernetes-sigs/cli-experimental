@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -826,7 +826,7 @@
 <p>通常情况下，<code>B</code> 和 <code>A</code> 处于同级目录，或者 <code>B</code> 放在一个完全独立的 Git 仓库里，可以从任意的 Kustomization 进行引用。</p>
 <p>常见布局大致如下：</p>
 <blockquote>
-<pre><code>├── base
+<pre tabindex="0"><code>├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
 │   └── service.yaml
@@ -855,7 +855,7 @@
 <p>通用配置是一种用于共享的 Kustomization 以及资源。</p>
 <p>例如创建一个这样的 Github 仓库：</p>
 <blockquote>
-<pre><code>github.com/username/someapp/
+<pre tabindex="0"><code>github.com/username/someapp/
   kustomization.yaml
   deployment.yaml
   configmap.yaml
@@ -872,7 +872,7 @@
 <p>总的说来，这些变体使用的资源基本是一致的，只有一些简单的差异，例如 Deployment 的实例数量、特定 Pod 的 CPU 资源、ConfigMap 中的数据源定义等。</p>
 <p>可以这样把配置提交到集群：</p>
 <blockquote>
-<pre><code> kustomize build someapp/overlays/staging |\
+<pre tabindex="0"><code> kustomize build someapp/overlays/staging |\
      kubectl apply -f -
 
  kustomize build someapp/overlays/production |\
@@ -909,7 +909,7 @@
 <h2 id="target">target</h2>
 <p><code>target</code> 是 <code>kustomize build</code> 的参数，例如：</p>
 <blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> kustomize build <span style="color:#000">$target</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> kustomize build <span style="color:#000">$target</span>
 </code></pre></div></blockquote>
 <p><code>$target</code> 必须是一个指向 <a href="#kustomization">Kustomization</a> 的路径或者 URL。</p>
 <p>要创建用于进行 <a href="#apply">Apply</a> 操作的资源，<code>target</code> 中必须包含或者引用所有相关信息。</p>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -1478,6 +1478,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/references/kustomize/builtins/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Built-Ins</a>
+  </li>
+  <ul>
+    <li class="collapse " id="referenceskustomizebuiltins">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -1612,27 +1635,27 @@
 	<p>Creates an autoscaler that automatically chooses and sets the number of pods that run in a kubernetes cluster.</p>
 <p>Looks up a Deployment, ReplicaSet, StatefulSet, or ReplicationController by name and creates an autoscaler that uses the given resource as a reference. An autoscaler can automatically increase or decrease number of pods deployed within the system as needed.</p>
 <h2 id="command">Command</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl autoscale <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME <span style="color:#000;font-weight:bold">|</span> TYPE/NAME<span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">[</span>--min<span style="color:#ce5c00;font-weight:bold">=</span>MINPODS<span style="color:#ce5c00;font-weight:bold">]</span> --max<span style="color:#ce5c00;font-weight:bold">=</span>MAXPODS <span style="color:#ce5c00;font-weight:bold">[</span>--cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span>CPU<span style="color:#ce5c00;font-weight:bold">]</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl autoscale <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME <span style="color:#000;font-weight:bold">|</span> TYPE/NAME<span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">[</span>--min<span style="color:#ce5c00;font-weight:bold">=</span>MINPODS<span style="color:#ce5c00;font-weight:bold">]</span> --max<span style="color:#ce5c00;font-weight:bold">=</span>MAXPODS <span style="color:#ce5c00;font-weight:bold">[</span>--cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span>CPU<span style="color:#ce5c00;font-weight:bold">]</span>
 </code></pre></div><p>[OR]</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl hpa <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME <span style="color:#000;font-weight:bold">|</span> TYPE/NAME<span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">[</span>--min<span style="color:#ce5c00;font-weight:bold">=</span>MINPODS<span style="color:#ce5c00;font-weight:bold">]</span> --max<span style="color:#ce5c00;font-weight:bold">=</span>MAXPODS <span style="color:#ce5c00;font-weight:bold">[</span>--cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span>CPU<span style="color:#ce5c00;font-weight:bold">]</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl hpa <span style="color:#ce5c00;font-weight:bold">(</span>-f FILENAME <span style="color:#000;font-weight:bold">|</span> TYPE NAME <span style="color:#000;font-weight:bold">|</span> TYPE/NAME<span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">[</span>--min<span style="color:#ce5c00;font-weight:bold">=</span>MINPODS<span style="color:#ce5c00;font-weight:bold">]</span> --max<span style="color:#ce5c00;font-weight:bold">=</span>MAXPODS <span style="color:#ce5c00;font-weight:bold">[</span>--cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span>CPU<span style="color:#ce5c00;font-weight:bold">]</span>
 </code></pre></div><p><code>hpa</code> stands for <code>Horizontal Pod Autoscale</code></p>
 <h2 id="example">Example</h2>
 <h3 id="current-state">Current State</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get pods
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get pods
 
 NAME                     READY   STATUS    RESTARTS   AGE
 nginx-6db489d4b7-zcc8h   1/1     Running   <span style="color:#0000cf;font-weight:bold">0</span>          5s
 </code></pre></div><h3 id="command-1">Command</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl autoscale deployment nginx --min<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> --max<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">10</span> --cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">80</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl autoscale deployment nginx --min<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> --max<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">10</span> --cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">80</span>
 
 horizontalpodautoscaler.autoscaling/nginx autoscaled
 </code></pre></div><p>[OR]</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl hpa deployment nginx --min<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> --max<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">10</span> --cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">80</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl hpa deployment nginx --min<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> --max<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">10</span> --cpu-percent<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">80</span>
 
 horizontalpodautoscaler.autoscaling/nginx autoscaled
 </code></pre></div><p>This will make sure to auto-scale horizontally when the CPU usage hits 80%.</p>
 <h3 id="output">Output</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get pods
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get pods
 
 NAME                     READY   STATUS    RESTARTS   AGE
 nginx-6db489d4b7-2rrrm   1/1     Running   <span style="color:#0000cf;font-weight:bold">0</span>          15s
@@ -1645,6 +1668,8 @@ nginx-6db489d4b7-vxqwm   1/1     Running   <span style="color:#0000cf;font-weigh
     
     
     <hr class="panel-line">
+        
+            
         
             
         
