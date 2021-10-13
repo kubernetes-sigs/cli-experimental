@@ -1,32 +1,110 @@
 ---
-title: "Exec plugin on linux"
-linkTitle: "Exec plugin on linux"
+title: "Exec plugins (deprecated)"
+linkTitle: "Exec plugins"
 type: docs
 description: >
-    Exec plugin on linux in 60 seconds
+    Guide to writing exec plugins
+weight: 3
 ---
 
+{{% alert color="warning" title="Deprecation warning" %}}
+This style of plugin is slated for deprecation.
+See the [Kustomize Plugin Graduation KEP](https://github.com/kubernetes/enhancements/issues/2953) for information on the future of Kustomize plugins.
+{{% /alert %}}
+
+## Authoring legacy exec plugins
+
+An _exec plugin_ is any executable that accepts a
+single argument on its command line - the name of
+a YAML file containing its configuration (the file name
+provided in the kustomization file).
+
+[helm chart inflator]: https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/chartinflator
+[bashed config map]: https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/bashedconfigmap
+[sed transformer]: https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/sedtransformer
+[hashicorp go-getter]: https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/someteam.example.com/v1/gogetter
+
+### Placement
+
+Each plugin gets its own dedicated directory named
+
+[`XDG_CONFIG_HOME`]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+
+```bash
+$XDG_CONFIG_HOME/kustomize/plugin
+    /${apiVersion}/LOWERCASE(${kind})
+```
+
+The default value of [`XDG_CONFIG_HOME`] is
+`$HOME/.config`.
+
+The one-plugin-per-directory requirement eases
+creation of a plugin bundle (source, tests, plugin
+data files, etc.) for sharing.
+
+When loading, kustomize will look for an
+_executable_ file called `kind`.
+
+```bash
+$XDG_CONFIG_HOME/kustomize/plugin
+    /${apiVersion}/LOWERCASE(${kind})/${kind}
+```
+
+Failure to find a plugin to load fails the overall
+`kustomize build`.
+
+### Examples
+
+* [helm chart inflator] - A generator that inflates a helm chart.
+* [bashed config map] -  Super simple configMap generation from bash.
+* [sed transformer] - Define your unstructured edits using a
+   plugin like this one.
+* [hashicorp go-getter] - Download kustomize layes and build it to generate resources
+
+A generator plugin accepts nothing on `stdin`, but emits
+generated resources to `stdout`.
+
+A transformer plugin accepts resource YAML on `stdin`,
+and emits those resources, presumably transformed, to
+`stdout`.
+
+kustomize uses an exec plugin adapter to provide
+marshalled resources on `stdin` and capture
+`stdout` for further processing.
+
+## Guided example
+
 This is a (no reading allowed!) 60 second copy/paste guided
-example.  Full plugin docs [here](..).
+example.
 
 This demo writes and uses a somewhat ridiculous
 _exec_ plugin (written in bash) that generates a
 `ConfigMap`.
 
-This is a guide to try it without damaging your
-current setup.
+Prerequisites:
+* linux
+* git
+* curl
+* Go 1.13
 
-#### requirements
-
-* linux, git, curl, Go 1.13
-
-## Make a place to work
+### Make a place to work
 
 ```bash
 DEMO=$(mktemp -d)
 ```
 
-## Create a kustomization
+### Install kustomize
+
+Per the [instructions](/installation/kustomize/):
+
+```bash
+curl -s "https://raw.githubusercontent.com/\
+kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+mkdir -p $DEMO/bin
+mv kustomize $DEMO/bin
+```
+
+### Create a kustomization
 
 Make a kustomization directory to
 hold all your config:
@@ -53,16 +131,10 @@ spec:
         image: monopole/hello:1
         command: ["/hello",
                   "--port=8080",
-                  "--date=$(THE_DATE)",
                   "--enableRiskyFeature=$(ENABLE_RISKY)"]
         ports:
         - containerPort: 8080
         env:
-        - name: THE_DATE
-          valueFrom:
-            configMapKeyRef:
-              name: the-map
-              key: today
         - name: ALT_GREETING
           valueFrom:
             configMapKeyRef:
@@ -132,7 +204,7 @@ Review the files
 ls -C1 $MYAPP
 ```
 
-## Make a home for plugins
+### Make a home for plugins
 
 Plugins must live in a particular place for
 kustomize to find them.
@@ -146,10 +218,10 @@ PLUGIN_ROOT=$DEMO/kustomize/plugin
 The plugin config defined above in
 `$MYAPP/cmGenerator.yaml` specifies:
 
-> ```bash
-> apiVersion: myDevOpsTeam
-> kind: SillyConfigMapGenerator
-> ```
+```bash
+apiVersion: myDevOpsTeam
+kind: SillyConfigMapGenerator
+```
 
 This means the plugin must live in a directory
 named:
@@ -167,9 +239,7 @@ A plugin gets its own directory to hold itself,
 its tests and any supplemental data files it
 might need.
 
-## Create the plugin
-
-There are two kinds of plugins, _exec_ and _Go_.
+### Create the plugin
 
 Make an _exec_ plugin, installing it to the
 correct directory and file name.  The file name
@@ -181,14 +251,12 @@ must match the plugin's _kind_ (in this case,
 #!/bin/bash
 # Skip the config file name argument.
 shift
-today=`date +%F`
 echo "
 kind: ConfigMap
 apiVersion: v1
 metadata:
   name: the-map
 data:
-  today: $today
   altGreeting: "$1"
   enableRisky: "$2"
 "
@@ -201,24 +269,13 @@ By definition, an _exec_ plugin must be executable:
 chmod a+x $MY_PLUGIN_DIR/SillyConfigMapGenerator
 ```
 
-## Install kustomize
-
-Per the [instructions](/installation/kustomize/):
-
-```bash
-curl -s "https://raw.githubusercontent.com/\
-kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
-mkdir -p $DEMO/bin
-mv kustomize $DEMO/bin
-```
-
-## Review the layout
+### Review the layout
 
 ```bash
 tree $DEMO
 ```
 
-## Build your app, using the plugin
+### Build your app
 
 ```bash
 XDG_CONFIG_HOME=$DEMO $DEMO/bin/kustomize build --enable_alpha_plugins $MYAPP
@@ -226,9 +283,9 @@ XDG_CONFIG_HOME=$DEMO $DEMO/bin/kustomize build --enable_alpha_plugins $MYAPP
 
 Above, if you had set
 
-> ```bash
-> PLUGIN_ROOT=$HOME/.config/kustomize/plugin
-> ```
+```bash
+PLUGIN_ROOT=$HOME/.config/kustomize/plugin
+```
 
 there would be no need to use `XDG_CONFIG_HOME` in the
 _kustomize_ command above.

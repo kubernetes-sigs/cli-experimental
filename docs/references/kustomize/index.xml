@@ -174,7 +174,7 @@ to &lt;strong&gt;A&lt;/strong&gt;, or &lt;strong&gt;B&lt;/strong&gt; is off in a
 git repository, referencable from any kustomization.&lt;/p&gt;
 &lt;p&gt;A common layout is&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;├── base
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
 │   └── service.yaml
@@ -220,7 +220,7 @@ resources intentionally published somewhere for others
 to use.&lt;/p&gt;
 &lt;p&gt;E.g. one might create a github repository like this:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;github.com/username/someapp/
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;github.com/username/someapp/
   kustomization.yaml
   deployment.yaml
   configmap.yaml
@@ -248,7 +248,7 @@ in a deployment, the CPU to a particular pod, the data
 source used in a ConfigMap, etc.&lt;/p&gt;
 &lt;p&gt;One configures a cluster like this:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt; kustomize build someapp/overlays/staging |\
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; kustomize build someapp/overlays/staging |\
      kubectl apply -f -
 
  kustomize build someapp/overlays/production |\
@@ -301,7 +301,7 @@ syntax.  See this &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/t
 &lt;p&gt;A chunk of code used by kustomize, but not necessarily
 compiled into kustomize, to generate and/or transform a
 kubernetes resource as part of a kustomization.&lt;/p&gt;
-&lt;p&gt;Details &lt;a href=&#34;../../../guides/extending_kustomize/builtins&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Details &lt;a href=&#34;../../../guides/extending_kustomize&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;resource&#34;&gt;resource&lt;/h2&gt;
 &lt;p&gt;A &lt;em&gt;resource&lt;/em&gt; in the context of a REST-ful API is the
 target object of an HTTP operation like &lt;em&gt;GET&lt;/em&gt;, &lt;em&gt;PUT&lt;/em&gt; or
@@ -323,7 +323,7 @@ with a &lt;em&gt;kind&lt;/em&gt; and a &lt;em&gt;metadata/name&lt;/em&gt; field.
 &lt;h2 id=&#34;target&#34;&gt;target&lt;/h2&gt;
 &lt;p&gt;The &lt;em&gt;target&lt;/em&gt; is the argument to &lt;code&gt;kustomize build&lt;/code&gt;, e.g.:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt; kustomize build $target
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; kustomize build $target
 &lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;code&gt;$target&lt;/code&gt; must be a path or a url to a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The target contains, or refers to, all the information
@@ -366,7 +366,7 @@ A kustomization describes how to generate or transform
 other KRM objects.&lt;/p&gt;
 &lt;p&gt;Although most practical kustomization files don&amp;rsquo;t actually look this
 way, a &lt;code&gt;kustomization.yaml&lt;/code&gt; file is basically four lists:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apiVersion: kustomize.config.k8s.io/v1beta1
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
@@ -406,7 +406,7 @@ injected into the encapsulating list in order.  When this happens, the
 encapsulating kustomization can be called an &lt;em&gt;overlay&lt;/em&gt;, and what it
 refers to can be called a &lt;em&gt;base&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;A typical layout:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;app1/
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;app1/
   kustomization.yaml
     | resources:
     | - ../base
@@ -470,7 +470,7 @@ convenience.&lt;/p&gt;
 &lt;h3 id=&#34;generators-and-transformers&#34;&gt;Generators and Transformers&lt;/h3&gt;
 &lt;p&gt;In the code, the interfaces distinguishing a generator from a
 transformer are:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// Generator creates an instance of ResMap.
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// Generator creates an instance of ResMap.
 type Generator interface {
   Generate() (ResMap, error)
 }
@@ -487,7 +487,7 @@ and T&amp;rsquo;s are done via a distinct (and common) interface.&lt;/p&gt;
 &lt;p&gt;A transformer doesn&amp;rsquo;t implement &lt;code&gt;Generator&lt;/code&gt;, but it&amp;rsquo;s capable of
 behaving like one.&lt;/p&gt;
 &lt;p&gt;This is because &lt;code&gt;ResMap&lt;/code&gt; has the methods&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Append(*Resource)
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Append(*Resource)
 Replace(*Resource)
 Remove(ResId)
 Clear()
@@ -519,8 +519,8 @@ run after the generators, but before the validators&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Also, they make common use cases easier to express.&lt;/p&gt;
 &lt;p&gt;E.g. the following two YAML stanzas do the exactly the same thing if
 added to a kustomization file:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;namePrefix: bob-
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;transformers:
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;namePrefix: bob-
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;transformers:
 - |-
   apiVersion: builtin
   kind: PrefixSuffixTransformer
@@ -546,7 +546,7 @@ reusable, custom transformer configs.&lt;/p&gt;
 that transform the base transformer configurations before they are
 used in the top level apps.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;app1/
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;app1/
   kustomization.yaml
     | resources:
     | - ../base/resources
@@ -600,6 +600,614 @@ base/
 &lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;This isn&amp;rsquo;t a recommended or disallowed practice, but something that&amp;rsquo;s
 allowed by how kustomization fields are processed.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Kustomize Built-Ins</title>
+      <link>https://kubectl.docs.kubernetes.io/references/kustomize/builtins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/references/kustomize/builtins/</guid>
+      <description>
+        
+        
+        &lt;p&gt;A list of kustomize&amp;rsquo;s built-in
+generators and transformers.&lt;/p&gt;
+&lt;p&gt;For each, an example is given for&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;triggering the feature via a dedicated kustomization
+file field (e.g. the &lt;code&gt;AnnotationsTransformer&lt;/code&gt; is
+triggered by the &lt;code&gt;commonAnnotations&lt;/code&gt; field).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;triggering the feature via the &lt;code&gt;generators&lt;/code&gt; or &lt;code&gt;transformers&lt;/code&gt; field
+(by providing a config file specifying the feature&amp;rsquo;s own configuration object).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The former method is convenient but limited in
+power as most of the configuration options must
+be defaulted.  The latter method allows for
+complete argument specification.&lt;/p&gt;
+&lt;h2 id=&#34;_annotationtransformer_&#34;&gt;&lt;em&gt;AnnotationTransformer&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-commonannotations&#34;&gt;field name: &lt;code&gt;commonAnnotations&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Adds annotations (non-identifying metadata) to
+all resources. Like labels, these are key value
+pairs.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;commonAnnotations:
+  oncallPager: 800-555-1212
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;usage-via-transformers-field&#34;&gt;Usage via &lt;code&gt;transformers&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Annotations map[string]string&lt;/p&gt;
+&lt;p&gt;FieldSpecs  []&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/fieldspec.go&#34;&gt;config.FieldSpec&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apiVersion: builtin
+kind: AnnotationsTransformer
+metadata:
+  name: not-important-to-example
+annotations:
+  app: myApp
+  greeting/morning: a string with blanks
+fieldSpecs:
+- path: metadata/annotations
+  create: true
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_configmapgenerator_&#34;&gt;&lt;em&gt;ConfigMapGenerator&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-1&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-configmapgenerator&#34;&gt;field name: &lt;code&gt;configMapGenerator&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Each entry in this list results in the creation of
+one ConfigMap resource (it&amp;rsquo;s a generator of n maps).&lt;/p&gt;
+&lt;p&gt;The example below creates three ConfigMaps. One with the names and contents of
+the given files, one with key/value as data, and a third which sets an
+annotation and label via &lt;code&gt;options&lt;/code&gt; for that single ConfigMap.&lt;/p&gt;
+&lt;p&gt;Each configMapGenerator item accepts a parameter of
+&lt;code&gt;behavior: [create|replace|merge]&lt;/code&gt;.
+This allows an overlay to modify or
+replace an existing configMap from the parent.&lt;/p&gt;
+&lt;p&gt;Also, each entry has an &lt;code&gt;options&lt;/code&gt; field, that has the
+same subfields as the kustomization file&amp;rsquo;s &lt;code&gt;generatorOptions&lt;/code&gt; field.&lt;/p&gt;
+&lt;p&gt;This &lt;code&gt;options&lt;/code&gt; field allows one to add labels and/or
+annotations to the generated instance, or to individually
+disable the name suffix hash for that instance.
+Labels and annotations added here will not be overwritten
+by the global options associated with the kustomization
+file &lt;code&gt;generatorOptions&lt;/code&gt; field.  However, due to how
+booleans behave, if the global &lt;code&gt;generatorOptions&lt;/code&gt; field
+specifies &lt;code&gt;disableNameSuffixHash: true&lt;/code&gt;, this will
+trump any attempt to locally override it.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# These labels are added to all configmaps and secrets.
+generatorOptions:
+  labels:
+    fruit: apple
+
+configMapGenerator:
+- name: my-java-server-props
+  behavior: merge
+  files:
+  - application.properties
+  - more.properties
+- name: my-java-server-env-vars
+  literals: 
+  - JAVA_HOME=/opt/java/jdk
+  - JAVA_TOOL_OPTIONS=-agentlib:hprof
+  options:
+    disableNameSuffixHash: true
+    labels:
+      pet: dog
+- name: dashboards
+  files:
+  - mydashboard.json
+  options:
+    annotations:
+      dashboard: &amp;quot;1&amp;quot;
+    labels:
+      app.kubernetes.io/name: &amp;quot;app1&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It is also possible to
+&lt;a href=&#34;https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#define-the-key-to-use-when-creating-a-configmap-from-a-file&#34;&gt;define a key&lt;/a&gt;
+to set a name different than the filename.&lt;/p&gt;
+&lt;p&gt;The example below creates a ConfigMap
+with the name of file as &lt;code&gt;myFileName.ini&lt;/code&gt;
+while the &lt;em&gt;actual&lt;/em&gt; filename from which the
+configmap is created is &lt;code&gt;whatever.ini&lt;/code&gt;.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;configMapGenerator:
+- name: app-whatever
+  files:
+  - myFileName.ini=whatever.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;usage-via-generators-field&#34;&gt;Usage via &lt;code&gt;generators&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-1&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/configmapargs.go&#34;&gt;types.ConfigMapArgs&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-1&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apiVersion: &lt;span style=&#34;color:#204a87&#34;&gt;builtin&lt;/span&gt;
+kind: ConfigMapGenerator
+metadata:
+  name: mymap
+envs:
+- devops.env
+- uxteam.env
+literals:
+- &lt;span style=&#34;color:#000&#34;&gt;FRUIT&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;apple
+- &lt;span style=&#34;color:#000&#34;&gt;VEGETABLE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;carrot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_imagetagtransformer_&#34;&gt;&lt;em&gt;ImageTagTransformer&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-2&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-images&#34;&gt;field name: &lt;code&gt;images&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Images modify the name, tags and/or digest for images
+without creating patches.  E.g. Given this
+kubernetes Deployment fragment:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;containers:
+- name: mypostgresdb
+  image: postgres:8
+- name: nginxapp
+  image: nginx:1.7.9
+- name: myapp
+  image: my-demo-app:latest
+- name: alpine-app
+  image: alpine:3.7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;one can change the &lt;code&gt;image&lt;/code&gt; in the following ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;postgres:8&lt;/code&gt; to &lt;code&gt;my-registry/my-postgres:v1&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;nginx tag &lt;code&gt;1.7.9&lt;/code&gt; to &lt;code&gt;1.8.0&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;image name &lt;code&gt;my-demo-app&lt;/code&gt; to &lt;code&gt;my-app&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;alpine&amp;rsquo;s tag &lt;code&gt;3.7&lt;/code&gt; to a digest value&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;all with the following &lt;em&gt;kustomization&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;images:
+- name: postgres
+  newName: my-registry/my-postgres
+  newTag: v1
+- name: nginx
+  newTag: 1.8.0
+- name: my-demo-app
+  newName: my-app
+- name: alpine
+  digest: sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;usage-via-transformers-field-1&#34;&gt;Usage via &lt;code&gt;transformers&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-2&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ImageTag   &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/image.go&#34;&gt;image.Image&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;FieldSpecs []&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/fieldspec.go&#34;&gt;config.FieldSpec&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-2&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apiVersion: &lt;span style=&#34;color:#204a87&#34;&gt;builtin&lt;/span&gt;
+kind: ImageTagTransformer
+metadata:
+  name: not-important-to-example
+imageTag:
+  name: nginx
+  newTag: v2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_labeltransformer_&#34;&gt;&lt;em&gt;LabelTransformer&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-3&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-commonlabels&#34;&gt;field name: &lt;code&gt;commonLabels&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Adds labels to all resources and selectors&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;commonLabels:
+  someName: someValue
+  owner: alice
+  app: bingo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;usage-via-transformers-field-2&#34;&gt;Usage via &lt;code&gt;transformers&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-3&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Labels  map[string]string&lt;/p&gt;
+&lt;p&gt;FieldSpecs []&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/fieldspec.go&#34;&gt;config.FieldSpec&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-3&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apiVersion: &lt;span style=&#34;color:#204a87&#34;&gt;builtin&lt;/span&gt;
+kind: LabelTransformer
+metadata:
+  name: not-important-to-example
+labels:
+  app: myApp
+  env: production
+fieldSpecs:
+- path: metadata/labels
+  create: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_namespacetransformer_&#34;&gt;&lt;em&gt;NamespaceTransformer&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-4&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-namespace&#34;&gt;field name: &lt;code&gt;namespace&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Adds namespace to all resources&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;namespace: my-namespace
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;usage-via-transformers-field-3&#34;&gt;Usage via &lt;code&gt;transformers&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-4&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/objectmeta.go&#34;&gt;types.ObjectMeta&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;FieldSpecs []&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/fieldspec.go&#34;&gt;config.FieldSpec&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-4&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apiVersion: &lt;span style=&#34;color:#204a87&#34;&gt;builtin&lt;/span&gt;
+ kind: NamespaceTransformer
+ metadata:
+   name: not-important-to-example
+   namespace: &lt;span style=&#34;color:#204a87&#34;&gt;test&lt;/span&gt;
+ fieldSpecs:
+ - path: metadata/namespace
+   create: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
+ - path: subjects
+   kind: RoleBinding
+   group: rbac.authorization.k8s.io
+ - path: subjects
+   kind: ClusterRoleBinding
+   group: rbac.authorization.k8s.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_patchesjson6902_&#34;&gt;&lt;em&gt;PatchesJson6902&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-5&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-patchesjson6902&#34;&gt;field name: &lt;code&gt;patchesJson6902&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Each entry in this list should resolve to
+a kubernetes object and a JSON patch that will be applied
+to the object.
+The JSON patch is documented at &lt;a href=&#34;https://tools.ietf.org/html/rfc6902&#34;&gt;https://tools.ietf.org/html/rfc6902&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;target field points to a kubernetes object within the same kustomization
+by the object&amp;rsquo;s group, version, kind, name and namespace.
+path field is a relative file path of a JSON patch file.
+The content in this patch file can be either in JSON format as&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;
+   &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;op&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;add&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/some/new/path&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;,
+   &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;op&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;replace&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/some/existing/path&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;new value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+ &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or in YAML format as&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;- op: add
+  path: /some/new/path
+  value: value
+- op: replace
+  path: /some/existing/path
+  value: new value
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;patchesJson6902:
+- target:
+    version: v1
+    kind: Deployment
+    name: my-deployment
+  path: add_init_container.yaml
+- target:
+    version: v1
+    kind: Service
+    name: my-service
+  path: add_service_annotation.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The patch content can be an inline string as well:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;patchesJson6902:
+- target:
+    version: v1
+    kind: Deployment
+    name: my-deployment
+  patch: &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt;-
+    - op: add
+      path: /some/new/path
+      value: value
+    - op: replace
+      path: /some/existing/path
+      value: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;new value&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;usage-via-transformers-field-4&#34;&gt;Usage via &lt;code&gt;transformers&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-5&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Target &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/patchtarget.go&#34;&gt;types.PatchTarget&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Path   string&lt;/p&gt;
+&lt;p&gt;JsonOp string&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-5&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apiVersion: &lt;span style=&#34;color:#204a87&#34;&gt;builtin&lt;/span&gt;
+kind: PatchJson6902Transformer
+metadata:
+  name: not-important-to-example
+target:
+  group: apps
+  version: v1
+  kind: Deployment
+  name: my-deploy
+path: jsonpatch.json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_patchesstrategicmerge_&#34;&gt;&lt;em&gt;PatchesStrategicMerge&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-6&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-patchesstrategicmerge&#34;&gt;field name: &lt;code&gt;patchesStrategicMerge&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Each entry in this list should be either a relative
+file path or an inline content
+resolving to a partial or complete resource
+definition.&lt;/p&gt;
+&lt;p&gt;The names in these (possibly partial) resource
+files must match names already loaded via the
+&lt;code&gt;resources&lt;/code&gt; field.  These entries are used to
+&lt;em&gt;patch&lt;/em&gt; (modify) the known resources.&lt;/p&gt;
+&lt;p&gt;Small patches that do one thing are best, e.g. modify
+a memory request/limit, change an env var in a
+ConfigMap, etc.  Small patches are easy to review and
+easy to mix together in overlays.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;patchesStrategicMerge:
+- service_port_8888.yaml
+- deployment_increase_replicas.yaml
+- deployment_increase_memory.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The patch content can be a inline string as well.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;patchesStrategicMerge:
+- &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt;-
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: nginx
+  spec:
+    template:
+      spec:
+        containers:
+          - name: nginx
+            image: nignx:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note that kustomize does not support more than one patch
+for the same object that contain a &lt;em&gt;delete&lt;/em&gt; directive. To remove
+several fields / slice elements from an object create a single
+patch that performs all the needed deletions.&lt;/p&gt;
+&lt;h3 id=&#34;usage-via-transformers-field-5&#34;&gt;Usage via &lt;code&gt;transformers&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-6&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Paths []&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/patchstrategicmerge.go&#34;&gt;types.PatchStrategicMerge&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Patches string&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-6&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apiVersion: &lt;span style=&#34;color:#204a87&#34;&gt;builtin&lt;/span&gt;
+kind: PatchStrategicMergeTransformer
+metadata:
+  name: not-important-to-example
+paths:
+- patch.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_patchtransformer_&#34;&gt;&lt;em&gt;PatchTransformer&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-7&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-patches&#34;&gt;field name: &lt;code&gt;patches&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Each entry in this list should resolve to an Patch
+object, which includes a patch and a target selector.
+The patch can be either a strategic merge patch or a
+JSON patch. it can be either a patch file or an inline
+string. The target selects
+resources by group, version, kind, name, namespace,
+labelSelector and annotationSelector. A resource
+which matches all the specified fields is selected
+to apply the patch.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;patches:
+- path: patch.yaml
+  target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: deploy.*
+    labelSelector: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;env=dev&amp;#34;&lt;/span&gt;
+    annotationSelector: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;zone=west&amp;#34;&lt;/span&gt;
+- patch: &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt;-
+    - op: replace
+      path: /some/existing/path
+      value: new value
+  target:
+    kind: MyKind
+    labelSelector: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;env=dev&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;namespace&lt;/code&gt; fields of the patch target selector are
+automatically anchored regular expressions. This means that the value &lt;code&gt;myapp&lt;/code&gt;
+is equivalent to &lt;code&gt;^myapp$&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;usage-via-transformers-field-6&#34;&gt;Usage via &lt;code&gt;transformers&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-7&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Path string&lt;/p&gt;
+&lt;p&gt;Patch string&lt;/p&gt;
+&lt;p&gt;Target *&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/selector.go&#34;&gt;types.Selector&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-7&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apiVersion: &lt;span style=&#34;color:#204a87&#34;&gt;builtin&lt;/span&gt;
+kind: PatchTransformer
+metadata:
+  name: not-important-to-example
+patch: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;[{&amp;#34;op&amp;#34;: &amp;#34;replace&amp;#34;, &amp;#34;path&amp;#34;: &amp;#34;/spec/template/spec/containers/0/image&amp;#34;, &amp;#34;value&amp;#34;: &amp;#34;nginx:latest&amp;#34;}]&amp;#39;&lt;/span&gt;
+target:
+  name: .*Deploy
+  kind: Deployment
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_prefixsuffixtransformer_&#34;&gt;&lt;em&gt;PrefixSuffixTransformer&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-8&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-names-nameprefix-namesuffix&#34;&gt;field names: &lt;code&gt;namePrefix&lt;/code&gt;, &lt;code&gt;nameSuffix&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Prepends or postfixes the value to the names
+of all resources.&lt;/p&gt;
+&lt;p&gt;E.g. a deployment named &lt;code&gt;wordpress&lt;/code&gt; could
+become &lt;code&gt;alices-wordpress&lt;/code&gt; or  &lt;code&gt;wordpress-v2&lt;/code&gt;
+or &lt;code&gt;alices-wordpress-v2&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;namePrefix: alices-
+nameSuffix: -v2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The suffix is appended before the content hash if
+the resource type is ConfigMap or Secret.&lt;/p&gt;
+&lt;h3 id=&#34;usage-via-transformers-field-7&#34;&gt;Usage via &lt;code&gt;transformers&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-8&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Prefix     string&lt;/p&gt;
+&lt;p&gt;Suffix     string&lt;/p&gt;
+&lt;p&gt;FieldSpecs []&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/fieldspec.go&#34;&gt;config.FieldSpec&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-8&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apiVersion: &lt;span style=&#34;color:#204a87&#34;&gt;builtin&lt;/span&gt;
+kind: PrefixSuffixTransformer
+metadata:
+  name: not-important-to-example
+prefix: baked-
+suffix: -pie
+fieldSpecs:
+  - path: metadata/name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_replicacounttransformer_&#34;&gt;&lt;em&gt;ReplicaCountTransformer&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-9&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-replicas&#34;&gt;field name: &lt;code&gt;replicas&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Replicas modified the number of replicas for a resource.&lt;/p&gt;
+&lt;p&gt;E.g. Given this kubernetes Deployment fragment:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kind: Deployment
+metadata:
+  name: deployment-name
+spec:
+  replicas: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;one can change the number of replicas to 5
+by adding the following to your kustomization:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;replicas:
+- name: deployment-name
+  count: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;5&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This field accepts a list, so many resources can
+be modified at the same time.&lt;/p&gt;
+&lt;p&gt;As this declaration does not take in a &lt;code&gt;kind:&lt;/code&gt; nor a &lt;code&gt;group:&lt;/code&gt;
+it will match any &lt;code&gt;group&lt;/code&gt; and &lt;code&gt;kind&lt;/code&gt; that has a matching name and
+that is one of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Deployment&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ReplicationController&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ReplicaSet&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StatefulSet&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For more complex use cases, revert to using a patch.&lt;/p&gt;
+&lt;h3 id=&#34;usage-via-transformers-field-8&#34;&gt;Usage via &lt;code&gt;transformers&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-9&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Replica &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/replica.go&#34;&gt;types.Replica&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;FieldSpecs []&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/fieldspec.go&#34;&gt;config.FieldSpec&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-9&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apiVersion: &lt;span style=&#34;color:#204a87&#34;&gt;builtin&lt;/span&gt;
+kind: ReplicaCountTransformer
+metadata:
+  name: not-important-to-example
+replica:
+  name: myapp
+  count: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;23&lt;/span&gt;
+fieldSpecs:
+- path: spec/replicas
+  create: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
+  kind: Deployment
+- path: spec/replicas
+  create: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
+  kind: ReplicationController
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_secretgenerator_&#34;&gt;&lt;em&gt;SecretGenerator&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-10&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-secretgenerator&#34;&gt;field name: &lt;code&gt;secretGenerator&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Each entry in the argument list
+results in the creation of
+one Secret resource
+(it&amp;rsquo;s a generator of n secrets).&lt;/p&gt;
+&lt;p&gt;This works like the &lt;code&gt;configMapGenerator&lt;/code&gt; field
+described above.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;secretGenerator:
+- name: app-tls
+  files:
+  - secret/tls.cert
+  - secret/tls.key
+  type: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;kubernetes.io/tls&amp;#34;&lt;/span&gt;
+- name: app-tls-namespaced
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# you can define a namespace to generate&lt;/span&gt;
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# a secret in, defaults to: &amp;#34;default&amp;#34;&lt;/span&gt;
+  namespace: apps
+  files:
+  - tls.crt&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;catsecret/tls.cert
+  - tls.key&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;secret/tls.key
+  type: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;kubernetes.io/tls&amp;#34;&lt;/span&gt;
+- name: env_file_secret
+  envs:
+  - env.txt
+  type: Opaque
+- name: secret-with-annotation
+  files:
+  - app-config.yaml
+  type: Opaque
+  options:
+    annotations:
+      app_config: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+    labels:
+      app.kubernetes.io/name: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;app2&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;usage-via-generators-field-1&#34;&gt;Usage via &lt;code&gt;generators&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-10&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/objectmeta.go&#34;&gt;types.ObjectMeta&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/secretargs.go&#34;&gt;types.SecretArgs&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-10&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apiVersion: &lt;span style=&#34;color:#204a87&#34;&gt;builtin&lt;/span&gt;
+kind: SecretGenerator
+metadata:
+  name: my-secret
+  namespace: whatever
+behavior: merge
+envs:
+- a.env
+- b.env
+files:
+- &lt;span style=&#34;color:#000&#34;&gt;obscure&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;longsecret.txt
+literals:
+- &lt;span style=&#34;color:#000&#34;&gt;FRUIT&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;apple
+- &lt;span style=&#34;color:#000&#34;&gt;VEGETABLE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;carrot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;_helmchartinflationgenerator_&#34;&gt;&lt;em&gt;HelmChartInflationGenerator&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;usage-via-kustomizationyaml-11&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;field-name-helmchartinflationgenerator&#34;&gt;field name: &lt;code&gt;helmChartInflationGenerator&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Each entry in the argument list results in the pulling
+and rendering of a helm chart.&lt;/p&gt;
+&lt;p&gt;Each entry can have following fields:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;chartName&lt;/code&gt;: The name of the chart that you want to use.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chartRepoUrl&lt;/code&gt;: [Optional] The URL of the repository which contains the chart. If
+this is provided, the generator will try to fetch remote charts. Otherwise it will
+try to load local chart in &lt;code&gt;chartHome&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chartVersion&lt;/code&gt;: [Optional] Version of the chart. Will use latest version
+if this is omitted.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chartHome&lt;/code&gt;: [Optional] Provide the path to the parent directory for local chart.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chartRelease&lt;/code&gt;: [Optional] The name of the repo where to find the chart.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;values&lt;/code&gt;: [Optional] A path to the values file.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;releaseName&lt;/code&gt;: [Optional] The release name that will be set in the chart.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;releaseNamespace&lt;/code&gt;: [Optional] The namespace which will be used by &lt;code&gt;--namespace&lt;/code&gt;
+flag in &lt;code&gt;helm template&lt;/code&gt; command.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;helmBin&lt;/code&gt;: [Optional] Path to helm binary. Default is &lt;code&gt;helm&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;helmHome&lt;/code&gt;: [Optional] Path to helm home directory.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;extraArgs&lt;/code&gt;: [Optional] A list of additional argumetns that will be passed into helm
+template command.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;helmChartInflationGenerator:
+- chartName: minecraft
+  chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
+  chartVersion: v1.2.0
+  releaseName: test
+  releaseNamespace: testNamespace
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;usage-via-generators-field-2&#34;&gt;Usage via &lt;code&gt;generators&lt;/code&gt; field&lt;/h3&gt;
+&lt;h4 id=&#34;arguments-11&#34;&gt;Arguments&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ChartName string&lt;/p&gt;
+&lt;p&gt;ChartVersion string&lt;/p&gt;
+&lt;p&gt;ChartRepoURL string&lt;/p&gt;
+&lt;p&gt;ChartHome string&lt;/p&gt;
+&lt;p&gt;ChartRepoName string&lt;/p&gt;
+&lt;p&gt;HelmBin string&lt;/p&gt;
+&lt;p&gt;HelmHome string&lt;/p&gt;
+&lt;p&gt;Values string&lt;/p&gt;
+&lt;p&gt;ReleaseName string&lt;/p&gt;
+&lt;p&gt;ReleaseNamespace string&lt;/p&gt;
+&lt;p&gt;ExtraArgs []string&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;example-11&#34;&gt;Example&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: myMap
+chartName: minecraft
+chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
+chartVersion: v1.2.0
+helmBin: /usr/bin/helm
+helmHome: /tmp/helmHome
+releaseName: test
+releaseNamespace: testNamespace
+values: values.yaml
+extraArgs:
+- --include-crds
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 
       </description>
     </item>

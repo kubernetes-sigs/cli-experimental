@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/config_management/container_images/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2020-10-31T08:50:10&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-10-31T08:50:10+05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Container Images">
 <meta itemprop="description" content="Dealing with Application Containers
 ">
-<meta itemprop="dateModified" content="2020-10-31T08:50:10&#43;05:30" />
+<meta itemprop="dateModified" content="2020-10-31T08:50:10+05:30" />
 <meta itemprop="wordCount" content="198">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Container Images"/>
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -553,25 +553,25 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizebuiltins" href="/guides/extending_kustomize/builtins/">Builtin Plugins</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizecontainerized_krm_functions" href="/guides/extending_kustomize/containerized_krm_functions/">Containerized KRM Functions</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizeexecpluginguidedexample" href="/guides/extending_kustomize/execpluginguidedexample/">Exec plugin on linux</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizeexec_krm_functions" href="/guides/extending_kustomize/exec_krm_functions/">Exec KRM functions</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizegoplugincaveats" href="/guides/extending_kustomize/goplugincaveats/">Go plugin Caveats</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizeexec_plugins" href="/guides/extending_kustomize/exec_plugins/">Exec plugins</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizegopluginguidedexample" href="/guides/extending_kustomize/gopluginguidedexample/">Go plugin example</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizego_plugins" href="/guides/extending_kustomize/go_plugins/">Go Plugins</a>
       
       
     </li>
@@ -722,7 +722,7 @@ the project</li>
 <li>Change the registry used for an image</li>
 </ul>
 <p>Consider the following <code>deployment.yaml</code> file,</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># deployment.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># deployment.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">apps/v1</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Deployment</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">

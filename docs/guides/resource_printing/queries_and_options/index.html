@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/resource_printing/queries_and_options/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2020-09-30T20:01:35&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2020-09-30T20:01:35+05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Queries and Options">
 <meta itemprop="description" content="Prints result of queries
 ">
-<meta itemprop="dateModified" content="2020-09-30T20:01:35&#43;05:30" />
+<meta itemprop="dateModified" content="2020-09-30T20:01:35+05:30" />
 <meta itemprop="wordCount" content="302">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Queries and Options"/>
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -553,25 +553,25 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizebuiltins" href="/guides/extending_kustomize/builtins/">Builtin Plugins</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizecontainerized_krm_functions" href="/guides/extending_kustomize/containerized_krm_functions/">Containerized KRM Functions</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizeexecpluginguidedexample" href="/guides/extending_kustomize/execpluginguidedexample/">Exec plugin on linux</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizeexec_krm_functions" href="/guides/extending_kustomize/exec_krm_functions/">Exec KRM functions</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizegoplugincaveats" href="/guides/extending_kustomize/goplugincaveats/">Go plugin Caveats</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizeexec_plugins" href="/guides/extending_kustomize/exec_plugins/">Exec plugins</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizegopluginguidedexample" href="/guides/extending_kustomize/gopluginguidedexample/">Go plugin example</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizego_plugins" href="/guides/extending_kustomize/go_plugins/">Go Plugins</a>
       
       
     </li>
@@ -729,46 +729,46 @@
 <p>Match Resources with Queries when Getting or Describing them.</p>
 <h2 id="resource-config-by-kustomizationyaml">Resource Config By <code>kustomization.yaml</code></h2>
 <p>Get all Resources provided by the <code>kustomization.yaml</code> in project/.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get -k project/
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get -k project/
 </code></pre></div><h2 id="resource-config-by-dir">Resource Config By Dir</h2>
 <p>Get all Resources present in the Resource Config for a directory.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get -f configs/
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get -f configs/
 </code></pre></div><h2 id="resource-types">Resource Types</h2>
 <p>Get <strong>all</strong> Resources in a namespace for a given type.</p>
 <p>The Group and Version for the Resource are determined by the apiserver discovery service.</p>
 <p>The Singular, Plural, Short Name also apply to <em>Types with Name</em> and <em>Types with Selectors</em>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Plural</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Plural</span>
 kubectl get deployments
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Singular</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Singular</span>
 kubectl get deployment
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Short name</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Short name</span>
 kubectl get deploy
 </code></pre></div><h2 id="resource-types-with-group--version">Resource Types with Group / Version</h2>
 <p>Get <strong>all</strong> Resources in a namespace for a given type.</p>
 <p>The Group and Version for the Resource are explicit.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments.apps
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments.v1.apps
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments.apps
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments.v1.apps
 </code></pre></div><h2 id="resource-types-with-name">Resource Types with Name</h2>
 <p>Get named Resources in a namespace for a given type.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment nginx
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment nginx
 </code></pre></div><h2 id="label-selector">Label Selector</h2>
 <p>Get <strong>all</strong> Resources in a namespace <strong>matching a label select</strong> for a given type.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments -l <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>nginx
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments -l <span style="color:#000">app</span><span style="color:#ce5c00;font-weight:bold">=</span>nginx
 </code></pre></div><h2 id="namespaces">Namespaces</h2>
 <p>By default Get and Describe will fetch resource in the default namespace or the namespace specified
 with <code>--namespace</code>.</p>
 <p>The <code>--all-namespaces</code> flag will <strong>fetch Resources from all namespaces</strong>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments --all-namespaces
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments --all-namespaces
 </code></pre></div><h2 id="list-multiple-resource-types">List multiple Resource types</h2>
 <p>Get and Describe can accept <strong>multiple Resource types</strong>, and it will print them both in separate sections.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments,services
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments,services
 </code></pre></div><h2 id="list-multiple-resource-types-by-name">List multiple Resource types by name</h2>
 <p>Get and Describe can accept <strong>multiple Resource types and names</strong>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get rc/web service/frontend pods/web-pod-13je7
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get rc/web service/frontend pods/web-pod-13je7
 </code></pre></div><h2 id="not-found">Not Found</h2>
 <p>By default, Get or Describe <strong>will return an error if an object is requested and doesn&rsquo;t exist</strong>.
 The <code>--ignore-not-found</code> flag will cause kubectl to exit 0 if the Resource is not found</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment nginx --ignore-not-found
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment nginx --ignore-not-found
 </code></pre></div>
 	
 		<style>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -1478,6 +1478,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/references/kustomize/builtins/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Built-Ins</a>
+  </li>
+  <ul>
+    <li class="collapse " id="referenceskustomizebuiltins">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -1623,10 +1646,10 @@
 	<h2 id="auth-resources">Auth Resources</h2>
 <h3 id="clusterrole">ClusterRole</h3>
 <p>Create a ClusterRole named &ldquo;foo&rdquo; with API Group specified.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create clusterrole foo --verb<span style="color:#ce5c00;font-weight:bold">=</span>get,list,watch --resource<span style="color:#ce5c00;font-weight:bold">=</span>rs.extensions
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create clusterrole foo --verb<span style="color:#ce5c00;font-weight:bold">=</span>get,list,watch --resource<span style="color:#ce5c00;font-weight:bold">=</span>rs.extensions
 </code></pre></div><h3 id="clusterrolebinding">ClusterRoleBinding</h3>
 <p>Create a role binding to give a user cluster admin permissions.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create clusterrolebinding &lt;choose-a-name&gt; --clusterrole<span style="color:#ce5c00;font-weight:bold">=</span>cluster-admin --user<span style="color:#ce5c00;font-weight:bold">=</span>&lt;your-cloud-email-account&gt;
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create clusterrolebinding &lt;choose-a-name&gt; --clusterrole<span style="color:#ce5c00;font-weight:bold">=</span>cluster-admin --user<span style="color:#ce5c00;font-weight:bold">=</span>&lt;your-cloud-email-account&gt;
 </code></pre></div>
 
 <div class="alert alert-success" role="alert">
@@ -1636,13 +1659,13 @@ The cluster-admin role maybe required for creating new RBAC bindings.
 
 <h3 id="role">Role</h3>
 <p>Create a Role named &ldquo;foo&rdquo; with API Group specified.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create role foo --verb<span style="color:#ce5c00;font-weight:bold">=</span>get,list,watch --resource<span style="color:#ce5c00;font-weight:bold">=</span>rs.extensions
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create role foo --verb<span style="color:#ce5c00;font-weight:bold">=</span>get,list,watch --resource<span style="color:#ce5c00;font-weight:bold">=</span>rs.extensions
 </code></pre></div><h3 id="rolebinding">RoleBinding</h3>
 <p>Create a RoleBinding for user1, user2, and group1 using the admin ClusterRole.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create rolebinding admin --clusterrole<span style="color:#ce5c00;font-weight:bold">=</span>admin --user<span style="color:#ce5c00;font-weight:bold">=</span>user1 --user<span style="color:#ce5c00;font-weight:bold">=</span>user2 --group<span style="color:#ce5c00;font-weight:bold">=</span>group1
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create rolebinding admin --clusterrole<span style="color:#ce5c00;font-weight:bold">=</span>admin --user<span style="color:#ce5c00;font-weight:bold">=</span>user1 --user<span style="color:#ce5c00;font-weight:bold">=</span>user2 --group<span style="color:#ce5c00;font-weight:bold">=</span>group1
 </code></pre></div><h3 id="serviceaccount">ServiceAccount</h3>
 <p>Create a new service account named my-service-account</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create serviceaccount my-service-account
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create serviceaccount my-service-account
 </code></pre></div>
         <div class="section-index">
     
@@ -1650,6 +1673,8 @@ The cluster-admin role maybe required for creating new RBAC bindings.
     
     
     <hr class="panel-line">
+        
+            
         
             
         

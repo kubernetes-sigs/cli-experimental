@@ -24,9 +24,9 @@
         
         &lt;p&gt;Requires &lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt; to be installed.&lt;/p&gt;
 &lt;h2 id=&#34;install-the-kustomize-cli-from-source-without-cloning-the-repo&#34;&gt;Install the kustomize CLI from source without cloning the repo&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GOBIN&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;pwd&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt;/ &lt;span style=&#34;color:#000&#34;&gt;GO111MODULE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;on go get sigs.k8s.io/kustomize/kustomize/v3
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GOBIN&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;pwd&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt;/ &lt;span style=&#34;color:#000&#34;&gt;GO111MODULE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;on go get sigs.k8s.io/kustomize/kustomize/v3
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;install-the-kustomize-cli-from-local-source-with-cloning-the-repo&#34;&gt;Install the kustomize CLI from local source with cloning the repo&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Need go 1.13 or higher&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# Need go 1.13 or higher&lt;/span&gt;
 &lt;span style=&#34;color:#204a87&#34;&gt;unset&lt;/span&gt; GOPATH
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# see https://golang.org/doc/go1.13#modules&lt;/span&gt;
 &lt;span style=&#34;color:#204a87&#34;&gt;unset&lt;/span&gt; GO111MODULES
@@ -61,7 +61,7 @@ git checkout kustomize/v3.2.3
         &lt;p&gt;Binaries at various versions for linux, MacOs and Windows are published on the &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/releases&#34;&gt;releases page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The following &lt;a href=&#34;https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&#34;&gt;script&lt;/a&gt; detects your OS and downloads the appropriate kustomize binary to your
 current working directory.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -s &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; bash
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -s &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; bash
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;This script doesn&amp;rsquo;t work for ARM architecture.&lt;/strong&gt; If you want to install ARM binaries, please
 go to the release page to find the URL.&lt;/p&gt;
 
@@ -81,7 +81,7 @@ go to the release page to find the URL.&lt;/p&gt;
 The images are hosted in kubernetes official GCR repositories.&lt;/p&gt;
 &lt;p&gt;See &lt;a href=&#34;https://us.gcr.io/k8s-artifacts-prod/kustomize/kustomize&#34;&gt;GCR page&lt;/a&gt; for available images.&lt;/p&gt;
 &lt;p&gt;The following commands are how to pull and run kustomize 3.8.7 docker image.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker pull k8s.gcr.io/kustomize/kustomize:v3.8.7
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker pull k8s.gcr.io/kustomize/kustomize:v3.8.7
 docker run k8s.gcr.io/kustomize/kustomize:v3.8.7 version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
@@ -97,9 +97,9 @@ docker run k8s.gcr.io/kustomize/kustomize:v3.8.7 version
         
         
         &lt;p&gt;For &lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt; users:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;brew install kustomize
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;brew install kustomize
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For &lt;a href=&#34;https://www.macports.org&#34;&gt;MacPorts&lt;/a&gt; users:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo port install kustomize
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo port install kustomize
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
@@ -113,7 +113,7 @@ docker run k8s.gcr.io/kustomize/kustomize:v3.8.7 version
       <description>
         
         
-        &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;choco install kustomize
+        &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;choco install kustomize
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For support on the chocolatey package
 and prior releases, see:&lt;/p&gt;
 &lt;ul&gt;

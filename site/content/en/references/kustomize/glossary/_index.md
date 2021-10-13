@@ -2,7 +2,7 @@
 title: "Glossary"
 linkTitle: "Glossary"
 type: docs
-weight: 99
+weight: 1
 description: >
     Glossary of terms
 ---
@@ -409,7 +409,7 @@ A chunk of code used by kustomize, but not necessarily
 compiled into kustomize, to generate and/or transform a
 kubernetes resource as part of a kustomization.
 
-Details [here](../../../guides/extending_kustomize/builtins).
+Details [here](../../../guides/extending_kustomize).
 
 ## resource
 

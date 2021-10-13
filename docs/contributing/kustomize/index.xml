@@ -39,7 +39,7 @@ transformer test&lt;/a&gt;, to a new test file in the
 krusty package.&lt;/p&gt;
 &lt;p&gt;Insert the inputs you want to use, and run it as
 you&amp;rsquo;d run the reusable custom transformer test:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;(cd api; go test -run TestReusableCustomTransformers ./krusty)
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(cd api; go test -run TestReusableCustomTransformers ./krusty)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The output will demonstrate the bug or missing feature.&lt;/p&gt;
 &lt;p&gt;Record this output in the test file in a call to
 &lt;code&gt;AssertActualEqualsExpected&lt;/code&gt;, per all the other tests
@@ -249,15 +249,15 @@ the &lt;code&gt;kustomize/go.mod&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Add &lt;code&gt;go&lt;/code&gt; to your PATH&lt;/p&gt;
 &lt;h3 id=&#34;install-kubeval&#34;&gt;Install kubeval&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/instrumenta/kubeval&#34;&gt;Instructions&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;go get github.com/instrumenta/kubeval
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;go get github.com/instrumenta/kubeval
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add &lt;code&gt;kubeval&lt;/code&gt; to your PATH&lt;/p&gt;
 &lt;h3 id=&#34;install-gnu-tools&#34;&gt;Install gnu tools&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/&#34;&gt;Instructions&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;brew install coreutils wget gnu-sed tree
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;brew install coreutils wget gnu-sed tree
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add the new tools to your PATH&lt;/p&gt;
 &lt;h2 id=&#34;make-everything&#34;&gt;Make everything&lt;/h2&gt;
 &lt;p&gt;Verify your install by running &lt;code&gt;make&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;make
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;make
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Be default, this runs all tests needed to qualify a pull request.&lt;/p&gt;
 
       </description>
@@ -323,7 +323,7 @@ the &lt;code&gt;kustomize/go.mod&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You should now be able to issue these commands and see comparable responses&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;C:\...&amp;gt; golangci-lint --help
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;C:\...&amp;gt; golangci-lint --help
 Smart, fast linters runner. Run it in cloud for every GitHub pull request on https://golangci.com
 ...
 

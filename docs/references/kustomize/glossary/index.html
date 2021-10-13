@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -1478,6 +1478,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/references/kustomize/builtins/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Built-Ins</a>
+  </li>
+  <ul>
+    <li class="collapse " id="referenceskustomizebuiltins">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -1779,7 +1802,7 @@ to <strong>A</strong>, or <strong>B</strong> is off in a completely independent
 git repository, referencable from any kustomization.</p>
 <p>A common layout is</p>
 <blockquote>
-<pre><code>├── base
+<pre tabindex="0"><code>├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
 │   └── service.yaml
@@ -1825,7 +1848,7 @@ resources intentionally published somewhere for others
 to use.</p>
 <p>E.g. one might create a github repository like this:</p>
 <blockquote>
-<pre><code>github.com/username/someapp/
+<pre tabindex="0"><code>github.com/username/someapp/
   kustomization.yaml
   deployment.yaml
   configmap.yaml
@@ -1853,7 +1876,7 @@ in a deployment, the CPU to a particular pod, the data
 source used in a ConfigMap, etc.</p>
 <p>One configures a cluster like this:</p>
 <blockquote>
-<pre><code> kustomize build someapp/overlays/staging |\
+<pre tabindex="0"><code> kustomize build someapp/overlays/staging |\
      kubectl apply -f -
 
  kustomize build someapp/overlays/production |\
@@ -1906,7 +1929,7 @@ syntax.  See this <a href="https://github.com/kubernetes-sigs/kustomize/tree/mas
 <p>A chunk of code used by kustomize, but not necessarily
 compiled into kustomize, to generate and/or transform a
 kubernetes resource as part of a kustomization.</p>
-<p>Details <a href="../../../guides/extending_kustomize/builtins">here</a>.</p>
+<p>Details <a href="../../../guides/extending_kustomize">here</a>.</p>
 <h2 id="resource">resource</h2>
 <p>A <em>resource</em> in the context of a REST-ful API is the
 target object of an HTTP operation like <em>GET</em>, <em>PUT</em> or
@@ -1928,7 +1951,7 @@ with a <em>kind</em> and a <em>metadata/name</em> field.</p>
 <h2 id="target">target</h2>
 <p>The <em>target</em> is the argument to <code>kustomize build</code>, e.g.:</p>
 <blockquote>
-<pre><code> kustomize build $target
+<pre tabindex="0"><code> kustomize build $target
 </code></pre></blockquote>
 <p><code>$target</code> must be a path or a url to a <a href="#kustomization">kustomization</a>.</p>
 <p>The target contains, or refers to, all the information
@@ -1959,6 +1982,8 @@ cpu and memory requests.</p>
     
     
     <hr class="panel-line">
+        
+            
         
             
         
@@ -2151,7 +2176,7 @@ cpu and memory requests.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified May 1, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/2f69db97e5081bf1984ae274e2d1714e7e0c3862">fix the root path of the plugins link (2f69db9)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 12, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/46787e0fdab0aa96c9e5d4227a0a103ca381a017">Update extensions docs (46787e0)</a>
 </div>
 </div>
 

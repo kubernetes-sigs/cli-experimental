@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/config_management/components/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2021-04-08T16:00:48&#43;05:30" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2021-04-08T16:00:48+05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Kustomize Components">
 <meta itemprop="description" content="Kustomize components guide
 ">
-<meta itemprop="dateModified" content="2021-04-08T16:00:48&#43;05:30" />
+<meta itemprop="dateModified" content="2021-04-08T16:00:48+05:30" />
 <meta itemprop="wordCount" content="811">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kustomize Components"/>
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -553,25 +553,25 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizebuiltins" href="/guides/extending_kustomize/builtins/">Builtin Plugins</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizecontainerized_krm_functions" href="/guides/extending_kustomize/containerized_krm_functions/">Containerized KRM Functions</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizeexecpluginguidedexample" href="/guides/extending_kustomize/execpluginguidedexample/">Exec plugin on linux</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizeexec_krm_functions" href="/guides/extending_kustomize/exec_krm_functions/">Exec KRM functions</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizegoplugincaveats" href="/guides/extending_kustomize/goplugincaveats/">Go plugin Caveats</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizeexec_plugins" href="/guides/extending_kustomize/exec_plugins/">Exec plugins</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizegopluginguidedexample" href="/guides/extending_kustomize/gopluginguidedexample/">Go plugin example</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-guidesextending_kustomizego_plugins" href="/guides/extending_kustomize/go_plugins/">Go Plugins</a>
       
       
     </li>
@@ -708,7 +708,7 @@ overlays, i.e., different features for different environments or audiences.</p>
 <a href="https://github.com/kubernetes/enhancements/tree/master/keps/sig-cli/1802-kustomize-components">Kustomize Components KEP</a>.</p>
 <h2 id="use-case">Use case</h2>
 <p>Suppose you&rsquo;ve written a very simple Web application:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">apps/v1</span><span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">apps/v1</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Deployment</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">example</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -763,12 +763,12 @@ three environments. Here&rsquo;s how you can do this with Kustomize components: 
 opt-in feature gets packaged as a component, so that it can be referred to from
 multiple higher-level overlays.</p>
 <p>First, define a place to work:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">DEMO_HOME</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>mktemp -d<span style="color:#204a87;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">DEMO_HOME</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">$(</span>mktemp -d<span style="color:#204a87;font-weight:bold">)</span>
 </code></pre></div><p>Define a common <strong>base</strong> that has a <code>Deployment</code> and a simple <code>ConfigMap</code>, that
 is mounted on the application&rsquo;s container.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">BASE</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/base
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#000">BASE</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/base
 mkdir <span style="color:#000">$BASE</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $BASE/kustomization.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $BASE/kustomization.yaml</span>
 resources:
 - deployment.yaml
 
@@ -778,7 +778,7 @@ configMapGenerator:
     - main.conf<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000;font-weight:bold">|</span>
         <span style="color:#000">color</span><span style="color:#ce5c00;font-weight:bold">=</span>cornflower_blue
         <span style="color:#000">log_level</span><span style="color:#ce5c00;font-weight:bold">=</span>info
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $BASE/deployment.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $BASE/deployment.yaml</span>
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -798,9 +798,9 @@ spec:
             name: conf
 </code></pre></div><p>Define an <code>external_db</code> component, using <code>kind: Component</code>, that creates a
 <code>Secret</code> for the DB password and a new entry in the <code>ConfigMap</code>:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">EXT_DB</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/components/external_db
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">EXT_DB</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/components/external_db
 mkdir -p <span style="color:#000">$EXT_DB</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $EXT_DB/kustomization.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $EXT_DB/kustomization.yaml</span>
 apiVersion: kustomize.config.k8s.io/v1alpha1  <span style="color:#8f5902;font-style:italic"># &lt;-- Component notation</span>
 kind: Component
 
@@ -819,7 +819,7 @@ patchesJson6902:
     kind: Deployment
     name: example
   path: deployment.yaml
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $EXT_DB/deployment.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $EXT_DB/deployment.yaml</span>
 - op: add
   path: /spec/template/spec/volumes/0
   value:
@@ -831,7 +831,7 @@ patchesJson6902:
   value:
     mountPath: /var/run/secrets/db/
     name: dbpass
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $EXT_DB/configmap.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $EXT_DB/configmap.yaml</span>
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -845,9 +845,9 @@ data:
 EOF
 </code></pre></div><p>Define an <code>ldap</code> component, that creates a <code>Secret</code> for the LDAP password
 and a new entry in the <code>ConfigMap</code>:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">LDAP</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/components/ldap
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">LDAP</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/components/ldap
 mkdir -p <span style="color:#000">$LDAP</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $LDAP/kustomization.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $LDAP/kustomization.yaml</span>
 apiVersion: kustomize.config.k8s.io/v1alpha1
 kind: Component
 
@@ -866,7 +866,7 @@ patchesJson6902:
     kind: Deployment
     name: example
   path: deployment.yaml
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $LDAP/deployment.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $LDAP/deployment.yaml</span>
 - op: add
   path: /spec/template/spec/volumes/0
   value:
@@ -878,7 +878,7 @@ patchesJson6902:
   value:
     mountPath: /var/run/secrets/ldap/
     name: ldappass
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $LDAP/configmap.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $LDAP/configmap.yaml</span>
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -891,9 +891,9 @@ data:
 EOF
 </code></pre></div><p>Define a <code>recaptcha</code> component, that creates a <code>Secret</code> for the reCAPTCHA
 site/secret keys and a new entry in the <code>ConfigMap</code>:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">RECAPTCHA</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/components/recaptcha
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">RECAPTCHA</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/components/recaptcha
 mkdir -p <span style="color:#000">$RECAPTCHA</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $RECAPTCHA/kustomization.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $RECAPTCHA/kustomization.yaml</span>
 apiVersion: kustomize.config.k8s.io/v1alpha1
 kind: Component
 
@@ -920,7 +920,7 @@ patchesJson6902:
     kind: Deployment
     name: example
   path: deployment.yaml
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $RECAPTCHA/deployment.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $RECAPTCHA/deployment.yaml</span>
 - op: add
   path: /spec/template/spec/volumes/0
   value:
@@ -935,9 +935,9 @@ patchesJson6902:
 EOF
 </code></pre></div><p>Define a <code>community</code> variant, that bundles the external DB and reCAPTCHA
 components:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">COMMUNITY</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/overlays/community
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">COMMUNITY</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/overlays/community
 mkdir -p <span style="color:#000">$COMMUNITY</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
 <span style="color:#8f5902;font-style:italic"># $COMMUNITY/kustomization.yaml</span>
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
@@ -951,9 +951,9 @@ components:
 EOF
 </code></pre></div><p>Define an <code>enterprise</code> overlay, that bundles the external DB and LDAP
 components:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">ENTERPRISE</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/overlays/enterprise
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">ENTERPRISE</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/overlays/enterprise
 mkdir -p <span style="color:#000">$ENTERPRISE</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $ENTERPRISE/kustomization.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $ENTERPRISE/kustomization.yaml</span>
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -966,9 +966,9 @@ components:
 EOF
 </code></pre></div><p>Define a <code>dev</code> overlay, that points to all the components and has LDAP
 disabled:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">DEV</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/overlays/dev
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#000">DEV</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$DEMO_HOME</span>/overlays/dev
 mkdir -p <span style="color:#000">$DEV</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $DEV/kustomization.yaml</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># $DEV/kustomization.yaml</span>
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -981,7 +981,7 @@ components:
   - ../../components/recaptcha
 EOF
 </code></pre></div><p>Now, the workspace has the following directories:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">├── base
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">├── base
 │   ├── deployment.yaml
 │   └── kustomization.yaml
 ├── components
@@ -1009,7 +1009,7 @@ EOF
         └── kustomization.yaml
 </code></pre></div><p>With this structure, you can generate the YAML manifests for each deployment
 using <code>kustomize build</code>:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kustomize build overlays/community
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kustomize build overlays/community
 kustomize build overlays/enterprise
 kustomize build overlays/dev
 </code></pre></div>

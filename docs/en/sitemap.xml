@@ -26,6 +26,9 @@
     <loc>https://kubectl.docs.kubernetes.io/guides/container_debugging/container_logs/</loc>
     <lastmod>2020-10-31T08:50:10+05:30</lastmod>
   </url><url>
+    <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/containerized_krm_functions/</loc>
+    <lastmod>2021-10-12T22:58:37-07:00</lastmod>
+  </url><url>
     <loc>https://kubectl.docs.kubernetes.io/references/kubectl/cp/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url><url>
@@ -61,6 +64,9 @@
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/references/kubectl/get/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
+  </url><url>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/glossary/</loc>
+    <lastmod>2021-10-12T22:58:37-07:00</lastmod>
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/guides/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
@@ -178,6 +184,9 @@
     <loc>https://kubectl.docs.kubernetes.io/guides/extending_kubectl/discovering_plugins/</loc>
     <lastmod>2020-10-31T08:29:57+05:30</lastmod>
   </url><url>
+    <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/exec_krm_functions/</loc>
+    <lastmod>2021-10-12T22:58:37-07:00</lastmod>
+  </url><url>
     <loc>https://kubectl.docs.kubernetes.io/installation/kustomize/source/</loc>
     <lastmod>2020-10-05T00:12:12+05:30</lastmod>
   </url><url>
@@ -186,6 +195,9 @@
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/guides/example/inline_patch/</loc>
     <lastmod>2020-11-25T21:45:20+05:30</lastmod>
+  </url><url>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/</loc>
+    <lastmod>2021-10-12T22:58:37-07:00</lastmod>
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/contributing/kustomize/</loc>
     <lastmod>2020-11-11T21:41:16+05:30</lastmod>
@@ -211,6 +223,9 @@
     <loc>https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/</loc>
     <lastmod>2021-04-30T16:03:44+10:00</lastmod>
   </url><url>
+    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/builtins/</loc>
+    <lastmod>2021-10-12T22:58:37-07:00</lastmod>
+  </url><url>
     <loc>https://kubectl.docs.kubernetes.io/installation/kubectl/chocolatey/</loc>
     <lastmod>2020-10-05T00:12:12+05:30</lastmod>
   </url><url>
@@ -232,6 +247,9 @@
                 hreflang="en"
                 href="https://kubectl.docs.kubernetes.io/contributing/docs/"
                 />
+  </url><url>
+    <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/exec_plugins/</loc>
+    <lastmod>2021-10-12T22:58:37-07:00</lastmod>
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/guides/container_debugging/executing_a_command_in_a_container/</loc>
     <lastmod>2020-09-30T20:01:35+05:30</lastmod>
@@ -272,6 +290,9 @@
     <loc>https://kubectl.docs.kubernetes.io/guides/resource_printing/describe/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url><url>
+    <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/go_plugins/</loc>
+    <lastmod>2021-10-12T22:58:37-07:00</lastmod>
+  </url><url>
     <loc>https://kubectl.docs.kubernetes.io/references/kubectl/get/options/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
   </url><url>
@@ -306,7 +327,7 @@
     <lastmod>2020-09-30T20:01:35+05:30</lastmod>
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/</loc>
-    <lastmod>2020-10-05T00:12:12+05:30</lastmod>
+    <lastmod>2021-10-12T22:58:37-07:00</lastmod>
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/guides/config_management/labels_annotations/</loc>
     <lastmod>2020-10-31T08:50:10+05:30</lastmod>
@@ -407,12 +428,6 @@
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/faq/kustomize/eschewedfeatures/</loc>
     <lastmod>2021-05-29T22:02:42-07:00</lastmod>
-  </url><url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/glossary/</loc>
-    <lastmod>2021-05-01T15:02:33+02:00</lastmod>
-  </url><url>
-    <loc>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/</loc>
-    <lastmod>2021-02-04T14:04:07-08:00</lastmod>
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/faq/kustomize/versioningpolicy/</loc>
     <lastmod>2021-05-29T22:19:34-07:00</lastmod>
@@ -534,9 +549,6 @@
                 href="https://kubectl.docs.kubernetes.io/blog/"
                 />
   </url><url>
-    <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/builtins/</loc>
-    <lastmod>2021-02-23T20:53:27-06:00</lastmod>
-  </url><url>
     <loc>https://kubectl.docs.kubernetes.io/contributing/</loc>
     <lastmod>2020-09-30T20:01:35+05:30</lastmod>
     <xhtml:link
@@ -550,9 +562,6 @@
                 href="https://kubectl.docs.kubernetes.io/contributing/"
                 />
   </url><url>
-    <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/execpluginguidedexample/</loc>
-    <lastmod>2020-10-31T08:50:10+05:30</lastmod>
-  </url><url>
     <loc>https://kubectl.docs.kubernetes.io/faq/</loc>
     <lastmod>2020-09-30T20:01:35+05:30</lastmod>
     <xhtml:link
@@ -565,12 +574,6 @@
                 hreflang="en"
                 href="https://kubectl.docs.kubernetes.io/faq/"
                 />
-  </url><url>
-    <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/goplugincaveats/</loc>
-    <lastmod>2020-09-30T20:01:35+05:30</lastmod>
-  </url><url>
-    <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/gopluginguidedexample/</loc>
-    <lastmod>2020-10-31T08:50:10+05:30</lastmod>
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/faq/kubectl/</loc>
     <lastmod>2020-10-05T00:12:12+05:30</lastmod>

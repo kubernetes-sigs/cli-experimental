@@ -52,16 +52,10 @@ spec:
         image: monopole/hello:1
         command: ["/hello",
                   "--port=8080",
-                  "--date=$(THE_DATE)",
                   "--enableRiskyFeature=$(ENABLE_RISKY)"]
         ports:
         - containerPort: 8080
         env:
-        - name: THE_DATE
-          valueFrom:
-            configMapKeyRef:
-              name: the-map
-              key: today
         - name: ALT_GREETING
           valueFrom:
             configMapKeyRef:

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,8 +38,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" as="style">
-<link href="/scss/main.min.928222d57e7ada1351f7384fde6d87bc0fb6858b5fd22c225a093012eb1c95d0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" as="style">
+<link href="/scss/main.min.64fabd645d54d6673b9f238029808fea7a92611c03aa03b44d7bfe81b906b767.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89018dc0c41cf7551f76e99f8e8818f48a7e9adc953f6ebf5d7f85fc1512c733831fd3f37c1f9b139d14e0aaf0471756b1c79d170bea83908d5624a42583bc43.json"
+  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
   data-offline-search-base-href="/"
 >
 
@@ -1478,6 +1478,29 @@
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/references/kustomize/builtins/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Built-Ins</a>
+  </li>
+  <ul>
+    <li class="collapse " id="referenceskustomizebuiltins">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -1616,7 +1639,7 @@ A kustomization describes how to generate or transform
 other KRM objects.</p>
 <p>Although most practical kustomization files don&rsquo;t actually look this
 way, a <code>kustomization.yaml</code> file is basically four lists:</p>
-<pre><code>apiVersion: kustomize.config.k8s.io/v1beta1
+<pre tabindex="0"><code>apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
@@ -1656,7 +1679,7 @@ injected into the encapsulating list in order.  When this happens, the
 encapsulating kustomization can be called an <em>overlay</em>, and what it
 refers to can be called a <em>base</em>.</p>
 <p>A typical layout:</p>
-<pre><code>app1/
+<pre tabindex="0"><code>app1/
   kustomization.yaml
     | resources:
     | - ../base
@@ -1720,7 +1743,7 @@ convenience.</p>
 <h3 id="generators-and-transformers">Generators and Transformers</h3>
 <p>In the code, the interfaces distinguishing a generator from a
 transformer are:</p>
-<pre><code>// Generator creates an instance of ResMap.
+<pre tabindex="0"><code>// Generator creates an instance of ResMap.
 type Generator interface {
   Generate() (ResMap, error)
 }
@@ -1737,7 +1760,7 @@ and T&rsquo;s are done via a distinct (and common) interface.</p>
 <p>A transformer doesn&rsquo;t implement <code>Generator</code>, but it&rsquo;s capable of
 behaving like one.</p>
 <p>This is because <code>ResMap</code> has the methods</p>
-<pre><code>Append(*Resource)
+<pre tabindex="0"><code>Append(*Resource)
 Replace(*Resource)
 Remove(ResId)
 Clear()
@@ -1769,8 +1792,8 @@ run after the generators, but before the validators</em>.</p>
 <p>Also, they make common use cases easier to express.</p>
 <p>E.g. the following two YAML stanzas do the exactly the same thing if
 added to a kustomization file:</p>
-<pre><code>namePrefix: bob-
-</code></pre><pre><code>transformers:
+<pre tabindex="0"><code>namePrefix: bob-
+</code></pre><pre tabindex="0"><code>transformers:
 - |-
   apiVersion: builtin
   kind: PrefixSuffixTransformer
@@ -1796,7 +1819,7 @@ reusable, custom transformer configs.</p>
 that transform the base transformer configurations before they are
 used in the top level apps.</p>
 <blockquote>
-<pre><code>app1/
+<pre tabindex="0"><code>app1/
   kustomization.yaml
     | resources:
     | - ../base/resources
@@ -1928,12 +1951,18 @@ allowed by how kustomization fields are processed.</p>
             
         
             
+        
+            
                 <div class="entry">
                     <h5>
                         <a href="/references/kustomize/kustomization/commonannotations/">commonAnnotations</a>
                     </h5>
                     <p>Add annotations to add all resources.</p>
                 </div>
+            
+        
+            
+        
             
         
             
@@ -2120,10 +2149,6 @@ allowed by how kustomization fields are processed.</p>
                 </div>
             
         
-            
-        
-            
-        
     
 </div>
 
@@ -2189,7 +2214,7 @@ allowed by how kustomization fields are processed.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 4, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/8e1ef9f7779d172dc6319e616007a396c9d5f973">Provide kustomization file overview. (8e1ef9f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 12, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/46787e0fdab0aa96c9e5d4227a0a103ca381a017">Update extensions docs (46787e0)</a>
 </div>
 </div>
 
