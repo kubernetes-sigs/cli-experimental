@@ -278,7 +278,7 @@ tree $DEMO
 ### Build your app
 
 ```bash
-XDG_CONFIG_HOME=$DEMO $DEMO/bin/kustomize build --enable_alpha_plugins $MYAPP
+XDG_CONFIG_HOME=$DEMO $DEMO/bin/kustomize build --enable-alpha-plugins $MYAPP
 ```
 
 Above, if you had set

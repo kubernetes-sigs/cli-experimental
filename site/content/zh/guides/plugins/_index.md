@@ -122,7 +122,7 @@ $XDG_CONFIG_HOME/kustomize/plugin
 
 Kustomize 插件不会在任何形式的 kustomize 提供的沙盒中运行。不存在 _"plugin security"_ 的概念。
 
-`kustomize build` 会尝试使用插件，但如果省略了 `--enable_alpha_plugins`，将导致插件无法加载，并且会有一个关于插件使用的警告。
+`kustomize build` 会尝试使用插件，但如果省略了 `--enable-alpha-plugins`，将导致插件无法加载，并且会有一个关于插件使用的警告。
 
 使用这个 flag 就是承认使用不稳定的插件 API（alpha）、承认使用缺少出处插件，以及插件不属于 kustomize 的事实。
 

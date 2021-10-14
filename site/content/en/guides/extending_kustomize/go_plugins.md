@@ -593,7 +593,7 @@ This should look something like:
 ### Build your app
 
 ```shell
-XDG_CONFIG_HOME=$DEMO $tmpGoPath/bin/kustomize build --enable_alpha_plugins $MYAPP
+XDG_CONFIG_HOME=$DEMO $tmpGoPath/bin/kustomize build --enable-alpha-plugins $MYAPP
 ```
 
 This should emit a kubernetes secret, with

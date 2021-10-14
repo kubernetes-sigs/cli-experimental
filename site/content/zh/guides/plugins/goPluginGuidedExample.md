@@ -299,7 +299,7 @@ tree $DEMO
 ## 使用插件构建您的应用
 
 ```shell
-XDG_CONFIG_HOME=$DEMO $tmpGoPath/bin/kustomize build --enable_alpha_plugins $MYAPP
+XDG_CONFIG_HOME=$DEMO $tmpGoPath/bin/kustomize build --enable-alpha-plugins $MYAPP
 ```
 
 这将生成一个 kubernetes secret，并对名称 `ROCKET` 和 `CAR` 的数据进行加密。

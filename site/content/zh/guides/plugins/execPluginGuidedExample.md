@@ -200,7 +200,7 @@ tree $DEMO
 ## 使用插件构建 APP
 
 ```bash
-XDG_CONFIG_HOME=$DEMO $DEMO/bin/kustomize build --enable_alpha_plugins $MYAPP
+XDG_CONFIG_HOME=$DEMO $DEMO/bin/kustomize build --enable-alpha-plugins $MYAPP
 ```
 
 之前如果您已经设置了 `PLUGIN_ROOT=$HOME/.config/kustomize/plugin`，则无需在 _kustomize_ 命令前使用 `XDG_CONFIG_HOME`。
