@@ -10,6 +10,9 @@ description: >
 Add labels and selectors to all resources.  If the label key already is present on the resource,
 the value will be overridden.
 
+An alternative to this field is the `labels` field, which allows adding labels without also automatically
+injecting corresponding selectors.
+
 {{% pageinfo color="warning" %}}
 Selectors for resources such as Deployments and Services shouldn't be changed once the
 resource has been applied to a cluster.
