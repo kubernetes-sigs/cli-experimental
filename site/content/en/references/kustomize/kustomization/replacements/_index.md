@@ -2,7 +2,7 @@
 title: "replacements"
 linkTitle: "replacements"
 type: docs
-weight: 18
+weight: 17
 description: >
     Substitute field(s) in N target(s) with a field from a source.
 ---

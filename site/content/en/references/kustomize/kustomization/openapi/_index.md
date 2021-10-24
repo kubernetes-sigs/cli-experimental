@@ -2,7 +2,7 @@
 title: "openapi"
 linkTitle: "openapi"
 type: docs
-weight: 18
+weight: 13
 description: >
     Specify where kustomize gets its OpenAPI schema.
 ---
