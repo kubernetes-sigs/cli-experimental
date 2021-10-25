@@ -13,7 +13,7 @@ description:
 - Kustomize uses patches to introduce environment specific changes on an already existing standard config file without disturbing it.
 {{< /alert >}}
 
-Kustomize provides a solution for customizing Kubernetes resource configuration free from templates and DSLs.
+[Kustomize](https://kubectl.docs.kubernetes.io/installation/kustomize/) provides a solution for customizing Kubernetes resource configuration free from templates and DSLs.
 
 Kustomize lets you customize raw, template-free YAML
 files for multiple purposes, leaving the original YAML
