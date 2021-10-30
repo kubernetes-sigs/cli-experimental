@@ -32,7 +32,8 @@ metadata:
   name: notImportantHere
   annotations:
     config.kubernetes.io/function: |
-      image: example.docker.com/my-functions/chart-inflator:0.1.6
+      container:
+        image: example.docker.com/my-functions/chart-inflator:0.1.6
 spec:
   chartName: minecraft
 ```
@@ -111,7 +112,8 @@ metadata:
   name: notImportantHere
   annotations:
     config.kubernetes.io/function: |
-      image: example.docker.com/my-functions/valueannotator:1.0.0
+      container:
+        image: example.docker.com/my-functions/valueannotator:1.0.0
 value: 'important-data'
 ```
 
