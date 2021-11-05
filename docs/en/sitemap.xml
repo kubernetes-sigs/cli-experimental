@@ -27,7 +27,7 @@
     <lastmod>2020-10-31T08:50:10+05:30</lastmod>
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/containerized_krm_functions/</loc>
-    <lastmod>2021-10-12T22:58:37-07:00</lastmod>
+    <lastmod>2021-10-30T19:21:28+05:30</lastmod>
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/references/kubectl/cp/</loc>
     <lastmod>2020-09-23T14:28:56+05:30</lastmod>
@@ -327,7 +327,7 @@
     <lastmod>2020-09-30T20:01:35+05:30</lastmod>
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/guides/extending_kustomize/</loc>
-    <lastmod>2021-10-12T22:58:37-07:00</lastmod>
+    <lastmod>2021-10-30T19:01:58+05:30</lastmod>
   </url><url>
     <loc>https://kubectl.docs.kubernetes.io/guides/config_management/labels_annotations/</loc>
     <lastmod>2020-10-31T08:50:10+05:30</lastmod>
