@@ -83,7 +83,8 @@ metadata:
   name: notImportantHere
   annotations:
     config.kubernetes.io/function: |
-      image: example.docker.com/my-functions/chart-inflator:0.1.6
+      container:
+        image: example.docker.com/my-functions/chart-inflator:0.1.6
 spec:
   chartName: minecraft
 ```
@@ -114,7 +115,8 @@ generators:
     name: notImportantHere
     annotations:
     config.kubernetes.io/function: |
-      image: example.docker.com/my-functions/chart-inflator:0.1.6
+      container:
+        image: example.docker.com/my-functions/chart-inflator:0.1.6
   spec:
     chartName: minecraft
 
@@ -141,7 +143,8 @@ metadata:
   name: notImportantHere
   annotations:
     config.kubernetes.io/function: |
-      image: example.docker.com/my-functions/chart-inflator:0.1.6
+      container:
+        image: example.docker.com/my-functions/chart-inflator:0.1.6
 chartName: minecraft
 ```
 
