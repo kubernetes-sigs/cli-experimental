@@ -757,25 +757,17 @@ helmChartInflationGenerator:
 
 #### Arguments
 
-> ChartName string
+> Name string
 >
-> ChartVersion string
+> Version string
 >
-> ChartRepoURL string
+> Repo string
 >
-> ChartHome string
->
-> ChartRepoName string
->
-> HelmBin string
->
-> HelmHome string
->
-> Values string
+> valuesFile string
 >
 > ReleaseName string
 >
-> ReleaseNamespace string
+> Namespace string
 >
 > ExtraArgs []string
 
@@ -786,14 +778,10 @@ helmChartInflationGenerator:
 > kind: HelmChartInflationGenerator
 > metadata:
 >   name: myMap
-> chartName: minecraft
-> chartRepoUrl: https://kubernetes-charts.storage.googleapis.com
-> chartVersion: v1.2.0
-> helmBin: /usr/bin/helm
-> helmHome: /tmp/helmHome
+> name: minecraft
+> repo: https://kubernetes-charts.storage.googleapis.com
+> version: v1.2.0
 > releaseName: test
-> releaseNamespace: testNamespace
-> values: values.yaml
-> extraArgs:
-> - --include-crds
-> ```
+> namespace: testNamespace
+> valuesFile: values.yaml
+> IncludeCRDs: true
