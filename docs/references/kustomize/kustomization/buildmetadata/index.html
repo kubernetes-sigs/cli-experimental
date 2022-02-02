@@ -7,7 +7,7 @@
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/commonannotations/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/buildmetadata/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,17 +21,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>commonAnnotations | SIG CLI</title><meta property="og:title" content="commonAnnotations" />
-<meta property="og:description" content="Add annotations to add all resources.
+<title>buildMetadata | SIG CLI</title><meta property="og:title" content="buildMetadata" />
+<meta property="og:description" content="Specify options for including information about the build in annotations or labels. 
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/commonannotations/" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="og:url" content="https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/buildmetadata/" /><meta property="og:site_name" content="SIG CLI" />
 
-<meta itemprop="name" content="commonAnnotations">
-<meta itemprop="description" content="Add annotations to add all resources.
+<meta itemprop="name" content="buildMetadata">
+<meta itemprop="description" content="Specify options for including information about the build in annotations or labels. 
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="commonAnnotations"/>
-<meta name="twitter:description" content="Add annotations to add all resources.
+<meta name="twitter:title" content="buildMetadata"/>
+<meta name="twitter:description" content="Specify options for including information about the build in annotations or labels. 
 "/>
 
 
@@ -53,7 +53,7 @@
   crossorigin="anonymous"></script>
 
 
-    <title>commonAnnotations | SIG CLI</title>
+    <title>buildMetadata | SIG CLI</title>
   </head>
   <body class="td-section">
     <header>
@@ -1045,10 +1045,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/references/kustomize/kustomization/commonannotations/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">commonAnnotations</a>
+    <a  href="/references/kustomize/kustomization/commonannotations/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">commonAnnotations</a>
   </li>
   <ul>
-    <li class="collapse show" id="referenceskustomizekustomizationcommonannotations">
+    <li class="collapse " id="referenceskustomizekustomizationcommonannotations">
       
       
       
@@ -1413,10 +1413,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/references/kustomize/kustomization/buildmetadata/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">buildMetadata</a>
+    <a  href="/references/kustomize/kustomization/buildmetadata/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">buildMetadata</a>
   </li>
   <ul>
-    <li class="collapse " id="referenceskustomizekustomizationbuildmetadata">
+    <li class="collapse show" id="referenceskustomizekustomizationbuildmetadata">
       
       
       
@@ -1584,8 +1584,8 @@
 
 
 
-<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/site/content/en/references/kustomize/kustomization/commonannotations/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=commonAnnotations" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/site/content/en/references/kustomize/kustomization/buildmetadata/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=buildMetadata" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -1599,10 +1599,11 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#example">Example</a>
+    <li>
       <ul>
-        <li><a href="#file-input">File Input</a></li>
-        <li><a href="#build-output">Build Output</a></li>
+        <li><a href="#managed-by-label">Managed By Label</a></li>
+        <li><a href="#origin-annotation">Origin Annotation</a></li>
+        <li><a href="#transformer-annotations-alpha">Transformer Annotations [Alpha]</a></li>
       </ul>
     </li>
   </ul>
@@ -1653,7 +1654,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/commonannotations/">commonAnnotations</a>
+	<a href="https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/buildmetadata/">buildMetadata</a>
 </li>
 
 	</ol>
@@ -1661,42 +1662,217 @@
 
             
 <div class="td-content">
-	<h1>commonAnnotations</h1>
-	<div class="lead">Add annotations to add all resources.</div>
-	<p>Add annotations to all resources.  If the annotation key already is present on the resource,
-the value will be overridden.</p>
+	<h1>buildMetadata</h1>
+	<div class="lead">Specify options for including information about the build in annotations or labels.</div>
+	<p>The <code>buildMetadata</code> field is a list of strings. The strings can be one of three builtin
+options that add some metadata to each resource about how the resource was built.</p>
+<p>These options are:</p>
+<ul>
+<li><code>managedByLabel</code></li>
+<li><code>originAnnotations</code></li>
+<li><code>transformerAnnotations</code></li>
+</ul>
+<p>It is possible to set one or all of these options in the kustomization file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">buildMetadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">managedByLabel, originAnnotations, transformerAnnotations]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h3 id="managed-by-label">Managed By Label</h3>
+<p>To mark the resource as having been managed by kustomize, you can specify the <code>managedByLabel</code>
+option in the <code>buildMetadata</code> field of the kustomization:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">buildMetadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">managedByLabel]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>This will add the label <code>app.kubernetes.io/managed-by</code> to each resource with the version of kustomize
+that has built it. For example, given the following input:</p>
+<p>kustomization.yaml</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">kustomize.config.k8s.io/v1beta1</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Kustomization</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">commonAnnotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">oncallPager</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">800-555-1212</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h2 id="example">Example</h2>
-<h3 id="file-input">File Input</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># kustomization.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">kustomize.config.k8s.io/v1beta1</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Kustomization</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">commonAnnotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">oncallPager</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">800-555-1212</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">resources</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">deploy.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># deploy.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">apps/v1</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Deployment</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">service.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">buildMetadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">managedByLabel]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>service.yaml</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Service</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">example</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">myService</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#000">...</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h3 id="build-output">Build Output</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">apps/v1</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Deployment</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">ports</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">port</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">7002</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p><code>kustomize build</code> will produce a resource with an output like the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Service</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">example</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">labels</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">app.kubernetes.io/managed-by</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">kustomize-v4.4.1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">myService</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">ports</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">port</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">7002</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h3 id="origin-annotation">Origin Annotation</h3>
+<p>To annotate resources with information about their origin, you can specify the <code>originAnnotations</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">buildMetadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">originAnnotations]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>When this option is set, generated resources will receive an annotation with key <code>config.kubernetes.io/origin</code>,
+containing data about the generator that produced it. If the resource is from the <code>resources</code> field, this annotation
+contains data about the file it originated from.</p>
+<p>The possible fields of these annotations are:</p>
+<ul>
+<li><code>path</code>: The path to a resource file itself</li>
+<li><code>ref</code>: If from a remote file or generator, the ref of the repo URL.</li>
+<li><code>repo</code>: If from a remote file or generator, the repo source</li>
+<li><code>configuredIn</code>: If a generated resource, the path to the generator config. If a generator is invoked via a field
+in the kustomization file, this would point to the kustomization file itself.</li>
+<li><code>configuredBy</code>: If a generated resource, the ObjectReference of the generator config.</li>
+</ul>
+<p>All local file paths are relative to the top-level kustomization, i.e. the kustomization file in the directory upon
+which <code>kustomize build</code> was invoked. For example, if someone were to run <code>kustomize build foo</code>, all file paths
+in the annotation output would be relative to<code>foo/kustomization.yaml</code>. All remote file paths are relative to the root of the
+remote repository. Any fields that are not applicable would be omitted from the final output.</p>
+<p>Here is an example of what this would look like:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">config.kubernetes.io/origin</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">  path: path.yaml 
+</span><span style="color:#8f5902;font-style:italic">  ref: v0.0.0 
+</span><span style="color:#8f5902;font-style:italic">  repo: http://github.com/examplerepo 
+</span><span style="color:#8f5902;font-style:italic">  configuredIn: path/to/generatorconfig 
+</span><span style="color:#8f5902;font-style:italic">  configuredBy: 
+</span><span style="color:#8f5902;font-style:italic">    kind: Generator
+</span><span style="color:#8f5902;font-style:italic">    apiVersion: builtin 
+</span><span style="color:#8f5902;font-style:italic">    name: foo
+</span><span style="color:#8f5902;font-style:italic">    namespace: default</span><span style="color:#f8f8f8;text-decoration:underline">  
+</span></code></pre></div><h4 id="examples">Examples</h4>
+<h5 id="resource-declared-from-resources">Resource declared from <code>resources</code></h5>
+<p>A kustomization such as the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">resources</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">deployment.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">buildMetadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">originAnnotations]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>would produce a resource with an annotation like the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">config.kubernetes.io/origin</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">  </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">path</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">deployment.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h5 id="local-custom-generator">Local custom generator</h5>
+<p>A kustomization such as the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">generators</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">generator.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">buildMetadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">originAnnotations]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>would produce a resource with an annotation like the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">config.kubernetes.io/origin</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">  configuredIn: generator.yaml
+</span><span style="color:#8f5902;font-style:italic">  configuredBy: 
+</span><span style="color:#8f5902;font-style:italic">    kind: MyGenerator
+</span><span style="color:#8f5902;font-style:italic">    apiVersion: v1
+</span><span style="color:#8f5902;font-style:italic">    name: generator</span><span style="color:#f8f8f8;text-decoration:underline">  
+</span></code></pre></div><h5 id="remote-builtin-generator">Remote builtin generator</h5>
+<p>We have a top-level kustomization such as the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">resources</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">github.com/examplerepo/?ref=v1.0.6</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">buildMetadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">originAnnotations]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>which uses <code>github.com/examplerepo/?ref=v1.0.6</code> as a remote base. This remote base has the following kustomization
+defined in <code>github.com/examplerepo/kustomization.yaml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">configMapGenerator</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">my-java-server-env-vars</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">literals</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#000">JAVA_HOME=/opt/java/jdk</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#000">JAVA_TOOL_OPTIONS=-agentlib:hprof</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Running <code>kustomize build</code> on the top-level kustomization would produce the following output:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">JAVA_HOME</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">/opt/java/jdk</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">JAVA_TOOL_OPTIONS</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>-<span style="color:#000">agentlib:hprof</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">ConfigMap</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">my-java-server-env-vars-44k658k8gk</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">annotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">oncallPager</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">800-555-1212</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#000">...</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">config.kubernetes.io/origin</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">      ref: v1.0.6 
+</span><span style="color:#8f5902;font-style:italic">      repo: github.com/examplerepo 
+</span><span style="color:#8f5902;font-style:italic">      configuredIn: kustomization.yaml
+</span><span style="color:#8f5902;font-style:italic">      configuredBy: 
+</span><span style="color:#8f5902;font-style:italic">        kind: ConfigMapGenerator
+</span><span style="color:#8f5902;font-style:italic">        apiVersion: builtin </span><span style="color:#f8f8f8;text-decoration:underline">      
+</span></code></pre></div><h3 id="transformer-annotations-alpha">Transformer Annotations [Alpha]</h3>
+<p>To annotate resources with information about the transformers that have acted on them, you can add the
+<code>transformerAnnotations</code> option to the <code>buildMetadata</code> field of the kustomization:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">buildMetadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">transformerAnnotations]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>When the <code>transformerAnnotations</code> option is set, kustomize will add annotations with information about what transformers
+have acted on each resource. Transformers can be invoked either through various fields in the kustomization file
+(e.g. the <code>replacements</code> field will invoke the ReplacementTransformer), or through the <code>transformers</code> field.</p>
+<p>The annotation key for transformer annotations will be <code>config.kubernetes.io/transformations</code>, which will contain a list of
+transformer data. The possible fields in each item in this list is identical to the possible fields in <code>config.kubernetes.io/origin</code>,
+except that the transformer annotation does not have a <code>path</code> field:</p>
+<p>The possible fields of these annotations are:</p>
+<ul>
+<li><code>path</code>: The path to a resource file itself</li>
+<li><code>ref</code>: If from a remote file or generator, the ref of the repo URL.</li>
+<li><code>repo</code>: If from a remote file or generator, the repo source</li>
+<li><code>configuredIn</code>: The path to the transformer config. If a transformer is invoked via a field
+in the kustomization file, this would point to the kustomization file itself.</li>
+<li><code>configuredBy</code>: The ObjectReference of the transformer config.</li>
+</ul>
+<p>All local file paths are relative to the top-level kustomization, i.e. the kustomization file in the directory upon
+which <code>kustomize build</code> was invoked. For example, if someone were to run <code>kustomize build foo</code>, all file paths
+in the annotation output would be relative to<code>foo/kustomization.yaml</code>. All remote file paths are relative to the root of the
+remote repository. Any fields that are not applicable would be omitted from the final output.</p>
+<p>Here is an example of what this would look like:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">config.kubernetes.io/transformations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">  - ref: v0.0.0 
+</span><span style="color:#8f5902;font-style:italic">    repo: http://github.com/examplerepo 
+</span><span style="color:#8f5902;font-style:italic">    configuredIn: path/to/transformerconfig 
+</span><span style="color:#8f5902;font-style:italic">    configuredBy: 
+</span><span style="color:#8f5902;font-style:italic">      kind: Transformer
+</span><span style="color:#8f5902;font-style:italic">      apiVersion: builtin 
+</span><span style="color:#8f5902;font-style:italic">      name: foo
+</span><span style="color:#8f5902;font-style:italic">      namespace: default</span><span style="color:#f8f8f8;text-decoration:underline">  
+</span></code></pre></div><p>While this field is in alpha, it will receive the <code>alpha</code> prefix, so you will see the annotation key
+<code>alpha.config.kubernetes.io/transformations</code> instead. We are not guaranteeing that the annotation content will be stable during
+alpha, and reserve the right to make changes as we evolve the feature.</p>
+<h4 id="examples-1">Examples</h4>
+<h4 id="local-custom-transformer">Local custom transformer</h4>
+<p>A kustomization such as the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">transformers</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">transformer.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">buildMetadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">transformerAnnotations]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>would produce a resource with an annotation like the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">config.kubernetes.io/transformations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">|</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">configuredIn</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">transformer.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">configuredBy</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> 
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">MyTransformer</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">transformer</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h5 id="remote-builtin-transformer--local-builtin-transformer">Remote builtin transformer + local builtin transformer</h5>
+<p>We have a top-level kustomization such as the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">resources</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">github.com/examplerepo/?ref=v1.0.6</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">buildMetadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">transformerAnnotations]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">namespace</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">my-ns</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>which uses <code>github.com/examplerepo/?ref=v1.0.6</code> as a remote base. This remote base has the following kustomization
+defined in <code>github.com/examplerepo/kustomization.yaml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">resources</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#000">deployment.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">namePrefix</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">pre-</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p><code>deployment.yaml</code> contains the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Deployment</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">deploy</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Running <code>kustomize build</code> on the top-level kustomization would produce the following output:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">v1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Deployment</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">pre-deploy</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">annotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">config.kubernetes.io/transformations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">    - ref: v1.0.6 
+</span><span style="color:#8f5902;font-style:italic">      repo: github.com/examplerepo 
+</span><span style="color:#8f5902;font-style:italic">      configuredIn: kustomization.yaml
+</span><span style="color:#8f5902;font-style:italic">      configuredBy: 
+</span><span style="color:#8f5902;font-style:italic">        kind: PrefixSuffixTransformer
+</span><span style="color:#8f5902;font-style:italic">        apiVersion: builtin 
+</span><span style="color:#8f5902;font-style:italic">    - configuredIn: kustomization.yaml
+</span><span style="color:#8f5902;font-style:italic">      configuredBy:
+</span><span style="color:#8f5902;font-style:italic">        kind: NamespaceTransformer
+</span><span style="color:#8f5902;font-style:italic">        apiVersion: builtin</span><span style="color:#f8f8f8;text-decoration:underline">    
 </span></code></pre></div>
         <div class="section-index">
     
@@ -1900,7 +2076,7 @@ the value will be overridden.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 4, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/8e1ef9f7779d172dc6319e616007a396c9d5f973">Provide kustomization file overview. (8e1ef9f7)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 1, 2022: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/6ea0f91b8b13c8c8f7233d1fa537c1a7572e1223">document kustomize buildmetadata field (6ea0f91b)</a>
 </div>
 </div>
 
