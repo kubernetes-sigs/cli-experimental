@@ -19,7 +19,7 @@ linkTitle = "SIG CLI"
 <div>
 	<img src="/images/new_kubectl_banner.png" width=100% height=100%>
 	<p class="lead mt-5">
-			<b>Kubectl</b> is a Kubernetes CLI, which provides a swiss army knife of functionality for working with Kubernetes clusters. It can be used to deploy and manage applications on Kubernetes, and for scripting and building higher-level frameworks.
+			<b>Kubectl</b> is a Kubernetes CLI, which provides a Swiss Army knife of functionality for working with Kubernetes clusters. It can be used to deploy and manage applications on Kubernetes, and for scripting and building higher-level frameworks.
 	</p>
 	<a class="btn btn-lg btn-primary mr-3 mb-4 lead mt-5" href="/references/kubectl/">
     	Goto Reference <i class="fas fa-arrow-alt-circle-right ml-2"></i>
@@ -50,5 +50,5 @@ Join the community on Slack
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/kubernetesio" url_text="Follow us" %}}
-For announcement of latest features etc.
+For announcement of latest features, etc.
 {{% /blocks/feature %}}
