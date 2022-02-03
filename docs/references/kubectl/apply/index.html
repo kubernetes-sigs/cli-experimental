@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.163e3c198d151bbc64c7e1ffb8fbff1d5701c2ddf39cbcfe719f726610dbc1733c4cf12c4570e2d4f2adab0e1a4b03986b6dc7e85bef5b412b6135962eab9517.json"
+  data-offline-search-index-json-src="/offline-search-index.776ca1fb47debc0b4844e11bf371a41227541d876ac874e18a59244b4bd8fad340686cc412a32a7b8a31c4a4549f7016e44722699048d92457f90f12a70e6483.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.163e3c198d151bbc64c7e1ffb8fbff1d5701c2ddf39cbcfe719f726610dbc1733c4cf12c4570e2d4f2adab0e1a4b03986b6dc7e85bef5b412b6135962eab9517.json"
+  data-offline-search-index-json-src="/offline-search-index.776ca1fb47debc0b4844e11bf371a41227541d876ac874e18a59244b4bd8fad340686cc412a32a7b8a31c4a4549f7016e44722699048d92457f90f12a70e6483.json"
   data-offline-search-base-href="/"
 >
 
@@ -409,6 +409,29 @@
   </li>
   <ul>
     <li class="collapse " id="referenceskubectlcreatedeployment">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/references/kubectl/create/job/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">job</a>
+  </li>
+  <ul>
+    <li class="collapse " id="referenceskubectlcreatejob">
       
       
       
@@ -1661,7 +1684,7 @@
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">template</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">containers</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">the-container</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">registry/conatiner:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">registry/container:latest</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Apply the Resource Config</span>
 kubectl apply -f deployment.yaml
 </code></pre></div><p>This will apply the deployment file on the Kubernetes cluster. You can get the status by using a get command.</p>
@@ -1696,7 +1719,7 @@ configuration that cuts across many Resources (e.g. namespace).</p>
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">template</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">containers</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">the-container</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">registry/conatiner:latest</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">registry/container:latest</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><p>Users run Apply on directories containing <code>kustomization.yaml</code> files using <code>-k</code> or on raw
 ResourceConfig files using <code>-f</code>.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># Apply the Resource Config</span>
@@ -1711,6 +1734,8 @@ kubectl get -k .
     
     
     <hr class="panel-line">
+        
+            
         
             
         
@@ -1907,7 +1932,7 @@ kubectl get -k .
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 23, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/b46eb865e1ab737ad6fbcb67d153303e53b79c8c">docs update (b46eb865)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified December 8, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/6aea04f1a6c6bc1a72a1188c6e86b54895550804">Fixes misspelling of container. (6aea04f1)</a>
 </div>
 </div>
 
