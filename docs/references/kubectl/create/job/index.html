@@ -7,7 +7,7 @@
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://kubectl.docs.kubernetes.io/references/kustomize/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="https://kubectl.docs.kubernetes.io/references/kubectl/create/job/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,17 +21,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Kustomize | SIG CLI</title><meta property="og:title" content="Kustomize" />
-<meta property="og:description" content="Reference Docs for Kustomize
+<title>job | SIG CLI</title><meta property="og:title" content="job" />
+<meta property="og:description" content="Create a job with the specified name.
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://kubectl.docs.kubernetes.io/references/kustomize/" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="og:url" content="https://kubectl.docs.kubernetes.io/references/kubectl/create/job/" /><meta property="og:site_name" content="SIG CLI" />
 
-<meta itemprop="name" content="Kustomize">
-<meta itemprop="description" content="Reference Docs for Kustomize
+<meta itemprop="name" content="job">
+<meta itemprop="description" content="Create a job with the specified name.
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Kustomize"/>
-<meta name="twitter:description" content="Reference Docs for Kustomize
+<meta name="twitter:title" content="job"/>
+<meta name="twitter:description" content="Create a job with the specified name.
 "/>
 
 
@@ -53,7 +53,7 @@
   crossorigin="anonymous"></script>
 
 
-    <title>Kustomize | SIG CLI</title>
+    <title>job | SIG CLI</title>
   </head>
   <body class="td-section">
     <header>
@@ -233,10 +233,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/references/kubectl/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Kubectl</a>
+    <a  href="/references/kubectl/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Kubectl</a>
   </li>
   <ul>
-    <li class="collapse " id="referenceskubectl">
+    <li class="collapse show" id="referenceskubectl">
       
       
       
@@ -365,10 +365,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/references/kubectl/create/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">create</a>
+    <a  href="/references/kubectl/create/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">create</a>
   </li>
   <ul>
-    <li class="collapse " id="referenceskubectlcreate">
+    <li class="collapse show" id="referenceskubectlcreate">
       
       
       
@@ -428,10 +428,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/references/kubectl/create/job/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">job</a>
+    <a  href="/references/kubectl/create/job/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">job</a>
   </li>
   <ul>
-    <li class="collapse " id="referenceskubectlcreatejob">
+    <li class="collapse show" id="referenceskubectlcreatejob">
       
       
       
@@ -988,10 +988,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/references/kustomize/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Kustomize</a>
+    <a  href="/references/kustomize/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Kustomize</a>
   </li>
   <ul>
-    <li class="collapse show" id="referenceskustomize">
+    <li class="collapse " id="referenceskustomize">
       
       
       
@@ -1607,8 +1607,8 @@
 
 
 
-<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/site/content/en/references/kustomize/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=Kustomize" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/edit/master/site/content/en/references/kubectl/create/job/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new?title=job" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/kubernetes-sigs/cli-experimental/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -1619,6 +1619,18 @@
 
 
 
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#command">Command</a></li>
+    <li><a href="#example">Example</a>
+      <ul>
+        <li><a href="#command-1">Command</a></li>
+        <li><a href="#output">Output</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -1637,6 +1649,12 @@
 
 
 
+
+
+
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://kubectl.docs.kubernetes.io/references/">Reference</a>
 </li>
@@ -1644,8 +1662,22 @@
 
 
 
+<li class="breadcrumb-item" >
+	<a href="https://kubectl.docs.kubernetes.io/references/kubectl/">Kubectl</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://kubectl.docs.kubernetes.io/references/kubectl/create/">create</a>
+</li>
+
+
+
+
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://kubectl.docs.kubernetes.io/references/kustomize/">Kustomize</a>
+	<a href="https://kubectl.docs.kubernetes.io/references/kubectl/create/job/">job</a>
 </li>
 
 	</ol>
@@ -1653,9 +1685,26 @@
 
             
 <div class="td-content">
-	<h1>Kustomize</h1>
-	<div class="lead">Reference Docs for Kustomize</div>
-	
+	<h1>job</h1>
+	<div class="lead">Create a job with the specified name.</div>
+	<p>A Job creates one or more Pods and will continue to retry execution of the Pods until a specified number of them successfully terminate. As pods successfully complete, the Job tracks the successful completions. When a specified number of successful completions is reached, the task (ie, Job) is complete. Deleting a Job will clean up the Pods it created. Suspending a Job will delete its active Pods until the Job is resumed again.</p>
+<p>A simple case is to create one Job object in order to reliably run one Pod to completion. The Job object will start a new Pod if the first Pod fails or is deleted (for example due to a node hardware failure or a node reboot).</p>
+<h2 id="command">Command</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$   kubectl create job NAME --image<span style="color:#ce5c00;font-weight:bold">=</span>image <span style="color:#ce5c00;font-weight:bold">[</span>--from<span style="color:#ce5c00;font-weight:bold">=</span>cronjob/name<span style="color:#ce5c00;font-weight:bold">]</span> -- <span style="color:#ce5c00;font-weight:bold">[</span>COMMAND<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>args...<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>options<span style="color:#ce5c00;font-weight:bold">]</span>
+</code></pre></div><h2 id="example">Example</h2>
+<h3 id="command-1">Command</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl create job my-job --image<span style="color:#ce5c00;font-weight:bold">=</span>nginx
+</code></pre></div><h3 id="output">Output</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl get <span style="color:#204a87">jobs</span>
+
+NAME    COMPLETIONS    DURATION    AGE
+my-job  1/1            8S          35s
+
+$ kubectl get pods
+
+NAME           READY   STATUS   RESTARTS   AGE 
+my-job-mqwpv   1/1     Running  <span style="color:#0000cf;font-weight:bold">0</span>          15s
+</code></pre></div>
         <div class="section-index">
     
     
@@ -1698,13 +1747,6 @@
             
         
             
-                <div class="entry">
-                    <h5>
-                        <a href="/references/kustomize/glossary/">Glossary</a>
-                    </h5>
-                    <p>Glossary of terms</p>
-                </div>
-            
         
             
         
@@ -1743,13 +1785,6 @@
             
         
             
-                <div class="entry">
-                    <h5>
-                        <a href="/references/kustomize/kustomization/">The Kustomization File</a>
-                    </h5>
-                    <p>An overview of the content of a kustomization file.</p>
-                </div>
-            
         
             
         
@@ -1757,13 +1792,6 @@
         
             
         
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/references/kustomize/builtins/">Kustomize Built-Ins</a>
-                    </h5>
-                    <p>Reference docs for Kustomize&rsquo;s built-in transformers and generators</p>
-                </div>
             
         
             
@@ -1881,7 +1909,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 23, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/b46eb865e1ab737ad6fbcb67d153303e53b79c8c">docs update (b46eb865)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 2022: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/5ccfdf737964af31103676e22d946285e6df9b3a">provide job under kubectl create (5ccfdf73)</a>
 </div>
 </div>
 

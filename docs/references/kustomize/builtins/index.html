@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.163e3c198d151bbc64c7e1ffb8fbff1d5701c2ddf39cbcfe719f726610dbc1733c4cf12c4570e2d4f2adab0e1a4b03986b6dc7e85bef5b412b6135962eab9517.json"
+  data-offline-search-index-json-src="/offline-search-index.776ca1fb47debc0b4844e11bf371a41227541d876ac874e18a59244b4bd8fad340686cc412a32a7b8a31c4a4549f7016e44722699048d92457f90f12a70e6483.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.163e3c198d151bbc64c7e1ffb8fbff1d5701c2ddf39cbcfe719f726610dbc1733c4cf12c4570e2d4f2adab0e1a4b03986b6dc7e85bef5b412b6135962eab9517.json"
+  data-offline-search-index-json-src="/offline-search-index.776ca1fb47debc0b4844e11bf371a41227541d876ac874e18a59244b4bd8fad340686cc412a32a7b8a31c4a4549f7016e44722699048d92457f90f12a70e6483.json"
   data-offline-search-base-href="/"
 >
 
@@ -409,6 +409,29 @@
   </li>
   <ul>
     <li class="collapse " id="referenceskubectlcreatedeployment">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/references/kubectl/create/job/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">job</a>
+  </li>
+  <ul>
+    <li class="collapse " id="referenceskubectlcreatejob">
       
       
       
@@ -1933,19 +1956,19 @@ fieldSpecs:
 <h4 id="example-4">Example</h4>
 <blockquote>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apiVersion: <span style="color:#204a87">builtin</span>
- kind: NamespaceTransformer
- metadata:
-   name: not-important-to-example
-   namespace: <span style="color:#204a87">test</span>
- fieldSpecs:
- - path: metadata/namespace
-   create: <span style="color:#204a87">true</span>
- - path: subjects
-   kind: RoleBinding
-   group: rbac.authorization.k8s.io
- - path: subjects
-   kind: ClusterRoleBinding
-   group: rbac.authorization.k8s.io
+kind: NamespaceTransformer
+metadata:
+  name: not-important-to-example
+  namespace: <span style="color:#204a87">test</span>
+fieldSpecs:
+- path: metadata/namespace
+  create: <span style="color:#204a87">true</span>
+- path: subjects
+  kind: RoleBinding
+  group: rbac.authorization.k8s.io
+- path: subjects
+  kind: ClusterRoleBinding
+  group: rbac.authorization.k8s.io
 </code></pre></div></blockquote>
 <h2 id="_patchesjson6902_"><em>PatchesJson6902</em></h2>
 <h3 id="usage-via-kustomizationyaml-5">Usage via <code>kustomization.yaml</code></h3>
@@ -2452,6 +2475,8 @@ extraArgs:
         
             
         
+            
+        
     
 </div>
 
@@ -2517,7 +2542,7 @@ extraArgs:
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 12, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/46787e0fdab0aa96c9e5d4227a0a103ca381a017">Update extensions docs (46787e0f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified December 2, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/05e9de0e7430d82a0f076758e22923c6fabb1bc7">fix indentation (05e9de0e)</a>
 </div>
 </div>
 
