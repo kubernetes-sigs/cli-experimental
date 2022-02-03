@@ -158,8 +158,8 @@ In these interfaces, a `ResMap` is a list of kubernetes `Resource`s
 with ancillary map-like lookup and modification methods.
 
 A generator cannot be a transformer, because it doesn't accept an
-input other than its own configuration.  Configuration for both G's
-and T's are done via a distinct (and common) interface.
+input other than its own configuration.  Configuration for both generators
+and transformers are done via a distinct (and common) interface.
 
 A transformer doesn't implement `Generator`, but it's capable of
 behaving like one.
@@ -188,7 +188,7 @@ can call these methods - creating, sorting, destroying, etc.
 
 Transformers have a general generative power.
 
-A kustomization overlay, could, say, fix common oversites made in
+A kustomization overlay, could, say, fix common oversights made in
 cluster configuration.
 
 For example, a transformer could scan all resources, looking for the
