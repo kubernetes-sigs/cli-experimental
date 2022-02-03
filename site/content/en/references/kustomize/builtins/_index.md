@@ -297,19 +297,19 @@ namespace: my-namespace
 >
 > ```bash
 > apiVersion: builtin
->  kind: NamespaceTransformer
->  metadata:
->    name: not-important-to-example
->    namespace: test
->  fieldSpecs:
->  - path: metadata/namespace
->    create: true
->  - path: subjects
->    kind: RoleBinding
->    group: rbac.authorization.k8s.io
->  - path: subjects
->    kind: ClusterRoleBinding
->    group: rbac.authorization.k8s.io
+> kind: NamespaceTransformer
+> metadata:
+>   name: not-important-to-example
+>   namespace: test
+> fieldSpecs:
+> - path: metadata/namespace
+>   create: true
+> - path: subjects
+>   kind: RoleBinding
+>   group: rbac.authorization.k8s.io
+> - path: subjects
+>   kind: ClusterRoleBinding
+>   group: rbac.authorization.k8s.io
 > ```
 
 ## _PatchesJson6902_
