@@ -18,7 +18,7 @@ kind: Kustomization
 secretGenerator:
 - name: app-tls
   files:
-  - secret/tls.cert
+  - secret/tls.crt
   - secret/tls.key
   type: "kubernetes.io/tls"
 - name: app-tls-namespaced
@@ -26,7 +26,7 @@ secretGenerator:
   # a secret in, defaults to: "default"
   namespace: apps
   files:
-  - tls.crt=catsecret/tls.cert
+  - tls.crt=catsecret/tls.crt
   - tls.key=secret/tls.key
   type: "kubernetes.io/tls"
 - name: env_file_secret
@@ -62,13 +62,13 @@ kind: Kustomization
 secretGenerator:
 - name: app-tls
   files:
-    - "tls.cert"
+    - "tls.crt"
     - "tls.key"
   type: "kubernetes.io/tls"
 ```
 
 ```yaml
-# tls.cert
+# tls.crt
 LS0tLS1CRUd...tCg==
 ```
 
@@ -82,7 +82,7 @@ LS0tLS1CRUd...0tLQo=
 ```yaml
 apiVersion: v1
 data:
-  tls.cert: TFMwdExTMUNSVWQuLi50Q2c9PQ==
+  tls.crt: TFMwdExTMUNSVWQuLi50Q2c9PQ==
   tls.key: TFMwdExTMUNSVWQuLi4wdExRbz0=
 kind: Secret
 metadata:
