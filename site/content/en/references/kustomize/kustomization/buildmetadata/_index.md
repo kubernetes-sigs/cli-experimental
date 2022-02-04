@@ -2,7 +2,7 @@
 title: "buildMetadata"
 linkTitle: "buildMetadata"
 type: docs
-weight: 18
+weight: 2
 description: >
     Specify options for including information about the build in annotations or labels. 
 ---
