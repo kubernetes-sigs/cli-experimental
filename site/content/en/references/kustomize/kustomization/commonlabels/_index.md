@@ -7,10 +7,12 @@ description: >
     Add labels and selectors to add all resources.
 ---
 
+[labels]: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/labels/
+
 Add labels and selectors to all resources.  If the label key already is present on the resource,
 the value will be overridden.
 
-An alternative to this field is the `labels` field, which allows adding labels without also automatically
+An alternative to this field is the [labels] field, which allows adding labels without also automatically
 injecting corresponding selectors.
 
 {{% pageinfo color="warning" %}}
