@@ -2,7 +2,7 @@
 title: "components"
 linkTitle: "components"
 type: docs
-weight: 4
+weight: 5
 description: >
     Compose kustomizations.
 ---
