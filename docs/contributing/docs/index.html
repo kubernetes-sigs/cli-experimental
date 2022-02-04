@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -153,7 +153,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
+  data-offline-search-index-json-src="/offline-search-index.776ca1fb47debc0b4844e11bf371a41227541d876ac874e18a59244b4bd8fad340686cc412a32a7b8a31c4a4549f7016e44722699048d92457f90f12a70e6483.json"
   data-offline-search-base-href="/"
 >
 
@@ -183,7 +183,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
+  data-offline-search-index-json-src="/offline-search-index.776ca1fb47debc0b4844e11bf371a41227541d876ac874e18a59244b4bd8fad340686cc412a32a7b8a31c4a4549f7016e44722699048d92457f90f12a70e6483.json"
   data-offline-search-base-href="/"
 >
 
@@ -472,9 +472,8 @@
   <ul>
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#development">Development</a></li>
-    <li><a href="#publishing">Publishing</a></li>
+    <li><a href="#making-a-pr-with-your-changes">Making a PR with your changes</a></li>
     <li><a href="#publishing-docs-in-forked-repository">Publishing docs in forked repository</a></li>
-    <li><a href="#raising-a-pr-for-changes-in-the-site">Raising a PR for changes in the site</a></li>
     <li><a href="#setting-custom-domain--dns-changes">Setting Custom Domain &amp; DNS changes</a></li>
   </ul>
 </nav>
@@ -537,8 +536,11 @@ hugo server
 </code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">...
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
 Web Server is available at http://localhost:1313/ <span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#204a87">bind</span> address 127.0.0.1<span style="color:#ce5c00;font-weight:bold">)</span>
-</code></pre></div><h2 id="publishing">Publishing</h2>
-<p>Hugo compiles the files under <code>site</code> Hugo into html which it puts in the <code>docs</code> folder:</p>
+</code></pre></div><h2 id="making-a-pr-with-your-changes">Making a PR with your changes</h2>
+<p>Once you&rsquo;ve verified that your changes look good using the local Hugo server, compile the HTML to be committed.</p>
+<ol>
+<li>Run the <code>hugo</code> command. This compiles the files under <code>site</code> into HTML, which it puts in the <code>docs</code> folder:</li>
+</ol>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#204a87">cd</span> site/
 hugo
 </code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">                   <span style="color:#000;font-weight:bold">|</span> EN  
@@ -551,7 +553,18 @@ hugo
   Aliases          <span style="color:#000;font-weight:bold">|</span>  <span style="color:#0000cf;font-weight:bold">2</span>  
   Sitemaps         <span style="color:#000;font-weight:bold">|</span>  <span style="color:#0000cf;font-weight:bold">1</span>  
   Cleaned          <span style="color:#000;font-weight:bold">|</span>  <span style="color:#0000cf;font-weight:bold">0</span>  
-</code></pre></div><p>Add the <code>site/</code> and <code>docs/</code> folders to a commit, then create a PR.</p>
+</code></pre></div><ol start="2">
+<li>
+<p>Commit the changes to both the <code>site/</code> and <code>docs/</code> folders.</p>
+</li>
+<li>
+<p>Open a PR.</p>
+</li>
+<li>
+<p>Once status checks run on your PR, look for the <code>deploy/netlify</code> status check, and click the <code>Details</code> link to verify your change on Netlify.</p>
+</li>
+</ol>
+<p><img src="/images/netlify_pr_preview.png" alt="Netlify Preview PR Status Image"></p>
 <h2 id="publishing-docs-in-forked-repository">Publishing docs in forked repository</h2>
 <p>We use <strong>Netlify</strong> to publish changes in the site. You can also enable netlify on you&rsquo;re forked repo
 by doing the following step.</p>
@@ -567,11 +580,7 @@ by doing the following step.</p>
 </li>
 </ul>
 <p><img src="/images/netlify_setup.png" alt="Netlify Setup Image"></p>
-<h2 id="raising-a-pr-for-changes-in-the-site">Raising a PR for changes in the site</h2>
-<ul>
-<li>Once deployed, you&rsquo;ll have a URL pointing to the newly deployed site. Submit the URL along with the PR.</li>
-<li>Make sure your changes are working as expected in the newly received netlify URL before PR.</li>
-</ul>
+<p>Once deployed, you&rsquo;ll have a URL pointing to the newly deployed site.</p>
 <p><img src="/images/netlify_deployed.png" alt="Netlify Deployed Image"></p>
 <h2 id="setting-custom-domain--dns-changes">Setting Custom Domain &amp; DNS changes</h2>
 
@@ -598,7 +607,7 @@ This is applicable only for the site adminisrators on the event of site migratio
 <h4 class="alert-heading">Useful Links</h4>
 <ul>
 <li>Subproject Site Requests: <a href="https://github.com/kubernetes/community/blob/master/github-management/subproject-site-requests.md">https://github.com/kubernetes/community/blob/master/github-management/subproject-site-requests.md</a>.</li>
-<li>Issue template for site request: <a href="https://github.com/kubernetes/org/issues/new/choose,">https://github.com/kubernetes/org/issues/new/choose,</a> select <strong>Netlify site request</strong>.</li>
+<li>Issue template for site request: <a href="https://github.com/kubernetes/org/issues/new/choose">https://github.com/kubernetes/org/issues/new/choose</a>, select <strong>Netlify site request</strong>.</li>
 </ul>
 
 </div>
@@ -696,7 +705,7 @@ This is applicable only for the site adminisrators on the event of site migratio
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified November 11, 2020: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/711e83006786f75813f8bb40a24c2142e559431a">outstanding issues fix (711e830)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified January 18, 2022: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/0d2b12807418e38433c53c9cda4b82941ccdf7e1">Update readme and contributing docs (0d2b1280)</a>
 </div>
 </div>
 
@@ -714,7 +723,7 @@ This is applicable only for the site adminisrators on the event of site migratio
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 SIG CLI | Documentation Distributed under CC BY 4.0 |  All Rights Reserved</small>
+        <small class="text-white">&copy; 2022 SIG CLI | Documentation Distributed under CC BY 4.0 |  All Rights Reserved</small>
         
 	
 		

@@ -482,8 +482,8 @@ type Transformer interface {
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In these interfaces, a &lt;code&gt;ResMap&lt;/code&gt; is a list of kubernetes &lt;code&gt;Resource&lt;/code&gt;s
 with ancillary map-like lookup and modification methods.&lt;/p&gt;
 &lt;p&gt;A generator cannot be a transformer, because it doesn&amp;rsquo;t accept an
-input other than its own configuration.  Configuration for both G&amp;rsquo;s
-and T&amp;rsquo;s are done via a distinct (and common) interface.&lt;/p&gt;
+input other than its own configuration.  Configuration for both generators
+and transformers are done via a distinct (and common) interface.&lt;/p&gt;
 &lt;p&gt;A transformer doesn&amp;rsquo;t implement &lt;code&gt;Generator&lt;/code&gt;, but it&amp;rsquo;s capable of
 behaving like one.&lt;/p&gt;
 &lt;p&gt;This is because &lt;code&gt;ResMap&lt;/code&gt; has the methods&lt;/p&gt;
@@ -503,7 +503,7 @@ kubernetes-specific YAML library called &lt;a href=&#34;https://github.com/kuber
 speak kyaml, kustomize&amp;rsquo;s role will evolve too.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Transformers have a general generative power.&lt;/p&gt;
-&lt;p&gt;A kustomization overlay, could, say, fix common oversites made in
+&lt;p&gt;A kustomization overlay, could, say, fix common oversights made in
 cluster configuration.&lt;/p&gt;
 &lt;p&gt;For example, a transformer could scan all resources, looking for the
 &lt;em&gt;need&lt;/em&gt; for a &lt;code&gt;PodDisruptionBudget&lt;/code&gt;, and &lt;em&gt;conditionally&lt;/em&gt; add it
@@ -827,19 +827,19 @@ fieldSpecs:
 &lt;h4 id=&#34;example-4&#34;&gt;Example&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apiVersion: &lt;span style=&#34;color:#204a87&#34;&gt;builtin&lt;/span&gt;
- kind: NamespaceTransformer
- metadata:
-   name: not-important-to-example
-   namespace: &lt;span style=&#34;color:#204a87&#34;&gt;test&lt;/span&gt;
- fieldSpecs:
- - path: metadata/namespace
-   create: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
- - path: subjects
-   kind: RoleBinding
-   group: rbac.authorization.k8s.io
- - path: subjects
-   kind: ClusterRoleBinding
-   group: rbac.authorization.k8s.io
+kind: NamespaceTransformer
+metadata:
+  name: not-important-to-example
+  namespace: &lt;span style=&#34;color:#204a87&#34;&gt;test&lt;/span&gt;
+fieldSpecs:
+- path: metadata/namespace
+  create: &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;
+- path: subjects
+  kind: RoleBinding
+  group: rbac.authorization.k8s.io
+- path: subjects
+  kind: ClusterRoleBinding
+  group: rbac.authorization.k8s.io
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;_patchesjson6902_&#34;&gt;&lt;em&gt;PatchesJson6902&lt;/em&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;usage-via-kustomizationyaml-5&#34;&gt;Usage via &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/h3&gt;

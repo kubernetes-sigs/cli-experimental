@@ -36,9 +36,11 @@ Running in Fast Render Mode. For full rebuilds on change: hugo server --disableF
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 ```
 
-## Publishing
+## Making a PR with your changes
 
-Hugo compiles the files under `site` Hugo into html which it puts in the `docs` folder:
+Once you've verified that your changes look good using the local Hugo server, compile the HTML to be committed.
+
+1. Run the `hugo` command. This compiles the files under `site` into HTML, which it puts in the `docs` folder:
 
 ```shell script
 cd site/
@@ -58,7 +60,16 @@ hugo
   Cleaned          |  0  
 ```
 
-Add the `site/` and `docs/` folders to a commit, then create a PR.
+
+
+2. Commit the changes to both the `site/` and `docs/` folders.
+
+3. Open a PR.
+
+4. Once status checks run on your PR, look for the `deploy/netlify` status check, and click the `Details` link to verify your change on Netlify.
+
+![Netlify Preview PR Status Image][pr-preview]
+
 
 ## Publishing docs in forked repository
 
@@ -74,10 +85,8 @@ by doing the following step.
 
 ![Netlify Setup Image][setup]
 
-## Raising a PR for changes in the site
 
-- Once deployed, you'll have a URL pointing to the newly deployed site. Submit the URL along with the PR.
-- Make sure your changes are working as expected in the newly received netlify URL before PR.
+Once deployed, you'll have a URL pointing to the newly deployed site.
 
 ![Netlify Deployed Image][deploy]
 
@@ -107,3 +116,4 @@ This is applicable only for the site adminisrators on the event of site migratio
 
 [setup]: /images/netlify_setup.png
 [deploy]: /images/netlify_deployed.png
+[pr-preview]: /images/netlify_pr_preview.png

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -26,13 +26,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kubectl.docs.kubernetes.io/guides/extending_kustomize/containerized_krm_functions/" /><meta property="article:section" content="guides" />
 
-<meta property="article:modified_time" content="2021-10-12T22:58:37-07:00" /><meta property="og:site_name" content="SIG CLI" />
+<meta property="article:modified_time" content="2021-10-30T19:21:28+05:30" /><meta property="og:site_name" content="SIG CLI" />
 
 <meta itemprop="name" content="Containerized KRM Functions">
 <meta itemprop="description" content="Guide to writing containerized KRM functions for use as Kustomize plugins 
 ">
-<meta itemprop="dateModified" content="2021-10-12T22:58:37-07:00" />
-<meta itemprop="wordCount" content="471">
+<meta itemprop="dateModified" content="2021-10-30T19:21:28+05:30" />
+<meta itemprop="wordCount" content="475">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Containerized KRM Functions"/>
 <meta name="twitter:description" content="Guide to writing containerized KRM functions for use as Kustomize plugins 
@@ -157,7 +157,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
+  data-offline-search-index-json-src="/offline-search-index.776ca1fb47debc0b4844e11bf371a41227541d876ac874e18a59244b4bd8fad340686cc412a32a7b8a31c4a4549f7016e44722699048d92457f90f12a70e6483.json"
   data-offline-search-base-href="/"
 >
 
@@ -187,7 +187,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8736f8f81ea184195a9b689302277fa82509111036d2f6ac99ad3771011486e9f69b1efdca12a8cccfaf2e59dcb5f0a2b587460efe6a515796c54b57a6b7b4cf.json"
+  data-offline-search-index-json-src="/offline-search-index.776ca1fb47debc0b4844e11bf371a41227541d876ac874e18a59244b4bd8fad340686cc412a32a7b8a31c4a4549f7016e44722699048d92457f90f12a70e6483.json"
   data-offline-search-base-href="/"
 >
 
@@ -740,7 +740,8 @@ See the <a href="https://github.com/kubernetes/enhancements/issues/2953">Kustomi
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">notImportantHere</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">annotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">config.kubernetes.io/function</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">      </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">example.docker.com/my-functions/chart-inflator:0.1.6</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#8f5902;font-style:italic">      container:
+</span><span style="color:#8f5902;font-style:italic">        image: example.docker.com/my-functions/chart-inflator:0.1.6</span><span style="color:#f8f8f8;text-decoration:underline">      
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">chartName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">minecraft</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><h2 id="guided-example">Guided example</h2>
@@ -793,7 +794,8 @@ object.  The <code>config.kubernetes.io/function</code> annotation is used to <e
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">notImportantHere</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">annotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">config.kubernetes.io/function</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">      </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">example.docker.com/my-functions/valueannotator:1.0.0</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#8f5902;font-style:italic">      container:
+</span><span style="color:#8f5902;font-style:italic">        image: example.docker.com/my-functions/valueannotator:1.0.0</span><span style="color:#f8f8f8;text-decoration:underline">      
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">value</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;important-data&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><p>Finally, make a kustomization file
 referencing all of the above:</p>
@@ -923,7 +925,7 @@ go mod tidy
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 12, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/46787e0fdab0aa96c9e5d4227a0a103ca381a017">Update extensions docs (46787e0)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 30, 2021: <a  href="https://github.com/kubernetes-sigs/cli-experimental/commit/314236cb6d4e34e5cbfd9dd8cbd58a9c970c686a">Add container key to the function annotation (314236cb)</a>
 </div>
 </div>
 
@@ -942,7 +944,7 @@ go mod tidy
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 SIG CLI | Documentation Distributed under CC BY 4.0 |  All Rights Reserved</small>
+        <small class="text-white">&copy; 2022 SIG CLI | Documentation Distributed under CC BY 4.0 |  All Rights Reserved</small>
         
 	
 		
