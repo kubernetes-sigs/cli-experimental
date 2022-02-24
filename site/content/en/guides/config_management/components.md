@@ -75,7 +75,7 @@ mkdir $BASE
 ```
 
 ```bash
-# $BASE/kustomization.yaml
+cat <<EOF > $BASE/kustomization.yaml
 resources:
 - deployment.yaml
 
@@ -85,10 +85,11 @@ configMapGenerator:
     - main.conf=|
         color=cornflower_blue
         log_level=info
+EOF        
 ```
 
 ```bash
-# $BASE/deployment.yaml
+cat <<EOF > $BASE/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -106,6 +107,7 @@ spec:
         - name: conf
           configMap:
             name: conf
+EOF
 ```
 
 Define an `external_db` component, using `kind: Component`, that creates a
@@ -117,7 +119,7 @@ mkdir -p $EXT_DB
 ```
 
 ```bash
-# $EXT_DB/kustomization.yaml
+cat <<EOF > $EXT_DB/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1alpha1  # <-- Component notation
 kind: Component
 
@@ -136,10 +138,11 @@ patchesJson6902:
     kind: Deployment
     name: example
   path: deployment.yaml
+EOF
 ```
 
 ```bash
-# $EXT_DB/deployment.yaml
+cat <<EOF > $EXT_DB/deployment.yaml
 - op: add
   path: /spec/template/spec/volumes/0
   value:
@@ -151,10 +154,11 @@ patchesJson6902:
   value:
     mountPath: /var/run/secrets/db/
     name: dbpass
+EOF
 ```
 
 ```bash
-# $EXT_DB/configmap.yaml
+cat <<EOF > $EXT_DB/configmap.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -177,7 +181,7 @@ mkdir -p $LDAP
 ```
 
 ```bash
-# $LDAP/kustomization.yaml
+cat <<EOF > $LDAP/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1alpha1
 kind: Component
 
@@ -196,10 +200,11 @@ patchesJson6902:
     kind: Deployment
     name: example
   path: deployment.yaml
+EOF
 ```
 
 ```bash
-# $LDAP/deployment.yaml
+cat <<EOF > $LDAP/deployment.yaml
 - op: add
   path: /spec/template/spec/volumes/0
   value:
@@ -211,10 +216,11 @@ patchesJson6902:
   value:
     mountPath: /var/run/secrets/ldap/
     name: ldappass
+EOF
 ```
 
 ```bash
-# $LDAP/configmap.yaml
+cat <<EOF > $LDAP/configmap.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -236,7 +242,7 @@ mkdir -p $RECAPTCHA
 ```
 
 ```bash
-# $RECAPTCHA/kustomization.yaml
+cat <<EOF > $RECAPTCHA/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1alpha1
 kind: Component
 
@@ -263,10 +269,11 @@ patchesJson6902:
     kind: Deployment
     name: example
   path: deployment.yaml
+EOF
 ```
 
 ```bash
-# $RECAPTCHA/deployment.yaml
+cat <<EOF > $RECAPTCHA/deployment.yaml
 - op: add
   path: /spec/template/spec/volumes/0
   value:
@@ -290,8 +297,7 @@ mkdir -p $COMMUNITY
 ```
 
 ```bash
-
-# $COMMUNITY/kustomization.yaml
+cat <<EOF > $COMMUNITY/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -313,7 +319,7 @@ mkdir -p $ENTERPRISE
 ```
 
 ```bash
-# $ENTERPRISE/kustomization.yaml
+cat <<EOF > $ENTERPRISE/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -335,7 +341,7 @@ mkdir -p $DEV
 ```
 
 ```bash
-# $DEV/kustomization.yaml
+cat <<EOF > $DEV/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
