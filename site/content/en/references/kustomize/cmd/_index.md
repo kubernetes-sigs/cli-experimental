@@ -4,5 +4,5 @@ linkTitle: "Command Line Options"
 type: docs
 weight: 2
 description: >
-    Usage of command line options
+    Reference for the kustomize CLI
 ---
