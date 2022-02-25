@@ -1,6 +1,6 @@
 ---
-title: "Command Line Options"
-linkTitle: "Command Line Options"
+title: "Commands"
+linkTitle: "Commands"
 type: docs
 weight: 2
 description: >
