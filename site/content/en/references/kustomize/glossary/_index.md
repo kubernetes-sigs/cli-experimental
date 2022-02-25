@@ -2,7 +2,7 @@
 title: "Glossary"
 linkTitle: "Glossary"
 type: docs
-weight: 1
+weight: 3
 description: >
     Glossary of terms
 ---

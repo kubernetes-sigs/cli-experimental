@@ -2,7 +2,7 @@
 title: "The Kustomization File"
 linkTitle: "kustomization"
 type: docs
-weight: 2
+weight: 4
 description: >
     An overview of the content of a kustomization file.
 ---
