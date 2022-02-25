@@ -1,7 +1,7 @@
 ---
 title: "Kustomize Built-Ins"
 linkTitle: "Built-Ins"
-weight: 3
+weight: 1
 type: docs
 description: >
     Reference docs for Kustomize's built-in transformers and generators
