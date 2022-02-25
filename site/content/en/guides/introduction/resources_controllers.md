@@ -219,7 +219,7 @@ Shared Configuration and Secret data may be provided by ConfigMaps and Secrets. 
 Environment Variables, Command Line Arguments and Files to be loosely injected into
 the Pods and Containers that consume them.
 
-{{< alert color="success" title="Internal vs External Services" >}}
+{{< alert color="success" title="ConfigMaps vs Secrets" >}}
 - [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
   are for providing non-sensitive data to Pods.
 - [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
