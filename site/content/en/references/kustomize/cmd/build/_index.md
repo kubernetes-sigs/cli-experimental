@@ -4,5 +4,5 @@ linkTitle: "build"
 type: docs
 weight: 2
 description: >
-    Print configuration per contents of kustomization.yaml
+    Build a kustomization.yaml into the set of Kubernetes resources it describes
 ---
