@@ -14,597 +14,6 @@
     
     
     <item>
-      <title>References: Glossary</title>
-      <link>https://kubectl.docs.kubernetes.io/references/kustomize/glossary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kubectl.docs.kubernetes.io/references/kustomize/glossary/</guid>
-      <description>
-        
-        
-        &lt;h1 id=&#34;glossary&#34;&gt;Glossary&lt;/h1&gt;
-&lt;h2 id=&#34;application&#34;&gt;application&lt;/h2&gt;
-&lt;p&gt;An &lt;em&gt;application&lt;/em&gt; is a group of k8s resources related by
-some common purpose, e.g.  a load balancer in front of a
-webserver backed by a database.
-&lt;a href=&#34;#resource&#34;&gt;Resource&lt;/a&gt; labelling, naming and metadata schemes have
-historically served to group resources together for
-collective operations like &lt;em&gt;list&lt;/em&gt; and &lt;em&gt;remove&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;This &lt;a href=&#34;https://github.com/kubernetes/community/pull/1629&#34;&gt;proposal&lt;/a&gt; describes a new k8s resource called
-&lt;em&gt;application&lt;/em&gt; to more formally describe this idea and
-provide support for application-level operations and
-dashboards.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#kustomize&#34;&gt;kustomize&lt;/a&gt; configures k8s resources, and the proposed
-application resource is just another resource.&lt;/p&gt;
-&lt;h2 id=&#34;apply&#34;&gt;apply&lt;/h2&gt;
-&lt;p&gt;The verb &lt;em&gt;apply&lt;/em&gt; in the context of k8s refers to a
-kubectl command and an in-progress &lt;a href=&#34;https://goo.gl/UbCRuf&#34;&gt;API
-endpoint&lt;/a&gt; for mutating a
-cluster.&lt;/p&gt;
-&lt;p&gt;One &lt;em&gt;applies&lt;/em&gt; a statement of what one wants to a
-cluster in the form of a complete resource list.&lt;/p&gt;
-&lt;p&gt;The cluster merges this with the previously applied
-state and the actual state to arrive at a new desired
-state, which the cluster&amp;rsquo;s reconciliation loop attempts
-to create.  This is the foundation of level-based state
-management in k8s.&lt;/p&gt;
-&lt;h2 id=&#34;base&#34;&gt;base&lt;/h2&gt;
-&lt;p&gt;A &lt;em&gt;base&lt;/em&gt; is a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt; referred to
-by some other &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Any kustomization, including an &lt;a href=&#34;#overlay&#34;&gt;overlay&lt;/a&gt;, can be a base to
-another kustomization.&lt;/p&gt;
-&lt;p&gt;A base has no knowledge of the overlays that refer to it.&lt;/p&gt;
-&lt;p&gt;For simple &lt;a href=&#34;#gitops&#34;&gt;gitops&lt;/a&gt; management, a base configuration
-could be the &lt;em&gt;sole content of a git repository
-dedicated to that purpose&lt;/em&gt;.  Same with &lt;a href=&#34;#overlay&#34;&gt;overlays&lt;/a&gt;.
-Changes in a repo could generate a build, test and
-deploy cycle.&lt;/p&gt;
-&lt;h2 id=&#34;bespoke-configuration&#34;&gt;bespoke configuration&lt;/h2&gt;
-&lt;p&gt;A &lt;em&gt;bespoke&lt;/em&gt; configuration is a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt; and some
-&lt;a href=&#34;#resource&#34;&gt;resources&lt;/a&gt; created and maintained internally by some
-organization for their own purposes.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/guides&#34;&gt;workflow&lt;/a&gt; associated with a &lt;em&gt;bespoke&lt;/em&gt; config is
-simpler than the workflow associated with an
-&lt;a href=&#34;#off-the-shelf-configuration&#34;&gt;off-the-shelf&lt;/a&gt; config, because there&amp;rsquo;s no notion of
-periodically capturing someone else&amp;rsquo;s upgrades to the
-&lt;a href=&#34;#off-the-shelf-configuration&#34;&gt;off-the-shelf&lt;/a&gt; config.&lt;/p&gt;
-&lt;h2 id=&#34;custom-resource-definition&#34;&gt;custom resource definition&lt;/h2&gt;
-&lt;p&gt;One can extend the k8s API by making a
-Custom Resource Definition (&lt;a href=&#34;https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/&#34;&gt;CRD spec&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;This defines a custom &lt;a href=&#34;#resource&#34;&gt;resource&lt;/a&gt; (CD), an entirely
-new resource that can be used alongside &lt;em&gt;native&lt;/em&gt;
-resources like ConfigMaps, Deployments, etc.&lt;/p&gt;
-&lt;p&gt;Kustomize can customize a CD, but to do so
-kustomize must also be given the corresponding CRD
-so that it can interpret the structure correctly.&lt;/p&gt;
-&lt;h2 id=&#34;declarative-application-management&#34;&gt;declarative application management&lt;/h2&gt;
-&lt;p&gt;Kustomize aspires to support &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/declarative-application-management.md&#34;&gt;Declarative Application Management&lt;/a&gt;,
-a set of best practices around managing k8s clusters.&lt;/p&gt;
-&lt;p&gt;In brief, kustomize should&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Work with any configuration, be it bespoke,
-off-the-shelf, stateless, stateful, etc.&lt;/li&gt;
-&lt;li&gt;Support common customizations, and creation of
-&lt;a href=&#34;#variant&#34;&gt;variants&lt;/a&gt; (e.g. &lt;em&gt;development&lt;/em&gt; vs.
-&lt;em&gt;staging&lt;/em&gt; vs. &lt;em&gt;production&lt;/em&gt;).&lt;/li&gt;
-&lt;li&gt;Expose and teach native k8s APIs, rather than
-hide them.&lt;/li&gt;
-&lt;li&gt;Add no friction to version control integration to
-support reviews and audit trails.&lt;/li&gt;
-&lt;li&gt;Compose with other tools in a unix sense.&lt;/li&gt;
-&lt;li&gt;Eschew crossing the line into templating, domain
-specific languages, etc., frustrating the other
-goals.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;generator&#34;&gt;generator&lt;/h2&gt;
-&lt;p&gt;A generator makes resources that can be used as is,
-or fed into a &lt;a href=&#34;#transformer&#34;&gt;transformer&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;gitops&#34;&gt;gitops&lt;/h2&gt;
-&lt;p&gt;Devops or CICD workflows that use a git repository as a
-single source of truth and take action (e.g., build,
-test or deploy) when that truth changes.&lt;/p&gt;
-&lt;h2 id=&#34;kustomization&#34;&gt;kustomization&lt;/h2&gt;
-&lt;p&gt;The term &lt;em&gt;kustomization&lt;/em&gt; refers to a
-&lt;code&gt;kustomization.yaml&lt;/code&gt; file, or more generally to a
-directory (the &lt;a href=&#34;#kustomization-root&#34;&gt;root&lt;/a&gt;) containing the
-&lt;code&gt;kustomization.yaml&lt;/code&gt; file and all the relative file
-paths that it immediately references (all the local
-data that doesn&amp;rsquo;t require a URL specification).&lt;/p&gt;
-&lt;p&gt;I.e. if someone gives you a &lt;em&gt;kustomization&lt;/em&gt; for use
-with &lt;a href=&#34;#kustomize&#34;&gt;kustomize&lt;/a&gt;, it could be in the form of&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;one file called &lt;code&gt;kustomization.yaml&lt;/code&gt;,&lt;/li&gt;
-&lt;li&gt;a tarball (containing that YAML file plus what it references),&lt;/li&gt;
-&lt;li&gt;a git archive (ditto),&lt;/li&gt;
-&lt;li&gt;a URL to a git repo (ditto), etc.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;A kustomization file contains &lt;a href=&#34;fields.md&#34;&gt;fields&lt;/a&gt;
-falling into four categories:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;resources&lt;/em&gt; - what existing &lt;a href=&#34;#resource&#34;&gt;resources&lt;/a&gt; are to be customized.
-Example fields: &lt;em&gt;resources&lt;/em&gt;, &lt;em&gt;crds&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;generators&lt;/em&gt; - what &lt;em&gt;new&lt;/em&gt; resources should be created.
-Example fields: &lt;em&gt;configMapGenerator&lt;/em&gt; (legacy),
-&lt;em&gt;secretGenerator&lt;/em&gt; (legacy), &lt;em&gt;generators&lt;/em&gt; (v2.1).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;transformers&lt;/em&gt; - what to &lt;em&gt;do&lt;/em&gt; to the aforementioned resources.
-Example fields: &lt;em&gt;namePrefix&lt;/em&gt;, &lt;em&gt;nameSuffix&lt;/em&gt;, &lt;em&gt;images&lt;/em&gt;,
-&lt;em&gt;commonLabels&lt;/em&gt;, &lt;em&gt;patchesJson6902&lt;/em&gt;, etc. and the more
-general &lt;em&gt;transformers&lt;/em&gt; (v2.1) field.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;meta&lt;/em&gt; - fields which may influence all or some of
-the above.  Example fields: &lt;em&gt;vars&lt;/em&gt;, &lt;em&gt;namespace&lt;/em&gt;,
-&lt;em&gt;apiVersion&lt;/em&gt;, &lt;em&gt;kind&lt;/em&gt;, etc.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;kustomization-root&#34;&gt;kustomization root&lt;/h2&gt;
-&lt;p&gt;The directory that immediately contains a
-&lt;code&gt;kustomization.yaml&lt;/code&gt; file.&lt;/p&gt;
-&lt;p&gt;When a kustomization file is processed, it may or may
-not be able to access files outside its root.&lt;/p&gt;
-&lt;p&gt;Data files like resource YAML files, or text files
-containing &lt;em&gt;name=value&lt;/em&gt; pairs intended for a ConfigMap
-or Secret, or files representing a patch to be used in
-a patch transformation, must live &lt;em&gt;within or below&lt;/em&gt; the
-root, and as such are specified via &lt;em&gt;relative
-paths&lt;/em&gt; exclusively.&lt;/p&gt;
-&lt;p&gt;A special flag (in v2.1), &lt;code&gt;--load_restrictions none&lt;/code&gt;,
-is provided to relax this security feature, to, say,
-allow a patch file to be shared by more than one
-kustomization.&lt;/p&gt;
-&lt;p&gt;Other kustomizations (other directories containing a
-&lt;code&gt;kustomization.yaml&lt;/code&gt; file) may be referred to by URL, by
-absolute path, or by relative path.&lt;/p&gt;
-&lt;p&gt;If kustomization &lt;strong&gt;A&lt;/strong&gt; depends on kustomization &lt;strong&gt;B&lt;/strong&gt;, then&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;B&lt;/strong&gt; may not &lt;em&gt;contain&lt;/em&gt; &lt;strong&gt;A&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;B&lt;/strong&gt; may not &lt;em&gt;depend on&lt;/em&gt; &lt;strong&gt;A&lt;/strong&gt;, even transitively.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;A&lt;/strong&gt; may contain &lt;strong&gt;B&lt;/strong&gt;, but in this case it might be
-simplest to have &lt;strong&gt;A&lt;/strong&gt; directly depend on &lt;strong&gt;B&lt;/strong&gt;&amp;rsquo;s
-resources and eliminate &lt;strong&gt;B&lt;/strong&gt;&amp;rsquo;s kustomization.yaml file
-(i.e. absorb &lt;strong&gt;B&lt;/strong&gt; into &lt;strong&gt;A&lt;/strong&gt;).&lt;/p&gt;
-&lt;p&gt;Conventionally, &lt;strong&gt;B&lt;/strong&gt; is in a directory that&amp;rsquo;s sibling
-to &lt;strong&gt;A&lt;/strong&gt;, or &lt;strong&gt;B&lt;/strong&gt; is off in a completely independent
-git repository, referencable from any kustomization.&lt;/p&gt;
-&lt;p&gt;A common layout is&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;├── base
-│   ├── deployment.yaml
-│   ├── kustomization.yaml
-│   └── service.yaml
-└── overlays
-    ├── dev
-    │   ├── kustomization.yaml
-    │   └── patch.yaml
-    ├── prod
-    │   ├── kustomization.yaml
-    │   └── patch.yaml
-    └── staging
-        ├── kustomization.yaml
-        └── patch.yaml
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;The three roots &lt;code&gt;dev&lt;/code&gt;, &lt;code&gt;prod&lt;/code&gt; and &lt;code&gt;staging&lt;/code&gt;
-(presumably) all refer to the &lt;code&gt;base&lt;/code&gt; root.  One would
-have to inspect the &lt;code&gt;kustomization.yaml&lt;/code&gt; files to be
-sure.&lt;/p&gt;
-&lt;h2 id=&#34;kubernetes&#34;&gt;kubernetes&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://kubernetes.io&#34;&gt;Kubernetes&lt;/a&gt; is an open-source
-system for automating deployment, scaling, and
-management of containerized applications.&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s often abbreviated as &lt;em&gt;k8s&lt;/em&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;kubernetes-style-object&#34;&gt;kubernetes-style object&lt;/h2&gt;
-&lt;p&gt;An object, expressed in a YAML or JSON file, with the
-&lt;a href=&#34;https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/#required-fields&#34;&gt;fields required&lt;/a&gt; by kubernetes.  Basically just a
-&lt;em&gt;kind&lt;/em&gt; field to identify the type, a &lt;em&gt;metadata/name&lt;/em&gt;
-field to identify the particular instance, and an
-&lt;em&gt;apiVersion&lt;/em&gt; field to identify the version (if there&amp;rsquo;s
-more than one version).&lt;/p&gt;
-&lt;h2 id=&#34;kustomize&#34;&gt;kustomize&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;kustomize&lt;/em&gt; is a command line tool supporting
-template-free, structured customization of declarative
-configuration targeted to k8s-style objects.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Targeted to k8s means&lt;/em&gt; that kustomize has some
-understanding of API resources, k8s concepts like
-names, labels, namespaces, etc. and the semantics of
-resource patching.&lt;/p&gt;
-&lt;p&gt;kustomize is an implementation of &lt;a href=&#34;#declarative-application-management&#34;&gt;DAM&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;off-the-shelf-configuration&#34;&gt;off-the-shelf configuration&lt;/h2&gt;
-&lt;p&gt;An &lt;em&gt;off-the-shelf&lt;/em&gt; configuration is a kustomization and
-resources intentionally published somewhere for others
-to use.&lt;/p&gt;
-&lt;p&gt;E.g. one might create a github repository like this:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;github.com/username/someapp/
-  kustomization.yaml
-  deployment.yaml
-  configmap.yaml
-  README.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;Someone could then &lt;em&gt;fork&lt;/em&gt; this repo (on github) and
-&lt;em&gt;clone&lt;/em&gt; their fork to their local disk for
-customization.&lt;/p&gt;
-&lt;p&gt;This clone could act as a &lt;a href=&#34;#base&#34;&gt;base&lt;/a&gt; for the user&amp;rsquo;s
-own &lt;a href=&#34;#overlay&#34;&gt;overlays&lt;/a&gt; to do further customization.&lt;/p&gt;
-&lt;h2 id=&#34;overlay&#34;&gt;overlay&lt;/h2&gt;
-&lt;p&gt;An &lt;em&gt;overlay&lt;/em&gt; is a kustomization that depends on
-another kustomization.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;#kustomization&#34;&gt;kustomizations&lt;/a&gt; an overlay refers to (via file
-path, URI or other method) are called &lt;a href=&#34;#base&#34;&gt;bases&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;An overlay is unusable without its bases.&lt;/p&gt;
-&lt;p&gt;An overlay may act as a base to another overlay.&lt;/p&gt;
-&lt;p&gt;Overlays make the most sense when there is &lt;em&gt;more than
-one&lt;/em&gt;, because they create different &lt;a href=&#34;#variant&#34;&gt;variants&lt;/a&gt; of a
-common base - e.g.  &lt;em&gt;development&lt;/em&gt;, &lt;em&gt;QA&lt;/em&gt;, &lt;em&gt;staging&lt;/em&gt; and
-&lt;em&gt;production&lt;/em&gt; environment variants.&lt;/p&gt;
-&lt;p&gt;These variants use the same overall resources, and vary
-in relatively simple ways, e.g. the number of replicas
-in a deployment, the CPU to a particular pod, the data
-source used in a ConfigMap, etc.&lt;/p&gt;
-&lt;p&gt;One configures a cluster like this:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; kustomize build someapp/overlays/staging |\
-     kubectl apply -f -
-
- kustomize build someapp/overlays/production |\
-     kubectl apply -f -
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;Usage of the base is implicit - the overlay&amp;rsquo;s
-kustomization points to the base.&lt;/p&gt;
-&lt;p&gt;See also &lt;a href=&#34;#kustomization-root&#34;&gt;root&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;package&#34;&gt;package&lt;/h2&gt;
-&lt;p&gt;The word &lt;em&gt;package&lt;/em&gt; has no meaning in kustomize, as
-kustomize is not to be confused with a package
-management tool in the tradition of, say, &lt;a href=&#34;https://en.wikipedia.org/wiki/APT_(Debian)&#34;&gt;apt&lt;/a&gt; or
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Rpm_(software)&#34;&gt;rpm&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;patch&#34;&gt;patch&lt;/h2&gt;
-&lt;p&gt;General instructions to modify a resource.&lt;/p&gt;
-&lt;p&gt;There are two alternative techniques with similar
-power but different notation - the
-&lt;a href=&#34;#patchstrategicmerge&#34;&gt;strategic merge patch&lt;/a&gt;
-and the &lt;a href=&#34;#patchjson6902&#34;&gt;JSON patch&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;patchstrategicmerge&#34;&gt;patchStrategicMerge&lt;/h2&gt;
-&lt;p&gt;A &lt;em&gt;patchStrategicMerge&lt;/em&gt; is &lt;a href=&#34;https://git.k8s.io/community/contributors/devel/sig-api-machinery/strategic-merge-patch.md&#34;&gt;strategic-merge&lt;/a&gt;-style patch (SMP).&lt;/p&gt;
-&lt;p&gt;An SMP looks like an incomplete YAML specification of
-a k8s resource.  The SMP includes &lt;code&gt;TypeMeta&lt;/code&gt;
-fields to establish the group/version/kind/name of the
-&lt;a href=&#34;#resource&#34;&gt;resource&lt;/a&gt; to patch, then just enough remaining fields
-to step into a nested structure to specify a new field
-value, e.g. an image tag.&lt;/p&gt;
-&lt;p&gt;By default, an SMP &lt;em&gt;replaces&lt;/em&gt; values.  This is
-usually desired when the target value is a simple
-string, but may not be desired when the target
-value is a list.&lt;/p&gt;
-&lt;p&gt;To change this
-default behavior, add a &lt;em&gt;directive&lt;/em&gt;.  Recognized
-directives in YAML patches are &lt;em&gt;replace&lt;/em&gt; (the default)
-and &lt;em&gt;delete&lt;/em&gt; (see &lt;a href=&#34;https://git.k8s.io/community/contributors/devel/sig-api-machinery/strategic-merge-patch.md&#34;&gt;these notes&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Note that for custom resources, SMPs are treated as
-&lt;a href=&#34;https://tools.ietf.org/html/rfc7386&#34;&gt;json merge patches&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Fun fact - any resource file can be used as
-an SMP, overwriting matching fields in another
-resource with the same group/version/kind/name,
-but leaving all other fields as they were.&lt;/p&gt;
-&lt;p&gt;TODO(monopole): add ptr to example.&lt;/p&gt;
-&lt;h2 id=&#34;patchjson6902&#34;&gt;patchJson6902&lt;/h2&gt;
-&lt;p&gt;A &lt;em&gt;patchJson6902&lt;/em&gt; refers to a kubernetes &lt;a href=&#34;#resource&#34;&gt;resource&lt;/a&gt; and
-a &lt;a href=&#34;https://tools.ietf.org/html/rfc6902&#34;&gt;JSONPatch&lt;/a&gt; specifying how to change the resource.&lt;/p&gt;
-&lt;p&gt;A &lt;em&gt;patchJson6902&lt;/em&gt; can do almost everything a
-&lt;em&gt;patchStrategicMerge&lt;/em&gt; can do, but with a briefer
-syntax.  See this &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/examples/jsonpatch.md&#34;&gt;example&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;plugin&#34;&gt;plugin&lt;/h2&gt;
-&lt;p&gt;A chunk of code used by kustomize, but not necessarily
-compiled into kustomize, to generate and/or transform a
-kubernetes resource as part of a kustomization.&lt;/p&gt;
-&lt;p&gt;Details &lt;a href=&#34;../../../guides/extending_kustomize&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;resource&#34;&gt;resource&lt;/h2&gt;
-&lt;p&gt;A &lt;em&gt;resource&lt;/em&gt; in the context of a REST-ful API is the
-target object of an HTTP operation like &lt;em&gt;GET&lt;/em&gt;, &lt;em&gt;PUT&lt;/em&gt; or
-&lt;em&gt;POST&lt;/em&gt;.  k8s offers a REST-ful API surface to interact
-with clients.&lt;/p&gt;
-&lt;p&gt;A &lt;em&gt;resource&lt;/em&gt;, in the context of a kustomization, is a
-&lt;a href=&#34;#kustomization-root&#34;&gt;root&lt;/a&gt; relative path to a &lt;a href=&#34;http://www.yaml.org/start.html&#34;&gt;YAML&lt;/a&gt; or &lt;a href=&#34;https://www.json.org/&#34;&gt;JSON&lt;/a&gt; file
-describing a k8s API object, like a Deployment or a
-ConfigMap, or it&amp;rsquo;s a path to a kustomization, or a URL
-that resolves to a kustomization.&lt;/p&gt;
-&lt;p&gt;More generally, a resource can be any correct YAML file
-that &lt;a href=&#34;https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/#required-fields&#34;&gt;defines an object&lt;/a&gt;
-with a &lt;em&gt;kind&lt;/em&gt; and a &lt;em&gt;metadata/name&lt;/em&gt; field.&lt;/p&gt;
-&lt;h2 id=&#34;root&#34;&gt;root&lt;/h2&gt;
-&lt;p&gt;See &lt;a href=&#34;#kustomization-root&#34;&gt;kustomization root&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;sub-target--sub-application--sub-package&#34;&gt;sub-target / sub-application / sub-package&lt;/h2&gt;
-&lt;p&gt;A &lt;em&gt;sub-whatever&lt;/em&gt; is not a thing. There are only
-&lt;a href=&#34;#base&#34;&gt;bases&lt;/a&gt; and &lt;a href=&#34;#overlay&#34;&gt;overlays&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;target&#34;&gt;target&lt;/h2&gt;
-&lt;p&gt;The &lt;em&gt;target&lt;/em&gt; is the argument to &lt;code&gt;kustomize build&lt;/code&gt;, e.g.:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; kustomize build $target
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;code&gt;$target&lt;/code&gt; must be a path or a url to a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The target contains, or refers to, all the information
-needed to create customized resources to send to the
-&lt;a href=&#34;#apply&#34;&gt;apply&lt;/a&gt; operation.&lt;/p&gt;
-&lt;p&gt;A target can be a &lt;a href=&#34;#base&#34;&gt;base&lt;/a&gt; or an &lt;a href=&#34;#overlay&#34;&gt;overlay&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;transformer&#34;&gt;transformer&lt;/h2&gt;
-&lt;p&gt;A transformer can modify a resource, or merely
-visit it and collect information about it in the
-course of a &lt;code&gt;kustomize build&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;variant&#34;&gt;variant&lt;/h2&gt;
-&lt;p&gt;A &lt;em&gt;variant&lt;/em&gt; is the outcome, in a cluster, of applying
-an &lt;a href=&#34;#overlay&#34;&gt;overlay&lt;/a&gt; to a &lt;a href=&#34;#base&#34;&gt;base&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;E.g., a &lt;em&gt;staging&lt;/em&gt; and &lt;em&gt;production&lt;/em&gt; overlay both modify
-some common base to create distinct variants.&lt;/p&gt;
-&lt;p&gt;The &lt;em&gt;staging&lt;/em&gt; variant is the set of resources exposed
-to quality assurance testing, or to some external users
-who&amp;rsquo;d like to see what the next version of production
-will look like.&lt;/p&gt;
-&lt;p&gt;The &lt;em&gt;production&lt;/em&gt; variant is the set of resources
-exposed to production traffic, and thus may employ
-deployments with a large number of replicas and higher
-cpu and memory requests.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>References: The Kustomization File</title>
-      <link>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The kustomization file is a YAML specification of a Kubernetes
-Resource Model (&lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/resource-management.md&#34;&gt;KRM&lt;/a&gt;) object called a &lt;em&gt;Kustomization&lt;/em&gt;.
-A kustomization describes how to generate or transform
-other KRM objects.&lt;/p&gt;
-&lt;p&gt;Although most practical kustomization files don&amp;rsquo;t actually look this
-way, a &lt;code&gt;kustomization.yaml&lt;/code&gt; file is basically four lists:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-
-resources:
-- {pathOrUrl}
-- ...
-
-generators:
-- {pathOrUrl}
-- ...
-
-transformers:
-- {pathOrUrl}
-- ...
-
-validators:
-- {pathOrUrl}
-- ...
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The order in each of these lists is relevant
-and respected.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;There are other fields too, e.g. &lt;code&gt;commonLabels&lt;/code&gt;, &lt;code&gt;namePrefixes&lt;/code&gt;,
-&lt;code&gt;patches&lt;/code&gt;, etc.  These fields are &lt;em&gt;convenience&lt;/em&gt; fields, shorthand for
-longer transformer configuration stanzas, and are discussed later.
-They&amp;rsquo;re what&amp;rsquo;s used most often, but it&amp;rsquo;s useful to first cover
-the fundamentals before discussing the conveniences.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;In all cases the &lt;code&gt;{pathOrUrl}&lt;/code&gt; list entry can specify&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;a file system path to a YAML &lt;em&gt;file&lt;/em&gt; containing one or
-more KRM objects, or&lt;/li&gt;
-&lt;li&gt;a &lt;em&gt;directory&lt;/em&gt; (local or in a remote git repo)
-that contains a &lt;code&gt;kustomization.yaml&lt;/code&gt; file.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In the latter case, the kustomization is recursively built (aka
-&lt;em&gt;hydrated&lt;/em&gt;) into a flat list of KRM objects that&amp;rsquo;s effectively
-injected into the encapsulating list in order.  When this happens, the
-encapsulating kustomization can be called an &lt;em&gt;overlay&lt;/em&gt;, and what it
-refers to can be called a &lt;em&gt;base&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;A typical layout:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;app1/
-  kustomization.yaml
-    | resources:
-    | - ../base
-    | patches:
-    | - patch1.yaml
-  patch1.yaml
-
-app2/
-  kustomization.yaml
-    | resources:
-    | - ../base
-    | patches:
-    | - patch2.yaml
-  patch2.yaml
-
-base/
-  kustomization.yaml
-    | resources:
-    | - deployment.yaml
-    | - configMap.yaml
-  deployment.yaml
-  configMap.yaml
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Under &lt;code&gt;resources&lt;/code&gt;, the result of reading KRM yaml files or executing
-recursive kustomizations becomes the list of &lt;em&gt;input objects&lt;/em&gt; to the
-current build stage.&lt;/p&gt;
-&lt;p&gt;Under &lt;code&gt;generators&lt;/code&gt;, &lt;code&gt;transformers&lt;/code&gt; and &lt;code&gt;validators&lt;/code&gt;, the result of
-reading/hydrating is a list of KRM objects that &lt;em&gt;configure operations&lt;/em&gt;
-that kustomize is expected to perform.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Some of these fields allow YAML inlining, allowing a KRM object to be
-declared directly in the &lt;code&gt;kustomization.yaml&lt;/code&gt; file (in practice this
-is &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/blob/master/api/krusty/inlinetransformer_test.go#L26&#34;&gt;mainly useful&lt;/a&gt; in the &lt;code&gt;transformers&lt;/code&gt; field).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;These configurations specify some executable (e.g. a plugin) along
-with that executable&amp;rsquo;s &lt;em&gt;configuration&lt;/em&gt;.  For example, a replica count
-transformer&amp;rsquo;s configuration must specify both an executable capable
-of parsing and modifying a &lt;em&gt;Deployment&lt;/em&gt;, and the actual numerical
-value (or increment) to use in the Deployment&amp;rsquo;s &lt;code&gt;replicas&lt;/code&gt; field.&lt;/p&gt;
-&lt;h3 id=&#34;ordering&#34;&gt;Ordering&lt;/h3&gt;
-&lt;p&gt;A build stage first processes &lt;code&gt;resources&lt;/code&gt;, then it processes &lt;code&gt;generators&lt;/code&gt;,
-adding to the resource list under consideration, then it processes
-&lt;code&gt;transformers&lt;/code&gt; to modify the list, and finally runs &lt;code&gt;validators&lt;/code&gt; to check the
-list for whatever error.&lt;/p&gt;
-&lt;h3 id=&#34;conveniences&#34;&gt;Conveniences&lt;/h3&gt;
-&lt;p&gt;The &lt;code&gt;resources&lt;/code&gt; field is a convenience.  One can omit &lt;code&gt;resources&lt;/code&gt;
-field and instead use a generator that accepts a file path list,
-expanding it as needed.  Such a generator would read the file system,
-doing the job that kustomize does when processing the &lt;code&gt;resources&lt;/code&gt;
-field.&lt;/p&gt;
-&lt;p&gt;All the other fields in a kustomization file (&lt;code&gt;configMapGenerator&lt;/code&gt;,
-&lt;code&gt;namePrefix&lt;/code&gt;, &lt;code&gt;patches&lt;/code&gt;, etc.) are conveniences as well, as they are
-shorthand for: run a particular generator or transformer with a
-particular configuration.&lt;/p&gt;
-&lt;p&gt;Likewise, a &lt;code&gt;validator&lt;/code&gt; is just a transformer that doesn&amp;rsquo;t transform,
-but can (just like a transformer) &lt;em&gt;fail the build&lt;/em&gt; with an error
-message.  Coding up a validator is identical to coding up a
-transformer. The only difference is in how it&amp;rsquo;s used by kustomize;
-kustomize attempts to disallow validators from making changes.&lt;/p&gt;
-&lt;p&gt;The next section explains why the &lt;code&gt;generators&lt;/code&gt; field is also just a
-convenience.&lt;/p&gt;
-&lt;h3 id=&#34;generators-and-transformers&#34;&gt;Generators and Transformers&lt;/h3&gt;
-&lt;p&gt;In the code, the interfaces distinguishing a generator from a
-transformer are:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// Generator creates an instance of ResMap.
-type Generator interface {
-  Generate() (ResMap, error)
-}
-
-// Transformer can modify an instance of ResMap.
-type Transformer interface {
-  Transform(m ResMap) error
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In these interfaces, a &lt;code&gt;ResMap&lt;/code&gt; is a list of kubernetes &lt;code&gt;Resource&lt;/code&gt;s
-with ancillary map-like lookup and modification methods.&lt;/p&gt;
-&lt;p&gt;A generator cannot be a transformer, because it doesn&amp;rsquo;t accept an
-input other than its own configuration.  Configuration for both generators
-and transformers are done via a distinct (and common) interface.&lt;/p&gt;
-&lt;p&gt;A transformer doesn&amp;rsquo;t implement &lt;code&gt;Generator&lt;/code&gt;, but it&amp;rsquo;s capable of
-behaving like one.&lt;/p&gt;
-&lt;p&gt;This is because &lt;code&gt;ResMap&lt;/code&gt; has the methods&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Append(*Resource)
-Replace(*Resource)
-Remove(ResId)
-Clear()
-  ...etc.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;i.e. the ResMap interface allows for growing and shrinking
-the Resource list, as well as mutating each Resource on it.&lt;/p&gt;
-&lt;p&gt;A transformer (specifically the author of a transformer)
-can call these methods - creating, sorting, destroying, etc.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;At the time of writing, the ResMap is being converted to a mutable
-list RNodes, objects that integrate KRM with a new
-kubernetes-specific YAML library called &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/blob/master/kyaml/doc.go&#34;&gt;kyaml&lt;/a&gt;.  As more programs
-speak kyaml, kustomize&amp;rsquo;s role will evolve too.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Transformers have a general generative power.&lt;/p&gt;
-&lt;p&gt;A kustomization overlay, could, say, fix common oversights made in
-cluster configuration.&lt;/p&gt;
-&lt;p&gt;For example, a transformer could scan all resources, looking for the
-&lt;em&gt;need&lt;/em&gt; for a &lt;code&gt;PodDisruptionBudget&lt;/code&gt;, and &lt;em&gt;conditionally&lt;/em&gt; add it
-and hook it up as a guard rail for the user.&lt;/p&gt;
-&lt;h3 id=&#34;everything-is-a-transformer&#34;&gt;Everything is a transformer&lt;/h3&gt;
-&lt;p&gt;Every field in a kustomization file could be expressed as a
-transformer, so any kustomization file can be converted to a
-kustomization file with one &lt;code&gt;transformers:&lt;/code&gt; field.&lt;/p&gt;
-&lt;p&gt;So why keep all these fields?&lt;/p&gt;
-&lt;p&gt;The fields in kustomization file are useful for ordering and
-signalling, e.g. &lt;em&gt;these particular things are transformers, and should
-run after the generators, but before the validators&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Also, they make common use cases easier to express.&lt;/p&gt;
-&lt;p&gt;E.g. the following two YAML stanzas do the exactly the same thing if
-added to a kustomization file:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;namePrefix: bob-
-&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;transformers:
-- |-
-  apiVersion: builtin
-  kind: PrefixSuffixTransformer
-  metadata:
-    name: myFancyNamePrefixer
-  prefix: bob-
-  fieldSpecs:
-  - path: metadata/name
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;transformed-transformers&#34;&gt;Transformed transformers&lt;/h3&gt;
-&lt;p&gt;The arguments to &lt;code&gt;resources&lt;/code&gt; are usually files containing instances of
-&lt;em&gt;Deployment&lt;/em&gt;, &lt;em&gt;Service&lt;/em&gt;, &lt;em&gt;PodDisruptionBudget&lt;/em&gt;, etc., but they could
-also be transformer configurations.&lt;/p&gt;
-&lt;p&gt;In this case the transformer configurations are just grist for the
-kustomization mill, and can be modifed and passed up an overlay stack,
-and later be used to as input in a &lt;code&gt;transformers&lt;/code&gt; field, whereupon
-they&amp;rsquo;ll be applied to any resources at that kustomization stage.&lt;/p&gt;
-&lt;p&gt;For example, the following file layout has two apps using a common
-pair of bases.&lt;/p&gt;
-&lt;p&gt;One base contains a deployment and a configMap.  The other contains
-transformer configurations.  This is a means to specify a set of
-reusable, custom transformer configs.&lt;/p&gt;
-&lt;p&gt;In between the apps and these bases are intermediate overlays
-that transform the base transformer configurations before they are
-used in the top level apps.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;app1/
-  kustomization.yaml
-    | resources:
-    | - ../base/resources
-    | transformers:
-    | - ../transformers1
-    | patches:
-    | - patch1.yaml
-  patch1.yaml
-    | {a patch for resources}
-
-app2/
-  kustomization.yaml
-    | resources:
-    | - ../base/resources
-    | transformers:
-    | - ../transformers2
-    | patches:
-    | - patch2.yaml
-  patch2.yaml
-    | {some other patch for the resources}
-
-transformers1/
-  kustomization.yaml
-    | resources:
-    | - ../base/transformers
-  transformerPatch1.yaml
-    | {a patch for the base transformer configs}
-
-transformers2/
-  kustomization.yaml
-    | resources:
-    | - ../base/transformers
-  transformerPatch1.yaml
-    | {some other patch for the base transformer configs}
-
-base/
-  transformers/
-    kustomization.yaml
-       | resources:
-       | - transformerConfig1.yaml
-       | - transformerConfig2.yaml
-    transformerConfig1.yaml
-    transformerConfig2.yaml
-  resources/
-    kustomization.yaml
-       | resources:
-       | - deployment.yaml
-       | - configMap.yaml
-    deployment.yaml
-    configMap.yaml
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;This isn&amp;rsquo;t a recommended or disallowed practice, but something that&amp;rsquo;s
-allowed by how kustomization fields are processed.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>References: Kustomize Built-Ins</title>
       <link>https://kubectl.docs.kubernetes.io/references/kustomize/builtins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1208,6 +617,610 @@ values: values.yaml
 extraArgs:
 - --include-crds
 &lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Commands</title>
+      <link>https://kubectl.docs.kubernetes.io/references/kustomize/cmd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/references/kustomize/cmd/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>References: Glossary</title>
+      <link>https://kubectl.docs.kubernetes.io/references/kustomize/glossary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/references/kustomize/glossary/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;glossary&#34;&gt;Glossary&lt;/h1&gt;
+&lt;h2 id=&#34;application&#34;&gt;application&lt;/h2&gt;
+&lt;p&gt;An &lt;em&gt;application&lt;/em&gt; is a group of k8s resources related by
+some common purpose, e.g.  a load balancer in front of a
+webserver backed by a database.
+&lt;a href=&#34;#resource&#34;&gt;Resource&lt;/a&gt; labelling, naming and metadata schemes have
+historically served to group resources together for
+collective operations like &lt;em&gt;list&lt;/em&gt; and &lt;em&gt;remove&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This &lt;a href=&#34;https://github.com/kubernetes/community/pull/1629&#34;&gt;proposal&lt;/a&gt; describes a new k8s resource called
+&lt;em&gt;application&lt;/em&gt; to more formally describe this idea and
+provide support for application-level operations and
+dashboards.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#kustomize&#34;&gt;kustomize&lt;/a&gt; configures k8s resources, and the proposed
+application resource is just another resource.&lt;/p&gt;
+&lt;h2 id=&#34;apply&#34;&gt;apply&lt;/h2&gt;
+&lt;p&gt;The verb &lt;em&gt;apply&lt;/em&gt; in the context of k8s refers to a
+kubectl command and an in-progress &lt;a href=&#34;https://goo.gl/UbCRuf&#34;&gt;API
+endpoint&lt;/a&gt; for mutating a
+cluster.&lt;/p&gt;
+&lt;p&gt;One &lt;em&gt;applies&lt;/em&gt; a statement of what one wants to a
+cluster in the form of a complete resource list.&lt;/p&gt;
+&lt;p&gt;The cluster merges this with the previously applied
+state and the actual state to arrive at a new desired
+state, which the cluster&amp;rsquo;s reconciliation loop attempts
+to create.  This is the foundation of level-based state
+management in k8s.&lt;/p&gt;
+&lt;h2 id=&#34;base&#34;&gt;base&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;base&lt;/em&gt; is a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt; referred to
+by some other &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Any kustomization, including an &lt;a href=&#34;#overlay&#34;&gt;overlay&lt;/a&gt;, can be a base to
+another kustomization.&lt;/p&gt;
+&lt;p&gt;A base has no knowledge of the overlays that refer to it.&lt;/p&gt;
+&lt;p&gt;For simple &lt;a href=&#34;#gitops&#34;&gt;gitops&lt;/a&gt; management, a base configuration
+could be the &lt;em&gt;sole content of a git repository
+dedicated to that purpose&lt;/em&gt;.  Same with &lt;a href=&#34;#overlay&#34;&gt;overlays&lt;/a&gt;.
+Changes in a repo could generate a build, test and
+deploy cycle.&lt;/p&gt;
+&lt;h2 id=&#34;bespoke-configuration&#34;&gt;bespoke configuration&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;bespoke&lt;/em&gt; configuration is a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt; and some
+&lt;a href=&#34;#resource&#34;&gt;resources&lt;/a&gt; created and maintained internally by some
+organization for their own purposes.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://kubectl.docs.kubernetes.io/kustomize/guides&#34;&gt;workflow&lt;/a&gt; associated with a &lt;em&gt;bespoke&lt;/em&gt; config is
+simpler than the workflow associated with an
+&lt;a href=&#34;#off-the-shelf-configuration&#34;&gt;off-the-shelf&lt;/a&gt; config, because there&amp;rsquo;s no notion of
+periodically capturing someone else&amp;rsquo;s upgrades to the
+&lt;a href=&#34;#off-the-shelf-configuration&#34;&gt;off-the-shelf&lt;/a&gt; config.&lt;/p&gt;
+&lt;h2 id=&#34;custom-resource-definition&#34;&gt;custom resource definition&lt;/h2&gt;
+&lt;p&gt;One can extend the k8s API by making a
+Custom Resource Definition (&lt;a href=&#34;https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/&#34;&gt;CRD spec&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;This defines a custom &lt;a href=&#34;#resource&#34;&gt;resource&lt;/a&gt; (CD), an entirely
+new resource that can be used alongside &lt;em&gt;native&lt;/em&gt;
+resources like ConfigMaps, Deployments, etc.&lt;/p&gt;
+&lt;p&gt;Kustomize can customize a CD, but to do so
+kustomize must also be given the corresponding CRD
+so that it can interpret the structure correctly.&lt;/p&gt;
+&lt;h2 id=&#34;declarative-application-management&#34;&gt;declarative application management&lt;/h2&gt;
+&lt;p&gt;Kustomize aspires to support &lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/declarative-application-management.md&#34;&gt;Declarative Application Management&lt;/a&gt;,
+a set of best practices around managing k8s clusters.&lt;/p&gt;
+&lt;p&gt;In brief, kustomize should&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Work with any configuration, be it bespoke,
+off-the-shelf, stateless, stateful, etc.&lt;/li&gt;
+&lt;li&gt;Support common customizations, and creation of
+&lt;a href=&#34;#variant&#34;&gt;variants&lt;/a&gt; (e.g. &lt;em&gt;development&lt;/em&gt; vs.
+&lt;em&gt;staging&lt;/em&gt; vs. &lt;em&gt;production&lt;/em&gt;).&lt;/li&gt;
+&lt;li&gt;Expose and teach native k8s APIs, rather than
+hide them.&lt;/li&gt;
+&lt;li&gt;Add no friction to version control integration to
+support reviews and audit trails.&lt;/li&gt;
+&lt;li&gt;Compose with other tools in a unix sense.&lt;/li&gt;
+&lt;li&gt;Eschew crossing the line into templating, domain
+specific languages, etc., frustrating the other
+goals.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;generator&#34;&gt;generator&lt;/h2&gt;
+&lt;p&gt;A generator makes resources that can be used as is,
+or fed into a &lt;a href=&#34;#transformer&#34;&gt;transformer&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;gitops&#34;&gt;gitops&lt;/h2&gt;
+&lt;p&gt;Devops or CICD workflows that use a git repository as a
+single source of truth and take action (e.g., build,
+test or deploy) when that truth changes.&lt;/p&gt;
+&lt;h2 id=&#34;kustomization&#34;&gt;kustomization&lt;/h2&gt;
+&lt;p&gt;The term &lt;em&gt;kustomization&lt;/em&gt; refers to a
+&lt;code&gt;kustomization.yaml&lt;/code&gt; file, or more generally to a
+directory (the &lt;a href=&#34;#kustomization-root&#34;&gt;root&lt;/a&gt;) containing the
+&lt;code&gt;kustomization.yaml&lt;/code&gt; file and all the relative file
+paths that it immediately references (all the local
+data that doesn&amp;rsquo;t require a URL specification).&lt;/p&gt;
+&lt;p&gt;I.e. if someone gives you a &lt;em&gt;kustomization&lt;/em&gt; for use
+with &lt;a href=&#34;#kustomize&#34;&gt;kustomize&lt;/a&gt;, it could be in the form of&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;one file called &lt;code&gt;kustomization.yaml&lt;/code&gt;,&lt;/li&gt;
+&lt;li&gt;a tarball (containing that YAML file plus what it references),&lt;/li&gt;
+&lt;li&gt;a git archive (ditto),&lt;/li&gt;
+&lt;li&gt;a URL to a git repo (ditto), etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A kustomization file contains &lt;a href=&#34;fields.md&#34;&gt;fields&lt;/a&gt;
+falling into four categories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;resources&lt;/em&gt; - what existing &lt;a href=&#34;#resource&#34;&gt;resources&lt;/a&gt; are to be customized.
+Example fields: &lt;em&gt;resources&lt;/em&gt;, &lt;em&gt;crds&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;generators&lt;/em&gt; - what &lt;em&gt;new&lt;/em&gt; resources should be created.
+Example fields: &lt;em&gt;configMapGenerator&lt;/em&gt; (legacy),
+&lt;em&gt;secretGenerator&lt;/em&gt; (legacy), &lt;em&gt;generators&lt;/em&gt; (v2.1).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;transformers&lt;/em&gt; - what to &lt;em&gt;do&lt;/em&gt; to the aforementioned resources.
+Example fields: &lt;em&gt;namePrefix&lt;/em&gt;, &lt;em&gt;nameSuffix&lt;/em&gt;, &lt;em&gt;images&lt;/em&gt;,
+&lt;em&gt;commonLabels&lt;/em&gt;, &lt;em&gt;patchesJson6902&lt;/em&gt;, etc. and the more
+general &lt;em&gt;transformers&lt;/em&gt; (v2.1) field.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;meta&lt;/em&gt; - fields which may influence all or some of
+the above.  Example fields: &lt;em&gt;vars&lt;/em&gt;, &lt;em&gt;namespace&lt;/em&gt;,
+&lt;em&gt;apiVersion&lt;/em&gt;, &lt;em&gt;kind&lt;/em&gt;, etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;kustomization-root&#34;&gt;kustomization root&lt;/h2&gt;
+&lt;p&gt;The directory that immediately contains a
+&lt;code&gt;kustomization.yaml&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;When a kustomization file is processed, it may or may
+not be able to access files outside its root.&lt;/p&gt;
+&lt;p&gt;Data files like resource YAML files, or text files
+containing &lt;em&gt;name=value&lt;/em&gt; pairs intended for a ConfigMap
+or Secret, or files representing a patch to be used in
+a patch transformation, must live &lt;em&gt;within or below&lt;/em&gt; the
+root, and as such are specified via &lt;em&gt;relative
+paths&lt;/em&gt; exclusively.&lt;/p&gt;
+&lt;p&gt;A special flag (in v2.1), &lt;code&gt;--load_restrictions none&lt;/code&gt;,
+is provided to relax this security feature, to, say,
+allow a patch file to be shared by more than one
+kustomization.&lt;/p&gt;
+&lt;p&gt;Other kustomizations (other directories containing a
+&lt;code&gt;kustomization.yaml&lt;/code&gt; file) may be referred to by URL, by
+absolute path, or by relative path.&lt;/p&gt;
+&lt;p&gt;If kustomization &lt;strong&gt;A&lt;/strong&gt; depends on kustomization &lt;strong&gt;B&lt;/strong&gt;, then&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;B&lt;/strong&gt; may not &lt;em&gt;contain&lt;/em&gt; &lt;strong&gt;A&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;B&lt;/strong&gt; may not &lt;em&gt;depend on&lt;/em&gt; &lt;strong&gt;A&lt;/strong&gt;, even transitively.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;A&lt;/strong&gt; may contain &lt;strong&gt;B&lt;/strong&gt;, but in this case it might be
+simplest to have &lt;strong&gt;A&lt;/strong&gt; directly depend on &lt;strong&gt;B&lt;/strong&gt;&amp;rsquo;s
+resources and eliminate &lt;strong&gt;B&lt;/strong&gt;&amp;rsquo;s kustomization.yaml file
+(i.e. absorb &lt;strong&gt;B&lt;/strong&gt; into &lt;strong&gt;A&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;Conventionally, &lt;strong&gt;B&lt;/strong&gt; is in a directory that&amp;rsquo;s sibling
+to &lt;strong&gt;A&lt;/strong&gt;, or &lt;strong&gt;B&lt;/strong&gt; is off in a completely independent
+git repository, referencable from any kustomization.&lt;/p&gt;
+&lt;p&gt;A common layout is&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;├── base
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   └── service.yaml
+└── overlays
+    ├── dev
+    │   ├── kustomization.yaml
+    │   └── patch.yaml
+    ├── prod
+    │   ├── kustomization.yaml
+    │   └── patch.yaml
+    └── staging
+        ├── kustomization.yaml
+        └── patch.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;The three roots &lt;code&gt;dev&lt;/code&gt;, &lt;code&gt;prod&lt;/code&gt; and &lt;code&gt;staging&lt;/code&gt;
+(presumably) all refer to the &lt;code&gt;base&lt;/code&gt; root.  One would
+have to inspect the &lt;code&gt;kustomization.yaml&lt;/code&gt; files to be
+sure.&lt;/p&gt;
+&lt;h2 id=&#34;kubernetes&#34;&gt;kubernetes&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://kubernetes.io&#34;&gt;Kubernetes&lt;/a&gt; is an open-source
+system for automating deployment, scaling, and
+management of containerized applications.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s often abbreviated as &lt;em&gt;k8s&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;kubernetes-style-object&#34;&gt;kubernetes-style object&lt;/h2&gt;
+&lt;p&gt;An object, expressed in a YAML or JSON file, with the
+&lt;a href=&#34;https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/#required-fields&#34;&gt;fields required&lt;/a&gt; by kubernetes.  Basically just a
+&lt;em&gt;kind&lt;/em&gt; field to identify the type, a &lt;em&gt;metadata/name&lt;/em&gt;
+field to identify the particular instance, and an
+&lt;em&gt;apiVersion&lt;/em&gt; field to identify the version (if there&amp;rsquo;s
+more than one version).&lt;/p&gt;
+&lt;h2 id=&#34;kustomize&#34;&gt;kustomize&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;kustomize&lt;/em&gt; is a command line tool supporting
+template-free, structured customization of declarative
+configuration targeted to k8s-style objects.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Targeted to k8s means&lt;/em&gt; that kustomize has some
+understanding of API resources, k8s concepts like
+names, labels, namespaces, etc. and the semantics of
+resource patching.&lt;/p&gt;
+&lt;p&gt;kustomize is an implementation of &lt;a href=&#34;#declarative-application-management&#34;&gt;DAM&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;off-the-shelf-configuration&#34;&gt;off-the-shelf configuration&lt;/h2&gt;
+&lt;p&gt;An &lt;em&gt;off-the-shelf&lt;/em&gt; configuration is a kustomization and
+resources intentionally published somewhere for others
+to use.&lt;/p&gt;
+&lt;p&gt;E.g. one might create a github repository like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;github.com/username/someapp/
+  kustomization.yaml
+  deployment.yaml
+  configmap.yaml
+  README.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;Someone could then &lt;em&gt;fork&lt;/em&gt; this repo (on github) and
+&lt;em&gt;clone&lt;/em&gt; their fork to their local disk for
+customization.&lt;/p&gt;
+&lt;p&gt;This clone could act as a &lt;a href=&#34;#base&#34;&gt;base&lt;/a&gt; for the user&amp;rsquo;s
+own &lt;a href=&#34;#overlay&#34;&gt;overlays&lt;/a&gt; to do further customization.&lt;/p&gt;
+&lt;h2 id=&#34;overlay&#34;&gt;overlay&lt;/h2&gt;
+&lt;p&gt;An &lt;em&gt;overlay&lt;/em&gt; is a kustomization that depends on
+another kustomization.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;#kustomization&#34;&gt;kustomizations&lt;/a&gt; an overlay refers to (via file
+path, URI or other method) are called &lt;a href=&#34;#base&#34;&gt;bases&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;An overlay is unusable without its bases.&lt;/p&gt;
+&lt;p&gt;An overlay may act as a base to another overlay.&lt;/p&gt;
+&lt;p&gt;Overlays make the most sense when there is &lt;em&gt;more than
+one&lt;/em&gt;, because they create different &lt;a href=&#34;#variant&#34;&gt;variants&lt;/a&gt; of a
+common base - e.g.  &lt;em&gt;development&lt;/em&gt;, &lt;em&gt;QA&lt;/em&gt;, &lt;em&gt;staging&lt;/em&gt; and
+&lt;em&gt;production&lt;/em&gt; environment variants.&lt;/p&gt;
+&lt;p&gt;These variants use the same overall resources, and vary
+in relatively simple ways, e.g. the number of replicas
+in a deployment, the CPU to a particular pod, the data
+source used in a ConfigMap, etc.&lt;/p&gt;
+&lt;p&gt;One configures a cluster like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; kustomize build someapp/overlays/staging |\
+     kubectl apply -f -
+
+ kustomize build someapp/overlays/production |\
+     kubectl apply -f -
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;Usage of the base is implicit - the overlay&amp;rsquo;s
+kustomization points to the base.&lt;/p&gt;
+&lt;p&gt;See also &lt;a href=&#34;#kustomization-root&#34;&gt;root&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;package&#34;&gt;package&lt;/h2&gt;
+&lt;p&gt;The word &lt;em&gt;package&lt;/em&gt; has no meaning in kustomize, as
+kustomize is not to be confused with a package
+management tool in the tradition of, say, &lt;a href=&#34;https://en.wikipedia.org/wiki/APT_(Debian)&#34;&gt;apt&lt;/a&gt; or
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Rpm_(software)&#34;&gt;rpm&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;patch&#34;&gt;patch&lt;/h2&gt;
+&lt;p&gt;General instructions to modify a resource.&lt;/p&gt;
+&lt;p&gt;There are two alternative techniques with similar
+power but different notation - the
+&lt;a href=&#34;#patchstrategicmerge&#34;&gt;strategic merge patch&lt;/a&gt;
+and the &lt;a href=&#34;#patchjson6902&#34;&gt;JSON patch&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;patchstrategicmerge&#34;&gt;patchStrategicMerge&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;patchStrategicMerge&lt;/em&gt; is &lt;a href=&#34;https://git.k8s.io/community/contributors/devel/sig-api-machinery/strategic-merge-patch.md&#34;&gt;strategic-merge&lt;/a&gt;-style patch (SMP).&lt;/p&gt;
+&lt;p&gt;An SMP looks like an incomplete YAML specification of
+a k8s resource.  The SMP includes &lt;code&gt;TypeMeta&lt;/code&gt;
+fields to establish the group/version/kind/name of the
+&lt;a href=&#34;#resource&#34;&gt;resource&lt;/a&gt; to patch, then just enough remaining fields
+to step into a nested structure to specify a new field
+value, e.g. an image tag.&lt;/p&gt;
+&lt;p&gt;By default, an SMP &lt;em&gt;replaces&lt;/em&gt; values.  This is
+usually desired when the target value is a simple
+string, but may not be desired when the target
+value is a list.&lt;/p&gt;
+&lt;p&gt;To change this
+default behavior, add a &lt;em&gt;directive&lt;/em&gt;.  Recognized
+directives in YAML patches are &lt;em&gt;replace&lt;/em&gt; (the default)
+and &lt;em&gt;delete&lt;/em&gt; (see &lt;a href=&#34;https://git.k8s.io/community/contributors/devel/sig-api-machinery/strategic-merge-patch.md&#34;&gt;these notes&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Note that for custom resources, SMPs are treated as
+&lt;a href=&#34;https://tools.ietf.org/html/rfc7386&#34;&gt;json merge patches&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Fun fact - any resource file can be used as
+an SMP, overwriting matching fields in another
+resource with the same group/version/kind/name,
+but leaving all other fields as they were.&lt;/p&gt;
+&lt;p&gt;TODO(monopole): add ptr to example.&lt;/p&gt;
+&lt;h2 id=&#34;patchjson6902&#34;&gt;patchJson6902&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;patchJson6902&lt;/em&gt; refers to a kubernetes &lt;a href=&#34;#resource&#34;&gt;resource&lt;/a&gt; and
+a &lt;a href=&#34;https://tools.ietf.org/html/rfc6902&#34;&gt;JSONPatch&lt;/a&gt; specifying how to change the resource.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;patchJson6902&lt;/em&gt; can do almost everything a
+&lt;em&gt;patchStrategicMerge&lt;/em&gt; can do, but with a briefer
+syntax.  See this &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/tree/master/examples/jsonpatch.md&#34;&gt;example&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;plugin&#34;&gt;plugin&lt;/h2&gt;
+&lt;p&gt;A chunk of code used by kustomize, but not necessarily
+compiled into kustomize, to generate and/or transform a
+kubernetes resource as part of a kustomization.&lt;/p&gt;
+&lt;p&gt;Details &lt;a href=&#34;../../../guides/extending_kustomize&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;resource&#34;&gt;resource&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;resource&lt;/em&gt; in the context of a REST-ful API is the
+target object of an HTTP operation like &lt;em&gt;GET&lt;/em&gt;, &lt;em&gt;PUT&lt;/em&gt; or
+&lt;em&gt;POST&lt;/em&gt;.  k8s offers a REST-ful API surface to interact
+with clients.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;resource&lt;/em&gt;, in the context of a kustomization, is a
+&lt;a href=&#34;#kustomization-root&#34;&gt;root&lt;/a&gt; relative path to a &lt;a href=&#34;http://www.yaml.org/start.html&#34;&gt;YAML&lt;/a&gt; or &lt;a href=&#34;https://www.json.org/&#34;&gt;JSON&lt;/a&gt; file
+describing a k8s API object, like a Deployment or a
+ConfigMap, or it&amp;rsquo;s a path to a kustomization, or a URL
+that resolves to a kustomization.&lt;/p&gt;
+&lt;p&gt;More generally, a resource can be any correct YAML file
+that &lt;a href=&#34;https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/#required-fields&#34;&gt;defines an object&lt;/a&gt;
+with a &lt;em&gt;kind&lt;/em&gt; and a &lt;em&gt;metadata/name&lt;/em&gt; field.&lt;/p&gt;
+&lt;h2 id=&#34;root&#34;&gt;root&lt;/h2&gt;
+&lt;p&gt;See &lt;a href=&#34;#kustomization-root&#34;&gt;kustomization root&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;sub-target--sub-application--sub-package&#34;&gt;sub-target / sub-application / sub-package&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;sub-whatever&lt;/em&gt; is not a thing. There are only
+&lt;a href=&#34;#base&#34;&gt;bases&lt;/a&gt; and &lt;a href=&#34;#overlay&#34;&gt;overlays&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;target&#34;&gt;target&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;target&lt;/em&gt; is the argument to &lt;code&gt;kustomize build&lt;/code&gt;, e.g.:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; kustomize build $target
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;$target&lt;/code&gt; must be a path or a url to a &lt;a href=&#34;#kustomization&#34;&gt;kustomization&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The target contains, or refers to, all the information
+needed to create customized resources to send to the
+&lt;a href=&#34;#apply&#34;&gt;apply&lt;/a&gt; operation.&lt;/p&gt;
+&lt;p&gt;A target can be a &lt;a href=&#34;#base&#34;&gt;base&lt;/a&gt; or an &lt;a href=&#34;#overlay&#34;&gt;overlay&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;transformer&#34;&gt;transformer&lt;/h2&gt;
+&lt;p&gt;A transformer can modify a resource, or merely
+visit it and collect information about it in the
+course of a &lt;code&gt;kustomize build&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;variant&#34;&gt;variant&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;variant&lt;/em&gt; is the outcome, in a cluster, of applying
+an &lt;a href=&#34;#overlay&#34;&gt;overlay&lt;/a&gt; to a &lt;a href=&#34;#base&#34;&gt;base&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;E.g., a &lt;em&gt;staging&lt;/em&gt; and &lt;em&gt;production&lt;/em&gt; overlay both modify
+some common base to create distinct variants.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;staging&lt;/em&gt; variant is the set of resources exposed
+to quality assurance testing, or to some external users
+who&amp;rsquo;d like to see what the next version of production
+will look like.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;production&lt;/em&gt; variant is the set of resources
+exposed to production traffic, and thus may employ
+deployments with a large number of replicas and higher
+cpu and memory requests.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>References: The Kustomization File</title>
+      <link>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The kustomization file is a YAML specification of a Kubernetes
+Resource Model (&lt;a href=&#34;https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/resource-management.md&#34;&gt;KRM&lt;/a&gt;) object called a &lt;em&gt;Kustomization&lt;/em&gt;.
+A kustomization describes how to generate or transform
+other KRM objects.&lt;/p&gt;
+&lt;p&gt;Although most practical kustomization files don&amp;rsquo;t actually look this
+way, a &lt;code&gt;kustomization.yaml&lt;/code&gt; file is basically four lists:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- {pathOrUrl}
+- ...
+
+generators:
+- {pathOrUrl}
+- ...
+
+transformers:
+- {pathOrUrl}
+- ...
+
+validators:
+- {pathOrUrl}
+- ...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The order in each of these lists is relevant
+and respected.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are other fields too, e.g. &lt;code&gt;commonLabels&lt;/code&gt;, &lt;code&gt;namePrefixes&lt;/code&gt;,
+&lt;code&gt;patches&lt;/code&gt;, etc.  These fields are &lt;em&gt;convenience&lt;/em&gt; fields, shorthand for
+longer transformer configuration stanzas, and are discussed later.
+They&amp;rsquo;re what&amp;rsquo;s used most often, but it&amp;rsquo;s useful to first cover
+the fundamentals before discussing the conveniences.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In all cases the &lt;code&gt;{pathOrUrl}&lt;/code&gt; list entry can specify&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a file system path to a YAML &lt;em&gt;file&lt;/em&gt; containing one or
+more KRM objects, or&lt;/li&gt;
+&lt;li&gt;a &lt;em&gt;directory&lt;/em&gt; (local or in a remote git repo)
+that contains a &lt;code&gt;kustomization.yaml&lt;/code&gt; file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the latter case, the kustomization is recursively built (aka
+&lt;em&gt;hydrated&lt;/em&gt;) into a flat list of KRM objects that&amp;rsquo;s effectively
+injected into the encapsulating list in order.  When this happens, the
+encapsulating kustomization can be called an &lt;em&gt;overlay&lt;/em&gt;, and what it
+refers to can be called a &lt;em&gt;base&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;A typical layout:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;app1/
+  kustomization.yaml
+    | resources:
+    | - ../base
+    | patches:
+    | - patch1.yaml
+  patch1.yaml
+
+app2/
+  kustomization.yaml
+    | resources:
+    | - ../base
+    | patches:
+    | - patch2.yaml
+  patch2.yaml
+
+base/
+  kustomization.yaml
+    | resources:
+    | - deployment.yaml
+    | - configMap.yaml
+  deployment.yaml
+  configMap.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Under &lt;code&gt;resources&lt;/code&gt;, the result of reading KRM yaml files or executing
+recursive kustomizations becomes the list of &lt;em&gt;input objects&lt;/em&gt; to the
+current build stage.&lt;/p&gt;
+&lt;p&gt;Under &lt;code&gt;generators&lt;/code&gt;, &lt;code&gt;transformers&lt;/code&gt; and &lt;code&gt;validators&lt;/code&gt;, the result of
+reading/hydrating is a list of KRM objects that &lt;em&gt;configure operations&lt;/em&gt;
+that kustomize is expected to perform.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some of these fields allow YAML inlining, allowing a KRM object to be
+declared directly in the &lt;code&gt;kustomization.yaml&lt;/code&gt; file (in practice this
+is &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/blob/master/api/krusty/inlinetransformer_test.go#L26&#34;&gt;mainly useful&lt;/a&gt; in the &lt;code&gt;transformers&lt;/code&gt; field).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;These configurations specify some executable (e.g. a plugin) along
+with that executable&amp;rsquo;s &lt;em&gt;configuration&lt;/em&gt;.  For example, a replica count
+transformer&amp;rsquo;s configuration must specify both an executable capable
+of parsing and modifying a &lt;em&gt;Deployment&lt;/em&gt;, and the actual numerical
+value (or increment) to use in the Deployment&amp;rsquo;s &lt;code&gt;replicas&lt;/code&gt; field.&lt;/p&gt;
+&lt;h3 id=&#34;ordering&#34;&gt;Ordering&lt;/h3&gt;
+&lt;p&gt;A build stage first processes &lt;code&gt;resources&lt;/code&gt;, then it processes &lt;code&gt;generators&lt;/code&gt;,
+adding to the resource list under consideration, then it processes
+&lt;code&gt;transformers&lt;/code&gt; to modify the list, and finally runs &lt;code&gt;validators&lt;/code&gt; to check the
+list for whatever error.&lt;/p&gt;
+&lt;h3 id=&#34;conveniences&#34;&gt;Conveniences&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;resources&lt;/code&gt; field is a convenience.  One can omit &lt;code&gt;resources&lt;/code&gt;
+field and instead use a generator that accepts a file path list,
+expanding it as needed.  Such a generator would read the file system,
+doing the job that kustomize does when processing the &lt;code&gt;resources&lt;/code&gt;
+field.&lt;/p&gt;
+&lt;p&gt;All the other fields in a kustomization file (&lt;code&gt;configMapGenerator&lt;/code&gt;,
+&lt;code&gt;namePrefix&lt;/code&gt;, &lt;code&gt;patches&lt;/code&gt;, etc.) are conveniences as well, as they are
+shorthand for: run a particular generator or transformer with a
+particular configuration.&lt;/p&gt;
+&lt;p&gt;Likewise, a &lt;code&gt;validator&lt;/code&gt; is just a transformer that doesn&amp;rsquo;t transform,
+but can (just like a transformer) &lt;em&gt;fail the build&lt;/em&gt; with an error
+message.  Coding up a validator is identical to coding up a
+transformer. The only difference is in how it&amp;rsquo;s used by kustomize;
+kustomize attempts to disallow validators from making changes.&lt;/p&gt;
+&lt;p&gt;The next section explains why the &lt;code&gt;generators&lt;/code&gt; field is also just a
+convenience.&lt;/p&gt;
+&lt;h3 id=&#34;generators-and-transformers&#34;&gt;Generators and Transformers&lt;/h3&gt;
+&lt;p&gt;In the code, the interfaces distinguishing a generator from a
+transformer are:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// Generator creates an instance of ResMap.
+type Generator interface {
+  Generate() (ResMap, error)
+}
+
+// Transformer can modify an instance of ResMap.
+type Transformer interface {
+  Transform(m ResMap) error
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In these interfaces, a &lt;code&gt;ResMap&lt;/code&gt; is a list of kubernetes &lt;code&gt;Resource&lt;/code&gt;s
+with ancillary map-like lookup and modification methods.&lt;/p&gt;
+&lt;p&gt;A generator cannot be a transformer, because it doesn&amp;rsquo;t accept an
+input other than its own configuration.  Configuration for both generators
+and transformers are done via a distinct (and common) interface.&lt;/p&gt;
+&lt;p&gt;A transformer doesn&amp;rsquo;t implement &lt;code&gt;Generator&lt;/code&gt;, but it&amp;rsquo;s capable of
+behaving like one.&lt;/p&gt;
+&lt;p&gt;This is because &lt;code&gt;ResMap&lt;/code&gt; has the methods&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Append(*Resource)
+Replace(*Resource)
+Remove(ResId)
+Clear()
+  ...etc.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;i.e. the ResMap interface allows for growing and shrinking
+the Resource list, as well as mutating each Resource on it.&lt;/p&gt;
+&lt;p&gt;A transformer (specifically the author of a transformer)
+can call these methods - creating, sorting, destroying, etc.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;At the time of writing, the ResMap is being converted to a mutable
+list RNodes, objects that integrate KRM with a new
+kubernetes-specific YAML library called &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/blob/master/kyaml/doc.go&#34;&gt;kyaml&lt;/a&gt;.  As more programs
+speak kyaml, kustomize&amp;rsquo;s role will evolve too.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Transformers have a general generative power.&lt;/p&gt;
+&lt;p&gt;A kustomization overlay, could, say, fix common oversights made in
+cluster configuration.&lt;/p&gt;
+&lt;p&gt;For example, a transformer could scan all resources, looking for the
+&lt;em&gt;need&lt;/em&gt; for a &lt;code&gt;PodDisruptionBudget&lt;/code&gt;, and &lt;em&gt;conditionally&lt;/em&gt; add it
+and hook it up as a guard rail for the user.&lt;/p&gt;
+&lt;h3 id=&#34;everything-is-a-transformer&#34;&gt;Everything is a transformer&lt;/h3&gt;
+&lt;p&gt;Every field in a kustomization file could be expressed as a
+transformer, so any kustomization file can be converted to a
+kustomization file with one &lt;code&gt;transformers:&lt;/code&gt; field.&lt;/p&gt;
+&lt;p&gt;So why keep all these fields?&lt;/p&gt;
+&lt;p&gt;The fields in kustomization file are useful for ordering and
+signalling, e.g. &lt;em&gt;these particular things are transformers, and should
+run after the generators, but before the validators&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Also, they make common use cases easier to express.&lt;/p&gt;
+&lt;p&gt;E.g. the following two YAML stanzas do the exactly the same thing if
+added to a kustomization file:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;namePrefix: bob-
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;transformers:
+- |-
+  apiVersion: builtin
+  kind: PrefixSuffixTransformer
+  metadata:
+    name: myFancyNamePrefixer
+  prefix: bob-
+  fieldSpecs:
+  - path: metadata/name
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;transformed-transformers&#34;&gt;Transformed transformers&lt;/h3&gt;
+&lt;p&gt;The arguments to &lt;code&gt;resources&lt;/code&gt; are usually files containing instances of
+&lt;em&gt;Deployment&lt;/em&gt;, &lt;em&gt;Service&lt;/em&gt;, &lt;em&gt;PodDisruptionBudget&lt;/em&gt;, etc., but they could
+also be transformer configurations.&lt;/p&gt;
+&lt;p&gt;In this case the transformer configurations are just grist for the
+kustomization mill, and can be modifed and passed up an overlay stack,
+and later be used to as input in a &lt;code&gt;transformers&lt;/code&gt; field, whereupon
+they&amp;rsquo;ll be applied to any resources at that kustomization stage.&lt;/p&gt;
+&lt;p&gt;For example, the following file layout has two apps using a common
+pair of bases.&lt;/p&gt;
+&lt;p&gt;One base contains a deployment and a configMap.  The other contains
+transformer configurations.  This is a means to specify a set of
+reusable, custom transformer configs.&lt;/p&gt;
+&lt;p&gt;In between the apps and these bases are intermediate overlays
+that transform the base transformer configurations before they are
+used in the top level apps.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;app1/
+  kustomization.yaml
+    | resources:
+    | - ../base/resources
+    | transformers:
+    | - ../transformers1
+    | patches:
+    | - patch1.yaml
+  patch1.yaml
+    | {a patch for resources}
+
+app2/
+  kustomization.yaml
+    | resources:
+    | - ../base/resources
+    | transformers:
+    | - ../transformers2
+    | patches:
+    | - patch2.yaml
+  patch2.yaml
+    | {some other patch for the resources}
+
+transformers1/
+  kustomization.yaml
+    | resources:
+    | - ../base/transformers
+  transformerPatch1.yaml
+    | {a patch for the base transformer configs}
+
+transformers2/
+  kustomization.yaml
+    | resources:
+    | - ../base/transformers
+  transformerPatch1.yaml
+    | {some other patch for the base transformer configs}
+
+base/
+  transformers/
+    kustomization.yaml
+       | resources:
+       | - transformerConfig1.yaml
+       | - transformerConfig2.yaml
+    transformerConfig1.yaml
+    transformerConfig2.yaml
+  resources/
+    kustomization.yaml
+       | resources:
+       | - deployment.yaml
+       | - configMap.yaml
+    deployment.yaml
+    configMap.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;This isn&amp;rsquo;t a recommended or disallowed practice, but something that&amp;rsquo;s
+allowed by how kustomization fields are processed.&lt;/p&gt;
 
       </description>
     </item>
