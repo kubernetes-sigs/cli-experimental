@@ -12,7 +12,7 @@ Requires [Go] to be installed.
 ## Install the kustomize CLI from source without cloning the repo
 
 ```bash
-GOBIN=$(pwd)/ GO111MODULE=on go get sigs.k8s.io/kustomize/kustomize/v3
+GOBIN=$(pwd)/ GO111MODULE=on go get sigs.k8s.io/kustomize/kustomize/v4
 ```
 
 ## Install the kustomize CLI from local source with cloning the repo
@@ -30,7 +30,7 @@ cd kustomize
 
 # Optionally checkout a particular tag if you don't
 # want to build at head
-git checkout kustomize/v3.2.3
+git checkout kustomize/v4.5.2
 
 # build the binary
 (cd kustomize; go install .)
