@@ -7,6 +7,9 @@ dyctl
 .idea/
 *.iml
 
+# Compiled site
+publishedSite/
+
 # go artifacts
 cover.out
 
