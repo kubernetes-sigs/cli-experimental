@@ -1,7 +1,7 @@
 baseURL = "https://kubectl.docs.kubernetes.io"
 title = "SIG CLI"
 
-publishDir = "../docs"
+publishDir = "publishedSite"
 
 enableRobotsTXT = true
 
