@@ -40,33 +40,11 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 
 Once you've verified that your changes look good using the local Hugo server, compile the HTML to be committed.
 
-1. Run the `hugo` command. This compiles the files under `site` into HTML, which it puts in the `docs` folder:
+1. Commit the changes to both the `site/` folder.  Do not commit anything from the `publishedSite/` folder
 
-```shell script
-cd site/
-hugo
-```
+2. Open a PR.
 
-```shell script
-                   | EN  
--------------------+-----
-  Pages            | 99  
-  Paginator pages  |  0  
-  Non-page files   |  0  
-  Static files     | 47  
-  Processed images |  0  
-  Aliases          |  2  
-  Sitemaps         |  1  
-  Cleaned          |  0  
-```
-
-
-
-2. Commit the changes to both the `site/` and `docs/` folders.
-
-3. Open a PR.
-
-4. Once status checks run on your PR, look for the `deploy/netlify` status check, and click the `Details` link to verify your change on Netlify.
+3. Once status checks run on your PR, look for the `deploy/netlify` status check, and click the `Details` link to verify your change on Netlify.
 
 ![Netlify Preview PR Status Image][pr-preview]
 
