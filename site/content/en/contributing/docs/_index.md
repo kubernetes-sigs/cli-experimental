@@ -40,7 +40,7 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 
 Once you've verified that your changes look good using the local Hugo server, compile the HTML to be committed.
 
-1. Commit the changes to both the `site/` folder.  Do not commit anything from the `publishedSite/` folder
+1. Commit the changes to the `site/` folder.  Do not commit anything from the `publishedSite/` folder
 
 2. Open a PR.
 
