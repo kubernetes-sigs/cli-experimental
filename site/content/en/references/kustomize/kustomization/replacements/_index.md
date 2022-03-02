@@ -192,15 +192,13 @@ We can express our path:
 
 2. With '[]': `metadata.annotations.[config.kubernetes.io/local-config]`
 
-Strings are used for mapping nodes. For sequence nodes, we support two options:
+Strings are used for mapping nodes. For sequence nodes, we support three options:
 
 1. Index by number: `spec.template.spec.containers.1.image`
 
-2. Index by key-value pair: `spec.template.spec.containers.[name=nginx].image`
+2. Index by key-value pair: `spec.template.spec.containers.[name=nginx].image`. If the key-value pair matches multiple elements in the sequence node, all matching elements will be targetted.
 
-And, Wildcard( `*` ) is replacing every element.
-
-1. `spec.template.spec.containers.*.env.[name=TARGET_ENV].value`
+3. Index with a wildcard match: `spec.template.spec.containers.*.env.[name=TARGET_ENV].value`. This will target every element in the list.
 
 
 ### Example
