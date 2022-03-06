@@ -46,7 +46,7 @@ or in YAML format as
 - op: remove
   path: /some/path
 # test: check if the specified node has the specified value, if the value differs it will throw an error
-- op: remove
+- op: test
   path: /some/path
   value: "my-node-value"
 ```
