@@ -29,6 +29,8 @@ generatorOptions:
   # suffix to the names of generated resources that is a hash of
   # the resource contents.
   disableNameSuffixHash: true
+  # if set to true, the immutable property is added to generated resources
+  immutable: true
 ```
 
 ## Example I
