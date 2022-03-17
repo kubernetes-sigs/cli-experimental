@@ -36,7 +36,7 @@ changes.  See [Rollouts](#rollouts) for more on this.
 ### ConfigMapsGenerator
 
 {{% alert color="success" title="Command / Examples" %}}
-Check out the [reference](/references/kustomize/configmapgenerator/) for commands and examples for `ConfigMapsGenerator`
+Check out the [reference](/references/kustomize/kustomization/configmapgenerator/) for commands and examples for `ConfigMapsGenerator`
 {{% /alert %}}
 
 Consider we have to generate ConfigMap from a preset values stored in `.properties` file. One can make use
@@ -72,7 +72,7 @@ metadata:
 
 ### SecretGenerator
 {{% alert color="success" title="Command / Examples" %}}
-Check out the [reference](/references/kustomize/secretgenerator/) for commands and examples
+Check out the [reference](/references/kustomize/kustomization/secretgenerator/) for commands and examples
 for `SecretGenerator`
 {{% /alert %}}
 
