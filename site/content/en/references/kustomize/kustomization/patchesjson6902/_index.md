@@ -19,7 +19,11 @@ The content in this patch file can be either in JSON format as
 ```json
  [
    {"op": "add", "path": "/some/new/path", "value": "value"},
-   {"op": "replace", "path": "/some/existing/path", "value": "new value"}
+   {"op": "replace", "path": "/some/existing/path", "value": "new value"},
+   {"op": "copy", "from": "/some/existing/path", "path": "/some/path"},
+   {"op": "move", "from": "/some/existing/path", "path": "/some/existing/destination/path"},
+   {"op": "remove", "path": "/some/existing/path"},
+   {"op": "test", "path": "/some/path", "value": "my-node-value"}
  ]
  ```
 
