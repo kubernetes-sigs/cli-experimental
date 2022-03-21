@@ -19,19 +19,40 @@ The content in this patch file can be either in JSON format as
 ```json
  [
    {"op": "add", "path": "/some/new/path", "value": "value"},
-   {"op": "replace", "path": "/some/existing/path", "value": "new value"}
+   {"op": "replace", "path": "/some/existing/path", "value": "new value"},
+   {"op": "copy", "from": "/some/existing/path", "path": "/some/path"},
+   {"op": "move", "from": "/some/existing/path", "path": "/some/existing/destination/path"},
+   {"op": "remove", "path": "/some/existing/path"},
+   {"op": "test", "path": "/some/path", "value": "my-node-value"}
  ]
  ```
 
 or in YAML format as
 
 ```yaml
+# add: creates a new entry with a given value
 - op: add
   path: /some/new/path
   value: value
+# replace: replaces the value of the node with the new specified value
 - op: replace
   path: /some/existing/path
   value: new value
+# copy: copies the value specified in from to the destination path
+- op: copy
+  from: /some/existing/path
+  path: /some/path
+# move: moves the node specified in from to the destination path
+- op: move
+  from: /some/existing/path
+  path: /some/existing/destination/path
+# remove: delete's the node('s subtree)
+- op: remove
+  path: /some/path
+# test: check if the specified node has the specified value, if the value differs it will throw an error
+- op: test
+  path: /some/path
+  value: "my-node-value"
 ```
 
 ```yaml
