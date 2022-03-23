@@ -188,7 +188,7 @@ metadata:
 
 We can express our path:
 
-1. With a '\': `metadata.annotations.config\.kubernetes\.io/local-config`
+1. With a '\\': `metadata.annotations.config\.kubernetes\.io/local-config`
 
 2. With '[]': `metadata.annotations.[config.kubernetes.io/local-config]`
 
