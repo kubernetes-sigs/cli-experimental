@@ -8,7 +8,7 @@ description: >
 ---
 
 Replacements are used to copy fields from one source into any
-number of specified targets. 
+number of specified targets.
 
 \
 The `replacements` field can support a path to a replacement:
@@ -42,7 +42,7 @@ replacements:
     kind: Deployment
     fieldPath: metadata.name
   targets:
-  - select: 
+  - select:
       name: my-resource
 ```
 
@@ -63,7 +63,7 @@ replacements:
       delimiter: string
       index: int
       create: bool
-  targets: 
+  targets:
   - select:
       group: string
       version: string
@@ -76,7 +76,7 @@ replacements:
       kind: string
       name: string
       namespace: string
-    fieldPaths: 
+    fieldPaths:
     - string
     options:
       delimiter: string
@@ -107,14 +107,14 @@ replacements:
 #### Source
 The source field is a selector that determines the source of the value by finding a
 match to the specified GVKNN. All the subfields of `source` are optional,
-but the source selection must resolve to a single resource. 
+but the source selection must resolve to a single resource.
 
 #### Targets
 Replacements will be applied to all targets that are matched by the `select` field and
 are NOT matched by the `reject` field, and will be applied to all listed `fieldPaths`.
 
 ##### Reject
-The reject field is a selector that drops targets selected by select, overruling their selection. 
+The reject field is a selector that drops targets selected by select, overruling their selection.
 
 For example, if we wanted to reject all Deployments named my-deploy:
 
@@ -144,8 +144,8 @@ reject:
 
 #### Delimiter
 
-This field is intended to be used in conjunction with the `index` field for partial string replacement. 
-For example, say we have a value: 
+This field is intended to be used in conjunction with the `index` field for partial string replacement.
+For example, say we have a value:
 
 `path: my/path/VALUE`
 
@@ -157,7 +157,7 @@ options:
   index: 2
 ```
 
-and it would replace VALUE, e.g. `path: my/path/NEW_VALUE`. 
+and it would replace VALUE, e.g. `path: my/path/NEW_VALUE`.
 
 #### Index
 
@@ -165,8 +165,8 @@ This field is intended to be used in conjunction with the `delimiter` field desc
 replacement. The default value is 0.
 
 If the index is out of bounds, behavior depends on whether it is in a source or target. In a source, an index out of bounds
-will throw an error. For a target, a value less than 0 will cause the target to be prefixed, and a value beyond 
-the length of the split will cause the target to be suffixed. 
+will throw an error. For a target, a value less than 0 will cause the target to be prefixed, and a value beyond
+the length of the split will cause the target to be suffixed.
 
 If the fields `index` and `delimiter` are specified on sources or targets that are not scalar values (e.g. mapping or list values),
 kustomize will throw an error.
@@ -192,16 +192,18 @@ We can express our path:
 
 2. With '[]': `metadata.annotations.[config.kubernetes.io/local-config]`
 
-Strings are used for mapping nodes. For sequence nodes, we support two options:
+Strings are used for mapping nodes. For sequence nodes, we support three options:
 
 1. Index by number: `spec.template.spec.containers.1.image`
 
-2. Index by key-value pair: `spec.template.spec.containers.[name=nginx].image`
+2. Index by key-value pair: `spec.template.spec.containers.[name=nginx].image`. If the key-value pair matches multiple elements in the sequence node, all matching elements will be targetted.
+
+3. Index with a wildcard match: `spec.template.spec.containers.*.env.[name=TARGET_ENV].value`. This will target every element in the list.
 
 
 ### Example
 
-For example, suppose one specifies the name of a k8s Secret object in a container's 
+For example, suppose one specifies the name of a k8s Secret object in a container's
 environment variable as follows:
 
 `job.yaml`
@@ -242,7 +244,7 @@ metadata:
 ```
 
 To (1) replace the value of SOME_SECRET_NAME with the name of my-secret, and (2) to add
-a restartPolicy copied from my-pod, you can do the following: 
+a restartPolicy copied from my-pod, you can do the following:
 
 `kustomization.yaml`
 ```yaml
@@ -268,7 +270,7 @@ replacements:
 
 `my-replacement.yaml`
 ```yaml
-source: 
+source:
   kind: Pod
   name: my-pod
   fieldPath: spec.restartPolicy
@@ -276,7 +278,7 @@ targets:
 - select:
     name: hello
     kind: Job
-  fieldPaths: 
+  fieldPaths:
   - spec.template.spec.restartPolicy
   options:
     create: true
