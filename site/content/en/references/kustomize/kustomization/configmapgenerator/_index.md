@@ -184,6 +184,7 @@ single `envs` entry, e.g. `envs: [ 'config.env' ]`.
 {{< alert color="success" title="Environment File Syntax" >}}
 - The key/value pairs inside of the environment file are separated by a `=` sign (left side is the key)
 - The value of each line will appear as a data item in the ConfigMap keyed by its key.
+- Pairs may span a single line only.
 {{< /alert >}}
 
 **Example:** Create a ConfigMap with 3 data items generated from an environment file.
