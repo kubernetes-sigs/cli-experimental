@@ -212,12 +212,12 @@ As with the Inline Strategic Merge, the `name` field in the patch is not used wh
 resources:
 - deployment.yaml
 patches:
-  - path: add-label.patch.json
+  - path: fix-version.patch.yaml
     target:
       group: apps
       version: v1
       kind: Deployment
-  - path: fix-version.patch.yaml
+  - path: add-label.patch.json
     target:
       labelSelector: "app.kubernetes.io/name=nginx"
 ```
