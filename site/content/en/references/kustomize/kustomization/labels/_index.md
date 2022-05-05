@@ -28,9 +28,10 @@ labels:
       owner: alice
       app: bingo
     includeSelectors: true # <-- false by default
+    includeTemplates: true # <-- false by default
 ```
 
-## Example 1 - selectors NOT modified
+## Example 1 - selectors and templates NOT modified
 
 ### File Input
 
@@ -157,6 +158,72 @@ spec:
       app: bingo
       owner: alice
       someName: someValue
+  template:
+    metadata:
+      labels:
+        app: bingo
+        owner: alice
+        someName: someValue
+```
+
+## Example 3 - templates modified
+
+### File Input
+
+```yaml
+# kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+labels:
+  - pairs:
+      someName: someValue
+      owner: alice
+      app: bingo
+    includeTemplates: true 
+
+resources:
+- deploy.yaml
+- service.yaml
+```
+
+```yaml
+# deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example
+```
+
+```yaml
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: example
+```
+
+### Build Output
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: bingo
+    owner: alice
+    someName: someValue
+  name: example
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bingo
+    owner: alice
+    someName: someValue
+  name: example
+spec:
   template:
     metadata:
       labels:
