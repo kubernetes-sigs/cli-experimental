@@ -18,6 +18,10 @@ Changing `includeSelectors` to `true` or changing labels when `includeSelectors`
 is equivalent to changing `commonLabels` and could result in failures.
 {{% /pageinfo %}}
 
+The following flags are available:
+* `includeTemplates`: When set will also apply labels to metadata/labels and spec/template/metadata/labels. This can be used to add labels to Pods from owner resources, such as Deployments and StatefulSets, without modifying selectors. False by default.
+* `includeSelectors`: When set will apply labels to metadata/labels, selectors, and spec/template/metadata/labels. False by default.
+
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
