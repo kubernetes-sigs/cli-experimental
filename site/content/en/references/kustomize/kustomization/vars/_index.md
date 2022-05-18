@@ -10,7 +10,7 @@ description: >
 [replacements]: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/replacements/
 
 WARNING: There are plans to deprecate vars. For existing users of vars, we recommend migration to [replacements]
-as early as possible. There is a guide for convering vars to replacements at the bottom of this page under
+as early as possible. There is a guide for converting vars to replacements at the bottom of this page under
 "convert vars to replacements". For new users, we recommend never using vars, and starting with replacements 
 to avoid migration in the future.
 
