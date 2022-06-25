@@ -185,7 +185,11 @@ generators:
 Review the files
 
 ```bash
-ls -C1 $MYAPP
+$ ls -C1 $MYAPP
+cmGenerator.yaml
+deployment.yaml
+kustomization.yaml
+service.yaml
 ```
 
 ### Make a home for plugins
@@ -244,7 +248,17 @@ chmod a+x $MYAPP/plugins/silly-generator.sh
 ### Review the layout
 
 ```bash
-tree $DEMO
+$ tree $DEMO
+tmp/tmp.qDYh1kiHqD
+└── myapp
+    ├── cmGenerator.yaml
+    ├── deployment.yaml
+    ├── kustomization.yaml
+    ├── plugins
+    │   └── silly-generator.sh
+    └── service.yaml
+
+2 directories, 5 files
 ```
 
 ### Build your app, using the plugin
