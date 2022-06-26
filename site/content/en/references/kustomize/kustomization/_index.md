@@ -7,7 +7,7 @@ description: >
     An overview of the content of a kustomization file.
 ---
 
-[KRM]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/resource-management.md
+[KRM]: https://github.com/kubernetes/design-proposals-archive/blob/main/architecture/resource-management.md
 
 The kustomization file is a YAML specification of a Kubernetes
 Resource Model ([KRM]) object called a _Kustomization_.
