@@ -1,10 +1,10 @@
 ---
-title: "Helm Charts"
-linkTitle: "Helm Charts"
+title: "helmCharts"
+linkTitle: "helmCharts"
 type: docs
-weight: 6
+weight: 8
 description: >
-Helm chart inflation generator
+    Helm chart inflation generator.
 ---
 
 [kustomize builtins]: https://kubectl.docs.kubernetes.io/references/kustomize/builtins/#_helmchartinflationgenerator_
@@ -14,6 +14,12 @@ Helm chart inflation generator
 
 Kustomize has limited support for helm chart inflation through the `helmCharts` field.
 You can read a detailed description of this field in the docs about [kustomize builtins].
+
+To enable the helm chart inflation generator, you have to specify the `enable-helm` flag as follows:
+
+```sh
+kustomize build --enable-helm
+```
 
 ## Long term support
 
@@ -25,12 +31,14 @@ For enhancements to the helm chart inflation generator feature, we will only sup
 
 - bug fixes
 - critical security issues
-- additional fields that are analogous to flags passed to `helm template`
+- additional fields that are analogous to flags passed to `helm template`, except for flags such as `post-renderer`
+  that allow arbitrary commands to be executed
 
 We will not add support for:
+
 - private repository or registry authentication
 - OCI registries
-- other large features that increase the complexity and security of the feature
+- other large features that increase the complexity of the feature and/or have significant security implications
 
 ### Future support
 The next iteration of the helm inflation generator will take the form of a KRM function, which will have
