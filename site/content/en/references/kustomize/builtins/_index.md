@@ -741,7 +741,7 @@ Each entry can have following fields:
   flag in `helm template` command.
 - `helmBin`: [Optional] Path to helm binary. Default is `helm`.
 - `helmHome`: [Optional] Path to helm home directory.
-- `extraArgs`: [Optional] A list of additional argumetns that will be passed into helm
+- `extraArgs`: [Optional] A list of additional arguments that will be passed into helm
   template command.
 
 ```
