@@ -291,7 +291,18 @@ namespace: my-namespace
 
 > [types.ObjectMeta]
 >
+> SetRoleBindingSubjects string
+>
+> UnsetOnly bool
+>
 > FieldSpecs \[\][config.FieldSpec]
+
+`unsetOnly` is false by default. When true, NamespaceTransformer will only set namespace fields that are currently unset (empty string or missing). It is available in Kustomize v4.5.6+.
+
+`setRoleBindingSubjects` controls NamespaceTransformer's handling of `subjects[].namespace` fields within `RoleBinding` and `ClusterRoleBinding` objects. It is available in Kustomize v4.5.6+ and has three possible values:
+* `defaultOnly` (default): updates the namespaces of subjects with the name "default".
+* `allServiceAccounts`: updates the namespaces of all subjects with `kind: ServiceAccount`.
+* `none`: no subjects updated.
 
 #### Example
 >
@@ -301,16 +312,16 @@ namespace: my-namespace
 > metadata:
 >   name: not-important-to-example
 >   namespace: test
+> setRoleBindingSubjects: none
+> unsetOnly: true
 > fieldSpecs:
-> - path: metadata/namespace
+> - path: metadata/name
+>   kind: Namespace
 >   create: true
-> - path: subjects
->   kind: RoleBinding
->   group: rbac.authorization.k8s.io
-> - path: subjects
->   kind: ClusterRoleBinding
->   group: rbac.authorization.k8s.io
 > ```
+
+This example will update the `metadata/name` field of all Namespace objects and the `metadata/namespace` field of all other objects (no fieldspec is required for this), if and only if they do not already have a value.
+
 
 ## _PatchesJson6902_
 
