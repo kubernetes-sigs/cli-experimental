@@ -11,6 +11,14 @@ Requires [Go] to be installed.
 
 ## Install the kustomize CLI from source without cloning the repo
 
+For `go version` $\ge$ `go1.17`
+
+```
+GOBIN=$(pwd)/ GO111MODULE=on go install sigs.k8s.io/kustomize/kustomize/v4@latest
+```
+
+For `go version` $\lt$ `go1.17`
+
 ```bash
 GOBIN=$(pwd)/ GO111MODULE=on go get sigs.k8s.io/kustomize/kustomize/v4
 ```
