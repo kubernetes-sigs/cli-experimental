@@ -60,3 +60,7 @@ patch that performs all the needed deletions.
 A patch can refer to a resource by any of its previous names or kinds.
 For example, if a resource has gone through name-prefix transformations, it can refer to the
 resource by its current name, original name, or any intermediate name that it had. 
+
+## Patching custom resources
+
+Strategic merge patches may require additional configuration via [openapi](../openapi) field to work as expected with custom resources. For example, if a resource uses a merge key other than `name` or needs a list to be merged rather than replaced, Kustomize needs openapi information informing it about this.

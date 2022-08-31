@@ -51,8 +51,10 @@ The `name` and `namespace` fields of the patch target selector are
 automatically anchored regular expressions. This means that the value `myapp`
 is equivalent to `^myapp$`. 
 
-With patches it is possible to override the kind or name of the resource it is 
-editing with the options allowNameChange and allowKindChange. For example:
+## Name and kind changes
+
+With `patches` it is possible to override the kind or name of the resource it is
+editing with the options `allowNameChange` and `allowKindChange`. For example:
 ```yaml
 resources:
 - deployment.yaml
@@ -66,11 +68,19 @@ patches:
 ```
 By default, these fields are false and the patch will leave the kind and name of the resource untouched.
 
+## Name references
+
 A patch can refer to a resource by any of its previous names or kinds.
 For example, if a resource has gone through name-prefix transformations, it can refer to the
 resource by its current name, original name, or any intermediate name that it had.
 
-## Examples 
+## Patching custom resources
+
+[Strategic merge] patches may require additional configuration via [openapi](../openapi) field to work as expected with custom resources. For example, if a resource uses a merge key other than `name` or needs a list to be merged rather than replaced, Kustomize needs openapi information informing it about this.
+
+[JSON6902] patch usage is the same for built-in and custom resources.
+
+## Examples
 
 Consider the following `deployment.yaml` common for all examples:
 ```yaml
