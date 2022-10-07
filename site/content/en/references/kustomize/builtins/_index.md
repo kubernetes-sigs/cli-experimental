@@ -757,7 +757,10 @@ Each entry can have following fields:
 - `configHome`: [Optional] The value that kustomize should pass to helm via
   `HELM_CONFIG_HOME` environment variable.
    If omitted, `{tmpDir}/helm` is used, where `{tmpDir}` is some temporary.
-```
+- `skipHooks`: [Optional] Skips running hooks when inflating the chart. By
+  default the inflation process used by Kustomize will render all the contents
+  of the templates directory, which can result in output different than what
+  you get when using `helm install`. Use this option to supress this behavior.
 helmChartInflationGenerator:
 - name: minecraft
   repo: https://kubernetes-charts.storage.googleapis.com
