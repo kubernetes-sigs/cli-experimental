@@ -165,7 +165,6 @@ data:
     name=app
     user=admin
     pass=/var/run/secrets/db/dbpass.txt
-EOF
 ```
 
 Define an `ldap` component, that creates a `Secret` for the LDAP password
@@ -224,7 +223,6 @@ data:
     endpoint=ldap://ldap.example.com
     bindDN=cn=admin,dc=example,dc=com
     pass=/var/run/secrets/ldap/ldappass.txt
-EOF
 ```
 
 Define a `recaptcha` component, that creates a `Secret` for the reCAPTCHA
@@ -278,7 +276,6 @@ patchesJson6902:
   value:
     mountPath: /var/run/secrets/recaptcha/
     name: recaptcha
-EOF
 ```
 
 Define a `community` variant, that bundles the external DB and reCAPTCHA
@@ -301,7 +298,6 @@ resources:
 components:
   - ../../components/external_db
   - ../../components/recaptcha
-EOF
 ```
 
 Define an `enterprise` overlay, that bundles the external DB and LDAP
@@ -323,7 +319,6 @@ resources:
 components:
   - ../../components/external_db
   - ../../components/ldap
-EOF
 ```
 
 Define a `dev` overlay, that points to all the components and has LDAP
@@ -346,7 +341,6 @@ components:
   - ../../components/external_db
   #- ../../components/ldap
   - ../../components/recaptcha
-EOF
 ```
 
 Now, the workspace has the following directories:
