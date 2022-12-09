@@ -13,7 +13,7 @@ Requires [Go] to be installed.
 
 For `go version` ≥ `go1.17`
 
-```
+```bash
 GOBIN=$(pwd)/ GO111MODULE=on go install sigs.k8s.io/kustomize/kustomize/v4@latest
 ```
 
