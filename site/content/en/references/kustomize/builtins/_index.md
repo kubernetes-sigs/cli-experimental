@@ -491,7 +491,7 @@ patch that performs all the needed deletions.
 Each entry in this list should resolve to an Patch
 object, which includes a patch and a target selector.
 The patch can be either a strategic merge patch or a
-JSON patch. it can be either a patch file or an inline
+[JSON patch](https://tools.ietf.org/html/rfc6902). It can be either a patch file or an inline
 string. The target selects
 resources by group, version, kind, name, namespace,
 labelSelector and annotationSelector. A resource
