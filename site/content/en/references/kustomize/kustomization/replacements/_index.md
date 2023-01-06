@@ -19,7 +19,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 replacements:
-  - path: replacement.yaml
+- path: replacement.yaml
 ```
 `replacement.yaml`
 ```yaml
@@ -27,8 +27,8 @@ source:
   kind: Deployment
   fieldPath: metadata.name
 targets:
-  - select:
-      name: my-resource
+- select:
+    name: my-resource
 ```
 \
 Alternatively, `replacements` supports inline replacements:
