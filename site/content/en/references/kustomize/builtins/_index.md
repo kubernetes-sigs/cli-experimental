@@ -768,7 +768,7 @@ helmChartInflationGenerator:
   releaseName: test
   namespace: testNamespace
   valuesFile: values.yaml
-```
+
 
 ### Usage via `generators` field
 
