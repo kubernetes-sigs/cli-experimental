@@ -761,6 +761,8 @@ Each entry can have following fields:
   default the inflation process used by Kustomize will render all the contents
   of the templates directory, which can result in output different than what
   you get when using `helm install`. Use this option to supress this behavior.
+  
+```
 helmChartInflationGenerator:
 - name: minecraft
   repo: https://kubernetes-charts.storage.googleapis.com
