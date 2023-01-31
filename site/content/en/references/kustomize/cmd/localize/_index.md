@@ -4,24 +4,28 @@ linkTitle: "localize"
 type: docs
 weight: 9
 description: >
-    Replace urls with local paths
+    Replace urls with local paths to downloaded content
 ---
 
 Disclaimer: This is an alpha command. Please see the [command proposal](https://github.com/kubernetes-sigs/kustomize/blob/master/proposals/22-04-localize-command.md)
 for full capabilities.
 
-### Feedback
-
-Please leave your feedback for this command under [the following issue](https://github.com/kubernetes-sigs/kustomize/issues/4996).
-
-### Man
+### Description
 
 The `kustomize localize` command makes a recursive copy of a kustomization
 in which referenced urls are replaced by local paths to their downloaded content.
+The command copies files referenced under kustomization [fields](#fields).
+The copy contains files referenced both by the kustomization in question
+and by recursively referenced kustomizations.
 
 The purpose of this command is to create a copy on which
 `kustomize build`<sup>[[build]](#notes)</sup> produces the same output
-without a network connection.
+without a network connection. The original motivation for this command
+is documented [here](https://github.com/kubernetes-sigs/kustomize/issues/3980).
+A `kustomize build` use case precluding network use could be a CI/CD pipeline
+that only has access to the internal network.
+
+### Usage
 
 The command takes the following form:
 
@@ -34,34 +38,113 @@ where
 * `target` is the [kustomization directory](https://kubectl.docs.kubernetes.io/references/kustomize/glossary/#kustomization-root) 
 to localize. This value can be a local path or a [remote root](https://github.com/kubernetes-sigs/kustomize/blob/master/examples/remoteBuild.md). 
 The default value is the current working directory.
-* `newDir` is the destination of the "localized" copy that the command
-will create. The destination must reside in an existing directory.
+* `newDir` is the destination of the "localized" copy that the command creates. 
+The destination cannot already exist. 
+The command creates the destination directory, but not any of its parents.
 The default destination is a directory in the current working directory named:
   * `localized-{target}` for local `target`
-  * `localized-{target}-{ref}`<sup>[[ref]](#notes)</sup> for remote `target`
-* `scope` is the bounding directory. The command can only copy files inside
-this directory. The default is `target`. This flag cannot be specified for
-remote `target`, as its value is implicitly the repo containing `target`.
+  * `localized-{target}-{ref}`<sup>[[ref]](#notes)</sup> for remote `target`.
+    See an [example](#example).
+* `scope` is the "bounding directory"; in other words, the command 
+can only copy files inside this directory. The default is `{target}`. 
+This flag cannot be specified for remote `target`, as its value is implicitly 
+the repo containing `target`.
+
+### Structure
+
+The localized destination directory is a copy<sup>[[absolute]](#notes), [[symlink]](#notes)</sup>
+of `scope`, excluding files that `target` does not reference and
+with the addition of downloaded remote content.
+
+Downloaded files are copied to a directory named `localized-files` located in
+the same directory as the referencing kustomization. Inside `localized-files`,
+the content of remote
+* roots are written to path<sup>[[localized root]](#notes)</sup>:
+
+  <pre>
+  <ins>host</ins> / <ins>path/to/repo</ins> / <ins>ref</ins> / <ins>path/to/file/in/repo</ins>
+  </pre>
+
+* files are written to the following path<sup>[[localized file]](#notes)</sup>
+  constructed from its url components:
+
+  <pre>
+  <ins>host</ins> / <ins>path</ins>
+  </pre>
+
+### Example
+
+Running the following command:
+
+<!--
+TODO(annasong): Replace ref with kustomize/v5.0 after release. 
+The kustomize/v4.5.7 version is very slow to execute because it fetches
+submodules.
+-->
+```shell
+$ kustomize localize https://github.com/kubernetes-sigs/kustomize//api/krusty/testdata/localize/remote?ref=kustomize/v4.5.7&submodules=0&timeout=300
+```
+
+in an empty directory named `example` creates the localized destination
+with the following contents:
+
+```shell
+example
+└── localized-remote-kustomize-v4.5.7
+    ├── localized-files
+    │   └── github.com
+    │       └── kubernetes-sigs
+    │           └── kustomize
+    │               └── kustomize
+    │                   └── v4.5.7
+    │                       └── api
+    │                           └── krusty
+    │                               └── testdata
+    │                                   └── localize
+    │                                       └── simple
+    │                                           ├── deployment.yaml
+    │                                           ├── service.yaml
+    │                                           └── kustomization.yaml
+    └── hpa.yaml
+```
+```shell
+# example/localized-remote-kustomize-v4.5.7/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+commonLabels:
+  purpose: remoteReference
+kind: Kustomization
+resources:
+- localized-files/github.com/kubernetes-sigs/kustomize/kustomize/v4.5.7/api/krusty/testdata/localize/simple
+- hpa.yaml
+```
+```shell
+# example/localized-remote-kustomize-v4.5.7/localized-files/github.com/kubernetes-sigs/kustomize/kustomize/v4.5.7/api/krusty/testdata/localize/simple/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namePrefix: localize-
+resources:
+- deployment.yaml
+- service.yaml
+```
+
+The [proposal](https://github.com/kubernetes-sigs/kustomize/blob/master/proposals/22-04-localize-command.md)
+contains more examples.
 
 ### Fields
 
-The command "localizes", copying or downloading, files under 
+The command localizes, copying or downloading, files under 
 the following kustomization fields<sup>[[resource]](#notes)</sup>:
 
 * `resources`
-* `bases`
 * `components`
 * `openapi.path`
 * `configurations`
 * `crds`
 * `configMapGenerator`<sup>[[gen]](#notes)</sup>
 * `secretGenerator`<sup>[[gen]](#notes)</sup>
-* `helmChartInflationGenerator`<sup>[[helm]](#notes)</sup>
 * `helmCharts`<sup>[[helm]](#notes)</sup>
 * `helmGlobals`<sup>[[helm]](#notes)</sup>
 * `patches`
-* `patchesJson6902`
-* `patchesStrategicMerge`
 * `replacements`
 
 In addition to localizing files<sup>[[plugin]](#notes)</sup> under the following 
@@ -82,98 +165,11 @@ which have a built-in kustomization field counterpart:
 * `PatchStrategicMergeTransformer`
 * `ReplacementTransformer`
 
-### Structure
-
-The localized destination directory is a copy<sup>[[absolute]](#notes), [[symlink]](#notes)</sup> 
-of `scope`, excluding files that `target` does not reference and 
-with the addition of downloaded remote content.
-
-Downloaded files are copied to a directory named `localized-files` located in
-the same directory as the referencing kustomization. Inside `localized-files`,
-the content of remote 
-* roots are written to path<sup>[[localized root]](#notes)</sup>:
-
-  <pre>
-  <ins>host</ins> / <ins>path/to/repo</ins> / <ins>ref</ins> / <ins>path/to/file/in/repo</ins>
-  </pre>
-
-* files are written to the following path<sup>[[localized file]](#notes)</sup> 
-constructed from its url components:
-
-  <pre>
-  <ins>host</ins> / <ins>path</ins>
-  </pre>
-
-### Example
-
-Running the following command:
-
-```shell
-$ kustomize localize src dst
-```
-
-in the `example` directory shown below:
-
-```shell
-example
-└── src
-    ├── configMap.yaml
-    └── kustomization.yaml
-```
-```shell
-# example/src/kustomization.yaml
-resources:
-  - configMap.yaml
-  - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/kustomize/v4.5.7/api/krusty/testdata/localize/remote/hpa.yaml
-  - https://github.com/kubernetes-sigs/kustomize//api/krusty/testdata/localize/simple?ref=kustomize/v4.5.7
-```
-
-creates `dst` with the following contents:
-
-```shell
-example
-├── src
-│   ├── configMap.yaml
-│   └── kustomization.yaml
-└── dst
-    ├── configMap.yaml
-    ├── kustomization.yaml
-    └── localized-files
-        ├── raw.githubusercontent.com
-        │   └── kubernetes-sigs
-        │       └── kustomize
-        │           └── kustomize
-        │               └── v4.5.7
-        │                   └── api
-        │                       └── krusty
-        │                           └── testdata
-        │                               └── localize
-        │                                   └── remote
-        │                                       └── hpa.yaml
-        └── github.com
-            └── kubernetes-sigs
-                └── kustomize
-                    └── kustomize
-                        └── v4.5.7
-                            └── api
-                                └── krusty
-                                    └── testdata
-                                        └── localize
-                                            └── simple
-                                                ├── deployment.yaml
-                                                ├── service.yaml
-                                                └── kustomization.yaml
-```
-```shell
-# example/dst/kustomization.yaml
-resources:
-  - configMap.yaml
-  - localized-files/raw.githubusercontent.com/kubernetes-sigs/kustomize/kustomize/v4.5.7/api/krusty/testdata/localize/remote/hpa.yaml
-  - localized-files/github.com/kubernetes-sigs/kustomize/kustomize/v4.5.7/api/krusty/testdata/localize/simple
-```
-
-The [proposal](https://github.com/kubernetes-sigs/kustomize/blob/master/proposals/22-04-localize-command.md) 
-contains more examples.
+The command also localizes the following deprecated fields:
+* `bases`
+* `helmChartInflationGenerator`<sup>[[helm]](#notes)</sup>
+* `patchesStrategicMerge`
+* `patchesJson6902`
 
 ### Notes
 * [absolute]: The alpha version of this command does not handle and
@@ -261,3 +257,7 @@ following symlinks. `kustomize build` enforces load restrictions using the
 "delinked" locations of files. As long as this command preserves the delinked
 structure of `scope` in the localized copy, the copy will satisfy 
 load requirements.
+
+### Feedback
+
+Please leave your feedback for this command under [the following issue](https://github.com/kubernetes-sigs/kustomize/issues/4996).
