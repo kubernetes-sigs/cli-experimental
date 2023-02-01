@@ -4,7 +4,7 @@ linkTitle: "localize"
 type: docs
 weight: 9
 description: >
-    Replace urls with local paths to downloaded content
+  Downloads url content to a local directory, and replaces urls with paths to downloaded content
 ---
 
 Disclaimer: This is an alpha command. Please see the [command proposal](https://github.com/kubernetes-sigs/kustomize/blob/master/proposals/22-04-localize-command.md)
