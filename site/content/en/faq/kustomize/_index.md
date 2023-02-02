@@ -45,13 +45,13 @@ kustomization file, and referring to this directory as a
 wants to use it.  This encourages modularity and
 relocatability.
 
-To disable this, use v3, and the `load_restrictor` flag:
+To disable this in v3, use the `load_restrictor` flag:
 
 ```bash
 kustomize build --load_restrictor none $target
 ```
 
-To disable this in v4, use the `load-restrictor` flag:
+To disable this in v4+, use the `load-restrictor` flag:
 
 ```bash
 kustomize build --load-restrictor LoadRestrictionsNone $target
