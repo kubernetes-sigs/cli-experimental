@@ -2,7 +2,7 @@
 title: "vars"
 linkTitle: "vars"
 type: docs
-weight: 22
+weight: 23
 description: >
     Substitute name references.
 ---
@@ -11,7 +11,7 @@ description: >
 
 WARNING: There are plans to deprecate vars. For existing users of vars, we recommend migration to [replacements]
 as early as possible. There is a guide for convering vars to replacements at the bottom of this page under
-"convert vars to replacements". For new users, we recommend never using vars, and starting with replacements 
+"convert vars to replacements". For new users, we recommend never using vars, and starting with replacements
 to avoid migration in the future.
 
 Vars are used to capture text from one resource's field
@@ -134,7 +134,7 @@ vars:
 In order to convert `vars` to `replacements`, we have to:
  1. Replace every instance of $(SOME_SECRET_NAME) with any arbitrary placeholder value.
  2. Convert the vars `objref` field to a [replacements] `source` field.
- 3. Replace the vars `name` fied with a [replacements] `targets` field that points to 
+ 3. Replace the vars `name` fied with a [replacements] `targets` field that points to
 every instance of the placeholder value in step 1.
 
 In our simple example here, this would look like the following:
@@ -169,7 +169,7 @@ replacements:
     name: my-secret
     version: v1
   targets:
-  - select: 
+  - select:
       kind: Pod
       name: my-pod
     fieldPaths:
@@ -178,9 +178,9 @@ replacements:
 
 #### More complex migration example
 
-Let's take a more complex usage of vars and convert it to [replacements]. We are going 
+Let's take a more complex usage of vars and convert it to [replacements]. We are going
 to convert the vars in the [wordpress example](https://github.com/kubernetes-sigs/kustomize/tree/master/examples/wordpress)
-to replacements. 
+to replacements.
 
 The wordpress example has the following directory structure:
 
@@ -228,7 +228,7 @@ spec:
  ```
 
 and the top level `kustomization.yaml` has the following contents:
- 
+
  ```
  resources:
  - wordpress
@@ -236,7 +236,7 @@ and the top level `kustomization.yaml` has the following contents:
  patchesStrategicMerge:
  - patch.yaml
  namePrefix: demo-
- 
+
  vars:
  - name: WORDPRESS_SERVICE
    objref:
@@ -255,7 +255,7 @@ In this example, the patch is used to:
 - Add environment variable that allow wordpress to find the mysql database
 
 We can convert vars to replacements in this more complex case too, by taking the same steps as
-the previous example. To do this, we can change the contents of `patch.yaml` to: 
+the previous example. To do this, we can change the contents of `patch.yaml` to:
 
 ```yaml
 apiVersion: apps/v1
@@ -283,7 +283,7 @@ spec:
 
  ```
 
-Then, in our kustomization, we can have our replacements: 
+Then, in our kustomization, we can have our replacements:
 
 `kustomization.yaml`
 
@@ -296,22 +296,22 @@ patchesStrategicMerge:
 namePrefix: demo-
 
 replacements:
-- source: 
+- source:
     name: demo-wordpress
     kind: Service
     version: v1
   targets:
-  - select: 
+  - select:
       kind: Deployment
       name: demo-wordpress
     fieldPaths:
     - spec.template.spec.initContainers.[name=init-command].args.2
-- source: 
+- source:
     name: demo-mysql
     kind: Service
     version: v1
   targets:
-  - select: 
+  - select:
       kind: Deployment
       name: demo-wordpress
     fieldPaths:
