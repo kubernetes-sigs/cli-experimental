@@ -7,6 +7,20 @@ description: >
     Patch resources using the [json 6902 standard](https://tools.ietf.org/html/rfc6902)
 ---
 
+{{% pageinfo color="warning" %}}
+The `patchesJson6902` field was deprecated in v5.0.0. This field will never be removed from the
+kustomize.config.k8s.io/v1beta1 Kustomization API, but it will not be included
+in the kustomize.config.k8s.io/v1 Kustomization API. When Kustomization v1 is available,
+we will announce the deprecation of the v1beta1 version. There will be at least
+two releases between deprecation and removal of Kustomization v1beta1 support from the
+kustomize CLI, and removal itself will happen in a future major version bump.
+
+Please move your `patchesJson6902` into
+the [patches](/references/kustomize/kustomization/patches) field. This field supports patchesJson6902,
+but with slightly different syntax. You can run `kustomize edit fix` to automatically convert
+`patchesJson6902` to `patches`.
+{{% /pageinfo %}}
+
 Each entry in this list should resolve to a kubernetes object and a JSON patch that will be applied
 to the object.
 The JSON patch is documented at <https://tools.ietf.org/html/rfc6902>
@@ -94,4 +108,4 @@ patchesJson6902:
 
 A patch can refer to a resource by any of its previous names or kinds.
 For example, if a resource has gone through name-prefix transformations, it can refer to the
-resource by its current name, original name, or any intermediate name that it had. 
+resource by its current name, original name, or any intermediate name that it had.
