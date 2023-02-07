@@ -176,7 +176,7 @@ The command also localizes the following deprecated fields:
 throws an error for absolute paths.
 <br></br>
 
-* [build]: This command may not catch `build` fallacies in the kustomization, as
+* [build]: This command may not catch `build` errors in the kustomization, as
 this command serves a different purpose than `kustomize build` and does not look
 to overstep its scope.
 <br></br>
