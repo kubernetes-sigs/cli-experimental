@@ -51,9 +51,12 @@ the repo containing `target`.
 
 ### Structure
 
-The localized destination directory is a copy<sup>[[absolute]](#notes), [[symlink]](#notes)</sup>
+The localized destination directory at `newDir` is a copy<sup>[[absolute]](#notes), [[symlink]](#notes)</sup>
 of `scope`, excluding files that `target` does not reference and
-with the addition of downloaded remote content.
+with the addition of downloaded remote content. 
+Note that if `scope` is not equal to `target`, the localized root
+that produces the same `kustomize build` output as `target`
+is at the same relative path inside `newDir` as `target` inside `scope`.
 
 Downloaded files are copied to a directory named `localized-files` located in
 the same directory as the referencing kustomization file. 
