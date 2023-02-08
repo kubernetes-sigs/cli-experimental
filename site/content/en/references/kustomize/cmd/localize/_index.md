@@ -12,13 +12,12 @@ for full capabilities.
 
 ### Description
 
-The `kustomize localize` command makes a recursive copy of a kustomization
+The `kustomize localize` command makes a copy of a [kustomization root](https://kubectl.docs.kubernetes.io/references/kustomize/glossary/#kustomization-root), 
 in which referenced urls are replaced by local paths to their downloaded content.
-The command copies files referenced under kustomization [fields](#fields).
-The copy contains files referenced both by the kustomization in question
-and by recursively referenced kustomizations.
+The command copies files referenced under kustomization [fields](#fields) 
+in the source kustomization, and all base kustomizations under it.
 
-The purpose of this command is to create a copy on which
+The purpose of this command is to create a copied root on which
 `kustomize build`<sup>[[build]](#notes)</sup> produces the same output
 without a network connection. The original motivation for this command
 is documented [here](https://github.com/kubernetes-sigs/kustomize/issues/3980).
@@ -35,11 +34,11 @@ The command takes the following form:
 
 where
 
-* `target` is the [kustomization directory](https://kubectl.docs.kubernetes.io/references/kustomize/glossary/#kustomization-root) 
-to localize. This value can be a local path or a [remote root](https://github.com/kubernetes-sigs/kustomize/blob/master/examples/remoteBuild.md). 
+* `target` is the kustomization root to localize.
+This value can be a local path or a [remote root](https://github.com/kubernetes-sigs/kustomize/blob/master/examples/remoteBuild.md). 
 The default value is the current working directory.
 * `newDir` is the destination of the "localized" copy that the command creates. 
-The destination cannot already exist. 
+The destination directory cannot already exist. 
 The command creates the destination directory, but not any of its parents.
 The default destination is a directory in the current working directory named:
   * `localized-{target}` for local `target`
@@ -57,8 +56,9 @@ of `scope`, excluding files that `target` does not reference and
 with the addition of downloaded remote content.
 
 Downloaded files are copied to a directory named `localized-files` located in
-the same directory as the referencing kustomization. Inside `localized-files`,
-the content of remote
+the same directory as the referencing kustomization file. 
+Inside `localized-files`, the content of remote
+
 * roots are written to path<sup>[[localized root]](#notes)</sup>:
 
   <pre>
@@ -76,13 +76,8 @@ the content of remote
 
 Running the following command:
 
-<!--
-TODO(annasong): Replace ref with kustomize/v5.0 after release. 
-The kustomize/v4.5.7 version is very slow to execute because it fetches
-submodules.
--->
 ```shell
-$ kustomize localize https://github.com/kubernetes-sigs/kustomize//api/krusty/testdata/localize/remote?ref=kustomize/v4.5.7&submodules=0&timeout=300
+$ kustomize localize "https://github.com/kubernetes-sigs/kustomize//api/krusty/testdata/localize/remote?submodules=0&ref=kustomize/v5.0.0&timeout=300"
 ```
 
 in an empty directory named `example` creates the localized destination
@@ -90,13 +85,13 @@ with the following contents:
 
 ```shell
 example
-└── localized-remote-kustomize-v4.5.7
+└── localized-remote-kustomize-v5.0.0
     ├── localized-files
     │   └── github.com
     │       └── kubernetes-sigs
     │           └── kustomize
     │               └── kustomize
-    │                   └── v4.5.7
+    │                   └── v5.0.0
     │                       └── api
     │                           └── krusty
     │                               └── testdata
@@ -108,17 +103,17 @@ example
     └── hpa.yaml
 ```
 ```shell
-# example/localized-remote-kustomize-v4.5.7/kustomization.yaml
+# example/localized-remote-kustomize-v5.0.0/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 commonLabels:
   purpose: remoteReference
 kind: Kustomization
 resources:
-- localized-files/github.com/kubernetes-sigs/kustomize/kustomize/v4.5.7/api/krusty/testdata/localize/simple
+- localized-files/github.com/kubernetes-sigs/kustomize/kustomize/v5.0.0/api/krusty/testdata/localize/simple
 - hpa.yaml
 ```
 ```shell
-# example/localized-remote-kustomize-v4.5.7/localized-files/github.com/kubernetes-sigs/kustomize/kustomize/v4.5.7/api/krusty/testdata/localize/simple/kustomization.yaml
+# example/localized-remote-kustomize-v5.0.0/localized-files/github.com/kubernetes-sigs/kustomize/kustomize/v5.0.0/api/krusty/testdata/localize/simple/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namePrefix: localize-
@@ -237,8 +232,8 @@ if omitting these url components affects the correctness of your localized copy.
 <br></br>
 
 * [plugin]: The alpha version of this command handles plugin files, but not 
-kustomization directories producing plugins. The command throws an error upon
-encountering kustomizations under the plugin fields.
+kustomization roots producing plugins. The command throws an error upon
+encountering such roots under the plugin fields.
 <br></br>
 
 * [ref]: This command requires [remote roots](https://github.com/kubernetes-sigs/kustomize/blob/master/examples/remoteBuild.md)
@@ -247,8 +242,9 @@ the content of the remote root is always the same.
 See [[localized root]](#notes) for more on remote roots.
 <br></br>
 
-* [resource]: As a byproduct of processing yaml files such as kustomizations,
-this command writes their keys in alphabetical order to the destination.
+* [resource]: As a byproduct of processing yaml files 
+such as the kustomization file, this command writes their keys 
+in alphabetical order to the destination.
 <br></br>
 
 * [symlink]: To avoid `kustomize build` load restriction errors on the 
