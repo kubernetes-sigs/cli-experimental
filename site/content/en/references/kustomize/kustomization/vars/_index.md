@@ -9,10 +9,25 @@ description: >
 
 [replacements]: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/replacements/
 
-WARNING: There are plans to deprecate vars. For existing users of vars, we recommend migration to [replacements]
-as early as possible. There is a guide for convering vars to replacements at the bottom of this page under
-"convert vars to replacements". For new users, we recommend never using vars, and starting with replacements
-to avoid migration in the future.
+{{% pageinfo color="warning" %}}
+The `vars` field was deprecated in v5.0.0. This field will never be removed from the
+kustomize.config.k8s.io/v1beta1 Kustomization API, but it will not be included
+in the kustomize.config.k8s.io/v1 Kustomization API. When Kustomization v1 is available,
+we will announce the deprecation of the v1beta1 version. There will be at least
+two releases between deprecation and removal of Kustomization v1beta1 support from the
+kustomize CLI, and removal itself will happen in a future major version bump.
+
+Please try to migrate to the
+the [replacements](/references/kustomize/kustomization/replacements) field. If you are
+unable to restructure your configuration to use replacements instead of vars, please
+ask for help in slack or file an issue for guidance.
+
+We are experimentally attempting to
+automatically convert `vars` to `replacements` with `kustomize edit fix --vars`. However,
+converting vars to replacements in this way will potentially overwrite many resource files
+and the resulting files may not produce the same output when `kustomize build` is run.
+We recommend doing this in a clean git repository where the change is easy to undo.
+{{% /pageinfo %}}
 
 Vars are used to capture text from one resource's field
 and insert that text elsewhere - a reflection feature.
