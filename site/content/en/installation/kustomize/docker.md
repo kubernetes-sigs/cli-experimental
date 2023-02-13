@@ -12,11 +12,12 @@ The images are hosted in kubernetes official GCR repositories.
 
 See [GCR page] for available images.
 
-The following commands are how to pull and run kustomize 3.8.7 docker image.
-
 ```bash
-docker pull k8s.gcr.io/kustomize/kustomize:v3.8.7
-docker run k8s.gcr.io/kustomize/kustomize:v3.8.7 version
+# pull the image
+docker pull k8s.gcr.io/kustomize/kustomize:v5.0.0
+
+# run 'kustomize version'
+docker run k8s.gcr.io/kustomize/kustomize:v5.0.0 version
 ```
 
 [GCR page]: https://us.gcr.io/k8s-artifacts-prod/kustomize/kustomize
