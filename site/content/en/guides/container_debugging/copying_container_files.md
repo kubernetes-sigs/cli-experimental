@@ -49,7 +49,7 @@ kubectl cp <some-pod>:/tmp/foo /tmp/bar
 ```
 
 {{% alert color="success" title="Operations" %}}
-One can also perfrom operations such as:
+One can also perform operations such as:
 - Copy a specific container within a Pod running multiple containers
 - Set the Pod namespace by prefixing the Pod name with `<namespace>/`.
 {{% /alert %}}

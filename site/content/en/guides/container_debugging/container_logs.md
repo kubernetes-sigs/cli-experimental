@@ -34,7 +34,7 @@ hello
 ---
 
 {{% alert color="success" title="Operations" %}}
-One can also perfrom debugging operations such as:
+One can also perform debugging operations such as:
 - Print Logs for all Pods for a Workload
 - Follow Logs for a Container
 - Printing Logs for a Container that has exited
