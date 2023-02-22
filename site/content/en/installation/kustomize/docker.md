@@ -14,10 +14,10 @@ See [GCR page] for available images.
 
 ```bash
 # pull the image
-docker pull k8s.gcr.io/kustomize/kustomize:v5.0.0
+docker pull registry.k8s.io/kustomize/kustomize:v5.0.0
 
 # run 'kustomize version'
-docker run k8s.gcr.io/kustomize/kustomize:v5.0.0 version
+docker run registry.k8s.io/kustomize/kustomize:v5.0.0 version
 ```
 
 [GCR page]: https://us.gcr.io/k8s-artifacts-prod/kustomize/kustomize
