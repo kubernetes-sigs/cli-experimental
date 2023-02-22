@@ -302,7 +302,7 @@ spec:
     spec:
       containers:
       - name: container
-        image: k8s.gcr.io/busybox
+        image: registry.k8s.io/busybox
         command: [ "/bin/sh", "-c", "ls /etc/config/" ]
         volumeMounts:
         - name: config-volume
@@ -345,7 +345,7 @@ spec:
         - /bin/sh
         - -c
         - ls /etc/config/
-        image: k8s.gcr.io/busybox
+        image: registry.k8s.io/busybox
         name: container
         volumeMounts:
         - mountPath: /etc/config
