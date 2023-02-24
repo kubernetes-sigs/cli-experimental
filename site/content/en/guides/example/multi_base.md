@@ -173,4 +173,6 @@ spec:
 ```
 
 Similarly to adding different `namePrefix` in different variants, one can also add different `namespace` and compose those variants in
-one _kustomization_. For more details, take a look at [multi-namespaces](multi-namespace.md).
+one _kustomization_. For more details, take a look at:
+- [Setting Namespaces](../config_management/namespaces_names.md)
+- [When to Use Multiple Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/#when-to-use-multiple-namespaces)
