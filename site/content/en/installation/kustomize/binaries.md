@@ -16,8 +16,5 @@ current working directory.
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 ```
 
-**This script doesn't work for ARM architecture.** If you want to install ARM binaries, please
-go to the release page to find the URL.
-
 [releases page]: https://github.com/kubernetes-sigs/kustomize/releases
 [script]: https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh
