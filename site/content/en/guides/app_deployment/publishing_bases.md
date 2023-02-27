@@ -85,7 +85,7 @@ White Box Bases may be versioned using the well known versioning techniques prov
 
 ## Forking a White Box Base
 
-Uses may fork a White Box Base hosted on GitHub by forking the GitHub repo.  This allows the user
+Users may fork a White Box Base hosted on GitHub by forking the GitHub repo.  This allows the user
 complete control over changes to the Base.  Users should periodically pull changes from the
 upstream repo back into the fork to get bug fixes and optimizations.
 
