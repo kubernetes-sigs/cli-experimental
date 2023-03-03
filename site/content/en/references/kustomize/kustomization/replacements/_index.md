@@ -215,6 +215,7 @@ metadata:
 spec:
   template:
     spec:
+      restartPolicy: OnFailure
       containers:
         - image: myimage
           name: hello
