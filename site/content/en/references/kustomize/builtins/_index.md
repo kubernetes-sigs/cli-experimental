@@ -812,4 +812,4 @@ helmChartInflationGenerator:
 > releaseName: test
 > namespace: testNamespace
 > valuesFile: values.yaml
-> IncludeCRDs: true
+> includeCRDs: true
