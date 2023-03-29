@@ -10,7 +10,7 @@ description: >
 [strategic merge]: /references/kustomize/glossary#patchstrategicmerge
 [JSON6902]: /references/kustomize/glossary#patchjson6902
 
-Patches (also call overlays) add or override fields on resources.  They are provided using the
+Patches (also called overlays) add or override fields on resources.  They are provided using the
 `patches` Kustomization field.
 
 The `patches` field contains a list of patches to be applied in the order they are specified.
