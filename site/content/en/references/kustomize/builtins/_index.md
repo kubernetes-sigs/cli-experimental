@@ -761,7 +761,12 @@ Each entry can have following fields:
   default the inflation process used by Kustomize will render all the contents
   of the templates directory, which can result in output different than what
   you get when using `helm install`. Use this option to supress this behavior.
-  
+- `additionalValuesFiles`: [Optional] A list of local file paths to values files to be used 
+  in addition to current values file.
+- `skipTests`: [Optional] Skips tests from templated output
+- `apiVersions`: [Optional] the kubernetes apiversions used for Capabilities.APIVersions
+- `nameTemplate`: [Optional] specifies the name template used to name the release
+
 ```
 helmChartInflationGenerator:
 - name: minecraft
@@ -770,6 +775,9 @@ helmChartInflationGenerator:
   releaseName: test
   namespace: testNamespace
   valuesFile: values.yaml
+  additionalValuesFiles:
+  - values-file-1.yml
+  - values-file-2.yml
 ```
 
 ### Usage via `generators` field
