@@ -731,7 +731,7 @@ secretGenerator:
 
 ### Usage via `kustomization.yaml`
 
-#### field name: `helmChartInflationGenerator`
+#### field name: `helmCharts`
 
 Each entry in the argument list results in the pulling
 and rendering of a helm chart.
@@ -742,7 +742,6 @@ Each entry can have following fields:
 - `repo`: [Optional] The URL of the repository which contains the chart. If
   this is provided, the generator will try to fetch remote charts. Otherwise it will
   try to load local chart in `chartHome`.
-- `chartHome`: [Optional] Provide the path to the parent directory for local chart.
 - `version`: [Optional] Version of the chart. Will use latest version
   if this is omitted.
 - `releaseName`: [Optional] The release name that will be set in the chart.
@@ -754,9 +753,6 @@ Each entry can have following fields:
    Legal values: 'merge', 'override', 'replace'. Defaults to 'override'.
 - `includeCRDs`: specifies if Helm should also generate CustomResourceDefinitions.
    Defaults to 'false'.  
-- `configHome`: [Optional] The value that kustomize should pass to helm via
-  `HELM_CONFIG_HOME` environment variable.
-   If omitted, `{tmpDir}/helm` is used, where `{tmpDir}` is some temporary.
 - `skipHooks`: [Optional] Skips running hooks when inflating the chart. By
   default the inflation process used by Kustomize will render all the contents
   of the templates directory, which can result in output different than what
@@ -767,8 +763,8 @@ Each entry can have following fields:
 - `apiVersions`: [Optional] the kubernetes apiversions used for Capabilities.APIVersions
 - `nameTemplate`: [Optional] specifies the name template used to name the release
 
-```
-helmChartInflationGenerator:
+```yaml
+helmCharts:
 - name: minecraft
   repo: https://kubernetes-charts.storage.googleapis.com
   version: v1.2.0
@@ -780,31 +776,54 @@ helmChartInflationGenerator:
   - values-file-2.yml
 ```
 
+#### field name: `helmGlobals`
+
+Stores settings affecting all entries in the related `helmCharts` field:
+- `chartHome`: a file path, relative to the kustomization root, to a directory containing a subdirectory for each chart to be included in the kustomization. The default value of this field is "charts". So, for example, kustomize looks for the minecraft chart at `{kustomizationRoot}/{ChartHome}/minecraft`. If the chart is there at build time, kustomize will use it as found, and not check version numbers or dates. If the chart is not there, kustomize will attempt to pull it using the version number specified in the kustomization file, and put it there.  To suppress the pull attempt, simply assure that the chart is already there.
+- `configHome`: a value that kustomize should pass to helm via the `HELM_CONFIG_HOME`environment variable.  kustomize doesn't attempt to read or write this directory. If omitted, `{tmpDir}/helm` is used, where `{tmpDir}` is some temporary directory created by kustomize for the benefit of helm.
+
+```yaml
+helmGlobals:
+  chartHome: my-charts-dir
+```
+
+
 ### Usage via `generators` field
 
 #### Arguments
-
+>
+> additionalValuesFiles []string
+>
+> apiVersions []string
+>
+> chartHome string
+>
+> configHome string
+>
+> includeCRDs bool
+>
 > name string
->
-> version string
->
-> repo string
->
-> releaseName string
 >
 > namespace string
 >
+> nameTemplate string
+>
+> releaseName string
+>
+> repo string
+>
+> skipHooks bool
+>
 > valuesFile string
-> 
+>
 > valuesInline map[string]interface{}
-> 
+>
 > valuesMerge string
-> 
-> includeCRDs bool
-> 
-> configHome: string
-
-
+>
+> version string
+>
+> skipTests bool
+>
 
 
 #### Example
