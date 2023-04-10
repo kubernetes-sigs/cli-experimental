@@ -88,14 +88,14 @@ replacements:
 
 | Field       | Required| Description | Default |
 | -----------: | :----:| ----------- | ---- |
-| `source`| :heavy_check_mark: | The source of the value |
-| `target`|:heavy_check_mark: | The N fields to write the value to |
+| `source`|✔️ | The source of the value |
+| `target`|✔️ | The N fields to write the value to |
 | `group` | | The group of the referent |
 | `version`|  | The version of the referent
 |`kind` | |The kind of the referent
 |`name` | |The name of the referent
 |`namespace`|  |The namespace of the referent
-|`select` |:heavy_check_mark: |Include objects that match this
+|`select` |✔️ |Include objects that match this
 |`reject`| |Exclude objects that match this
 |`fieldPath`|  |The structured path to the source value | `metadata.name`
 |`fieldPaths`|  |The structured path(s) to the target nodes | `metadata.name`
