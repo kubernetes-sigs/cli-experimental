@@ -29,7 +29,7 @@ kubectl port-forward pod/mypod 5000 6000
 ---
 
 {{% alert color="success" title="Operations" %}}
-One can also perfrom operations such as, Port Forward to:
+One can also perform operations such as, Port Forward to:
 - Pod in a Workload
 - Different Local and Remote Ports
 - Random Local Port
