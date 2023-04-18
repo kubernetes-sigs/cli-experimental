@@ -39,17 +39,17 @@ or [transformer configs] for the built-in generators and transformers would meet
 
 ## Plugin feature status
 
-All Kustomize plugins are in **alpha**. There are five different ways to build them, some of which are slated for deprecation:
-- [Containerized KRM Functions](/guides/extending_kustomize/containerized_krm_functions/)
-- [Exec KRM Functions](/guides/extending_kustomize/exec_krm_functions/)
-- [Legacy exec plugins (DEPRECATED)](/guides/extending_kustomize/exec_plugins/)
-- [Legacy Go plugins (DEPRECATED)](/guides/extending_kustomize/go_plugins/)
-- Starlark KRM Functions (DEPRECATED)
+All Kustomize plugins are in **alpha**. There are five different ways to build them, some of which are slated for deprecation and are marked with a strikethrough:
+
+* [Containerized KRM Functions](/guides/extending_kustomize/containerized_krm_functions/)
+* [Exec KRM Functions](/guides/extending_kustomize/exec_krm_functions/)
+* [~~Legacy exec plugins~~](/guides/extending_kustomize/exec_plugins/)
+* [~~Legacy Go plugins~~](/guides/extending_kustomize/go_plugins/)
+* ~~Starlark KRM Functions~~
 
  The content on this page focuses on container-based plugins. Plugin developers getting started today are strongly encouraged to build containerized KRM Function plugins. Containers provide some level of plugin security for end users, and this method of plugin development is expected to change the least as Kustomize plugins progress towards stable status.
 
 The vision for the future of Kustomize plugins is detailed in the [Kustomize Plugin Graduation KEP]. The [Composition KEP], [KRM Plugin Catalog KEP] and [Public KRM Functions Registry KEP] go into detail on specific aspects of this plan.
-
 
 ### Security
 
@@ -59,7 +59,7 @@ of _"plugin security"_ beyond any security inherent to the plugin runtime used. 
 
 End users should always carefully vet each plugin before enabling it, regardless of the plugin type. Under no circumstances should a user enable a plugin from an untrusted source.
 
-All plugins currently require the use of additional flag: `--enable-alpha-plugins`. Without this flag, Kustomize will not load plugins and will fail with a warning about plugin use. 
+All plugins currently require the use of additional flag: `--enable-alpha-plugins`. Without this flag, Kustomize will not load plugins and will fail with a warning about plugin use.
 
 The use of this flag is an opt-in acknowledging
 the unstable (alpha) plugin API, the absence of
@@ -99,7 +99,7 @@ The `metadata.annotations["config.kubernetes.io/function]` is also required, as 
 The `metadata.name` field is also standard Kubernetes object metadata, and is required in most contexts.
 
 Your plugin determines the rest of the configuration object's schema. For example,  `spec.chartName` in the example above will presumably be used by the plugin to determine the Helm chart to fetch and render into resources.
- 
+
 ### Specification in `kustomization.yaml`
 
 Plugin configuration must be referred to in the `generators` and/or `transformers`
@@ -133,7 +133,7 @@ generators:
 
 The kustomization process would expect
 to find a file called `chartInflator.yaml` in the
-kustomization [root](/kustomize/api-reference/glossary#kustomization-root). 
+kustomization [root](/kustomize/api-reference/glossary#kustomization-root).
 The file `chartInflator.yaml` could contain:
 
 ```yaml
@@ -148,7 +148,6 @@ metadata:
 chartName: minecraft
 ```
 
-[kustomization]: /kustomize/api-reference/glossary#kustomization
 [plugins]: https://github.com/kubernetes-sigs/kustomize/tree/master/plugin/builtin
 
 For more examples of plugin configuration YAML,
@@ -156,7 +155,7 @@ browse the unit tests below the [plugins] root.
 
 ### Transforming plugin configuration
 
-Both the `transformers` and `generators` fields can also accept paths or URLs containing Kustomization files. 
+Both the `transformers` and `generators` fields can also accept paths or URLs containing Kustomization files.
 
 ```yaml
 generators:
@@ -206,23 +205,23 @@ All plugins currently require the use of an additional flag:
 
 Some plugin styles require additional flags to enable them at all, or to enable additional features. Some of these additional flags are not available in `kubectl kustomize`, effectively disabling those plugins in that version of Kustomize. The chart below outlines the flags required as of Kubectl v1.22 and Kustomize v4.4.
 
-
-| Feature               | Kustomize                                                    | Kubectl Kustomize                                            |
-| --------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| legacy go plugins     | `--enable-alpha-plugins`                                     | `--enable-alpha-plugins`                                     |
-| legacy exec plugins   | `--enable-alpha-plugins`                                     | `--enable-alpha-plugins`                                     |
-| KRM starlark plugins  | `--enable-alpha-plugins --enable-star`                       | DISABLED.                                                    |
-| KRM exec plugins      | `--enable-alpha-plugins --enable-exec`                       | DISABLED.                                                    |
+| Feature               | Kustomize                                                                                                                          | Kubectl Kustomize                                                                                                                  |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| legacy go plugins     | `--enable-alpha-plugins`                                                                                                           | `--enable-alpha-plugins`                                                                                                           |
+| legacy exec plugins   | `--enable-alpha-plugins`                                                                                                           | `--enable-alpha-plugins`                                                                                                           |
+| KRM starlark plugins  | `--enable-alpha-plugins --enable-star`                                                                                             | DISABLED.                                                                                                                          |
+| KRM exec plugins      | `--enable-alpha-plugins --enable-exec`                                                                                             | DISABLED.                                                                                                                          |
 | KRM container plugins | `--enable-alpha-plugins` to use; `--mount` `--network` and `--network-name` further configure these types of plugins specifically. | `--enable-alpha-plugins` to use; `--mount` `--network` and `--network-name` further configure these types of plugins specifically. |
 
 ## Plugin authoring
 
 There are five ways to build Kustomize plugins, some of which are slated for deprecation:
-- [Containerized KRM Functions](/guides/extending_kustomize/containerized_krm_functions/)
-- [Exec KRM Functions](/guides/extending_kustomize/exec_krm_functions/)
-- [Legacy exec plugins (DEPRECATED)](/guides/extending_kustomize/exec_plugins/)
-- [Legacy Go plugins (DEPRECATED)](/guides/extending_kustomize/go_plugins/)
-- Starlark KRM Functions (DEPRECATED)
+
+* [Containerized KRM Functions](/guides/extending_kustomize/containerized_krm_functions/)
+* [Exec KRM Functions](/guides/extending_kustomize/exec_krm_functions/)
+* [Legacy exec plugins (DEPRECATED)](/guides/extending_kustomize/exec_plugins/)
+* [Legacy Go plugins (DEPRECATED)](/guides/extending_kustomize/go_plugins/)
+* Starlark KRM Functions (DEPRECATED)
 
 ### Generator options
 

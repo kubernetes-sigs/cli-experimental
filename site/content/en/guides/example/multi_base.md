@@ -30,22 +30,27 @@ DEMO_HOME = $(mktemp -d)
 ```
 
 ## `/base`
+
 Define a common base:
+
 ```bash
-$ cd $DEMO_HOME
-$ mkdir base
-$ cd base
+cd $DEMO_HOME
+mkdir base
+cd base
 ```
 
 Create a Sample Pod File and Kustomize file in `base`
+
 ```bash
-$ vim kustomization.yaml
+vim kustomization.yaml
 ```
-```yaml 
+
+```yaml
 # kustomization.yaml contents
 resources:
 - pod.yaml
 ```
+
 ```yaml
 # pod.yaml contents
 apiVersion: v1
@@ -61,15 +66,17 @@ spec:
 ```
 
 ## `/dev`
+
 Define a dev variant overlaying base:
 
 ```bash
-$ cd $DEMO_HOME
-$ mkdir dev
-$ cd dev
+cd $DEMO_HOME
+mkdir dev
+cd dev
 ```
 
 Create a Kustomize file in `dev`
+
 ```yaml
 # kustomization.yaml contents
 resources:
@@ -78,14 +85,17 @@ namePrefix: dev-
 ```
 
 ## `/staging`
+
 Define a staging variant overlaying base:
+
 ```bash
-$ cd $DEMO_HOME
-$ mkdir staging
-$ cd staging
+cd $DEMO_HOME
+mkdir staging
+cd staging
 ```
 
 Create a Kustomize file in `staging`
+
 ```yaml
 # kustomization.yaml contents
 resources:
@@ -94,13 +104,17 @@ namePrefix: stag-
 ```
 
 ## `/production`
+
 Define a production variant overlaying base:
+
 ```bash
-$ cd $DEMO_HOME
-$ mkdir production
-$ cd production
+cd $DEMO_HOME
+mkdir production
+cd production
 ```
+
 Create a Kustomize file in `production`
+
 ```yaml
 # kustomization.yaml contents
 resources:
@@ -109,7 +123,9 @@ namePrefix: prod-
 ```
 
 ## `kustomize @ root dir`
+
 Then define a _Kustomization_ composing three variants together:
+
 ```yaml
 # kustomization.yaml contents
 resources:
@@ -120,6 +136,7 @@ namePrefix: cluster-a-
 ```
 
 ## `directory structure`
+>
 > ```bash
 > .
 > ├── kustomization.yaml
@@ -137,6 +154,7 @@ namePrefix: cluster-a-
 Confirm that the `kustomize build` output contains three pod objects from dev, staging and production variants.
 
 ## `output`
+
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -174,5 +192,7 @@ spec:
 
 Similarly to adding different `namePrefix` in different variants, one can also add different `namespace` and compose those variants in
 one _kustomization_. For more details, take a look at:
-- [Setting Namespaces](/guides/config_management/namespaces_names.md)
+
+- [Namespace Reference](/references/kustomize/kustomization/namespace/)
+- [Setting Namespaces](/guides/config_management/namespaces_names/#setting-namespaces-and-names)
 - [When to Use Multiple Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/#when-to-use-multiple-namespaces)
