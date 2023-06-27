@@ -256,7 +256,10 @@ resources:
 - job.yaml
 
 replacements:
+# additional sources/paths can be added in a list
+
 - path: my-replacement.yaml
+# - path: ...
 - source:
     kind: Secret
     name: my-secret
@@ -266,22 +269,25 @@ replacements:
       kind: Job
     fieldPaths:
     - spec.template.spec.containers.[name=hello].env.[name=SECRET_TOKEN].value
+# - source: ...
 ```
 
 `my-replacement.yaml`
 ```yaml
-source:
-  kind: Pod
-  name: my-pod
-  fieldPath: spec.restartPolicy
-targets:
-- select:
-    name: hello
-    kind: Job
-  fieldPaths:
-  - spec.template.spec.restartPolicy
-  options:
-    create: true
+- source:
+    kind: Pod
+    name: my-pod
+    fieldPath: spec.restartPolicy
+  targets:
+  - select:
+      name: hello
+      kind: Job
+    fieldPaths:
+    - spec.template.spec.restartPolicy
+    options:
+      create: true
+# additional sources can be added in a list
+# - source: ...
 ```
 
 The output of `kustomize build` will be:
