@@ -32,7 +32,8 @@ unset GOPATH
 unset GO111MODULES
 
 # clone the repo
-git clone git@github.com:kubernetes-sigs/kustomize.git
+git clone https://github.com/kubernetes-sigs/kustomize.git
+
 # get into the repo root
 cd kustomize
 
