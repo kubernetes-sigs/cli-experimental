@@ -142,6 +142,29 @@ reject:
 - kind: StatefulSet
 ```
 
+Moreover, when the selected target is going to be transformed during the kustomization process,
+you can use either the original or the transformed resource id to reject it.
+
+For example, the name of the target could be changed because of the `nameSuffix` field, as below:
+
+```yaml
+nameSuffix: -dev
+```
+
+You can use the original target name to prevent it from going through any replacement.
+
+```yaml
+reject:
+- name: deployment
+```
+
+Alternatively, using the transformed name with the suffix will produce the same behaviour.
+
+```yaml
+reject:
+- name: deployment-dev
+```
+
 #### Delimiter
 
 This field is intended to be used in conjunction with the `index` field for partial string replacement.
