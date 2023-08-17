@@ -113,6 +113,51 @@ but the source selection must resolve to a single resource.
 Replacements will be applied to all targets that are matched by the `select` field and
 are NOT matched by the `reject` field, and will be applied to all listed `fieldPaths`.
 
+##### Select
+You can use any of the following fields to select the targets to replace:
+`group`, `version`, `kind`, `name`, `namespace`
+
+For example, the following will select all the Deployments as targets of replacement.
+
+```yaml
+select:
+  kind: Deployment
+```
+
+Also, you can use multiple fields together to select only the resources that match all the conditions.
+For example, the following will select only the Deployments that are named my-deploy:
+
+```yaml
+select:
+- kind: Deployment
+  name: my-deploy
+```
+
+Moreover, when the selected target is going to be transformed during the kustomization process,
+you can use either the original or the transformed resource id to select it.
+
+For example, the name of the target could be changed because of the `namePrefix` field, as below:
+
+```yaml
+namePrefix: my-
+```
+
+In this case, below will be enough if we wanted to select all the targets that were originally named deploy:
+
+```yaml
+select:
+- name: deploy
+```
+
+Alternatively, using the transformed name with the prefix will produce the same behaviour.
+So the following case will select all the resources that *will be* named my-deploy,
+along with all the resources that *were* originally named my-deploy.
+
+```yaml
+select:
+- name: my-deploy
+```
+
 ##### Reject
 The reject field is a selector that drops targets selected by select, overruling their selection.
 
@@ -155,14 +200,14 @@ You can use the original target name to prevent it from going through any replac
 
 ```yaml
 reject:
-- name: deployment
+- name: my-deploy
 ```
 
 Alternatively, using the transformed name with the suffix will produce the same behaviour.
 
 ```yaml
 reject:
-- name: deployment-dev
+- name: my-deploy-dev
 ```
 
 #### Delimiter
