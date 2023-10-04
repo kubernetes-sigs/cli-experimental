@@ -36,7 +36,7 @@ This file should declare those resources, and any
 customization to apply to them, e.g. _add a common
 label_.
 
-```
+```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
