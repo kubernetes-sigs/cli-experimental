@@ -36,14 +36,24 @@ This file should declare those resources, and any
 customization to apply to them, e.g. _add a common
 label_.
 
+```
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - deployment.yaml
+  - service.yaml
+commonLabels:
+  app: someApp
+```
+
 File structure:
 
- ```
- ~/someApp
- ├── deployment.yaml
- ├── kustomization.yaml
- └── service.yaml
- ```
+```
+~/someApp
+├── deployment.yaml
+├── kustomization.yaml
+└── service.yaml
+```
 
 The resources in this directory could be a fork of
 someone else's configuration.  If so, you can easily
