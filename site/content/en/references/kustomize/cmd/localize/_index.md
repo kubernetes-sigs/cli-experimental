@@ -170,8 +170,7 @@ The command also localizes the following deprecated fields:
 * `patchesJson6902`
 
 ### Notes
-* [absolute]: The alpha version of this command does not handle and
-throws an error for absolute paths.
+* [absolute]: Absolute paths are replaced by paths relative to the kustomization root.
 <br></br>
 
 * [build]: This command may not catch `build` errors in the kustomization, as
