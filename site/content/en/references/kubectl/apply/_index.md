@@ -19,8 +19,15 @@ metadata:
   name: the-deployment
 spec:
   replicas: 5
+  selector:
+    matchLabels:
+      app: container
   template:
-    containers:
+    metadata:
+      labels:
+        app: container
+    spec:
+      containers:
       - name: the-container
         image: registry/container:latest
 ```
