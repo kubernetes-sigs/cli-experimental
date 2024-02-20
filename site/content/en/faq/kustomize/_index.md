@@ -17,7 +17,7 @@ published out of the kubernetes staging directory.
 2 pieces of work are underway which will allow kustomize to be updated in kubectl:
 
 - migrating kubectl out of kubernetes/kubernetes (expected Kubernetes ~1.20)
-- migrating kustomize off of the apimachinery libraries (expected Kuberntes ~1.20)
+- migrating kustomize off of the apimachinery libraries (expected Kubernetes ~1.20)
   - [2506](https://github.com/kubernetes-sigs/kustomize/issues/2506)
 
 Once either of these issues is resolved we will then update kubectl with the latest kustomize version.
