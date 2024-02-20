@@ -32,7 +32,6 @@ complete argument specification.
 [types.Selector]: https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/selector.go
 [types.Replica]: https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/replica.go
 [types.PatchStrategicMerge]: https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/patchstrategicmerge.go
-[types.PatchTarget]: https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/patchtarget.go
 [image.Image]: https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/image.go
 
 ## _AnnotationTransformer_
@@ -392,7 +391,7 @@ patchesJson6902:
 
 #### Arguments
 
-> Target [types.PatchTarget]
+> Target [types.Selector]
 >
 > Path   string
 >
