@@ -24,9 +24,10 @@ metadata:
 spec:
   replicas: 5
   template:
-    containers:
-      - name: the-container
-        image: registry/container:latest
+    spec:
+      containers:
+        - name: the-container
+          image: registry/container:latest
 ```
 
 ```yaml
@@ -51,7 +52,8 @@ metadata:
 spec:
   replicas: 5
   template:
-    containers:
-    - image: registry/container:latest
-      name: the-container
+    spec:
+      containers:
+        - name: the-container
+          image: registry/container:latest
 ```

@@ -20,9 +20,10 @@ metadata:
 spec:
   replicas: 5
   template:
-    containers:
-      - name: the-container
-        image: registry/container:latest
+    spec:
+      containers:
+        - name: the-container
+          image: registry/container:latest
 ```
 
 ```bash
@@ -70,9 +71,10 @@ metadata:
 spec:
   replicas: 5
   template:
-    containers:
-      - name: the-container
-        image: registry/container:latest
+    spec:
+      containers:
+        - name: the-container
+          image: registry/container:latest
 ```
 
 Users run Apply on directories containing `kustomization.yaml` files using `-k` or on raw
