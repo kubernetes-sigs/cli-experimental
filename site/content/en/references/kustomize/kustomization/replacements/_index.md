@@ -200,6 +200,10 @@ Strings are used for mapping nodes. For sequence nodes, we support three options
 
 3. Index with a wildcard match: `spec.template.spec.containers.*.env.[name=TARGET_ENV].value`. This will target every element in the list.
 
+{{% alert color="warning" title="Index by key-value pair matching with regexp" %}}
+After [kustomize v4.5.3](https://github.com/kubernetes-sigs/kustomize/releases/tag/kustomize%2Fv4.5.3), The index by key-value pair option matches any values with regexp.
+If you want to exact match, please use the exact match operand in value. e.g., `spec.template.spec.containers.[name=^nginx$].image`
+{{% /alert %}}
 
 ### Example
 
