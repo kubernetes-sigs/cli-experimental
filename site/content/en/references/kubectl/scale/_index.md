@@ -4,7 +4,7 @@ linkTitle: "scale"
 weight: 1
 type: docs
 description: >
-    Scaling Kubenetes Resources
+    Scaling Kubernetes Resources
 ---
 
 Set a new size for a Deployment, ReplicaSet, Replication Controller, or StatefulSet.
