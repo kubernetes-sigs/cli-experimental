@@ -9,6 +9,7 @@ description: >
 
 [kustomize builtins]: https://kubectl.docs.kubernetes.io/references/kustomize/builtins/#_helmchartinflationgenerator_
 [Helm support long term plan]: https://github.com/kubernetes-sigs/kustomize/issues/4401
+[Kustomize v5.2.1]: https://github.com/kubernetes-sigs/kustomize/pull/5167#issuecomment-1771738256
 
 ## Helm Chart Inflation Generator
 
@@ -20,6 +21,10 @@ To enable the helm chart inflation generator, you have to specify the `enable-he
 ```sh
 kustomize build --enable-helm
 ```
+
+{{% pageinfo color="info" %}}
+Post [Kustomize v5.2.1], the Helm plugin supports OCI-based chart registries too. Just make sure to login to the registry first, for instance for Github Packages it is: `helm registry login https://ghcr.io`.
+{{% /pageinfo %}}
 
 ## Long term support
 
@@ -36,8 +41,6 @@ For enhancements to the helm chart inflation generator feature, we will only sup
 
 We will not add support for:
 
-- private repository or registry authentication
-- OCI registries
 - other large features that increase the complexity of the feature and/or have significant security implications
 
 ### Future support
