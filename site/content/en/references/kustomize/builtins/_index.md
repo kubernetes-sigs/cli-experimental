@@ -762,6 +762,7 @@ Each entry can have following fields:
 - `skipTests`: [Optional] Skips tests from templated output
 - `apiVersions`: [Optional] the kubernetes apiversions used for Capabilities.APIVersions
 - `nameTemplate`: [Optional] specifies the name template used to name the release
+- `kubeVersion`: [Optional] specifies the kubernetes version used by Helm for Capabilities.KubeVersion
 
 ```yaml
 helmCharts:
@@ -801,6 +802,8 @@ helmGlobals:
 > configHome string
 >
 > includeCRDs bool
+>
+> kubeVersion string
 >
 > name string
 >
