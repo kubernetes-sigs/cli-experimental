@@ -4,7 +4,7 @@ linkTitle: "commonLabels"
 type: docs
 weight: 4
 description: >
-    Add labels and selectors to add all resources.
+    Add labels and selectors to all resources.
 ---
 
 [labels]: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/labels/
