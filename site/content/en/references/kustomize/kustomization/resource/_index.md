@@ -15,11 +15,18 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+# Local files
 - myNamespace.yaml
-- sub-dir/some-deployment.yaml
-- ../../commonbase
-- github.com/kubernetes-sigs/kustomize/examples/multibases?ref=v1.0.6
 - deployment.yaml
+- sub-dir/some-deployment.yaml
+
+# Local directories
+- ../../commonbase
+
+# Remote URLs
+- https://github.com/kubernetes-sigs/kustomize//examples/multibases/?timeout=120&ref=v3.3.1
+
+# Legacy hashicorp/go-getter format
 - github.com/kubernets-sigs/kustomize/examples/helloWorld?ref=test-branch
 ```
 
@@ -29,7 +36,12 @@ Files should contain k8s resources in YAML form. A file may contain multiple res
 the document marker `---`.  File paths should be specified _relative_ to the directory holding the
 kustomization file containing the `resources` field.
 
-Directory specification can be relative, absolute, or part of a URL.  URL specifications should
-follow the [hashicorp URL] format.  The directory must contain a `kustomization.yaml` file.
+Directory specification can be relative, absolute, or part of a URL.
 
-[hashicorp URL]: https://github.com/hashicorp/go-getter#url-format
+The URL format is a HTTPS or SSH git clone URL with an optional directory and some query string
+parameters. For backwards compatibility, kustomize has also supported a modified
+[hashicorp/go-getter] URL format which is no longer recommended. Please refer to [remoteBuild.md]
+for more information on remote targets.
+
+[hashicorp/go-getter]: https://github.com/hashicorp/go-getter#url-format
+[remoteBuild.md]: https://github.com/kubernetes-sigs/kustomize/blob/master/examples/remoteBuild.md
