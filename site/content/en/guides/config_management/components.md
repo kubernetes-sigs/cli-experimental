@@ -126,7 +126,7 @@ secretGenerator:
   files:
     - dbpass.txt
 
-patchesStrategicMerge:
+patches:
   - configmap.yaml
 
 patchesJson6902:
@@ -185,7 +185,7 @@ secretGenerator:
   files:
     - ldappass.txt
 
-patchesStrategicMerge:
+patches:
   - configmap.yaml
 
 patchesJson6902:
