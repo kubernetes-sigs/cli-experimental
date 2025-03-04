@@ -8,16 +8,15 @@ description: >
 ---
 
 Starting with Kustomize v3.8.7, docker images are available to run Kustomize.
-The images are hosted in kubernetes official GCR repositories.
+The images are hosted in kubernetes official repositories.
 
-See [GCR page] for available images.
+See [GGCR page] for available images.
 
 ```bash
 # pull the image
-docker pull registry.k8s.io/kustomize/kustomize:v5.0.0
+docker pull registry.k8s.io/kustomize/kustomize:v5.6.0
 
 # run 'kustomize version'
-docker run registry.k8s.io/kustomize/kustomize:v5.0.0 version
+docker run registry.k8s.io/kustomize/kustomize:v5.6.0 version
 ```
-
-[GCR page]: https://us.gcr.io/k8s-artifacts-prod/kustomize/kustomize
+[GGCR page]: https://explore.ggcr.dev/?repo=registry.k8s.io/kustomize/kustomize
