@@ -61,7 +61,7 @@ kustomize build --load-restrictor LoadRestrictionsNone $target
 
 Example: [#1319](https://github.com/kubernetes-sigs/kustomize/issues/1319), [#1322](https://github.com/kubernetes-sigs/kustomize/issues/1322), [#1347](https://github.com/kubernetes-sigs/kustomize/issues/1347) and etc.
 
-The fields transformed by kustomize is configured explicitly in [defaultconfig](https://github.com/kubernetes-sigs/kustomize/tree/master/api/konfig/builtinpluginconsts/defaultconfig.go). The configuration itself can be customized by including `configurations` in `kustomization.yaml`, e.g.
+The fields transformed by kustomize is configured explicitly in [defaultconfig](https://github.com/kubernetes-sigs/kustomize/blob/master/api/internal/konfig/builtinpluginconsts/defaultconfig.go). The configuration itself can be customized by including `configurations` in `kustomization.yaml`, e.g.
 
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
