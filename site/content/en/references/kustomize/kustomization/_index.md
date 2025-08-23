@@ -41,7 +41,7 @@ validators:
 The order in each of these lists is relevant
 and respected.
 
-> There are other fields too, e.g. `commonLabels`, `namePrefixes`,
+> There are other fields too, e.g. `labels`, `namePrefixes`,
 > `patches`, etc.  These fields are _convenience_ fields, shorthand for
 > longer transformer configuration stanzas, and are discussed later.
 > They're what's used most often, but it's useful to first cover
