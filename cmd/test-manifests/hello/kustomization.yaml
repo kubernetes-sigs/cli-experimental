@@ -1,4 +1,4 @@
-commonLabels:
+labels:
   app: hello
 
 namespace: default
