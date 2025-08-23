@@ -108,7 +108,7 @@ example
 ```shell
 # example/localized-remote-kustomize-v5.0.0/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
-commonLabels:
+labels:
   purpose: remoteReference
 kind: Kustomization
 resources:

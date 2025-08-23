@@ -239,12 +239,12 @@ images:
 
 ### Usage via `kustomization.yaml`
 
-#### field name: `commonLabels`
+#### field name: `labels`
 
 Adds labels to all resources and selectors
 
 ```bash
-commonLabels:
+labels:
   someName: someValue
   owner: alice
   app: bingo
