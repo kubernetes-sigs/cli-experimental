@@ -53,7 +53,7 @@ The configuration directive allows customization of the following transformers:
 
 ```yaml
 commonAnnotations: []
-commonLabels: []
+labels: []
 nameprefix: []
 namespace: []
 varreference: []
