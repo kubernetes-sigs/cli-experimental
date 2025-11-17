@@ -50,7 +50,7 @@ yes
 ```
 
 ## `reconcile`
-Reconciles rules for RBAC Role, RoleBinding, ClusterRole, and ClusterRole binding objects.
+Reconciles rules for RBAC Role, RoleBinding, ClusterRole, and ClusterRoleBinding objects.
 
 Missing objects are created, and the containing namespace is created for namespaced objects, if required.
 
