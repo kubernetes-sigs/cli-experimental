@@ -35,6 +35,71 @@ complete argument specification.
 [types.PatchTarget]: https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/patchtarget.go
 [image.Image]: https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/image.go
 
+## _Configurations_
+
+### Usage via `kustomization.yaml`
+
+#### field name: `configurations`
+
+The `configurations` field allows you to specify transformer configuration files that customize how built-in transformers behave. These configurations define fieldSpecs that specify which fields in resources should be modified by transformers like namePrefix, nameSuffix, labels, annotations, and nameReference.
+
+This is particularly useful when:
+- You have custom resources that need to be updated by transformers
+- You need to specify custom paths for label/annotation injection
+- You want to configure how name references are updated for custom resources
+
+```bash
+configurations:
+- transformer.config
+```
+
+### Configuration File Structure
+
+The configuration file can contain the following sections:
+
+- **namePrefix**: Specifies which fields should have the name prefix applied
+- **nameSuffix**: Specifies which fields should have the name suffix applied
+- **commonLabels**: Specifies which fields should have labels applied
+- **commonAnnotations**: Specifies which fields should have annotations applied
+- **nameReference**: Specifies which fields reference resources by name (e.g., ConfigMap, Secret) and should be updated when those resources are renamed
+- **varReference**: Specifies which fields contain variable references
+- **images**: Specifies which fields contain image references
+- **replicas**: Specifies which fields contain replica counts
+
+#### Example Configuration
+
+```yaml
+nameReference:
+- kind: Secret
+  version: v1
+  fieldSpecs:
+  - path: spec/bootstrap/initdb/secret/name
+    kind: Cluster
+    group: postgresql.cnpg.io
+    version: v1
+  - path: spec/containers/env/valueFrom/secretKeyRef/name
+    kind: Pod
+    group: ""
+    version: v1
+
+commonLabels:
+- path: metadata/labels
+  create: true
+- path: spec/selector
+  create: true
+
+namePrefix:
+- path: metadata/name
+```
+
+This configuration tells Kustomize to:
+1. Update `spec/bootstrap/initdb/secret/name` in Cluster resources when Secret names change
+2. Update `spec/containers/env/valueFrom/secretKeyRef/name` in Pod resources when Secret names change
+3. Add labels to `metadata/labels` and `spec/selector` fields
+4. Apply name prefix to `metadata/name` fields
+
+For more examples, see the [transformerconfigs examples](/examples/transformerconfigs/).
+
 ## _AnnotationTransformer_
 
 ### Usage via `kustomization.yaml`
