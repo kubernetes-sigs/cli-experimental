@@ -19,8 +19,9 @@ is equivalent to changing `commonLabels` and could result in failures.
 {{% /pageinfo %}}
 
 The following flags are available:
-* `includeTemplates`: When set will also apply labels to metadata/labels and spec/template/metadata/labels. This can be used to add labels to Pods from owner resources, such as Deployments and StatefulSets, without modifying selectors. False by default.
 * `includeSelectors`: When set will apply labels to metadata/labels, selectors, and spec/template/metadata/labels. False by default.
+* `includeTemplates`: When set will also apply labels to metadata/labels and spec/template/metadata/labels. This can be used to add labels to Pods from owner resources, such as Deployments and StatefulSets, without modifying selectors. False by default.
+* `includeVolumeClaimTemplates`: When set will also apply labels to metadata/labels and spec/volumeClaimTemplates/metadata/labels. This can be used to add labels to PersistentVolumeClaims from owner resources, such as StatefulSets. False by default.
 
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -31,8 +32,9 @@ labels:
       someName: someValue
       owner: alice
       app: bingo
-    includeSelectors: true # <-- false by default
-    includeTemplates: true # <-- false by default
+    includeSelectors: true            # <-- false by default
+    includeTemplates: true            # <-- false by default
+    includeVolumeClaimTemplates: true # <-- false by default
 ```
 
 ## Example 1 - selectors and templates NOT modified
@@ -45,10 +47,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 labels:
-  - pairs:
-      someName: someValue
-      owner: alice
-      app: bingo
+- pairs:
+    someName: someValue
+    owner: alice
+    app: bingo
 
 resources:
 - deploy.yaml
@@ -104,11 +106,11 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 labels:
-  - pairs:
-      someName: someValue
-      owner: alice
-      app: bingo
-    includeSelectors: true 
+- pairs:
+    someName: someValue
+    owner: alice
+    app: bingo
+  includeSelectors: true 
 
 resources:
 - deploy.yaml
@@ -170,7 +172,7 @@ spec:
         someName: someValue
 ```
 
-## Example 3 - templates modified
+## Example 3 - templates modified (selectors unmodified)
 
 ### File Input
 
@@ -180,11 +182,11 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 labels:
-  - pairs:
-      someName: someValue
-      owner: alice
-      app: bingo
-    includeTemplates: true 
+- pairs:
+    someName: someValue
+    owner: alice
+    app: bingo
+  includeTemplates: true 
 
 resources:
 - deploy.yaml
@@ -230,6 +232,72 @@ metadata:
 spec:
   template:
     metadata:
+      labels:
+        app: bingo
+        owner: alice
+        someName: someValue
+```
+
+## Example 4 - volumeClaimTemplates modified (selectors and templates unmodified)
+
+### File Input
+
+```yaml
+# kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+labels:
+- pairs:
+    someName: someValue
+    owner: alice
+    app: bingo
+  includeVolumeClaimTemplates: true
+
+resources:
+- sts.yaml
+- service.yaml
+```
+
+```yaml
+# sts.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: example
+```
+
+```yaml
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: example
+```
+
+### Build Output
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: bingo
+    owner: alice
+    someName: someValue
+  name: example
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: bingo
+    owner: alice
+    someName: someValue
+  name: example
+spec:
+  volumeClaimTemplates:
+  - metadata:
       labels:
         app: bingo
         owner: alice
