@@ -1,0 +1,11 @@
+###############################################
+# set server-side redirects in this file      #
+# see https://www.netlify.com/docs/redirects/ #
+# test at https://play.netlify.com/redirects  #
+###############################################
+
+# NOTE: This file is the source for static redirects.
+# Add fixed-path redirects here using Netlify redirect syntax.
+
+/references/kubectl      https://kubernetes.io/docs/reference/kubectl/generated/ 301!
+/references/kubectl/     https://kubernetes.io/docs/reference/kubectl/generated/ 301!
