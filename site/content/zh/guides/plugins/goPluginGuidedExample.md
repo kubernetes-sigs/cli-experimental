@@ -178,7 +178,7 @@ EOF
 
 ```shell
 cat <<EOF >$MYAPP/kustomization.yaml
-commonLabels:
+labels:
   app: hello
 generators:
 - secGenerator.yaml

@@ -9,7 +9,7 @@ description: >
 
 
 {{< alert color="success" title="TL;DR" >}}
-- Set Labels for all Resources declared within a Project with `commonLabels`
+- Set Labels for all Resources declared within a Project with `labels`
 - Set Annotations for all Resources declared within a Project with `commonAnnotations`
 {{< /alert >}}
 
@@ -26,9 +26,9 @@ Users may want to define a common set of labels or annotations for all the Resou
 
 ## Setting Labels
 
-**Example:** Add the labels declared in `commonLabels` to all Resources in the project.
+**Example:** Add the labels declared in `labels` to all Resources in the project.
 
-**Important:** Once set, commonLabels should not be changed so as not to change the Selectors for Services
+**Important:** Once set, labels should not be changed so as not to change the Selectors for Services
 or Workloads.
 
 **Input:** The kustomization.yaml and deployment.yaml files
@@ -37,7 +37,7 @@ or Workloads.
 # kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-commonLabels:
+labels:
   app: foo
   environment: test
 resources:
@@ -99,22 +99,22 @@ spec:
 ```
 
 {{% alert color="success" title="Command / Examples" %}}
-Check out the [reference](/references/kustomize/kustomization/commonlabels/) for commands and examples for `setting labels`
+Check out the [reference](/references/kustomize/kustomization/labels/) for commands and examples for `setting labels`
 {{% /alert %}}
 
 ### Propagating Labels to Selectors
 In addition to updating the labels for each Resource, any selectors will also be updated to target the
-labels.  e.g. the selectors for Services in the project will be updated to include the commonLabels
+labels.  e.g. the selectors for Services in the project will be updated to include the labels
 *in addition* to the other labels.
 
-**Note:** Once set, commonLabels should not be changed so as not to change the Selectors for Services
+**Note:** Once set, labels should not be changed so as not to change the Selectors for Services
 or Workloads.
 
 {{< alert color="success" title="Common Labels" >}}
 The k8s.io documentation defines a set of [Common Labeling Conventions](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/)
 that may be applied to Applications.
 
-**Note:** commonLabels should only be set for **immutable** labels, since they will be applied to Selectors.
+**Note:** labels should only be set for **immutable** labels, since they will be applied to Selectors.
 
 Labeling Workload Resources makes it simpler to query Pods - e.g. for the purpose of getting their logs.
 {{< /alert >}}

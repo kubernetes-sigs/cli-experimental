@@ -56,7 +56,7 @@ resources:
 namespace: default
 
 # labels added to all Resources
-commonLabels:
+labels:
   app: example
   env: test
 ```

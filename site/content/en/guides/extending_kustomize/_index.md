@@ -28,7 +28,7 @@ and _transformers_.
 * A _transformer_ plugin makes changes to existing Kubernetes objects. For example, it might apply a custom order to the resource list, perform special
    container command line edits, or any other
    transformation beyond those provided by the
-   builtin (`namePrefix`, `commonLabels`, etc.)
+   builtin (`namePrefix`, `labels`, etc.)
    transformers.
 
 [generator options]: https://github.com/kubernetes-sigs/kustomize/tree/master/examples/generatorOptions.md

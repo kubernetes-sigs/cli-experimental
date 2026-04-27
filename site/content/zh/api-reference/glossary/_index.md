@@ -119,7 +119,7 @@ Kustomize 鼓励对声明式应用程序管理（[Declarative Application Manage
 
 - `resources`：待定制的现存[资源]，示例字段：`resources`、`crds`。
 - `generator`：将要创建的**新**资源，示例字段：`configMapGenerator`（传统）、`secretGenerator`（传统）、`generators`（v2.1）
-- `transformer`：对前面提到的新旧资源进行**处理**的方式。示例字段：`namePrefix`、`nameSuffix`、`images`、`commonLabels`、`patchesJson6902` 等。在 v2.1 中还有更多的 `transformer`。
+- `transformer`：对前面提到的新旧资源进行**处理**的方式。示例字段：`namePrefix`、`nameSuffix`、`images`、`labels`、`patchesJson6902` 等。在 v2.1 中还有更多的 `transformer`。
 - `meta`：会对上面几种字段产生影响。示例字段：`vars`、`namespace`、`apiVersion`、`kind` 等。
 
 ## kustomization root

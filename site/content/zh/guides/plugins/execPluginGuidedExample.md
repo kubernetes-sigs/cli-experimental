@@ -104,7 +104,7 @@ EOF
 
 ```bash
 cat <<EOF >$MYAPP/kustomization.yaml
-commonLabels:
+labels:
   app: hello
 resources:
 - deployment.yaml

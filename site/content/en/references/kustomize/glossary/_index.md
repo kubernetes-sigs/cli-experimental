@@ -186,7 +186,7 @@ falling into four categories:
 
 * _transformers_ - what to _do_ to the aforementioned resources.
    Example fields: _namePrefix_, _nameSuffix_, _images_,
-   _commonLabels_, _patchesJson6902_, etc. and the more
+   _labels_, _patchesJson6902_, etc. and the more
    general _transformers_ (v2.1) field.
 
 * _meta_ - fields which may influence all or some of

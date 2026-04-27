@@ -26,6 +26,6 @@ resources:
 - deployment.yaml
 - service.yaml
 namespace: myapp
-commonLabels:
+labels:
   app: myapp
 ```

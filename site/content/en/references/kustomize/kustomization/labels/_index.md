@@ -8,14 +8,14 @@ description: >
 ---
 
 A field that allows adding labels without also automatically injecting corresponding selectors.
-This can be used instead of the `commonLabels` field, which always adds selectors.
+This can be used instead of the deprecated `commonLabels` field, which always adds selectors.
 
 {{% pageinfo color="warning" %}}
 Selectors for resources such as Deployments and Services shouldn't be changed once the
 resource has been applied to a cluster.
 
 Changing `includeSelectors` to `true` or changing labels when `includeSelectors` is `true` in live resources
-is equivalent to changing `commonLabels` and could result in failures.
+is equivalent to changing the deprecated `commonLabels` and could result in failures.
 {{% /pageinfo %}}
 
 The following flags are available:

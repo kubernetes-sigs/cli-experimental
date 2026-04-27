@@ -17,7 +17,7 @@ Kustomize 提供一个插件框架，允许用户开发自己的 _生成器_ 和
 [12-factor]: https://12factor.net
 
 * _generator_ 插件生成 k8s 资源，比如 [helm chart inflator] 是一个 generator 插件，基于少量自由变量生成一个 [12-factor] 应用所包含的全部组件 deployment，service，scaler，ingress 等）也是一个 generator 插件。
-* _transformer_ 插件转化（修改）k8s 资源，比如可能会执行对特殊容器命令行的编辑，或为其他内置转换器（`namePrefix`、`commonLabels` 等）无法转换的内容提供转换。
+* _transformer_ 插件转化（修改）k8s 资源，比如可能会执行对特殊容器命令行的编辑，或为其他内置转换器（`namePrefix`、`labels` 等）无法转换的内容提供转换。
 
 ## `kustomization.yaml` 的格式
 

@@ -188,7 +188,7 @@ referencing all of the above:
 
 ```bash
 # $MYAPP/kustomization.yaml
-commonLabels:
+labels:
   app: hello
 resources:
 - deployment.yaml

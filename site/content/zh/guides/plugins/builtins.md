@@ -208,12 +208,12 @@ images:
 
 ### 使用 `kustomization.yaml`
 
-#### 字段名称：`commonLabels`
+#### 字段名称：`labels`
 
 为所有资源和 selectors 增加标签。
 
 ```yaml
-commonLabels:
+labels:
   someName: someValue
   owner: alice
   app: bingo
