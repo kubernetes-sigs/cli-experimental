@@ -52,3 +52,4 @@ Join the community on Slack
 {{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/kubernetesio" url_text="Follow us" %}}
 For announcement of latest features, etc.
 {{% /blocks/feature %}}
+{{< /blocks/section >}}
