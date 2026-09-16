@@ -173,4 +173,4 @@ spec:
 ```
 
 Similarly to adding different `namePrefix` in different variants, one can also add different `namespace` and compose those variants in
-one _kustomization_. For more details, take a look at [multi-namespaces](multi-namespace.md).
+one _kustomization_. For more details, take a look at [multi-namespaces](https://github.com/kubernetes-sigs/kustomize/blob/master/examples/multibases/multi-namespace.md).
