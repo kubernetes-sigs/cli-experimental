@@ -49,7 +49,7 @@ description: >
 [transformer]: #transformer
 [variant]: #variant
 [variants]: #variant
-[workflow]: /kustomize/guides
+[workflow]: /guides/config_management/bespoke/
 
 ## application
 
