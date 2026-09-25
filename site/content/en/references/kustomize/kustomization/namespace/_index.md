@@ -8,7 +8,7 @@ description: >
 ---
 
 Will override the existing namespace if it is set on a resource, or add it
-if it is not set on a resource.
+if it is not set on a resource. It also sets the `name` on any namespace resources.
 
 ## Example
 
