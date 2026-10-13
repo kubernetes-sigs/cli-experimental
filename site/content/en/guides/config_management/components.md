@@ -126,16 +126,14 @@ secretGenerator:
   files:
     - dbpass.txt
 
-patchesStrategicMerge:
-  - configmap.yaml
-
-patchesJson6902:
-- target:
-    group: apps
-    version: v1
-    kind: Deployment
-    name: example
-  path: deployment.yaml
+patches:
+  - path: configmap.yaml
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: example
+    path: deployment.yaml
 ```
 
 ```bash
@@ -185,16 +183,14 @@ secretGenerator:
   files:
     - ldappass.txt
 
-patchesStrategicMerge:
-  - configmap.yaml
-
-patchesJson6902:
-- target:
-    group: apps
-    version: v1
-    kind: Deployment
-    name: example
-  path: deployment.yaml
+patches:
+  - path: configmap.yaml
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: example
+    path: deployment.yaml
 ```
 
 ```bash
@@ -254,13 +250,13 @@ configMapGenerator:
         site_key=/var/run/secrets/recaptcha/site_key.txt
         secret_key=/var/run/secrets/recaptcha/secret_key.txt
 
-patchesJson6902:
-- target:
-    group: apps
-    version: v1
-    kind: Deployment
-    name: example
-  path: deployment.yaml
+patches:
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: example
+    path: deployment.yaml
 ```
 
 ```bash
