@@ -35,6 +35,130 @@ complete argument specification.
 [types.PatchTarget]: https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/patchtarget.go
 [image.Image]: https://github.com/kubernetes-sigs/kustomize/tree/master/api/types/image.go
 
+## _Configurations_
+
+### Usage via `kustomization.yaml`
+
+#### field name: `configurations`
+
+The `configurations` field supplies additional field specifications for the
+built-in transformers. These specifications are merged with the defaults, so
+they extend the behaviour of transformers such as `namePrefix`, `nameSuffix`,
+`commonLabels`, `commonAnnotations` and `nameReference` without replacing it.
+
+A configuration file only declares *where* a transformer may act (the
+`fieldSpec` entries). It does not supply the values being applied: a label
+value still comes from `commonLabels` in the kustomization, and a prefix still
+comes from `namePrefix`. Providing a field spec for `namePrefix` without a
+`namePrefix` value in the kustomization changes nothing.
+
+This is distinct from the `transformers` field, which takes the manifests of
+standalone transformer plugins (including custom resource definitions) and runs
+them, and from `generators`, which takes generator plugins.
+
+```bash
+configurations:
+- transformer.config
+```
+
+### Configuration File Structure
+
+The configuration file can contain the following sections:
+
+- **namePrefix**: Specifies which fields should have the name prefix applied
+- **nameSuffix**: Specifies which fields should have the name suffix applied
+- **commonLabels**: Specifies which fields should have labels applied
+- **commonAnnotations**: Specifies which fields should have annotations applied
+- **nameReference**: Specifies which fields reference resources by name (e.g., ConfigMap, Secret) and should be updated when those resources are renamed
+- **varReference**: Specifies which fields contain variable references
+- **images**: Specifies which fields contain image references
+- **replicas**: Specifies which fields contain replica counts
+
+#### Example Configuration
+
+The example below extends name-reference handling to a custom resource, using
+the CloudNativePG `Cluster` kind. The `nameReference` transformer is already
+aware of Secret references in core kinds, but it has no knowledge of the
+`spec/bootstrap/initdb/secret/name` field of a `Cluster`, so a configuration is
+needed to rename that reference together with the Secret.
+
+Given these resources and configuration:
+
+```yaml
+# cluster.yaml
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: pg-cluster
+spec:
+  bootstrap:
+    initdb:
+      secret:
+        name: pg-secret
+  storage:
+    size: 1Gi
+```
+
+```yaml
+# secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: pg-secret
+type: Opaque
+stringData:
+  password: hunter2
+```
+
+```yaml
+# transformer.config
+nameReference:
+- kind: Secret
+  version: v1
+  fieldSpecs:
+  - path: spec/bootstrap/initdb/secret/name
+    kind: Cluster
+    group: postgresql.cnpg.io
+    version: v1
+```
+
+```yaml
+# kustomization.yaml
+resources:
+- cluster.yaml
+- secret.yaml
+namePrefix: dev-
+configurations:
+- transformer.config
+```
+
+The prefix is applied to both the Secret name and the Cluster's reference to it:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dev-pg-secret
+stringData:
+  password: hunter2
+type: Opaque
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: dev-pg-cluster
+spec:
+  bootstrap:
+    initdb:
+      secret:
+        name: dev-pg-secret
+  storage:
+    size: 1Gi
+```
+
+For more examples, see the
+[transformerconfigs examples](https://github.com/kubernetes-sigs/kustomize/tree/master/examples/transformerconfigs).
+
 ## _AnnotationTransformer_
 
 ### Usage via `kustomization.yaml`
