@@ -41,12 +41,20 @@ complete argument specification.
 
 #### field name: `configurations`
 
-The `configurations` field allows you to specify transformer configuration files that customize how built-in transformers behave. These configurations define fieldSpecs that specify which fields in resources should be modified by transformers like namePrefix, nameSuffix, labels, annotations, and nameReference.
+The `configurations` field supplies additional field specifications for the
+built-in transformers. These specifications are merged with the defaults, so
+they extend the behaviour of transformers such as `namePrefix`, `nameSuffix`,
+`commonLabels`, `commonAnnotations` and `nameReference` without replacing it.
 
-This is particularly useful when:
-- You have custom resources that need to be updated by transformers
-- You need to specify custom paths for label/annotation injection
-- You want to configure how name references are updated for custom resources
+A configuration file only declares *where* a transformer may act (the
+`fieldSpec` entries). It does not supply the values being applied: a label
+value still comes from `commonLabels` in the kustomization, and a prefix still
+comes from `namePrefix`. Providing a field spec for `namePrefix` without a
+`namePrefix` value in the kustomization changes nothing.
+
+This is distinct from the `transformers` field, which takes the manifests of
+standalone transformer plugins (including custom resource definitions) and runs
+them, and from `generators`, which takes generator plugins.
 
 ```bash
 configurations:
@@ -68,7 +76,42 @@ The configuration file can contain the following sections:
 
 #### Example Configuration
 
+The example below extends name-reference handling to a custom resource, using
+the CloudNativePG `Cluster` kind. The `nameReference` transformer is already
+aware of Secret references in core kinds, but it has no knowledge of the
+`spec/bootstrap/initdb/secret/name` field of a `Cluster`, so a configuration is
+needed to rename that reference together with the Secret.
+
+Given these resources and configuration:
+
 ```yaml
+# cluster.yaml
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: pg-cluster
+spec:
+  bootstrap:
+    initdb:
+      secret:
+        name: pg-secret
+  storage:
+    size: 1Gi
+```
+
+```yaml
+# secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: pg-secret
+type: Opaque
+stringData:
+  password: hunter2
+```
+
+```yaml
+# transformer.config
 nameReference:
 - kind: Secret
   version: v1
@@ -77,28 +120,44 @@ nameReference:
     kind: Cluster
     group: postgresql.cnpg.io
     version: v1
-  - path: spec/containers/env/valueFrom/secretKeyRef/name
-    kind: Pod
-    group: ""
-    version: v1
-
-commonLabels:
-- path: metadata/labels
-  create: true
-- path: spec/selector
-  create: true
-
-namePrefix:
-- path: metadata/name
 ```
 
-This configuration tells Kustomize to:
-1. Update `spec/bootstrap/initdb/secret/name` in Cluster resources when Secret names change
-2. Update `spec/containers/env/valueFrom/secretKeyRef/name` in Pod resources when Secret names change
-3. Add labels to `metadata/labels` and `spec/selector` fields
-4. Apply name prefix to `metadata/name` fields
+```yaml
+# kustomization.yaml
+resources:
+- cluster.yaml
+- secret.yaml
+namePrefix: dev-
+configurations:
+- transformer.config
+```
 
-For more examples, see the [transformerconfigs examples](/examples/transformerconfigs/).
+The prefix is applied to both the Secret name and the Cluster's reference to it:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dev-pg-secret
+stringData:
+  password: hunter2
+type: Opaque
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: dev-pg-cluster
+spec:
+  bootstrap:
+    initdb:
+      secret:
+        name: dev-pg-secret
+  storage:
+    size: 1Gi
+```
+
+For more examples, see the
+[transformerconfigs examples](https://github.com/kubernetes-sigs/kustomize/tree/master/examples/transformerconfigs).
 
 ## _AnnotationTransformer_
 
