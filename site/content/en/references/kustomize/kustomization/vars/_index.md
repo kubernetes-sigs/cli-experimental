@@ -106,7 +106,7 @@ in the Deployment.
 
 ### Convert vars to replacements
 
-There are plans to deprecate vars, so we recommend migration to [replacements] as early as possible.
+The `vars` field was deprecated in v5.0.0. We recommend migrating to [replacements].
 
 #### Simple migration example
 Let's first take a simple example of how to manually do this conversion. Suppose we have a container
